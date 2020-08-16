@@ -32,7 +32,7 @@ tags:
 </figure>
 
 {% capture bo %}
-![bò]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-16-yutube-hanquocbros-food_mi-got_2.png' }})
+![bò]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-16-yutube-hanquocbros-food_mi-got_2.png' | relative_url }})
 {% endcapture %}
 
 <figure>
@@ -41,7 +41,7 @@ tags:
 </figure>
 
 {% capture thap_cam %}
-![thập cẩm]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-16-yutube-hanquocbros-food_mi-got_1.png' }})
+![thập cẩm]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-16-yutube-hanquocbros-food_mi-got_3.png' | relative_url }})
 {% endcapture %}
 
 <figure>
@@ -50,7 +50,7 @@ tags:
 </figure>
 
 > ## **오늘의 단어**
->> **siêu đẳng**: 슈퍼, 대단한
+>> **siêu đẳng**: 슈퍼, 대단한  
 >> **mì gọt** : 도삭면  
 >> **tâm đức** : 心德(심덕, 도덕심)  
 >> **mì gọt hải sản** : 해산물 도삭면  
