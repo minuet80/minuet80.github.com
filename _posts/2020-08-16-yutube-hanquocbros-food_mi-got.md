@@ -17,7 +17,7 @@ tags:
 
 [To embed the following YouTube video at url](https://www.youtube.com/watch?v=HZ3bGun1pJw)
 
-<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=QMC3%2B99%2011%EA%B5%B0%20%EB%B2%A0%ED%8A%B8%EB%82%A8%20Ho%20Chi%20Minh%20City&key=AIzaSyBLSImokDhsM2lmlAJD2bEoYROoDB0h07g" allowfullscreen></iframe>
+<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoRihbcAudTER6lU9BRI7bL8&key=AIzaSyDOCAmsYHJqFPBB7r8tU6AGwO3h3pOYBvw" allowfullscreen></iframe>
 
 
 ### **오늘의 푸드**
@@ -40,13 +40,13 @@ tags:
   {{ bo | markdownify | remove: "<p>" | remove: "</p>" }}
 </figure>
 
-{% capture thap cam %}
+{% capture thap_cam %}
 ![thập cẩm]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-16-yutube-hanquocbros-food_mi-got_1.png' }})
 {% endcapture %}
 
 <figure>
   <figcaption>thập cẩm</figcaption>
-  {{ thap cam | markdownify | remove: "<p>" | remove: "</p>" }}
+  {{ thap_cam | markdownify | remove: "<p>" | remove: "</p>" }}
 </figure>
 
 > ## **오늘의 단어**
