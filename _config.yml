@@ -18,15 +18,15 @@ minimal_mistakes_skin    : "default" # 테마색 설정 "air", "aqua", "contrast
 locale                   : "ko-KR"
 title                    : "" # Meta 태그에 들어가는 영역, masthead_title 등이 없으면 기본값으로 나온다.
 title_separator          : "&#124" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 
-subtitle                 : "" # 타이틀 아래에 나올 작은 글씨
-name                     : "minuet80 Developer"
+subtitle                 : "생각하고 있는 것을 기록해봐, 10년~20년 후 ?" # 타이틀 아래에 나올 작은 글씨
+name                     : "youtube channel my favorite"
 description              : "" # 상세
 url                      : "https://minuet80.github.io" # GitBlog 호스트 주소
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "minuet80/minuet80.github.com" # Github username/repo-name
 teaser                   : # 홈페이지 기본 티처 이미지
 logo                     : # 타이틀 옆에 작게 들어갈 이미지.
-masthead_title           : "프리랜서 개발자" #홈페이지 최 상단에 들어갈 타이틀
+masthead_title           : "미뉴의 스터디 노트" #홈페이지 최 상단에 들어갈 타이틀
 # breadcrumbs            : true # 브래드크럼 사용 여부 true, false (default), _data/ui-text.yml에 다국어 지원 가능합니다.
 words_per_minute         : 200 # 해당 포스트 읽는데 걸리는 시간을 계산하기 위해 대략 분당 읽는 수가 몇글자가 될지 적는 공간
 comments:
