@@ -5,8 +5,8 @@ header:
     id: HZ3bGun1pJw
     provider: youtube
 categories:
-  - Layout
-  - Uncategorized
+  - youtube
+  - HanQuocBros HQB
 tags:
   - 유튜브
   - 베트남어
