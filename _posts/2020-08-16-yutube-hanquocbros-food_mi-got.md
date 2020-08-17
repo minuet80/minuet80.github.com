@@ -115,7 +115,7 @@ tags:
 | Thành phố|
 | Xa quá|
 | Chưa nói xong bạn xyyy|
-| Dao này, Ở Tp, HCM có rất nhiều mưa|
+| Dạo này, Ở Tp, HCM có rất nhiều mưa|
 | thì hôm như tắm rồi|
 | Định nghĩa tắm mưa của Sungrak |
 | Định nghĩa tắm mưa của tụi em |
