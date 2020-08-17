@@ -15,7 +15,7 @@ tags:
 
 <br>
 
-[To embed the following YouTube video at url](https://www.youtube.com/watch?v=HZ3bGun1pJw)
+[HanQuocBros HQB 바로가기](https://www.youtube.com/watch?v=HZ3bGun1pJw)
 
 <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoRihbcAudTER6lU9BRI7bL8&key=AIzaSyDOCAmsYHJqFPBB7r8tU6AGwO3h3pOYBvw" allowfullscreen></iframe>
 
