@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "미뉴엣"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile.jpg"
   bio              : ""
   location         : "Somewhere"
   email            :
