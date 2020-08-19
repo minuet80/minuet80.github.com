@@ -31,13 +31,13 @@ tags:
   {{ trung_cut_lon | markdownify | remove: "<p>" | remove: "</p>"}}
 </figure>
 
-{% capture trung_vit_luoc %}
-![trứng vịt luộc]]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-18-yutube-hanquocbros-trung-vit-luoc_2.png' | relative_url }})
+{% capture trung_cut_luoc %}
+![trứng cút luộc]({{ '/assets/images/youtube/han_quoc_bros_hqb/2018-08-18-yutube-hanquocbros-trung-cut-luoc_2.png' | relative_url }})
 {% endcapture %}
 
 <figure>
-  <figcaption>trứng vịt luộc</figcaption>
-  {{ trung_vit_luoc | markdownify | remove: "<p>" | remove: "</p>" }}
+  <figcaption>trứng cút luộc</figcaption>
+  {{ trung_cut_luoc | markdownify | remove: "<p>" | remove: "</p>" }}
 </figure>
 
 > ## **오늘의 단어**
