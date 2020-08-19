@@ -282,7 +282,7 @@ tags:
 | Thật sự đấy các bạn.|
 | Ở đây có rất nhiều điểm đặc biệt |
 | Rất nhiều điều làm món ăn này đặc biệt|
-| Vì ở đây có nguyên liêu tươi |
+| Vì ở đây có nguyên liệu tươi |
 | Và thật sự là mì gọt...|
 | Cái này là rất đặc biệt|
 | Nhìn thấy là khá dễ|
