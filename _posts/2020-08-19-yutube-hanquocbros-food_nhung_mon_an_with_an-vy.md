@@ -36,7 +36,7 @@ tags:
 {% endcapture %}
 
 <figure>
-  <figcaption>giỏ cuốn</figcaption>
+  <figcaption>gỏi cuốn</figcaption>
   {{ goi_cuon | markdownify | remove: "<p>" | remove: "</p>" }}
 </figure>
 
