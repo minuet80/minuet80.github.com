@@ -149,7 +149,7 @@ tags:
 | bây giờ anh thích ăn cái gì trước |
 | cái kia |
 | bún cá Campuchia |
-| thực ra anh đa ăn thử bún cá rồi |
+| thực ra anh đã ăn thử bún cá rồi |
 | nhưng mà Bún cá Campuchia là gì |
 | em cũng chưa ăn nha |
 | chưa ăn |

@@ -58,10 +58,12 @@ tags:
 >> **hoàn hồn**: 還魂(생기를 되찾다)  
 >> **chảo**: 후라이팬  
 >> **mòn**: 닳다  
->> **có được**: 쥐다  
+>> **chiên**: 튀기다, 볶다  
 >> **đổ**: (기름) 붓다, 쏟다  
+>> **thơm**: 파인애플, …의 냄새를 내뿜다  
 >> **dầu**: 기름  
 >> **tô**: 그릇, 사발  
+>> **đốt nóng**: 뜨겁게 달구다  
 >> **chưa**: 아직  
 >> **đốt**: 태우다, 굽다  
 >> **đùi**: 넓적다리  
@@ -112,6 +114,10 @@ tags:
 >> **sáng chế**: 창제하다  
 >> **hay ho**: 뛰어난  
 >> **ẩm thực**: 음식  
+>> **tương đậu**: 된장  
+>> **phù hợp**: 부합하다  
+>> **miếng**: 조각, 토막  
+>> **tới thăm**: 방문하다  
 ---
 
 ## 회화
@@ -158,7 +164,7 @@ tags:
 | à à à tui biết cái này |
 | nó là hải sản |
 | lắc lắc |
-| hạt thốt nốt mà hồi nãy anh uống á |
+| hạt thốt nốt mà (hồi) nãy anh uống á |
 | nhìn thấy jelly fish (sứa)
 | nhìn rất giống sứa nhưng không phải |
 | thịt bò |
@@ -178,18 +184,19 @@ tags:
 | có cái râu rất là xịn |
 | những nguyên liệu ở đây |
 | bắp bò và lườn ngỗng đều rất mắc |
+| mình nghĩ là đâu có cần lửa gì đâu ta? |
 | cái này là 『mì lửa』hả? |
 | chưa~ vẫn chưa |
 | anh có ăn được hành hông? |
 | nóng lắm đó |
 | chưa kịp hoàn hồn nữa |
-| thời ơi, anh ấy làm lửa ở đây nè! |
+| trời ơi, anh ấy làm lửa ở đây nè! |
 | mình hiểu lý do rồi |
 | lý do vì sao mấy cái chảo nó mòn hết |
 | có được thử không anh? |
 | thử đổ dầu |
 | các anh thấy lửa ở đâu |
-| trông tô mì này chưa? |
+| trong tô mì này chưa? |
 | bình thường là sẽ chiên |
 | đúng rồi đổ vào |
 | nhưng mà ở đâu người ta đốt nóng dầu |
@@ -360,10 +367,12 @@ tags:
 *[hoàn hồn]: 還魂(생기를 되찾다)
 *[chảo]: 후라이팬
 *[mòn]: 닳다
-*[có được]: 쥐다
+*[chiên]: 튀기다, 볶다
 *[đổ]: (기름) 붓다, 쏟다
+*[thơm]: 파인애플, …의 냄새를 내뿜다
 *[dầu]: 기름
 *[tô]: 그릇, 사발
+*[đốt nóng]: 뜨겁게 달구다
 *[chưa]: 아직
 *[đốt]: 태우다, 굽다
 *[đùi]: 넓적다리
@@ -414,3 +423,6 @@ tags:
 *[sáng chế]: 창제하다
 *[hay ho]: 뛰어난
 *[ẩm thực]: 음식
+*[tương đậu]: 된장
+*[phù hợp]: 부합하다
+*[miếng]: 조각, 토막
