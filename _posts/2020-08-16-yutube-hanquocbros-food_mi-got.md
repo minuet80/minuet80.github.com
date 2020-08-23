@@ -10,6 +10,7 @@ categories:
 tags:
   - 유튜브
   - 베트남어
+  - 베트남음식
   - HanQuocBros HQB
 ---
 
