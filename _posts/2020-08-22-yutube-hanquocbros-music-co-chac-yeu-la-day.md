@@ -59,7 +59,10 @@ tags:
 >> **tới**: 다음의, 도착하다, 오다,닿다  
 >> **lần này**: 이번  
 >> **lần sau**: 다음번  
-
+>> **dịch bệnh**: 전염병  
+>> **đồng điệu**: (同調) 동조하다, 동조적인  
+>> **thể hiện**: 구체화하다, 표현하다  
+>> **đáng để**: ~할만 하다  
 ---
 
 ## 회화
@@ -76,7 +79,7 @@ tags:
 | thì không thể đi VN được |
 | mình là fan của Sơn Tùng |
 | thì mình rất thích nhạc của Sơn Tùng |
-| khi tập gy hay là đi bộ |
+| khi tập gym hay là đi bộ |
 | mình luôn luôn nghe nhạc của Sơn Tùng |
 | MV mới của Sơn Tùng M-TP tên là |
 | có chắc yêu là đây |
@@ -207,3 +210,7 @@ tags:
 *[tới]: 다음의, 도착하다, 오다,닿다
 *[lần này]: 이번
 *[lần sau]: 다음번
+*[dịch bệnh]: 전염병
+*[đồng điệu]: (同調) 동조하다, 동조적인
+*[thể hiện]: 구체화하다, 표현하다
+*[đáng để]: ~할만 하다
