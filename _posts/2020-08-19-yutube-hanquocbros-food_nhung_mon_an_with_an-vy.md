@@ -16,7 +16,7 @@ tags:
 
 <br>
 
-[HanQuocBros HQB 바로가기](https://www.youtube.com/watch?v=BqFHsVC1lx0)
+[바로보기](https://www.youtube.com/watch?v=BqFHsVC1lx0)
 
 <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=11%20L%C3%AA%20H%E1%BB%93ng%20Phong%2C%20Ph%C6%B0%E1%BB%9Dng%202%2C%20Qu%E1%BA%ADn%2010%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20%EB%B2%A0%ED%8A%B8%EB%82%A8&key=AIzaSyDOCAmsYHJqFPBB7r8tU6AGwO3h3pOYBvw" allowfullscreen></iframe>
 

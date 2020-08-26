@@ -17,7 +17,7 @@ tags:
 
 <br>
 
-[HanQuocBros HQB 바로가기](https://www.youtube.com/watch?v=qKWVOJwWRnA)
+[바로보기](https://www.youtube.com/watch?v=qKWVOJwWRnA)
 
 
 ### **오늘의 뮤직비디오**
