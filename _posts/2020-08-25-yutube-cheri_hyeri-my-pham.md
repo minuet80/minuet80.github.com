@@ -42,7 +42,7 @@ tags:
 >> **đỏ**: 붉은, 빨갛다, 붉게 타오르다  
 >> **ánh**: 빛, 광선, 번쩍이는, 빛나는  
 >> **ẩm**: 습기찬, 젖은, 촉촉한  
->> **bóng**: 공, 축구공  
+>> **bóng**: 공, 축구공, 빛나다, 번쩍번쩍하다  
 >> **sơn**: 착색하다  
 >> **son môi**: 립스틱  
 >> **khô**: 마른, 건조한  
@@ -77,6 +77,11 @@ tags:
 >> **cọ**: 브러쉬  
 >> **phần trăm**: %  
 >> **đạt được**: 달성하다  
+>> **bẩn**: 더러운  
+>> **tràn ngập**: 가득하다, 넘치다  
+>> **vi khuẩn**: 세균, 미생물  
+>> **tẩy trang**: 화장을 지우다  
+>> **di chuyển**: 이사하다, 움직이다  
 ---
 
 ## 회화
@@ -180,7 +185,7 @@ tags:
 | để vào hộp lại :) |
 | như vậy gần đây mình thấy Mousse tint hoặc velvet lip tint |
 | của 『3ce』 hoặc 『Too Cool for School』hot hơn |
-| tint bình thường vì nó vừa mềm vừa có đọ bền lâu hơn |
+| tint bình thường vì nó vừa mềm vừa có độ bền lâu hơn |
 | tiếp theo là 3 loại mỹ phẩm chăm sóc da của 『COSRX』 |
 | 『COSRX』rất nổi tiếng ở HQ vì nó tốt cho mụn, da nhạy cảm |
 | bạn nào có nhiều mụn, da đầu hoặc có da quá nhạy cảm |
@@ -260,7 +265,7 @@ tags:
 *[đỏ]: 붉은, 빨갛다, 붉게 타오르다
 *[ánh]: 빛, 광선, 번쩍이는, 빛나는
 *[ẩm]: 습기찬, 젖은, 촉촉한
-*[bóng]: 공, 축구공
+*[bóng]: 공, 축구공, 빛나다, 번쩍번쩍하다
 *[sơn]: 착색하다
 *[son môi]: 립스틱
 *[khô]: 마른, 건조한
@@ -295,3 +300,8 @@ tags:
 *[cọ]: 브러쉬
 *[phần trăm]: %
 *[đạt được]: 달성하다
+*[bẩn]: 더러운
+*[tràn ngập]: 가득하다, 넘치다  
+*[vi khuẩn]: 세균, 미생물  
+*[tẩy trang]: 화장을 지우다
+*[di chuyển]: 이사하다, 움직이다
