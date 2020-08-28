@@ -57,7 +57,7 @@ tags:
 | khi mình đếc việt nam Fthật |
 | giá như học tiếng Việt với tốc đọ 1 ở Hàn Quốc |
 | nhưng thực tế khi mình đến Việt Nam, người Việt nói với tốc độ 100 |
-| nên khi mình và bạn mình đến Việt Namm, chúng mình đều rất sững sờ |
+| nên khi mình và bạn mình đến Việt Nam, chúng mình đều rất sững sờ |
 | rất nhiều bạn cũng biết là |
 | trật tự câu trông tiếng Viẹt và tiếng Hàn ngược nhau |
 | nhưng mà không phải tất cả ngược nhau, |
