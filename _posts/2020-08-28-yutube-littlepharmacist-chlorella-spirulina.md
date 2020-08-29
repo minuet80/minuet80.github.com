@@ -20,8 +20,6 @@ toc_sticky: true
 [바로보기](https://www.youtube.com/watch?v=vDw-dqxL3ro)
 
 
-### **오늘의 건강**
----
 {% capture spirulina_1 %}
 ![스피루리나]({{ '/assets/images/youtube/little_pharmacist/2020-08-28-yutube-littlepharmacist-chlorella-spirulina_1.png' | relative_url }})
 {% endcapture %}
