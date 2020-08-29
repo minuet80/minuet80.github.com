@@ -71,7 +71,7 @@ tags:
 | lần trước mình đã làm video để giải thích với mọi người rằng |
 | tại sao mình lại học tiếng Việt |
 | ngưng đó là lý do của Hye Ri |
-| còn lý do của những sinh việ khác trong khoa tiêng Việt thì sao? |
+| còn lý do của những sinh viên khác trong khoa tiếng Việt thì sao? |
 | hôm nay mình sẽ phỏng vấn một số bạn trong khoa tiếng Việt để trả lời cho câu hỏi |
 | tại sao bạn lại học tiếng Việt |
 | mình là bạn thân nhất của cheri hyeri |
@@ -87,7 +87,7 @@ tags:
 | họ nói rằng khoa tiếng Việt rất phổ biến và có tương lai tốt |
 | mình rất quan tâm đến việc học ngôn ngữ nên mình chọn khoa tiếng Việt |
 | thật ra là khi em ở trung học phổ thông thì mình đã từng học tiếng trung quốc |
-| nhưng mình đã nghĩ Việt Name là quốc gia khả năng phát triển nhiều hơn trung quốc |
+| nhưng mình đã nghĩ Việt Nam là quốc gia khả năng phát triển nhiều hơn trung quốc |
 | thật ra đầu tiên em cũng hơi ngại |
 | và sau khi em trở thành sinh viên khoa tiếng Việt em hơi ngại |
 | tất cả các bạn xung quanh em thì cũng cảm thấy việc em chọn khoa tiếng Việt hơi kì lạ |
