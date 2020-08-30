@@ -26,7 +26,7 @@ gallery2:
 
 <br>
 
-[코로나바이러스감염증-19(COVID-19) 바로가기](http://ncov.mohw.go.kr/baroView2.do?brdld=4&brdGubun=42)  
+[바로보기](http://ncov.mohw.go.kr/baroView2.do?brdld=4&brdGubun=42)  
 <br>
 
 ## 한국정보 대응체계
