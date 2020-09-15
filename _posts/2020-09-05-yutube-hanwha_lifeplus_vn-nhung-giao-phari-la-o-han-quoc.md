@@ -44,7 +44,7 @@ tags:
 >> **quốc tế**: 국제  
 >> **quốc nội**: 국내  
 >> **đi qua đi lại**: 왔다 갔다하다  
->> **thân thiện**: (親善) 친절하다, 
+>> **thân thiện**: (親善) 친절하다,  
 >> **lợi dụng**: ~이게 이롭다, 이익이 되다, ~을 이용하다  
 >> **điểm yếu**: 약점  
 >> **tiếp cận**: (接近) 접근의, 접근하다  
@@ -96,7 +96,47 @@ tags:
 >> **cái gọi là**: 이른바  
 >> **dòng chảy**: 흐름  
 >> **y chang**: 그대로이다, 똑같다  
-
+>> **khám phá**: 발견하다, 찾아내다  
+>> **bản thân**: (本身) 본인, 자기자신  
+>> **làm quen**: 친해지다, 아는 사이가 되다  
+>> **kết bạn**: 친구가 되다  
+>> **kinh thánh**: 성경, 기도서  
+>> **giáo lý**: 교리  
+>> **lôi kéo**: 끌다, 당기다, 유도하다  
+>> **trường hợp**: 경우  
+>> **lời khuyên**: 조언, 충고  
+>> **cắt đuôi**: 꼬리를 자르다, 커트, 해지하다  
+>> **khu du lịch**: 여행지  
+>> **vài câu**: 몇 마디  
+>> **xã giao**: 교제, 사귐  
+>> **giả bộ**: ~척하다, 가장하다  
+>> **dạo gần đây**: 요즘  
+>> **thua**: (전쟁에서) 지다, 패하다  
+>> **bắt buộc**: 강요하다, 억지로 시키다  
+>> **thẳng thừng**: 심하게, 몹시  
+>> **mánh khóe**: 속임수, 속임수를 잘 쓰는  
+>> **tìm đến**: 찾아가다  
+>> **giai đoạn**: 단계  
+>> **giao lưu**: 교류하다  
+>> **tích cực**: (積極) 적극적  
+>> **phòng**: 방, 예방하다  
+>> **khó khăn**: 고난  
+>> **cho đến khi**: (~thì) 때가 되면  
+>> **cảnh giác**: (警覺) 경각심, 경계하다  
+>> **mới**: 정말로 (미뉴생각))  
+>> **khóa**: 자물쇠, 학기, 년도, 잠그다, 닫다  
+>> **đúng đắn**: 바르다, 올바른, 규정대로  
+>> **phán xét**: 판가름하다, 재판하다  
+>> **tầm**: 범위, 한계  
+>> **phổ biến**: 보편적인, 널리 선전하다  
+>> **dữ đội**: 사나운, 거칠은  
+>> **truyền**: (傳) 전하다  
+>> **phòng hờ**: 임시의, 후보의  
+>> **đề phòng**: (提防) 예방하다  
+>> **thừa** 남다, 여분의  
+>> **mong là**: 청컨데  
+>> **ủng hộ**: 지지하다  
+>> **kế tiếp**: (繼接) 계속 잇다  
 
 ---
 
@@ -125,7 +165,8 @@ tags:
 | và cách để nhận ra họ là người truyền tà đạo |
 | và những cái kinh nghiệm cá nhân của mình trong việc |
 | chạy khỏi những cái người tà đạo này |
-| nhớm người tà đạo mà |
+|  |
+| nhóm người tà đạo mà |
 | nhiều bạn khách du lịch có thể sẽ gặp phải |
 | là ở những chỗ đông người và nhiều khách du lịch quốc tế |
 | như là Hongdae hoặc là Myeong dong ở Seoul |
@@ -135,7 +176,7 @@ tags:
 | và người ta ra vẻ là |
 | rất là muốn giúp đỡ khách du lịch |
 | thì khi mà bạn gặp những người này |
-| họ sẽ hỏ là bạn đến từ đâu |
+| họ sẽ hỏi là bạn đến từ đâu |
 | họ sẽ hỏi rất là thân thiện |
 | và thường những người này sẽ rất là giỏi tiếng Anh |
 | vì họ sẽ lợi dụng điểm yếu của bạn là không biết tiếng Hàn |
@@ -144,11 +185,11 @@ tags:
 | là họ có thể giúp đỡ mình |
 | thì họ có thể nói với mình những câu rất là thân thiện |
 | hỏi mình đang đi đâu hay có cần giúp đỡ gì không |
-| thương thì khi đã giúp đỡ mình xong. họ sẽ không đi ngay |
+| thường thì khi đã giúp đỡ mình xong. họ sẽ không đi ngay |
 | mà họ sẽ kiểu bám thêo mình xíu, và kiểu |
 | thấy nhân duyên mình gặp nhau vầy |
 | mình có nên đi uống một ly cà phê, hay là |
-| tao cs đứa bạn |
+| tao có đứa bạn |
 | cũng rất thích nói chuyện với người nước ngoài |
 | mày có muốn đi chung với tao không? |
 | hoặc là nếu họ biết mình là người Việt |
@@ -156,20 +197,20 @@ tags:
 | tao có đứa bạn cũng thích Việt Nam lắm |
 | hay là tụi mình đi cà phê nói chuyện với nó |
 | nếu như bạn đồng ý thêo họ đi uống cà phê |
-| hoặc đến mmootj địa điểm nào đó |
+| hoặc đến một địa điểm nào đó |
 | thì có thể là ở đó họ sẽ nói những câu chuyện mà nó |
-| nó là lùng hơn |
+| nó lạ lùng hơn |
 | chẳng hạn như họ sẽ nói về tôn giáo |
 | họ sẽ kêu bạn đến tham gia với họ |
 | một buổi tiệc, một buổi cầu nguyên hay là một buổi |
 | sinh hoạt chung gì đó |
 | nếu như mà bạn đã lỡ tới bước này rồi |
 | từ đầu bạn không từ chối họ, ban vẫn đi theo họ |
-| và chuố cùng bạn phải nghe những câu chuyện là lùng như vậy |
+| và chuố cùng bạn phải nghe những câu chuyện lạ lùng như vậy |
 | 90% họ là những người đến từ những đạo khá là lạ |
 | thật ra họ sẽ không nói cho bạn là |
-| tôi đến từ giáo phái Tân Thiên Địa |
-| tạo vì giáo phái "Tân Thiên Địa" thì cho phép |
+| tôi đến từ giáo phái 『Tân Thiên Địa』 |
+| tạo vì giáo phái 『Tân Thiên Địa』 thì cho phép |
 | giáo dân của mình nói dối trong việc truyền đạo |
 | cho nên lúc truyền đạo, họ sẽ không nói với bạn |
 | họ là Tân Thiên Địa |
@@ -192,8 +233,8 @@ tags:
 | rất có khả năng là những người truyền đạo là |
 | thật ra cũng có nhiều trường hợp |
 | đó là những bản khảo sát bình thường |
-| nhưng à nếu trong bản khảo sát đó họ có hỏi |
-| về tên, ssos điện thoại hay địa chỉ nhà |
+| nhưng mà nếu trong bản khảo sát đó họ có hỏi |
+| về tên, số điện thoại hay địa chỉ nhà |
 | thì chắc chắn trên 80% |
 | đó là những đạo là, và họ sẽ làm phiền bạn dài dài |
 | chẳng những họ có thể đứng trước cổng trường |
@@ -228,7 +269,7 @@ tags:
 | cho đến khi họ bắt đầu tìm cách |
 | họ sẽ nhờ bạn |
 | mình đã tham gia 2-3 lần những hội giống như vầy rồi |
-| cái gọi là dfong chảy của họ y chang nhau |
+| cái gọi là dòng chảy của họ y chang nhau |
 | cũng ban đầu là |
 | tới gặp nhau, làm bạn, kết bạn, nói chuyện thân thiết |
 | xong rồi họ |
@@ -241,7 +282,7 @@ tags:
 | họ bảo là: "Có bài test tính cách này hay lắm" |
 | mà mình nhớ là từ hồi mình qua Hàn Quốc |
 | mình đã làm 2-3 bài test tính cách giống vậy rồi |
-| sau khi họ cho mình làm bài tét họ sẽ nói là |
+| sau khi họ cho mình làm bài test họ sẽ nói là |
 | "tính cách của mày thế này |
 | mày có muốn tham gia lớp này để |
 | khám phá bản thân để coi mày làm được những gì không?" |
@@ -251,7 +292,7 @@ tags:
 | nhưng sau đó thì họ bắt đầu cho mình học kinh thánh |
 | những đạo chính thống cũng học khinh thánh mà |
 | thì bắt đầu họ sẽ đưa |
-| những giáo lý la, những giáo lý không có trong |
+| những giáo lý là, những giáo lý không có trong |
 | kinh thánh chính thống |
 | những người mà bị những đạo là lôi kéo |
 | thì thường sẽ là trường hợp thứ 3 |
@@ -286,7 +327,7 @@ tags:
 | nhưng mà mình luôn có một chút đề phòng |
 | khi mà hỏi về thông thin cá nhân hay hỏi về gia đinh mình |
 | họ luôn luôn muốn biết là mình gặp những khó khăn gì |
-| và họ sẽ tìm mọ cách để họ giúp đỡ mình |
+| và họ sẽ tìm mọi cách để họ giúp đỡ mình |
 | họ kiểu như là cô lập mình |
 | để mình không có một bạn thân nào khác ngoài họ |
 | cho đến khi đó thì mình mới phải cảnh giác |
@@ -304,13 +345,13 @@ tags:
 | là đạo tốt hay là đạo xấu|
 | mà đạo xấu thường người ta sẽ truyền dữ dội hơn đạo tốt |
 | tại vì mọi người biết rồi |
-| "thanh dã tự thanh" - cái gì tốt người ta sẽ từ theo|
+| "thanh dã tự thanh" - cái gì tốt người ta sẽ tự theo|
 | mà cái gì xấu người ta sẽ lôi kếo rất là ghê |
 | cho nên là cái sự phòng hờ |
 | cái sự đề phòng của du học sinh tụi mình |
-| thì không bao giaowf là thừa |
+| thì không bao giờgiờ là thừa |
 | mong là mọi người sẽ ủng hộ những video kế tiếp |
-| trên kênh Hanhwa Lìe Plus Việt Nam |
+| trên kênh Hanhwa Life Plus Việt Nam |
 
 
 *[giáo phái]: (종교)(敎派) 교파
@@ -339,7 +380,7 @@ tags:
 *[quốc tế]: 국제
 *[quốc nội]: 국내
 *[đi qua đi lại]: 왔다 갔다하다
-*[thân thiện]: (親善) 친절하다
+*[thân thiện]: (親善) 친절하다,
 *[lợi dụng]: ~이게 이롭다, 이익이 되다, ~을 이용하다
 *[điểm yếu]: 약점
 *[tiếp cận]: (接近) 접근의, 접근하다
@@ -391,3 +432,44 @@ tags:
 *[cái gọi là]: 이른바
 *[dòng chảy]: 흐름
 *[y chang]: 그대로이다, 똑같다
+*[khám phá]: 발견하다, 찾아내다
+*[bản thân]: (本身) 본인, 자기자신
+*[làm quen]: 친해지다, 아는 사이가 되다
+*[kết bạn]: 친구가 되다
+*[kinh thánh]: 성경, 기도서
+*[giáo lý]: 교리
+*[lôi kéo]: 끌다, 당기다, 유도하다
+*[trường hợp]: 경우
+*[lời khuyên]: 조언, 충고
+*[cắt đuôi]: 꼬리를 자르다, 커트, 해지하다
+*[khu du lịch]: 여행지
+*[vài câu]: 몇 마디
+*[xã giao]: 교제, 사귐
+*[giả bộ]: ~척하다, 가장하다
+*[dạo gần đây]: 요즘
+*[thua]: (전쟁에서) 지다, 패하다
+*[bắt buộc]: 강요하다, 억지로 시키다
+*[thẳng thừng]: 심하게, 몹시
+*[mánh khóe]: 속임수, 속임수를 잘 쓰는
+*[tìm đến]: 찾아가다
+*[giai đoạn]: 단계
+*[giao lưu]: 교류하다
+*[tích cực]: (積極) 적극적
+*[phòng]: 방, 예방하다
+*[khó khăn]: 고난
+*[cho đến khi]: (~thì) 때가 되면
+*[cảnh giác]: (警覺) 경각심, 경계하다
+*[mới]: 정말로 (미뉴생각))
+*[khóa]: 자물쇠, 학기, 년도, 잠그다, 닫다
+*[đúng đắn]: 바르다, 올바른, 규정대로
+*[phán xét]: 판가름하다, 재판하다
+*[tầm]: 범위, 한계
+*[phổ biến]: 보편적인, 널리 선전하다
+*[dữ đội]: 사나운, 거칠은
+*[truyền]: (傳) 전하다
+*[phòng hờ]: 임시의, 후보의
+*[đề phòng]: (提防) 예방하다
+*[thừa] 남다, 여분의
+*[mong là]: 청컨데
+*[ủng hộ]: 지지하다
+*[kế tiếp]: (繼接) 계속 잇다
