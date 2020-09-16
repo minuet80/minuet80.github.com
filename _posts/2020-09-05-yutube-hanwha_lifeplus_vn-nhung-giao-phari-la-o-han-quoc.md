@@ -88,6 +88,7 @@ tags:
 >> **tổ chức**: (組織) 조직, 조직하다, 시행하다  
 >> **hoạt động tình nguyện**: 자원봉사  
 >> **tình nguyện**: 지원하다  
+>> **nhìn vô**: 살펴보다  
 >> **nhìn vào**: 살펴보다  
 >> **cho dù**: 비록  
 >> **hân hoan**: 매우 기쁘다, 반갑다  
@@ -137,6 +138,7 @@ tags:
 >> **mong là**: 청컨데  
 >> **ủng hộ**: 지지하다  
 >> **kế tiếp**: (繼接) 계속 잇다  
+>> **từ hồi**: 그 이후  
 
 ---
 
@@ -260,7 +262,7 @@ tags:
 | thì bạn cũng sẽ rất là hân hoan làm |
 | tại vì |
 | thật sự đó là những hoạt động tốt |
-| những hoạt động tình nguyên nè |
+| những hoạt động tình nguyện nè |
 | hoặc là họ dạy bạn tiếng Hàn |
 | hoặc là họ tổ chức những nhóm sinh hoạt |
 | giữa những người nước ngoài với nhau |
@@ -425,6 +427,7 @@ tags:
 *[tổ chức]: (組織) 조직, 조직하다, 시행하다
 *[hoạt động tình nguyện]: 자원봉사
 *[tình nguyện]: 지원하다
+*[nhìn vô]: 살펴보다
 *[nhìn vào]: 살펴보다
 *[cho dù]: 비록
 *[hân hoan]: 매우 기쁘다, 반갑다
@@ -474,3 +477,4 @@ tags:
 *[mong là]: 청컨데
 *[ủng hộ]: 지지하다
 *[kế tiếp]: (繼接) 계속 잇다
+*[từ hồi]: 그 이후
