@@ -185,7 +185,7 @@ tags:
 | là họ có thể giúp đỡ mình |
 | thì họ có thể nói với mình những câu rất là thân thiện |
 | hỏi mình đang đi đâu hay có cần giúp đỡ gì không |
-| thường thì khi đã giúp đỡ mình xong. họ sẽ không đi ngay |
+| thường thì khi đã giúp đỡ mình xong, họ sẽ không đi ngay |
 | mà họ sẽ kiểu bám thêo mình xíu, và kiểu |
 | thấy nhân duyên mình gặp nhau vầy |
 | mình có nên đi uống một ly cà phê, hay là |
@@ -196,7 +196,7 @@ tags:
 | thì họ sẽ nói về Việt Nam, họ sẽ nói là |
 | tao có đứa bạn cũng thích Việt Nam lắm |
 | hay là tụi mình đi cà phê nói chuyện với nó |
-| nếu như bạn đồng ý thêo họ đi uống cà phê |
+| nếu như bạn đồng ý theo họ đi uống cà phê |
 | hoặc đến một địa điểm nào đó |
 | thì có thể là ở đó họ sẽ nói những câu chuyện mà nó |
 | nó lạ lùng hơn |
@@ -206,7 +206,7 @@ tags:
 | sinh hoạt chung gì đó |
 | nếu như mà bạn đã lỡ tới bước này rồi |
 | từ đầu bạn không từ chối họ, ban vẫn đi theo họ |
-| và chuố cùng bạn phải nghe những câu chuyện lạ lùng như vậy |
+| và cuối cùng bạn phải nghe những câu chuyện lạ lùng như vậy |
 | 90% họ là những người đến từ những đạo khá là lạ |
 | thật ra họ sẽ không nói cho bạn là |
 | tôi đến từ giáo phái 『Tân Thiên Địa』 |
@@ -230,7 +230,7 @@ tags:
 | làm một bài tập về tôn giáo |
 | bạn có thể dành một tí thời gian nghe tôi nói được không? |
 | thì ngững người này cũng |
-| rất có khả năng là những người truyền đạo là |
+| rất có khả năng là những người truyền đạo lạ |
 | thật ra cũng có nhiều trường hợp |
 | đó là những bản khảo sát bình thường |
 | nhưng mà nếu trong bản khảo sát đó họ có hỏi |
@@ -290,7 +290,7 @@ tags:
 | khám phá bản thân, chỉ lầ tâm lý, chỉ là |
 | làm quen kết bạn |
 | nhưng sau đó thì họ bắt đầu cho mình học kinh thánh |
-| những đạo chính thống cũng học khinh thánh mà |
+| những đạo chính thống cũng học kinh thánh mà |
 | thì bắt đầu họ sẽ đưa |
 | những giáo lý là, những giáo lý không có trong |
 | kinh thánh chính thống |
@@ -321,11 +321,11 @@ tags:
 | đối với kiểu thứ 3 |
 | thì mình nghĩ hoạt động truyền đạo mà |
 | cái giai đoạn đầu của họ, khi mà họ |
-| tổ chức những hoạt động thình nguyện hoặc là |
+| tổ chức những hoạt động tình nguyện hoặc là |
 | giao lưu văn hóa giữa những người nước ngoài với nhau |
 | thì mình vẫn tích cực tham gia bình thường |
 | nhưng mà mình luôn có một chút đề phòng |
-| khi mà hỏi về thông thin cá nhân hay hỏi về gia đinh mình |
+| khi mà hỏi về thông tin cá nhân hay hỏi về gia đinh mình |
 | họ luôn luôn muốn biết là mình gặp những khó khăn gì |
 | và họ sẽ tìm mọi cách để họ giúp đỡ mình |
 | họ kiểu như là cô lập mình |
@@ -338,8 +338,9 @@ tags:
 | mình không có đủ sự đúng đắn để mà mình |
 | phán xét là |
 | những người này đang là người tốt hay là người xấu |
+| những người đang truyền đạo tốt hay tà đạo |
 | mình không đủ cái tầm để phán xét chuyện đó |
-| nhưng mà ình chỉ muốn có lời khuyên |
+| nhưng mà mình chỉ muốn có lời khuyên |
 | là việc truyền đạo ở HQ khá là phổ biến |
 | cho nên bạn không thể nào biết cái đạo đó là |
 | là đạo tốt hay là đạo xấu|
@@ -349,7 +350,7 @@ tags:
 | mà cái gì xấu người ta sẽ lôi kếo rất là ghê |
 | cho nên là cái sự phòng hờ |
 | cái sự đề phòng của du học sinh tụi mình |
-| thì không bao giờgiờ là thừa |
+| thì không bao giờ là thừa |
 | mong là mọi người sẽ ủng hộ những video kế tiếp |
 | trên kênh Hanhwa Life Plus Việt Nam |
 
