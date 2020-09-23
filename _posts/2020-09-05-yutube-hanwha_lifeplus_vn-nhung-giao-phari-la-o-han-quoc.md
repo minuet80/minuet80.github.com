@@ -73,7 +73,7 @@ tags:
 >> **Tin Lành**: 청교도  
 >> **Công Giáo**: 천주교  
 >> **cổng trường**: 광장  
->> **đứng ở trược**: 앞에 서다  
+>> **đứng ở trước**: 앞에 서다  
 >> **khảo sát**: 조사하다  
 >> **bài tập**: 과제  
 >> **tôn giáo**: 종교  
@@ -412,7 +412,7 @@ tags:
 *[Tin Lành]: 청교도
 *[Công Giáo]: 천주교
 *[cổng trường]: 광장
-*[đứng ở trược]: 앞에 서다
+*[đứng ở trước]: 앞에 서다
 *[khảo sát]: 조사하다
 *[bài tập]: 과제
 *[tôn giáo]: 종교
