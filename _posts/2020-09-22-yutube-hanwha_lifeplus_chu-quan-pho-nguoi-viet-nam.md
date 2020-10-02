@@ -17,6 +17,39 @@ tags:
 
 [바로보기](https://www.youtube.com/watch?v=GF5PQy6EgTU)
 
+
+<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EC%9E%91%EA%B5%AC%20%EB%A7%8C%EC%96%91%EB%A1%9C%2012%EA%B8%B8%206-2&key=AIzaSyDOCAmsYHJqFPBB7r8tU6AGwO3h3pOYBvw" allowfullscreen></iframe>
+
+
+### **오늘의 푸드**
+---
+{% capture ten_diem %}
+![ten tiệm]({{ '/assets/images/youtube/hanhwa_life_plus/2020-09-22-yutube-hanwha_lifeplus_chu-quan-pho-nguoi-viet-nam-1.png' | relative_url }})
+{% endcapture %}
+
+<figure>
+  <figcaption>ten tiệm</figcaption>
+  {{ ten_tiem | markdownify | remove: "<p>" | remove: "</p>"}}
+</figure>
+
+{% capture gio_ban_hang %}
+![giờ bán hàng]({{ '/assets/images/youtube/hanhwa_life_plus/2020-09-22-yutube-hanwha_lifeplus_chu-quan-pho-nguoi-viet-nam-2.png' | relative_url }})
+{% endcapture %}
+
+<figure>
+  <figcaption>giờ bán hàng</figcaption>
+  {{ gio_ban_hang | markdownify | remove: "<p>" | remove: "</p>"}}
+</figure>
+
+{% capture thuc_don %}
+![thực đơn]({{ '/assets/images/youtube/hanhwa_life_plus/2020-09-22-yutube-hanwha_lifeplus_chu-quan-pho-nguoi-viet-nam-3.png' | relative_url }})
+{% endcapture %}
+
+<figure>
+  <figcaption>thực đơn</figcaption>
+  {{ thuc_don | markdownify | remove: "<p>" | remove: "</p>"}}
+</figure>
+
 > ## **오늘의 단어**
 >> **trải nghiệm**: 경험하다, 맛보다  
 >> **ẩm thực**: 음식  
