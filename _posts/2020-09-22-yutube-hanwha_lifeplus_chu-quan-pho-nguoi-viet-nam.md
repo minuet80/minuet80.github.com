@@ -23,7 +23,7 @@ tags:
 
 ### **오늘의 푸드**
 ---
-{% capture ten_diem %}
+{% capture ten_tiem %}
 ![ten tiệm]({{ '/assets/images/youtube/hanhwa_life_plus/2020-09-22-yutube-hanwha_lifeplus_chu-quan-pho-nguoi-viet-nam-1.png' | relative_url }})
 {% endcapture %}
 
