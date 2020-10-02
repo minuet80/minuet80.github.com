@@ -28,7 +28,7 @@ tags:
 >> **lúc đầu**: 처음  
 >> **nơi**: 장소  
 >> **ổn định**: (穩定) 안정된, 고정된  
->> **không chỉ là**: 아니요 그냥 단지  
+>> **không chỉ là**: (~đâu mà) ~ 뿐만 아니라  
 >> **nghiên cứu**: 연구하다, 조사하다  
 >> **thị trường**: （市場) 시장  
 >> **bất kể**: ~에 상관없이  
@@ -52,6 +52,7 @@ tags:
 >> **được biết**: 알려지다, 알게되다  
 >> **tự nhiên**: 자연스럽게, 부담없이  
 >> **phía mình**: 이편  
+>> **tài khoản**: 계좌, 계정  
 >> **đổ về**: 모여들다  
 >> **thu nhập**: (收入) 수입  
 >> **do mình**: 마음대로  
@@ -67,6 +68,7 @@ tags:
 >> **nào là**: 그리고, 및  
 >> **lãi**: 수익, 이자, 이득  
 >> **dành cho**: ~를 위해서  
+>> **sinh lời**: (돈) 이자가 붙다  
 >> **đâu biết**: 모르다  
 >> **dựa vào**: ~에 근거하다  
 >> **chuyên gia**: 전문가  
@@ -86,6 +88,12 @@ tags:
 >> **còn trẻ**: 어린아이  
 >> **đạt được**: 달성하다  
 >> **nỗ lực**: (努力) 노력하다  
+>> **như vầy**: 이처럼  
+>> **dù gì**: 아무래도, 어차피  
+>> **giao cho**: 넘기다, 주다  
+>> **con số**: 숫자, 지수  
+>> **có ích**: 유익한  
+>> **kiếm tiền**: 돈을 벌다  
 ---
 
 ## 회화
@@ -106,24 +114,22 @@ tags:
 | lý do đầu tiền đó là cô bạn gái mà mình có giới thiệu lúc đầu |
 | bây giờ đã trở thành vợ của mình |
 | và là mẹ của cô con gái 6 tháng tuổi của mình |
-| mình đã có mootj gia đình và mình nghĩ là |
+| mình đã có một gia đình và mình nghĩ là |
 | đây là nơi mình sẽ có một cuộc sống ổn định với gia đình mình |
 | lý do thứ 2 đó là mình rất thích đồ ăn VN |
 | đi đâu mình cũng rất nhớ đồ ăn VN |
 | ngay cả ở Hàn Quốc mình cũng nấu các món ăn VN |
 | điều quan trọng khi mở quán cà phê |
-| theo như mình thì |
-| không chỉ là việc kinh donah quán cà phê đâu |
-| mà tất cả mọi việc khih doanh |
+| theo như mình thì không chỉ là việc kinh donah quán cà phê đâu mà |
+| tất cả mọi việc kinh doanh |
 | thì việc đầu tiền và quan trọng nhất là nghiên cứu thị trường |
 | dù là bạn có kinh doanh bất kể loại hình sản phẩm hay dịch vụ gì |
 | thì việc nghiên cứu thị trường quyết định đến việc bạn có thành công hay không |
-| từ việc tìm địa điểm bạn muốn kinh doanh |
-| cho đến thói quen khách hàng |
+| từ việc tìm địa điểm bạn muốn kinh doanh cho đến thói quen khách hàng |
 | văn hóa, khẩu vị |
 | và có nhiều thứ nữa bạn cần tìm hiểu |
 | mình nghĩ quan trọng nhất và đầu tiên đó là nghiên cứu thị trường |
-| anh đã tiết kiệm tiền thế nào? |
+| a  tiền thế nào? |
 | thật ra khi đến HQ mình thì mới biết được là để kinh doanh thì cần một khoản tiền rât lớn |
 | sau hơn 2 năm hai vợ chòng đi làm rồi tiết kiệm |
 | với lại thông qua việc đầu tư tại HQ thì tụi mình cũng tiết kiệm được một khoản kha khá |
@@ -139,7 +145,7 @@ tags:
 | theo mình được biết thì ở VN việc quản ly tài chính cũng là việc của vợ |
 | thế là mấy việc đó tự nhiên đổ về phía mình |
 | thu nhập hiện tại của chúng mình thì do mình quản lý và |
-| mình cũng mở một số tk ngân hàng |
+| mình cũng mở một số tài khoản ngân hàng |
 | và cũng đang chơi cổ phiểu, các quỹ đầu tư hay là ISA |
 | và còn có cả bên ngoại tệ nữa |
 | mình học mấy cái này từ hồi còn đi làm ở công ty |
@@ -154,8 +160,7 @@ tags:
 | thật ra thì |
 | cũng có nhiều người HQ đâu biết làm thế nào đẩy dòng tiền vào các sản phẩm tài chính để sinh lời đâu |
 | và hiện tại mình cũng đang làm trên 50% dựa vào quỹ đầu từ |
-| dù gì thì mình cũng tin các quỹ đầu tư nên mình giao cho |
-| các chuyên gia rồi cùng tìm hiểu |
+| dù gì thì mình cũng tin các quỹ đầu tư nên mình giao cho các chuyên gia rồi cùng tìm hiểu |
 | để tìm ra một con số phù hợp nhất đẻ làm, chính vì vậy |
 | mình nghĩ sẽ rất có ích nếu các bạn tìm hiểu các sản phẩm |
 | tài chính và thử tham gia nó |
@@ -213,6 +218,7 @@ tags:
 *[trợ giúp]: 돕다
 *[được biết]: 알려지다, 알게되다
 *[tự nhiên]: 자연스럽게, 부담없이
+*[tài khoản]: 계좌, 계정
 *[phía mình]: 이편
 *[đổ về]: 모여들다
 *[thu nhập]: (收入) 수입
@@ -228,6 +234,7 @@ tags:
 *[gửi tiết kiệm]: 적금, 저금하다
 *[nào là]: 그리고, 및
 *[lãi]: 수익, 이자, 이득
+*[sinh lời]: (돈) 이자가 붙다
 *[dành cho]: ~를 위해서
 *[đâu biết]: 모르다
 *[dựa vào]: ~에 근거하다
@@ -248,3 +255,9 @@ tags:
 *[còn trẻ]: 어린아이
 *[đạt được]: 달성하다
 *[nỗ lực]: (努力) 노력하다
+*[như vầy]: 이처럼
+*[dù gì]: 아무래도, 어차피
+*[giao cho]: 넘기다, 주다
+*[con số]: 숫자, 지수
+*[có ích]: 유익한
+*[kiếm tiền]: 돈을 벌다
