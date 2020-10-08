@@ -36,7 +36,7 @@ tags:
 >> **bột ngũ cốc**: 미숫가루  
 >> **thêm cả**: 까지  
 >> **đổ**: 붓다, 쏟다  
->> **hợp**: 상자  
+>> **hộp**: 상자  
 >> **lỏng lỏng**: 미끈미끈한, 약간 물기가 많은  
 >> **một lớp**: 홅겹, 외겹  
 >> **sốt**: (=nước sốt) 소스  
@@ -117,13 +117,13 @@ tags:
 | cứ nhắc đến món 빙수 |
 | thì mình nghĩ đến ngay thương hiệu 설빙 |
 | vậy thì chúng mình sẽ ăn luôn nhá |
-| và đây chính là 2 món 빙수 mà bọ mình đã đặt |
+| và đây chính là 2 cái món 빙수 mà bọn mình đã đặt |
 | thì bây giờ nó đã có mặt tại đây |
 | trước tiên thì bọn mình sẽ mở ra |
 | để giới thiệu cho các bạn nhá |
 | đây là món 빙수 đầu tiên |
 | và loại đầu tiên bọn mình gọi có tên là |
-| incheolmi 빙수 |
+| incheolmi    |
 | thì khi gọi bọi mình thêm cả sữa đặc |
 | trước tiên mình sẽ đổ lên phía trên nhá |
 | hơi có mùi thơm của sữa đặc |
@@ -132,7 +132,7 @@ tags:
 | thì là món xoài và phô mai |
 | thì bây giờ mình sẽ mở ra cho cạc bạn xem nhé |
 | trông ngon nhờ |
-| thì ở đây mình cũng có hợp sữa đặc |
+| thì ở đây mình cũng có hộp sữa đặc |
 | lỏng lỏng như thế này |
 | mình cũng sẽ đổ sữa đặc lên phía trên |
 | ở phía trên nó có một lớp như kem |
@@ -288,7 +288,7 @@ tags:
 *[bột ngũ cốc]: 미숫가루
 *[thêm cả]: 까지
 *[đổ]: 붓다, 쏟다
-*[hợp]: 상자
+*[hộp]: 상자
 *[lỏng lỏng]: 미끈미끈한, 약간 물기가 많은
 *[một lớp]: 홅겹, 외겹
 *[sốt]: (=nước sốt) 소스
