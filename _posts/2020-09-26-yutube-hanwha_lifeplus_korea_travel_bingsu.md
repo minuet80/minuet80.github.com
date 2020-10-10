@@ -98,7 +98,7 @@ tags:
 | --- |
 | và hôm nay bọn mình lại quay trở lại |
 | để tiếp tục review về một món ăn |
-| thì Shu có biết hôm nay bao độ không? |
+| thì Thu có biết hôm nay bao độ không? |
 | hôm nay vừa xem dự báo thời tiết xong |
 | thì là 30 độ |
 | thời điểm hiện tại đang là 30 độ |
