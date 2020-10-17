@@ -1,5 +1,5 @@
 ---
-title: "대부도 여행| 힐링 트립"
+title: "대부도 여행"
 header:
   video:
     id: 6laysSe6A2k
