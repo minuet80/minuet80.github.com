@@ -3,7 +3,7 @@ title: "이민자 조기적응 프로그램"
 toc: true
 toc_label: "Getting Started"
 categories:
-  - marriage to aliens
+  - marriage_to_aliens
 tags:
   - 외국인
   - 배우자

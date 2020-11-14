@@ -1,7 +1,7 @@
 ---
 title: "결혼 비자에 대하여"
 categories:
-  - marriage to aliens
+  - marriage_to_aliens
 tags:
   - 외국인
   - 배우자

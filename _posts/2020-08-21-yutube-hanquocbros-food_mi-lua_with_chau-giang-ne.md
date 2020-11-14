@@ -1,5 +1,5 @@
 ---
-title: "[tiếng Việt] Cùng Châu Giang đột kích quán \"Mì lửa\" siêu độc lạ giữa Sài Gòn!"
+title: "[베트남어] Cùng Châu Giang đột kích quán \"Mì lửa\" siêu độc lạ giữa Sài Gòn!"
 header:
   video:
     id: JPGfaCI-gEA
@@ -122,222 +122,222 @@ tags:
 ## 회화
 
 | --- |
-| hôm nay chúng mình đến quận Bình Thạnh |
-| khi chúng mình mới đến VN |
-| chúng mình bắt đầu cuộc sống ở VN |
-| tại quận Bình Thạnh |
-| quê của chúng mình |
-| hôm nay có 1 người khách mời |
-| em ấy như thế nào? |
-| rất đẹp |
-| rất thông minh |
-| tới lượt cậu nói mà |
-| rất dễ thương |
-| xin mời |
-| ngày hôm nay được mời tham gia |
-| quay một cái vlog |
-| và liên quan đến ăn uống nữa |
-| của mấy anh... cao quá |
-| em quay video trên "hôm nay ăn gì |
-| và schannel |
-| chắc chắn em ăn nhiều loại món ăn rồi |
-| nhưng món này em chưa ăn bao giờ hết |
-| vậy hả |
-| hôm nay cùng nhau xác nhận |
-| cái này ngon hoặc lạ thế nào nhé |
-| nhưng mà chỉ ở ngay đây thôi |
-| chúng em muốn ăn thử 『mì lửa』|
-| tất cả đây là nguyên liệu của mì lửa hả? |
-| nó rất cầu kì, rất nhiều loại topping |
-| chắc chắn cái này là mì |
-| chính xác |
-| và mì này là |
-| mì udon |
-| không~ |
-| hình như là |
-| nhìn giống như vậy |
-| à giống như vậy |
-| và ở đây |
-| nấm |
-| còn cái này là gì? |
-| à à à tui biết cái này |
-| nó là hải sản |
-| lắc lắc |
-| hạt thốt nốt mà (hồi) nãy anh uống á |
-| nhìn thấy jelly fish (sứa)
-| nhìn rất giống sứa nhưng không phải |
-| thịt bò |
-| bắp bò |
-| và đây giống như là |
-| thịt gà |
-| lườn |
-| ngỗng |
-| xông khói |
-| sốt này là gì anh? |
-| bí mật |
-| sốt đặc biệt |
-| sốt bí mật |
-| anh ơi vì sao đặt ten là Black Chef |
-| hình chụp này là anh hả |
-| cái hình này anh đúng hông? |
-| có cái râu rất là xịn |
-| những nguyên liệu ở đây |
-| bắp bò và lườn ngỗng đều rất mắc |
-| mình nghĩ là đâu có cần lửa gì đâu ta? |
-| cái này là 『mì lửa』hả? |
-| chưa~ vẫn chưa |
-| anh có ăn được hành hông? |
-| nóng lắm đó |
-| chưa kịp hoàn hồn nữa |
-| trời ơi, anh ấy làm lửa ở đây nè! |
-| mình hiểu lý do rồi |
-| lý do vì sao mấy cái chảo nó mòn hết |
-| có được thử không anh? |
-| thử đổ dầu |
-| các anh thấy lửa ở đâu |
-| trong tô mì này chưa? |
-| bình thường là sẽ chiên |
-| đúng rồi đổ vào |
-| nhưng mà ở đâu người ta đốt nóng dầu |
-| rồi đổ lên những to mì này |
-| nó làm thơm lên nhũng rau mùi này |
-| mùi lửa |
-| cái này là lườn ngỗng xông khói |
-| lườn ngỗng |
-| xông khói |
-| có thịt bò |
-| bắp bò |
-| là phần nào của con bò? |
-| là ngay phần đùi của nó |
-| cái bắp đùi |
-| nên rất là chắc thịt |
-| người VN thích ăn như vậy |
-| tức là nó sẽ hơi dai dai, cứng cứng xíu |
-| dưới này là nấm đùi gà |
-| và đặc biệt ở đây |
-| người ta dùng thốt nốt |
-| để mà |
-| sứa |
-| hông phải sứa đâu mà |
-| ăn thử thốt nốt thì sẽ như thế nào? |
-| chắc chắn ngọt |
-| mềm mại |
-| mềm và hơi giòn giòn |
-| uii mềm ghê ấy |
-| giống như... |
-| trong miệng |
-| giống như jelly |
-| nó thấm cái nước dùng |
-| nước dùng thấm vào cái thốt nốt này luôn |
-| trứng này là trứng chần |
-| cái này là trứng chần không phải ốp là |
-| anh lấy muỗng múc vo miệng luôn |
-| sẽ tan trong miệng |
-| nhưng mà của anh vỡ rồi |
-| sợi mì được anh đầu bếp làm trực tiếp |
-| là mì tươi |
-| sợi làm từ bột mì |
-| ở quê em cũng hay ăn mì này |
-| ở sài gòn thì ít hơn |
-| đa phần lá sợi hủ tiếu |
-| hoặc là sợi phở |
-| anh cũng chưa ăn thử mì này |
-| không quen lắm nhưng mà ngon |
-| em biết cái này hả |
-| cái này giống chao đúng hông ta? |
-| giống như sốt Hàn Quốc |
-| à giống tương đậu Hàn Quốc |
-| giống tương đậu |
-| hương vị giống nhau? |
-| ngon thật đó |
-| giống hệt vị tương đậu Hàn Quốc lun |
-| nó làm dậy cái vị của thịt ấy |
-| anh nghe nói là cái này là bí mật |
-| sốt bí mật |
-| em mạnh dạn đoán mò |
-| trong này nhìn như có chao |
-| anh biết chao không? |
-| là một loại nước chấm |
-| em cũng chẳng biết diễn tả thế nào |
-| nhưg mà nó là một loại nước chấm |
-| rất là phổ biến của người miền nam |
-| rất thích hợp chấm với thịt bò |
-| ăn cùng thịt bò cũng rất là ngon |
-| thịt bò này được nấu rất mềm |
-| nó không hề bị dai hả? |
-| mình đầu tiên thấy cái này |
-| cảm thấy là rất nhiều rau |
-| nhưng mùi ngò cũng không mạnh lắm |
-| anh biết tại sao mà |
-| cái mùi ngò nó không nồng không? |
-| tại vì lúc người ta rưới dầu lên á |
-| nó làm cho ngò này chín đi |
-| nó làm giảm đi |
-| cái mùi ngai ngái của ngò tươi |
-| nhưng nhiề người lại thích |
-| thì đó khá đặc biệt |
-| chưa ăn món VN ăn với cái này |
-| có rau với tía tô này |
-| món ăn HQ có nhiều tía tô |
-| tía tô ở HQ và VN khác nhau |
-| tía tô ở VN mùi sẽ nặng hơn |
-| mùi nó đặc trưng, ngai ngái hơn | 
-| anh cũng có thể cảm thấy |
-| tía tô VN là hơi mạnh hơn và nặng hơn |
-| thì chắc chắn người VN |
-| có thể ăn tía tô HQ dễ dàng |
-| vì anh có nhiều bạn nước ngoài |
-| các bạn ấy không thể ăn tía tô HQ |
-| người nước ngoài không thể ăn |
-| em thấy ăn rất dễ |
-| hay ăn với thịt nướng đúng hông? |
-| đúng rồi với thịt nướng |
-| người VN là quen với tía tô rồi |
-| tô như thế này có gọi là nhiều khong? |
-| nguyên liệu nhiều lắm |
-| em thấy cái giá 52k |
-| rất phù hợp |
-| đúng là hơi cao hơn mì, bún, hủ tiếu |
-| nhưng mà tại vì những nguyên liệu |
-| giống như lườn ngỗng nè |
-| hay là những miếng bắp bò như này |
-| thì nó rất là chất lượng |
-| đáng giá |
-| và hợp lý |
-| thực ra mì này là một phát minh |
-| một sáng chế của anh đầu bếp |
-| chúng mình ăn hết rồi |
-| à thật ra thì không hết lắm |
-| hôm nay em cảm thấy như thế nào? |
-| này cũng là lần đầu tiên em ăn thử |
-| đúng rồi, lần đầu tiên em ăn thử món này |
-| nên em chỉ có thể giói thiệu nguyên liệu |
-| ở trong đây thôi |
-| còn cái này có hương vị hoàn toàn mới |
-| rất khác so với hương vị phở, mì, bún |
-| và anh thấy sao, ngon hông |
-| món này rất ngon, có rất nhiều thịt |
-| bình thường là mình ăn hết lun |
-| món ăn mình mới ăn thịt thôi đã no rồi |
-| có giang giải thích, món ăn càng ngon hơn |
-| đúng vậy đó |
-| ban đầu khi nghe đến 『Mì lửa』|
-| anh nghĩ dĩ nhiên nó là mì xào |
-| nhưng mà cái này không phải là mì xào |
-| cái này là mì đổ lên |
-| đúng rồi, mì nước |
-| nhưng mà có lửa |
-| ở trên |
-| nếu có những bạn Hàn Quốc đang xem video |
-| thì có thể chọn được 1 món ăn hay ho |
-| khi tới thăm Việt Nam |
-| tới thăm Sài Gòn |
-| nó khác hoàn toàn so với những món |
-| đươc giới thiêu trên các kênh ẩm thực |
-| rất là khác |
-| hôm nay, rất vui vẻ |
-| nếu các bạn cũng cảm thấy thú vị |
-| đúng quên subscribe kênh "HQB" và... |
+| *hôm nay chúng mình đến quận Bình Thạnh* |
+| *khi chúng mình mới đến VN* |
+| *chúng mình bắt đầu cuộc sống ở VN* |
+| *tại quận Bình Thạnh* |
+| *quê của chúng mình* |
+| *hôm nay có 1 người khách mời* |
+| *em ấy như thế nào?* |
+| *rất đẹp* |
+| *rất thông minh* |
+| *tới lượt cậu nói mà* |
+| *rất dễ thương* |
+| *xin mời* |
+| *ngày hôm nay được mời tham gia* |
+| *quay một cái vlog* |
+| *và liên quan đến ăn uống nữa* |
+| *của mấy anh... cao quá* |
+| *em quay video trên "hôm nay ăn gì* |
+| *và schannel* |
+| *chắc chắn em ăn nhiều loại món ăn rồi* |
+| *nhưng món này em chưa ăn bao giờ hết* |
+| *vậy hả* |
+| *hôm nay cùng nhau xác nhận* |
+| *cái này ngon hoặc lạ thế nào nhé* |
+| *nhưng mà chỉ ở ngay đây thôi* |
+| *chúng em muốn ăn thử 『mì lửa*』|
+| *tất cả đây là nguyên liệu của mì lửa hả?* |
+| *nó rất cầu kì, rất nhiều loại topping* |
+| *chắc chắn cái này là mì* |
+| *chính xác* |
+| *và mì này là* |
+| *mì udon* |
+| *không~* |
+| *hình như là* |
+| *nhìn giống như vậy* |
+| *à giống như vậy* |
+| *và ở đây* |
+| *nấm* |
+| *còn cái này là gì?* |
+| *à à à tui biết cái này* |
+| *nó là hải sản* |
+| *lắc lắc* |
+| *hạt thốt nốt mà (hồi) nãy anh uống á* |
+| *nhìn thấy jelly fish (sứ*a)
+| *nhìn rất giống sứa nhưng không phải* |
+| *thịt bò* |
+| *bắp bò* |
+| *và đây giống như là* |
+| *thịt gà* |
+| *lườn* |
+| *ngỗng* |
+| *xông khói* |
+| *sốt này là gì anh?* |
+| *bí mật* |
+| *sốt đặc biệt* |
+| *sốt bí mật* |
+| *anh ơi vì sao đặt ten là Black Chef* |
+| *hình chụp này là anh hả* |
+| *cái hình này anh đúng hông?* |
+| *có cái râu rất là xịn* |
+| *những nguyên liệu ở đây* |
+| *bắp bò và lườn ngỗng đều rất mắc* |
+| *mình nghĩ là đâu có cần lửa gì đâu ta?* |
+| *cái này là 『mì lửa』hả?* |
+| *chưa~ vẫn chưa* |
+| *anh có ăn được hành hông?* |
+| *nóng lắm đó* |
+| *chưa kịp hoàn hồn nữa* |
+| *trời ơi, anh ấy làm lửa ở đây nè!* |
+| *mình hiểu lý do rồi* |
+| *lý do vì sao mấy cái chảo nó mòn hết* |
+| *có được thử không anh?* |
+| *thử đổ dầu* |
+| *các anh thấy lửa ở đâu* |
+| *trong tô mì này chưa?* |
+| *bình thường là sẽ chiên* |
+| *đúng rồi đổ vào* |
+| *nhưng mà ở đâu người ta đốt nóng dầu* |
+| *rồi đổ lên những to mì này* |
+| *nó làm thơm lên nhũng rau mùi này* |
+| *mùi lửa* |
+| *cái này là lườn ngỗng xông khói* |
+| *lườn ngỗng* |
+| *xông khói* |
+| *có thịt bò* |
+| *bắp bò* |
+| *là phần nào của con bò?* |
+| *là ngay phần đùi của nó* |
+| *cái bắp đùi* |
+| *nên rất là chắc thịt* |
+| *người VN thích ăn như vậy* |
+| *tức là nó sẽ hơi dai dai, cứng cứng xíu* |
+| *dưới này là nấm đùi gà* |
+| *và đặc biệt ở đây* |
+| *người ta dùng thốt nốt* |
+| *để mà* |
+| *sứa* |
+| *hông phải sứa đâu mà* |
+| *ăn thử thốt nốt thì sẽ như thế nào?* |
+| *chắc chắn ngọt* |
+| *mềm mại* |
+| *mềm và hơi giòn giòn* |
+| *uii mềm ghê ấy* |
+| *giống như...* |
+| *trong miệng* |
+| *giống như jelly* |
+| *nó thấm cái nước dùng* |
+| *nước dùng thấm vào cái thốt nốt này luôn* |
+| *trứng này là trứng chần* |
+| *cái này là trứng chần không phải ốp là* |
+| *anh lấy muỗng múc vo miệng luôn* |
+| *sẽ tan trong miệng* |
+| *nhưng mà của anh vỡ rồi* |
+| *sợi mì được anh đầu bếp làm trực tiếp* |
+| *là mì tươi* |
+| *sợi làm từ bột mì* |
+| *ở quê em cũng hay ăn mì này* |
+| *ở sài gòn thì ít hơn* |
+| *đa phần lá sợi hủ tiếu* |
+| *hoặc là sợi phở* |
+| *anh cũng chưa ăn thử mì này* |
+| *không quen lắm nhưng mà ngon* |
+| *em biết cái này hả* |
+| *cái này giống chao đúng hông ta?* |
+| *giống như sốt Hàn Quốc* |
+| *à giống tương đậu Hàn Quốc* |
+| *giống tương đậu* |
+| *hương vị giống nhau?* |
+| *ngon thật đó* |
+| *giống hệt vị tương đậu Hàn Quốc lun* |
+| *nó làm dậy cái vị của thịt ấy* |
+| *anh nghe nói là cái này là bí mật* |
+| *sốt bí mật* |
+| *em mạnh dạn đoán mò* |
+| *trong này nhìn như có chao* |
+| *anh biết chao không?* |
+| *là một loại nước chấm* |
+| *em cũng chẳng biết diễn tả thế nào* |
+| *nhưg mà nó là một loại nước chấm* |
+| *rất là phổ biến của người miền nam* |
+| *rất thích hợp chấm với thịt bò* |
+| *ăn cùng thịt bò cũng rất là ngon* |
+| *thịt bò này được nấu rất mềm* |
+| *nó không hề bị dai hả?* |
+| *mình đầu tiên thấy cái này* |
+| *cảm thấy là rất nhiều rau* |
+| *nhưng mùi ngò cũng không mạnh lắm* |
+| *anh biết tại sao mà* |
+| *cái mùi ngò nó không nồng không?* |
+| *tại vì lúc người ta rưới dầu lên á* |
+| *nó làm cho ngò này chín đi* |
+| *nó làm giảm đi* |
+| *cái mùi ngai ngái của ngò tươi* |
+| *nhưng nhiề người lại thích* |
+| *thì đó khá đặc biệt* |
+| *chưa ăn món VN ăn với cái này* |
+| *có rau với tía tô này* |
+| *món ăn HQ có nhiều tía tô* |
+| *tía tô ở HQ và VN khác nhau* |
+| *tía tô ở VN mùi sẽ nặng hơn* |
+| *mùi nó đặc trưng, ngai ngái hơn *| 
+| *anh cũng có thể cảm thấy* |
+| *tía tô VN là hơi mạnh hơn và nặng hơn* |
+| *thì chắc chắn người VN* |
+| *có thể ăn tía tô HQ dễ dàng* |
+| *vì anh có nhiều bạn nước ngoài* |
+| *các bạn ấy không thể ăn tía tô HQ* |
+| *người nước ngoài không thể ăn* |
+| *em thấy ăn rất dễ* |
+| *hay ăn với thịt nướng đúng hông?* |
+| *đúng rồi với thịt nướng* |
+| *người VN là quen với tía tô rồi* |
+| *tô như thế này có gọi là nhiều khong?* |
+| *nguyên liệu nhiều lắm* |
+| *em thấy cái giá 52k* |
+| *rất phù hợp* |
+| *đúng là hơi cao hơn mì, bún, hủ tiếu* |
+| *nhưng mà tại vì những nguyên liệu* |
+| *giống như lườn ngỗng nè* |
+| *hay là những miếng bắp bò như này* |
+| *thì nó rất là chất lượng* |
+| *đáng giá* |
+| *và hợp lý* |
+| *thực ra mì này là một phát minh* |
+| *một sáng chế của anh đầu bếp* |
+| *chúng mình ăn hết rồi* |
+| *à thật ra thì không hết lắm* |
+| *hôm nay em cảm thấy như thế nào?* |
+| *này cũng là lần đầu tiên em ăn thử* |
+| *đúng rồi, lần đầu tiên em ăn thử món này* |
+| *nên em chỉ có thể giói thiệu nguyên liệu* |
+| *ở trong đây thôi* |
+| *còn cái này có hương vị hoàn toàn mới* |
+| *rất khác so với hương vị phở, mì, bún* |
+| *và anh thấy sao, ngon hông* |
+| *món này rất ngon, có rất nhiều thịt* |
+| *bình thường là mình ăn hết lun* |
+| *món ăn mình mới ăn thịt thôi đã no rồi* |
+| *có giang giải thích, món ăn càng ngon hơn* |
+| *đúng vậy đó* |
+| *ban đầu khi nghe đến 『Mì lửa*』|
+| *anh nghĩ dĩ nhiên nó là mì xào* |
+| *nhưng mà cái này không phải là mì xào* |
+| *cái này là mì đổ lên* |
+| *đúng rồi, mì nước* |
+| *nhưng mà có lửa* |
+| *ở trên* |
+| *nếu có những bạn Hàn Quốc đang xem video* |
+| *thì có thể chọn được 1 món ăn hay ho* |
+| *khi tới thăm Việt Nam* |
+| *tới thăm Sài Gòn* |
+| *nó khác hoàn toàn so với những món* |
+| *đươc giới thiêu trên các kênh ẩm thực* |
+| *rất là khác* |
+| *hôm nay, rất vui vẻ* |
+| *nếu các bạn cũng cảm thấy thú vị* |
+| *đúng quên subscribe kênh "HQB" và...* |
 
 
 *[khách mời]: 손님, 초청객

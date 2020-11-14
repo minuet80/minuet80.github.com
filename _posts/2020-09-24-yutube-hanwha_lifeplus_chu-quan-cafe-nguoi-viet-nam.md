@@ -1,5 +1,5 @@
 ---
-title: "[tiếng Việt] Người đi đầu làn sóng phở Việt tại Hàn?Chủ quán phở Việt thành công tại Hàn Quốc"
+title: "[베트남어] Người đi đầu làn sóng phở Việt tại Hàn?Chủ quán phở Việt thành công tại Hàn Quốc"
 header:
   video:
     id: xsbHUuf3PXc
@@ -80,66 +80,66 @@ tags:
 ## 회화
 
 | --- |
-| ten mình là Trần Thị Mai, năm nay 41 tuổi |
-| người Việt nam, quê ở Hải Dương |
-| mình sang Hàn lấy chồng cũng được 10 năm rồi |
-| bí quyết thành công củ quán phở |
-| bên Việt Nam cũng có lấy chồng nhưng mà chồng mất sớm |
-| và mình cũng có hai đứa con |
-| nhưng bên Việt Nam rất khó khắn trong việc nuôi con |
-| nên cũng muốn sang Hàn lấy chồng để cuộc sống con cái sau này bớt khổ |
-| hiện tại bây giờ mình đang làm quán phở Việt Nam ở Noryangjin |
-| nói chung là cũng có khách |
-| mình làm phở Việt Nam cách đây 6,7 năm |
-| lý do mở quán phở là vì |
-| thực ra ở HQ, mình cũng đã đi ăn rất nhiều quán phở rồi |
-| nhưng mà nó rất đắt |
-| mình nghĩ người Việt Nam ai cũng biết nấu Phở |
-| nên mình cũng muốn thử kinh doanh phở Việt Nam xem sao |
-| phở Việt Nam là món ăn nổi tiếng thế giới |
-| và mình cũng muốn người HQ biết đến nhiều món ăn VN hơn |
-| nên sự lựa chợn của mình làm món Phở Việt Nam |
-| ở Noryangjin thường có rất nhiều học sinh và sinh viên |
-| nên mình muốn làm món phở sao cho tất cả mọi người đều đều có thể ăn được |
-| lý do mình nhận người Việt Nam làm việc tại quán |
-| thứ nhất là mình cũng đồng cảm và muốn giúp đỡ những bạn học sinh |
-| hoặc là những người sang đây mà chưa có việc làm |
-| nên mình muốn tạo điều kiện cho họ có thu nhập |
-| thứ 2, cùng là người Việt Nam với nhau nên dễ giao tiếp |
-| và thông cảm với nhau hơn |
-| mình cũng mong những người VN sang đây lấy chồng HQ |
-| hoặc là đi lao động |
-| nếu như ai muốn mở quán thì |
-| cứ đến Noryangjin mình sẽ nhiệt tình giúp đỡ |
-| mình sẽ không lấy bất cứ gì |
-| doanh thu và kế hoạch quản lý tài chính? |
-| doanh thu một tháng gần một tỷ tiền Việt Nam |
-| mình phải thuê quán và trả tiền thuê quán |
-| thuê công nhân tiền ga, điện, nước, thuế |
-| sau khi trừ đi thì lãi suất còn 20% |
-| lợi nhuận thuần = 20% doanh thu bán hàng |
-| tiền lãi này thì mình gửi tiết kiệm ngân hàng để cuộc sống |
-| sau này thoải mái hơn |
-| khi có tiền thì mình cũng muốn gởi ngân hàng |
-| sau này khi có nhiều tiền mính sẽ ua villa hoặc chung cư |
-| sau đó cho người ta thuê |
-| và tiền nhận được mình sẽ chăm sóc bản thân lúc về già |
-| bí quyết thành công của JUNTIAMI |
-| theo mình nghĩ thành công được như vậy, thứ nhất là |
-| giá cả hợp lý |
-| thứ hai là món ăn cũng ngon |
-| thứ ba là nhiều |
-| 3 yếu tố này đã quyết định đến thành công |
-| bạn đầu mình cũng gặp khó khăn nhiều |
-| thứ nhất là tiếng Hàn mình chưa biết nhiều |
-| thứ hai là không biết người Hàn phụ hợp với cái gì? |
-| nên ban đầu cũng rất khó khăn nhưng bây giờ thì |
-| mọi thứ đã ổn rồi |
-| mình không biết tương lai sau này như thế nào |
-| nhưng mình vẫn hy vọng tiếp tục làm công việc này lâu dài |
-| mình nghĩ khi các bạn trẻ có thu nhập |
-| thì cũng không nên phung phí như sắm đồ nhiều |
-| và cũng nên tích góp một chút để sau này có vốn thì tốt hơn |
+| *ten mình là Trần Thị Mai, năm nay 41 tuổi* |
+| *người Việt nam, quê ở Hải Dương* |
+| *mình sang Hàn lấy chồng cũng được 10 năm rồi* |
+| *bí quyết thành công củ quán phở* |
+| *bên Việt Nam cũng có lấy chồng nhưng mà chồng mất sớm* |
+| *và mình cũng có hai đứa con* |
+| *nhưng bên Việt Nam rất khó khắn trong việc nuôi con* |
+| *nên cũng muốn sang Hàn lấy chồng để cuộc sống con cái sau này bớt khổ* |
+| *hiện tại bây giờ mình đang làm quán phở Việt Nam ở Noryangjin* |
+| *nói chung là cũng có khách* |
+| *mình làm phở Việt Nam cách đây 6,7 năm* |
+| *lý do mở quán phở là vì* |
+| *thực ra ở HQ, mình cũng đã đi ăn rất nhiều quán phở rồi* |
+| *nhưng mà nó rất đắt* |
+| *mình nghĩ người Việt Nam ai cũng biết nấu Phở* |
+| *nên mình cũng muốn thử kinh doanh phở Việt Nam xem sao* |
+| *phở Việt Nam là món ăn nổi tiếng thế giới* |
+| *và mình cũng muốn người HQ biết đến nhiều món ăn VN hơn* |
+| *nên sự lựa chợn của mình làm món Phở Việt Nam* |
+| *ở Noryangjin thường có rất nhiều học sinh và sinh viên* |
+| *nên mình muốn làm món phở sao cho tất cả mọi người đều đều có thể ăn được* |
+| *lý do mình nhận người Việt Nam làm việc tại quán* |
+| *thứ nhất là mình cũng đồng cảm và muốn giúp đỡ những bạn học sinh* |
+| *hoặc là những người sang đây mà chưa có việc làm* |
+| *nên mình muốn tạo điều kiện cho họ có thu nhập* |
+| *thứ 2, cùng là người Việt Nam với nhau nên dễ giao tiếp* |
+| *và thông cảm với nhau hơn* |
+| *mình cũng mong những người VN sang đây lấy chồng HQ* |
+| *hoặc là đi lao động* |
+| *nếu như ai muốn mở quán thì* |
+| *cứ đến Noryangjin mình sẽ nhiệt tình giúp đỡ* |
+| *mình sẽ không lấy bất cứ gì* |
+| *doanh thu và kế hoạch quản lý tài chính?* |
+| *doanh thu một tháng gần một tỷ tiền Việt Nam* |
+| *mình phải thuê quán và trả tiền thuê quán* |
+| *thuê công nhân tiền ga, điện, nước, thuế* |
+| *sau khi trừ đi thì lãi suất còn 20%* |
+| *lợi nhuận thuần = 20% doanh thu bán hàng* |
+| *tiền lãi này thì mình gửi tiết kiệm ngân hàng để cuộc sống* |
+| *sau này thoải mái hơn* |
+| *khi có tiền thì mình cũng muốn gởi ngân hàng* |
+| *sau này khi có nhiều tiền mính sẽ ua villa hoặc chung cư* |
+| *sau đó cho người ta thuê* |
+| *và tiền nhận được mình sẽ chăm sóc bản thân lúc về già* |
+| *bí quyết thành công của JUNTIAMI* |
+| *theo mình nghĩ thành công được như vậy, thứ nhất là* |
+| *giá cả hợp lý* |
+| *thứ hai là món ăn cũng ngon* |
+| *thứ ba là nhiều* |
+| *3 yếu tố này đã quyết định đến thành công* |
+| *bạn đầu mình cũng gặp khó khăn nhiều* |
+| *thứ nhất là tiếng Hàn mình chưa biết nhiều* |
+| *thứ hai là không biết người Hàn phụ hợp với cái gì?* |
+| *nên ban đầu cũng rất khó khăn nhưng bây giờ thì* |
+| *mọi thứ đã ổn rồi* |
+| *mình không biết tương lai sau này như thế nào* |
+| *nhưng mình vẫn hy vọng tiếp tục làm công việc này lâu dài* |
+| *mình nghĩ khi các bạn trẻ có thu nhập* |
+| *thì cũng không nên phung phí như sắm đồ nhiều* |
+| *và cũng nên tích góp một chút để sau này có vốn thì tốt hơn* |
 
 
 *[nuôi con]: 키우다, 기르다

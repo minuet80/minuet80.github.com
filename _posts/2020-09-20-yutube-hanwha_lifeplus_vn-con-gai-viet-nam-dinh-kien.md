@@ -1,5 +1,5 @@
 ---
-title: "[tiếng Việt] Con gái Việt Nam thử trả lời những câu hỏi định kiến về con gái Việt!!"
+title: "[베트남어] Con gái Việt Nam thử trả lời những câu hỏi định kiến về con gái Việt!!"
 header:
   video:
     id: 3H_8pGGj3sA
@@ -129,150 +129,150 @@ tags:
 ## 회화
 
 | --- |
-| chào em đã đến với buổi phỏng vấn hôm nay của chúng ta |
-| hôm nay, anh sẽ hỏi em về suy nghĩ, quan điểm |
-| định kiến của người nước ngoài |
-| định kiến hả? |
-| về văn hóa, đặc điểm của văn hóa và con người Việt Nam |
-| của người nước ngoài luôn ý ạ? |
-| anh cứ hỏi đi ạ! |
-| Hãy bắt đầu nhé! |
-| chúng ta sẽ cùng nhau đến với câu hỏi đầu tiên! |
-| có phải người Việt nào cũng thích bánh mì? |
-| riêng em thì em rất là thích! |
-| cũng có thể ạ! |
-| theo em thấy thì là đúng! |
-| riêng cá nhân em thì bánh mì càng dài sẽ càng thích! |
-| em cũng nghĩ là đúng |
-| kiểu |
-| càng to thì càng tốt nữa! |
-| bánh mì Việt Nam ngon hơn bánh mì nướic ngoài mà |
-| tại vì mỗi lần đi học trễ, thì ăn bánh mì là xong liền! |
-| với lại, bánh mì Việt Nam có nhiều cách để ăn lắm! |
-| giống như là ăn bánh mì không với sữa! |
-| hoặc là bánh mì bỏ thịt vô, bánh mì chả cá! |
-| đa dạng lắm! |
-| thực ra cũng tùy vào loại bánh mì! |
-| có người thì thích Paté, bánh mì trứng |
-| bánh mì này, bánh mì kia... kiểu kiểu vậy! |
-| con gái Việt Nam ai cũng biết đi xe máy? |
-| không phải thế đâu anh! |
-| chị đừng nói là chị không đua nha! |
-| nhưng mà... |
-| không phải là riêng chị |
-| chị là nằm bên nhóm đua xe của em rồi |
-| à đúng rồi |
-| tại em thấy, đa số phương tiện ở Việt Nam là xe máy! |
-| cho nên con gái cũng phải biết chạy xe máy đẻ tiện qua lại! |
-| theo mà em biết, bạn em có nhiều người không biết đi xe máy! |
-| cho tới bây giờ luôn |
-| với lại một vài người chị của em không biết đi xe máy |
-| mấy chị đó kiểu... |
-| ở nhà, hồi nhỏ có một cái gì đó liên quan đến xe |
-| cho nên là... |
-| lớn lên thì người nhà đưa rước hoặc book Grab đi! |
-| nhiều đứa em quen, chắc chỉ có 1 mình em đi xe máy thôi à! |
-| còn lại chúng nó là... |
-| chịu, toàn kiểu |
-| ví dụ |
-| alo, mai đón tao nhé! |
-| xong kiểu mấy hôm sau lại : 『alo, mai đón tao nhé!』 |
-| tao không biết đi xe máy nên mày đón tao đi! |
-| kiểu vậy |
-| nó vẫn liên tục liên tục vậy! |
-| như bọ em thì có thể đua xe, nhưng mà một số bạn của em thì |
-| nó chỉ biết chạy một đường thẳng! |
-| không biết qua đường luôn anh! |
-| vậy đó! |
-| các bạn, ai cũng muốn được da trắng? |
-| theo em là không ạ! |
-| dạ đúng rồi |
-| giống em nè, em thích lắm |
-| cái này thì em không biết |
-| nhưng mà nếu theo quan điểm của e thì là... |
-| em không quan trọng về màu da |
-| miễn sao nó đừng khác màu nhau là được |
-| nó đồng đều một màu thôi là được! |
-| con trai mà, thường họ thấy da trắng cũng bắt mắt hơn! |
-| chứ da đen thì sao mà bắt mắt được |
-| chắc cũng tùy người! |
-| nhưng mà em thì em thích da trắng hơn! |
-| em thì... |
-| thích kiểu da nó ngăm ngăm! |
-| tại vì nếu mà trắng quá thì nhìn nó bạch tạng lắm! |
-| nhìn nó 1 nét à, nhìn nó kỳ lắm! |
-| nhìn chán lắm! |
-| sao em lại nói sao người bên cạnh như vậy? |
-| thật ra là... |
-| em thích da mình nó ngăm ngăm xíu |
-| nhưng mà số phận đưa em da trắng hoài à! |
-| quan điểm của em thì em thích da nâu hơn! |
-| cảm giác da nâu nó khỏe khắn! |
-| còn da trắng thì cảm thấy hơi yếu đuối 1 chút! |
-| tạo sao con gái Việt Nam lười make-up khi ra ngoài? |
-| em thì không phải là lười |
-| mà là em hổng biết make-up |
-| make-up vô ghê lắm! |
-| lười make-up ý ạ? |
-| em thấy không phải như thế đâu ạ |
-| trời ơi, đâu có đâu anh! |
-| trời ơi, không hề lười anh à! |
-| không hề lười, đúng hông (x3)? |
-| người ta có 1 câu là... |
-| đi đổ rác mình cũng phải xinh anh à! |
-| cho nên ít nhất ra đường cũng phải kẻ chân mày đồ ha! |
-| giờ mà đi ra ngoài đường, kiếm được 1 người để mặt mộc... |
-| bái phục luôn! |
-| vác mặt mộc đi học thì chúng nó kiểu như là... |
-| tao đề nghị mày, đánh ngay cho tao miếng son vào |
-| không là tao đuổi mày ra khỏi lớp ngay lập tức |
-| nó như vậy |
-| cũng có 1 số người, người ta không phải lười make-up |
-| mà là người ta lười việc tẩy trang! |
-| việc đó rất là mệt, tốn rất là nhiều thời gian! |
-| với lại |
-| xong thì mặt nó rát nên thường là ít make-up hơn! |
-| dạ mình thường em rất là lười tẩy trang cho nên là... |
-| nhưng mà hiện tại đa số người Việt Nam ở đây đều đi thẩm mỹ hết rồi |
-| nên đa số họ sẽ không make-up nữa! |
-| em nghĩ là vậy! |
-| khi đi ăn với người yêu, tại sao con gái thường không phải là người trả tiền? |
-| làm gì có chuyện đấy ạ! |
-| em thấy rất là phi lý luôn ý! |
-| dạ hông nha anh! |
-| đa số nhiều anh con trai sẽ ga lăng |
-| thôi, kèo này để anh trả hết |
-| nhưng nếu đi ăn 100 chầu giống vậy thì anh có trả hết được không? |
-| thì em hổng biết nha |
-| nên là em nghĩ là cũng không hoàn toàn là người yêu trả hết tiền! |
-| tại vì cả 2 người đều ăn mà! |
-| cái đó là nói sai hoàn toàn rồi |
-| tại vì bây giờ, nam nũ bình đẳng |
-| mình quen nhau thì cũng phải, hôm nay người yêu mình trả |
-| thì ngày mai mình tả hoặc chia đôi ra! |
-| chứ không có việc con gái không trả tiền, cái đó không đúng đâu! |
-| đối với bản thân em, khi em đi với người yêu |
-| tất nhiên là bây giờ em chưa có người yêu rồi |
-| khi mà em đi với... |
-| khi mà em đi với người yêu |
-| 1 là chia đôi! |
-| 2 là hôm nay em trả, hôm sau bạn trả |
-| nó cứ tiếp tục nhue vậy và không bao giờ có chuyện là... |
-| con gái đi chơi với người yêu mà không cần phải trả tiền! |
-| còn riêng em thì em là sinh viên mà cho nên là |
-| em với bạn của em nói chung là khó khăn lắm |
-| cho nên là mình chia đôi với nhau vui vẻ là được! |
-| nói chung thì mọi người hay có suy nghĩ là |
-| con gái đi ăn thì thường không phải trả tiền |
-| riêng em thì vẫn trả tiền, được cái là |
-| bồ em giàu nên em cũng không bao giờ cần phải trả! |
-| dạ còn em thì hổng có bồ |
-| nếu như hổng có bồ thì ai mà trả |
-| nếu như hôm đấy anh đến anh mời hôm nay đi ăn anh trả tiền |
-| thì hôm sau, chắc chắn em sẽ mời lại anh |
-| quan điểm của em là như thế |
-| thường thì trong tình yêu phải có sự san sẻ thì mới kéo dài được lâu! |
-| hạnh phúc nó mới được lâu bền! |
+| *chào em đã đến với buổi phỏng vấn hôm nay của chúng ta* |
+| *hôm nay, anh sẽ hỏi em về suy nghĩ, quan điểm* |
+| *định kiến của người nước ngoài* |
+| *định kiến hả?* |
+| *về văn hóa, đặc điểm của văn hóa và con người Việt Nam* |
+| *của người nước ngoài luôn ý ạ?* |
+| *anh cứ hỏi đi ạ!* |
+| *Hãy bắt đầu nhé!* |
+| *chúng ta sẽ cùng nhau đến với câu hỏi đầu tiên!* |
+| *có phải người Việt nào cũng thích bánh mì?* |
+| *riêng em thì em rất là thích!* |
+| *cũng có thể ạ!* |
+| *theo em thấy thì là đúng!* |
+| *riêng cá nhân em thì bánh mì càng dài sẽ càng thích!* |
+| *em cũng nghĩ là đúng* |
+| *kiểu* |
+| *càng to thì càng tốt nữa!* |
+| *bánh mì Việt Nam ngon hơn bánh mì nướic ngoài mà* |
+| *tại vì mỗi lần đi học trễ, thì ăn bánh mì là xong liền!* |
+| *với lại, bánh mì Việt Nam có nhiều cách để ăn lắm!* |
+| *giống như là ăn bánh mì không với sữa!* |
+| *hoặc là bánh mì bỏ thịt vô, bánh mì chả cá!* |
+| *đa dạng lắm!* |
+| *thực ra cũng tùy vào loại bánh mì!* |
+| *có người thì thích Paté, bánh mì trứng* |
+| *bánh mì này, bánh mì kia... kiểu kiểu vậy!* |
+| *con gái Việt Nam ai cũng biết đi xe máy?* |
+| *không phải thế đâu anh!* |
+| *chị đừng nói là chị không đua nha!* |
+| *nhưng mà...* |
+| *không phải là riêng chị* |
+| *chị là nằm bên nhóm đua xe của em rồi* |
+| *à đúng rồi* |
+| *tại em thấy, đa số phương tiện ở Việt Nam là xe máy!* |
+| *cho nên con gái cũng phải biết chạy xe máy đẻ tiện qua lại!* |
+| *theo mà em biết, bạn em có nhiều người không biết đi xe máy!* |
+| *cho tới bây giờ luôn* |
+| *với lại một vài người chị của em không biết đi xe máy* |
+| *mấy chị đó kiểu...* |
+| *ở nhà, hồi nhỏ có một cái gì đó liên quan đến xe* |
+| *cho nên là...* |
+| *lớn lên thì người nhà đưa rước hoặc book Grab đi!* |
+| *nhiều đứa em quen, chắc chỉ có 1 mình em đi xe máy thôi à!* |
+| *còn lại chúng nó là...* |
+| *chịu, toàn kiểu* |
+| *ví dụ* |
+| *alo, mai đón tao nhé!* |
+| *xong kiểu mấy hôm sau lại : 『alo, mai đón tao nhé!』* |
+| *tao không biết đi xe máy nên mày đón tao đi!* |
+| *kiểu vậy* |
+| *nó vẫn liên tục liên tục vậy!* |
+| *như bọ em thì có thể đua xe, nhưng mà một số bạn của em thì* |
+| *nó chỉ biết chạy một đường thẳng!* |
+| *không biết qua đường luôn anh!* |
+| *vậy đó!* |
+| *các bạn, ai cũng muốn được da trắng?* |
+| *theo em là không ạ!* |
+| *dạ đúng rồi* |
+| *giống em nè, em thích lắm* |
+| *cái này thì em không biết* |
+| *nhưng mà nếu theo quan điểm của e thì là...* |
+| *em không quan trọng về màu da* |
+| *miễn sao nó đừng khác màu nhau là được* |
+| *nó đồng đều một màu thôi là được!* |
+| *con trai mà, thường họ thấy da trắng cũng bắt mắt hơn!* |
+| *chứ da đen thì sao mà bắt mắt được* |
+| *chắc cũng tùy người!* |
+| *nhưng mà em thì em thích da trắng hơn!* |
+| *em thì...* |
+| *thích kiểu da nó ngăm ngăm!* |
+| *tại vì nếu mà trắng quá thì nhìn nó bạch tạng lắm!* |
+| *nhìn nó 1 nét à, nhìn nó kỳ lắm!* |
+| *nhìn chán lắm!* |
+| *sao em lại nói sao người bên cạnh như vậy?* |
+| *thật ra là...* |
+| *em thích da mình nó ngăm ngăm xíu* |
+| *nhưng mà số phận đưa em da trắng hoài à!* |
+| *quan điểm của em thì em thích da nâu hơn!* |
+| *cảm giác da nâu nó khỏe khắn!* |
+| *còn da trắng thì cảm thấy hơi yếu đuối 1 chút!* |
+| *tạo sao con gái Việt Nam lười make-up khi ra ngoài?* |
+| *em thì không phải là lười* |
+| *mà là em hổng biết make-up* |
+| *make-up vô ghê lắm!* |
+| *lười make-up ý ạ?* |
+| *em thấy không phải như thế đâu ạ* |
+| *trời ơi, đâu có đâu anh!* |
+| *trời ơi, không hề lười anh à!* |
+| *không hề lười, đúng hông (x3)?* |
+| *người ta có 1 câu là...* |
+| *đi đổ rác mình cũng phải xinh anh à!* |
+| *cho nên ít nhất ra đường cũng phải kẻ chân mày đồ ha!* |
+| *giờ mà đi ra ngoài đường, kiếm được 1 người để mặt mộc...* |
+| *bái phục luôn!* |
+| *vác mặt mộc đi học thì chúng nó kiểu như là...* |
+| *tao đề nghị mày, đánh ngay cho tao miếng son vào* |
+| *không là tao đuổi mày ra khỏi lớp ngay lập tức* |
+| *nó như vậy* |
+| *cũng có 1 số người, người ta không phải lười make-up* |
+| *mà là người ta lười việc tẩy trang!* |
+| *việc đó rất là mệt, tốn rất là nhiều thời gian!* |
+| *với lại* |
+| *xong thì mặt nó rát nên thường là ít make-up hơn!* |
+| *dạ mình thường em rất là lười tẩy trang cho nên là...* |
+| *nhưng mà hiện tại đa số người Việt Nam ở đây đều đi thẩm mỹ hết rồi* |
+| *nên đa số họ sẽ không make-up nữa!* |
+| *em nghĩ là vậy!* |
+| *khi đi ăn với người yêu, tại sao con gái thường không phải là người trả tiền?* |
+| *làm gì có chuyện đấy ạ!* |
+| *em thấy rất là phi lý luôn ý!* |
+| *dạ hông nha anh!* |
+| *đa số nhiều anh con trai sẽ ga lăng* |
+| *thôi, kèo này để anh trả hết* |
+| *nhưng nếu đi ăn 100 chầu giống vậy thì anh có trả hết được không?* |
+| *thì em hổng biết nha* |
+| *nên là em nghĩ là cũng không hoàn toàn là người yêu trả hết tiền!* |
+| *tại vì cả 2 người đều ăn mà!* |
+| *cái đó là nói sai hoàn toàn rồi* |
+| *tại vì bây giờ, nam nũ bình đẳng* |
+| *mình quen nhau thì cũng phải, hôm nay người yêu mình trả* |
+| *thì ngày mai mình tả hoặc chia đôi ra!* |
+| *chứ không có việc con gái không trả tiền, cái đó không đúng đâu!* |
+| *đối với bản thân em, khi em đi với người yêu* |
+| *tất nhiên là bây giờ em chưa có người yêu rồi* |
+| *khi mà em đi với...* |
+| *khi mà em đi với người yêu* |
+| *1 là chia đôi!* |
+| *2 là hôm nay em trả, hôm sau bạn trả* |
+| *nó cứ tiếp tục nhue vậy và không bao giờ có chuyện là...* |
+| *con gái đi chơi với người yêu mà không cần phải trả tiền!* |
+| *còn riêng em thì em là sinh viên mà cho nên là* |
+| *em với bạn của em nói chung là khó khăn lắm* |
+| *cho nên là mình chia đôi với nhau vui vẻ là được!* |
+| *nói chung thì mọi người hay có suy nghĩ là* |
+| *con gái đi ăn thì thường không phải trả tiền* |
+| *riêng em thì vẫn trả tiền, được cái là* |
+| *bồ em giàu nên em cũng không bao giờ cần phải trả!* |
+| *dạ còn em thì hổng có bồ* |
+| *nếu như hổng có bồ thì ai mà trả* |
+| *nếu như hôm đấy anh đến anh mời hôm nay đi ăn anh trả tiền* |
+| *thì hôm sau, chắc chắn em sẽ mời lại anh* |
+| *quan điểm của em là như thế* |
+| *thường thì trong tình yêu phải có sự san sẻ thì mới kéo dài được lâu!* |
+| *hạnh phúc nó mới được lâu bền!* |
 
 
 *[định kiến]: (定見) 편견

@@ -1,7 +1,7 @@
 ---
 title: "사회통합프로그램"
 categories:
-  - marriage to aliens
+  - marriage_to_aliens
 tags:
   - 외국인
   - 배우자
