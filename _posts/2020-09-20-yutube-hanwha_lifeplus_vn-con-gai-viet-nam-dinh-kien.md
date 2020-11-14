@@ -1,5 +1,5 @@
 ---
-title: "Con gái Việt Nam thử trả lời những câu hỏi định kiến về con gái Việt!!"
+title: "[tiếng Việt] Con gái Việt Nam thử trả lời những câu hỏi định kiến về con gái Việt!!"
 header:
   video:
     id: 3H_8pGGj3sA

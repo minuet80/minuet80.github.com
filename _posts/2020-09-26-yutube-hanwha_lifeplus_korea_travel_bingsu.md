@@ -1,5 +1,5 @@
 ---
-title: "Cách người Hàn sống sót qua mùa hè nóng bức? (빙수)"
+title: "[tiếng Việt] Cách người Hàn sống sót qua mùa hè nóng bức? (빙수)"
 header:
   video:
     id: wgA6OQEtV8I

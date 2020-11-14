@@ -1,5 +1,5 @@
 ---
-title: "한국인에게 베트남어가 유독 어려운 이유는?!"
+title: "[tiếng Việt] 한국인에게 베트남어가 유독 어려운 이유는?!"
 header:
   video:
     id: wSHTRZYatD4

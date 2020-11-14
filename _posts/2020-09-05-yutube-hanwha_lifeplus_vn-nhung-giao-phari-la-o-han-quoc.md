@@ -1,5 +1,5 @@
 ---
-title: "Những giáo phái lạ ở Hàn Quốc"
+title: "[tiếng Việt] Những giáo phái lạ ở Hàn Quốc"
 header:
   video:
     id: 6b9R-2V_F5E

@@ -1,5 +1,5 @@
 ---
-title: "Bất ngờ với món mì tương đen phiên bản “Kí Sinh Trùng”??"
+title: "[tiếng Việt] Bất ngờ với món mì tương đen phiên bản “Kí Sinh Trùng”??"
 header:
   video:
     id: laNXteGOlLI

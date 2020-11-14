@@ -1,5 +1,5 @@
 ---
-title: "Người đi đầu làn sóng phở Việt tại Hàn?Chủ quán phở Việt thành công tại Hàn Quốc"
+title: "[tiếng Việt] Người đi đầu làn sóng phở Việt tại Hàn?Chủ quán phở Việt thành công tại Hàn Quốc"
 header:
   video:
     id: xsbHUuf3PXc

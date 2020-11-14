@@ -1,5 +1,5 @@
 ---
-title: "Thử cầm 100k phá đảo món ăn chợ Hồ Thị Kỷ cùng An Vy!!"
+title: "[tiếng Việt] Thử cầm 100k phá đảo món ăn chợ Hồ Thị Kỷ cùng An Vy!!"
 header:
   video:
     id: BqFHsVC1lx0

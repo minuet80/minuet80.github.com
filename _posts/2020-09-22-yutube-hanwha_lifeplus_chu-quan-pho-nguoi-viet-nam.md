@@ -1,5 +1,5 @@
 ---
-title: "chủ quán cafe người Việt Nam tại Hàn Quốc, lý do tại sao tôi mở quán cafe tại HQ"
+title: "[tiếng Việt] chủ quán cafe người Việt Nam tại Hàn Quốc, lý do tại sao tôi mở quán cafe tại HQ"
 header:
   video:
     id: GF5PQy6EgTU

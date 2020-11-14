@@ -1,5 +1,5 @@
 ---
-title: "Liệu CÚT LỘN XÀO ME Việt Nam có ngon với người Hàn?"
+title: "[tiếng Việt] Liệu CÚT LỘN XÀO ME Việt Nam có ngon với người Hàn?"
 header:
   video:
     id: DwffLAyjUEk

@@ -1,5 +1,5 @@
 ---
-title: "Cùng Châu Giang đột kích quán \"Mì lửa\" siêu độc lạ giữa Sài Gòn!"
+title: "[tiếng Việt] Cùng Châu Giang đột kích quán \"Mì lửa\" siêu độc lạ giữa Sài Gòn!"
 header:
   video:
     id: JPGfaCI-gEA
