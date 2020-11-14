@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # 테마색 설정 "air", "aqua", "contrast
 locale                   : "ko-KR"
 title                    : "" # Meta 태그에 들어가는 영역, masthead_title 등이 없으면 기본값으로 나온다.
 title_separator          : "&#124" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 
-subtitle                 : "생각하고 있는 것을 기록해봐, 10년~20년 후 ?" # 타이틀 아래에 나올 작은 글씨
+subtitle                 : "젋어서 공부를 안했으니 늙어서 많이 공부해야지?" # 타이틀 아래에 나올 작은 글씨
 name                     : "youtube channel my favorite"
 description              : "" # 상세
 url                      : "https://minuet80.github.io" # GitBlog 호스트 주소
@@ -38,7 +38,7 @@ comments:
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
+    num_posts            : 20 # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
     theme                : # "github-light" (default), "github-dark"
