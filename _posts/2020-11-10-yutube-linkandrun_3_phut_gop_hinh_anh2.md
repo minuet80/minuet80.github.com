@@ -34,6 +34,7 @@ tags:
 >> **yêu đương**: 연예, 연예하다  
 >> **lại**: 또, 다가가다, 다시  
 >> **tập trung**: 집중하다  
+>> **để ý**: 신경쓰다  
 ---
 
 ## 회화
@@ -72,11 +73,35 @@ tags:
 | *lại đây* : 이리와 |
 | *tập trung làm việc đi* : 일에 집중해라 |
 | *chỉ học cho vui thôi* : 재미로 배우는 것 뿐이에요 |
+| *tôi cũng đang định nói vậy* : 저도 그 말을 하려던 참이었어요 |
+| *sao lúc lãy không nghe điện* : 아까 왜 전화 안 받았어요? |
+| *tôi không có ý đấy* : 제 의도가 아니에요 |
+| *xin lỗi. đây là chỗ của tôi mà* : 죄송한테요. 여기가 제 자리인데요 |
+| *chúc một ngày tốt lành* : 좋은 하루 되세요 |
+| *chúc một ngày vui vẻ* : 즐거운 하루 되세요 |
+| *cứ tự nhiên đi nhé!* : 그냥 편하게 있어 |
+| *cần gì cứ nói nhé!* : 필요한것 있으면 말해요 |
+| *cáy này ở Hàn Quốc cũng có* : 이것은 한국에도 있어요 |
+| *loại này đang hot* : 이건 아주 핫한거야 |
+| *xin lỗi nhé. lúc nãy không để ý điện thoại* : 미안해요. 아까 핸드폰 못 봤어요 |
+| *giận rồi à?* : 화났어요? |
+| *chúng ta cùng cố gắng nhé!* : 우리 같이 화이팅하자! |
+| *đây là lần đầu tiên tôi học ngoại ngữ* : 이번이 처음이야 내가 외국어를 배우는게 |
+| *đây là lần đầu tiên anh ấy mắng tôi* : 이번이 처음이야 그가 날 갈구는게 |
+| *đây là lần đầu tiên tôi được tặng hoa* : 이번이 처음이야 내가 꽃을 받은게 |
+| *đây là lần đầu tiên gia đình tôi đi du lịch cùng nhau* : 이번이 처음이야 우리 가족이 함께 여행간게 |
+| *đây là lần đầu tiên mẹ tôi đi máy bay : 이번이 처음이야 엄마가 비행기 탄게 |
+| *chưa bao giờ như thế* : 그렇게 한적이 없다 |
+| *chưa bao giờ đi xa một mình* : 혼자 멀리간적이 없다 |
+| *chưa bao giờ yêu ai* : 누군가를 사랑한적이 없다 |
+| *chưa bao giờ nghĩ đến* : 생각한적이 없다. |
+| *chưa bao giờ ăn món đó* : 그 음식을 먹은적이 없다 |
+| *cãi lời sếp* : 상사의 말을 거역한적이 없다. |
 
 
-*[giữ gìn]: 지키다, 유지하다, 보관하다  
+*[giữ gìn]: 지키다, 유지하다, 보관하다
 *[đón]: 픽업하다, 납치하다
-*[qua]: 건너다, (어디어) 들리다
+*[qua]: 건너다, (어디에) 들리다
 *[mọi lần]: 매번
 *[tránh ra]: 비켜
 *[linh tinh]: 엉뚱한, 하찮은
@@ -89,3 +114,4 @@ tags:
 *[yêu đương]: 연예, 연예하다
 *[lại]: 또, 다가가다, 다시
 *[tập trung]: 집중하다
+*[để ý]: 신경쓰다

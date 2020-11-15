@@ -1,5 +1,5 @@
 ---
-title: "[베트남어] 조사에 대한 고찰"
+title: "[베트남어] 조사분석"
 categories:
   - tieng_viet
 tags:
