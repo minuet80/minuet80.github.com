@@ -83,9 +83,9 @@ tags:
 | *ten mình là Trần Thị Mai, năm nay 41 tuổi* |
 | *người Việt nam, quê ở Hải Dương* |
 | *mình sang Hàn lấy chồng cũng được 10 năm rồi* |
-| *bí quyết thành công củ quán phở* |
+| *bí quyết thành công chủ quán phở* |
 | *bên Việt Nam cũng có lấy chồng nhưng mà chồng mất sớm* |
-| *và mình cũng có hai đứa con* |
+| *và mình cũng có hai đưa con* |
 | *nhưng bên Việt Nam rất khó khắn trong việc nuôi con* |
 | *nên cũng muốn sang Hàn lấy chồng để cuộc sống con cái sau này bớt khổ* |
 | *hiện tại bây giờ mình đang làm quán phở Việt Nam ở Noryangjin* |
@@ -98,7 +98,7 @@ tags:
 | *nên mình cũng muốn thử kinh doanh phở Việt Nam xem sao* |
 | *phở Việt Nam là món ăn nổi tiếng thế giới* |
 | *và mình cũng muốn người HQ biết đến nhiều món ăn VN hơn* |
-| *nên sự lựa chợn của mình làm món Phở Việt Nam* |
+| *nên sự lựa chọn của mình làm món Phở Việt Nam* |
 | *ở Noryangjin thường có rất nhiều học sinh và sinh viên* |
 | *nên mình muốn làm món phở sao cho tất cả mọi người đều đều có thể ăn được* |
 | *lý do mình nhận người Việt Nam làm việc tại quán* |
