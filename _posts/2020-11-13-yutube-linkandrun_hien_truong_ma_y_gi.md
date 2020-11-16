@@ -32,7 +32,7 @@ tags:
 | --- |
 | *đừng đỗ xe* : 주정차 하지마 |
 | *bán hàng rong* : 이동판매 |
-| *kinh doanh lần chiếm vỉa hè, lòng đường* : 인도와 도로를 점거하여 장사하다 |
+| *kinh doanh lấn chiếm vỉa hè, lòng đường* : 인도와 도로를 점거하여 장사하다 |
 
 *[cấm]: 금지
 *[đỗ xe]: 주차하다
