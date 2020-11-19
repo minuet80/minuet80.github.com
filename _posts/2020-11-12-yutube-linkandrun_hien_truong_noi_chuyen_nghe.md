@@ -1,0 +1,114 @@
+---
+title: "[베트남어] 현지인 대화듣기 - 1"
+header:
+  video:
+    id: xt-G0gV2iJA
+    provider: youtube
+categories:
+  - youtube
+  - linkandrun
+tags:
+  - 유튜브
+  - 베트남어
+  - linkandrun
+---
+
+<br>
+
+[바로보기](https://www.youtube.com/watch?v=xt-G0gV2iJA)
+
+> ## **오늘의 단어**
+>> **bởi vì**: 왜냐하면  
+>> **xung quanh**: 주변  
+>> **hiện tại**: 현재  
+>> **gia sư**: 가정선생님 (가정사?)  
+>> **lớp**: 학년  
+>> **toán** 수학  
+>> **tiếng Viẹt**: 국어  
+>> **rất may là**: 운좋게도, 다행이게도  
+>> **hiện giờ**: 현재  
+>> **cả gia đình**: 온가족  
+>> **hài lòng**: 만족하다, 마음에 들다  
+>> **xin vào**: 취득하다  
+>> **phiên dịch**: 통역하다, 번역하다  
+>> **làm phiên dịch**: 통역사, 번역사  
+>> **tốt nghiệp**: 졸업하다  
+>> **cây số**: km (kilo)  
+>> **ngoại hình**: 외모  
+>> **còn**: 남다, 그리고  
+>> **thang máy**: 엘레베이터  
+>> **ít**: 적다  
+>> **chiều cao**: 키  
+>> **cân nặng**: 몸무게  
+>> **phóng viên**: 기자  
+>> **còn**: 또한, 그리고, 남다  
+>> **môn**: 종목, 과목  
+>> **thể thao**: 스포츠  
+>> **bát**: 그릇  
+>> **rửa bát**: 설겆이  
+>> **giặt**: 빨다  
+>> **giặt quần ào**: 옷을 빨다  
+>> **tỉnh khác**: 다른지방, 타지, 타도  
+>> **trình độ**: 수준  
+>> **luyện** : 연습하다  
+>> **công tác**: 출장가다  
+>> **luôn**: 바로  
+---
+
+## 회화
+
+| --- |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" class="fa fa-play"> *● Em rất là thích tiếng Hàn ● Bởi vì là tiếng Hàn rất là thú vị*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_02.aac" class="fa fa-play"> *● Ở xung quanh trường của em thì có rất nhiều quán cà phê ngon ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_03.aac" class="fa fa-play"> *● Dạ hiện tại thì em đang làm gia sư cho 1 bé lớp 3 ạ. toán, tiếng Việt ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_04.aac" class="fa fa-play"> *● Dạ rất may là hiện giờ em đang sống cùng với cả gia dình em ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_05.aac" class="fa fa-play"> *● Hiện giờ thì em cũng hơi hơi hài lòng với cuộc sống của mình ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_06.aac" class="fa fa-play"> *● Sau khi tốt nghiệp thì em muốn xin vào làm phiên dịch ở công ty Samsung*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_07.aac" class="fa fa-play"> *● Sau 1 năm sống ở đấy thì em rất thích cuộc sống ở Hàn Quốc ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_08.aac" class="fa fa-play"> *● Từ Hà Nội đến quê em thì khoảng gần 200 cây số ạ*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_09.aac" class="fa fa-play"> *● trong gia đình của em, về ngoại hình thì em giống bố em, Còn về tính cách thì em giống mẹ em*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_10.aac" class="fa fa-play"> *● Sau này em không muốn trở thành giáo viên, mà em chỉ thích đi làm ở những công ty Hàn Quốc*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_11.aac" class="fa fa-play"> *● Bất tiện là thang máy hơi chậm một chút và hơi ít thang máy*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_12.aac" class="fa fa-play"> *● Chiều cao hiện tại của dũng là bao nhiêu? ● Em 1 mét 81 ạ ● 1 mét 81. cân nặng? ● 78kg*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_13.aac" class="fa fa-play"> *● Ngoài đá bóng thì Dũng còn thích môn thể thao nào nữa không?*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" class="fa fa-play"> *● Giữa rửa bát và giặt quần ào thì Dũng chợn cái gì? ● Ờ, rửa bát. nhanh hơn*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_15.aac" class="fa fa-play"> *● thế hiện nay thì vấn đề mà em quan tâm nhất trong cuộc sống là gì? ● Dạ, vấn đề em quan tâm hiện nay là gia đình và bạn bè*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_16.aac" class="fa fa-play"> *● Hiên nay gia đình em sống ở thành phố Hồ Chí Mình hay lá sống ở tỉnh khác? ● Dạ, sống ở tỉnh khác, chị*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_17.aac" class="fa fa-play"> *● Em đang chụp ảnh bằng máy gì? ● Em chụp ảnh bằng 아이폰6*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_18.aac" class="fa fa-play"> *● Em học ngoại ngữ gì? ● Em học môn tiếng Anh vì em thích nó*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_19.aac" class="fa fa-play"> *● Em thấy trình độ tiếng Anh của mình vẫn chưa tốt lắm ● Em cần luyện nhiều hơn nữa*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_20.aac" class="fa fa-play"> *● Bạn sống ở thành phố Hồ Chí Minh đã lâu chưa? ● Thật ra thì mình vào đây công tác*</a> |
+| <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_20.aac" class="fa fa-play"> *● Ở Hà Nội thì bây giờ trời vẫn đang là đầu mùa xuân cuối mùa đông, vẫn rất lạnh ● vào đây thì như mùa hè luôn rồi*</a> |
+
+
+*[bởi vì]: 왜냐하면
+*[xung quanh]: 주변
+*[hiện tại]: 현재
+*[gia sư]: 가정선생님 (가정사?)
+*[lớp]: 학년
+*[toán]: 수학
+*[xung quanh]: 국어
+*[rất may là]: 운좋게도, 다행이게도
+*[hiện giờ]: 현재
+*[cả gia đình]: 온가족
+*[hài lòng]: 만족하다, 마음에 들다
+*[xin vào]: 취득하다
+*[phiên dịch]: 통역하다, 번역하다
+*[làm phiên dịch]: 통역사, 번역사
+*[tốt nghiệp]: 졸업하다
+*[cây số]: km (kilo)
+*[ngoại hình]: 외모
+*[còn]: 남다, 그리고
+*[thang máy]: 엘레베이터
+*[ít]: 적다
+*[chiều cao]: 키
+*[cân nặng]: 몸무 게
+*[phóng viên]: 기자
+*[còn]: 또한, 그리고, 남다
+*[môn]: 종목, 과목
+*[thể thao]: 스포츠
+*[tỉnh khác]: 다른지방, 타지, 타도
+*[trình độ]: 수준
+*[luyện]: 연습하다
+*[công tác]: 출장가다
+*[luôn]: 바로
