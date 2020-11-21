@@ -6,18 +6,20 @@ $(document).ready(function() {
     }
 
     var audio = [];
-    var domain = 'https://minuet80.github.io/';
+    var domain = 'https://minuet80.github.io';
     var ringsToPlay = 0;
-    var repeatCount = 0;
+    var repeat = 0;
     $('a[id*=play-pause-button').each(function (index, element) {
         audio[index] = new Audio(domain + $(element).data('url'));
-        $(element).click(function (e) {
+        $(element).click(function (e, p) {
             e.preventDefault();
-            if (repeatCount === 0) {
+            var allListen = (typeof p === 'undefined') ? false : true;
+            if (repeat === 0 && !allListen) {
                 ringsToPlay = Number($('#ringsToPlay').val()) - 1;
             }
+            var j = allListen ? p : index;
             for (var i = 0; i < audio.length; i++) {
-                if (i == index) {
+                if (i == j) {
                     continue;
                 } else {
                     $('a[id*=play-pause-button').eq(i).removeClass('fa-pause');
@@ -31,51 +33,57 @@ $(document).ready(function() {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
                 $(this).closest('tr').css('background-color', '#CCCCFF');
-                audio[index].playbackRate = $('#playbackspeed').val();
-                audio[index].play();
+                audio[j].playbackRate = $('#playbackspeed').val();
+                audio[j].play();
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
                 $(this).closest('tr').css('background-color', '');
-                audio[index].currentTime = 0;
-                audio[index].pause();
+                audio[j].currentTime = 0;
+                audio[j].pause();
             }
-            audio[index].onended = function() {
+            audio[j].onended = function() {
                 $('a[id*=play-pause-button').removeClass('fa-pause');
                 $('a[id*=play-pause-button').addClass('fa-play');
-                $('a[id*=play-pause-button').eq(index).closest('tr').css('background-color', '');
-                if (ringsToPlay === 0) {
-                    repeatCount = 0;
+                $('a[id*=play-pause-button').eq(j).closest('tr').css('background-color', '');
+                if (!allListen) {
+                    if (ringsToPlay === 0) {
+                        repeat = 0;
+                    } else {
+                        ringsToPlay--;
+                        repeat = 1;
+                        $('a[id*=play-pause-button').eq(j).trigger('click');
+                    }
                 } else {
-                    ringsToPlay--;
-                    repeatCount = 1;
-                    $('a[id*=play-pause-button').eq(index).click();
+                    if (j < audio.length) {
+                        $('a[id*=play-pause-button').eq(j + 1).trigger('click', j + 1);
+                    } 
                 }
             };
         });
     });
 
-    var sound;
     $('#allListen').click(function (e) {
         e.preventDefault();
-        sound = new Audio(domain + $(this).data('url'));
+        if ($(this).hasClass('btn--success')) {
+            $(this).html('전체정지');
+            $(this).removeClass('btn--success');
+            $(this).addClass('btn--danger');
 
-        if($(this).hasClass('fa-play')) {
-            $(this).removeClass('fa-play');
-            $(this).addClass('fa-pause');
-            sound.playbackRate = $('#playbackspeed').val();
-            sound.play();
+            $('a[id*=play-pause-button').eq(0).trigger('click', 0);
         } else {
-            $(this).removeClass('fa-pause');
-            $(this).addClass('fa-play');
-            sound.currentTime = 0;
-            sound.pause();
+            $(this).html('전체듣기');
+            $(this).removeClass('btn--danger');
+            $(this).addClass('btn--success');
+            if (audio !== null) {
+                for (var i = 0; i < audio.length; i++) {
+                    $('a[id*=play-pause-button').eq(i).removeClass('fa-pause');
+                    $('a[id*=play-pause-button').eq(i).addClass('fa-play');
+                    $('a[id*=play-pause-button').eq(i).closest('tr').css('background-color', '');
+                    audio[i].currentTime = 0;
+                    audio[i].pause();
+                }
+            }
         }
-        sound.onended = function() {
-            $('#allListen').removeClass('fa-pause');
-            $('#allListen').addClass('fa-play');
-        };
-        
-
     });
 });

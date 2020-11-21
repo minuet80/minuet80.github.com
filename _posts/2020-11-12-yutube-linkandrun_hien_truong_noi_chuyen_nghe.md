@@ -1,9 +1,5 @@
 ---
 title: "[베트남어] 현지인 대화듣기"
-header:
-  video:
-    id: xt-G0gV2iJA
-    provider: youtube
 categories:
   - youtube
   - linkandrun
@@ -15,9 +11,7 @@ tags:
 
 <br>
 
-[바로보기](https://www.youtube.com/watch?v=xt-G0gV2iJA)
-
-## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">일반</option>  <option value="0.75">0.75</option>  <option value="0.5">0.5</option></select><select id="ringsToPlay">  <option value="1">반복안함</option>  <option value="3">3번 반복</option>  <option value="999">무한반복</option></select><a href="#" id="allListen" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_99.aac" class="btn btn--danger fa fa-play">전체듣기</a>{% endraw %}
+## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">일반</option>  <option value="0.75">0.75</option>  <option value="0.5">0.5</option></select><select id="ringsToPlay">  <option value="1">반복안함</option>  <option value="3">3번 반복</option>  <option value="999">무한반복</option></select><a href="#" id="allListen" class="btn btn--success">전체듣기</a>{% endraw %}
 
 | --- | --- |
 | *Em rất là thích tiếng Hàn* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" class="fa fa-play"></a> |
