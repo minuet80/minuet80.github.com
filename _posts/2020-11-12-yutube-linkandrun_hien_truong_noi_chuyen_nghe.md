@@ -29,7 +29,7 @@ tags:
 >> **hiện giờ**: 현재  
 >> **cả gia đình**: 온가족  
 >> **hài lòng**: 만족하다, 마음에 들다  
->> **xin vào**: 취득하다  
+>> **xin vào**: 취직하다  
 >> **phiên dịch**: 통역하다, 번역하다  
 >> **làm phiên dịch**: 통역사, 번역사  
 >> **tốt nghiệp**: 졸업하다  
@@ -87,7 +87,7 @@ tags:
 | *1 mét 81. cân nặng?* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_12.aac" class="fa fa-play"></a> |
 | *78kg* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_12.aac" class="fa fa-play"></a> |
 | *Ngoài đá bóng thì Dũng còn thích môn thể thao nào nữa không?* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_13.aac" class="fa fa-play"></a> |
-| *Giữa rửa bát và giặt quần ào thì Dũng chợn cái gì?* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" class="fa fa-play"></a> |
+| *Giữa rửa bát và giặt quần ào thì Dũng chọn cái gì?* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" class="fa fa-play"></a> |
 | *Ờ, rửa bát. nhanh hơn* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" class="fa fa-play"></a> |
 | *thế hiện nay thì vấn đề mà em quan tâm nhất trong cuộc sống là gì?* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_15.aac" class="fa fa-play"></a> |
 | *Dạ, vấn đề em quan tâm hiện nay là gia đình và bạn bè* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_15.aac" class="fa fa-play"></a> |
@@ -127,7 +127,7 @@ tags:
 *[hiện giờ]: 현재
 *[cả gia đình]: 온가족
 *[hài lòng]: 만족하다, 마음에 들다
-*[xin vào]: 취득하다
+*[xin vào]: 취직하다
 *[phiên dịch]: 통역하다, 번역하다
 *[làm phiên dịch]: 통역사, 번역사
 *[tốt nghiệp]: 졸업하다
