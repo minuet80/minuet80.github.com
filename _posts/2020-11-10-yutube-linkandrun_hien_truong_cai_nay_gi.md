@@ -9,7 +9,7 @@ gallery:
     alt: "hiện trường 1"
     title: "Hiện trường 1"
   - url: /assets/images/youtube/linkandrun/2020-11-10-yutube-linkandrun_hien_truong_cai_nay_gi_2.png
-    image_path: /assets/images/youtube/linkandrun/2020-11-10-yutube-linkandrun_hien_truong_cai_nay_gi_3.png
+    image_path: /assets/images/youtube/linkandrun/2020-11-10-yutube-linkandrun_hien_truong_cai_nay_gi_2.png
     alt: "hiện trường 2"
     title: "Hiện trường 2"
   - url: /assets/images/youtube/linkandrun/2020-11-10-yutube-linkandrun_hien_truong_cai_nay_gi_3.png
