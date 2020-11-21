@@ -1,5 +1,5 @@
 ---
-title: "[베트남어] 현지인 대화듣기 - 1"
+title: "[베트남어] 현지인 대화듣기"
 header:
   video:
     id: xt-G0gV2iJA
@@ -59,6 +59,12 @@ tags:
 >> **dư**: 남다, 여유있다  
 >> **vào**: (언제) ~에  
 >> **đôi khi**: 때때로  
+>> **hồi xưa**: 예전에  
+>> **cũng**: 제법  
+>> **phân khối**: cc  
+>> **đông**: 붐비다  
+>> **hàng xóm**: 이웃  
+>> **may**: (옷 등을) 맞추다  
 ---
 
 ## 회화
@@ -105,6 +111,9 @@ tags:
 | *Dạ, thì... vào những lúc rảnh á thì em thường là á đọc sách hoặc là đi xem phim hoặc là đôi khi em sẽ đi uống cà phê với bạn bè* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_25.aac" class="fa fa-play"></a> |
 | *thật ra thì ở Sài Gòn cũng không có nhiều các hoạt động vào buổi tối lắm* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_26.aac" class="fa fa-play"></a> |
 | *Dạ, thì... hồi xưa, nhà em ở cũng xa trường cho nên là ba em mưa xe 50 phân khối cho em đi* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_27.aac" class="fa fa-play"></a> |
+| *Dạ, có. Tại vì trong thành phố thì đường hơi đông xe một tí* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_28.aac" class="fa fa-play"></a> |
+| *Dạ. Cô hàng xóm bên cạnh nhà em may cho em* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_29.aac" class="fa fa-play"></a> |
+| *Dạ. Hôm nay em đến đây để tập nói tiếng Anh với người nước ngoài* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_30.aac" class="fa fa-play"></a> |
 
 
 *[bởi vì]: 왜냐하면
@@ -148,3 +157,8 @@ tags:
 *[dư]: 남다, 여유있다
 *[vào]: (언제) ~에
 *[đôi khi]: 때때로
+*[cũng]: 제법
+*[phân khối]: cc
+*[đông]: 붐비다
+*[hàng xóm]: 이웃
+*[may]: (옷 등을) 맞추다
