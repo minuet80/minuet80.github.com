@@ -5,15 +5,19 @@ $(document).ready(function() {
         });
     }
 
-    
-
+    var audio = [];
+    var domain = 'https://minuet80.github.io/';
     $('a[id*=play-pause-button').each(function (index, element) {
-        var audio = [];
+        audio[index] = new Audio(domain + $(element).data('url'));
         $(element).click(function (e) {
             e.preventDefault();
-            var url = 'https://minuet80.github.io/';
-            url += $(this).data('url');
-            audio[index] = new Audio(url);
+            
+            $('a[id*=play-pause-button').removeClass('fa-pause');
+            $('a[id*=play-pause-button').addClass('fa-play');
+            for (var i = 0; i < audio.length; i++) {
+                audio[i].pause();
+                audio[i].currentTime = 0;
+            }
             if($(this).hasClass('fa-play')) {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
