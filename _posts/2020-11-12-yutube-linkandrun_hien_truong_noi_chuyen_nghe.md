@@ -11,7 +11,7 @@ tags:
 
 <br>
 
-## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">일반</option>  <option value="0.75">0.75</option>  <option value="0.5">0.5</option></select><select id="ringsToPlay">  <option value="1">반복안함</option>  <option value="3">3번 반복</option>  <option value="999">무한반복</option></select><a href="#" id="allListen" class="btn btn--success">전체듣기</a>{% endraw %}
+## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">일반</option>  <option value="0.75">0.75</option>  <option value="0.5">0.5</option></select><select id="ringsToPlay">  <option value="1">횟수1회</option>  <option value="2">횟수2회</option>  <option value="3">횟수3회</option>  <option value="4">횟수4회</option>  <option value="5">횟수5회</option></select><a href="#" id="allListen" class="btn btn--success">♬ (all for)</a>{% endraw %}
 
 | --- | --- |
 | *Em rất là thích tiếng Hàn* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" class="fa fa-play"></a> |
@@ -59,6 +59,7 @@ tags:
 | *Dạ, có. Tại vì trong thành phố thì đường hơi đông xe một tí* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_29.aac" class="fa fa-play"></a> |
 | *Dạ. Cô hàng xóm bên cạnh nhà em may cho em* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_30.aac" class="fa fa-play"></a> |
 | *Dạ. Hôm nay em đến đây để tập nói tiếng Anh với người nước ngoài* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_31.aac" class="fa fa-play"></a> |
+
 
 > ## **오늘의 단어**
 >> **bởi vì**: 왜냐하면  
