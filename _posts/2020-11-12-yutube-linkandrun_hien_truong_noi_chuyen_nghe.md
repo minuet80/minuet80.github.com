@@ -11,7 +11,7 @@ tags:
 
 <br>
 
-## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">일반</option>  <option value="0.75">0.75</option>  <option value="0.5">0.5</option></select><select id="ringsToPlay">  <option value="1">횟수1회</option>  <option value="2">횟수2회</option>  <option value="3">횟수3회</option>  <option value="4">횟수4회</option>  <option value="5">횟수5회</option></select><a href="#" id="allListen" class="btn btn--success">♬ (all for)</a>{% endraw %}
+## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">속도0</option>  <option value="0.75">속도-1</option>  <option value="0.5">속도-2</option></select><select id="ringsToPlay">  <option value="1">횟수1회</option>  <option value="2">횟수2회</option>  <option value="3">횟수3회</option>  <option value="4">횟수4회</option>  <option value="5">횟수5회</option></select><a href="#" id="allListen" class="btn btn--success">♬ (전체듣기)</a><a href="#" id="infiniteListen" data-addminutes="60" class="btn btn--info">♬ (60분 셔플)</a>{% endraw %}
 
 | --- | --- |
 | *Em rất là thích tiếng Hàn* | <a id="play-pause-button" data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" class="fa fa-play"></a> |

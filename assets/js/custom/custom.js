@@ -9,28 +9,41 @@ $(document).ready(function() {
     var domain = 'https://minuet80.github.io';
     var ringsToPlay = 0;
     var repeat = 0;
-    $('a[id*=play-pause-button').each(function (index, element) {
+    $('a[id*=play-pause-button]').each(function (index, element) {
         audio[index] = new Audio(domain + $(element).data('url'));
         $(element).click(function (e, p) {
             e.preventDefault();
-            var allListen = (typeof p === 'undefined') ? false : true;
-            if (!allListen) {
-                $('#allListen').html('♬ (all for)');
+
+            var type;
+            var no;
+            var endTimestamp;
+            if (typeof p === 'undefined') {
+                type = '';
+                no = index;
+            } else {
+                type = p.type;
+                no = p.no;
+                endTimestamp = p.endTimestamp;
+            }
+            if (type === '') {
+                $('#allListen').html('♬ (전체듣기)');
                 $('#allListen').removeClass('btn--danger');
                 $('#allListen').addClass('btn--success');
 
+                $('#infiniteListen').html('♬ (60분 셔플)');
+                $('#infiniteListen').removeClass('btn--warning');
+                $('#infiniteListen').addClass('btn--info');
             }
             if (repeat === 0) {
                 ringsToPlay = Number($('#ringsToPlay').val()) - 1;
             }
-            var j = allListen ? p : index;
             for (var i = 0; i < audio.length; i++) {
-                if (i == j) {
+                if (i === no) {
                     continue;
                 } else {
-                    $('a[id*=play-pause-button').eq(i).removeClass('fa-pause');
-                    $('a[id*=play-pause-button').eq(i).addClass('fa-play');
-                    $('a[id*=play-pause-button').eq(i).closest('tr').css('background-color', '');
+                    $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
+                    $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
+                    $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
                     audio[i].currentTime = 0;
                     audio[i].pause();
                 }
@@ -39,32 +52,54 @@ $(document).ready(function() {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
                 $(this).closest('tr').css('background-color', '#CCCCFF');
-                if (allListen) {
+                if (type !== '') {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
                 }
-                audio[j].playbackRate = $('#playbackspeed').val();
-                audio[j].play();
+                audio[no].playbackRate = $('#playbackspeed').val();
+                audio[no].play();
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
                 $(this).closest('tr').css('background-color', '');
-                audio[j].currentTime = 0;
-                audio[j].pause();
+                audio[no].currentTime = 0;
+                audio[no].pause();
             }
-            audio[j].onended = function() {
-                $('a[id*=play-pause-button').removeClass('fa-pause');
-                $('a[id*=play-pause-button').addClass('fa-play');
-                $('a[id*=play-pause-button').eq(j).closest('tr').css('background-color', '');
+            audio[no].onended = function() {
+                $('a[id*=play-pause-button]').removeClass('fa-pause');
+                $('a[id*=play-pause-button]').addClass('fa-play');
+                $('a[id*=play-pause-button]').eq(no).closest('tr').css('background-color', '');
+
+                var map = {};
+                var audioSize = audio.length - 1;
                 if (ringsToPlay === 0) {
                     repeat = 0;
-                    if (allListen) {
-                        if (j < audio.length - 1) {
-                            $('a[id*=play-pause-button').eq(j + 1).trigger('click', j + 1);
+                    if (type === 'allListen') {
+                        
+                        if (no < audioSize) {
+                            map.no = no + 1;
+                            map.type = 'allListen';
+                            $('a[id*=play-pause-button]').eq(map.no).trigger('click', map);
                         } else {
-                            $('#allListen').html('♬ (all for)');
+                            $('#allListen').html('♬ (전체듣기)');
                             $('#allListen').removeClass('btn--danger');
                             $('#allListen').addClass('btn--success');
+                            var offset = $('.page__content').offset();
+                            $('html, body').animate({scrollTop : offset.top}, 400);
+                        }
+                    } else if (type === 'infiniteListen') {
+                        var date = new Date();
+                        var startTimestamp = date.setMinutes(date.getMinutes());
+                        if (startTimestamp < endTimestamp) {
+                            var map = {};
+                            map.no = Math.floor(Math.random() * (audioSize - 0 + 1)) + 0;
+                            map.type = 'infiniteListen';
+                            map.endTimestamp = endTimestamp;
+                            $('a[id*=play-pause-button]').eq(map.no).trigger('click', map);
+                        } else {
+                            $('#infiniteListen').html('♬ (60분 셔플)');
+                            $('#infiniteListen').removeClass('btn--warning');
+                            $('#infiniteListen').addClass('btn--info');
                             var offset = $('.page__content').offset();
                             $('html, body').animate({scrollTop : offset.top}, 400);
                         }
@@ -72,38 +107,85 @@ $(document).ready(function() {
                 } else {
                     ringsToPlay--;
                     repeat = 1;
-                    if (allListen) {
-                        $('a[id*=play-pause-button').eq(j).trigger('click', j);
+                    if (type !== '') {
+                        map.no = no;
+                        map.type = type;
+                        map.endTimestamp = endTimestamp;
+                        $('a[id*=play-pause-button]').eq(map.no).trigger('click', map);
                     } else {
-                        $('a[id*=play-pause-button').eq(j).trigger('click');
+                        $('a[id*=play-pause-button]').eq(no).trigger('click');
                     }
                     
                 }
             };
         });
     });
-
-    $('#allListen').click(function (e) {
+    $('a[id*=infiniteListen]').click(function (e) {
         e.preventDefault();
+        $('#allListen').html('♬ (전체듣기)');
+        $('#allListen').removeClass('btn--danger');
+        $('#allListen').addClass('btn--success');
+
         if (audio !== null) {
             for (var i = 0; i < audio.length; i++) {
-                $('a[id*=play-pause-button').eq(i).removeClass('fa-pause');
-                $('a[id*=play-pause-button').eq(i).addClass('fa-play');
-                $('a[id*=play-pause-button').eq(i).closest('tr').css('background-color', '');
+                $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
+                $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
+                $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
                 audio[i].currentTime = 0;
                 audio[i].pause();
             }
-        }
-        if ($(this).hasClass('btn--success')) {
-            $(this).html('‖ (all for)');
-            $(this).removeClass('btn--success');
-            $(this).addClass('btn--danger');
+            if ($(this).hasClass('btn--info')) {
+                $(this).html('‖ (60분 셔플)');
+                $(this).removeClass('btn--info');
+                $(this).addClass('btn--warning');
 
-            $('a[id*=play-pause-button').eq(0).trigger('click', 0);
-        } else {
-            $(this).html('♬ (all for)');
-            $(this).removeClass('btn--danger');
-            $(this).addClass('btn--success');
+                var audioSize = audio.length - 1;
+                var no = Math.floor(Math.random() * (audioSize - 0 + 1)) + 0;
+                var addMinutes = Number($(this).data('addminutes'));
+                var date = new Date();
+                var endTimestamp = date.setMinutes(date.getMinutes() + addMinutes);
+
+                var map = {};
+                map.no = no;
+                map.type = 'infiniteListen';
+                map.endTimestamp = endTimestamp;
+                $('a[id*=play-pause-button]').eq(no).trigger('click', map);
+            } else {
+                $(this).html('♬ (60분 셔플)');
+                $(this).removeClass('btn--warning');
+                $(this).addClass('btn--info');
+            }
+        }
+    });
+
+    $('#allListen').click(function (e) {
+        e.preventDefault();
+        $('#infiniteListen').html('♬ (60분 셔플)');
+        $('#infiniteListen').removeClass('btn--warning');
+        $('#infiniteListen').addClass('btn--info');
+
+        if (audio !== null) {
+            for (var i = 0; i < audio.length; i++) {
+                $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
+                $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
+                $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
+                audio[i].currentTime = 0;
+                audio[i].pause();
+            }
+            if ($(this).hasClass('btn--success')) {
+                $(this).html('‖ (전체듣기)');
+                $(this).removeClass('btn--success');
+                $(this).addClass('btn--danger');
+    
+                var map = {};
+                map.no = 0;
+                map.type = 'allListen';
+                $('a[id*=play-pause-button]').eq(0).trigger('click', map);
+            } else {
+                $(this).html('♬ (전체듣기)');
+                $(this).removeClass('btn--danger');
+                $(this).addClass('btn--success');
+            }
         }
     });
 });
