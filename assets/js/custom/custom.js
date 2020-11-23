@@ -11,9 +11,11 @@ $(document).ready(function() {
     var repeat = 0;
     $('a[id*=play-pause-button]').each(function (index, element) {
         audio[index] = new Audio(domain + $(element).data('url'));
+        
         $(element).click(function (e, p) {
             e.preventDefault();
-
+            var audioSize = audio.length - 1;
+            var trSize = $(this).closest('tbody').find('tr').length;
             var type;
             var no;
             var endTimestamp;
@@ -25,19 +27,20 @@ $(document).ready(function() {
                 no = p.no;
                 endTimestamp = p.endTimestamp;
             }
+            no = Number(no);
             if (type === '') {
-                $('#allListen').html('♬ (전체듣기)');
+                $('#allListen').html('∀');
                 $('#allListen').removeClass('btn--danger');
-                $('#allListen').addClass('btn--success');
+                $('#allListen').addClass('btn--inverse');
 
-                $('#infiniteListen').html('♬ (60분 셔플)');
-                $('#infiniteListen').removeClass('btn--warning');
-                $('#infiniteListen').addClass('btn--info');
+                $('#infListen').html('∞');
+                $('#infListen').removeClass('btn--warning');
+                $('#infListen').addClass('btn--inverse');
             }
             if (repeat === 0) {
                 ringsToPlay = Number($('#ringsToPlay').val()) - 1;
             }
-            for (var i = 0; i < audio.length; i++) {
+            for (var i = 0; i <= audioSize; i++) {
                 if (i === no) {
                     continue;
                 } else {
@@ -52,6 +55,8 @@ $(document).ready(function() {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
                 $(this).closest('tr').css('background-color', '#CCCCFF');
+                console.log($(this).closest('tr').find('td:eq(1)').html());
+                $(this).closest('tr').find('td:eq(1)').nextUntil(':not(a)').css('background-color', '#CCCCFF');
                 if (type !== '') {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
@@ -71,7 +76,6 @@ $(document).ready(function() {
                 $('a[id*=play-pause-button]').eq(no).closest('tr').css('background-color', '');
 
                 var map = {};
-                var audioSize = audio.length - 1;
                 if (ringsToPlay === 0) {
                     repeat = 0;
                     if (type === 'allListen') {
@@ -81,25 +85,25 @@ $(document).ready(function() {
                             map.type = 'allListen';
                             $('a[id*=play-pause-button]').eq(map.no).trigger('click', map);
                         } else {
-                            $('#allListen').html('♬ (전체듣기)');
+                            $('#allListen').html('∀');
                             $('#allListen').removeClass('btn--danger');
-                            $('#allListen').addClass('btn--success');
+                            $('#allListen').addClass('btn--inverse');
                             var offset = $('.page__content').offset();
                             $('html, body').animate({scrollTop : offset.top}, 400);
                         }
-                    } else if (type === 'infiniteListen') {
+                    } else if (type === 'infListen') {
                         var date = new Date();
                         var startTimestamp = date.setMinutes(date.getMinutes());
                         if (startTimestamp < endTimestamp) {
                             var map = {};
                             map.no = Math.floor(Math.random() * (audioSize - 0 + 1)) + 0;
-                            map.type = 'infiniteListen';
+                            map.type = 'infListen';
                             map.endTimestamp = endTimestamp;
                             $('a[id*=play-pause-button]').eq(map.no).trigger('click', map);
                         } else {
-                            $('#infiniteListen').html('♬ (60분 셔플)');
-                            $('#infiniteListen').removeClass('btn--warning');
-                            $('#infiniteListen').addClass('btn--info');
+                            $('#infListen').html('∞');
+                            $('#infListen').removeClass('btn--warning');
+                            $('#infListen').addClass('btn--inverse');
                             var offset = $('.page__content').offset();
                             $('html, body').animate({scrollTop : offset.top}, 400);
                         }
@@ -120,11 +124,11 @@ $(document).ready(function() {
             };
         });
     });
-    $('a[id*=infiniteListen]').click(function (e) {
+    $('a[id*=infListen]').click(function (e) {
         e.preventDefault();
-        $('#allListen').html('♬ (전체듣기)');
+        $('#allListen').html('∀');
         $('#allListen').removeClass('btn--danger');
-        $('#allListen').addClass('btn--success');
+        $('#allListen').addClass('btn--inverse');
 
         if (audio !== null) {
             for (var i = 0; i < audio.length; i++) {
@@ -134,9 +138,9 @@ $(document).ready(function() {
                 audio[i].currentTime = 0;
                 audio[i].pause();
             }
-            if ($(this).hasClass('btn--info')) {
-                $(this).html('‖ (60분 셔플)');
-                $(this).removeClass('btn--info');
+            if ($(this).hasClass('btn--inverse')) {
+                $(this).html('‖');
+                $(this).removeClass('btn--inverse');
                 $(this).addClass('btn--warning');
 
                 var audioSize = audio.length - 1;
@@ -147,22 +151,22 @@ $(document).ready(function() {
 
                 var map = {};
                 map.no = no;
-                map.type = 'infiniteListen';
+                map.type = 'infListen';
                 map.endTimestamp = endTimestamp;
                 $('a[id*=play-pause-button]').eq(no).trigger('click', map);
             } else {
-                $(this).html('♬ (60분 셔플)');
+                $(this).html('∞');
                 $(this).removeClass('btn--warning');
-                $(this).addClass('btn--info');
+                $(this).addClass('btn--inverse');
             }
         }
     });
 
     $('#allListen').click(function (e) {
         e.preventDefault();
-        $('#infiniteListen').html('♬ (60분 셔플)');
-        $('#infiniteListen').removeClass('btn--warning');
-        $('#infiniteListen').addClass('btn--info');
+        $('#infListen').html('∞');
+        $('#infListen').removeClass('btn--warning');
+        $('#infListen').addClass('btn--inverse');
 
         if (audio !== null) {
             for (var i = 0; i < audio.length; i++) {
@@ -172,9 +176,9 @@ $(document).ready(function() {
                 audio[i].currentTime = 0;
                 audio[i].pause();
             }
-            if ($(this).hasClass('btn--success')) {
-                $(this).html('‖ (전체듣기)');
-                $(this).removeClass('btn--success');
+            if ($(this).hasClass('btn--inverse')) {
+                $(this).html('‖');
+                $(this).removeClass('btn--inverse');
                 $(this).addClass('btn--danger');
     
                 var map = {};
@@ -182,9 +186,9 @@ $(document).ready(function() {
                 map.type = 'allListen';
                 $('a[id*=play-pause-button]').eq(0).trigger('click', map);
             } else {
-                $(this).html('♬ (전체듣기)');
+                $(this).html('∀');
                 $(this).removeClass('btn--danger');
-                $(this).addClass('btn--success');
+                $(this).addClass('btn--inverse');
             }
         }
     });
