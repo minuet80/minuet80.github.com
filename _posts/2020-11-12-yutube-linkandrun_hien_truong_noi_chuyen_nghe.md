@@ -11,11 +11,27 @@ tags:
 
 <br>
 
-## 회화 {% raw %}<select id="playbackspeed">  <option value="1.0">속도0</option>  <option value="0.75">속도-1</option>  <option value="0.5">속도-2</option></select><select id="ringsToPlay">  <option value="1">횟수1회</option>  <option value="2">횟수2회</option>  <option value="3">횟수3회</option>  <option value="4">횟수4회</option>  <option value="5">횟수5회</option></select>{% endraw %}[∀](#){: #allListen .btn .btn--inverse}[∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+## 회화 
 
-| --- | :---: |
+[∀](#){: #allListen .btn .btn--inverse}{% raw %}
+<select id="playbackspeed">
+  <option value="1.0">속도0</option>
+  <option value="0.75">속도-1</option>
+  <option value="0.5">속도-2</option>
+</select>
+[초기화](#){: #reset .btn .btn--inverse}
+<select id="ringsToPlay">
+  <option value="1">횟수1회</option>
+  <option value="2">횟수2회</option>
+  <option value="3">횟수3회</option>
+  <option value="4">횟수4회</option>
+  <option value="5">횟수5회</option>
+</select>
+{% endraw %}[∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+
+| --- | --- |
 | *Em rất là thích tiếng Hàn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" #play-pause-button .fa .fa-play} |
-| *Bởi vì là tiếng Hàn rất là thú vị* |  |
+| *Bởi vì là tiếng Hàn rất là thú vị* |
 | *Ở xung quanh trường của em thì có rất nhiều quán cà phê ngon ạ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_02.aac" #play-pause-button .fa .fa-play} |
 | *Dạ hiện tại thì em đang làm gia sư cho 1 bé lớp 3 ạ, toán, tiếng Việt ạ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_03.aac" #play-pause-button .fa .fa-play} |
 | *Dạ rất may là hiện giờ em đang sống cùng với cả gia đình em ạ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_04.aac" #play-pause-button .fa .fa-play} |
@@ -27,30 +43,30 @@ tags:
 | *Sau này em không muốn trở thành giáo viên, mà em chỉ thích đi làm ở những công ty Hàn Quốc* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_10.aac" #play-pause-button .fa .fa-play} |
 | *Bất tiện là thang máy hơi chậm một chút và hơi ít thang máy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_11.aac" #play-pause-button .fa .fa-play} |
 | *Chiều cao hiện tại của dũng là bao nhiêu?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_12.aac" #play-pause-button .fa .fa-play} |
-| *Em 1 mét 81 ạ* |  |
-| *1 mét 81. cân nặng?* |  |
-| *78kg* |  |
+| *Em 1 mét 81 ạ* |
+| *1 mét 81. cân nặng?* |
+| *78kg* |
 | *Ngoài đá bóng thì Dũng còn thích môn thể thao nào nữa không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_13.aac" #play-pause-button .fa .fa-play} |
-| *Giữa rửa bát và giặt quần ááo thì Dũng chọn cái gì?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" #play-pause-button .fa .fa-play} |
-| *Ờ, rửa bát. nhanh hơn* |  |
+| *Giữa rửa bát và giặt quần áo thì Dũng chọn cái gì?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_14.aac" #play-pause-button .fa .fa-play} |
+| *Ờ, rửa bát. nhanh hơn* |
 | *thế hiện nay thì vấn đề mà em quan tâm nhất trong cuộc sống là gì?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_15.aac" #play-pause-button .fa .fa-play} |
-| *Dạ, vấn đề em quan tâm hiện nay là gia đình và bạn bè* |  |
+| *Dạ, vấn đề em quan tâm hiện nay là gia đình và bạn bè* |
 | *Hiên nay gia đình em sống ở thành phố Hồ Chí Mình hay lá sống ở tỉnh khác?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_16.aac" #play-pause-button .fa .fa-play} |
-| *Dạ, sống ở tỉnh khác, chị* |  |
+| *Dạ, sống ở tỉnh khác, chị* |
 | *Em đang chụp ảnh bằng máy gì?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_17.aac" #play-pause-button .fa .fa-play} |
-| *Em chụp ảnh bằng 아이폰6* |  |
+| *Em chụp ảnh bằng 아이폰6* |
 | *Em học ngoại ngữ gì?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_18.aac" #play-pause-button .fa .fa-play} |
-| *Em học môn tiếng Anh vì em thích nó* |  |
+| *Em học môn tiếng Anh vì em thích nó* |
 | *Em thấy trình độ tiếng Anh của mình vẫn chưa tốt lắm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_19.aac" #play-pause-button .fa .fa-play} |
-| *Em cần luyện nhiều hơn nữa* |  |
+| *Em cần luyện nhiều hơn nữa* |
 | *Bạn sống ở thành phố Hồ Chí Minh đã lâu chưa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_20.aac" #play-pause-button .fa .fa-play} |
-| *Thật ra thì mình vào đây công tác* |  |
+| *Thật ra thì mình vào đây công tác* |
 | *Ở Hà Nội thì bây giờ trời vẫn đang là đầu mùa xuân cuối mùa đông, vẫn rất lạnh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_21.aac" #play-pause-button .fa .fa-play} |
-| *Vào đây thì như mùa hè luôn rồi* |  |
+| *Vào đây thì như mùa hè luôn rồi* |
 | *Bạn ở đây công tác đến khi nào ạ?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_22.aac" #play-pause-button .fa .fa-play} |
-| *Mình sẽ ở đến giữa tuần sau* |  |
+| *Mình sẽ ở đến giữa tuần sau* |
 | *Mình mới đi shopping, mới đi mưa sắm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_23.aac" #play-pause-button .fa .fa-play} |
-| *Và có lẽ là nếu có thời gian thì sẽ thử thêm một số món đặc sản trong miền Nam nữa* |  |
+| *Và có lẽ là nếu có thời gian thì sẽ thử thêm một số món đặc sản trong miền Nam nữa* |
 | *Mấy bạn khác thì em không biết nhưng mà 3 triệu đối với em là dư* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_24.aac" #play-pause-button .fa .fa-play} |
 | *Dạ, thì... vào những lúc rảnh á thì em thường là á đọc sách hoặc là đi xem phim hoặc là đôi khi em sẽ đi uống cà phê với bạn bè* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_25.aac" #play-pause-button .fa .fa-play} |
 | *thật ra thì ở Sài Gòn cũng không có nhiều các hoạt động vào buổi tối lắm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_26.aac" #play-pause-button .fa .fa-play} |
@@ -59,10 +75,11 @@ tags:
 | *Dạ, có. Tại vì trong thành phố thì đường hơi đông xe một tí* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_29.aac" #play-pause-button .fa .fa-play} |
 | *Dạ. Cô hàng xóm bên cạnh nhà em may cho em* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_30.aac" #play-pause-button .fa .fa-play} |
 | *Dạ. Hôm nay em đến đây để tập nói tiếng Anh với người nước ngoài* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_31.aac" #play-pause-button .fa .fa-play} |
-{: #sentence }
+{: #conversation }
 
 
-> ## **오늘의 단어**
+[단어장 열람](#){: #vocabularyBtn .btn .btn--inverse .open}
+> ## **단어**
 >> **bởi vì**: 왜냐하면  
 >> **xung quanh**: 주변  
 >> **hiện tại**: 현재  
@@ -110,7 +127,7 @@ tags:
 >> **đông**: 붐비다  
 >> **hàng xóm**: 이웃  
 >> **may**: (옷 등을) 맞추다  
----
+{: #vocabulary}
 
 *[bởi vì]: 왜냐하면
 *[xung quanh]: 주변

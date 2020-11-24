@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#vocabulary').hide();
     if ($(window).outerWidth() <= 1200) {
         $("abbr[title]").click(function() {
             $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
@@ -9,9 +10,20 @@ $(document).ready(function() {
     var domain = 'https://minuet80.github.io';
     var ringsToPlay = 0;
     var repeat = 0;
+    var q = 0;
+    $('#conversation').find('tr').each(function (index, element) {
+        var $a = $(element).find('a');
+        if ($a.length > 0) {
+            if (index !== 0) {
+                q++;
+            }
+            $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q));
+        } else {
+            $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q) + '-' + index);
+        }
+    });
     $('a[id*=play-pause-button]').each(function (index, element) {
         audio[index] = new Audio(domain + $(element).data('url'));
-        
         $(element).click(function (e, p) {
             e.preventDefault();
             var audioSize = audio.length - 1;
@@ -46,7 +58,8 @@ $(document).ready(function() {
                 } else {
                     $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
                     $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
-                    $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
+                    var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
+                    $('tr[id*=' + trId +']').css('background-color', '');
                     audio[i].currentTime = 0;
                     audio[i].pause();
                 }
@@ -54,9 +67,8 @@ $(document).ready(function() {
             if($(this).hasClass('fa-play')) {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
-                $(this).closest('tr').css('background-color', '#CCCCFF');
-                console.log($(this).closest('tr').find('td:eq(1)').html());
-                $(this).closest('tr').find('td:eq(1)').nextUntil(':not(a)').css('background-color', '#CCCCFF');
+                var trId = $(this).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '#CCCCFF');
                 if (type !== '') {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
@@ -66,14 +78,16 @@ $(document).ready(function() {
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
-                $(this).closest('tr').css('background-color', '');
+                var trId = $(this).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
                 audio[no].currentTime = 0;
                 audio[no].pause();
             }
             audio[no].onended = function() {
                 $('a[id*=play-pause-button]').removeClass('fa-pause');
                 $('a[id*=play-pause-button]').addClass('fa-play');
-                $('a[id*=play-pause-button]').eq(no).closest('tr').css('background-color', '');
+                var trId = $('a[id*=play-pause-button]').eq(no).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
 
                 var map = {};
                 if (ringsToPlay === 0) {
@@ -134,7 +148,8 @@ $(document).ready(function() {
             for (var i = 0; i < audio.length; i++) {
                 $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
                 $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
-                $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
+                var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
                 audio[i].currentTime = 0;
                 audio[i].pause();
             }
@@ -172,7 +187,8 @@ $(document).ready(function() {
             for (var i = 0; i < audio.length; i++) {
                 $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
                 $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
-                $('a[id*=play-pause-button]').eq(i).closest('tr').css('background-color', '');
+                var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
                 audio[i].currentTime = 0;
                 audio[i].pause();
             }
@@ -190,6 +206,54 @@ $(document).ready(function() {
                 $(this).removeClass('btn--danger');
                 $(this).addClass('btn--inverse');
             }
+        }
+    });
+
+    $('#reset').click(function (e) {
+        e.preventDefault();
+        $('#playbackspeed').val('1.0');
+        $('#ringsToPlay').val('1');
+        if (audio !== null) {
+            for (var i = 0; i < audio.length; i++) {
+                $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
+                $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
+                var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
+
+                audio[i].currentTime = 0;
+                audio[i].pause();
+            }
+        }
+        $('#infListen').html('∞');
+        $('#infListen').removeClass('btn--warning');
+        $('#infListen').addClass('btn--inverse');
+
+        $('#allListen').html('∀');
+        $('#allListen').removeClass('btn--danger');
+        $('#allListen').addClass('btn--inverse');
+
+        $('body').on('scroll touchmove mousewheel', function(p) {
+            p.preventDefault();
+            p.stopPropagation();
+            return false;
+        });
+        $('body').off('scroll touchmove mousewheel');
+        var offset = $('.page__content').offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+    });
+
+    $('#vocabularyBtn').click(function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('open')) {
+            $(this).html('단어장 열람');
+            $(this).removeClass('open');
+            $(this).addClass('close');
+            $('#vocabulary').show();
+        } else {
+            $(this).html('단어장 닫음');
+            $(this).removeClass('close');
+            $(this).addClass('open');
+            $('#vocabulary').hide();
         }
     });
 });
