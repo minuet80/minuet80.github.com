@@ -13,21 +13,29 @@ tags:
 
 ## 회화 
 
-[∀](#){: #allListen .btn .btn--inverse}{% raw %}
-<select id="playbackspeed">
-  <option value="1.0">속도0</option>
-  <option value="0.75">속도-1</option>
-  <option value="0.5">속도-2</option>
-</select>
-[초기화](#){: #reset .btn .btn--inverse}
-<select id="ringsToPlay">
-  <option value="1">횟수1회</option>
-  <option value="2">횟수2회</option>
-  <option value="3">횟수3회</option>
-  <option value="4">횟수4회</option>
-  <option value="5">횟수5회</option>
-</select>
-{% endraw %}[∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% capture a %}
+  [∀](#){: #allListen .btn .btn--inverse}
+  <select id="playbackspeed">
+    <option value="1.0">속도0</option>
+    <option value="0.75">속도-1</option>
+    <option value="0.5">속도-2</option>
+  </select>
+  [초기화](#){: #reset .btn .btn--inverse}
+  <select id="ringsToPlay">
+    <option value="1">횟수1회</option>
+    <option value="2">횟수2회</option>
+    <option value="3">횟수3회</option>
+    <option value="4">횟수4회</option>
+    <option value="5">횟수5회</option>
+  </select>
+  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% endcapture %}
+
+<div id="fixedBtn">
+  <div class="inner">
+  {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>
+</div>
 
 | --- | --- |
 | *Em rất là thích tiếng Hàn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" #play-pause-button .fa .fa-play} |

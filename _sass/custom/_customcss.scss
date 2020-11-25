@@ -447,3 +447,18 @@ body {
     text-decoration: none;
     font-style: normal;
   }
+  #fixedBtn {
+    z-index: 100;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width: 100%;
+    text-align: center;
+  }
+  .inner {
+    background:#ffffff;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border-top-right-radius: 10px;
+  }
