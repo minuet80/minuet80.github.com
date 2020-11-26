@@ -1,5 +1,5 @@
 ---
-title: "[베트남어] 현지인 대화듣기"
+title: "[베트남어링크앤런] 베트남 현지인과 대화 중 얼마나 알아듣나요? 현지인의 대화도 보고 진짜 베트남어를 배우고 싶다면?"
 categories:
   - youtube
   - linkandrun
@@ -10,7 +10,7 @@ tags:
 ---
 
 {% capture a %}
-**[베트남어] 현지인 대화 듣기**
+**현지 베트남어 듣기**
 {% endcapture %}
 <div class="notice--danger" style="text-align: center;">
 {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
