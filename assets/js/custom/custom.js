@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#footer').hide();
     $('#vocabulary').hide();
     if ($(window).outerWidth() <= 1200) {
         $("abbr[title]").click(function() {
@@ -245,12 +246,12 @@ $(document).ready(function() {
     $('#vocabularyBtn').click(function (e) {
         e.preventDefault();
         if ($(this).hasClass('open')) {
-            $(this).html('단어장 열람');
+            $(this).html('단어장 닫힘');
             $(this).removeClass('open');
             $(this).addClass('close');
             $('#vocabulary').show();
         } else {
-            $(this).html('단어장 닫음');
+            $(this).html('단어장 열람');
             $(this).removeClass('close');
             $(this).addClass('open');
             $('#vocabulary').hide();

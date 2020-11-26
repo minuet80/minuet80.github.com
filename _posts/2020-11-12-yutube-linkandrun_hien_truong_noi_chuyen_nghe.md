@@ -9,32 +9,11 @@ tags:
   - linkandrun
 ---
 
-<br>
-
-## 회화 
-
 {% capture a %}
-  [∀](#){: #allListen .btn .btn--inverse}
-  <select id="playbackspeed">
-    <option value="1.0">속도0</option>
-    <option value="0.75">속도-1</option>
-    <option value="0.5">속도-2</option>
-  </select>
-  [초기화](#){: #reset .btn .btn--inverse}
-  <select id="ringsToPlay">
-    <option value="1">횟수1회</option>
-    <option value="2">횟수2회</option>
-    <option value="3">횟수3회</option>
-    <option value="4">횟수4회</option>
-    <option value="5">횟수5회</option>
-  </select>
-  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+**[베트남어] 현지인 대화 듣기**
 {% endcapture %}
-
-<div id="fixedBtn">
-  <div class="inner">
-  {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
-  </div>
+<div class="notice--danger" style="text-align: center;">
+{{ a | markdownify | remove: "<p>" | remove: "</p>"}}
 </div>
 
 | --- | --- |
@@ -85,9 +64,16 @@ tags:
 | *Dạ. Hôm nay em đến đây để tập nói tiếng Anh với người nước ngoài* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_31.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
-
+{% capture b %}
 [단어장 열람](#){: #vocabularyBtn .btn .btn--inverse .open}
+{% endcapture %}
+<div class="notice--danger" style="text-align: center;">
+{{ b | markdownify | remove: "<p>" | remove: "</p>"}}
+</div>
+
+
 > ## **단어**
+
 >> **bởi vì**: 왜냐하면  
 >> **xung quanh**: 주변  
 >> **hiện tại**: 현재  
@@ -178,8 +164,35 @@ tags:
 *[dư]: 남다, 여유있다
 *[vào]: (언제) ~에
 *[đôi khi]: 때때로
+*[hồi xưa]: 예전에
 *[cũng]: 제법
 *[phân khối]: cc
 *[đông]: 붐비다
 *[hàng xóm]: 이웃
 *[may]: (옷 등을) 맞추다
+
+{% capture c %}
+  [∀](#){: #allListen .btn .btn--inverse}
+  <select id="playbackspeed">
+    <option value="1.0">속도0</option>
+    <option value="0.75">속도-1</option>
+    <option value="0.5">속도-2</option>
+  </select>
+  [초기화](#){: #reset .btn .btn--inverse}
+  <select id="ringsToPlay">
+    <option value="1">횟수01회</option>
+    <option value="2">횟수02회</option>
+    <option value="3">횟수03회</option>
+    <option value="4">횟수04회</option>
+    <option value="5">횟수05회</option>
+    <option value="5">횟수07회</option>
+    <option value="5">횟수10회</option>
+  </select>
+  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% endcapture %}
+
+<div id="fixedBtn">
+  <div class="inner">
+  {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>
+</div>
