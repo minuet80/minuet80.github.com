@@ -145,6 +145,9 @@ $(document).ready(function() {
     });
     $('a[id*=infListen]').click(function (e) {
         e.preventDefault();
+        if ($('#playModeBtn').hasClass('youtube')) {
+            return;
+        }
         $('#allListen').html('∀');
         $('#allListen').removeClass('btn--danger');
         $('#allListen').addClass('btn--inverse');
@@ -184,6 +187,9 @@ $(document).ready(function() {
 
     $('#allListen').click(function (e) {
         e.preventDefault();
+        if ($('#playModeBtn').hasClass('youtube')) {
+            return;
+        }
         $('#infListen').html('∞');
         $('#infListen').removeClass('btn--warning');
         $('#infListen').addClass('btn--inverse');
@@ -214,39 +220,6 @@ $(document).ready(function() {
         }
     });
 
-    $('#reset').click(function (e) {
-        e.preventDefault();
-        $('#playbackspeed').val('1.0');
-        $('#ringsToPlay').val('1');
-        if (audio !== null) {
-            for (var i = 0; i < audio.length; i++) {
-                $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
-                $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
-                var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
-                $('tr[id*=' + trId +']').css('background-color', '');
-
-                audio[i].currentTime = 0;
-                audio[i].pause();
-            }
-        }
-        $('#infListen').html('∞');
-        $('#infListen').removeClass('btn--warning');
-        $('#infListen').addClass('btn--inverse');
-
-        $('#allListen').html('∀');
-        $('#allListen').removeClass('btn--danger');
-        $('#allListen').addClass('btn--inverse');
-
-        $('body').on('scroll touchmove mousewheel', function(p) {
-            p.preventDefault();
-            p.stopPropagation();
-            return false;
-        });
-        $('body').off('scroll touchmove mousewheel');
-        var offset = $('.page__content').offset();
-        $('html, body').animate({scrollTop : offset.top}, 400);
-    });
-
     $('#vocabularyBtn').click(function (e) {
         e.preventDefault();
         if ($(this).hasClass('open')) {
@@ -275,18 +248,48 @@ $(document).ready(function() {
     $('#playModeBtn').click(function (e) {
         e.preventDefault();
         if ($(this).hasClass('play')) {
-            $(this).find('img').prop('src', '/assets/images/youtube_play.png');
+
+            $('#fixedBtn').find('.btn').prop('disabled', true);
+            $(this).find('img').prop('src', '/assets/images/play.png');
             $(this).removeClass('play');
             $(this).addClass('youtube');
             $('.playTd').hide();
             $('.youtubeTd').show();
         } else {
-            $(this).find('img').prop('src', '/assets/images/play.png');
+            $('#fixedBtn').find('.btn').prop('disabled', false);
+            $(this).find('img').prop('src', '/assets/images/youtube_play.png');
             $(this).removeClass('youtube');
             $(this).addClass('play');
             $('.youtubeTd').hide();
             $('.playTd').show();
         }
         $('#reset').trigger('click');
+    });
+
+    $('#reset').click(function (e) {
+        e.preventDefault();
+        $('#playbackspeed').val('1.0');
+        $('#ringsToPlay').val('1');
+        if (audio !== null) {
+            for (var i = 0; i < audio.length; i++) {
+                $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
+                $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
+                var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
+                $('tr[id*=' + trId +']').css('background-color', '');
+
+                audio[i].currentTime = 0;
+                audio[i].pause();
+            }
+        }
+        $('#infListen').html('∞');
+        $('#infListen').removeClass('btn--warning');
+        $('#infListen').addClass('btn--inverse');
+
+        $('#allListen').html('∀');
+        $('#allListen').removeClass('btn--danger');
+        $('#allListen').addClass('btn--inverse');
+
+        var offset = $('.page__content').offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
     });
 });
