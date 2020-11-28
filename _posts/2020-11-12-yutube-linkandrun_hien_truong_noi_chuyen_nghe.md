@@ -69,7 +69,7 @@ tags:
 {% capture b %}
 [단어장 열람](#){: #vocabularyBtn .btn .btn--inverse .open}
 {% endcapture %}
-<div class="notice--danger" style="text-align: center;">
+<div class="notice--warning" style="text-align: center;">
 {{ b | markdownify | remove: "<p>" | remove: "</p>"}}
 </div>
 
