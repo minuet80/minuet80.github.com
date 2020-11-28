@@ -7,7 +7,6 @@ header:
 categories:
   - LinkAndRun
 tags:
-  - Youtube
   - VietnameseLanguage
 ---
 
