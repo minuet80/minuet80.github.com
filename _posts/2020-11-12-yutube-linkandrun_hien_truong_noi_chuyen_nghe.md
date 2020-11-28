@@ -19,7 +19,7 @@ tags:
 </div>
 
 | --- | --- | --- |
-| *Em rất là thích tiếng Hàn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" #play-pause-button .fa .fa-play} | [![jTdHb_srCUA](/assets/images/youtube_play.png){: width="86px"}](#){: #youtube-pause-button} |
+| *Em rất là thích tiếng Hàn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_01.aac" #play-pause-button .fa .fa-play} | [![jTdHb_srCUA](/assets/images/youtube_play.png){: width="82px"}](#){: #youtube-pause-button} |
 | *Bởi vì là tiếng Hàn rất là thú vị* |
 | *Ở xung quanh trường của em thì có rất nhiều quán cà phê ngon ạ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_02.aac" #play-pause-button .fa .fa-play} | [![OfLsheSFeiQ](/assets/images/youtube_play.png)](#){: #youtube-pause-button} |
 | *Dạ hiện tại thì em đang làm gia sư cho 1 bé lớp 3 ạ, toán, tiếng Việt ạ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-12-yutube-linkandrun_hien_truong_noi_chuyen_nghe_03.aac" #play-pause-button .fa .fa-play} | [![sVJjnbMGEI8](/assets/images/youtube_play.png)](#){: #youtube-pause-button} |
@@ -171,13 +171,14 @@ tags:
 *[may]: (옷 등을) 맞추다
 
 {% capture c %}
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   [∀](#){: #allListen .btn .btn--inverse}
   <select id="playbackspeed">
     <option value="1.0">속도0</option>
     <option value="0.75">속도-1</option>
     <option value="0.5">속도-2</option>
   </select>
-  [초기화](#){: #reset .btn .btn--inverse style="display: none;"}
+  [초기화](#){: #reset .btn .btn--inverse}
   <select id="ringsToPlay">
     <option value="1">횟수01회</option>
     <option value="2">횟수02회</option>
@@ -188,7 +189,7 @@ tags:
     <option value="5">횟수10회</option>
   </select>
   [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
-  [![](/assets/images/play.png)](#){: #playModeBtn .play} |
+  [![](/assets/images/play.png)](#){: #playModeBtn .play}
 {% endcapture %}
 
 <div id="fixedBtn">
