@@ -17,6 +17,7 @@ $(document).ready(function() {
         var $a = $(element).find('a');
         $(element).find('td:eq(1)').addClass('playTd');
         $(element).find('td:eq(2)').addClass('youtubeTd');
+        $(element).find('td:eq(2)').css('padding', '5px');
         if ($a.length > 0) {
             if (index !== 0) {
                 q++;
@@ -248,15 +249,12 @@ $(document).ready(function() {
     $('#playModeBtn').click(function (e) {
         e.preventDefault();
         if ($(this).hasClass('play')) {
-
-            $('#fixedBtn').find('.btn').prop('disabled', true);
             $(this).find('img').prop('src', '/assets/images/play.png');
             $(this).removeClass('play');
             $(this).addClass('youtube');
             $('.playTd').hide();
             $('.youtubeTd').show();
         } else {
-            $('#fixedBtn').find('.btn').prop('disabled', false);
             $(this).find('img').prop('src', '/assets/images/youtube_play.png');
             $(this).removeClass('youtube');
             $(this).addClass('play');
@@ -284,11 +282,9 @@ $(document).ready(function() {
         $('#infListen').html('∞');
         $('#infListen').removeClass('btn--warning');
         $('#infListen').addClass('btn--inverse');
-
         $('#allListen').html('∀');
         $('#allListen').removeClass('btn--danger');
         $('#allListen').addClass('btn--inverse');
-
         var offset = $('.page__content').offset();
         $('html, body').animate({scrollTop : offset.top}, 400);
     });
