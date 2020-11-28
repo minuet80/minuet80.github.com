@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    var youtubeEmbedUrl = 'https://www.youtube-nocookie.com/embed/';
+    var audio = [];
+    var ringsToPlay = 0;
+    var repeat = 0;
+    var q = 0;
+
+    $('a img').css('textDecoration','none')
     $('#footer').hide();
     $('#vocabulary').hide();
     if ($(window).outerWidth() <= 1200) {
@@ -6,14 +13,10 @@ $(document).ready(function() {
             $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
         });
     }
-
-    var audio = [];
-    var domain = 'https://minuet80.github.io';
-    var ringsToPlay = 0;
-    var repeat = 0;
-    var q = 0;
     $('#conversation').find('tr').each(function (index, element) {
         var $a = $(element).find('a');
+        $(element).find('td:eq(1)').addClass('playTd');
+        $(element).find('td:eq(2)').addClass('youtubeTd');
         if ($a.length > 0) {
             if (index !== 0) {
                 q++;
@@ -23,8 +26,9 @@ $(document).ready(function() {
             $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q) + '-' + index);
         }
     });
+    $('.youtubeTd').hide();
     $('a[id*=play-pause-button]').each(function (index, element) {
-        audio[index] = new Audio(domain + $(element).data('url'));
+        audio[index] = new Audio($(element).data('url'));
         $(element).click(function (e, p) {
             e.preventDefault();
             var audioSize = audio.length - 1;
@@ -256,5 +260,33 @@ $(document).ready(function() {
             $(this).addClass('open');
             $('#vocabulary').hide();
         }
+    });
+
+    $('a[id*=youtube-pause-button]').each(function (index, element) {
+        $(element).click(function (e) {
+            e.preventDefault();
+            var offset = $('.responsive-video-container').offset();
+            $('html, body').animate({scrollTop : offset.top}, 400);
+            var videoSeq = $(element).find('img').prop('alt');
+            $('.responsive-video-container').find('iframe').prop('src', youtubeEmbedUrl + videoSeq + '?autoplay=1');
+        });
+    });
+
+    $('#playModeBtn').click(function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('play')) {
+            $(this).find('img').prop('src', '/assets/images/youtube_play.png');
+            $(this).removeClass('play');
+            $(this).addClass('youtube');
+            $('.playTd').hide();
+            $('.youtubeTd').show();
+        } else {
+            $(this).find('img').prop('src', '/assets/images/play.png');
+            $(this).removeClass('youtube');
+            $(this).addClass('play');
+            $('.youtubeTd').hide();
+            $('.playTd').show();
+        }
+        $('#reset').trigger('click');
     });
 });
