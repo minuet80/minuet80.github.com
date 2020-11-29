@@ -15,8 +15,8 @@ $(document).ready(function() {
     }
     $('#conversation').find('tr').each(function (index, element) {
         var $a = $(element).find('a');
+        $(element).find('td:eq(0)').css('width', '100%');
         $(element).find('td:eq(1)').addClass('playTd');
-        $(element).find('td:eq(1)').css('width', '100%');
         $(element).find('td:eq(2)').addClass('youtubeTd');
         $(element).find('td:eq(2)').css('padding', '5px');
         if ($a.length > 0) {
