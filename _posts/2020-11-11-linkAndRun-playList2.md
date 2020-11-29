@@ -7,7 +7,7 @@ tags:
 ---
 
 {% capture a %}
-**현지 베트남어 듣기**
+**회화 패턴**
 {% endcapture %}
 <div class="notice--danger" style="text-align: center;">
 {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
@@ -92,7 +92,7 @@ tags:
 | *Cả bố và mẹ đều đi làm* |
 | *Cả nhà và xe đều là của tôi* |
 | *Cả thứ 7 và chủ nhật đều được nghỉ* |
-| *Cả công việc và tình yếu đều suôn sẻ*|
+| *Cả công việc và tình yế u đều suôn sẻ*|
 | *Cả phát âm và ngữ pháp đều khó* |
 {: #conversation }
 
@@ -124,6 +124,7 @@ tags:
 > **suôn sẻ**: 순조롭다  
 > **phát âm**: 발음  
 > **ngữ pháp**: 문법  
+{: #vocabulary}
 
 *[im lặng]: 조용하다, 침묵하다
 *[học sinh]: 학생
