@@ -43,18 +43,18 @@ tags:
 | *trông giống như hoa thật* |
 | *trông giống như hàng hiệu* |
 | *trông giống như (người) ăn mày* |
-| *Lại ăn nữa à?* |
-| *Lại ăn tiếp à?* |
-| *Lại mua sắm nữa à? *|
-| *Lại mua sắm tiếp à? *|
-| *Lại hết tiền nữa à?* |
-| *Lại hết tiền tiếp à?* |
-| *Lại vậy nữa à?* |
-| *Lại vậy tiếp à?* |
-| *Lại trượt nữa à?* |
-| *Lại trượt tiếp à?* |
-| *Lại giảm cân nữa à?* |
-| *Lại giảm cân tiếp à?* |
+| *lại ăn nữa à?* |
+| *lại ăn tiếp à?* |
+| *lại mua sắm nữa à? *|
+| *lại mua sắm tiếp à? *|
+| *lại hết tiền nữa à?* |
+| *lại hết tiền tiếp à?* |
+| *lại vậy nữa à?* |
+| *lại vậy tiếp à?* |
+| *lại trượt nữa à?* |
+| *lại trượt tiếp à?* |
+| *lại giảm cân nữa à?* |
+| *lại giảm cân tiếp à?* |
 | *để ở đây là được* |
 | *làm thế này là được* |
 | *nộp trong ngày hôm nay là được* |
@@ -71,29 +71,29 @@ tags:
 | *không có gì để nói* |
 | *không có gì để ăn* |
 | *không có gì để chơi* |
-| *Anh không hiểu à?* |
-| *Anh không yêu cô ấy à?* |
-| *Anh không tham gia lớp học à?* |
-| *Anh không sợ à?* |
-| *Anh không nghe tôi nói à?* |
-| *Có món nào ngon khong?* |
-| *Có cái nào rẻ hơn không?* |
-| *Có cách nào hay hơn không?* |
-| *Có sách nào có hình vẽ minh họa?* |
-| *Có căn hộ nào dưới 2 tỉ đồng* |
-| *Có món gì ngon không?* |
-| *Có cái gì  rẻ hơn không?* |
-| *Có cách gì hay hơn không?* |
-| *Có sách gì có hình vẽ minh họa không?* |
-| *Có chỗ nào cảnh đẹp và ít người không?* |
-| *Có chỗ nào bán sách dũ không?* |
-| *Có chỗ nào mở của qua đêm không* |
-| *Có chỗ nào dành cho người yêu xe mô tô không?* |
-| *Cả bố và mẹ đều đi làm* |
-| *Cả nhà và xe đều là của tôi* |
-| *Cả thứ 7 và chủ nhật đều được nghỉ* |
-| *Cả công việc và tình yế u đều suôn sẻ*|
-| *Cả phát âm và ngữ pháp đều khó* |
+| *anh không hiểu à?* |
+| *anh không yêu cô ấy à?* |
+| *anh không tham gia lớp học à?* |
+| *anh không sợ à?* |
+| *anh không nghe tôi nói à?* |
+| *có món nào ngon khong?* |
+| *có cái nào rẻ hơn không?* |
+| *có cách nào hay hơn không?* |
+| *có sách nào có hình vẽ minh họa?* |
+| *có căn hộ nào dưới 2 tỉ đồng* |
+| *có món gì ngon không?* |
+| *có cái gì  rẻ hơn không?* |
+| *có cách gì hay hơn không?* |
+| *có sách gì có hình vẽ minh họa không?* |
+| *có chỗ nào cảnh đẹp và ít người không?* |
+| *có chỗ nào bán sách dũ không?* |
+| *có chỗ nào mở của qua đêm không* |
+| *có chỗ nào dành cho người yêu xe mô tô không?* |
+| *cả bố và mẹ đều đi làm* |
+| *cả nhà và xe đều là của tôi* |
+| *cả thứ 7 và chủ nhật đều được nghỉ* |
+| *cả công việc và tình yế u đều suôn sẻ*|
+| *cả phát âm và ngữ pháp đều khó* |
 {: #conversation }
 
 {% capture b %}
