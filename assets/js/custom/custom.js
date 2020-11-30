@@ -15,17 +15,24 @@ $(document).ready(function() {
     }
     $('#conversation').prepend('<colgroup><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
     $('#conversation').find('tr').each(function (index, element) {
-        var $a = $(element).find('a');
-        $(element).find('td:eq(1)').addClass('playTd');
-        $(element).find('td:eq(2)').addClass('youtubeTd');
-        $(element).find('td:eq(2)').css('padding', '5px');
-        if ($a.length > 0) {
-            if (index !== 0) {
-                q++;
-            }
-            $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q));
+        var textTd = $.trim($(element).find('td:eq(0)').html());
+        var title = $.trim($(element).find('td:eq(1)').html());
+        if (/#\d*#/.test(textTd)) {
+            $(element).empty();
+            $(element).append('<td colspan="2" style="text-align: center;background-color: #ffa742;"><i>' + title +'</i></td>');
         } else {
-            $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q) + '-' + index);
+            var $a = $(element).find('a');
+            $(element).find('td:eq(1)').addClass('playTd');
+            $(element).find('td:eq(2)').addClass('youtubeTd');
+            $(element).find('td:eq(2)').css('padding', '5px');
+            if ($a.length > 0) {
+                if (index !== 0) {
+                    q++;
+                }
+                $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q));
+            } else {
+                $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q) + '-' + index);
+            }
         }
     });
     $('.youtubeTd').hide();
