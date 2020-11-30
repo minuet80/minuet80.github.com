@@ -19,7 +19,7 @@ $(document).ready(function() {
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/#\d*#/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td colspan="2" style="text-align: center;background-color: #ffa742;"><i>' + title +'</i></td>');
+            $(element).append('<td colspan="2" style="background-color: #d9f4ff"><i>' + title +'</i></td>');
         } else {
             var $a = $(element).find('a');
             $(element).find('td:eq(1)').addClass('playTd');

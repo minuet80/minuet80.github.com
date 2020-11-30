@@ -14,7 +14,7 @@ tags:
 </div>
 
 | --- | --- | --- |
-| #1# | Tốt nhất là ~ |
+| #1# | Tốt nhất là ~ ⇒ 가장 좋은게 ~하는 것이다 |
 | *tốt nhất là im lặng* |  |  |
 | *tốt nhất là giả vờ (như) không biết* |  |  |
 | *tốt nhất là (đi) báo công an* |  |  |
@@ -162,4 +162,3 @@ tags:
 *[suôn sẻ]: 순조롭다
 *[phát âm]: 발음
 *[ngữ pháp]: 문법
-*[Tốt nhất là]: ~하는 것이 가장 낫다
