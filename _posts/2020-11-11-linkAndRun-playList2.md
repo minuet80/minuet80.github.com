@@ -13,87 +13,87 @@ tags:
 {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
 </div>
 
-| --- | --- |
-| *tốt nhất là im lặng* |  |
-| *tốt nhất là giả vờ (như) không biết* |
-| *tốt nhất là (đi) báo công an* |
-| *tốt nhất là chia tay đi* |
-| *tốt nhất là em xin lỗi bố đi* |
-| *nhìn như học sinh* |
-| *nhìn như 20 tuổi* |
-| *nhìn như người mẫu* |
-| *nhìn như hoa thật* |
-| *nhìn như hàng hiệu* |
-| *nhìn như (người) ăn mày* |
-| *trông như học sinh* |
-| *trông như 20 tuổi* |
-| *trông như người mẫu* |
-| *trông như hoa thật* |
-| *trông như hàng hiệu* |
-| *trông như (người) ăn mày* |
-| *nhìn giống như học sinh* |
-| *nhìn giống như 20 tuổi* |
-| *nhìn giống như người mẫu* |
-| *nhìn giống như hoa thật* |
-| *nhìn giống như hàng hiệu* |
-| *nhìn giống như (người) ăn mày* |
-| *trông giống như học sinh* |
-| *trông giống như 20 tuổi* |
-| *trông giống như người mẫu* |
-| *trông giống như hoa thật* |
-| *trông giống như hàng hiệu* |
-| *trông giống như (người) ăn mày* |
-| *lại ăn nữa à?* |
-| *lại ăn tiếp à?* |
-| *lại mua sắm nữa à? *|
-| *lại mua sắm tiếp à? *|
-| *lại hết tiền nữa à?* |
-| *lại hết tiền tiếp à?* |
-| *lại vậy nữa à?* |
-| *lại vậy tiếp à?* |
-| *lại trượt nữa à?* |
-| *lại trượt tiếp à?* |
-| *lại giảm cân nữa à?* |
-| *lại giảm cân tiếp à?* |
-| *để ở đây là được* |
-| *làm thế này là được* |
-| *nộp trong ngày hôm nay là được* |
-| *không xấu quá là được* |
-| *em biết lỗi là được rồi* |
-| *trên 6 điểm là được* |
-| *không đẹp cũng không xấu* |
-| *không nóng cũng không lạnh* |
-| *không vui cũng không buồn* |
-| *không yêu cũng không giét* |
-| *không giàu cũng không nghèo* |
-| *không dễ cũng không khó* |
-| *không có gì để làm* |
-| *không có gì để nói* |
-| *không có gì để ăn* |
-| *không có gì để chơi* |
-| *anh không hiểu à?* |
-| *anh không yêu cô ấy à?* |
-| *anh không tham gia lớp học à?* |
-| *anh không sợ à?* |
-| *anh không nghe tôi nói à?* |
-| *có món nào ngon khong?* |
-| *có cái nào rẻ hơn không?* |
-| *có cách nào hay hơn không?* |
-| *có sách nào có hình vẽ minh họa?* |
-| *có căn hộ nào dưới 2 tỉ đồng* |
-| *có món gì ngon không?* |
-| *có cái gì  rẻ hơn không?* |
-| *có cách gì hay hơn không?* |
-| *có sách gì có hình vẽ minh họa không?* |
-| *có chỗ nào cảnh đẹp và ít người không?* |
-| *có chỗ nào bán sách dũ không?* |
-| *có chỗ nào mở của qua đêm không* |
-| *có chỗ nào dành cho người yêu xe mô tô không?* |
-| *cả bố và mẹ đều đi làm* |
-| *cả nhà và xe đều là của tôi* |
-| *cả thứ 7 và chủ nhật đều được nghỉ* |
-| *cả công việc và tình yế u đều suôn sẻ*|
-| *cả phát âm và ngữ pháp đều khó* |
+| --- | --- | --- |
+| *tốt nhất là im lặng* |  |  |
+| *tốt nhất là giả vờ (như) không biết* |  |  |
+| *tốt nhất là (đi) báo công an* |  |  |
+| *tốt nhất là chia tay đi* |  |  |
+| *tốt nhất là em xin lỗi bố đi* |  |  |
+| *nhìn như học sinh* |  |  |
+| *nhìn như 20 tuổi* |  |  |
+| *nhìn như người mẫu* |  |  |
+| *nhìn như hoa thật* |  |  |
+| *nhìn như hàng hiệu* |  |  |
+| *nhìn như (người) ăn mày* |  |  |
+| *trông như học sinh* |  |  |
+| *trông như 20 tuổi* |  |  |
+| *trông như người mẫu* |  |  |
+| *trông như hoa thật* |  |  |
+| *trông như hàng hiệu* |  |  |
+| *trông như (người) ăn mày* |  |  |
+| *nhìn giống như học sinh* |  |  |
+| *nhìn giống như 20 tuổi* |  |  |
+| *nhìn giống như người mẫu* |  |  |
+| *nhìn giống như hoa thật* |  |  |
+| *nhìn giống như hàng hiệu* |  |  |
+| *nhìn giống như (người) ăn mày* |  |  |
+| *trông giống như học sinh* |  |  |
+| *trông giống như 20 tuổi* |  |  |
+| *trông giống như người mẫu* |  |  |
+| *trông giống như hoa thật* |  |  |
+| *trông giống như hàng hiệu* |  |  |
+| *trông giống như (người) ăn mày* |  |  |
+| *lại ăn nữa à?* |  |  |
+| *lại ăn tiếp à?* |  |  |
+| *lại mua sắm nữa à?* |  |  |
+| *lại mua sắm tiếp à?* |  |  |
+| *lại hết tiền nữa à?* |  |  |
+| *lại hết tiền tiếp à?* |  |  |
+| *lại vậy nữa à?* |  |  |
+| *lại vậy tiếp à?* |  |  |
+| *lại trượt nữa à?* |  |  |
+| *lại trượt tiếp à?* |  |  |
+| *lại giảm cân nữa à?* |  |  |
+| *lại giảm cân tiếp à?* |  |  |
+| *để ở đây là được* |  |  |
+| *làm thế này là được* |  |  |
+| *nộp trong ngày hôm nay là được* |  |  |
+| *không xấu quá là được* |  |  |
+| *em biết lỗi là được rồi* |  |  |
+| *trên 6 điểm là được* |  |  |
+| *không đẹp cũng không xấu* |  |  |
+| *không nóng cũng không lạnh* |  |  |
+| *không vui cũng không buồn* |  |  |
+| *không yêu cũng không giét* |  |  |
+| *không giàu cũng không nghèo* |  |  |
+| *không dễ cũng không khó* |  |  |
+| *không có gì để làm* |  |  |
+| *không có gì để nói* |  |  |
+| *không có gì để ăn* |  |  |
+| *không có gì để chơi* |  |  |
+| *anh không hiểu à?* |  |  |
+| *anh không yêu cô ấy à?* |  |  |
+| *anh không tham gia lớp học à?* |  |  |
+| *anh không sợ à?* |  |  |
+| *anh không nghe tôi nói à?* |  |  |
+| *có món nào ngon khong?* |  |  |
+| *có cái nào rẻ hơn không?* |  |  |
+| *có cách nào hay hơn không?* |  |  |
+| *có sách nào có hình vẽ minh họa?* |  |  |
+| *có căn hộ nào dưới 2 tỉ đồng* |  |  |
+| *có món gì ngon không?* |  |  |
+| *có cái gì  rẻ hơn không?* |  |  |
+| *có cách gì hay hơn không?* |  |  |
+| *có sách gì có hình vẽ minh họa không?* |  |  |
+| *có chỗ nào cảnh đẹp và ít người không?* |  |  |
+| *có chỗ nào bán sách dũ không?* |  |  |
+| *có chỗ nào mở của qua đêm không* |  |  |
+| *có chỗ nào dành cho người yêu xe mô tô không?* |  |  |
+| *cả bố và mẹ đều đi làm* |  |  |
+| *cả nhà và xe đều là của tôi* |  |  |
+| *cả thứ 7 và chủ nhật đều được nghỉ* |  |  |
+| *cả công việc và tình yế u đều suôn sẻ* |  |  |
+| *cả phát âm và ngữ pháp đều khó* |  |  |
 {: #conversation }
 
 {% capture b %}

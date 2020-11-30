@@ -188,7 +188,7 @@ tags:
     <option value="5">횟수10회</option>
   </select>
   [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
-  [![](/assets/images/play.png)](#){: #playModeBtn .play}
+  [![](/assets/images/youtube_play.png)](#){: #playModeBtn .play}
 {% endcapture %}
 
 <div id="fixedBtn">
