@@ -21,12 +21,12 @@ tags:
 | *tốt nhất là chia tay đi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_04.aac" #play-pause-button .fa .fa-play} |  |
 | *tốt nhất là em xin lỗi bố đi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_05.aac" #play-pause-button .fa .fa-play} |  |
 | #2# | Nhìn như ~ ⇒ ~ 처럼 보이다 |
-| *nhìn như học sinh* |  |  |
-| *nhìn như 20 tuổi* |  |  |
-| *nhìn như người mẫu* |  |  |
-| *nhìn như hoa thật* |  |  |
-| *nhìn như hàng hiệu* |  |  |
-| *nhìn như (người) ăn mày* |  |  |
+| *nhìn như học sinh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_06.aac" #play-pause-button .fa .fa-play} |  |
+| *nhìn như 20 tuổi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_07.aac" #play-pause-button .fa .fa-play} |  |
+| *nhìn như người mẫu* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_08.aac" #play-pause-button .fa .fa-play} |  |
+| *nhìn như hoa thật* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_09.aac" #play-pause-button .fa .fa-play} |  |
+| *nhìn như hàng hiệu* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_10.aac" #play-pause-button .fa .fa-play} |  |
+| *nhìn như (người) ăn mày* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_11.aac" #play-pause-button .fa .fa-play} |  |
 | #3# | Trông như ~ ⇒ ~ 처럼 생겼다 |
 | *trông như học sinh* |  |  |
 | *trông như 20 tuổi* |  |  |
