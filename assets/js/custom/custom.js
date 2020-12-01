@@ -20,6 +20,7 @@ $(document).ready(function() {
         if (/#\d*#/.test(textTd)) {
             $(element).empty();
             $(element).append('<td colspan="2" style="background-color: #d9f4ff"><i>' + title +'</i></td>');
+            q++;
         } else {
             var $a = $(element).find('a');
             $(element).find('td:eq(1)').addClass('playTd');
