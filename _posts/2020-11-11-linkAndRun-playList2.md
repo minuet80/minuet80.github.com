@@ -162,3 +162,30 @@ tags:
 *[suôn sẻ]: 순조롭다
 *[phát âm]: 발음
 *[ngữ pháp]: 문법
+
+{% capture c %}
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  [∀](#){: #allListen .btn .btn--inverse}
+  <select id="playbackspeed">
+    <option value="1.0">속도0</option>
+    <option value="0.75">속도-1</option>
+    <option value="0.5">속도-2</option>
+  </select>
+  [초기화](#){: #reset .btn .btn--inverse}
+  <select id="ringsToPlay">
+    <option value="1">횟수01회</option>
+    <option value="2">횟수02회</option>
+    <option value="3">횟수03회</option>
+    <option value="4">횟수04회</option>
+    <option value="5">횟수05회</option>
+    <option value="7">횟수07회</option>
+    <option value="10">횟수10회</option>
+  </select>
+  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% endcapture %}
+
+<div id="fixedBtn">
+  <div class="inner">
+  {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>
+</div>
