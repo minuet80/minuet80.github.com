@@ -89,7 +89,9 @@ $(document).ready(function() {
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
                 }
                 audio[no].playbackRate = $('#playbackspeed').val();
-                audio[no].play();
+                setTimeout(function () {
+                    audio[no].play();
+                }, 1000);
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
