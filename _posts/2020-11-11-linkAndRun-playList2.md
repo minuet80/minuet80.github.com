@@ -93,12 +93,12 @@ tags:
 | *có cách nào hay hơn không?* |  |  |
 | *có sách nào có hình vẽ minh họa?* |  |  |
 | *có căn hộ nào dưới 2 tỉ đồng* |  |  |
-| #13# | Có ~ gì không? ⇒ 뭐 ~ 한것 있어요? |
+| #13# | Có ~ gì không? ⇒ 뭐 ~ 한 것이 있어요? |
 | *có món gì ngon không?* |  |  |
 | *có cái gì rẻ hơn không?* |  |  |
 | *có cách gì hay hơn không?* |  |  |
 | *có sách gì có hình vẽ minh họa không?* |  |  |
-| #14# | Có chỗ nào ~ không? ⇒ 힌 것이 있어요? |
+| #14# | Có chỗ nào ~ không? ⇒ 한 것이 있어요? |
 | *có chỗ nào cảnh đẹp và ít người không?* |  |  |
 | *có chỗ nào bán sách cũ không?* |  |  |
 | *có chỗ nào mở của qua đêm không* |  |  |
