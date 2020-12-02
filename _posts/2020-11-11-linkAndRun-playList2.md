@@ -49,12 +49,12 @@ tags:
 | *trông giống như hàng hiệu* |  |  |
 | *trông giống như (người) ăn mày* |  |  |
 | #6# | Lại ~ nữa à? ⇒ 또 ~ 해요? |
-| *lại ăn nữa à?* |  |  |
-| *lại mua sắm nữa à?* |  |  |
-| *lại hết tiền nữa à?* |  |  |
-| *lại vậy nữa à?* |  |  |
-| *lại trượt nữa à?* |  |  |
-| *lại giảm cân nữa à?* |  |  |
+| *lại ăn nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_12.aac" #play-pause-button .fa .fa-play} |  |
+| *lại mua sắm nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_13.aac" #play-pause-button .fa .fa-play} |  |
+| *lại hết tiền nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_14.aac" #play-pause-button .fa .fa-play} |  |
+| *lại vậy nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_15.aac" #play-pause-button .fa .fa-play} |  |
+| *lại trượt nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_16.aac" #play-pause-button .fa .fa-play} |  |
+| *lại giảm cân nữa à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_17.aac" #play-pause-button .fa .fa-play} |  |
 | #7# | Lại ~ tiếp à? ⇒ 또 ~ 해요? |
 | *lại ăn tiếp à?* |  |  |
 | *lại mua sắm tiếp à?* |  |  |
@@ -164,7 +164,6 @@ tags:
 *[ngữ pháp]: 문법
 
 {% capture c %}
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   [∀](#){: #allListen .btn .btn--inverse}
   <select id="playbackspeed">
     <option value="1.0">속도0</option>

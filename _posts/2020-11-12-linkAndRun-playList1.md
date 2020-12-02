@@ -170,7 +170,6 @@ tags:
 *[may]: (옷 등을) 맞추다
 
 {% capture c %}
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   [∀](#){: #allListen .btn .btn--inverse}
   <select id="playbackspeed">
     <option value="1.0">속도0</option>

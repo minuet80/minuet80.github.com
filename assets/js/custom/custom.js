@@ -297,4 +297,20 @@ $(document).ready(function() {
         var offset = $('.page__content').offset();
         $('html, body').animate({scrollTop : offset.top}, 400);
     });
+    var i = 0;
+    var j = 0;
+    var intrvlId = setInterval(function () {
+        $('#js-mkw-makerwidget__wrap').css('width', '0px');
+        if (i == 0 && $('.mkw-makerwidget__widget-wrap').length > 0) {
+            i++;
+            if (j == 0 && $('.author__avatar').length > 0) {
+                $('.author__avatar').click(function (e) {
+                    e.preventDefault();
+                    $('#js-mkw-maker-widget-trigger').click();
+                    j++;
+                    clearInterval(intrvlId);
+                });
+            }
+        }
+    }, 3000);
 });
