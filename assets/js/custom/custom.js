@@ -91,7 +91,7 @@ $(document).ready(function() {
                 audio[no].playbackRate = $('#playbackspeed').val();
                 setTimeout(function () {
                     audio[no].play();
-                }, 1000);
+                }, 200);
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
