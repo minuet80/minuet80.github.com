@@ -63,12 +63,12 @@ tags:
 | *lại trượt tiếp à?* |  |  |
 | *lại giảm cân tiếp à?* |  |  |
 | #8# | ~ là được ⇒ ~ 하면 돼요 |
-| *để ở đây là được* |  |  |
-| *làm thế này là được* |  |  |
-| *nộp trong ngày hôm nay là được* |  |  |
-| *không xấu quá là được* |  |  |
-| *em biết lỗi là được rồi* |  |  |
-| *trên 6 điểm là được* |  |  |
+| *để ở đây là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_18.aac" #play-pause-button .fa .fa-play} |  |
+| *làm thế này là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_19.aac" #play-pause-button .fa .fa-play} |  |
+| *nộp trong ngày hôm nay là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_20.aac" #play-pause-button .fa .fa-play} |  |
+| *không xấu quá là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_21.aac" #play-pause-button .fa .fa-play} |  |
+| *em biết lỗi là được rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_22.aac" #play-pause-button .fa .fa-play} |  |
+| *trên 6 điểm là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_23.aac" #play-pause-button .fa .fa-play} |  |
 | #9# | Không A cũng không B ⇒ A하지도 않고 B하지도 않다 |
 | *không đẹp cũng không xấu* |  |  |
 | *không nóng cũng không lạnh* |  |  |
@@ -164,6 +164,7 @@ tags:
 *[ngữ pháp]: 문법
 
 {% capture c %}
+  ![](/assets/images/empty.png)
   [∀](#){: #allListen .btn .btn--inverse}
   <select id="playbackspeed">
     <option value="1.0">속도0</option>
