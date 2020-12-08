@@ -70,12 +70,12 @@ tags:
 | *em biết lỗi là được rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_22.aac" #play-pause-button .fa .fa-play} |  |
 | *trên 6 điểm là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_23.aac" #play-pause-button .fa .fa-play} |  |
 | #9# | Không A cũng không B ⇒ A하지도 않고 B하지도 않다 |
-| *không đẹp cũng không xấu* |  |  |
-| *không nóng cũng không lạnh* |  |  |
-| *không vui cũng không buồn* |  |  |
-| *không yêu cũng không giét* |  |  |
-| *không giàu cũng không nghèo* |  |  |
-| *không dễ cũng không khó* |  |  |
+| *không đẹp cũng không xấu* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_24.aac" #play-pause-button .fa .fa-play} |  |
+| *không nóng cũng không lạnh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_25.aac" #play-pause-button .fa .fa-play} |  |
+| *không vui cũng không buồn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_26.aac" #play-pause-button .fa .fa-play} |  |
+| *không yêu cũng không giét* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_27.aac" #play-pause-button .fa .fa-play} |  |
+| *không giàu cũng không nghèo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_28.aac" #play-pause-button .fa .fa-play} |  |
+| *không dễ cũng không khó* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_29.aac" #play-pause-button .fa .fa-play} |  |
 | #10# | Không có gì để ~ ⇒ ~할게 없다 |
 | *không có gì để làm* |  |  |
 | *không có gì để nói* |  |  |
