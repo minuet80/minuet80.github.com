@@ -75,31 +75,31 @@ tags:
 | *không vui cũng không buồn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_26.aac" #play-pause-button .fa .fa-play} |  |
 | *không yêu cũng không giét* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_27.aac" #play-pause-button .fa .fa-play} |  |
 | *không giàu cũng không nghèo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_28.aac" #play-pause-button .fa .fa-play} |  |
-| *không dễ cũng không khó* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_29.aac" #play-pause-button .fa .fa-play} |  |
+| *không dễ cũng không khó* | [](#){: data-url="/assets/media/y2020-11-11-linkAndRun-playList2_31outube/linkandrun/2020-11-11-linkAndRun-playList2_29.aac" #play-pause-button .fa .fa-play} |  |
 | #10# | Không có gì để ~ ⇒ ~할게 없다 |
-| *không có gì để làm* |  |  |
-| *không có gì để nói* |  |  |
-| *không có gì để ăn* |  |  |
-| *không có gì để chơi* |  |  |
+| *không có gì để làm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_30.aac" #play-pause-button .fa .fa-play} |  |
+| *không có gì để nói* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_31.aac" #play-pause-button .fa .fa-play} |  |
+| *không có gì để ăn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_32.aac" #play-pause-button .fa .fa-play} |  |
+| *không có gì để chơi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_33.aac" #play-pause-button .fa .fa-play} |  |
 | #11# | Anh không ~ à? ⇒ 당신은 ~ 안해요? |
-| *anh không hiểu à?* |  |  |
-| *anh không yêu cô ấy à?* |  |  |
-| *anh không tham gia lớp học à?* |  |  |
-| *anh không sợ à?* |  |  |
-| *anh không nghe tôi nói à?* |  |  |
+| *anh không hiểu à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_34.aac" #play-pause-button .fa .fa-play} |  |
+| *anh không yêu cô ấy à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_35.aac" #play-pause-button .fa .fa-play} |  |
+| *anh không tham gia lớp học à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_36.aac" #play-pause-button .fa .fa-play} |  |
+| *anh không sợ à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_37.aac" #play-pause-button .fa .fa-play} |  |
+| *anh không nghe tôi nói à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_38.aac" #play-pause-button .fa .fa-play} |  |
 | #12# | Có ~ nào không? ⇒  어떤 ~ 한 것 있어요? |
-| *có món nào ngon khong?* |  |  |
-| *có cái nào rẻ hơn không?* |  |  |
-| *có cách nào hay hơn không?* |  |  |
-| *có sách nào có hình vẽ minh họa?* |  |  |
-| *có căn hộ nào dưới 2 tỉ đồng* |  |  |
+| *có món nào ngon khong?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_39.aac" #play-pause-button .fa .fa-play} |  |
+| *có cái nào rẻ hơn không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_40.aac" #play-pause-button .fa .fa-play} |  |
+| *có cách nào hay hơn không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_41.aac" #play-pause-button .fa .fa-play} |  |
+| *có sách nào có hình vẽ minh họa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_42.aac" #play-pause-button .fa .fa-play} |  |
+| *có căn hộ nào dưới 2 tỉ đồng* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_43.aac" #play-pause-button .fa .fa-play} |  |
 | #13# | Có ~ gì không? ⇒ 뭐 ~ 한 것이 있어요? |
-| *có món gì ngon không?* |  |  |
+| *có món gì ngon không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_44.aac" #play-pause-button .fa .fa-play} |  |
 | *có cái gì rẻ hơn không?* |  |  |
 | *có cách gì hay hơn không?* |  |  |
 | *có sách gì có hình vẽ minh họa không?* |  |  |
-| #14# | Có chỗ nào ~ không? ⇒ 한 것이 있어요? |
-| *có chỗ nào cảnh đẹp và ít người không?* |  |  |
+| #14# | Có chỗ nào ~ không? ⇒ 한 곳이 있어요? |
+| *có chỗ nào cảnh đẹp và ít người không?* |  |  | 
 | *có chỗ nào bán sách cũ không?* |  |  |
 | *có chỗ nào mở của qua đêm không* |  |  |
 | *có chỗ nào dành cho người yêu xe mô tô không?* |  |  |
