@@ -75,7 +75,7 @@ tags:
 | *không vui cũng không buồn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_26.aac" #play-pause-button .fa .fa-play} |  |
 | *không yêu cũng không giét* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_27.aac" #play-pause-button .fa .fa-play} |  |
 | *không giàu cũng không nghèo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_28.aac" #play-pause-button .fa .fa-play} |  |
-| *không dễ cũng không khó* | [](#){: data-url="/assets/media/y2020-11-11-linkAndRun-playList2_31outube/linkandrun/2020-11-11-linkAndRun-playList2_29.aac" #play-pause-button .fa .fa-play} |  |
+| *không dễ cũng không khó* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_29.aac" #play-pause-button .fa .fa-play} |  |
 | #10# | Không có gì để ~ ⇒ ~할게 없다 |
 | *không có gì để làm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_30.aac" #play-pause-button .fa .fa-play} |  |
 | *không có gì để nói* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_31.aac" #play-pause-button .fa .fa-play} |  |
