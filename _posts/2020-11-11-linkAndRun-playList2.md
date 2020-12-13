@@ -99,16 +99,16 @@ tags:
 | *có cách gì hay hơn không?* |  |  |
 | *có sách gì có hình vẽ minh họa không?* |  |  |
 | #14# | Có chỗ nào ~ không? ⇒ 한 곳이 있어요? |
-| *có chỗ nào cảnh đẹp và ít người không?* |  |  | 
-| *có chỗ nào bán sách cũ không?* |  |  |
-| *có chỗ nào mở của qua đêm không* |  |  |
-| *có chỗ nào dành cho người yêu xe mô tô không?* |  |  |
+| *có chỗ nào cảnh đẹp và ít người không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_45.aac" #play-pause-button .fa .fa-play} |  |
+| *có chỗ nào bán sách cũ không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_46.aac" #play-pause-button .fa .fa-play} |  |
+| *có chỗ nào mở của qua đêm không* |  [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_47.aac" #play-pause-button .fa .fa-play} |  |
+| *có chỗ nào dành cho người yêu xe mô tô không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_48.aac" #play-pause-button .fa .fa-play} |  |
 | #15# | Cả A và B đều ~ ⇒ A와 B모두 ~ 하다 |
-| *cả bố và mẹ đều đi làm* |  |  |
-| *cả nhà và xe đều là của tôi* |  |  |
-| *cả thứ 7 và chủ nhật đều được nghỉ* |  |  |
-| *cả công việc và tình yêu đều suôn sẻ* |  |  |
-| *cả phát âm và ngữ pháp đều khó* |  |  |
+| *cả bố và mẹ đều đi làm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_49.aac" #play-pause-button .fa .fa-play} |  |
+| *cả nhà và xe đều là của tôi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_50.aac" #play-pause-button .fa .fa-play} |  |
+| *cả thứ 7 và chủ nhật đều được nghỉ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_51.aac" #play-pause-button .fa .fa-play} |  |
+| *cả công việc và tình yêu đều suôn sẻ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_52.aac" #play-pause-button .fa .fa-play} |  |
+| *cả phát âm và ngữ pháp đều khó* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_53.aac" #play-pause-button .fa .fa-play} |  |
 {: #conversation }
 
 {% capture b %}
