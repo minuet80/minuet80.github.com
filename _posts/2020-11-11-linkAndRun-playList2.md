@@ -94,7 +94,7 @@ tags:
 | *có sách nào có hình vẽ minh họa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_42.aac" #play-pause-button .fa .fa-play} |  |
 | *có căn hộ nào dưới 2 tỉ đồng* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_43.aac" #play-pause-button .fa .fa-play} |  |
 | #13# | Có ~ gì không? ⇒ 뭐 ~ 한 것이 있어요? |
-| *có món gì ngon không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_44.aac" #play-pause-button .fa .fa-play} |  |
+| *có món gì ngon không?* |  |  |
 | *có cái gì rẻ hơn không?* |  |  |
 | *có cách gì hay hơn không?* |  |  |
 | *có sách gì có hình vẽ minh họa không?* |  |  |
