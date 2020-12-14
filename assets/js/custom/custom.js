@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+    if ($(window).outerWidth() <= 1200) {
+        $("abbr[title]").click(function() {
+            $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
+        });
+    }
+
     var youtubeEmbedUrl = 'https://www.youtube-nocookie.com/embed/';
     var audio = [];
     var ringsToPlay = 0;
@@ -8,11 +15,7 @@ $(document).ready(function() {
     $('a img').css('textDecoration','none')
     $('#footer').hide();
     $('#vocabulary').hide();
-    if ($(window).outerWidth() <= 1200) {
-        $("abbr[title]").click(function() {
-            $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
-        });
-    }
+
     $('#conversation').prepend('<colgroup><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
@@ -90,13 +93,31 @@ $(document).ready(function() {
                 }
                 audio[no].playbackRate = $('#playbackspeed').val();
                 setTimeout(function () {
+                    setTimeout(function () {
+                        var reTitle = '';
+                        $('tr[id*=' + trId +']').find('td:eq(0)').each(function (index, element) {
+                            if (index !== 0) {
+                                reTitle += '<br />';
+                            }
+                            reTitle += $(element).html();
+                        });
+                        var magnificTitl = {};
+                        magnificTitl.src = '<div class="white-popup">' + reTitle +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
+                        magnificTitl.type = 'inline';
+                        $('#popupBtn').magnificPopup({
+                            items: magnificTitl,
+                            closeBtnInside: true
+                        });
+                        $('#popupBtn').trigger('click');
+                    }, 200);
                     audio[no].play();
-                }, 200);
+                }, 600);
             } else {
                 $(this).removeClass('fa-pause');
                 $(this).addClass('fa-play');
                 var trId = $(this).closest('tr').prop('id');
                 $('tr[id*=' + trId +']').css('background-color', '');
+                $('.mfp-close').trigger('click');
                 audio[no].currentTime = 0;
                 audio[no].pause();
             }
@@ -105,7 +126,7 @@ $(document).ready(function() {
                 $('a[id*=play-pause-button]').addClass('fa-play');
                 var trId = $('a[id*=play-pause-button]').eq(no).closest('tr').prop('id');
                 $('tr[id*=' + trId +']').css('background-color', '');
-
+                $('.mfp-close').trigger('click');
                 var map = {};
                 if (ringsToPlay === 0) {
                     repeat = 0;
