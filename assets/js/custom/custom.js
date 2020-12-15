@@ -91,25 +91,30 @@ $(document).ready(function() {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
                 }
-                audio[no].playbackRate = $('#playbackspeed').val();
                 setTimeout(function () {
-                    setTimeout(function () {
-                        var reTitle = '';
-                        $('tr[id*=' + trId +']').find('td:eq(0)').each(function (index, element) {
-                            if (index !== 0) {
-                                reTitle += '<br />';
+                    var reTitle = '';
+                    $('tr[id*=' + trId +']').find('td:eq(0)').each(function (index, element) {
+                        if (index !== 0) {
+                            reTitle += '<br />';
+                        }
+                        reTitle += $(element).html();
+                    });
+                    var magnificTitl = {};
+                    magnificTitl.src = '<div class="white-popup">' + reTitle +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
+                    magnificTitl.type = 'inline';
+                    $('#popupBtn').magnificPopup({
+                        items: magnificTitl,
+                        closeBtnInside: true,
+                        callbacks: {
+                            open: function() {
+                                $('.mfp-content').find('abbr[title]').click(function() {
+                                    $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
+                                });
                             }
-                            reTitle += $(element).html();
-                        });
-                        var magnificTitl = {};
-                        magnificTitl.src = '<div class="white-popup">' + reTitle +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
-                        magnificTitl.type = 'inline';
-                        $('#popupBtn').magnificPopup({
-                            items: magnificTitl,
-                            closeBtnInside: true
-                        });
-                        $('#popupBtn').trigger('click');
-                    }, 200);
+                        }
+                    });
+                    $('#popupBtn').trigger('click');
+                    audio[no].playbackRate = $('#playbackspeed').val();
                     audio[no].play();
                 }, 600);
             } else {

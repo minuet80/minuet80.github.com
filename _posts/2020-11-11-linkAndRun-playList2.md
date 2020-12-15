@@ -116,6 +116,60 @@ tags:
 | *Anh còn giận tôi không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_57.aac" #play-pause-button .fa .fa-play} |  |
 | *Anh còn liên lạc với bạn cấp 1 không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_58.aac" #play-pause-button .fa .fa-play} |  |
 | *Anh còn hay đi bả khô không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_59.aac" #play-pause-button .fa .fa-play} |  |
+| #17# | Muốn A thì + (주어) + phải B ~ ⇒ A하고 싶으면 (주어가) B를 해야 한다 |
+| *Muốn thành công thì em phải nỗ lưc và sáng tạo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_60.aac" #play-pause-button .fa .fa-play} |  |
+| *Muốn giởi tiếng Việt thì em phải kiên trì* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_61.aac" #play-pause-button .fa .fa-play} |  |
+| *Muốn nhanh thì em chi nhiều tiền* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_62.aac" #play-pause-button .fa .fa-play} |  |
+| *Muốn được đối xử tốt thì em phải tôn trọng đối phương* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_63.aac" #play-pause-button .fa .fa-play} |  |
+| #18# | Để A thì + (주어) + phải B ~ ⇒ A하려면 (주어가) B를 해야 한다 |
+| *Để thành công thì em phải nỗ lưc và sáng tạo* |
+| *Để giởi tiếng Việt thì em phải kiên trì* |
+| *Để nhanh thì em chi nhiều tiền* |
+| *Để được đối xử tốt thì em phải tôn trọng đối phương* |
+| #19# | Bấy giờ tôi không ~ nữa rồi ⇒ 나는 이제 (더 이상) ~ 하지 않아요 |
+| *Bây giờ tôi không yêu em nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_64.aac" #play-pause-button .fa .fa-play} |  |
+| *Bây giờ tôi không ở cùng với bạn nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_65.aac" #play-pause-button .fa .fa-play} |  |
+| *Bây giờ tôi không chơi bời nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_66.aac" #play-pause-button .fa .fa-play} |  |
+| *Bây giờ tôi không phải tiết kiệm nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_67.aac" #play-pause-button .fa .fa-play} |  |
+| *Bây giờ tôi ghen tị với người khác nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_68.aac" #play-pause-button .fa .fa-play} |  |
+| #20# | Tôi không còn ~ (nữa) ⇒ 나는 이제 (더 이상) ~ 하지 않아요 |
+| *Tôi không yêu em (nữa)* |
+| *Tôi không ở cùng với bạn (nữa)* |
+| *Tôi không chơi bời (nữa)* |
+| *Tôi không phải tiết kiệm (nữa)* |
+| *Tôi ghen tị với người khác (nữa)* |
+| #21# | ~ (xong) chưa? ⇒ 다 했어요? |
+| *Làm bài tập xong chưa?* |
+| *Chuẩn bị tài liệu xong chưa?* |
+| *Giải quyết chuyện đó xong chưa?* |
+| *Nấu ăn xong chưa?* |
+| *Bàn bạc xong chưa?* |
+| #22# | có ai nào ~ không? ⇒ ~한 사람이 있어요? |
+| *có ai nào đẹp không?* |
+| *có ai nào xấu tính không?* |
+| *có ai nào rảnh không?* |
+| *có ai nào có câu hỏi không?* |
+| *có ai nào không đồng ý không?* |
+| *có ai nào biết nói tiếng Việt không?* |
+| *có ai nào bị thương không?* |
+| #23# | có người nào ~ không? ⇒ ~한 사람이 있어요? |
+| *có người nào đẹp không?* |
+| *có người nào xấu tính không?* |
+| *có người nào rảnh không?* |
+| *có người nào có câu hỏi không?* |
+| *có người nào không đồng ý không?* |
+| *có người nào biết nói tiếng Việt không?* |
+| *có người nào bị thương không?* |
+| #24# | 주어 + vẫn không ~ à? ⇒ 주어는 여전히 ~하지 않아요 |
+| *Người phụ trách vẫn không nhận điện thoại à?* |
+| *Chị vẫn không quen với cuộc sống ở nông thôn à?* |
+| *Dự án vẫn không hoàn thành à?* |
+| *Hàng đặt trên mạng vẫn không đến à?* |
+| #25# | 주어 + chưa ~ à? |
+| *Người phụ trách chưa nhận điện thoại à?* |
+| *Chị chưa quen với cuộc sống ở nông thôn à?* |
+| *Dự án chưa hoàn thành à?* |
+| *Hàng đặt trên mạng chưa đến à?* |
 {: #conversation }
 
 {% capture b %} 
@@ -146,6 +200,11 @@ tags:
 > **suôn sẻ**: 순조롭다  
 > **phát âm**: 발음  
 > **ngữ pháp**: 문법  
+> **đối xử**: 대하다, 대해주다  
+> **đối phương**: 상대방  
+> **sáng tạo**: 창조  
+> **kiên trì**: 끈기가 있는  
+> **chơi bời**: 불건전하게 놀다  
 {: #vocabulary}
 
 *[im lặng]: 조용하다, 침묵하다
@@ -169,6 +228,11 @@ tags:
 *[suôn sẻ]: 순조롭다
 *[phát âm]: 발음
 *[ngữ pháp]: 문법
+*[đối xử]: 대하다, 대해주다
+*[đối phương]: 상대방
+*[sáng tạo]: 창조
+*[kiên trì]: 끈기가 있는
+*[chơi bời]: 불건전하게 놀다
 
 {% capture c %}
   ![](/assets/images/empty.png)
