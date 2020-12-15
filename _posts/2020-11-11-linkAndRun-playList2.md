@@ -110,12 +110,12 @@ tags:
 | *cả công việc và tình yêu đều suôn sẻ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_52.aac" #play-pause-button .fa .fa-play} |  |
 | *cả phát âm và ngữ pháp đều khó* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_53.aac" #play-pause-button .fa .fa-play} |  |
 | #16# | Anh còn ~ không? ~ ⇒ 당신은 아직 ~ 해요? |
-| *Anh còn làm ở đó không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
-| *Anh còn đau đầu không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
-| *Anh còn khó chịu không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
-| *Anh còn giận tôi không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
-| *Anh còn liên lạc với bạn cấp 1 không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
-| *Anh còn hay đi bả khô không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn làm ở đó không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_54.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn đau đầu không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_55.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn khó chịu không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_56.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn giận tôi không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_57.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn liên lạc với bạn cấp 1 không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_58.aac" #play-pause-button .fa .fa-play} |  |
+| *Anh còn hay đi bả khô không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_59.aac" #play-pause-button .fa .fa-play} |  |
 {: #conversation }
 
 {% capture b %} 
