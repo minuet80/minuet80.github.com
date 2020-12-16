@@ -1,5 +1,5 @@
 ---
-title: "[링크앤런] 베트남어 회화 패턴"
+title: "[링크앤런] 베트남어 마법 패턴"
 categories:
   - LinkAndRun
 tags:
