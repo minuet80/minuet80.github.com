@@ -10,6 +10,7 @@ $(document).ready(function() {
     var audio = [];
     var ringsToPlay = 0;
     var repeat = 0;
+    var titlTdId;
     var q = 0;
 
     $('a img').css('textDecoration','none')
@@ -20,7 +21,8 @@ $(document).ready(function() {
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
         var title = $.trim($(element).find('td:eq(1)').html());
-        if (/#\d*#/.test(textTd)) {
+        if (/#\w*#/.test(textTd)) {
+            titlTdId = textTd.replaceAll('#', '');
             $(element).empty();
             $(element).append('<td colspan="2" style="background-color: #d9f4ff"><i>' + title +'</i></td>');
             q++;
@@ -33,9 +35,9 @@ $(document).ready(function() {
                 if (index !== 0) {
                     q++;
                 }
-                $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q));
+                $(element).prop('id', 'tr'+ (q < 10 ? (titlTdId + '0' + q) : titlTdId +q));
             } else {
-                $(element).prop('id', 'tr'+ (q < 10 ? ('0' + q) : q) + '-' + index);
+                $(element).prop('id', 'tr'+ (q < 10 ? (titlTdId + '0' + q) : titlTdId + q) + '-' + index);
             }
         }
     });
