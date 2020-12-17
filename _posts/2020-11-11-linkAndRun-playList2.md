@@ -7,7 +7,7 @@ tags:
 ---
 
 {% capture a %}
-**회화 패턴**
+**초급 회화 패턴**
 {% endcapture %}
 <div class="notice--danger" style="text-align: center;">
 {{ a | markdownify | remove: "<p>" | remove: "</p>"}}

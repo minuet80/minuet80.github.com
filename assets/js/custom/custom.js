@@ -6,6 +6,9 @@ $(document).ready(function() {
         });
     }
 
+    $('.lbsize').find('img').css('width', '100px');
+    $('.lbsize').find('img').css('height', '100px');
+
     var youtubeEmbedUrl = 'https://www.youtube-nocookie.com/embed/';
     var audio = [];
     var ringsToPlay = 0;
