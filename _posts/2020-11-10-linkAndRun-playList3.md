@@ -64,9 +64,9 @@ tags:
 
 | --- | --- | --- |
 | #aa# | hiện trường 1 |
-| *dừng đỗ xe* : 주정차 하자마 |
-| *bán hàng rong* : 이동판매 |
-| *kinh doanh lấn chiếm vỉa hè, lòng đường* : 인도와 도로를 점거하여 장사하다 |
+| *dừng đỗ xe* |
+| *bán hàng rong* |
+| *kinh doanh lấn chiếm vỉa hè, lòng đường* |
 | #ab# | hiện trường 2 |
 | *cấm đỗ xe khu vực này* |
 | *Ô tô được dừng đón trả khách 2 phút* |
