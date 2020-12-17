@@ -1,5 +1,5 @@
 ---
-title: "[베트남어] 베트남 현지에서 봤는데 무슨 뜻이죠?"
+title: "[링크앤런] 베트남 현지에서 봤는데 무슨 뜻이죠?"
 categories:
   - LinkAndRun
 gallery:
