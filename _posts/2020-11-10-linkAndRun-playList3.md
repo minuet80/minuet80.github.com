@@ -64,9 +64,9 @@ tags:
 
 | --- | --- | --- |
 | !0! | 안내 표시판 1 |
-| *dừng đỗ xe* |
-| *bán hàng rong* |
-| *kinh doanh lấn chiếm vỉa hè, lòng đường* |
+| *dừng đỗ xe* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_01.aac" #play-pause-button .fa .fa-play} |  |
+| *bán hàng rong* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_02.aac" #play-pause-button .fa .fa-play} |  |
+| *kinh doanh lấn chiếm vỉa hè, lòng đường* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_03.aac" #play-pause-button .fa .fa-play} |  |
 | !1! | 안내 표시판 2 |
 | *cấm đỗ xe khu vực này* |
 | *Ô tô được dừng đón trả khách 2 phút* |
@@ -256,3 +256,30 @@ tags:
 *[quần tây]: 정장바지
 *[sơ mi]: 셔츠
 *[sọc]: 세로줄무늬
+
+{% capture c %}
+  ![](/assets/images/empty.png)
+  [∀](#){: #allListen .btn .btn--inverse}
+  <select id="playbackspeed">
+    <option value="1.0">속도0</option>
+    <option value="0.75">속도-1</option>
+    <option value="0.5">속도-2</option>
+  </select>
+  [초기화](#){: #reset .btn .btn--inverse}
+  <select id="ringsToPlay">
+    <option value="1">횟수01회</option>
+    <option value="2">횟수02회</option>
+    <option value="3">횟수03회</option>
+    <option value="4">횟수04회</option>
+    <option value="5">횟수05회</option>
+    <option value="7">횟수07회</option>
+    <option value="10">횟수10회</option>
+  </select>
+  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% endcapture %}
+
+<div id="fixedBtn">
+  <div class="inner">
+  {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>
+</div>
