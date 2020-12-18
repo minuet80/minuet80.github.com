@@ -1,3 +1,41 @@
+/**
+ * 좌측문자열채우기
+ * @params
+ *  - padLen : 최대 채우고자 하는 길이
+ *  - padStr : 채우고자하는 문자(char)
+ */
+String.prototype.lpad = function(padLen, padStr) {
+    var str = this;
+    if (padStr.length > padLen) {
+        return str + '';
+    }
+    while (str.length < padLen) {
+        str = padStr + str;
+    }
+    str = str.length >= padLen ? str.substring(0, padLen) : str;
+    return str;
+};
+console.log("05".lpad(5, "00")); // 00000
+console.log("05".lpad(5, "01")); // 01010
+
+/**
+ * 우측문자열채우기
+ * @params
+ *  - padLen : 최대 채우고자 하는 길이
+ *  - padStr : 채우고자하는 문자(char)
+ */
+String.prototype.rpad = function(padLen, padStr) {
+    var str = this;
+    if (padStr.length > padLen) {
+        return str + '';
+    }
+    while (str.length < padLen) {
+        str += padStr;
+    }
+    str = str.length >= padLen ? str.substring(0, padLen) : str;
+    return str;
+};
+
 $(document).ready(function() {
 
     if ($(window).outerWidth() <= 1200) {
@@ -13,7 +51,7 @@ $(document).ready(function() {
     var audio = [];
     var ringsToPlay = 0;
     var repeat = 0;
-    var titlTdId;
+    var num;
     var q = 0;
 
     $('a img').css('textDecoration','none')
@@ -24,8 +62,7 @@ $(document).ready(function() {
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
         var title = $.trim($(element).find('td:eq(1)').html());
-        if (/#\w*#/.test(textTd)) {
-            titlTdId = textTd.replaceAll('#', '');
+        if (/!\d*!/.test(textTd)) {
             $(element).empty();
             $(element).append('<td colspan="2" style="background-color: #d9f4ff"><i>' + title +'</i></td>');
             q++;
@@ -34,13 +71,16 @@ $(document).ready(function() {
             $(element).find('td:eq(1)').addClass('playTd');
             $(element).find('td:eq(2)').addClass('youtubeTd');
             $(element).find('td:eq(2)').css('padding', '5px');
+            
             if ($a.length > 0) {
                 if (index !== 0) {
                     q++;
                 }
-                $(element).prop('id', 'tr'+ (q < 10 ? (titlTdId + '0' + q) : titlTdId +q));
+                num = q.toString().lpad(5, 0);
+                $(element).prop('id', 'tr'+ num);
             } else {
-                $(element).prop('id', 'tr'+ (q < 10 ? (titlTdId + '0' + q) : titlTdId + q) + '-' + index);
+                num = q.toString().lpad(5, 0);
+                $(element).prop('id', 'tr'+ num + '-' + index);
             }
         }
     });
