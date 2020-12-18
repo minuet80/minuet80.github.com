@@ -160,11 +160,21 @@ tags:
 | *có người nào không đồng ý không?* |
 | *có người nào biết nói tiếng Việt không?* |
 | *có người nào bị thương không?* |
-| !23! | 주어 + vẫn không ~ à?  **\|** 주어 + vẫn chưa ~ à? ⇒ 주어는 여전히 ~하지 않아요 |
+| !23! | 주어 + vẫn không ~ à?  **\|** 주어 + vẫn chưa ~ à? ⇒ 주어는 여전히 ~하지 않아요? |
 | *người phụ trách vẫn không nhận điện thoại à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_81.aac" #play-pause-button .fa .fa-play} |  |
 | *chị vẫn chưa quen với cuộc sống ở nông thôn à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_82.aac" #play-pause-button .fa .fa-play} |  |
 | *dự án vẫn chưa hoàn thành à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_83.aac" #play-pause-button .fa .fa-play} |  |
 | *hàng đặt trên mạng vẫn chưa đến à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_84.aac" #play-pause-button .fa .fa-play} |  |
+| !24! | không hiểu tại sai + N + (lại) ~ ⇒ 왜 ~하는지 모르겠어요 |
+| *không hiểu tại sao cửa (lại) không mở được* |
+| *không hiểu tại sao mẹ (lại) không nhận điện* |
+| *không hiểu tại sao anh Lâm (lại) hành động như vậy* |
+| *không hiểu tại sao (lại) như vậy* |   
+| !25! | chẳng hiểu sao + N + (lại) ~ ⇒ 왜 ~하는지 모르겠어요 |
+| *chẳng hiểu sao cửa (lại) không mở được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_85.aac" #play-pause-button .fa .fa-play} |  |
+| *chẳng hiểu sao mẹ (lại) không nhận điện* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_86.aac" #play-pause-button .fa .fa-play} |  |
+| *chắng hiểu sao anh Lâm (lại) hành động như vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_87.aac" #play-pause-button .fa .fa-play} |  |
+| *chẳng hiểu sao (lại) như vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_88.aac" #play-pause-button .fa .fa-play} |  |
 {: #conversation }
 
 {% capture b %} 
