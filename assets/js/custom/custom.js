@@ -64,7 +64,7 @@ $(document).ready(function() {
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/!\d*!/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td colspan="2" style="background-color: #f74"><i>' + title +'</i></td>');
+            $(element).append('<td colspan="2" style="background-color: #3d4144"><i>' + title +'</i></td>');
             q++;
         } else {
             var $a = $(element).find('a');
