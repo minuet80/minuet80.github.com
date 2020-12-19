@@ -68,22 +68,22 @@ tags:
 | *bán hàng rong* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_02.aac" #play-pause-button .fa .fa-play} |  |
 | *kinh doanh lấn chiếm vỉa hè, lòng đường* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_03.aac" #play-pause-button .fa .fa-play} |  |
 | !1! | 안내 표시판 2 |
-| *cấm đỗ xe khu vực này* |
-| *Ô tô được dừng đón trả khách 2 phút* |
+| *cấm đỗ xe khu vực này* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_04.aac" #play-pause-button .fa .fa-play} |  |
+| *Ô tô được dừng đón trả khách 2 phút* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_05.aac" #play-pause-button .fa .fa-play} |  |
 | !2! | 안내 표시판 3 |
-| *xin vui lòng không đi trên cỏ* |
-| *Không dẫm lên cỏ* |
+| *xin vui lòng không đi trên cỏ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_06.aac" #play-pause-button .fa .fa-play} |  |
+| *không dẫm lên cỏ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_07.aac" #play-pause-button .fa .fa-play} |  |
 | !3! | 안내 표시판 4 |
-| *cửa ra máy bay trong nước* |
-| *cửa ra máy bay quốc tế* |
-| *nhà vệ sinh* |
-| *sảnh thủ tục* |
+| *cửa ra máy bay trong nước* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_08.aac" #play-pause-button .fa .fa-play} |  |
+| *cửa ra máy bay quốc tế* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_09.aac" #play-pause-button .fa .fa-play} |  |
+| *nhà vệ sinh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_10.aac" #play-pause-button .fa .fa-play} |  |
+| *sảnh thủ tục* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_11.aac" #play-pause-button .fa .fa-play} |  |
 | !4! | 안내 표시판 5 |
-| *khung đo hành lý xách tay* |
-| *hạng thương gia* |
-| *2 kiện / hành khách* |
-| *hạng phổ thông* |
-| *giới hạn* |
+| *khung đo hành lý xách tay* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_12.aac" #play-pause-button .fa .fa-play} |  |
+| *hạng thương gia* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_13.aac" #play-pause-button .fa .fa-play} |  |
+| *2 kiện / hành khách* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_14.aac" #play-pause-button .fa .fa-play} |  |
+| *hạng phổ thông* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_15.aac" #play-pause-button .fa .fa-play} |  |
+| *giới hạn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_16.aac" #play-pause-button .fa .fa-play} |  |
 | !5! | 안내 표시판 6, 6-1 |
 | *cài dây an toàn trong khi ngồi* |
 | *áo phao dưới ghế ngồi của quý khách* |
@@ -184,6 +184,7 @@ tags:
 > **xách tay**: 손으로 가지고 다니는  
 > **kiện**: 꾸러미  
 > **hạng**: 레벨, 등급  
+> **thương gia**: 비즈니스  
 > **hành khách**: 승객  
 > **phổ thông**: 보통  
 > **giới hạn**: 제한  
@@ -233,6 +234,7 @@ tags:
 *[xách tay]: 손으로 가지고 다니는
 *[kiện]: 꾸러미
 *[hạng]: 레벨, 등급
+*[thương gia]: 비즈니스
 *[hành khách]: 승객
 *[phổ thông]: 보통
 *[giới hạn]: 제한
