@@ -84,11 +84,12 @@ body {
 
 .page__content {
   h2 {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid $border-color;
+    padding: 2em 0em 2em 0em;
+    border-bottom: 0px solid $border-color;
   }
 
 	h1, h2, h3, h4, h5, h6 {
+    padding: 1em 0em 0em 0em;
 		.header-link {
 			position: relative;
 			left: 0.5em;

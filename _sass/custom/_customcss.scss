@@ -471,3 +471,51 @@ body {
     margin: 20px auto;
     font-size: 1.5em;
   }
+  // Color
+  $pink: #f41fbf;
+  $extra-large: 20px;
+  $stroke-width: $extra-large * 0.05;
+
+  .wood-text {
+    background: url('/assets/images/OUyfQnt.jpg');
+    background-size: cover;
+    position: relative;
+    font-size: $extra-large * 1.5;
+    text-transform: uppercase;
+    font-family: 'Rancho', cursive;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    &:after {
+      $stroke-width: $extra-large * 0.05;
+      position: absolute;
+      -webkit-text-stroke-width: $stroke-width;
+      -webkit-text-stroke-color: rgba(black, 0.6);
+      left: 2px;
+      top: 2px
+    }
+  }
+
+  .neon-text {
+    position: relative;
+    $stroke-width: $extra-large * 0.05;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    font-size: $extra-large;
+    color: lighten($pink, 25%);
+    -webkit-text-stroke-width: $stroke-width;
+    -webkit-text-stroke-color: lighten($pink, 5%);
+    text-shadow: 0 0 40px lighten($pink, 5%),
+                 0 0 40px lighten($pink, 5%),
+                 0 0 40px lighten($pink, 5%);
+    &:after {
+      z-index: -1;
+      position: absolute;
+      color: transparent;
+      -webkit-text-stroke-width: $stroke-width;
+      -webkit-text-stroke-color: darken($pink, 40%);
+      top: -5%;
+      left: -0.5%;
+      
+    }
+  }
