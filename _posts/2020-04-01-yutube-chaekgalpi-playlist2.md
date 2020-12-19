@@ -18,7 +18,7 @@ toc_sticky: true
 {% endcapture %}
 
 <figure>
-  <figcaption>RAISE YOUR GAME</figcaption>
+  <figcaption>단순하게 말했더니 인정받기 시작했다</figcaption>
   {{ playlist2_1 | markdownify | remove: "<p>" | remove: "</p>"}}
 </figure>
 
