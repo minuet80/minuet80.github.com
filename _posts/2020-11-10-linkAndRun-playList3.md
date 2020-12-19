@@ -63,36 +63,36 @@ tags:
 </div>
 
 | --- | --- | --- |
-| !0! | ✔ 안내 표시판 1 |
+| !0! | 안내 표시판 1 |
 | *dừng đỗ xe* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_01.aac" #play-pause-button .fa .fa-play} |  |
 | *bán hàng rong* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_02.aac" #play-pause-button .fa .fa-play} |  |
 | *kinh doanh lấn chiếm vỉa hè, lòng đường* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_03.aac" #play-pause-button .fa .fa-play} |  |
-| !1! | ✔ 안내 표시판 2 |
+| !1! | 안내 표시판 2 |
 | *cấm đỗ xe khu vực này* |
 | *Ô tô được dừng đón trả khách 2 phút* |
-| !2! | ✔ 안내 표시판 3 |
+| !2! | 안내 표시판 3 |
 | *xin vui lòng không đi trên cỏ* |
 | *Không dẫm lên cỏ* |
-| !3! | ✔ 안내 표시판 4 |
+| !3! | 안내 표시판 4 |
 | *cửa ra máy bay trong nước* |
 | *cửa ra máy bay quốc tế* |
 | *nhà vệ sinh* |
 | *sảnh thủ tục* |
-| !4! | ✔ 안내 표시판 5 |
+| !4! | 안내 표시판 5 |
 | *khung đo hành lý xách tay* |
 | *hạng thương gia* |
 | *2 kiện / hành khách* |
 | *hạng phổ thông* |
 | *giới hạn* |
-| !5! | ✔ 안내 표시판 6, 6-1 |
+| !5! | 안내 표시판 6, 6-1 |
 | *cài dây an toàn trong khi ngồi* |
 | *áo phao dưới ghế ngồi của quý khách* |
-| !6! | ✔ 안내 표시판 7 |
+| !6! | 안내 표시판 7 |
 | *quý khách vui lòng lấy hóa đơn* |
 | *shop chỉ giải quyết đổi khi có hóa đơn bán hàng* |
-| !7! | ✔ 안내 표시판 8 |
+| !7! | 안내 표시판 8 |
 | *ăn sạch sống khỏe, ăn ngon sống vui* |
-| !8! | ✔ 안내 표시판 9, 9-1 |
+| !8! | 안내 표시판 9, 9-1 |
 | *hàng lẻ size* |
 | *đồng giá* |
 | *kính mời* |
