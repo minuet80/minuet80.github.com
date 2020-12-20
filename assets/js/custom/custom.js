@@ -64,7 +64,7 @@ $(document).ready(function() {
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/!\d*!/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td colspan="2" style="color: #3d4144;background-color: #ecf6ec;"><i>' + title +'</i></td>');
+            $(element).append('<td colspan="2" style="font-weight: 800; background: radial-gradient(ellipse farthest-corner at 90% 90%, red, yellow 10%, #1e90ff 50%, beige);"><i>' + title +'</i></td>');
             q++;
         } else {
             var $a = $(element).find('a');
