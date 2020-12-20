@@ -85,22 +85,24 @@ tags:
 | *hạng phổ thông* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_15.aac" #play-pause-button .fa .fa-play} |  |
 | *giới hạn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_16.aac" #play-pause-button .fa .fa-play} |  |
 | !5! | 안내 표시판 6, 6-1 |
-| *cài dây an toàn trong khi ngồi* |
-| *áo phao dưới ghế ngồi của quý khách* |
+| *cài dây an toàn trong khi ngồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_17.aac" #play-pause-button .fa .fa-play} |  |
+| *áo phao dưới ghế ngồi của quý khách* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_18.aac" #play-pause-button .fa .fa-play} |  |
 | !6! | 안내 표시판 7 |
-| *quý khách vui lòng lấy hóa đơn* |
-| *shop chỉ giải quyết đổi khi có hóa đơn bán hàng* |
+| *quý khách vui lòng lấy hóa đơn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_19.aac" #play-pause-button .fa .fa-play} |  |
+| *shop chỉ giải quyết đổi trả khi có hóa đơn bán hàng* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_20.aac" #play-pause-button .fa .fa-play} |  |
 | !7! | 안내 표시판 8 |
-| *ăn sạch sống khỏe, ăn ngon sống vui* |
+| *ăn sạch sống khỏe, ăn ngon sống vui* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_21.aac" #play-pause-button .fa .fa-play} |  |
 | !8! | 안내 표시판 9, 9-1 |
-| *hàng lẻ size* |
-| *đồng giá* |
-| *kính mời* |
-| *quần xọc/quần sooc* |
-| *quần jean* |
-| *áo thun lạnh* |
-| *quần tây* |
-| *sơ mi* |
+| *hàng lẻ size* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_22.aac" #play-pause-button .fa .fa-play} |  |
+| *đồng giá* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_23.aac" #play-pause-button .fa .fa-play} |  |
+| *200K* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_24.aac" #play-pause-button .fa .fa-play} |  |
+| *kính mời* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_25.aac" #play-pause-button .fa .fa-play} |  |
+| *quần xọc* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_26.aac" #play-pause-button .fa .fa-play} |  |
+| *quần sooc* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_27.aac" #play-pause-button .fa .fa-play} |  |
+| *quần jean* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_28.aac" #play-pause-button .fa .fa-play} |  |
+| *áo thun lạnh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_29.aac" #play-pause-button .fa .fa-play} |  |
+| *quần tây* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_30.aac" #play-pause-button .fa .fa-play} |  |
+| *sơ mi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_31.aac" #play-pause-button .fa .fa-play} |  |
 {: #conversation }
 
 {% capture b %} 
