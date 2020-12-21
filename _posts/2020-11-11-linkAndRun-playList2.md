@@ -119,12 +119,12 @@ tags:
 | !16! | Muốn A thì + (주어) + phải B ~ ⇒ A하고 싶으면 (주어가) B를 해야 한다 |
 | *Muốn thành công thì em phải nỗ lưc và sáng tạo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_60.aac" #play-pause-button .fa .fa-play} |  |
 | *muốn giởi tiếng Việt thì em phải kiên trì* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_61.aac" #play-pause-button .fa .fa-play} |  |
-| *muốn nhanh thì em chi nhiều tiền* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_62.aac" #play-pause-button .fa .fa-play} |  |
+| *muốn nhanh thì em phải chi nhiều tiền* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_62.aac" #play-pause-button .fa .fa-play} |  |
 | *muốn được đối xử tốt thì em phải tôn trọng đối phương* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_63.aac" #play-pause-button .fa .fa-play} |  |
 | !17! | Để A thì + (주어) + phải B ~ ⇒ A하려면 (주어가) B를 해야 한다 |
 | *để thành công thì em phải nỗ lưc và sáng tạo* |
 | *để giởi tiếng Việt thì em phải kiên trì* |
-| *để nhanh thì em chi nhiều tiền* |
+| *để nhanh thì em phải chi nhiều tiền* |
 | *để được đối xử tốt thì em phải tôn trọng đối phương* |
 | !18! | Bấy giờ tôi không ~ nữa rồi ⇒ 나는 이제 (더 이상) ~ 하지 않아요 |
 | *bây giờ tôi không yêu em nữa rồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_64.aac" #play-pause-button .fa .fa-play} |  |

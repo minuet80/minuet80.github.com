@@ -64,7 +64,7 @@ $(document).ready(function() {
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/!\d*!/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td colspan="2" style="font-weight: 800; background: radial-gradient(ellipse farthest-corner at 90% 90%, red, yellow 10%, #1e90ff 50%, beige);"><i>' + title +'</i></td>');
+            $(element).append('<td colspan="2" style="font-weight: 800; background: radial-gradient(ellipse farthest-corner at 0% 50%, red, yellow 0%, #1e90ff 0%, beige);"><i>' + title +'</i></td>');
             q++;
         } else {
             var $a = $(element).find('a');
@@ -131,7 +131,7 @@ $(document).ready(function() {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
                 var trId = $(this).closest('tr').prop('id');
-                $('tr[id*=' + trId +']').css('background-color', '#CCCCFF');
+                $('tr[id*=' + trId +']').css('background-color', '#f74');
                 if (type !== '') {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
