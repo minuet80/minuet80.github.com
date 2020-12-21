@@ -47,7 +47,6 @@ tags:
 > **về nước**: 귀국하다  
 > **chiều nay**: 오늘 오후  
 > **khách hàng**: 손님  
-
 {: #vocabulary}
 
 *[về nước]: 귀국하다
