@@ -124,7 +124,7 @@ toc_sticky: true
 | | *muốn giởi tiếng Việt thì em phải kiên trì* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_61.aac" #play-pause-button .fa .fa-play} |
 | | *muốn nhanh thì em phải chi nhiều tiền* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_62.aac" #play-pause-button .fa .fa-play} |
 | | *muốn được đối xử tốt thì em phải tôn trọng đối phương* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_63.aac" #play-pause-button .fa .fa-play} |
-| 17 | Để A thì + (주어) + phải B ~<br /><sub>A하려면 (주어가) B를 해야 한다</sub> |
+| 17 | Để A thì + (주어) + phải B ~<br /><sub>A하려면 (주어)가 B를 해야 한다</sub> |
 | | *để thành công thì em phải nỗ lưc và sáng tạo* |
 | | *để giởi tiếng Việt thì em phải kiên trì* |
 | | *để nhanh thì em phải chi nhiều tiền* |
@@ -169,20 +169,20 @@ toc_sticky: true
 | | *chị vẫn chưa quen với cuộc sống ở nông thôn à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_82.aac" #play-pause-button .fa .fa-play} |
 | | *dự án vẫn chưa hoàn thành à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_83.aac" #play-pause-button .fa .fa-play} |
 | | *hàng đặt trên mạng vẫn chưa đến à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_84.aac" #play-pause-button .fa .fa-play} |
-| 25 | không hiểu tại sao + N + (lại)<br /><sub>왜 ~하는지 모르겠어요</sub> |
+| 25 | không hiểu tại sao ~ (lại)<br /><sub>왜 ~하는지 모르겠어요</sub> |
 | | *không hiểu tại sao cửa (lại) không mở được* |
 | | *không hiểu tại sao mẹ (lại) không nhận điện* |
 | | *không hiểu tại sao anh Lâm (lại) hành động như vậy* |
 | | *không hiểu tại sao (lại) như vậy* |
-| 26 | chẳng hiểu sao + N + (lại) ~<br /><sub>왜 ~하는지 모르겠어요</sub> |
+| 26 | chẳng hiểu sao ~ (lại) ~<br /><sub>왜 ~하는지 모르겠어요</sub> |
 | | *chẳng hiểu sao cửa (lại) không mở được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_85.aac" #play-pause-button .fa .fa-play} |
 | | *chẳng hiểu sao mẹ (lại) không nhận điện* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_86.aac" #play-pause-button .fa .fa-play} |
 | | *chắng hiểu sao anh Lâm (lại) hành động như vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_87.aac" #play-pause-button .fa .fa-play} |
 | | *chẳng hiểu sao (lại) như vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_88.aac" #play-pause-button .fa .fa-play} |
-| 27 | Tôi định + V<br /><sub>~ 하려고 하다</sub> |
+| 27 | Tôi định ~<br /><sub>~ 하려고 하다</sub> |
 | | *tôi định nghỉ việc ở công ty này* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_89.aac" #play-pause-button .fa .fa-play} |
 | | *tôi định tối nay đi xem phim* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_90.aac" #play-pause-button .fa .fa-play} |
-| 28 | Tôi đang định + V<br /><sub>~ 하려던 참이었다</sub> |
+| 28 | Tôi đang định ~<br /><sub>~ 하려던 참이었다</sub> |
 | | *tôi đang định triển khai kế hoạch này* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_91.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang định nhờ chị chút việc* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_92.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang định nói sự thật với anh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_93.aac" #play-pause-button .fa .fa-play} |
