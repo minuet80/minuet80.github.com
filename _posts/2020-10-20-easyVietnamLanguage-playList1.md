@@ -14,7 +14,7 @@ tags:
 </div>
 
 | --- | --- | --- | --- |
-| !0! | 주어 + sẽ + 동사 ~<br /><sub>주어는 ~할 것이다</sub> |  |  |
+| !0! | 주어 + sẽ + 동사 ~<br /><sub>(주어)는 ~할 것이다</sub> |  |  |
 | | *chúng tôi sẽ đi Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_01.aac" #play-pause-button .fa .fa-play} |  |
 | | *ngày mai, chúng tôi sẽ đi Mỹ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_02.aac" #play-pause-button .fa .fa-play} |  |
 | | *tuần sau, chúng tôi sẽ đi du lịch ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_03.aac" #play-pause-button .fa .fa-play} |  |
