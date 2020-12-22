@@ -58,20 +58,22 @@ $(document).ready(function() {
     $('#footer').hide();
     $('#vocabulary').hide();
 
-    $('#conversation').prepend('<colgroup><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
+    $('#conversation').prepend('<colgroup><col width="4px;" /><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/!\d*!/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td colspan="2" style="font-weight: 800; background: radial-gradient(ellipse farthest-corner at 0% 50%, red, yellow 0%, #1e90ff 0%, beige);"><i>' + title +'</i></td>');
+            $(element).append('<td style="padding: 0px; background-color: #ee5f5b"></td>');
+            $(element).append('<td colspan="2" style="background-color: #fffef3"><i>' + title +'</i></td>');
             q++;
         } else {
             var $a = $(element).find('a');
-            $(element).find('td:eq(1)').addClass('playTd');
-            $(element).find('td:eq(2)').addClass('youtubeTd');
-            $(element).find('td:eq(2)').css('padding', '5px');
-            
+            $(element).find('td:eq(0)').css('padding', '0px')
+            $(element).find('td:eq(2)').addClass('playTd');
+            $(element).find('td:eq(3)').addClass('youtubeTd');
+            $(element).find('td:eq(3)').css('padding', '5px');
+
             if ($a.length > 0) {
                 if (index !== 0) {
                     q++;
@@ -131,14 +133,14 @@ $(document).ready(function() {
                 $(this).removeClass('fa-play');
                 $(this).addClass('fa-pause');
                 var trId = $(this).closest('tr').prop('id');
-                $('tr[id*=' + trId +']').css('background-color', '#f74');
+                $('tr[id*=' + trId +']').css('background-color', '#ebf5f8');
                 if (type !== '') {
                     var offset = $(this).offset();
                     $('html, body').animate({scrollTop : offset.top - 100}, 400);
                 }
                 setTimeout(function () {
                     var reTitle = '';
-                    $('tr[id*=' + trId +']').find('td:eq(0)').each(function (index, element) {
+                    $('tr[id*=' + trId +']').find('td:eq(1)').each(function (index, element) {
                         if (index !== 0) {
                             reTitle += '<br />';
                         }
@@ -149,7 +151,10 @@ $(document).ready(function() {
                     magnificTitl.type = 'inline';
                     $('#popupBtn').magnificPopup({
                         items: magnificTitl,
-                        closeBtnInside: true,
+                        closeBtnInside: false,
+                        preloader: true,
+                        removalDelay: 160,
+                        mainClass: 'mfp-fade',
                         callbacks: {
                             open: function() {
                                 $('.mfp-content').find('abbr[title]').click(function() {
