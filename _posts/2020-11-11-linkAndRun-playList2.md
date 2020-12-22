@@ -119,12 +119,12 @@ toc_sticky: true
 | | *anh còn giận tôi không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_57.aac" #play-pause-button .fa .fa-play} |
 | | *anh còn liên lạc với bạn cấp 1 không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_58.aac" #play-pause-button .fa .fa-play} |
 | | *anh còn hay đi bar không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_59.aac" #play-pause-button .fa .fa-play} |
-| 16 | Muốn A thì + (주어) + phải B<br /><sub>A하고 싶으면 (주어)가 B를 해야 한다</sub> |
+| 16 | Muốn A thì ~ phải B<br /><sub>A하고 싶으면 ~ B를 해야 한다</sub> |
 | | *Muốn thành công thì em phải nỗ lưc và sáng tạo* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_60.aac" #play-pause-button .fa .fa-play} |
 | | *muốn giởi tiếng Việt thì em phải kiên trì* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_61.aac" #play-pause-button .fa .fa-play} |
 | | *muốn nhanh thì em phải chi nhiều tiền* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_62.aac" #play-pause-button .fa .fa-play} |
 | | *muốn được đối xử tốt thì em phải tôn trọng đối phương* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_63.aac" #play-pause-button .fa .fa-play} |
-| 17 | Để A thì + (주어) + phải B ~<br /><sub>A하려면 (주어)가 B를 해야 한다</sub> |
+| 17 | Để A thì ~ phải B ~<br /><sub>A하려면 ~ B를 해야 한다</sub> |
 | | *để thành công thì em phải nỗ lưc và sáng tạo* |
 | | *để giởi tiếng Việt thì em phải kiên trì* |
 | | *để nhanh thì em phải chi nhiều tiền* |
@@ -147,7 +147,7 @@ toc_sticky: true
 | | *giải quyết chuyện đó xong chưa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_71.aac" #play-pause-button .fa .fa-play} |
 | | *nấu ăn xong chưa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_72.aac" #play-pause-button .fa .fa-play} |
 | | *bàn bạc xong chưa?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_73.aac" #play-pause-button .fa .fa-play} |
-| 21 | có ai nào ~ không?<br /><sub>~한 사람이 있어요?</sub> |
+| 21 | Có ai nào ~ không?<br /><sub>~한 사람이 있어요?</sub> |
 | | *có ai nào đẹp không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_74.aac" #play-pause-button .fa .fa-play} |
 | | *có ai nào xấu tính không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_75.aac" #play-pause-button .fa .fa-play} |
 | | *có ai nào rảnh không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_76.aac" #play-pause-button .fa .fa-play} |
@@ -155,7 +155,7 @@ toc_sticky: true
 | | *có ai nào không đồng ý không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_78.aac" #play-pause-button .fa .fa-play} |
 | | *có ai nào biết nói tiếng Việt không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_79.aac" #play-pause-button .fa .fa-play} |
 | | *có ai nào bị thương không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_80.aac" #play-pause-button .fa .fa-play} |
-| 22 | có người nào ~ không?<br /><sub>~한 사람이 있어요?</sub> |
+| 22 | Có người nào ~ không?<br /><sub>~한 사람이 있어요?</sub> |
 | | *có người nào đẹp không?* |
 | | *có người nào xấu tính không?* |
 | | *có người nào rảnh không?* |
@@ -163,18 +163,18 @@ toc_sticky: true
 | | *có người nào không đồng ý không?* |
 | | *có người nào biết nói tiếng Việt không?* |
 | | *có người nào bị thương không?* |
-| 23 | 주어 + vẫn không ~ à?<br /><sub>(주어)는 여전히 ~하지 않아요?</sub> |
+| 23 | ~ vẫn không ~ à?<br /><sub>~는 여전히 ~하지 않아요?</sub> |
 | | *người phụ trách vẫn không nhận điện thoại à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_81.aac" #play-pause-button .fa .fa-play} |
-| 24 | 주어 + vẫn chưa ~ à?<br /><sub>(주어)는 여전히 ~하지 않아요?</sub> |
+| 24 | ~ vẫn chưa ~ à?<br /><sub>~는 여전히 ~하지 않아요?</sub> |
 | | *chị vẫn chưa quen với cuộc sống ở nông thôn à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_82.aac" #play-pause-button .fa .fa-play} |
 | | *dự án vẫn chưa hoàn thành à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_83.aac" #play-pause-button .fa .fa-play} |
 | | *hàng đặt trên mạng vẫn chưa đến à?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_84.aac" #play-pause-button .fa .fa-play} |
-| 25 | không hiểu tại sao ~ (lại)<br /><sub>왜 ~하는지 모르겠어요</sub> |
+| 25 | Không hiểu tại sao ~ (lại)<br /><sub>왜 ~하는지 모르겠어요</sub> |
 | | *không hiểu tại sao cửa (lại) không mở được* |
 | | *không hiểu tại sao mẹ (lại) không nhận điện* |
 | | *không hiểu tại sao anh Lâm (lại) hành động như vậy* |
 | | *không hiểu tại sao (lại) như vậy* |
-| 26 | chẳng hiểu sao ~ (lại) ~<br /><sub>왜 ~하는지 모르겠어요</sub> |
+| 26 | Chẳng hiểu sao ~ (lại) ~<br /><sub>왜 ~하는지 모르겠어요</sub> |
 | | *chẳng hiểu sao cửa (lại) không mở được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_85.aac" #play-pause-button .fa .fa-play} |
 | | *chẳng hiểu sao mẹ (lại) không nhận điện* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_86.aac" #play-pause-button .fa .fa-play} |
 | | *chắng hiểu sao anh Lâm (lại) hành động như vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_87.aac" #play-pause-button .fa .fa-play} |
