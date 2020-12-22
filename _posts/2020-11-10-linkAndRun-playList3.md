@@ -66,36 +66,36 @@ toc_sticky: true
 </div>
 
 | --- | --- | --- | --- |
-| !0! | biển hiệu sự hướng dẫn 1<br /><sub>안내 표지판 1</sub> |  |  |
+| 0 | biển hiệu sự hướng dẫn 1<br /><sub>안내 표지판 1</sub> |  |  |
 | | *dừng đỗ xe* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_01.aac" #play-pause-button .fa .fa-play} |  |
 | | *bán hàng rong* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_02.aac" #play-pause-button .fa .fa-play} |  |
 | | *kinh doanh lấn chiếm vỉa hè, lòng đường* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_03.aac" #play-pause-button .fa .fa-play} |  |
-| !1! | biển hiệu sự hướng dẫn 2<br /><sub>안내 표지판 2</sub> |  |  |
+| 1 | biển hiệu sự hướng dẫn 2<br /><sub>안내 표지판 2</sub> |  |  |
 | | *cấm đỗ xe khu vực này* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_04.aac" #play-pause-button .fa .fa-play} |  |
 | | *Ô tô được dừng đón trả khách 2 phút* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_05.aac" #play-pause-button .fa .fa-play} |  |
-| !2! | biển hiệu sự hướng dẫn 3<br /><sub>안내 표지판 3</sub> |  |  |
+| 2 | biển hiệu sự hướng dẫn 3<br /><sub>안내 표지판 3</sub> |  |  |
 | | *xin vui lòng không đi trên cỏ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_06.aac" #play-pause-button .fa .fa-play} |  |
 | | *không dẫm lên cỏ* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_07.aac" #play-pause-button .fa .fa-play} |  |
-| !3! | biển hiệu sự hướng dẫn 4<br /><sub>안내 표지판 4</sub> |  |  |
+| 3 | biển hiệu sự hướng dẫn 4<br /><sub>안내 표지판 4</sub> |  |  |
 | | *cửa ra máy bay trong nước* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_08.aac" #play-pause-button .fa .fa-play} |  |
 | | *cửa ra máy bay quốc tế* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_09.aac" #play-pause-button .fa .fa-play} |  |
 | | *nhà vệ sinh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_10.aac" #play-pause-button .fa .fa-play} |  |
 | | *sảnh thủ tục* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_11.aac" #play-pause-button .fa .fa-play} |  |
-| !4! | biển hiệu sự hướng dẫn 5<br /><sub>안내 표지판 5</sub> |  |  |
+| 4 | biển hiệu sự hướng dẫn 5<br /><sub>안내 표지판 5</sub> |  |  |
 | | *khung đo hành lý xách tay* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_12.aac" #play-pause-button .fa .fa-play} |  |
 | | *hạng thương gia* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_13.aac" #play-pause-button .fa .fa-play} |  |
 | | *2 kiện / hành khách* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_14.aac" #play-pause-button .fa .fa-play} |  |
 | | *hạng phổ thông* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_15.aac" #play-pause-button .fa .fa-play} |  |
 | | *giới hạn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_16.aac" #play-pause-button .fa .fa-play} |  |
-| !5! | biển hiệu sự hướng dẫn 6, 6-1<br /><sub>안내 표지판 6, 6-1</sub> |  |  |
+| 5 | biển hiệu sự hướng dẫn 6, 6-1<br /><sub>안내 표지판 6, 6-1</sub> |  |  |
 | | *cài dây an toàn trong khi ngồi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_17.aac" #play-pause-button .fa .fa-play} |  |
 | | *áo phao dưới ghế ngồi của quý khách* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_18.aac" #play-pause-button .fa .fa-play} |  |
-| !6! | biển hiệu sự hướng dẫn 7<br /><sub>안내 표지판 7</sub> |  |  |
+| 6 | biển hiệu sự hướng dẫn 7<br /><sub>안내 표지판 7</sub> |  |  |
 | | *quý khách vui lòng lấy hóa đơn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_19.aac" #play-pause-button .fa .fa-play} |  |
 | | *shop chỉ giải quyết đổi trả khi có hóa đơn bán hàng* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_20.aac" #play-pause-button .fa .fa-play} |  |
-| !7! | biển hiệu sự hướng dẫn 8<br /><sub>안내 표지판 8</sub> |  |  |
+| 7 | biển hiệu sự hướng dẫn 8<br /><sub>안내 표지판 8</sub> |  |  |
 | | *ăn sạch sống khỏe, ăn ngon sống vui* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_21.aac" #play-pause-button .fa .fa-play} |  |
-| !8! | biển hiệu sự hướng dẫn 9, 9-1<br /><sub>안내 표지판 9, 9-1</sub> |  |  |
+| 8 | biển hiệu sự hướng dẫn 9, 9-1<br /><sub>안내 표지판 9, 9-1</sub> |  |  |
 | | *hàng lẻ size* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_22.aac" #play-pause-button .fa .fa-play} |  |
 | | *đồng giá* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_23.aac" #play-pause-button .fa .fa-play} |  |
 | | *200K* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList3_24.aac" #play-pause-button .fa .fa-play} |  |
