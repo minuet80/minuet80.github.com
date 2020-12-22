@@ -15,8 +15,6 @@ String.prototype.lpad = function(padLen, padStr) {
     str = str.length >= padLen ? str.substring(0, padLen) : str;
     return str;
 };
-console.log("05".lpad(5, "00")); // 00000
-console.log("05".lpad(5, "01")); // 01010
 
 /**
  * 우측문자열채우기
@@ -53,19 +51,23 @@ $(document).ready(function() {
     var repeat = 0;
     var num;
     var q = 0;
+    var tocMenu = [];
 
     $('a img').css('textDecoration','none')
     $('#footer').hide();
     $('#vocabulary').hide();
 
+    tocMenu.push('<ul class="toc__menu">');
     $('#conversation').prepend('<colgroup><col width="4px;" /><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
         var title = $.trim($(element).find('td:eq(1)').html());
         if (/!\d*!/.test(textTd)) {
             $(element).empty();
-            $(element).append('<td style="padding: 0px; background-color: #ee5f5b"></td>');
+            $(element).append('<td style="padding: 0px; background-color: #ee5f5b;" id=-' + textTd +'></td>');
             $(element).append('<td colspan="2" style="background-color: #fffef3"><i>' + title +'</i></td>');
+
+            tocMenu.push('<li><a href="#-' + textTd + '">' + title + '</a></li>');
             q++;
         } else {
             var $a = $(element).find('a');
@@ -86,6 +88,9 @@ $(document).ready(function() {
             }
         }
     });
+    tocMenu.push('</ul>');
+    $('.toc').append(tocMenu.join(''));
+
     $('.youtubeTd').hide();
     $('a[id*=play-pause-button]').each(function (index, element) {
         audio[index] = new Audio($(element).data('url'));
