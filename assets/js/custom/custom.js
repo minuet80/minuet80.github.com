@@ -62,7 +62,7 @@ $(document).ready(function() {
     $('#conversation').find('tr').each(function (index, element) {
         var textTd = $.trim($(element).find('td:eq(0)').html());
         var title = $.trim($(element).find('td:eq(1)').html());
-        if (/!\d*!/.test(textTd)) {
+        if (/\d+/.test(textTd)) {
             $(element).empty();
             $(element).append('<td style="padding: 0px; background-color: #ee5f5b;" id=-' + textTd +'></td>');
             $(element).append('<td colspan="2" style="background-color: #fffef3"><i>' + title +'</i></td>');
