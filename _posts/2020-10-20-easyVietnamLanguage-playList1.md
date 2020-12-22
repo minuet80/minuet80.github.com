@@ -4,6 +4,9 @@ categories:
   - easyVietnamLanguage
 tags:
   - VietnameseLanguage
+toc: true
+toc_label: "목차"
+toc_sticky: true
 ---
 
 {% capture a %}

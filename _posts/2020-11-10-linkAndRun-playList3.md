@@ -51,6 +51,9 @@ gallery:
     title: "Hiện trường 9-2"
 tags:
   - VietnameseLanguage
+toc: true
+toc_label: "목차"
+toc_sticky: true
 ---
 
 {% include gallery id="gallery" layout="lbsize" %}
