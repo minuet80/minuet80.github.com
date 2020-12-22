@@ -1,5 +1,5 @@
 ---
-title: "[쉬운베트남어] 베트남어 초급 회화 패턴"
+title: "[유튜브 - 쉬운베트남어] 베트남어 초급 회화 패턴"
 categories:
   - easyVietnamLanguage
 tags:
