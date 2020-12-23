@@ -186,6 +186,15 @@ toc_sticky: true
 | | *tôi đang định triển khai kế hoạch này* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_91.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang định nhờ chị chút việc* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_92.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang định nói sự thật với anh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_93.aac" #play-pause-button .fa .fa-play} |
+| 29 | Tất nhiênh là ~ (rồi)<br /><sub>당연히 ~ 하다</sub> |
+| | *tất nhiên là được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_94.aac" #play-pause-button .fa .fa-play} |
+| | *tất nhiên là không được* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_95.aac" #play-pause-button .fa .fa-play} |
+| | *tất nhiên là tôi tin anh* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_96.aac" #play-pause-button .fa .fa-play} |
+| | *tất nhiên là chúng tôi sẽ giữ lời hứa* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_97.aac" #play-pause-button .fa .fa-play} |
+| 30 | A thì tất nhiên là ~ (rồi)<br /><sub>A는 당연히 ~ 하다</sub> |
+| | *hàng hiệu thì tất nhiên là đắt* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_98.aac" #play-pause-button .fa .fa-play} |
+| | *sai thì tất nhiên là phải xin lỗi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_99.aac" #play-pause-button .fa .fa-play} |
+| | *sai thì tất nhiên là phải sửa* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_100.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
