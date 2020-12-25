@@ -24,7 +24,7 @@ tags:
 | | *đúng lúc đang cần gặp anh<br /><sub>마침 잘 만났어요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_8.aac" #play-pause-button .fa .fa-play} |
 | | *cho tôi đi nhờ được không?<br /><sub>저 좀 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_9.aac" #play-pause-button .fa .fa-play} |
 | | *cho tôi về nhờ được không?<br /><sub>저 좀 집으로 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_10.aac" #play-pause-button .fa .fa-play} |
-| | *tôi không cố ý* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_11.aac" #play-pause-button .fa .fa-play} |
+| | *tôi không cố ý<br /><sub>고의가 아니에요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_11.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
