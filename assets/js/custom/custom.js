@@ -36,6 +36,22 @@ String.prototype.rpad = function(padLen, padStr) {
 
 $(document).ready(function() {
 
+    $('.iframe-link').magnificPopup({
+        type:'iframe',
+        iframe: {
+            markup: '<style>.mfp-iframe-holder .mfp-content {max-width: 100%;height:100%}</style>'+ 
+                    '<div class="mfp-iframe-scaler" >'+
+                    '<div class="mfp-close"></div>'+
+                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                    '</div></div>'
+        }
+    });
+    $('.my-slider').cardslider({
+        swipe: true,
+        dots: true,
+        loop: true
+    });
+
     if ($(window).outerWidth() <= 1200) {
         $("abbr[title]").click(function() {
             $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
