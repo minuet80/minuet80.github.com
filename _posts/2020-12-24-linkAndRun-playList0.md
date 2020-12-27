@@ -25,6 +25,20 @@ tags:
 | | *cho tôi đi nhờ được không?<br /><sub>저 좀 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_9.aac" #play-pause-button .fa .fa-play} |
 | | *cho tôi về nhờ được không?<br /><sub>저 좀 집으로 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_10.aac" #play-pause-button .fa .fa-play} |
 | | *tôi không cố ý<br /><sub>고의가 아니에요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_11.aac" #play-pause-button .fa .fa-play} |
+| | *như mọi khi* |
+| | *gặp ở chỗ như mọi khi nhá!* |
+| | *tôi không làm gì sai cả* |
+| | *tôi không phải là người như thế* |
+| | *anh có chuyện gì không vui à?* |
+| | *biết vậy là tốt* |
+| | *biết thế là tốt* |
+| | *lần này tôi mời* |
+| | *lầm sau anh trả nhé!* |
+| | *có gì đấy không bình thường* |
+| | *a lo. xin lỗi* |
+| | *đây có phải là điện thoại của xxx không ạ?* |
+| | *cư cho là như vậy đi* |
+| | *cư cho là anh nói đúng đi* |
 {: #conversation }
 
 {% capture b %} 

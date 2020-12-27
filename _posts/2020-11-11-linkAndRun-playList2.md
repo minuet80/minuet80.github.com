@@ -104,7 +104,7 @@ toc_sticky: true
 | 13 | Có chỗ nào ~ không?<br /><sub>한 곳이 있어요?</sub> |
 | | *có chỗ nào cảnh đẹp và ít người không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_45.aac" #play-pause-button .fa .fa-play} |
 | | *có chỗ nào bán sách cũ không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_46.aac" #play-pause-button .fa .fa-play} |
-| | *có chỗ nào mở của qua đêm không* |  [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_47.aac" #play-pause-button .fa .fa-play} |
+| | *có chỗ nào mở của qua đêm không?* |  [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_47.aac" #play-pause-button .fa .fa-play} |
 | | *có chỗ nào dành cho người yêu xe mô tô không?* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_48.aac" #play-pause-button .fa .fa-play} |
 | 14 | Cả A và B đều<br /><sub>A와 B모두 ~ 하다</sub> |
 | | *cả bố và mẹ đều đi làm* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_49.aac" #play-pause-button .fa .fa-play} |
