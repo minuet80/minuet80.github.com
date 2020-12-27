@@ -38,6 +38,35 @@ toc_sticky: true
 | | *tối nay, bạn sẽ ăn gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_18.aac" #play-pause-button .fa .fa-play} |  |
 | | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_19.aac" #play-pause-button .fa .fa-play} |  |
 | | *năm nay, bạn sẽ đi du lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_20.aac" #play-pause-button .fa .fa-play} |  |
+| 1 | ~ mấy ~?<br /><sub>~ 몇?</sub> |  |  |
+| | *bạn đi du lịch mấy ngày?* |
+| | *mình đi du lịch 3 ngày* |
+| | *anh sống ở Việt Nam mấy năm?* |
+| | *anh sống ở Việt Nam 5 năm* |
+| | *anh sống ở Việt Nam 5 năm* |
+| | *cháu mấy tuổi?* |
+| | *chúa 8 tuổi ạ* |
+| | *các me mấy tuổi rồi?* |
+| | *chúng em 10 tuổi rồi ạ* |
+| | *gia đình chị có mấy người?* |
+| | *gia đình chị có 4 người* |
+| | *bạn có mấy cái kính?* |
+| | *mình có 2 cái kính* |
+| | *một ngày, bạn học tiếng Việt mấy tiếng?* |
+| 2 | ~ bao nhiêu ~?<br /><sub>~ 얼마?</sub> |  |  |
+| | *anh mua bao nhiêu cái bút?* |
+| | *anh mua 20 cái bút* |
+| | *anh bao nhiêu tuổi?* |
+| | *tôi 30 tuổi* |
+| | *chị bao nhiêu tuổi rồi?* |
+| | *chị 28 tuổi rồi* |
+| | *ở đây có bao nhiêu quả táo?* |
+| | *ở đây có 10 quả táo* |
+| | *công ty bạn có bao nhiêu nhân viên?* |
+| | *công ty mình có 200 nhân viên* |
+| | *bạn bao nhiêu tuổi* |
+| | *bạn có mấy cái điện thoại?* |
+| | *bạn có bao nhiêu bạn Việt Nam?* |
 {: #conversation }
 
 {% capture b %} 
@@ -50,11 +79,19 @@ toc_sticky: true
 > **về nước**: 귀국하다  
 > **chiều nay**: 오늘 오후  
 > **khách hàng**: 손님  
+> **bút**: 펜  
+> **kính**: 안경  
+> **thầy**: 남자선생님  
+> **cô**: 여자선생님
 {: #vocabulary}
 
 *[về nước]: 귀국하다
 *[chiều nay]: 오늘 오후
 *[khách hàng]: 손님
+*[bút]: 펜
+*[kính]: 안경
+*[thầy]: 남자선생님
+*[cô]: 여자선생님
 
 {% capture c %}
   ![](/assets/images/empty.png)
