@@ -14153,7 +14153,7 @@ $(document).ready(function() {
         source: data,
         select: function (event, ui) {
             event.preventDefault();
-            $('#resultStdCode').val(ui.item.abbr + ' ,' + ui.item.value);
+            $('#resultStdCode').val(ui.item.abbr + ', ' + ui.item.value);
             $('#searchStdCode').val(ui.item.label);
         },
         focus: function (event, ui) {
