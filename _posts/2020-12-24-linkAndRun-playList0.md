@@ -25,20 +25,18 @@ tags:
 | | *cho tôi đi nhờ được không?<br /><sub>저 좀 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_9.aac" #play-pause-button .fa .fa-play} |
 | | *cho tôi về nhờ được không?<br /><sub>저 좀 집으로 태워 줄 수 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_10.aac" #play-pause-button .fa .fa-play} |
 | | *tôi không cố ý<br /><sub>고의가 아니에요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_11.aac" #play-pause-button .fa .fa-play} |
-| | *như mọi khi* |
-| | *gặp ở chỗ như mọi khi nhá!* |
-| | *tôi không làm gì sai cả* |
-| | *tôi không phải là người như thế* |
-| | *anh có chuyện gì không vui à?* |
-| | *biết vậy là tốt* |
-| | *biết thế là tốt* |
-| | *lần này tôi mời* |
-| | *lầm sau anh trả nhé!* |
-| | *có gì đấy không bình thường* |
-| | *a lo. xin lỗi* |
-| | *đây có phải là điện thoại của xxx không ạ?* |
-| | *cư cho là như vậy đi* |
-| | *cư cho là anh nói đúng đi* |
+| | *như mọi khi<br /><sub>평상시 같이, 늘 하던 걸로</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_12.aac" #play-pause-button .fa .fa-play} |
+| | *gặp ở chỗ như mọi khi nhá!<br /><sub>늘 만나던 곳에서 보자!</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_13.aac" #play-pause-button .fa .fa-play} |
+| | *tôi không làm gì sai cả<br /><sub>나는 아무것도 잘못한게 없어요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_14.aac" #play-pause-button .fa .fa-play} |
+| | *tôi không phải là người như thế<br /><sub>저는 그런 사람이 아니에요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_15.aac" #play-pause-button .fa .fa-play} |
+| | *anh có chuyện gì không vui à?<br /><sub>뭐 안좋은 일이라도 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_16.aac" #play-pause-button .fa .fa-play} |
+| | *biết vậy là tốt<br /><sub>알면됐어</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_17.aac" #play-pause-button .fa .fa-play} |
+| | *lần này tôi mời<br /><sub>이번은 제가 살게요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_18.aac" #play-pause-button .fa .fa-play} |
+| | *lầm sau anh trả nhé!<br /><sub>다음 번에는 당신이 내세요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_19.aac" #play-pause-button .fa .fa-play} |
+| | *có gì đấy không bình thường<br /><sub>문거 이상한데요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_20.aac" #play-pause-button .fa .fa-play} |
+| | *đây có phải là điện thoại của xxx không ạ?<br /><sub>xxx씨 핸드폰 맞나요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_21.aac" #play-pause-button .fa .fa-play} |
+| | *cứ cho là như vậy đi<br /><sub>그런다고 치다</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_22.aac" #play-pause-button .fa .fa-play} |
+| | *cứ cho là anh nói đúng đi<br /><sub>당신말이 맞다고 치자</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_23.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
