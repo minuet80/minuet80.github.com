@@ -14154,6 +14154,7 @@ $(document).ready(function() {
         select: function (event, ui) {
             event.preventDefault();
             $('#resultStdCode').val(ui.item.abbr + ' ,' + ui.item.value);
+            $('#searchStdCode').val(ui.item.label);
         },
         focus: function (event, ui) {
             return false;
