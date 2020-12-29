@@ -17,3 +17,8 @@ toc_sticky: true
 - bao nhiêu
   - 10이상의 숫자에 대해 물을 때 사용하는 의문사이다.
 
+### ✔ 문장끝 cho
+---
+- 조금 더 간절한 부탁을 나타냄
+  - anh thông cảm cho
+  

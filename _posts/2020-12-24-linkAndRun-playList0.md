@@ -32,7 +32,7 @@ tags:
 | | *anh có chuyện gì không vui à?<br /><sub>뭐 안좋은 일이라도 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_16.aac" #play-pause-button .fa .fa-play} |
 | | *biết vậy là tốt<br /><sub>알면됐어</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_17.aac" #play-pause-button .fa .fa-play} |
 | | *lần này tôi mời<br /><sub>이번은 제가 살게요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_18.aac" #play-pause-button .fa .fa-play} |
-| | *lầm sau anh trả nhé!<br /><sub>다음 번에는 당신이 내세요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_19.aac" #play-pause-button .fa .fa-play} |
+| | *lần sau anh trả nhé!<br /><sub>다음 번에는 당신이 내세요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_19.aac" #play-pause-button .fa .fa-play} |
 | | *có gì đấy không bình thường<br /><sub>문거 이상한데요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_20.aac" #play-pause-button .fa .fa-play} |
 | | *đây có phải là điện thoại của xxx không ạ?<br /><sub>xxx씨 핸드폰 맞나요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_21.aac" #play-pause-button .fa .fa-play} |
 | | *cứ cho là như vậy đi<br /><sub>그런다고 치다</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_22.aac" #play-pause-button .fa .fa-play} |

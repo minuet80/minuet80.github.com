@@ -195,6 +195,18 @@ toc_sticky: true
 | | *hàng hiệu thì tất nhiên là đắt* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_98.aac" #play-pause-button .fa .fa-play} |
 | | *sai thì tất nhiên là phải xin lỗi* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_99.aac" #play-pause-button .fa .fa-play} |
 | | *sai thì tất nhiên là phải sửa* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_100.aac" #play-pause-button .fa .fa-play} |
+| 31 | hi vọng (là / rằng) ~<br /><sub>~를 희망합니다.</sub> |
+| | *hi vọng là vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_101.aac" #play-pause-button .fa .fa-play} |
+| | *hi vọng là anh thông cảm cho* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_102.aac" #play-pause-button .fa .fa-play} |
+| | *hi vọng là lần nay thành công* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_103.aac" #play-pause-button .fa .fa-play} |
+| | *hi vọng là không có chuyện gì xảy ra* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_104.aac" #play-pause-button .fa .fa-play} |
+| | *hi vọng là mọi chuyện sẽ ổn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_105.aac" #play-pause-button .fa .fa-play} |
+| 32 | mong (là / rằng) ~<br /><sub>~를 바랍니다.</sub> |
+| | *mong là vậy* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_106.aac" #play-pause-button .fa .fa-play} |
+| | *mong là anh thông cảm cho* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_107.aac" #play-pause-button .fa .fa-play} |
+| | *mong là lần này thành công* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_108.aac" #play-pause-button .fa .fa-play} |
+| | *mong là không có chuyện gì xảy ra* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_109.aac" #play-pause-button .fa .fa-play} |
+| | *mong là mọi chuyện sẽ ổn* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList2_110.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -235,6 +247,7 @@ toc_sticky: true
 > **nông thôn**: 시골  
 > **dự án**: 프로젝트  
 > **hàng đặt**: 주문  
+> **xảy ra**: (부정적) 생기다, 발생하다  
 {: #vocabulary}
 
 *[im lặng]: 조용하다, 침묵하다
@@ -268,6 +281,7 @@ toc_sticky: true
 *[nông thôn]: 시골
 *[dự án]: 프로젝트
 *[hàng đặt]: 주문
+*[xảy ra]: (부정적) 생기다, 발생하다
 
 {% capture c %}
   ![](/assets/images/empty.png)
