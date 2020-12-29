@@ -37,6 +37,20 @@ tags:
 | | *đây có phải là điện thoại của xxx không ạ?<br /><sub>xxx씨 핸드폰 맞나요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_21.aac" #play-pause-button .fa .fa-play} |
 | | *cứ cho là như vậy đi<br /><sub>그런다고 치다</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_22.aac" #play-pause-button .fa .fa-play} |
 | | *cứ cho là anh nói đúng đi<br /><sub>당신말이 맞다고 치자</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_23.aac" #play-pause-button .fa .fa-play} |
+| | *chị ơi, chỗ này đi đường nào ạ?<br /><sub>저기요. 여기, 어느쪽으로 가요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_24.aac" #play-pause-button .fa .fa-play} |
+| | *đường này phải không ạ?<br /><sub>이쪽 맞아요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_25.aac" #play-pause-button .fa .fa-play} |
+| | *dạo này anh làm gì để giết thời gian?<br /><sub>요즘 뭐하면서 시간을 보내요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_26.aac" #play-pause-button .fa .fa-play} |
+| | *điều đó là không thể<br /><sub>그건 불가능해요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_27.aac" #play-pause-button .fa .fa-play} |
+| | *không gì là không thể<br /><sub>불가능한 건 없어요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_28.aac" #play-pause-button .fa .fa-play} |
+| | *việc đấy để sau đi<br /><sub>그 일은 나중에 하자</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_29.aac" #play-pause-button .fa .fa-play} |
+| | *đành chịu vậy<br /><sub>어쩔 수 없죠</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_30.aac" #play-pause-button .fa .fa-play} |
+| | *không còn cách nào khác<br /><sub>다른 방법이 없어요</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_31.aac" #play-pause-button .fa .fa-play} |
+| | *tôi đòng ý<br /><sub>동의합니다.</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_32.aac" #play-pause-button .fa .fa-play} |
+| | *tôi cũng đòng ý với anh<br /><sub>저도 당신에게 동의합니다</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_33.aac" #play-pause-button .fa .fa-play} |
+| | *tôi cũng đòng ý với ý kiến của anh<br /><sub>저도 당신의 의견에 동의합니다</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_34.aac" #play-pause-button .fa .fa-play} |
+| | *không phải việc của anh<br /><sub>상관하지 마세요 (당신의 일이 아니에요)</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_35.aac" #play-pause-button .fa .fa-play} |
+| | *mong sớm nhận được liên lạc từ anh<br /><sub>빠른 시일내에 당신에게 연락받을 수 있기를 바랍니다.</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_36.aac" #play-pause-button .fa .fa-play} |
+| | *có cách gì hay không?<br /><sub>뭐 좋은 방법이 있어요?</sub>* | [](#){: data-url="/assets/media/youtube/linkandrun/2020-11-11-linkAndRun-playList0_37.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -52,6 +66,8 @@ tags:
 > **đi nhờ**:  얻어타다  
 > **về nhờ**:  집으로 돌아가는 것을 부탁하다  
 > **cố ý**:  고의적으로  
+> **giết**: (시간) 을 떼우다, 죽이다  
+> **để sau**: (일) 을 미루다  
 {: #vocabulary}
 
 *[lấy]: 사용하다
@@ -60,6 +76,8 @@ tags:
 *[đi nhờ]:  얻어타다
 *[về nhờ]:  집으로 돌아가는 것을 부탁하다
 *[cố ý]:  고의적으로
+*[giết]: (시간) 을 떼우다, 죽이다
+*[để sau]: (일) 을 미루다
 
 {% capture c %}
   ![](/assets/images/empty.png)
