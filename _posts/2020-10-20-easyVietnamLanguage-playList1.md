@@ -17,55 +17,55 @@ toc_sticky: true
 </div>
 
 | --- | --- | --- | --- |
-| 0 | ~ sẽ ~<br /><sub>~는 ~할 것이다</sub> |  |  |
-| | *chúng tôi sẽ đi Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_01.aac" #play-pause-button .fa .fa-play} |  |
-| | *ngày mai, chúng tôi sẽ đi Mỹ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_02.aac" #play-pause-button .fa .fa-play} |  |
-| | *tuần sau, chúng tôi sẽ đi du lịch ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_03.aac" #play-pause-button .fa .fa-play} |  |
-| | *tháng sau, anh ấy sẽ kết hôn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_04.aac" #play-pause-button .fa .fa-play} |  |
-| | *cuối tuần, chị ấy sẽ về nước* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_05.aac" #play-pause-button .fa .fa-play} |  |
-| | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_06.aac" #play-pause-button .fa .fa-play} |  |
-| | *ngày mai, mình sẽ đi gặp bạn trai* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_07.aac" #play-pause-button .fa .fa-play} |  |
-| | *chiều nay, anh sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_08.aac" #play-pause-button .fa .fa-play} |  |
-| | *chiều nay, anh sẽ đi gặp khách hàng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_09.aac" #play-pause-button .fa .fa-play} |  |
-| | *cuối tuần này, chị sẽ làm gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_10.aac" #play-pause-button .fa .fa-play} |  |
-| | *chị sẽ đi Tràng An cùng bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_11.aac" #play-pause-button .fa .fa-play} |  |
-| | *hè này, anh sẽ đi dụ lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_12.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh sẽ đi du lịch ở Thái Lan* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_13.aac" #play-pause-button .fa .fa-play} |  |
-| | *tối nay, chúng ta sẽ ăn ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_14.aac" #play-pause-button .fa .fa-play} |  |
-| | *chúng ta sẽ ăn ở nhà hàng ngon* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_15.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh sẽ mua nhà ở đâu ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_16.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh sẽ mua nhà ở Đà Lạt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_17.aac" #play-pause-button .fa .fa-play} |  |
-| | *tối nay, bạn sẽ ăn gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_18.aac" #play-pause-button .fa .fa-play} |  |
-| | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_19.aac" #play-pause-button .fa .fa-play} |  |
-| | *năm nay, bạn sẽ đi du lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_20.aac" #play-pause-button .fa .fa-play} |  |
-| 1 | ~ mấy ~?<br /><sub>~ 몇?</sub> |  |  |
-| | *bạn đi du lịch mấy ngày?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_21.aac" #play-pause-button .fa .fa-play} |  |
-| | *mình đi du lịch 3 ngày* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_22.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh sống ở Việt Nam mấy năm?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_23.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh sống ở Việt Nam 5 năm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_24.aac" #play-pause-button .fa .fa-play} |  |
-| | *cháu mấy tuổi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_25.aac" #play-pause-button .fa .fa-play} |  |
-| | *chúa 8 tuổi ạ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_26.aac" #play-pause-button .fa .fa-play} |  |
-| | *các em mấy tuổi rồi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_27.aac" #play-pause-button .fa .fa-play} |  |
-| | *chúng em 10 tuổi rồi ạ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_28.aac" #play-pause-button .fa .fa-play} |  |
-| | *gia đình chị có mấy người?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_29.aac" #play-pause-button .fa .fa-play} |  |
-| | *gia đình chị có 4 người* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_30.aac" #play-pause-button .fa .fa-play} |  |
-| | *bạn có mấy cái kính?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_31.aac" #play-pause-button .fa .fa-play} |  |
-| | *mình có 2 cái kính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_32.aac" #play-pause-button .fa .fa-play} |  |
-| | *một ngày, bạn học tiếng Việt mấy tiếng?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_33.aac" #play-pause-button .fa .fa-play} |  |
-| 2 | ~ bao nhiêu ~?<br /><sub>~ 얼마?</sub> |  |  |
-| | *anh mua bao nhiêu cái bút?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_34.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh mua 20 cái bút* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_35.aac" #play-pause-button .fa .fa-play} |  |
-| | *anh bao nhiêu tuổi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_36.aac" #play-pause-button .fa .fa-play} |  |
-| | *tôi 30 tuổi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_37.aac" #play-pause-button .fa .fa-play} |  |
-| | *chị bao nhiêu tuổi rồi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_38.aac" #play-pause-button .fa .fa-play} |  |
-| | *chị 28 tuổi rồi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_39.aac" #play-pause-button .fa .fa-play} |  |
-| | *ở đây có bao nhiêu quả táo?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_40.aac" #play-pause-button .fa .fa-play} |  |
-| | *ở đây có 10 quả táo* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_41.aac" #play-pause-button .fa .fa-play} |  |
-| | *công ty bạn có bao nhiêu nhân viên?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_42.aac" #play-pause-button .fa .fa-play} |  |
-| | *công ty mình có 200 nhân viên* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_43.aac" #play-pause-button .fa .fa-play} |  |
-| | *bạn bao nhiêu tuổi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_44.aac" #play-pause-button .fa .fa-play} |  |
-| | *bạn có mấy cái điện thoại?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_45.aac" #play-pause-button .fa .fa-play} |  |
-| | *bạn có bao nhiêu bạn Việt Nam?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_46.aac" #play-pause-button .fa .fa-play} |  |
+| 0 | ~ sẽ ~<br /><sub>~는 ~할 것이다</sub> |
+| | *chúng tôi sẽ đi Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_01.aac" #play-pause-button .fa .fa-play} |
+| | *ngày mai, chúng tôi sẽ đi Mỹ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_02.aac" #play-pause-button .fa .fa-play} |
+| | *tuần sau, chúng tôi sẽ đi du lịch ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_03.aac" #play-pause-button .fa .fa-play} |
+| | *tháng sau, anh ấy sẽ kết hôn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_04.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần, chị ấy sẽ về nước* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_05.aac" #play-pause-button .fa .fa-play} |
+| | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_06.aac" #play-pause-button .fa .fa-play} |
+| | *ngày mai, mình sẽ đi gặp bạn trai* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_07.aac" #play-pause-button .fa .fa-play} |
+| | *chiều nay, anh sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_08.aac" #play-pause-button .fa .fa-play} |
+| | *chiều nay, anh sẽ đi gặp khách hàng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_09.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần này, chị sẽ làm gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_10.aac" #play-pause-button .fa .fa-play} |
+| | *chị sẽ đi Tràng An cùng bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_11.aac" #play-pause-button .fa .fa-play} |
+| | *hè này, anh sẽ đi dụ lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_12.aac" #play-pause-button .fa .fa-play} |
+| | *anh sẽ đi du lịch ở Thái Lan* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_13.aac" #play-pause-button .fa .fa-play} |
+| | *tối nay, chúng ta sẽ ăn ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_14.aac" #play-pause-button .fa .fa-play} |
+| | *chúng ta sẽ ăn ở nhà hàng ngon* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_15.aac" #play-pause-button .fa .fa-play} |
+| | *anh sẽ mua nhà ở đâu ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_16.aac" #play-pause-button .fa .fa-play} |
+| | *anh sẽ mua nhà ở Đà Lạt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_17.aac" #play-pause-button .fa .fa-play} |
+| | *tối nay, bạn sẽ ăn gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_18.aac" #play-pause-button .fa .fa-play} |
+| | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_19.aac" #play-pause-button .fa .fa-play} |
+| | *năm nay, bạn sẽ đi du lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_20.aac" #play-pause-button .fa .fa-play} |
+| 1 | ~ mấy ~?<br /><sub>~ 몇?</sub> |
+| | *bạn đi du lịch mấy ngày?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_21.aac" #play-pause-button .fa .fa-play} |
+| | *mình đi du lịch 3 ngày* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_22.aac" #play-pause-button .fa .fa-play} |
+| | *anh sống ở Việt Nam mấy năm?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_23.aac" #play-pause-button .fa .fa-play} |
+| | *anh sống ở Việt Nam 5 năm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_24.aac" #play-pause-button .fa .fa-play} |
+| | *cháu mấy tuổi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_25.aac" #play-pause-button .fa .fa-play} |
+| | *cháu 8 tuổi ạ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_26.aac" #play-pause-button .fa .fa-play} |
+| | *các em mấy tuổi rồi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_27.aac" #play-pause-button .fa .fa-play} |
+| | *chúng em 10 tuổi rồi ạ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_28.aac" #play-pause-button .fa .fa-play} |
+| | *gia đình chị có mấy người?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_29.aac" #play-pause-button .fa .fa-play} |
+| | *gia đình chị có 4 người* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_30.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có mấy cái kính?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_31.aac" #play-pause-button .fa .fa-play} |
+| | *mình có 2 cái kính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_32.aac" #play-pause-button .fa .fa-play} |
+| | *một ngày, bạn học tiếng Việt mấy tiếng?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_33.aac" #play-pause-button .fa .fa-play} |
+| 2 | ~ bao nhiêu ~?<br /><sub>~ 얼마?</sub> |
+| | *anh mua bao nhiêu cái bút?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_34.aac" #play-pause-button .fa .fa-play} |
+| | *anh mua 20 cái bút* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_35.aac" #play-pause-button .fa .fa-play} |
+| | *anh bao nhiêu tuổi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_36.aac" #play-pause-button .fa .fa-play} |
+| | *tôi 30 tuổi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_37.aac" #play-pause-button .fa .fa-play} |
+| | *chị bao nhiêu tuổi rồi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_38.aac" #play-pause-button .fa .fa-play} |
+| | *chị 28 tuổi rồi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_39.aac" #play-pause-button .fa .fa-play} |
+| | *ở đây có bao nhiêu quả táo?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_40.aac" #play-pause-button .fa .fa-play} |
+| | *ở đây có 10 quả táo* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_41.aac" #play-pause-button .fa .fa-play} |
+| | *công ty bạn có bao nhiêu nhân viên?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_42.aac" #play-pause-button .fa .fa-play} |
+| | *công ty mình có 200 nhân viên* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_43.aac" #play-pause-button .fa .fa-play} |
+| | *bạn bao nhiêu tuổi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_44.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có mấy cái điện thoại?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_45.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có bao nhiêu bạn Việt Nam?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_46.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
