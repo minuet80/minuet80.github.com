@@ -1,5 +1,5 @@
 ---
-title: "숫자 공부"
+title: "한국어 텍스트 음성 변환 (TTS)"
 categories:
   - IT
 tags:
@@ -41,21 +41,64 @@ tags:
   </fieldset>
 </form>
 
-{% capture c %}
+{% capture a %}
 [듣기](#){: #speak .btn .btn--inverse}
-<select id="digitNum">
-  <option value="3">3자릿수</option>
-  <option value="4">4자릿수</option>
-  <option value="5">5자릿수</option>
-  <option value="6">6자릿수</option>
-  <option value="7">7자릿수</option>
-  <option value="8">8자릿수</option>
-  <option value="9">9자릿수</option>
-  <option value="10">10자릿수</option>
-</select>
-[초기화](#){: #reset .btn .btn--inverse}
-[금액계속듣기](#){: #speak .btn .btn--inverse}
-{% endcapture %}
-<center>{{ c | markdownify | remove: "<p>" | remove: "</p>"}}</center>
+{% endcapture a %}
 
-<div id="business2" style="display: none;"></div>
+<center>
+{{ a | markdownify | remove: "<p>" | remove: "</p>"}}
+</center>
+
+<p></p>
+
+{% capture b %}
+**금액 랜덤으로 듣기**
+{% endcapture %}
+<div class="notice--danger" style="text-align: center;">
+{{ b | markdownify | remove: "<p>" | remove: "</p>"}}
+</div>
+
+| --- | --- | --- | --- |
+| 금액 자릿수 <select id="digitNum">  <option value="1000">3자릿수</option>  <option value="10000">4자릿수</option>  <option value="100000">5자릿수</option>  <option value="1000000">6자릿수</option>  <option value="10000000">7자릿수</option>  <option value="100000000">8자릿수</option>  <option value="1000000000">9자릿수</option>  <option value="10000000000">10자릿수</option></select> | 딜레이 <select id="delay">  <option value="1000">1초</option>  <option value="3000">3초</option>  <option value="5000">6초</option>  <option value="7000">7초</option>  <option value="9000">9초</option>  <option value="11000">11초</option>  <option value="13000">13초</option></select> | [초기화](#){: #amtReset .btn .btn--inverse} [듣기](#){: #numSpeak data-type="0" .btn .btn--inverse} [랜덤듣기](#){: #randomNumSpeak data-type="1" .btn .btn--inverse} |
+
+{% capture c %}
+**생활 한국어**
+{% endcapture %}
+<div class="notice--danger" style="text-align: center;">
+{{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+</div>
+
+| --- | --- | --- | --- |
+| | *커피를 내오거라.* | [](#){: #play-pause-button .fa .fa-play} |
+| | *뜯지 말아주세요.* | [](#){: #play-pause-button .fa .fa-play} |
+| | *영수증을 드릴까요?* | [](#){: #play-pause-button .fa .fa-play} |
+{: #conversation }
+
+{% capture c %}
+  ![](/assets/images/empty.png)
+  [∀](#){: #allListen .btn .btn--inverse}
+  <select id="playbackspeed">
+    <option value="1.0">속도0</option>
+    <option value="0.75">속도-1</option>
+    <option value="0.5">속도-2</option>
+  </select>
+  [초기화](#){: #reset .btn .btn--inverse}
+  <select id="ringsToPlay">
+    <option value="1">횟수01회</option>
+    <option value="2">횟수02회</option>
+    <option value="3">횟수03회</option>
+    <option value="4">횟수04회</option>
+    <option value="5">횟수05회</option>
+    <option value="7">횟수07회</option>
+    <option value="10">횟수10회</option>
+  </select>
+  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
+{% endcapture %}
+
+<div id="fixedBtn">
+  <div class="inner">
+  {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>
+</div>
+
+<div id="business0" style="display: none;"></div>

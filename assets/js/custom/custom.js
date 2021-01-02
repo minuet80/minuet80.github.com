@@ -56,7 +56,7 @@ $(document).ready(function() {
     $('.iframe-link').magnificPopup({
         type:'iframe',
         iframe: {
-            markup: '<style>.mfp-iframe-holder .mfp-content {max-width: 100%;height:100%}</style>'+ 
+            markup: '<style>.mfp-iframe-holder .mfp-content {max-width: 100%;height:100%}</style>'+
                     '<div class="mfp-iframe-scaler" >'+
                     '<div class="mfp-close"></div>'+
                     '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
@@ -14204,11 +14204,13 @@ $(document).ready(function() {
     }
     // 행정표준용어 정리
 
-    // 텍스트 음성 변환 
-    var countSpeechSynthesis = 0;
-    if ($('#business2').length > 0) {
+    if ($('#business0').length > 0) {
+
+        // 텍스트 음성 변환
         var synth = window.speechSynthesis;
         var voices = [];
+        var digitNum;
+        var countRandom = 0;
         $('#speed').change(function () {
             $('.speed-value').html($(this).val());
         });
@@ -14230,6 +14232,16 @@ $(document).ready(function() {
                 });
             };
         }
+        $('#amtReset').click(function (e) {
+            e.preventDefault();
+
+            $('#inputText').val('');
+            if (synth !== 'undefined') {
+                synth.cancel();
+            }
+            countRandom = 0;
+            $('#inputText').select();
+        });
         $('#speak').click(function (e) {
             e.preventDefault();
             if (synth.speaking) {
@@ -14244,7 +14256,6 @@ $(document).ready(function() {
                 utterThis.onerror = function (event) {
                 }
                 var selectedOption = $('#lang').find('option:selected').data('name');
-                console.log(selectedOption);
                 for(i = 0; i < voices.length; i++) {
                     if(voices[i].name === selectedOption) {
                         utterThis.voice = voices[i];
@@ -14252,31 +14263,88 @@ $(document).ready(function() {
                     }
                 }
                 utterThis.pitch = $('#pitch').val();
-                console.log($('#pitch').val());
                 utterThis.rate = $('#speed').val();
-                console.log($('#speed').val());
                 synth.speak(utterThis);
             }
         });
-    }
-    // 텍스트 음성 변환
+        $('#numSpeak').click(function (e) {
+            e.preventDefault();
+            if (synth.speaking) {
+                return;
+            }
+            digitNum = Number($('#digitNum').val());
+            $('#inputText').val(Math.floor( ( Math.random() * (digitNum - 1) + 1 ) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '원');
+            if ($.trim($('#inputText').val()) === '') {
+                return;
+            } else {
+                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val()));
+                utterThis.onend = function (event) {
+                }
+                utterThis.onerror = function (event) {
+                }
+                var selectedOption = $('#lang').find('option:selected').data('name');
+                for(i = 0; i < voices.length; i++) {
+                    if(voices[i].name === selectedOption) {
+                        utterThis.voice = voices[i];
+                        break;
+                    }
+                }
+                utterThis.pitch = $('#pitch').val();
+                utterThis.rate = $('#speed').val();
+                synth.speak(utterThis);
+            }
+        });
+        $('#randomNumSpeak').click(function (e) {
+            e.preventDefault();
+            if (synth.speaking) {
+                return;
+            }
+            countRandom++;
+            digitNum = Number($('#digitNum').val());
+            $('#inputText').val(Math.floor( ( Math.random() * (digitNum - 1) + 1 ) ).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '원');
+            if ($.trim($('#inputText').val()) === '') {
+                return;
+            } else {
+                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val()));
+                utterThis.onend = function (event) {
+                    if (countRandom > 0) {
+                        var sleep = Number($('#delay').val());
+                        setTimeout(function () {
+                            $('#randomNumSpeak').trigger('click');
+                        }, sleep);
+                    }
+                }
+                utterThis.onerror = function (event) {
+                }
+                var selectedOption = $('#lang').find('option:selected').data('name');
+                for(i = 0; i < voices.length; i++) {
+                    if(voices[i].name === selectedOption) {
+                        utterThis.voice = voices[i];
+                        break;
+                    }
+                }
+                utterThis.pitch = $('#pitch').val();
+                utterThis.rate = $('#speed').val();
+                synth.speak(utterThis);
+            }
+        });
+        // 텍스트 음성 변환
 
-    if ($('#business0').length > 0) {
         $('.my-slider').cardslider({
             swipe: true,
             dots: true,
             loop: true
         });
-    
+
         if ($(window).outerWidth() <= 1200) {
             $("abbr[title]").click(function() {
                 $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
             });
         }
-    
+
         $('.lbsize').find('img').css('width', '100px');
         $('.lbsize').find('img').css('height', '100px');
-    
+
         var youtubeEmbedUrl = 'https://www.youtube-nocookie.com/embed/';
         var audio = [];
         var ringsToPlay = 0;
@@ -14284,11 +14352,11 @@ $(document).ready(function() {
         var num;
         var q = 0;
         var tocMenu = [];
-    
+
         $('a img').css('textDecoration','none')
         $('#footer').hide();
         $('#vocabulary').hide();
-    
+
         tocMenu.push('<ul class="toc__menu">');
         $('#conversation').prepend('<colgroup><col width="4px;" /><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
         $('#conversation').find('tr').each(function (index, element) {
@@ -14298,7 +14366,7 @@ $(document).ready(function() {
                 $(element).empty();
                 $(element).append('<td style="padding: 0px; background-color: #ee5f5b;" id=-' + textTd +'></td>');
                 $(element).append('<td colspan="2" style="background-color: #fffef3"><i>' + title +'</i></td>');
-    
+
                 tocMenu.push('<li><a href="#-' + textTd + '">' + title + '</a></li>');
                 q++;
             } else {
@@ -14307,7 +14375,7 @@ $(document).ready(function() {
                 $(element).find('td:eq(2)').addClass('playTd');
                 $(element).find('td:eq(3)').addClass('youtubeTd');
                 $(element).find('td:eq(3)').css('padding', '5px');
-    
+
                 if ($a.length > 0) {
                     if (index !== 0) {
                         q++;
@@ -14322,7 +14390,7 @@ $(document).ready(function() {
         });
         tocMenu.push('</ul>');
         $('.toc').append(tocMenu.join(''));
-    
+
         $('.youtubeTd').hide();
         $('a[id*=play-pause-button]').each(function (index, element) {
             audio[index] = new Audio($(element).data('url'));
@@ -14346,7 +14414,7 @@ $(document).ready(function() {
                     $('#allListen').html('∀');
                     $('#allListen').removeClass('btn--danger');
                     $('#allListen').addClass('btn--inverse');
-    
+
                     $('#infListen').html('∞');
                     $('#infListen').removeClass('btn--warning');
                     $('#infListen').addClass('btn--inverse');
@@ -14423,7 +14491,7 @@ $(document).ready(function() {
                     if (ringsToPlay === 0) {
                         repeat = 0;
                         if (type === 'allListen') {
-                            
+
                             if (no < audioSize) {
                                 map.no = no + 1;
                                 map.type = 'allListen';
@@ -14463,7 +14531,7 @@ $(document).ready(function() {
                         } else {
                             $('a[id*=play-pause-button]').eq(no).trigger('click');
                         }
-                        
+
                     }
                 };
             });
@@ -14476,7 +14544,7 @@ $(document).ready(function() {
             $('#allListen').html('∀');
             $('#allListen').removeClass('btn--danger');
             $('#allListen').addClass('btn--inverse');
-    
+
             if (audio !== null) {
                 for (var i = 0; i < audio.length; i++) {
                     $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
@@ -14490,13 +14558,13 @@ $(document).ready(function() {
                     $(this).html('‖');
                     $(this).removeClass('btn--inverse');
                     $(this).addClass('btn--warning');
-    
+
                     var audioSize = audio.length - 1;
                     var no = Math.floor(Math.random() * (audioSize - 0 + 1)) + 0;
                     var addMinutes = Number($(this).data('addminutes'));
                     var date = new Date();
                     var endTimestamp = date.setMinutes(date.getMinutes() + addMinutes);
-    
+
                     var map = {};
                     map.no = no;
                     map.type = 'infListen';
@@ -14509,7 +14577,7 @@ $(document).ready(function() {
                 }
             }
         });
-    
+
         $('#allListen').click(function (e) {
             e.preventDefault();
             if ($('#playModeBtn').hasClass('youtube')) {
@@ -14518,7 +14586,7 @@ $(document).ready(function() {
             $('#infListen').html('∞');
             $('#infListen').removeClass('btn--warning');
             $('#infListen').addClass('btn--inverse');
-    
+
             if (audio !== null) {
                 for (var i = 0; i < audio.length; i++) {
                     $('a[id*=play-pause-button]').eq(i).removeClass('fa-pause');
@@ -14532,7 +14600,7 @@ $(document).ready(function() {
                     $(this).html('‖');
                     $(this).removeClass('btn--inverse');
                     $(this).addClass('btn--danger');
-        
+
                     var map = {};
                     map.no = 0;
                     map.type = 'allListen';
@@ -14544,7 +14612,7 @@ $(document).ready(function() {
                 }
             }
         });
-    
+
         $('#vocabularyBtn').click(function (e) {
             e.preventDefault();
             if ($(this).hasClass('open')) {
@@ -14559,7 +14627,7 @@ $(document).ready(function() {
                 $('#vocabulary').hide();
             }
         });
-    
+
         $('a[id*=youtube-pause-button]').each(function (index, element) {
             $(element).click(function (e) {
                 e.preventDefault();
@@ -14569,7 +14637,7 @@ $(document).ready(function() {
                 $('.responsive-video-container').find('iframe').prop('src', youtubeEmbedUrl + videoSeq + '?autoplay=1');
             });
         });
-    
+
         $('#playModeBtn').click(function (e) {
             e.preventDefault();
             if ($(this).hasClass('play')) {
@@ -14587,7 +14655,7 @@ $(document).ready(function() {
             }
             $('#reset').trigger('click');
         });
-    
+
         $('#reset').click(function (e) {
             e.preventDefault();
             $('#playbackspeed').val('1.0');
@@ -14598,7 +14666,7 @@ $(document).ready(function() {
                     $('a[id*=play-pause-button]').eq(i).addClass('fa-play');
                     var trId = $('a[id*=play-pause-button]').eq(i).closest('tr').prop('id');
                     $('tr[id*=' + trId +']').css('background-color', '');
-    
+
                     audio[i].currentTime = 0;
                     audio[i].pause();
                 }
@@ -14614,10 +14682,10 @@ $(document).ready(function() {
         });
     }
 
+    if ($('#business0').length > 0) {
+        $('#inputText').select();
+    }
     if ($('#business1').length > 0) {
         $('#searchStdCode').select();
-    }
-    if ($('#business2').length > 0) {
-        $('#inputText').select();
     }
 });
