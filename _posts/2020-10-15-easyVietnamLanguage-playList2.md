@@ -28,7 +28,7 @@ toc_sticky: true
 | | *8<br /><sub>tám</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_09.aac" #play-pause-button .fa .fa-play} |
 | | *9<br /><sub>chín</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_10.aac" #play-pause-button .fa .fa-play} |
 | | *10<br /><sub>mười</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_11.aac" #play-pause-button .fa .fa-play} |
-| 0 | 1(0~9)<br /><sub><font color="red">mười</font>(không ~ chín)</sub> |
+| 0 | *1(0~9)<br /><sub><font color="red">mười</font>(không ~ chín)</sub>* |
 | | *11<br /><sub>mười mọt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_12.aac" #play-pause-button .fa .fa-play} |
 | | *12<br /><sub>mười hai</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_13.aac" #play-pause-button .fa .fa-play} |
 | | *13<br /><sub>mười ba</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_14.aac" #play-pause-button .fa .fa-play} |
@@ -38,7 +38,7 @@ toc_sticky: true
 | | *17<br /><sub>mười bảy</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_18.aac" #play-pause-button .fa .fa-play} |
 | | *18<br /><sub>mười tám</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_19.aac" #play-pause-button .fa .fa-play} |
 | | *19<br /><sub>mười chín</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_20.aac" #play-pause-button .fa .fa-play} |
-| 1 | (2~9)0<br /><sub>(hai ~ chín)<font color="red">mươi</font></sub> |2
+| 1 | *(2~9)0<br /><sub>(hai ~ chín)<font color="red">mươi</font></sub>* |2
 | | *20<br /><sub>hai mươi</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_21.aac" #play-pause-button .fa .fa-play} |
 | | *30<br /><sub>ba mươi</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_22.aac" #play-pause-button .fa .fa-play} |
 | | *40<br /><sub>bốn mươi</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_23.aac" #play-pause-button .fa .fa-play} |
@@ -54,7 +54,7 @@ toc_sticky: true
 | | *78<br /><sub>bảy mươi tám</sub><br /><sub>bảy tám</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_33.aac" #play-pause-button .fa .fa-play} |
 | | *89<br /><sub>tám mươi chín</sub><br /><sub>tám chín</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_34.aac" #play-pause-button .fa .fa-play} |
 | | *99<br /><sub>chín mươi chín</sub><br /><sub>chín chín</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_35.aac" #play-pause-button .fa .fa-play} |
-| 2 | (1~9)00<br /><sub>(một ~ chín)<font color="red">trăm</font></sub> |
+| 2 | *(1~9)00<br /><sub>(một ~ chín)<font color="red">trăm</font></sub>* |
 | | *100<br /><sub>một trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_36.aac" #play-pause-button .fa .fa-play} |
 | | *200<br /><sub>hai trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_37.aac" #play-pause-button .fa .fa-play} |
 | | *300<br /><sub>ba trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_38.aac" #play-pause-button .fa .fa-play} |
@@ -64,7 +64,7 @@ toc_sticky: true
 | | *700<br /><sub>bảy trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_42.aac" #play-pause-button .fa .fa-play} |
 | | *800<br /><sub>tám trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_43.aac" #play-pause-button .fa .fa-play} |
 | | *900<br /><sub>chín trăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_44.aac" #play-pause-button .fa .fa-play} |
-| 3 | (1~9),000<br /><sub>(một ~ chín)<font color="red">nghìn</font></sub> |
+| 3 | *(1~9),000<br /><sub>(một ~ chín)<font color="red">nghìn</font></sub>* |
 | | *1,000<br /><sub>một nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_45.aac" #play-pause-button .fa .fa-play} |
 | | *2,000<br /><sub>hai nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_46.aac" #play-pause-button .fa .fa-play} |
 | | *3,000<br /><sub>ba nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_47.aac" #play-pause-button .fa .fa-play} |
@@ -74,7 +74,7 @@ toc_sticky: true
 | | *7,000<br /><sub>bảy nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_51.aac" #play-pause-button .fa .fa-play} |
 | | *8,000<br /><sub>tám nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_52.aac" #play-pause-button .fa .fa-play} |
 | | *9,000<br /><sub>chín nghìn</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_53.aac" #play-pause-button .fa .fa-play} |
-| 4 | (1~9),000,000<br /><sub>(một ~ chín)<font color="red">triệu</font></sub> |
+| 4 | *(1~9),000,000<br /><sub>(một ~ chín)<font color="red">triệu</font></sub>* |
 | | *1,000,000<br /><sub>một triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_54.aac" #play-pause-button .fa .fa-play} |
 | | *2,000,000<br /><sub>hai triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_55.aac" #play-pause-button .fa .fa-play} |
 | | *3,000,000<br /><sub>ba triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_56.aac" #play-pause-button .fa .fa-play} |
@@ -85,7 +85,7 @@ toc_sticky: true
 | | *8,000,000<br /><sub>tám triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_61.aac" #play-pause-button .fa .fa-play} |
 | | *9,000,000<br /><sub>chín triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_62.aac" #play-pause-button .fa .fa-play} |
 | | *10,000,000<br /><sub>mười triệu</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_63.aac" #play-pause-button .fa .fa-play} |
-| 5 | (2~9)1<br /><sub>(hai ~ chín)<font color="red">mốt</font></sub> |
+| 5 | *(2~9)1<br /><sub>(hai ~ chín)<font color="red">mốt</font></sub>* |
 | | *21<br /><sub>hai mươi mốt</sub><br /><sub>hai mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_64.aac" #play-pause-button .fa .fa-play} |
 | | *31<br /><sub>ba mươi mốt</sub><br /><sub>ba mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_65.aac" #play-pause-button .fa .fa-play} |
 | | *41<br /><sub>bốn mươi mốt</sub><br /><sub>bốn mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_66.aac" #play-pause-button .fa .fa-play} |
@@ -94,7 +94,7 @@ toc_sticky: true
 | | *71<br /><sub>bảy mươi mốt</sub><br /><sub>bảy mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_69.aac" #play-pause-button .fa .fa-play} |
 | | *81<br /><sub>tám mươi mốt</sub><br /><sub>tám mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_70.aac" #play-pause-button .fa .fa-play} |
 | | *91<br /><sub>chín mươi mốt</sub><br /><sub>chín mốt</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_71.aac" #play-pause-button .fa .fa-play} |
-| 6 | (2~9)4<br /><sub>(hai ~ chín)<font color="red">bốn / tư</font></sub> |
+| 6 | *(2~9)4<br /><sub>(hai ~ chín)<font color="red">bốn / tư</font></sub>* |
 | | *24<br /><sub>hai mươi bốn</sub><br /><sub>hai mươi tư</sub><br /><sub>hai tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_72.aac" #play-pause-button .fa .fa-play} |
 | | *34<br /><sub>ba mươi bốn</sub><br /><sub>ba mươi tư</sub><br /><sub>ba tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_73.aac" #play-pause-button .fa .fa-play} |
 | | *44<br /><sub>bốn mươi bốn</sub><br /><sub>bốn mươi tư</sub><br /><sub>bốn tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_74.aac" #play-pause-button .fa .fa-play} |
@@ -103,7 +103,7 @@ toc_sticky: true
 | | *74<br /><sub>bảy mươi bốn</sub><br /><sub>bảy mươi tư</sub><br /><sub>bảy tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_77.aac" #play-pause-button .fa .fa-play} |
 | | *84<br /><sub>tám mươi bốn</sub><br /><sub>tám mươi tư</sub><br /><sub>tám tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_78.aac" #play-pause-button .fa .fa-play} |
 | | *94<br /><sub>chín mươi bốn</sub><br /><sub>chín mươi tư</sub><br /><sub>chín tư</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_79.aac" #play-pause-button .fa .fa-play} |
-| 7 | (1~9)5<br /><sub>(một ~ chín)<font color="red">lăm</font></sub> |
+| 7 | *(1~9)5<br /><sub>(một ~ chín)<font color="red">lăm</font></sub>* |
 | | *15<br /><sub>mười lăm</sub><br /><sub>mười lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_80.aac" #play-pause-button .fa .fa-play} |
 | | *25<br /><sub>hai mươi lăm</sub><br /><sub>hai lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_81.aac" #play-pause-button .fa .fa-play} |
 | | *35<br /><sub>ba mươi lăm</sub><br /><sub>ba lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_82.aac" #play-pause-button .fa .fa-play} |
@@ -113,7 +113,7 @@ toc_sticky: true
 | | *75<br /><sub>bảy mươi lăm</sub><br /><sub>bảy lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_86.aac" #play-pause-button .fa .fa-play} |
 | | *85<br /><sub>tám mươi lăm</sub><br /><sub>tám lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_87.aac" #play-pause-button .fa .fa-play} |
 | | *95<br /><sub>chín mươi lăm</sub><br /><sub>chín lăm</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_88.aac" #play-pause-button .fa .fa-play} |
-| 8 | (1~9)0(1~9)<br /><sub>(một ~ chín)<font color="red">linh</font>(một ~ chín)</sub> |
+| 8 | *(1~9)0(1~9)<br /><sub>(một ~ chín)<font color="red">linh</font>(một ~ chín)</sub>* |
 | | *101<br /><sub>một trăm linh một</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_89.aac" #play-pause-button .fa .fa-play} |
 | | *202<br /><sub>hai trăm linh hai</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_90.aac" #play-pause-button .fa .fa-play} |
 | | *303<br /><sub>ba trăm linh ba</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-15-easyVietnamLanguage-playList2_91.aac" #play-pause-button .fa .fa-play} |
@@ -161,3 +161,5 @@ toc_sticky: true
   {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
   </div>
 </div>
+
+<div id="business0" style="display: none;"></div>

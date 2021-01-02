@@ -97,6 +97,7 @@ select {
 }
 
 input[type="image"],
+input[type="range"],
 input[type="checkbox"],
 input[type="radio"] {
   width: auto;
@@ -112,6 +113,7 @@ input[type="radio"] {
 }
 
 input[type="checkbox"],
+input[type="range"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;

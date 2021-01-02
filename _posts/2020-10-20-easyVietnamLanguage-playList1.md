@@ -17,7 +17,7 @@ toc_sticky: true
 </div>
 
 | --- | --- | --- | --- |
-| 0 | ~ đang ~<br /><sub>~는 ~하고 있다.</sub> |
+| 0 | *~ đang ~<br /><sub>~는 ~하고 있다.</sub>* |
 | | *anh đang họp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_47.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang đi công tác* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_48.aac" #play-pause-button .fa .fa-play} |
 | | *tôi đang họp ở công ty* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_49.aac" #play-pause-button .fa .fa-play} |
@@ -37,7 +37,7 @@ toc_sticky: true
 | | *anh đang sống ở chung cư 강남* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_63.aac" #play-pause-button .fa .fa-play} |
 | | *hiện nay bạn đang sống ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_64.aac" #play-pause-button .fa .fa-play} |
 | | *hiện nay bạn đang làm việc ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_65.aac" #play-pause-button .fa .fa-play} |
-| 1 | ~ sẽ ~<br /><sub>~는 ~할 것이다</sub> |
+| 1 | *~ sẽ ~<br /><sub>~는 ~할 것이다</sub>* |
 | | *chúng tôi sẽ đi Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_01.aac" #play-pause-button .fa .fa-play} |
 | | *ngày mai, chúng tôi sẽ đi Mỹ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_02.aac" #play-pause-button .fa .fa-play} |
 | | *tuần sau, chúng tôi sẽ đi du lịch ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_03.aac" #play-pause-button .fa .fa-play} |
@@ -58,7 +58,7 @@ toc_sticky: true
 | | *tối nay, bạn sẽ ăn gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_18.aac" #play-pause-button .fa .fa-play} |
 | | *ngày mai, bạn sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_19.aac" #play-pause-button .fa .fa-play} |
 | | *năm nay, bạn sẽ đi du lịch ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_20.aac" #play-pause-button .fa .fa-play} |
-| 2 | ~ mấy ~?<br /><sub>~ 몇?</sub> |
+| 2 | *~ mấy ~?<br /><sub>~ 몇?</sub>* |
 | | *bạn đi du lịch mấy ngày?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_21.aac" #play-pause-button .fa .fa-play} |
 | | *mình đi du lịch 3 ngày* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_22.aac" #play-pause-button .fa .fa-play} |
 | | *anh sống ở Việt Nam mấy năm?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_23.aac" #play-pause-button .fa .fa-play} |
@@ -72,7 +72,7 @@ toc_sticky: true
 | | *bạn có mấy cái kính?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_31.aac" #play-pause-button .fa .fa-play} |
 | | *mình có 2 cái kính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_32.aac" #play-pause-button .fa .fa-play} |
 | | *một ngày, bạn học tiếng Việt mấy tiếng?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_33.aac" #play-pause-button .fa .fa-play} |
-| 3 | ~ bao nhiêu ~?<br /><sub>~ 얼마?</sub> |
+| 3 | *~ bao nhiêu ~?<br /><sub>~ 얼마?</sub>* |
 | | *anh mua bao nhiêu cái bút?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_34.aac" #play-pause-button .fa .fa-play} |
 | | *anh mua 20 cái bút* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_35.aac" #play-pause-button .fa .fa-play} |
 | | *anh bao nhiêu tuổi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_36.aac" #play-pause-button .fa .fa-play} |
@@ -138,3 +138,5 @@ toc_sticky: true
   {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
   </div>
 </div>
+
+<div id="business0" style="display: none;"></div>

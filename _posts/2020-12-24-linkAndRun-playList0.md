@@ -105,3 +105,5 @@ tags:
   {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
   </div>
 </div>
+
+<div id="business0" style="display: none;"></div>
