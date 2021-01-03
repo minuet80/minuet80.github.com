@@ -14253,7 +14253,7 @@ $(document).ready(function() {
             if ($.trim($('#inputText').val()) === '') {
                 return;
             } else {
-                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val()));
+                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val().replace(/(<([^>]+)>)/ig,"")));
                 utterThis.onend = function (event) {
                 }
                 utterThis.onerror = function (event) {
@@ -14308,7 +14308,7 @@ $(document).ready(function() {
             if ($.trim($('#inputText').val()) === '') {
                 return;
             } else {
-                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val()));
+                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val().replace(/(<([^>]+)>)/ig,"")));
                 utterThis.onend = function (event) {
                     if (countRandom > 0) {
                         var sleep = Number($('#delay').val());
@@ -14380,7 +14380,7 @@ $(document).ready(function() {
         $('.toc').append(tocMenu.join(''));
 
         $('a[id*=play-pause-button]').each(function (index, element) {
-            utterThis[index] = new SpeechSynthesisUtterance($(element).closest('tr').find('td:eq(1)').html());
+            utterThis[index] = new SpeechSynthesisUtterance($.trim($(element).closest('tr').find('td:eq(1)').html()).replace(/(<([^>]+)>)/ig,""));
             $(element).click(function (e, p) {
                 e.preventDefault();
                 var utterThisSize = utterThis.length - 1;
