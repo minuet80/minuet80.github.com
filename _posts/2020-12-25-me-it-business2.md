@@ -74,12 +74,14 @@ tags:
 | | *영수증을 드릴까요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *치킨을 양념맵소킹 콤보 반 그리고 뿌링클 콤보 반으로 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *노란색 봉투 10장 주세요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *노란색 비닐봉투 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 왜케 일찍자요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *또 먹어요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *내숭떨다* | [](#){: #play-pause-button .fa .fa-play} |
 | | *영주권을 신청할 수 있다* | [](#){: #play-pause-button .fa .fa-play} |
 | | *꾸준히 공부하세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *잘하는데 방심하면 안돼요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *집중력이 3살짜리 어린이에요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
