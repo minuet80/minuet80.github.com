@@ -19,15 +19,15 @@ toc_sticky: true
 | --- | --- | --- | --- |
 | 0 | *~giờ ~phút ~giây<br /><sub>~시 ~분 ~초</sub>* |
 | | *2 giờ 10 phút 50 giây<br /><sub>2:10:50</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_01.aac" #play-pause-button .fa .fa-play} |
-| | *3 giờ 20 phút 30 giây<br /><sub>3:20:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *4 giờ 30 phút<br /><sub>4:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *6 giờ 40 phút<br /><sub>6:40</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *9 giờ 55 phút<br /><sub>9:55</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *3 giờ đúng<br /><sub>3시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *4 giờ đúng<br /><sub>4시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *6 giờ đúng<br /><sub>6시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *12 giờ đúng<br /><sub>12시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
-| | *10 giờ 30 phút<br /><sub>10:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
+| | *3 giờ 20 phút 30 giây<br /><sub>3:20:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_02.aac" #play-pause-button .fa .fa-play} |
+| | *4 giờ 30 phút<br /><sub>4:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_03.aac" #play-pause-button .fa .fa-play} |
+| | *6 giờ 40 phút<br /><sub>6:40</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_04.aac" #play-pause-button .fa .fa-play} |
+| | *9 giờ 55 phút<br /><sub>9:55</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_05.aac" #play-pause-button .fa .fa-play} |
+| | *3 giờ đúng<br /><sub>3시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_06.aac" #play-pause-button .fa .fa-play} |
+| | *4 giờ đúng<br /><sub>4시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_07.aac" #play-pause-button .fa .fa-play} |
+| | *6 giờ đúng<br /><sub>6시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_08.aac" #play-pause-button .fa .fa-play} |
+| | *12 giờ đúng<br /><sub>12시 정각</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_09.aac" #play-pause-button .fa .fa-play} |
+| | *10 giờ 30 phút<br /><sub>10:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_10.aac" #play-pause-button .fa .fa-play} |
 | | *10 (giờ) rưỡi<br /><sub>10:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
 | | *7 (giờ) rưỡi<br /><sub>7:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |
 | | *9 (giờ) rưỡi<br /><sub>9:30</sub>* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-16-easyVietnamLanguage-playList3_.aac" #play-pause-button .fa .fa-play} |

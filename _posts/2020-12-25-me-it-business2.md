@@ -76,6 +76,8 @@ tags:
 | | *노란색 봉투 10장 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 왜케 일찍자요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *또 먹어요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *내숭떨다* | [](#){: #play-pause-button .fa .fa-play} |
+| | *영주권을 신청할 수 있다.* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
