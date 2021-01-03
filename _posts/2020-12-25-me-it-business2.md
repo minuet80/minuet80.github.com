@@ -69,10 +69,10 @@ tags:
 </div>
 
 | --- | --- | --- | --- |
-| | *커피를 내오거라.* | [](#){: #play-pause-button .fa .fa-play} |
-| | *뜯지 말아주세요.* | [](#){: #play-pause-button .fa .fa-play} |
+| | *커피를 내오거라* | [](#){: #play-pause-button .fa .fa-play} |
+| | *뜯지 말아주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *영수증을 드릴까요?* | [](#){: #play-pause-button .fa .fa-play} |
-| | *치킨을 양념맵소킹 콤보 반 그리고 뿌링클 콤보 반으로 주세요.* | [](#){: #play-pause-button .fa .fa-play} |
+| | *치킨을 양념맵소킹 콤보 반 그리고 뿌링클 콤보 반으로 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 

@@ -14280,7 +14280,7 @@ $(document).ready(function() {
             if ($.trim($('#inputText').val()) === '') {
                 return;
             } else {
-                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val()));
+                var utterThis = new SpeechSynthesisUtterance($.trim($('#inputText').val().replace(/(<([^>]+)>)/ig,"")));
                 utterThis.onend = function (event) {
                 }
                 utterThis.onerror = function (event) {
@@ -14819,7 +14819,7 @@ $(document).ready(function() {
         });
     }
 
-    if ($('#business0').length > 0) {
+    if ($('#business2').length > 0) {
         $('#inputText').select();
     }
     if ($('#business1').length > 0) {
