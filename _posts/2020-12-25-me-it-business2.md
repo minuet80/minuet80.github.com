@@ -75,6 +75,7 @@ tags:
 | | *치킨을 양념맵소킹 콤보 반 그리고 뿌링클 콤보 반으로 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *노란색 봉투 10장 주세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 왜케 일찍자요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *또 먹어요?* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
