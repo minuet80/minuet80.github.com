@@ -72,33 +72,8 @@ tags:
 | | *커피를 내오거라.* | [](#){: #play-pause-button .fa .fa-play} |
 | | *뜯지 말아주세요.* | [](#){: #play-pause-button .fa .fa-play} |
 | | *영수증을 드릴까요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *치킨을 양념맵소킹 콤보 반 그리고 뿌링클 콤보 반으로 주세요.* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
-{% capture c %}
-  ![](/assets/images/empty.png)
-  [∀](#){: #allListen .btn .btn--inverse}
-  <select id="playbackspeed">
-    <option value="1.0">속도0</option>
-    <option value="0.75">속도-1</option>
-    <option value="0.5">속도-2</option>
-  </select>
-  [초기화](#){: #reset .btn .btn--inverse}
-  <select id="ringsToPlay">
-    <option value="1">횟수01회</option>
-    <option value="2">횟수02회</option>
-    <option value="3">횟수03회</option>
-    <option value="4">횟수04회</option>
-    <option value="5">횟수05회</option>
-    <option value="7">횟수07회</option>
-    <option value="10">횟수10회</option>
-  </select>
-  [∞](#){: #infListen data-addminutes="60" .btn .btn--inverse}
-{% endcapture %}
 
-<div id="fixedBtn">
-  <div class="inner">
-  {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
-  </div>
-</div>
-
-<div id="business0" style="display: none;"></div>
+<div id="business2" style="display: none;"></div>

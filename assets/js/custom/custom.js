@@ -14204,13 +14204,16 @@ $(document).ready(function() {
     }
     // 행정표준용어 정리
 
-    if ($('#business0').length > 0) {
+    if ($('#business2').length > 0) {
 
         // 텍스트 음성 변환
         var synth = window.speechSynthesis;
         var voices = [];
         var digitNum;
         var countRandom = 0;
+        // 회화
+        var utterThis = [];
+
         $('#speed').change(function () {
             $('.speed-value').html($(this).val());
         });
@@ -14330,11 +14333,145 @@ $(document).ready(function() {
         });
         // 텍스트 음성 변환
 
+        if ($(window).outerWidth() <= 1200) {
+            $("abbr[title]").click(function() {
+                $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
+            });
+        }
+
+        var num;
+        var q = 0;
+        var tocMenu = [];
+
+        $('a img').css('textDecoration','none')
+        $('#footer').hide();
+        $('#vocabulary').hide();
+
+        tocMenu.push('<ul class="toc__menu">');
+        $('#conversation').prepend('<colgroup><col width="4px;" /><col width="*" /><col width="40px;" /><col width="40px;" /></colgroup>');
+        $('#conversation').find('tr').each(function (index, element) {
+            var textTd = $.trim($(element).find('td:eq(0)').html());
+            var title = $.trim($(element).find('td:eq(1)').html());
+            if (/\d+/.test(textTd)) {
+                $(element).empty();
+                $(element).append('<td style="padding: 0px; background-color: #ee5f5b;" id=-' + textTd +'></td>');
+                $(element).append('<td colspan="2" style="background-color: #fffef3"><i>' + title +'</i></td>');
+
+                tocMenu.push('<li><a href="#-' + textTd + '">' + title + '</a></li>');
+                q++;
+            } else {
+                var $a = $(element).find('a');
+                $(element).find('td:eq(0)').css('padding', '0px')
+                $(element).find('td:eq(2)').addClass('playTd');
+
+                if ($a.length > 0) {
+                    if (index !== 0) {
+                        q++;
+                    }
+                    num = q.toString().lpad(5, 0);
+                    $(element).prop('id', 'tr'+ num);
+                } else {
+                    num = q.toString().lpad(5, 0);
+                    $(element).prop('id', 'tr'+ num + '-' + index);
+                }
+            }
+        });
+        tocMenu.push('</ul>');
+        $('.toc').append(tocMenu.join(''));
+
+        $('a[id*=play-pause-button]').each(function (index, element) {
+            utterThis[index] = new SpeechSynthesisUtterance($(element).closest('tr').find('td:eq(1)').html());
+            $(element).click(function (e, p) {
+                e.preventDefault();
+                var utterThisSize = utterThis.length - 1;
+                var trSize = $(this).closest('tbody').find('tr').length;
+                var type;
+                var no;
+                var endTimestamp;
+                if (typeof p === 'undefined') {
+                    type = '';
+                    no = index;
+                } else {
+                    type = p.type;
+                    no = p.no;
+                    endTimestamp = p.endTimestamp;
+                }
+                no = Number(no);
+
+                if($(this).hasClass('fa-play')) {
+                    $(this).removeClass('fa-play');
+                    $(this).addClass('fa-pause');
+                    var trId = $(this).closest('tr').prop('id');
+                    $('tr[id*=' + trId +']').css('background-color', '#ebf5f8');
+                    if (type !== '') {
+                        var offset = $(this).offset();
+                        $('html, body').animate({scrollTop : offset.top - 100}, 400);
+                    }
+                    var reTitle = '';
+                    setTimeout(function () {
+                        $('tr[id*=' + trId +']').find('td:eq(1)').each(function (index, element) {
+                            if (index !== 0) {
+                                reTitle += '<br />';
+                            }
+                            reTitle += $(element).html();
+                        });
+                        var magnificTitl = {};
+                        magnificTitl.src = '<div class="white-popup">' + reTitle +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
+                        magnificTitl.type = 'inline';
+                        $('#popupBtn').magnificPopup({
+                            items: magnificTitl,
+                            closeBtnInside: false,
+                            preloader: true,
+                            removalDelay: 160,
+                            mainClass: 'mfp-fade',
+                            callbacks: {
+                                open: function() {
+                                    $('.mfp-content').find('abbr[title]').click(function() {
+                                        $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
+                                    });
+                                }
+                            }
+                        });
+                        $('#popupBtn').trigger('click');
+                        var selectedOption = $('#lang').find('option:selected').data('name');
+                        for(i = 0; i < voices.length; i++) {
+                            if(voices[i].name === selectedOption) {
+                                utterThis[no].voice = voices[i];
+                                break;
+                            }
+                        }
+                        utterThis[no].pitch = $('#pitch').val();
+                        utterThis[no].rate = $('#speed').val();
+                        synth.speak(utterThis[no]);
+                    }, 600);
+                } else {
+                    $(this).removeClass('fa-pause');
+                    $(this).addClass('fa-play');
+                    var trId = $(this).closest('tr').prop('id');
+                    $('tr[id*=' + trId +']').css('background-color', '');
+                    $('.mfp-close').trigger('click');
+                    synth.cancel();
+                }
+                utterThis[no].onend = function (event) {
+                    $('a[id*=play-pause-button]').removeClass('fa-pause');
+                    $('a[id*=play-pause-button]').addClass('fa-play');
+                    var trId = $('a[id*=play-pause-button]').eq(no).closest('tr').prop('id');
+                    $('tr[id*=' + trId +']').css('background-color', '');
+                    $('.mfp-close').trigger('click');
+                }
+            });
+        });
+    }
+
+    if ($('#business0').length > 0) {
+
+        // 카드 슬라이드
         $('.my-slider').cardslider({
             swipe: true,
             dots: true,
             loop: true
         });
+        // 카드 슬라이드
 
         if ($(window).outerWidth() <= 1200) {
             $("abbr[title]").click(function() {
