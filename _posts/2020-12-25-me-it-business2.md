@@ -82,6 +82,8 @@ tags:
 | | *꾸준히 공부하세요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *잘하는데 방심하면 안돼요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *집중력이 3살짜리 어린이에요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *내일 밥 먹을까요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *구어체 알아 두세요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
