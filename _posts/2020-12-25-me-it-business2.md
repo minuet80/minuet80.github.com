@@ -84,6 +84,13 @@ tags:
 | | *집중력이 3살짜리 어린이에요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *내일 밥 먹을까요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *구어체 알아 두세요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *환풍기를 틀어주세요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *왜 자꾸 핸드폰만 해요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *왜 자꾸 핸드폰만 만져요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *미역국에 이거 넣으면 어때요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *오늘 도깨비 드라마 보는건 어때요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *오늘은 외국인 등록증을 발급 받으러 갈거에요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *외국인청에 가기전에 조기적응프로그램을 이수해야 해요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
