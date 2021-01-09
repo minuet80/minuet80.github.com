@@ -91,12 +91,12 @@ toc_sticky: true
 | | *em tự học tiếng Việt trên Youtube* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_67.aac" #play-pause-button .fa .fa-play} |
 | | *chị ấy đã tự đặt lấy phờng khách sạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_68.aac" #play-pause-button .fa .fa-play} |
 | 5 | *~ biết ~<br /><sub>~ 할 줄 알다</sub>* |
-| | *min Ji biết nhóm nhạc BTS* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_69.aac" #play-pause-button .fa .fa-play} |
+| | *Min Ji biết nhóm nhạc BTS* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_69.aac" #play-pause-button .fa .fa-play} |
 | | *em ấy rất thích BTS* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_70.aac" #play-pause-button .fa .fa-play} |
-| | *min Ji không biết ca sĩ Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_71.aac" #play-pause-button .fa .fa-play} |
+| | *Min Ji không biết ca sĩ Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_71.aac" #play-pause-button .fa .fa-play} |
 | | *em ấy biêt chơi piano* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_72.aac" #play-pause-button .fa .fa-play} |
 | | *em ấy không biết chơi ghi ta* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_73.aac" #play-pause-button .fa .fa-play} |
-| | *mình Ji có biết tiếng Việt không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_74.aac" #play-pause-button .fa .fa-play} |
+| | *Min Ji có biết tiếng Việt không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_74.aac" #play-pause-button .fa .fa-play} |
 | | *có, Min Ji biết tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_75.aac" #play-pause-button .fa .fa-play} |
 | | *bạn có biết chợ Đồng Xuân không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_76.aac" #play-pause-button .fa .fa-play} |
 | | *biết, mình biết chợ Đồng Xuân* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_77.aac" #play-pause-button .fa .fa-play} |
