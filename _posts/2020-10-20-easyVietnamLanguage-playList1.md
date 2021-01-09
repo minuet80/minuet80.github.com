@@ -118,7 +118,6 @@ toc_sticky: true
 | | *không, mình không biết họ đi du lịch ở đâu* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_93.aac" #play-pause-button .fa .fa-play} |
 | | *bạn biết cầu thủ Mesi là người nước nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_94.aac" #play-pause-button .fa .fa-play} |
 | | *không, mình không biết anh ấy là người nước nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_85.aac" #play-pause-button .fa .fa-play} |
-
 {: #conversation }
 
 {% capture b %} 
