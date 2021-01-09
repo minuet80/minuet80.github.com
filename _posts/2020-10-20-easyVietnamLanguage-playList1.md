@@ -1,7 +1,7 @@
 ---
 title: "[유튜브 - 쉬운베트남어] 베트남어 초급 회화 패턴"
 categories:
-  - easyVietnamLanguage
+  - EasyVietnamLanguage
 tags:
   - VietnameseLanguage
 toc: true
@@ -86,6 +86,39 @@ toc_sticky: true
 | | *bạn bao nhiêu tuổi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_44.aac" #play-pause-button .fa .fa-play} |
 | | *bạn có mấy cái điện thoại?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_45.aac" #play-pause-button .fa .fa-play} |
 | | *bạn có bao nhiêu bạn Việt Nam?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_46.aac" #play-pause-button .fa .fa-play} |
+| 4 | *tự ~ lấy<br /><sub>스스로 ~ 하다</sub>* |
+| | *em ấy tự nấu ăn lấy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_66.aac" #play-pause-button .fa .fa-play} |
+| | *em tự học tiếng Việt trên Youtube* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_67.aac" #play-pause-button .fa .fa-play} |
+| | *chị ấy đã tự đặt lấy phờng khách sạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_68.aac" #play-pause-button .fa .fa-play} |
+| 5 | *~ biết ~<br /><sub>~ 할 줄 알다</sub>* |
+| | *min Ji biết nhóm nhạc BTS* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_69.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy rất thích BTS* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_70.aac" #play-pause-button .fa .fa-play} |
+| | *min Ji không biết ca sĩ Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_71.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy biêt chơi piano* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_72.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy không biết chơi ghi ta* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_73.aac" #play-pause-button .fa .fa-play} |
+| | *mình Ji có biết tiếng Việt không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_74.aac" #play-pause-button .fa .fa-play} |
+| | *có, Min Ji biết tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_75.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có biết chợ Đồng Xuân không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_76.aac" #play-pause-button .fa .fa-play} |
+| | *biết, mình biết chợ Đồng Xuân* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_77.aac" #play-pause-button .fa .fa-play} |
+| | *bạn biết ca sĩ Sơn Tùng không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_78.aac" #play-pause-button .fa .fa-play} |
+| | *không, mình không biết ca sĩ Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_79.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy biết chơi piano không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_80.aac" #play-pause-button .fa .fa-play} |
+| | *có, em ấy biết chơi phano* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_81.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy chơi piano rất hay* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_82.aac" #play-pause-button .fa .fa-play} |
+| | *có biết trượt tuyết không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_83.aac" #play-pause-button .fa .fa-play} |
+| | *không, cô không biêt trượt tuyết* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_84.aac" #play-pause-button .fa .fa-play} |
+| | *vì ở Việt Nam không có tuyết* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_85.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có biết Sơn Tùng là ai không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_86.aac" #play-pause-button .fa .fa-play} |
+| | *có, mình biết Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_87.aac" #play-pause-button .fa .fa-play} |
+| | *Sơn Tùng là ca sĩ nổi tiếng ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_88.aac" #play-pause-button .fa .fa-play} |
+| | *bạn có biết em ấy học tiếng Việt thế nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_89.aac" #play-pause-button .fa .fa-play} |
+| | *có, mình biết em ấy học thế nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_90.aac" #play-pause-button .fa .fa-play} |
+| | *em ấy tự học trên Youtube* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_91.aac" #play-pause-button .fa .fa-play} |
+| | *bạn biết họ đi du lịch ở đâu không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_92.aac" #play-pause-button .fa .fa-play} |
+| | *không, mình không biết họ đi du lịch ở đâu* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_93.aac" #play-pause-button .fa .fa-play} |
+| | *bạn biết cầu thủ Mesi là người nước nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_94.aac" #play-pause-button .fa .fa-play} |
+| | *không, mình không biết anh ấy là người nước nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_85.aac" #play-pause-button .fa .fa-play} |
+
 {: #conversation }
 
 {% capture b %} 
@@ -102,6 +135,8 @@ toc_sticky: true
 > **kính**: 안경  
 > **thầy**: 남자선생님  
 > **cô**: 여자선생님
+> **cầu thủ**: 선수  
+> **trượt tuyết**: 스키  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -111,6 +146,8 @@ toc_sticky: true
 *[kính]: 안경
 *[thầy]: 남자선생님
 *[cô]: 여자선생님
+*[cầu thủ]: 선수
+*[trượt tuyết]: 스키
 
 {% capture c %}
   ![](/assets/images/empty.png)

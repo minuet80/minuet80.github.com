@@ -1,7 +1,7 @@
 ---
 title: "[유튜브 - 쉬운베트남어] 시간"
 categories:
-  - easyVietnamLanguage
+  - EasyVietnamLanguage
 tags:
   - VietnameseLanguage
 toc: true
