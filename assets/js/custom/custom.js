@@ -99,7 +99,7 @@ var dates = {
             h = (h < 10 ? '0' + h : h);
             m = (m < 10 ? '0' + m : m);
             s = (s < 10 ? '0' + s : s);
-            return d + ' ' + (h + ':' + m + ':' + s);
+            return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' ' + (h + ':' + m + ':' + s);
         }
     }
 }
@@ -110,13 +110,13 @@ $(document).ready(function() {
         var strtDay = new Date($('#dday1').find('span').data('day'));
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday1').find('span').html('😢' + 'D-day' + result);
+        $('#dday1').find('span').html('😢' + 'D+' + result);
     }, 1000);
     setInterval(function () {
         var strtDay = new Date($('#dday2').find('span').data('day'));
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday2').find('span').html('👰' + 'D-day' + result);
+        $('#dday2').find('span').html('👰' + 'D+' + result);
     }, 1000);
 
     var i = 0;
