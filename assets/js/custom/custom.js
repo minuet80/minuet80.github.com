@@ -118,6 +118,12 @@ $(document).ready(function() {
         var result = dates.dday(strtDay, endDay);
         $('#dday2').find('span').html('👰' + 'D+' + result);
     }, 1000);
+    setInterval(function () {
+        var strtDay = new Date($('#dday3').find('span').data('day'));
+        var endDay = new Date();
+        var result = dates.dday(strtDay, endDay);
+        $('#dday3').find('span').html('😍✈' + 'D+' + result);
+    }, 1000);
 
     var i = 0;
     var j = 0;
