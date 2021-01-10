@@ -117,7 +117,22 @@ toc_sticky: true
 | | *bạn biết họ đi du lịch ở đâu không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_92.aac" #play-pause-button .fa .fa-play} |
 | | *không, mình không biết họ đi du lịch ở đâu* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_93.aac" #play-pause-button .fa .fa-play} |
 | | *bạn biết cầu thủ Mesi là người nước nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_94.aac" #play-pause-button .fa .fa-play} |
-| | *không, mình không biết anh ấy là người nước nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_85.aac" #play-pause-button .fa .fa-play} |
+| | *không, mình không biết anh ấy là người nước nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_95.aac" #play-pause-button .fa .fa-play} |
+| 6 | *vì/do/bởi vì/tại vì ~ nên ~<br /><sub>~ 때문에 ~ 하다</sub>* |
+| | *vì dịch covid-19 nên tôi không thể sang Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_96.aac" #play-pause-button .fa .fa-play} |
+| | *tôi không thể sang Việt Nam vì dụch covid-19* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_97.aac" #play-pause-button .fa .fa-play} |
+| | *do anh ấy làm việc quá sức nên đã bị ốm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_98.aac" #play-pause-button .fa .fa-play} |
+| | *anh ấy đã bị ốm do làm việc quá sức* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_99.aac" #play-pause-button .fa .fa-play} |
+| | *vì sao bạn học tiếng Việt?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_100.aac" #play-pause-button .fa .fa-play} |
+| | *bởi vì mình muốn làm việc ở Hà Nội nên mình học tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_101.aac" #play-pause-button .fa .fa-play} |
+| | *tại sao hôm nay đi làm muộn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_102.aac" #play-pause-button .fa .fa-play} |
+| | *xin lỗi sếp, tại vì hôm nay tắc đường quá nên em đi làm muộn ạ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_103.aac" #play-pause-button .fa .fa-play} |
+| 7 | *nhờ ~ nên ~<br /><sub>~ 덕분에 ~ 하다</sub>* |
+| | *nhờ tập thể dục chăm chỉ nên tôi đã giảm được 5kg* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_104.aac" #play-pause-button .fa .fa-play} |
+| | *nhờ chăm chỉ học nên chị ấy đã thi đỗ năng lực tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_105.aac" #play-pause-button .fa .fa-play} |
+| | *nhờ những thất bại mà tôi có thể thành công như bây giờ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_106.aac" #play-pause-button .fa .fa-play} |
+| | *anh đã quen với công việc ở Việt Nam chưa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_107.aac" #play-pause-button .fa .fa-play} |
+| | *vâng, nhờ mọi người giúp đõ nên tôi đã quen với công việc ở đây rồi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_108.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -136,6 +151,10 @@ toc_sticky: true
 > **cô**: 여자선생님
 > **cầu thủ**: 선수  
 > **trượt tuyết**: 스키  
+> **sang**: 건너가다  
+> **thi đỗ**: (시험에) 합격하다  
+> **năng lực**: 능력  
+> **thất bại**: 실패  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -147,6 +166,10 @@ toc_sticky: true
 *[cô]: 여자선생님
 *[cầu thủ]: 선수
 *[trượt tuyết]: 스키
+*[sang]: 건너가다
+*[thi đỗ]: (시험에) 합격하다
+*[năng lực]: 능력
+*[thất bại]: 실패
 
 {% capture c %}
   ![](/assets/images/empty.png)

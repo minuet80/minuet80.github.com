@@ -110,13 +110,13 @@ $(document).ready(function() {
         var strtDay = new Date($('#dday1').find('span').data('day'));
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday1').find('span').html('😢' + result);
+        $('#dday1').find('span').html('😢' + 'D-day' + result);
     }, 1000);
     setInterval(function () {
         var strtDay = new Date($('#dday2').find('span').data('day'));
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday2').find('span').html('👰' + result);
+        $('#dday2').find('span').html('👰' + 'D-day' + result);
     }, 1000);
 
     var i = 0;
