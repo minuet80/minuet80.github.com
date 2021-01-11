@@ -27,7 +27,7 @@ toc_sticky: true
 | | *bây giờ mình đang gặp bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_53.aac" #play-pause-button .fa .fa-play} |
 | | *các anh ấy đang làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_54.aac" #play-pause-button .fa .fa-play} |
 | | *các anh ấy đang họp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_55.aac" #play-pause-button .fa .fa-play} |
-| | *chị đang làmg gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_56.aac" #play-pause-button .fa .fa-play} |
+| | *chị đang làm gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_56.aac" #play-pause-button .fa .fa-play} |
 | | *chị đang uống cà phê cùng bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_57.aac" #play-pause-button .fa .fa-play} |
 | | *anh đang làm việc ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_58.aac" #play-pause-button .fa .fa-play} |
 | | *anh đang làm việc ở Việt Nam* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_59.aac" #play-pause-button .fa .fa-play} |
