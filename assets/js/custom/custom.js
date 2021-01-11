@@ -114,13 +114,15 @@ $(document).ready(function() {
         $('#dday1').find('span').html('😢]' + 'D+' + result + ' ~' + day);
     }, 1000);
     setInterval(function () {
-        var strtDay = new Date($('#dday2').find('span').data('day'));
+        var day = $('#dday2').find('span').data('day');
+        var strtDay = new Date(day);
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
         $('#dday2').find('span').html('👰' + 'D+' + result + ' ~' + day);
     }, 1000);
     setInterval(function () {
-        var strtDay = new Date($('#dday3').find('span').data('day'));
+        var day = $('#dday3').find('span').data('day');
+        var strtDay = new Date(day);
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
         $('#dday3').find('span').html('😍✈' + 'D+' + result + ' ~' + day);
