@@ -22,4 +22,9 @@ toc_sticky: true
 ---
 - 조금 더 간절한 부탁을 나타냄
   - anh thông cảm cho
-  
+
+### ✔ 주어뒤 thì
+{: .wood-text}
+---
+- 주어를 강조할 때 사용함
+  - anh Nam làm việc chăm chỉ, còn anh Hả thì lười

@@ -133,6 +133,31 @@ toc_sticky: true
 | | *nhờ những thất bại mà tôi có thể thành công như bây giờ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_106.aac" #play-pause-button .fa .fa-play} |
 | | *anh đã quen với công việc ở Việt Nam chưa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_107.aac" #play-pause-button .fa .fa-play} |
 | | *vâng, nhờ mọi người giúp đõ nên tôi đã quen với công việc ở đây rồi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_108.aac" #play-pause-button .fa .fa-play} |
+| 8 | *~ nhưng ~<br /><sub>~ 하지만 ~ </sub>* |
+| | *tiếng Việt khó nhưng thú vị* |
+| | *cái điện thoại này đẹp nhưng đắt* |
+| | *tôi thích cô ấy nhưng cô ấy không thích tôi* |
+| 9 | *tuy/dù/mặc dù ~ nhưng ~<br /><sub>비록 ~ 하지만 ~ </sub>* |
+| | *mặc dù đang bị ốm nhưng cô ấy vẫn đi làm* |
+| | *tuy tiếng Việt rất khó nhưng tôi vẫn cố gắng học* |
+| | *dù công việc rất bận nhưng anh ấy vẫn chạy bộ hàng ngày* |
+| | *anh ấy vẫn chạy bộ hàng ngày dù công việc rất bận* |
+| | *dù trời mưa nhưng chúng tôi vẫn đi dã ngoại* |
+| | *chúng tôi vẫn đi ngoại dù trời mưa* |
+| 10 | *~ còn ~<br /><sub>~ 그리고 / 그런데 ~</sub>* |
+| | *tôi thích phở bò, còn vợ tôi thích phở gà* |
+| | *thỏ chạy nhanh, còn rùa chạy chậm* |
+| | *tôi thích đi du lịch, còn các bạn thích gì?* |
+| | *chào anh! tôi là Nam, nhân viên công ty Vingroup. còn anh?* |
+| | *toi là Lee Min Ho, nhân viên công ty LG* |
+| | *tôi đang làm việc ở Hồ Chí Mình, còn anh?* |
+| | *tôi đang làm việc ở Hà Nội* |
+| | *anh Nam làm việc chăm chỉ, còn anh Hải thì lười* |
+| | *chúng toi đã yêu nhau 10 năm rồi nhưng chưa cưới* |
+| | *mặc dù hôm nay là chủ nhật nhưng tôi vẫn phải đi làm* |
+| | *cho chị 1 bún chả và 1 cốc nước chanh nhé* |
+| | *dạ, vâng ạ còn anh ạ?* |
+| | *cho anh 1 phở bò và 5 cái quẩy nhé* |
 {: #conversation }
 
 {% capture b %} 
@@ -155,6 +180,7 @@ toc_sticky: true
 > **thi đỗ**: (시험에) 합격하다  
 > **năng lực**: 능력  
 > **thất bại**: 실패  
+> **dã ngoại**: 소풍  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -170,6 +196,7 @@ toc_sticky: true
 *[thi đỗ]: (시험에) 합격하다
 *[năng lực]: 능력
 *[thất bại]: 실패
+*[dã ngoại]: 소풍
 
 {% capture c %}
   ![](/assets/images/empty.png)
