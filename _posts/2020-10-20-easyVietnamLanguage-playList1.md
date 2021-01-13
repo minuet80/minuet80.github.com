@@ -103,7 +103,7 @@ toc_sticky: true
 | | *bạn biết ca sĩ Sơn Tùng không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_78.aac" #play-pause-button .fa .fa-play} |
 | | *không, mình không biết ca sĩ Sơn Tùng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_79.aac" #play-pause-button .fa .fa-play} |
 | | *em ấy biết chơi piano không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_80.aac" #play-pause-button .fa .fa-play} |
-| | *có, em ấy biết chơi phano* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_81.aac" #play-pause-button .fa .fa-play} |
+| | *có, em ấy biết chơi piano* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_81.aac" #play-pause-button .fa .fa-play} |
 | | *em ấy chơi piano rất hay* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_82.aac" #play-pause-button .fa .fa-play} |
 | | *có biết trượt tuyết không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_83.aac" #play-pause-button .fa .fa-play} |
 | | *không, cô không biêt trượt tuyết* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_84.aac" #play-pause-button .fa .fa-play} |
