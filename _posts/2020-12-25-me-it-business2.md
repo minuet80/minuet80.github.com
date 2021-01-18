@@ -91,6 +91,7 @@ tags:
 | | *오늘 도깨비 드라마 보는건 어때요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 외국인 등록증을 발급 받으러 갈거에요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *외국인청에 가기전에 조기적응프로그램을 이수해야 해요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *힘들것 같았기 때문이다.* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
