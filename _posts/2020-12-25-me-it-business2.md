@@ -98,6 +98,8 @@ tags:
 | | *종업원이 이렇게 말할 거예요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *홈플러스 포인트 적립 하시겠어요?* | [](#){: #play-pause-button .fa .fa-play} |
 | | *핸드폰 번호로 할게요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *최재용님 맞으세요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *제 남편이예요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
