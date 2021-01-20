@@ -93,6 +93,11 @@ tags:
 | | *외국인청에 가기전에 조기적응프로그램을 이수해야 해요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *힘들것 같았기 때문이다* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오빠가 데릴러 갈까요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *종량제 봉투 주세요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *종량제 봉투에 물건을 담아요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *종업원이 이렇게 말할 거예요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *홈플러스 포인트 적립 하시겠어요?* | [](#){: #play-pause-button .fa .fa-play} |
+| | *핸드폰 번호로 할게요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
