@@ -102,6 +102,7 @@ tags:
 | | *제 남편이예요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 서점에 가서 "가장 쉬운 바른글씨 따라 쓰기" 책을 샀어요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 "소담촌"에서 월남쌈을 먹었어요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *분리수거는 너무 힘들어요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
