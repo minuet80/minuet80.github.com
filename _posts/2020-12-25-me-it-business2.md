@@ -103,6 +103,7 @@ tags:
 | | *오늘은 서점에 가서 "가장 쉬운 바른글씨 따라 쓰기" 책을 샀어요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *오늘은 "소담촌"에서 월남쌈을 먹었어요* | [](#){: #play-pause-button .fa .fa-play} |
 | | *분리수거는 너무 힘들어요* | [](#){: #play-pause-button .fa .fa-play} |
+| | *한국인으로 귀화하면 65세가 되어서 연금을 받을 수 있어요* | [](#){: #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 
