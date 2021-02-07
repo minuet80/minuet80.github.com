@@ -158,6 +158,70 @@ toc_sticky: true
 | | *cho chị 1 bún chả và 1 cốc nước chanh nhé* |
 | | *dạ, vâng ạ còn anh ạ?* |
 | | *cho anh 1 phở bò và 5 cái quẩy nhé* |
+| 11 | *từ ~ đến ~<br /><sub>~ 부터 ~ 까지</sub>* |
+| | *tôi làm việc từ 8 giờ sáng đến 5 giờ chiều* |
+| | *chị ấy đi công tác từ ngày 15 đến ngày 20 tháng 8* |
+| | *em đi bộ từ nhà đến công ty* |
+| 12 | *bằng ~<br /><sub>~ 로</sub>* |
+| | *người Việt Nam bằng xe máy* |
+| | *chị thanh toán bằng tiền mặt* |
+| | *anh ấy đi du lịch bằng xe đạp* |
+| 13 | *bằng gì?<br /><sub>무엇으로?</sub>* |
+| | *người Việt Nam thường đi làm bằng gì?* |
+| | *người Việt Nam thường đi làm bằng xe máy* |
+| | *chị thanh toán bằng gì ạ?* |
+| | *chị thanh toán bằng tiền mặt* |
+| | *anh ấy đi du lịch bằng gì?* |
+| | ** |
+| 14 | *~ mất bao lâu?<br /><sub>~ 얼마나 걸려요?</sub>* |
+| | *từ Hà Nội đến Bắc Ninh mất bao lâu?* |
+| | *từ Hà Nội đến Bắc Ninh mất khoảng 1 tiếng* |
+| | *từ Hà Nội đến Hồ Chí Minh mất bao lâu?* |
+| | *từ Hà Nội đến Hồ Chí Minh mất khoảng 2 tiếng bằng máy bay* |
+| | *từ nhà bạn đến công ty mất bao lâu?* |
+| | *từ nhà mình đến công ty mất khoảng 20 phút bằng xe máy* |
+| | ** |
+| 15 | *~ bao xa?<br /><sub>~ 얼마나 멀어요?</sub>* |
+| | *nhà anh cách công ty bao xa?* |
+| | *nhà tôi cách công ty khoảng 10km (ki lo mét)* |
+| | *강남 cách Hồ Hoàn Kiếm bao xa?* |
+| | *khoảng 7 cây số* |
+| 16 | *vừa ~ vừa ~<br /><sub>~ 하면서 ~ 하다</sub>* |
+| | *tôi vừa làm vừa học tiếng Việt* |
+| | *bố mẹ tôi vừa ăn vừa xem điện thoại* |
+| | *cô ấy vừa tập thể dục vừa nghe nhạc* |
+| | *mai phương thúy vừa xinh vừa cao* |
+| | *tiếng Việt vừa dễ vừa thú vị* |
+| | *dạo này thời tiết ở Hàn Quốc vừa lạnh vừa khô* |
+| 17 | *không những ~ mà còn ~ (nữa)<br /><sub>~ 할 뿐만 아니라 ~ 하다</sub>* |
+| | *mùa hè ở Hà Nội không những nóng mà độ ẩm còn cao* |
+| | *min ji không những giởi tiếng Anh mà còn giởi tiếng Việt nữa* |
+| | *nhà hàng đó thế nào?* |
+| | *nhà hàng đó không những ngon mà còn rẻ nữa* |
+| | *khách sạn đó thế nào?* |
+| | *khách sạn đó không những đắt mà dịch vụ còn không tốt* |
+| | ** |
+| 18 | *~ cả ~ và/lẫn (đều) ~<br /><sub>~ 와 ~ 둘다</sub>* |
+| | *tôi thích cả phở bò lẫn phỏ gà* |
+| | *hôm nay tôi đã mua cả điện thoại lẫn máy tính* |
+| | *min ji có thể nói cả tiếng Việt và tiếng Anh* |
+| | *cả min ji lẫn jae woo đều là sinh viên khoa tiếng Việt* |
+| | *cả hôm qua lẫn hôm nay trời đều mưa to* |
+| | *cuối tuần cả tôi và vợ tôi đều đi chơi gôn* |
+| | *thùy chi là ca sĩ* |
+| | *thùy chi là giáo viên thanh nhạc* |
+| | *thùy chi vừa ca sĩ vừa là giáo viên thanh nhạc* |
+| | *thùy chi không những là ca sĩ mà còn giáo viên thanh ngạc* |
+| | *cái TV này rẻ* |
+| | *cái TV này tốt* |
+| | *cái TV này không những rẻ mà còn tốt nữa* |
+| | *cái TV này vừa rẻ vừa tốt* |
+| | *hè năm nay tôi đã đi Nha Trang* |
+| | *hè năm nay tôi đã đi Đà Lạt* |
+| | *hè năm nay tôi đã đi cả Nha Trang và Đà Lạt* |
+| | *đảo Phú Quốc rất đẹp* |
+| | *đảo Jeju cũng rất đẹp* |
+| | *cả đảo Phú Quốc lẫn đảo Jeju đều rất đẹp* |
 {: #conversation }
 
 {% capture b %} 
