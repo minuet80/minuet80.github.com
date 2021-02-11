@@ -173,7 +173,6 @@ toc_sticky: true
 | | *chị thanh toán bằng tiền mặt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_140.aac" #play-pause-button .fa .fa-play} |
 | | *anh ấy đi du lịch bằng gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_141.aac" #play-pause-button .fa .fa-play} |
 | | *anh ấy đi du lịch bằng xe đạp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_142.aac" #play-pause-button .fa .fa-play} |
-| | ** |
 | 14 | *~ mất bao lâu?<br /><sub>~ 얼마나 걸려요?</sub>* |
 | | *từ Hà Nội đến Bắc Ninh mất bao lâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_143.aac" #play-pause-button .fa .fa-play} |
 | | *từ Hà Nội đến Bắc Ninh mất khoảng 1 tiếng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_144.aac" #play-pause-button .fa .fa-play} |
