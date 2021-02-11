@@ -180,7 +180,6 @@ toc_sticky: true
 | | *từ Hà Nội đến Hồ Chí Minh mất khoảng 2 tiếng bằng máy bay* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_146.aac" #play-pause-button .fa .fa-play} |
 | | *từ nhà bạn đến công ty mất bao lâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_147.aac" #play-pause-button .fa .fa-play} |
 | | *từ nhà mình đến công ty mất khoảng 20 phút bằng xe máy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_148.aac" #play-pause-button .fa .fa-play} |
-| | ** |
 | 15 | *~ bao xa?<br /><sub>~ 얼마나 멀어요?</sub>* |
 | | *nhà anh cách công ty bao xa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_149.aac" #play-pause-button .fa .fa-play} |
 | | *nhà tôi cách công ty khoảng 10km (ki lo mét)* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_150.aac" #play-pause-button .fa .fa-play} |
@@ -200,7 +199,6 @@ toc_sticky: true
 | | *nhà hàng đó không những ngon mà còn rẻ nữa* |
 | | *khách sạn đó thế nào?* |
 | | *khách sạn đó không những đắt mà dịch vụ còn không tốt* |
-| | ** |
 | 18 | *~ cả ~ và/lẫn (đều) ~<br /><sub>~ 와 ~ 둘다</sub>* |
 | | *tôi thích cả phở bò lẫn phỏ gà* |
 | | *hôm nay tôi đã mua cả điện thoại lẫn máy tính* |
