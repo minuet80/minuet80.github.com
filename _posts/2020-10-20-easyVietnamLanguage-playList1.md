@@ -134,58 +134,59 @@ toc_sticky: true
 | | *anh đã quen với công việc ở Việt Nam chưa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_107.aac" #play-pause-button .fa .fa-play} |
 | | *vâng, nhờ mọi người giúp đõ nên tôi đã quen với công việc ở đây rồi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_108.aac" #play-pause-button .fa .fa-play} |
 | 8 | *~ nhưng ~<br /><sub>~ 하지만 ~ </sub>* |
-| | *tiếng Việt khó nhưng thú vị* |
-| | *cái điện thoại này đẹp nhưng đắt* |
-| | *tôi thích cô ấy nhưng cô ấy không thích tôi* |
+| | *tiếng Việt khó nhưng thú vị* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_109.aac" #play-pause-button .fa .fa-play} |
+| | *cái điện thoại này đẹp nhưng đắt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_110.aac" #play-pause-button .fa .fa-play} |
+| | *tôi thích cô ấy nhưng cô ấy không thích tôi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_111.aac" #play-pause-button .fa .fa-play} |
 | 9 | *tuy/dù/mặc dù ~ nhưng ~<br /><sub>비록 ~ 하지만 ~ </sub>* |
-| | *mặc dù đang bị ốm nhưng cô ấy vẫn đi làm* |
-| | *tuy tiếng Việt rất khó nhưng tôi vẫn cố gắng học* |
-| | *dù công việc rất bận nhưng anh ấy vẫn chạy bộ hàng ngày* |
-| | *anh ấy vẫn chạy bộ hàng ngày dù công việc rất bận* |
-| | *dù trời mưa nhưng chúng tôi vẫn đi dã ngoại* |
-| | *chúng tôi vẫn đi ngoại dù trời mưa* |
+| | *mặc dù đang bị ốm nhưng cô ấy vẫn đi làm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_112.aac" #play-pause-button .fa .fa-play} |
+| | *tuy tiếng Việt rất khó nhưng tôi vẫn cố gắng học* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_113.aac" #play-pause-button .fa .fa-play} |
+| | *dù công việc rất bận nhưng anh ấy vẫn chạy bộ hàng ngày* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_114.aac" #play-pause-button .fa .fa-play} |
+| | *anh ấy vẫn chạy bộ hàng ngày dù công việc rất bận* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_115.aac" #play-pause-button .fa .fa-play} |
+| | *dù trời mưa nhưng chúng tôi vẫn đi dã ngoại* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_116.aac" #play-pause-button .fa .fa-play} |
+| | *chúng tôi vẫn đi ngoại dù trời mưa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_117.aac" #play-pause-button .fa .fa-play} |
 | 10 | *~ còn ~<br /><sub>~ 그리고 / 그런데 ~</sub>* |
-| | *tôi thích phở bò, còn vợ tôi thích phở gà* |
-| | *thỏ chạy nhanh, còn rùa chạy chậm* |
-| | *tôi thích đi du lịch, còn các bạn thích gì?* |
-| | *chào anh! tôi là Nam, nhân viên công ty Vingroup. còn anh?* |
-| | *toi là Lee Min Ho, nhân viên công ty LG* |
-| | *tôi đang làm việc ở Hồ Chí Mình, còn anh?* |
-| | *tôi đang làm việc ở Hà Nội* |
-| | *anh Nam làm việc chăm chỉ, còn anh Hải thì lười* |
-| | *chúng toi đã yêu nhau 10 năm rồi nhưng chưa cưới* |
-| | *mặc dù hôm nay là chủ nhật nhưng tôi vẫn phải đi làm* |
-| | *cho chị 1 bún chả và 1 cốc nước chanh nhé* |
-| | *dạ, vâng ạ còn anh ạ?* |
-| | *cho anh 1 phở bò và 5 cái quẩy nhé* |
+| | *tôi thích phở bò, còn vợ tôi thích phở gà* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_118.aac" #play-pause-button .fa .fa-play} |
+| | *thỏ chạy nhanh, còn rùa chạy chậm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_119.aac" #play-pause-button .fa .fa-play} |
+| | *tôi thích đi du lịch, còn các bạn thích gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_120.aac" #play-pause-button .fa .fa-play} |
+| | *chào anh! tôi là Nam, nhân viên công ty Vingroup. còn anh?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_121.aac" #play-pause-button .fa .fa-play} |
+| | *toi là Lee Min Ho, nhân viên công ty LG* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_122.aac" #play-pause-button .fa .fa-play} |
+| | *tôi đang làm việc ở Hồ Chí Mình, còn anh?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_123.aac" #play-pause-button .fa .fa-play} |
+| | *tôi đang làm việc ở Hà Nội* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_124.aac" #play-pause-button .fa .fa-play} |
+| | *anh Nam làm việc chăm chỉ, còn anh Hải thì lười* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_125.aac" #play-pause-button .fa .fa-play} |
+| | *chúng toi đã yêu nhau 10 năm rồi nhưng chưa cưới* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_126.aac" #play-pause-button .fa .fa-play} |
+| | *mặc dù hôm nay là chủ nhật nhưng tôi vẫn phải đi làm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_127.aac" #play-pause-button .fa .fa-play} |
+| | *cho chị 1 bún chả và 1 cốc nước chanh nhé* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_128.aac" #play-pause-button .fa .fa-play} |
+| | *dạ, vâng ạ còn anh ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_129.aac" #play-pause-button .fa .fa-play} |
+| | *cho anh 1 phở bò và 5 cái quẩy nhé* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_130.aac" #play-pause-button .fa .fa-play} |
 | 11 | *từ ~ đến ~<br /><sub>~ 부터 ~ 까지</sub>* |
-| | *tôi làm việc từ 8 giờ sáng đến 5 giờ chiều* |
-| | *chị ấy đi công tác từ ngày 15 đến ngày 20 tháng 8* |
-| | *em đi bộ từ nhà đến công ty* |
+| | *tôi làm việc từ 8 giờ sáng đến 5 giờ chiều* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_131.aac" #play-pause-button .fa .fa-play} |
+| | *chị ấy đi công tác từ ngày 15 đến ngày 20 tháng 8* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_132.aac" #play-pause-button .fa .fa-play} |
+| | *em đi bộ từ nhà đến công ty* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_133.aac" #play-pause-button .fa .fa-play} |
 | 12 | *bằng ~<br /><sub>~ 로</sub>* |
-| | *người Việt Nam bằng xe máy* |
-| | *chị thanh toán bằng tiền mặt* |
-| | *anh ấy đi du lịch bằng xe đạp* |
+| | *người Việt Nam bằng xe máy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_134.aac" #play-pause-button .fa .fa-play} |
+| | *chị thanh toán bằng tiền mặt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_135.aac" #play-pause-button .fa .fa-play} |
+| | *anh ấy đi du lịch bằng xe đạp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_136.aac" #play-pause-button .fa .fa-play} |
 | 13 | *bằng gì?<br /><sub>무엇으로?</sub>* |
-| | *người Việt Nam thường đi làm bằng gì?* |
-| | *người Việt Nam thường đi làm bằng xe máy* |
-| | *chị thanh toán bằng gì ạ?* |
-| | *chị thanh toán bằng tiền mặt* |
-| | *anh ấy đi du lịch bằng gì?* |
+| | *người Việt Nam thường đi làm bằng gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_137.aac" #play-pause-button .fa .fa-play} |
+| | *người Việt Nam thường đi làm bằng xe máy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_138.aac" #play-pause-button .fa .fa-play} |
+| | *chị thanh toán bằng gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_139.aac" #play-pause-button .fa .fa-play} |
+| | *chị thanh toán bằng tiền mặt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_140.aac" #play-pause-button .fa .fa-play} |
+| | *anh ấy đi du lịch bằng gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_141.aac" #play-pause-button .fa .fa-play} |
+| | *anh ấy đi du lịch bằng xe đạp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_142.aac" #play-pause-button .fa .fa-play} |
 | | ** |
 | 14 | *~ mất bao lâu?<br /><sub>~ 얼마나 걸려요?</sub>* |
-| | *từ Hà Nội đến Bắc Ninh mất bao lâu?* |
-| | *từ Hà Nội đến Bắc Ninh mất khoảng 1 tiếng* |
-| | *từ Hà Nội đến Hồ Chí Minh mất bao lâu?* |
-| | *từ Hà Nội đến Hồ Chí Minh mất khoảng 2 tiếng bằng máy bay* |
-| | *từ nhà bạn đến công ty mất bao lâu?* |
-| | *từ nhà mình đến công ty mất khoảng 20 phút bằng xe máy* |
+| | *từ Hà Nội đến Bắc Ninh mất bao lâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_143.aac" #play-pause-button .fa .fa-play} |
+| | *từ Hà Nội đến Bắc Ninh mất khoảng 1 tiếng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_144.aac" #play-pause-button .fa .fa-play} |
+| | *từ Hà Nội đến Hồ Chí Minh mất bao lâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_145.aac" #play-pause-button .fa .fa-play} |
+| | *từ Hà Nội đến Hồ Chí Minh mất khoảng 2 tiếng bằng máy bay* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_146.aac" #play-pause-button .fa .fa-play} |
+| | *từ nhà bạn đến công ty mất bao lâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_147.aac" #play-pause-button .fa .fa-play} |
+| | *từ nhà mình đến công ty mất khoảng 20 phút bằng xe máy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_148.aac" #play-pause-button .fa .fa-play} |
 | | ** |
 | 15 | *~ bao xa?<br /><sub>~ 얼마나 멀어요?</sub>* |
-| | *nhà anh cách công ty bao xa?* |
-| | *nhà tôi cách công ty khoảng 10km (ki lo mét)* |
-| | *강남 cách Hồ Hoàn Kiếm bao xa?* |
-| | *khoảng 7 cây số* |
+| | *nhà anh cách công ty bao xa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_149.aac" #play-pause-button .fa .fa-play} |
+| | *nhà tôi cách công ty khoảng 10km (ki lo mét)* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_150.aac" #play-pause-button .fa .fa-play} |
+| | *강남 cách Hồ Hoàn Kiếm bao xa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_151.aac" #play-pause-button .fa .fa-play} |
+| | *khoảng 7 cây số* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_152.aac" #play-pause-button .fa .fa-play} |
 | 16 | *vừa ~ vừa ~<br /><sub>~ 하면서 ~ 하다</sub>* |
 | | *tôi vừa làm vừa học tiếng Việt* |
 | | *bố mẹ tôi vừa ăn vừa xem điện thoại* |
@@ -245,6 +246,12 @@ toc_sticky: true
 > **năng lực**: 능력  
 > **thất bại**: 실패  
 > **dã ngoại**: 소풍  
+> **phương tiện giao thông**: 교통수단  
+> **xe taxi**: 택시  
+> **tàu thủy**: 배  
+> **xe đạp**: 자전거  
+> **tàu hỏa**: 기차  
+> **tàu điện ngầm**: 지하철  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -261,6 +268,12 @@ toc_sticky: true
 *[năng lực]: 능력
 *[thất bại]: 실패
 *[dã ngoại]: 소풍
+*[phương tiện giao thông]: 교통수단
+*[xe taxi]: 택시
+*[tàu thủy]: 배
+*[xe đạp]: 자전거
+*[tàu hỏa]: 기차
+*[tàu điện ngầm]: 지하철
 
 {% capture c %}
   ![](/assets/images/empty.png)
