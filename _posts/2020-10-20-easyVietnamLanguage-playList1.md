@@ -244,6 +244,22 @@ toc_sticky: true
 | | *không, trên bàn không có máy tính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_205.aac" #play-pause-button .fa .fa-play} |
 | | *trên bàn có cái điện thoại nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_206.aac" #play-pause-button .fa .fa-play} |
 | | *không, trên bàn không có cái điện thoại nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_207.aac" #play-pause-button .fa .fa-play} |
+| 20 | *rất・lắm・quá<br /><sub>아주/매우/너무</sub>* |
+| | *cô ấy rất gầy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_208.aac" #play-pause-button .fa .fa-play} |
+| | *phòng ngủ rất sạch* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_209.aac" #play-pause-button .fa .fa-play} |
+| | *mai phường thúy rất cao* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_210.aac" #play-pause-button .fa .fa-play} |
+| | *dạo này công ty anh thế nào?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_211.aac" #play-pause-button .fa .fa-play} |
+| | *dạo này công ty anh nhiều việc lắm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_212.aac" #play-pause-button .fa .fa-play} |
+| | *vịnh Hạ Long thế nào?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_213.aac" #play-pause-button .fa .fa-play} |
+| | *vịnh Hạ Long đẹp lắm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_214.aac" #play-pause-button .fa .fa-play} |
+| | *thanh hằng thế nào?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_215.aac" #play-pause-button .fa .fa-play} |
+| | *thanh hằng trẻ lắm* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_216.aac" #play-pause-button .fa .fa-play} |
+| | *bánh xèo ngon quá* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_217.aac" #play-pause-button .fa .fa-play} |
+| | *hôm nay trời lạnh quá* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_218.aac" #play-pause-button .fa .fa-play} |
+| | *bài tập này khó quá* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_219.aac" #play-pause-button .fa .fa-play} |
+| | *dạo này trời mưa quá nhiều* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_220.aac" #play-pause-button .fa .fa-play} |
+| | *hôm nay tôi quá bận* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_221.aac" #play-pause-button .fa .fa-play} |
+| | *hôm nay ở Hà Nội quá nóng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_222.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -280,6 +296,11 @@ toc_sticky: true
 > **đối diện**: 맞은편  
 > **ba lô**: 배낭  
 > **lọ hoa**: 꽃병  
+> **béo**: 뚱뚱하다  
+> **gầy**: 마르다  
+> **bẩn**: 더럽다  
+> **sạch**: 깨끗하다  
+> **trạng thái**: 상태  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -309,6 +330,11 @@ toc_sticky: true
 *[đối diện]: 맞은편
 *[ba lô]: 배낭
 *[lọ hoa]: 꽃병
+*[béo]: 뚱뚱하다
+*[gầy]: 마르다
+*[bẩn]: 더럽다
+*[sạch]: 깨끗하다
+*[trạng thái]: 상태
 
 {% capture c %}
   ![](/assets/images/empty.png)
