@@ -186,40 +186,64 @@ toc_sticky: true
 | | *강남 cách Hồ Hoàn Kiếm bao xa?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_151.aac" #play-pause-button .fa .fa-play} |
 | | *khoảng 7 cây số* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_152.aac" #play-pause-button .fa .fa-play} |
 | 16 | *vừa ~ vừa ~<br /><sub>~ 하면서 ~ 하다</sub>* |
-| | *tôi vừa làm vừa học tiếng Việt* |
-| | *bố mẹ tôi vừa ăn vừa xem điện thoại* |
-| | *cô ấy vừa tập thể dục vừa nghe nhạc* |
-| | *mai phương thúy vừa xinh vừa cao* |
-| | *tiếng Việt vừa dễ vừa thú vị* |
-| | *dạo này thời tiết ở Hàn Quốc vừa lạnh vừa khô* |
+| | *tôi vừa làm vừa học tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_153.aac" #play-pause-button .fa .fa-play} |
+| | *bố mẹ tôi vừa ăn vừa xem điện thoại* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_154.aac" #play-pause-button .fa .fa-play} |
+| | *cô ấy vừa tập thể dục vừa nghe nhạc* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_155.aac" #play-pause-button .fa .fa-play} |
+| | *mai phương thúy vừa xinh vừa cao* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_156.aac" #play-pause-button .fa .fa-play} |
+| | *tiếng Việt vừa dễ vừa thú vị* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_157.aac" #play-pause-button .fa .fa-play} |
+| | *dạo này thời tiết ở Hàn Quốc vừa lạnh vừa khô* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_158.aac" #play-pause-button .fa .fa-play} |
 | 17 | *không những ~ mà còn ~ (nữa)<br /><sub>~ 할 뿐만 아니라 ~ 하다</sub>* |
-| | *mùa hè ở Hà Nội không những nóng mà độ ẩm còn cao* |
-| | *min ji không những giởi tiếng Anh mà còn giởi tiếng Việt nữa* |
-| | *nhà hàng đó thế nào?* |
-| | *nhà hàng đó không những ngon mà còn rẻ nữa* |
-| | *khách sạn đó thế nào?* |
-| | *khách sạn đó không những đắt mà dịch vụ còn không tốt* |
+| | *mùa hè ở Hà Nội không những nóng mà độ ẩm còn cao* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_159.aac" #play-pause-button .fa .fa-play} |
+| | *min ji không những giởi tiếng Anh mà còn giởi tiếng Việt nữa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_160.aac" #play-pause-button .fa .fa-play} |
+| | *nhà hàng đó không những ngon mà còn rẻ nữa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_161.aac" #play-pause-button .fa .fa-play} |
+| | *khách sạn đó không những đắt mà dịch vụ còn không tốt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_162.aac" #play-pause-button .fa .fa-play} |
 | 18 | *~ cả ~ và/lẫn (đều) ~<br /><sub>~ 와 ~ 둘다</sub>* |
-| | *tôi thích cả phở bò lẫn phỏ gà* |
-| | *hôm nay tôi đã mua cả điện thoại lẫn máy tính* |
-| | *min ji có thể nói cả tiếng Việt và tiếng Anh* |
-| | *cả min ji lẫn jae woo đều là sinh viên khoa tiếng Việt* |
-| | *cả hôm qua lẫn hôm nay trời đều mưa to* |
-| | *cuối tuần cả tôi và vợ tôi đều đi chơi gôn* |
-| | *thùy chi là ca sĩ* |
-| | *thùy chi là giáo viên thanh nhạc* |
-| | *thùy chi vừa ca sĩ vừa là giáo viên thanh nhạc* |
-| | *thùy chi không những là ca sĩ mà còn giáo viên thanh ngạc* |
-| | *cái TV này rẻ* |
-| | *cái TV này tốt* |
-| | *cái TV này không những rẻ mà còn tốt nữa* |
-| | *cái TV này vừa rẻ vừa tốt* |
-| | *hè năm nay tôi đã đi Nha Trang* |
-| | *hè năm nay tôi đã đi Đà Lạt* |
-| | *hè năm nay tôi đã đi cả Nha Trang và Đà Lạt* |
-| | *đảo Phú Quốc rất đẹp* |
-| | *đảo Jeju cũng rất đẹp* |
-| | *cả đảo Phú Quốc lẫn đảo Jeju đều rất đẹp* |
+| | *tôi thích cả phở bò lẫn phở gà* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_163.aac" #play-pause-button .fa .fa-play} |
+| | *hôm nay tôi đã mua cả điện thoại lẫn máy tính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_164.aac" #play-pause-button .fa .fa-play} |
+| | *min ji có thể nói cả tiếng Việt và tiếng Anh* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_165.aac" #play-pause-button .fa .fa-play} |
+| | *cả min ji lẫn jae woo đều là sinh viên khoa tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_166.aac" #play-pause-button .fa .fa-play} |
+| | *cả hôm qua lẫn hôm nay trời đều mưa to* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_167.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần cả tôi và vợ tôi đều đi chơi gôn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_168.aac" #play-pause-button .fa .fa-play} |
+| | *thùy chi vừa là ca sĩ vừa là giáo viên thanh nhạc* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_169.aac" #play-pause-button .fa .fa-play} |
+| | *thùy chi không những là ca sĩ mà còn là giáo viên thanh ngạc* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_170.aac" #play-pause-button .fa .fa-play} |
+| | *cái TV này không những rẻ mà còn tốt nữa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_171.aac" #play-pause-button .fa .fa-play} |
+| | *cái TV này vừa rẻ vừa tốt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_172.aac" #play-pause-button .fa .fa-play} |
+| | *hè năm nay tôi đã đi cả Nha Trang và Đà Lạt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_173.aac" #play-pause-button .fa .fa-play} |
+| | *cả đảo Phú Quốc lẫn đảo Jeju đều rất đẹp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_174.aac" #play-pause-button .fa .fa-play} |
+| 19 | *trong・ngoài・trước・sau・trên・giữa・cạnh・dưới<br /><sub>안・밖・앞・뒤・위・사이・옆・아래</sub>* |
+| | *đi vào trong* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_175.aac" #play-pause-button .fa .fa-play} |
+| | *đi ra ngoài* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_176.aac" #play-pause-button .fa .fa-play} |
+| | *đi lên trên* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_177.aac" #play-pause-button .fa .fa-play} |
+| | *đi xuống dưới* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_178.aac" #play-pause-button .fa .fa-play} |
+| | *sách, cốc và máy tính ở trên bàn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_179.aac" #play-pause-button .fa .fa-play} |
+| | *cốc ở giữa sách và máy tính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_180.aac" #play-pause-button .fa .fa-play} |
+| | *ghế ở cạnh bàn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_181.aac" #play-pause-button .fa .fa-play} |
+| | *con chó ở dưới bàn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_182.aac" #play-pause-button .fa .fa-play} |
+| | *con mèo ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_183.aac" #play-pause-button .fa .fa-play} |
+| | *con mèo ở trên bàn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_184.aac" #play-pause-button .fa .fa-play} |
+| | *con chó ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_185.aac" #play-pause-button .fa .fa-play} |
+| | *con chó ở dưới bàn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_186.aac" #play-pause-button .fa .fa-play} |
+| | *quả táo ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_187.aac" #play-pause-button .fa .fa-play} |
+| | *quả táo ở giữa ba lô và máy tính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_188.aac" #play-pause-button .fa .fa-play} |
+| | *cốc ở đâu?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_189.aac" #play-pause-button .fa .fa-play} |
+| | *cốc ở trên bàn, cạnh quyển sách và lọ hoa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_190.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có cái gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_191.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có lọ hoa, cốc, kính và sách* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_192.aac" #play-pause-button .fa .fa-play} |
+| | *dưới bàn có cái gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_193.aac" #play-pause-button .fa .fa-play} |
+| | *dưới bàn có 1 con chó* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_194.aac" #play-pause-button .fa .fa-play} |
+| | *trong phòng họp có ai?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_195.aac" #play-pause-button .fa .fa-play} |
+| | *trong phòng họp có nhân viên đang họp* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_196.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có quyển sách nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_197.aac" #play-pause-button .fa .fa-play} |
+| | *có, có 2 quyển sách* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_198.aac" #play-pause-button .fa .fa-play} |
+| | *không, không có quyển sách nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_199.aac" #play-pause-button .fa .fa-play} |
+| | *trong phòng có người nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_200.aac" #play-pause-button .fa .fa-play} |
+| | *có, có 5 người* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_201.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có quyển sách nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_202.aac" #play-pause-button .fa .fa-play} |
+| | *có, trên bàn có 3 quyển sách* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_203.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có cái máy tính nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_204.aac" #play-pause-button .fa .fa-play} |
+| | *không, trên bàn không có máy tính* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_205.aac" #play-pause-button .fa .fa-play} |
+| | *trên bàn có cái điện thoại nào không?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_206.aac" #play-pause-button .fa .fa-play} |
+| | *không, trên bàn không có cái điện thoại nào* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_207.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -249,6 +273,13 @@ toc_sticky: true
 > **xe đạp**: 자전거  
 > **tàu hỏa**: 기차  
 > **tàu điện ngầm**: 지하철  
+> **độ ẩm**: 습도  
+> **gôn**: 골프  
+> **thanh nhạc**: 음악  
+> **vị trí**: 위치
+> **đối diện**: 맞은편  
+> **ba lô**: 배낭  
+> **lọ hoa**: 꽃병  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -271,6 +302,13 @@ toc_sticky: true
 *[xe đạp]: 자전거
 *[tàu hỏa]: 기차
 *[tàu điện ngầm]: 지하철
+*[độ ẩm]: 습도
+*[gôn]: 골프
+*[thanh nhạc]: 음악
+*[vị trí]: 위치
+*[đối diện]: 맞은편
+*[ba lô]: 배낭
+*[lọ hoa]: 꽃병
 
 {% capture c %}
   ![](/assets/images/empty.png)
