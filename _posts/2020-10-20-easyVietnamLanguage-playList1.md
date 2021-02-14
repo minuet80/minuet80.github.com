@@ -260,6 +260,43 @@ toc_sticky: true
 | | *dạo này trời mưa quá nhiều* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_220.aac" #play-pause-button .fa .fa-play} |
 | | *hôm nay tôi quá bận* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_221.aac" #play-pause-button .fa .fa-play} |
 | | *hôm nay ở Hà Nội quá nóng* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_222.aac" #play-pause-button .fa .fa-play} |
+| 21 | *và<br /><sub>~와/과/~하고</sub>* |
+| | *tôi đang sống và làm việc ở Hồ Chí Minh* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_223.aac" #play-pause-button .fa .fa-play} |
+| | *hoa quả ở Việt Nam rất rẻ và ngon* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_224.aac" #play-pause-button .fa .fa-play} |
+| | *tôi đã mua xoài, táo, nho và dưa hấu* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_225.aac" #play-pause-button .fa .fa-play} |
+| | *rau và hoa quả rất tốt cho sức khỏe* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_226.aac" #play-pause-button .fa .fa-play} |
+| 22 | *với<br /><sub>~랑/이랑</sub>* |
+| | *tối (hom) qua tôi với đồng nghiệp đã đi uống bia* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_227.aac" #play-pause-button .fa .fa-play} |
+| | *anh chị dùng gì ạ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_228.aac" #play-pause-button .fa .fa-play} |
+| | *cho anh 2 phở gà, 2 phở bò với 4 trà đá nhé* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_229.aac" #play-pause-button .fa .fa-play} |
+| | *tôi với mai làm cùng công ty* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_230.aac" #play-pause-button .fa .fa-play} |
+| | *vì vậy tôi hay đi cà phê và nói chuyện với cô ấy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_231.aac" #play-pause-button .fa .fa-play} |
+| | *tôi với Lan là bạn thân* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_232.aac" #play-pause-button .fa .fa-play} |
+| 23 | *cùng/cùng với<br /><sub>~와 같이</sub>* |
+| | *người Việt Nam thường ăn phở cùng với quẩy* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_233.aac" #play-pause-button .fa .fa-play} |
+| | *vợ chồng tôi cùng đi chơi gôn vào cuối tuần* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_234.aac" #play-pause-button .fa .fa-play} |
+| | *tôi và bạn tôi cùng học tiếng Việt* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_235.aac" #play-pause-button .fa .fa-play} |
+| | *tôi đã đi du lịch cùng với bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_236.aac" #play-pause-button .fa .fa-play} |
+| 24 | *rồi<br /><sub>~하고 나서</sub>* |
+| | *tôi tập thể dục rồi tắm gội* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_237.aac" #play-pause-button .fa .fa-play} |
+| | *buổi tối, tôi thường đọc báo rồi đi ngủ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_238.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần, tôi thường đi uống cà phê rồi đi ăn cùng bạn* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_239.aac" #play-pause-button .fa .fa-play} |
+| | *chúng tôi họp rồi đi ăn trưa* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_240.aac" #play-pause-button .fa .fa-play} |
+| 25 | *hay<br /><sub>~하거나</sub>* |
+| | *trưa nay, chúng ta sẽ ăn gì? ăn cơm hay phở?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_241.aac" #play-pause-button .fa .fa-play} |
+| | *mình muốn ăn phở bò* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_242.aac" #play-pause-button .fa .fa-play} |
+| | *chiều nay, chúng ta sẽ họp lúc 2 giờ hay 3 giờ?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_243.aac" #play-pause-button .fa .fa-play} |
+| | *chúng ta sẽ họp lúc 2 giờ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_244.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần, anh thường ở nhà hay đi chơi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_245.aac" #play-pause-button .fa .fa-play} |
+| | *tôi thường ở nhà vì tôi muốn nghỉ ngơi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_246.aac" #play-pause-button .fa .fa-play} |
+| | *chị uống cà phê hay trả?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_247.aac" #play-pause-button .fa .fa-play} |
+| | *cho chị cà phê* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_248.aac" #play-pause-button .fa .fa-play} |
+| 26 | *hoặc<br /><sub>~하거나</sub>* |
+| | *tết năm nay anh sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_249.aac" #play-pause-button .fa .fa-play} |
+| | *tôi sẽ về nước hoặc đi du lịch với gia đình* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_250.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần gia đình tôi thường đi dã ngoại hoặc đi bơi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_251.aac" #play-pause-button .fa .fa-play} |
+| | *khi có thời gian rỗi, tôi thường ở nhà đọc sách hoặc gặp bạn bè* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_252.aac" #play-pause-button .fa .fa-play} |
+| | *cuối tuần này tôi sẽ đi du lịch hoặc về quê* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_253.aac" #play-pause-button .fa .fa-play} |
 {: #conversation }
 
 {% capture b %} 
@@ -301,6 +338,11 @@ toc_sticky: true
 > **bẩn**: 더럽다  
 > **sạch**: 깨끗하다  
 > **trạng thái**: 상태  
+> **đồng nghiệp**: 동료  
+> **gội**: 머리감다  
+> **đọc báo**: 신문을 읽다  
+> **bơi**: 수영하다  
+> **rỗi**: 한가한  
 {: #vocabulary}
 
 *[về nước]: 귀국하다
@@ -335,6 +377,11 @@ toc_sticky: true
 *[bẩn]: 더럽다
 *[sạch]: 깨끗하다
 *[trạng thái]: 상태
+*[đồng nghiệp]: 동료
+*[gội]: 머리감다
+*[đọc báo]: 신문을 읽다
+*[bơi]: 수영하다
+*[rỗi]: 한가한
 
 {% capture c %}
   ![](/assets/images/empty.png)
