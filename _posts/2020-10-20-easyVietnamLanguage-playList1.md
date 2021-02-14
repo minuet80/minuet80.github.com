@@ -289,8 +289,8 @@ toc_sticky: true
 | | *chúng ta sẽ họp lúc 2 giờ* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_244.aac" #play-pause-button .fa .fa-play} |
 | | *cuối tuần, anh thường ở nhà hay đi chơi?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_245.aac" #play-pause-button .fa .fa-play} |
 | | *tôi thường ở nhà vì tôi muốn nghỉ ngơi* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_246.aac" #play-pause-button .fa .fa-play} |
-| | *chị uống cà phê hay trả?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_247.aac" #play-pause-button .fa .fa-play} |
-| | *cho chị cà phê* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_248.aac" #play-pause-button .fa .fa-play} |
+| | *chị uống cà phê hay trà?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_247.aac" #play-pause-button .fa .fa-play} |
+| | *cho chị trà* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_248.aac" #play-pause-button .fa .fa-play} |
 | 26 | *hoặc<br /><sub>~하거나</sub>* |
 | | *tết năm nay anh sẽ làm gì?* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_249.aac" #play-pause-button .fa .fa-play} |
 | | *tôi sẽ về nước hoặc đi du lịch với gia đình* | [](#){: data-url="/assets/media/youtube/easyvietnamlanguage/2020-10-20-easyVietnamLanguage-playList1_250.aac" #play-pause-button .fa .fa-play} |
