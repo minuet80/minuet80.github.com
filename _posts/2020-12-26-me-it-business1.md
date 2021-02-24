@@ -1,7 +1,7 @@
 ---
 title: "행정표준용어정리"
 categories:
-  - IT
+  - Me
 tags:
   - Business
 ---

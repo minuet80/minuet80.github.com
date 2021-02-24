@@ -1,7 +1,7 @@
 ---
 title: "한국어 텍스트 음성 변환 (TTS)"
 categories:
-  - IT
+  - Me
 tags:
   - Business
 ---
