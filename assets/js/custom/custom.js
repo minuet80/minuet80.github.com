@@ -14314,6 +14314,8 @@ $(document).ready(function() {
             var debtTotamt = Number($('input[name="debtTotamt"]').val());
             // 업종 PER
             var indutyPer = Number($('input[name="indutyPer"]').val());
+            // 배당금
+            var dvdnd = Number($('input[name="dvdnd"]').val());
 
             // 시가총액
             var mktcTotamt = Math.round((stkpc * pblicteStockCnt) * 100) / 100;
