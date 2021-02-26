@@ -14328,8 +14328,10 @@ $(document).ready(function() {
             // roe
             var roe = ntpfThstrm / ecptl * 100;
 
-            // 적정주가
-            var proprtStkpc = eps * indutyPer;
+            // 적정주가 (업종PER)
+            var proprtStkpcByIndutyPer = eps * indutyPer;
+            // 적정주가 (eps * roe)
+            var proprtStkpc = eps * roe;
 
             $('#mktcTotamt').html(mktcTotamt);
             $('#eps').html(eps);
@@ -14337,6 +14339,7 @@ $(document).ready(function() {
             $('#bps').html(bps);
             $('#roe').html(roe + '%');
             $('#pbr').html(pbr);
+            $('#proprtStkpcByIndutyPer').html(proprtStkpcByIndutyPer);
             $('#proprtStkpc').html(proprtStkpc);
         });
     };

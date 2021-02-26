@@ -57,7 +57,8 @@ toc_sticky: true
   - EV/EBITDA <span id="evEbitda"></span>
   - EV (기업가치) <span id="ev"></span>
   - EBITDA <span id="ebitda"></span>
-  - 적정주가 <span id="proprtStkpc"></span>
+  - 적정주가 (업종PER) <span id="proprtStkpcByIndutyPer"></span>
+  - 적정주가 (eps * roe) <span id="proprtStkpcByEpsRoe"></span>
 
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
