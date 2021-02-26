@@ -40,16 +40,19 @@ toc_sticky: true
   - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제 세금
 - 적정주가 = EPS * PER
 - <button id="stockCalc">계산</button>
-  - 현재주가 <input type="text" name="stkpc" />
-  - 발행주식수 <input type="text" name="pblicteStockCnt" />
-  - 당기순이익 <input type="text" name="ntpfThstrm" />
-  - 자기자본/자본총계 <input type="text" name="ecptl" />
-  - 주당순자산 <input type="text" name="nstsr" />
-  - 업종 PER <input type="text" name="indutyPer" />
+  - 현재주가 <input type="text" name="stkpc" placeholder="36050" value="36050" />
+  - 발행주식수 <input type="text" name="pblicteStockCnt"  placeholder="9604000" value="9604000" />
+  - 당기순이익 <input type="text" name="ntpfThstrm" placeholder="15100532141" value="15100532141" />
+  - 자산총계 <input type="text" name="assetsTotamt" placeholder="132725123457" value="132725123457" />
+  - 부채총계 <input type="text" name="debtTotamt" placeholder="47072945035" value="47072945035" />
+  - 자기자본/자본총계 <input type="text" name="ecptl" placeholder="85652178422" value="85652178422" />
+  - 업종 PER <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
 - 결과
+  - 시가총액 <span id="mktcTotamt"></span>
   - EPS (주당 순이익) <span id="eps"></span>
   - PER (예상 주가 수익 비율) <span id="per"></span>
-  - ROE (자기자본이익율) <span id="row"></span>
+  - BPS (주당순자산) <span id="bps"></span>
+  - ROE (자기자본이익율) <span id="roe"></span>
   - PBR (주가순자산비율) <span id="pbr"></span>
   - EV/EBITDA <span id="evEbitda"></span>
   - EV (기업가치) <span id="ev"></span>

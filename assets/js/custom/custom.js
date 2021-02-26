@@ -14294,7 +14294,53 @@ $(document).ready(function() {
             }
         });
     }
-    // 행정표준용어 정리
+    // 행정표준용어 정리 end
+
+    // 주식공부
+    if ($('#stockCalc').length > 0) {
+        $('#stockCalc').click(function (e) {
+            e.preventDefault();
+            // 현재주가
+            var stkpc = Number($('input[name="stkpc"]').val());
+            // 당기순이익
+            var ntpfThstrm = Number($('input[name="ntpfThstrm"]').val());
+            // 발행주식수
+            var pblicteStockCnt = Number($('input[name="pblicteStockCnt"]').val());
+            // 자기자본/자본총계
+            var ecptl = Number($('input[name="ecptl"]').val());
+            // 자산총계
+            var assetsTotamt = Number($('input[name="assetsTotamt"]').val());
+            // 부채총계
+            var debtTotamt = Number($('input[name="debtTotamt"]').val());
+            // 업종 PER
+            var indutyPer = Number($('input[name="indutyPer"]').val());
+
+            // 시가총액
+            var mktcTotamt = Math.round((stkpc * pblicteStockCnt) * 100) / 100;
+            // eps
+            var eps = Math.round((ntpfThstrm / pblicteStockCnt) * 100) / 100;
+            // per
+            var per = Math.round((mktcTotamt / ntpfThstrm) * 100) / 100;
+            // bps
+            var bps = Math.round(((assetsTotamt - debtTotamt) / pblicteStockCnt) * 100) / 100;
+            // pbr
+            var pbr = Math.round((mktcTotamt / ecptl) * 100) / 100;
+            // roe
+            var roe = ntpfThstrm / ecptl * 100;
+
+            // 적정주가
+            var proprtStkpc = eps * 
+
+            $('#mktcTotamt').html(mktcTotamt);
+            $('#eps').html(eps);
+            $('#per').html(per);
+            $('#bps').html(bps);
+            $('#roe').html(roe + '%');
+            $('#pbr').html(pbr);
+            $('#proprtStkpc').html(eps * indutyPer);
+        });
+    };
+    // 주식공부 end
 
     if ($('#business2').length > 0) {
 
