@@ -48,6 +48,7 @@ toc_sticky: true
   - 부채총계 <input type="text" name="debtTotamt" placeholder="47072945035" value="47072945035" />
   - 자기자본/자본총계 <input type="text" name="ecptl" placeholder="85652178422" value="85652178422" />
   - 업종 PER <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
+  - 배당금 <input type="text" name="dvdnd" placeholder="100" value="100" />
 - 결과
   - 시가총액 <span id="mktcTotamt"></span>
   - EPS (주당 순이익) <span id="eps"></span>
@@ -55,11 +56,12 @@ toc_sticky: true
   - BPS (주당순자산) <span id="bps"></span>
   - ROE (자기자본이익율) <span id="roe"></span>
   - PBR (주가순자산비율) <span id="pbr"></span>
+  - 적정주가 (업종PER) <span id="proprtStkpcByIndutyPer"></span>
+  - 적정주가 (eps * roe) <span id="proprtStkpcByEpsRoe"></span>
+  - 배당성향 <span id="alotIncln"></span>
   - EV/EBITDA <span id="evEbitda"></span>
   - EV (기업가치) <span id="ev"></span>
   - EBITDA <span id="ebitda"></span>
-  - 적정주가 (업종PER) <span id="proprtStkpcByIndutyPer"></span>
-  - 적정주가 (eps * roe) <span id="proprtStkpcByEpsRoe"></span>
 
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율

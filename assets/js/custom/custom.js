@@ -14327,6 +14327,8 @@ $(document).ready(function() {
             var pbr = Math.round((mktcTotamt / ecptl) * 100) / 100;
             // roe
             var roe = Math.round((ntpfThstrm / ecptl * 100) * 100) / 100;
+            // 배당성향
+            var alotIncln = Math.round((dvdnd / eps) * 100) / 100;
 
             // 적정주가 (업종PER)
             var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;
@@ -14339,6 +14341,7 @@ $(document).ready(function() {
             $('#bps').html(bps);
             $('#roe').html(roe + '%');
             $('#pbr').html(pbr);
+            $('#alotIncln').html(alotIncln);
             $('#proprtStkpcByIndutyPer').html(proprtStkpcByIndutyPer);
             $('#proprtStkpcByEpsRoe').html(proprtStkpcByEpsRoe);
         });
