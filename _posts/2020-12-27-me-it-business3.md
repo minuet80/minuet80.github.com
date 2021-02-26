@@ -38,6 +38,7 @@ toc_sticky: true
   - EBITDA는 이자비용, 법인세, 유무형자산, 감가상각비를 반영하기 전의 이익을 말함
   - EV = 시가총액 + 순차입금 (총차입금 - 현금 및 투자유가증권)
   - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제 세금
+- 배당성향 = 배당금 / 주당순이익
 - 적정주가 = EPS * PER
 - <button id="stockCalc">계산</button>
   - 현재주가 <input type="text" name="stkpc" placeholder="36050" value="36050" />
