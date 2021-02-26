@@ -14329,9 +14329,9 @@ $(document).ready(function() {
             var roe = Math.round((ntpfThstrm / ecptl * 100) * 100) / 100;
 
             // 적정주가 (업종PER)
-            var proprtStkpcByIndutyPer = eps * indutyPer;
+            var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;
             // 적정주가 (eps * roe)
-            var proprtStkpcByEpsRoe = eps * roe;
+            var proprtStkpcByEpsRoe = Math.round((eps * roe) * 100) / 100;
 
             $('#mktcTotamt').html(mktcTotamt);
             $('#eps').html(eps);
