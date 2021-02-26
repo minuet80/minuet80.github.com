@@ -14329,7 +14329,7 @@ $(document).ready(function() {
             var roe = ntpfThstrm / ecptl * 100;
 
             // 적정주가
-            var proprtStkpc = eps * 
+            var proprtStkpc = eps * indutyPer;
 
             $('#mktcTotamt').html(mktcTotamt);
             $('#eps').html(eps);
@@ -14337,7 +14337,7 @@ $(document).ready(function() {
             $('#bps').html(bps);
             $('#roe').html(roe + '%');
             $('#pbr').html(pbr);
-            $('#proprtStkpc').html(eps * indutyPer);
+            $('#proprtStkpc').html(proprtStkpc);
         });
     };
     // 주식공부 end
