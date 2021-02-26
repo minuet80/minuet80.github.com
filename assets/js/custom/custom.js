@@ -14326,12 +14326,12 @@ $(document).ready(function() {
             // pbr
             var pbr = Math.round((mktcTotamt / ecptl) * 100) / 100;
             // roe
-            var roe = ntpfThstrm / ecptl * 100;
+            var roe = Math.round((ntpfThstrm / ecptl * 100) * 100) / 100;
 
             // 적정주가 (업종PER)
             var proprtStkpcByIndutyPer = eps * indutyPer;
             // 적정주가 (eps * roe)
-            var proprtStkpc = eps * roe;
+            var proprtStkpcByEpsRoe = eps * roe;
 
             $('#mktcTotamt').html(mktcTotamt);
             $('#eps').html(eps);
@@ -14340,7 +14340,7 @@ $(document).ready(function() {
             $('#roe').html(roe + '%');
             $('#pbr').html(pbr);
             $('#proprtStkpcByIndutyPer').html(proprtStkpcByIndutyPer);
-            $('#proprtStkpc').html(proprtStkpc);
+            $('#proprtStkpcByEpsRoe').html(proprtStkpcByEpsRoe);
         });
     };
     // 주식공부 end
