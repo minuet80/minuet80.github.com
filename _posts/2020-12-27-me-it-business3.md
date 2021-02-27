@@ -13,7 +13,8 @@ toc_sticky: true
 {: .wood-text}
 ---
 
-- ![](/assets/images/me/2020-12-27-me-it-business3-1.png)
+![](/assets/images/me/2020-12-27-me-it-business3-1.png)
+<br>
 - ROE  (Return On Equity) : 자기자본이익율
   - 내가 처음 투자한 돈 대비 회사가 돈을 얼마나 잘 벌고 있는지 나타내는 지표
   - 당기순이익 / 평균 자기자본 * 100
@@ -39,7 +40,7 @@ toc_sticky: true
   - EV = 시가총액 + 순차입금 (총차입금 - 현금 및 투자유가증권)
   - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제 세금
 - 배당성향 = 배당금 / 주당순이익
-- 적정주가 = EPS * PER
+- 적정주가 = EPS * PER (PER > ROE → 고평가)
 - <button id="stockCalc">계산</button>
   - 현재주가 <input type="text" name="stkpc" placeholder="36050" value="36050" />
   - 발행주식수 <input type="text" name="pblicteStockCnt"  placeholder="9604000" value="9604000" />
@@ -50,18 +51,19 @@ toc_sticky: true
   - 업종 PER <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
   - 배당금 <input type="text" name="dvdnd" placeholder="100" value="100" />
 - 결과
-  - 시가총액 <span id="mktcTotamt"></span>
-  - EPS (주당 순이익) <span id="eps"></span>
-  - PER (예상 주가 수익 비율) <span id="per"></span>
-  - BPS (주당순자산) <span id="bps"></span>
-  - ROE (자기자본이익율) <span id="roe"></span>
-  - PBR (주가순자산비율) <span id="pbr"></span>
-  - 적정주가 (업종PER) <span id="proprtStkpcByIndutyPer"></span>
-  - 적정주가 (eps * roe) <span id="proprtStkpcByEpsRoe"></span>
-  - 배당성향 <span id="alotIncln"></span>
-  - EV/EBITDA <span id="evEbitda"></span>
-  - EV (기업가치) <span id="ev"></span>
-  - EBITDA <span id="ebitda"></span>
+  - 시가총액 <font color="red"><span id="mktcTotamt"></span></font>
+  - EPS (주당 순이익) <font color="red"><span id="eps"></span></font>
+  - PER (예상 주가 수익 비율) <font color="red"><span id="per"></span></font>
+  - BPS (주당순자산) <font color="red"><span id="bps"></span></font>
+  - ROE (자기자본이익율) <font color="red"><span id="roe"></span></font>
+  - PBR (주가순자산비율) <font color="red"><span id="pbr"></span></font>
+  - 적정주가 (업종PER) <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
+  - 적정주가 (eps * roe) <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
+  - 배당수익률(%) <font color="red"><span id="alotErnrt"></span></font>
+  - 배당성향 <font color="red"><span id="alotIncln"></span></font>
+  - EV/EBITDA <font color="red"><span id="evEbitda"></span></font>
+  - EV (기업가치) <font color="red"><span id="ev"></span></font>
+  - EBITDA <font color="red"><span id="ebitda"></span></font>
 
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
@@ -95,3 +97,19 @@ toc_sticky: true
   - 영업으로 버는 돈과 나가는 이자중 뭐가 많은지 확인하는 비율
   - 이자보상배율이 1미만인 것은 영업이익으로 이자조차 낼 수 없음을 의미
 - ![예](/assets/images/me/2020-12-27-me-it-business3-2.png)
+
+
+### ✔ 배당주 찾기
+{: .wood-text}
+---
+
+- 가짜 배당주
+  - 베트남개발
+    - 주가가 10년 지속 하락
+  - 동양고속
+    - ![영업이익률이 1.12인데 순이익률이 69.21](/assets/images/me/2020-12-27-me-it-business3-3.png)
+    - ![자산처분이익 313.0](/assets/images/me/2020-12-27-me-it-business3-4.png)
+    - **<u>자산처분이익으로 배당 (일시적)</u>**
+  - 두산우
+    
+- 진짜 배당주
