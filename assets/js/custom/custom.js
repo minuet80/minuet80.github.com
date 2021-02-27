@@ -14332,7 +14332,7 @@ $(document).ready(function() {
             // 배당수익률(%)
             var alotErnrt = Math.round(((dvdnd / stkpc) * 100) * 100) / 100;
             // 배당성향
-            var alotIncln = Math.round((dvdnd / eps) * 100) / 100;
+            var alotIncln = Math.round((((dvdnd * pblicteStockCnt) / ntpfThstrm) * 100) * 100) / 100;
 
             // 적정주가 (업종PER)
             var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;

@@ -51,19 +51,32 @@ toc_sticky: true
   - 업종 PER <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
   - 배당금 <input type="text" name="dvdnd" placeholder="100" value="100" />
 - 결과
-  - 시가총액 <font color="red"><span id="mktcTotamt"></span></font>
-  - EPS (주당 순이익) <font color="red"><span id="eps"></span></font>
-  - PER (예상 주가 수익 비율) <font color="red"><span id="per"></span></font>
-  - BPS (주당순자산) <font color="red"><span id="bps"></span></font>
-  - ROE (자기자본이익율) <font color="red"><span id="roe"></span></font>
-  - PBR (주가순자산비율) <font color="red"><span id="pbr"></span></font>
-  - 적정주가 (업종PER) <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
-  - 적정주가 (eps * roe) <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
-  - 배당수익률(%) <font color="red"><span id="alotErnrt"></span></font>
-  - 배당성향 <font color="red"><span id="alotIncln"></span></font>
-  - EV/EBITDA <font color="red"><span id="evEbitda"></span></font>
-  - EV (기업가치) <font color="red"><span id="ev"></span></font>
-  - EBITDA <font color="red"><span id="ebitda"></span></font>
+  - 시가총액 = 현재주가 * 발행주식수
+    - <font color="red"><span id="mktcTotamt"></span></font>
+  - EPS (주당 순이익) = 당기순이익 / 발행주식수
+    - <font color="red"><span id="eps"></span></font>
+  - PER (예상 주가 수익 비율) = 시가총액 / 당기순이익
+    - <font color="red"><span id="per"></span></font>
+  - BPS (주당순자산) = (자산총계 - 부채총계) / 발행주식수
+    - <font color="red"><span id="bps"></span></font>
+  - ROE (자기자본이익율) = 당기순이익 / 자본총계 * 100
+    - <font color="red"><span id="roe"></span></font>
+  - PBR (주가순자산비율) = 시가총액 / 자본총계
+    - <font color="red"><span id="pbr"></span></font>
+  - 적정주가 (업종PER) = (주당순이익 * 업종 예상주기수익비율)
+    - <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
+  - 적정주가 = (주당순이익 * 자기자본이익율)
+    - <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
+  - 배당수익률(%) = (배당금 * 현재주가) * 100
+    - <font color="red"><span id="alotErnrt"></span></font>
+  - 배당성향 = (배당금 * 주식수) / 당기순이익 * 100
+    - <font color="red"><span id="alotIncln"></span></font>
+  - EV/EBITDA
+    - <font color="red"><span id="evEbitda"></span></font>
+  - EV (기업가치)
+    - <font color="red"><span id="ev"></span></font>
+  - EBITDA
+    - <font color="red"><span id="ebitda"></span></font>
 
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
@@ -110,6 +123,19 @@ toc_sticky: true
     - ![영업이익률이 1.12인데 순이익률이 69.21](/assets/images/me/2020-12-27-me-it-business3-3.png)
     - ![자산처분이익 313.0](/assets/images/me/2020-12-27-me-it-business3-4.png)
     - **<u>자산처분이익으로 배당 (일시적)</u>**
-  - 두산우
-    
+  - 두산, 두산우
+    - 부도위기
+  - 웅진씽크빅
+    - 지주회사에 막대한 배당
+  - 대동전자
+    - 계열사 매각 → 아들이 매수 → 계열사 돈으로 모기업 인수
+  - 한국ANKOR유전
+    - 주가 지속 하락
+  - 삼양옵틱스
+    - 재고량 증가
+    - 주가 지속적 하락
+  - 유아이엘
+    - 기업을 인수한수 이자를 배당금으로 지급
+  - 대신증권우
+    - 지속적 성장x
 - 진짜 배당주
