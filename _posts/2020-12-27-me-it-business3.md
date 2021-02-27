@@ -63,9 +63,9 @@ toc_sticky: true
     - <font color="red"><span id="roe"></span></font>
   - PBR (주가순자산비율) = 시가총액 / 자본총계
     - <font color="red"><span id="pbr"></span></font>
-  - 적정주가 (업종PER) = (주당순이익 * 업종 예상주기수익비율)
+  - 평균 업종PER 적정주가 = (주당순이익 * 업종 예상주기수익비율)
     - <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
-  - 적정주가 = (주당순이익 * 자기자본이익율)
+  - 슈퍼개미 김정환식 적정주가 = (주당순이익 * 자기자본이익율)
     - <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
   - 배당수익률(%) = (배당금 * 현재주가) * 100
     - <font color="red"><span id="alotErnrt"></span></font>
