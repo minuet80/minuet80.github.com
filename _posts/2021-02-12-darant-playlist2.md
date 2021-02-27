@@ -4,6 +4,69 @@ categories:
   - Darant
 tags:
   - Asset
+gallery1:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-10.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-10.jpg
+    width: "100"
+    height: "100"
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-11.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-11.jpg
+    width: "100"
+    height: "100"
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-12.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-12.jpg
+    width: "100"
+    height: "100"
+gallery2:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-14.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-14.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-15.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-15.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-16.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-16.jpg
+gallery3:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-17.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-17.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-18.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-18.jpg
+gallery4:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-19-1.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-19-1.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-19-2.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-19-2.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-20.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-20.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-21.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-21.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-22.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-22.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-23.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-23.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-24.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-24.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-25.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-25.jpg
+gallery5:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-26.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-26.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-27.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-27.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-28.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-28.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-29.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-29.jpg
+gallery6:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-30.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-30.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-31.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-31.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-32.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-32.jpg
+gallery7:
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-33.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-33.jpg
+  - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-34.jpg
+    image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-34.jpg
 toc: true
 toc_label: "목차"
 toc_sticky: true
@@ -243,6 +306,31 @@ toc_sticky: true
   - **<u>투자자는 낙관적인 태도가  필요하고 미래는 과거보다 더 나아진다는 점</u>**
 
 
+### ✔ 슈퍼리치' 9인 추천도서
+{: .wood-text}
+---
+- 마이클 델
+  - {% include gallery id="gallery1" layout="lbsize" %}
+
+- 블룸버그
+  - {% include gallery id="gallery2" layout="lbsize" %}
+
+- 래리 엔리슨
+  - {% include gallery id="gallery3" layout="lbsize" %}
+
+- 마크 저커버그
+  - {% include gallery id="gallery4" layout="lbsize" %}
+
+- 워런 버핏
+  - {% include gallery id="gallery5" layout="lbsize" %}
+
+- 빌 게이츠
+  - {% include gallery id="gallery6" layout="lbsize" %}
+
+- 제프 베조스
+  - {% include gallery id="gallery7" layout="lbsize" %}
+
+
 ### ✔ 참고
 {: .wood-text}
 ---
@@ -252,3 +340,5 @@ toc_sticky: true
   - 배타가 큰 주식은 리스크가 큰 주식이다
   - 배타가 클수록 큰 수익
 - ★ 온택트(Ontact) - 비대면 접촉방식을 말하는 온라인과 언택트의 합성어
+
+<div id="business0" style="display: none;"></div>
