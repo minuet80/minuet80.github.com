@@ -83,3 +83,22 @@ toc_sticky: true
     - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-5.png)
   1. 배당금 예상
     - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-8.png)
+
+
+### ✔ 리츠(Reits)의 주가·가치는 무엇으로 결정될까?
+{: .wood-text}
+---
+- 저금리, 저성장 시대
+- 세제 혜택
+  - 분리과세를 적용 9%
+- 계량적인 지표
+  - P/FFO (부동산을 운용해서 실제 얼마만큼 현금흐름을 창출 지표)
+    - 시가총액(주가)를 운영수익으로 나눈 값
+    - FFO = 당기순이익 + 유무형자산 감가상각비 - 부동산 매각 차익
+    - PER 과 비슷
+  - P/NAV
+    - 시가총액(주가)를 순자산가치로 나눈 값
+    - NAV = 감정평가액으로 계산한 자산에서 부채를 뺀 값
+    - PBR 과 비슷
+
+
