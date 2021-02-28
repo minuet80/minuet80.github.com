@@ -38,6 +38,32 @@ toc_sticky: true
   - 실적 발표일 바로 다음날
 - 발굴방법
   1. FN 가이드 접속
-  1. 실적
+  1. 실적속보
   1. 2019년 12월 결산 3분기 (국문).xlsx 다운로드
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-1.png)
   1. 당기순이익 201909/누적, 당기순이익 201809(비교)/누적, 당기순이익 201812만 남기고 모두 삭제
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-2.png)
+  1. [올해 3분기 누적 순이익] + [작년 4분기 순이익] 값으로 올해 연간 순이익을 계산
+  1. 3분기 기준 연간 순이익 = [3분기 누적 순이익] + [작년 연간 순이익] - [작년 3분기 누적 순이익]
+  1. 순이익 증감률 (손익계산서)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-3.png)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-4.png)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-5.png)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-6.png)
+  1. 순이익 증감률 (배당금 상위)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-1.png)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-2.png)
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-3.png)
+  1. 2019년 예상 배당금
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-4.png)
+  1. 예상 배당 수익률
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-5.png)
+  1. 배당금 예상
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-8.png)
+
+
+### ✔ 분할분석과 주가전망
+{: .wood-text}
+---
+- 인적분할과 물적분할
+    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-9.png)
