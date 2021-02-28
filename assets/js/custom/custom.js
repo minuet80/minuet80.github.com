@@ -14297,6 +14297,9 @@ $(document).ready(function() {
     // 행정표준용어 정리 end
 
     // 주식공부
+    if ($('#listingDay').length > 0) {
+        new SimpleCalendar('#listingDay');
+    }
     if ($('#stockCalc').length > 0) {
         $('#stockCalc').click(function (e) {
             e.preventDefault();
