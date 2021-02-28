@@ -8,11 +8,11 @@ toc: true
 toc_label: "목차"
 toc_sticky: true
 ---
+
 ### ✔ 상장일
 {: .wood-text}
----
-
 <div id="listingDay"></div>
+<br>
 
 ### ✔ PER・PBR・ROE・EV/EBITDA
 {: .wood-text}
