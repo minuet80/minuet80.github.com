@@ -1,5 +1,5 @@
 ---
-title: "주식공부"
+title: "실전주식!!"
 categories:
   - Me
 tags:
