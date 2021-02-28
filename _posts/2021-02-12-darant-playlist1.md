@@ -31,6 +31,29 @@ toc_sticky: true
       | 신한알파리츠 | 2.9% | 8,800 | 판교 알파돔타워Ⅳ 등 |
       | 롯데리츠 | 0% | 6,680 | 롯데백화점 강남점 등 |
 
+
+### ✔ 분할분석과 주가전망
+{: .wood-text}
+---
+- 인적분할과 물적분할
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-9.png)
+- 지주회사 체제 갖추기 프로세스
+  - 지주회사는 사업회사의 지분을 반드시 20% 확보해야 한다.
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-10.png)
+- 지주회사 분할 관련 일정과 주가
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-11.png)
+- 분할 거래재개 당일 지주회사와 사업회사의 주가
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-12.png)
+- 지주회사, 사업회사 투자매력 파악하는 법
+  - 자본총계가 1000억이면 500억원씩
+  - 사업회사 영업활동
+  - 지주회사는 재고자산, 매출채권, 투자자산을 가져감 (영업활동x)
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-13.png)
+- 지주회사 분할의 목적
+  - 경영권 강화
+  - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-14.png)
+
+
 ### ✔ 배당 서프라이즈 기업 10분 만에 발굴하는 법
 {: .wood-text}
 ---
@@ -60,10 +83,3 @@ toc_sticky: true
     - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-7-5.png)
   1. 배당금 예상
     - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-8.png)
-
-
-### ✔ 분할분석과 주가전망
-{: .wood-text}
----
-- 인적분할과 물적분할
-    - ![](/assets/images/youtube/darant/2021-02-12-darant-playlist1-9.png)
