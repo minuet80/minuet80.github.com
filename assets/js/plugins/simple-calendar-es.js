@@ -217,8 +217,8 @@ var SimpleCalendar = function () {
 
     //默认配置
     this._defaultOptions = {
-      width: '100%',
-      height: '100%',
+      //width: '500px',
+      //height: '500px',
       language: 'KO', //语言
       showLunarCalendar: false, //阴历
       showHoliday: true, //休假
