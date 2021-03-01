@@ -9,6 +9,28 @@ toc_label: "목차"
 toc_sticky: true
 ---
 
+### ✔ 매수시 유의사항 
+{: .neon-text}
+---
+- 모두 알고있지만 실패하는 이유는 기다림이다
+- 당장의 이익보다는 사업성을 보라
+- CEO의 이력을 보라 (MBA 출신여부)
+- 단타는 해도 된다. 다만, 자신만의 원칙과 패턴을 만들어라
+  - 하루 2번의 단타는 허용 (오전, 오후)
+  - 3:8:10 법칙 - 예수금의 30%, 80%, 100% 분할매수
+  - 가장 HOT한 종목을 찾고 3일내 팔아라
+
+### ✔ HOT 10 코스피・코스닥 종목 찾기
+{: .wood-text}
+---
+<button id="searchHot10StockItemKospi">코스피 찾기</button>
+<button id="searchHot10StockItemKosdaq">코스닥 찾기</button>
+<br>
+<div id="hot10StockItemKospiList"></div>
+<br>
+<div id="hot10StockItemKosdaqList"></div>
+
+
 ### ✔ 상장일
 {: .wood-text}
 <div id="listingDay"></div>
@@ -126,8 +148,8 @@ toc_sticky: true
   - CJ4우(전환)
     - 보통주로 전환이 약속되어 있는 우선주
     - 전환일 2029년 3월 26일
-    - CJ와 괴리율이 크면 좋은 현재 30%정도
-    - 우선배당건 (액명금액에 2%를 우선배당 받을 수 있음)
+    - CJ와 괴리율이 크면 좋은 현재 25%정도
+    - 우선배당건 (액면금액에 2%를 우선배당 받을 수 있음)
     - 참가적 배당
   - 삼성전자우
     - 괴리율 10.9%
