@@ -189,6 +189,10 @@ $(document).ready(function() {
     // 행정표준용어 정리 end
 
     // 주식공부
+    $.ajaxPrefilter('json', function (options, orig, jqXHR) {
+        if (options.crossDomain && !$.support.cors) return 'jsonp';
+    });
+
     if ($('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').length > 0) {
         var naverStockUrl = 'https://finance.naver.com/item/board.nhn?code=';
         $('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').click(function (e) {
@@ -202,11 +206,12 @@ $(document).ready(function() {
                 .done(function(jqXHR) {
                     $.each(jqXHR, function (index, item) {
                         $.ajax({
-                            dataType: 'jsonp',
-                            jsonp: 'callback',
+                            type: 'GET',
+                            crossDomain: true,
                             url : naverStockUrl + item.code.substring(1),
-                            success : function(callback) {
-                                console.log(callback);
+                            dataType: 'json',
+                            success : function(data) {
+                                console.log(data);
                             }
                         });
                     });
