@@ -158,7 +158,7 @@ $(document).ready(function() {
 
     // 행정표준용어 정리
     if ($('#business1').length > 0) {
-        $.get('/assets/json/abbr.html', function(jqXHR) {
+        $.get('/assets/json/abbr.json', function(jqXHR) {
         }, 'json')
         .done(function(data) {
             $('#searchStdCode').autocomplete({
@@ -197,7 +197,7 @@ $(document).ready(function() {
             if (id === 'searchHot10StockItemKospi') {
                 var stockitemKospiUrl = 'http://localhost:4000/assets/json/stockitemKospi.json';
             } else if (id === 'searchHot10StockItemKosdaq') {
-                $.get('/assets/json/stockitemKosdaq.html', function(jqXHR) {
+                $.get('/assets/json/stockItemKosdaq.json', function(jqXHR) {
                 }, 'json')
                 .done(function(jqXHR) {
                     $.each(jqXHR, function (index, item) {
