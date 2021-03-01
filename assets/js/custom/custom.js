@@ -201,16 +201,13 @@ $(document).ready(function() {
                 }, 'json')
                 .done(function(jqXHR) {
                     $.each(jqXHR, function (index, item) {
+                        document.domain = 'naver.com';
                         $.ajax({
                             crossOrigin: true,
                             url : naverStockUrl + item.code.substring(1),
-                            context: {},
                             success: function(data) {
                                 alert(data);
-                              }
-                          })
-                          .done(function( data, textStatus, jqXHR ) {
-                            //console.log(data);
+                            }
                         });
                     });
                 });
