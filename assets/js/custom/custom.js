@@ -202,11 +202,11 @@ $(document).ready(function() {
                 .done(function(jqXHR) {
                     $.each(jqXHR, function (index, item) {
                         $.ajax({
-                            crossOrigin : true,
-                            contentType: 'text/html',
+                            dataType: 'jsonp',
+                            jsonp: 'callback',
                             url : naverStockUrl + item.code.substring(1),
-                            success : function(data) {
-                                console.log(data);
+                            success : function(callback) {
+                                console.log(callback);
                             }
                         });
                     });
