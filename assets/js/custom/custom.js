@@ -202,16 +202,15 @@ $(document).ready(function() {
                 .done(function(jqXHR) {
                     $.each(jqXHR, function (index, item) {
                         $.ajax({
-                            type: 'GET',
-                            headers: {  'Access-Control-Allow-Origin': 'https://minuet80.github.io/' },
+                            crossOrigin: true,
                             url : naverStockUrl + item.code.substring(1),
-                            dataType: 'jsonp',
-                            cache: false,
-                            crossDomain: true,
-                            contentType: 'application/json; charset=utf-8',
-                            success : function(data) {
-                                console.log(data);
-                            }
+                            context: {},
+                            success: function(data) {
+                                alert(data);
+                              }
+                          })
+                          .done(function( data, textStatus, jqXHR ) {
+                            //console.log(data);
                         });
                     });
                 });
