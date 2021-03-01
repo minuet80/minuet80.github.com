@@ -20,16 +20,6 @@ toc_sticky: true
   - 3:8:10 법칙 - 예수금의 30%, 80%, 100% 분할매수
   - 가장 HOT한 종목을 찾고 3일내 팔아라
 
-### ✔ HOT 10 코스피・코스닥 종목 찾기
-{: .wood-text}
----
-<button id="searchHot10StockItemKospi">코스피 찾기</button>
-<button id="searchHot10StockItemKosdaq">코스닥 찾기</button>
-<br>
-<div id="hot10StockItemKospiList"></div>
-<br>
-<div id="hot10StockItemKosdaqList"></div>
-
 
 ### ✔ 상장일
 {: .wood-text}

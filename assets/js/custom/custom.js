@@ -189,33 +189,6 @@ $(document).ready(function() {
     // 행정표준용어 정리 end
 
     // 주식공부
-    if ($('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').length > 0) {
-        var naverStockUrl = 'https://finance.naver.com/item/board.nhn?code=';
-        $('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').click(function (e) {
-            e.preventDefault();
-            var id = $(this).attr('id');
-            if (id === 'searchHot10StockItemKospi') {
-                var stockitemKospiUrl = 'http://localhost:4000/assets/json/stockitemKospi.json';
-            } else if (id === 'searchHot10StockItemKosdaq') {
-                $.get('/assets/json/stockItemKosdaq.json', function(jqXHR) {
-                }, 'json')
-                .done(function(jqXHR) {
-                    $.each(jqXHR, function (index, item) {
-                        document.domain = 'naver.com';
-                        $.ajax({
-                            crossOrigin: true,
-                            url : naverStockUrl + item.code.substring(1),
-                            success: function(data) {
-                                alert(data);
-                            }
-                        });
-                    });
-                });
-            } else {
-                ;
-            }
-        });
-    }
     if ($('#listingDay').length > 0) {
         new SimpleCalendar('#listingDay');
     }
