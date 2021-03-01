@@ -189,10 +189,6 @@ $(document).ready(function() {
     // 행정표준용어 정리 end
 
     // 주식공부
-    $.ajaxPrefilter('json', function (options, orig, jqXHR) {
-        if (options.crossDomain && !$.support.cors) return 'jsonp';
-    });
-
     if ($('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').length > 0) {
         var naverStockUrl = 'https://finance.naver.com/item/board.nhn?code=';
         $('#searchHot10StockItemKospi, #searchHot10StockItemKosdaq').click(function (e) {
@@ -207,9 +203,12 @@ $(document).ready(function() {
                     $.each(jqXHR, function (index, item) {
                         $.ajax({
                             type: 'GET',
-                            crossDomain: true,
+                            headers: {  'Access-Control-Allow-Origin': 'https://minuet80.github.io/' },
                             url : naverStockUrl + item.code.substring(1),
-                            dataType: 'json',
+                            dataType: 'jsonp',
+                            cache: false,
+                            crossDomain: true,
+                            contentType: 'application/json; charset=utf-8',
                             success : function(data) {
                                 console.log(data);
                             }
