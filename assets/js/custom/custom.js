@@ -204,7 +204,7 @@ $(document).ready(function() {
                         $.ajax({
                             crossOrigin : true,
                             contentType: 'text/html',
-                            url : naverStockUrl + item.code,
+                            url : naverStockUrl + item.code.substring(1),
                             success : function(data) {
                                 console.log(data);
                             }
