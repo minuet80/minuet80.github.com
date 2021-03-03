@@ -55,19 +55,25 @@ toc_sticky: true
 - EV/EBITDA (Enterprise Value / Earnings Before Interest, Tax, Depreciation and Amortization)
   - EV는 기업가치 (Enterprise Value)를 의미함
   - EBITDA는 이자비용, 법인세, 유무형자산, 감가상각비를 반영하기 전의 이익을 말함
-  - EV = 시가총액 + 순차입금 (총차입금 - 현금 및 투자유가증권)
-  - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제 세금
+  - EV =자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)
+  - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제세금
 - 배당성향 = 배당금 / 주당순이익
 - 적정주가 = EPS * PER (PER > ROE → 고평가)
-- <button id="stockCalc">계산</button>
-  - 현재주가 <input type="text" name="stkpc" placeholder="36050" value="36050" />
-  - 발행주식수 <input type="text" name="pblicteStockCnt"  placeholder="9604000" value="9604000" />
-  - 당기순이익 <input type="text" name="ntpfThstrm" placeholder="15100532141" value="15100532141" />
-  - 자산총계 <input type="text" name="assetsTotamt" placeholder="132725123457" value="132725123457" />
-  - 부채총계 <input type="text" name="debtTotamt" placeholder="47072945035" value="47072945035" />
-  - 자기자본/자본총계 <input type="text" name="ecptl" placeholder="85652178422" value="85652178422" />
-  - 업종 PER <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
-  - 배당금 <input type="text" name="dvdnd" placeholder="100" value="100" />
+- <button id="stockCalc">계산</button> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
+  - 현재주가 <input type="text" name="stkpc" class="won" placeholder="16,800" value="16,800" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
+  - 발행주식수 <input type="text" name="pblicteStockCnt" placeholder="9,604,000" value="9,604,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자사주 <input type="text" name="treasuryStockCnt"  placeholder="26,000" value="26,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 당기순이익 <input type="text" name="ntpfThstrm" class="won" placeholder="15,100,532,141" value="15,100,532,141" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자산총계 <input type="text" name="assetsTotamt" class="won" placeholder="132,725,123,457" value="132,725,123,457" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 부채총계 <input type="text" name="debtTotamt" class="won" placeholder="47,072,945,035" value="47,072,945,035" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자기자본/자본총계 <input type="text" name="ecptl" class="won" placeholder="85,652,178,422" value="85,652,178,422" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 유동 차입부채 <input type="text" name="dynmcBrrwDebt" class="won" placeholder="10,641,216,633" value="10,641,216,633" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 비유동 차입부채 <input type="text" name="notDynmcBrrwDebt" class="won" placeholder="5,000,000,000" value="5,000,000,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 현금성 자산 <input type="text" name="cashAssets" class="won" placeholder="10,340,581,763" value="10,340,581,763" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 영업이익 <input type="text" name="bsnProfit" class="won" placeholder="6,460,951,367" value="6,460,951,367" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입) <input type="text" name="dprc" class="won" placeholder="3,906,158,632" value="3,906,158,632" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 업종 멀티플 <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
+  - 배당금 <input type="text" name="dvdnd" class="won" placeholder="100" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
 - 결과
   - 시가총액 = 현재주가 * 발행주식수
     - <font color="red"><span id="mktcTotamt"></span></font>
@@ -81,20 +87,20 @@ toc_sticky: true
     - <font color="red"><span id="roe"></span></font>
   - PBR (주가순자산비율) = 시가총액 / 자본총계
     - <font color="red"><span id="pbr"></span></font>
-  - 평균 업종PER 적정주가 = (주당순이익 * 업종 예상주기수익비율)
-    - <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
-  - 슈퍼개미 김정환식 적정주가 = (주당순이익 * 자기자본이익율)
-    - <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
   - 배당수익률(%) = (배당금 * 현재주가) * 100
     - <font color="red"><span id="alotErnrt"></span></font>
   - 배당성향 = (배당금 * 주식수) / 당기순이익 * 100
     - <font color="red"><span id="alotIncln"></span></font>
+  - EV (기업가치) = 자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)
+    - <font color="red"><span id="ev"></span></font>
+  - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제세금
+    - <font color="red"><span id="ebitda"></span></font>
   - EV/EBITDA
     - <font color="red"><span id="evEbitda"></span></font>
-  - EV (기업가치)
-    - <font color="red"><span id="ev"></span></font>
-  - EBITDA
-    - <font color="red"><span id="ebitda"></span></font>
+  - 평균 업종PER 적정주가 = (주당순이익 * 업종 예상주기수익비율)
+    - <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
+  - 슈퍼개미 김정환 적정주가 = (주당순이익 * 자기자본이익율)
+    - <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
 
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
@@ -128,7 +134,6 @@ toc_sticky: true
   - 계산식 : 영업이익 / 이자비용
   - 영업으로 버는 돈과 나가는 이자중 뭐가 많은지 확인하는 비율
   - 이자보상배율이 1미만인 것은 영업이익으로 이자조차 낼 수 없음을 의미
-- ![예](/assets/images/me/2020-12-27-me-it-business3-2.png)
 
 
 ### ✔ 배당주 찾기
