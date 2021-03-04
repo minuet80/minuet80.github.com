@@ -191,6 +191,7 @@ $(document).ready(function() {
     if ($('#listingDay').length > 0) {
         new SimpleCalendar('#listingDay');
     }
+
     if ($('#stockCalc').length > 0) {
         $('#stockCalc').click(function (e) {
             e.preventDefault();
@@ -247,7 +248,7 @@ $(document).ready(function() {
             var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;
             // 적정주가 (eps * roe)
             var proprtStkpcByEpsRoe = Math.round((eps * roe) * 100) / 100;
-
+            
             $('#mktcTotamt').html(mktcTotamt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             $('#eps').html(Math.floor(eps)).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             $('#per').html(per.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
@@ -261,6 +262,18 @@ $(document).ready(function() {
             $('#alotIncln').html(alotIncln.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             $('#proprtStkpcByIndutyPer').html(Math.floor(proprtStkpcByIndutyPer).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             $('#proprtStkpcByEpsRoe').html(Math.floor(proprtStkpcByEpsRoe).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+
+            var magnificTitl = {};
+            magnificTitl.src = '<div class="white-popup" style="font-size: 1.0em;">' + $('#stockCalcResult').html() +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
+            magnificTitl.type = 'inline';
+            $('#popupBtn').magnificPopup({
+                items: magnificTitl,
+                closeBtnInside: false,
+                preloader: true,
+                removalDelay: 160,
+                mainClass: 'mfp-fade'
+            });
+            $('#popupBtn').trigger('click');
         });
     };
     // 주식공부 end

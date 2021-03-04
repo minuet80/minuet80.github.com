@@ -64,7 +64,7 @@ toc_sticky: true
   - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제세금
 - 배당성향 = 배당금 / 주당순이익
 - 적정주가 = EPS * PER (PER > ROE → 고평가)
-- <button id="stockCalc">계산</button> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
+- <a class="btn btn--inverse my-popup" id="stockCalc" href="#">계산</a> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
   - 현재주가 <input type="text" name="stkpc" class="won" placeholder="16,800" value="16,800" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
   - 발행주식수 <input type="text" name="pblicteStockCnt" placeholder="9,604,000" value="9,604,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
   - 자사주 <input type="text" name="treasuryStockCnt"  placeholder="26,000" value="26,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
@@ -79,34 +79,65 @@ toc_sticky: true
   - 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입) <input type="text" name="dprc" class="won" placeholder="3,906,158,632" value="3,906,158,632" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
   - 업종 멀티플 <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
   - 배당금 <input type="text" name="dvdnd" class="won" placeholder="100" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-- 결과
-  - 시가총액 = 현재주가 * 발행주식수
-    - <font color="red"><span id="mktcTotamt"></span></font>
-  - EPS (주당 순이익) = 당기순이익 / 발행주식수
-    - <font color="red"><span id="eps"></span></font>
-  - PER (예상 주가 수익 비율) = 시가총액 / 당기순이익
-    - <font color="red"><span id="per"></span></font>
-  - BPS (주당순자산) = (자산총계 - 부채총계) / 발행주식수
-    - <font color="red"><span id="bps"></span></font>
-  - ROE (자기자본이익율) = 당기순이익 / 자본총계 * 100
-    - <font color="red"><span id="roe"></span></font>
-  - PBR (주가순자산비율) = 시가총액 / 자본총계
-    - <font color="red"><span id="pbr"></span></font>
-  - 배당수익률(%) = (배당금 * 현재주가) * 100
-    - <font color="red"><span id="alotErnrt"></span></font>
-  - 배당성향 = (배당금 * 주식수) / 당기순이익 * 100
-    - <font color="red"><span id="alotIncln"></span></font>
-  - EV (기업가치) = 자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)
-    - <font color="red"><span id="ev"></span></font>
-  - EBITDA = 영업이익 + 감가상각비 등 비현금성 비용 + 제세금
-    - <font color="red"><span id="ebitda"></span></font>
-  - EV/EBITDA
-    - <font color="red"><span id="evEbitda"></span></font>
-  - 평균 업종PER 적정주가 = (주당순이익 * 업종 예상주기수익비율)
-    - <font color="red"><span id="proprtStkpcByIndutyPer"></span></font>
-  - 슈퍼개미 김정환 적정주가 = (주당순이익 * 자기자본이익율)
-    - <font color="red"><span id="proprtStkpcByEpsRoe"></span></font>
 
+  <div id="stockCalcResult" style="display: none;">
+    <table>
+      <tbody>
+        <tr>
+          <td>시가총액<br>현재주가 * 발행주식수</td>
+          <td><font color="red"><span id="mktcTotamt"></span></font></td>
+        </tr>
+        <tr>
+          <td>EPS (주당 순이익)<br>당기순이익 / 발행주식수</td>
+          <td><font color="red"><span id="eps"></span></font></td>
+        </tr>
+        <tr>
+          <td>PER (예상 주가 수익 비율)<br>시가총액 / 당기순이익</td>
+          <td><font color="red"><span id="per"></span></font></td>
+        </tr>
+        <tr>
+          <td>BPS (주당순자산)<br>(자산총계 - 부채총계) / 발행주식수</td>
+          <td><font color="red"><span id="bps"></span></font></td>
+        </tr>
+        <tr>
+          <td>ROE (자기자본이익율)<br>당기순이익 / 자본총계 * 100</td>
+          <td><font color="red"><span id="roe"></span></font></td>
+        </tr>
+        <tr>
+          <td>PBR (주가순자산비율)<br>시가총액 / 자본총계</td>
+          <td><font color="red"><span id="pbr"></span></font></td>
+        </tr>
+        <tr>
+          <td>배당수익률(%)<br>(배당금 * 현재주가) * 100</td>
+          <td><font color="red"><span id="alotErnrt"></span></font></td>
+        </tr>
+        <tr>
+          <td>배당성향<br>(배당금 * 주식수) / 당기순이익 * 100</td>
+          <td><font color="red"><span id="alotIncln"></span></font></td>
+        </tr>
+        <tr>
+          <td>EV (기업가치)<br>자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)</td>
+          <td><font color="red"><span id="ev"></span></font></td>
+        </tr>
+        <tr>
+          <td>EBITDA<br>영업이익 + 감가상각비 등 비현금성 비용 + 제세금</td>
+          <td><font color="red"><span id="ebitda"></span></font></td>
+        </tr>
+        <tr>
+          <td>EV/EBITDA</td>
+          <td><font color="red"><span id="evEbitda"></span></font></td>
+        </tr>
+        <tr>
+          <td>평균 업종PER 적정주가<br>(주당순이익 * 업종 예상주기수익비율)</td>
+          <td><font color="red"><span id="proprtStkpcByIndutyPer"></span></font></td>
+        </tr>
+        <tr>
+          <td>슈퍼개미 김정환 적정주가<br>(주당순이익 * 자기자본이익율)</td>
+          <td><font color="red"><span id="proprtStkpcByEpsRoe"></span></font></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 ### ✔ [주식용어] 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
 {: .wood-text}
@@ -216,4 +247,4 @@ toc_sticky: true
   - 비메모리에서 가시적 성과가 있어야 함
   - 저금리 삼성전자 우선주 투자
   - 반도체 가격 지속적 상승중
-  - 비메모리 M&A, 파운드르 증설 가능성
+  - 비메모리 M&A, 파운드리 증설 가능성
