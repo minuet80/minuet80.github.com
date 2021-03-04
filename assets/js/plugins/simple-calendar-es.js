@@ -850,7 +850,9 @@ SimpleCalendar.prototype.languageData = {
   feativals_KO: {
     '3-5': "하나머스트7호스팩",
     '3-9': "나노씨엠에스",
-    '3-11': "싸이버원"
+    '3-11': "싸이버원, 프레스티지바이오로직스",
+    '3-16': "네오이뮨텍",
+    '3-17': "바이오다인"
   },
   feativals_EN: {
     '1-1': "new year’s day",
