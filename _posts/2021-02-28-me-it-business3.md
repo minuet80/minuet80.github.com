@@ -84,55 +84,55 @@ toc_sticky: true
     <table>
       <tbody>
         <tr>
-          <td>시가총액<br>현재주가 * 발행주식수</td>
+          <td><font color="blue">시가총액</font><br>현재주가 * 발행주식수</td>
           <td><font color="red"><span id="mktcTotamt"></span></font></td>
         </tr>
         <tr>
-          <td>EPS (주당 순이익)<br>당기순이익 / 발행주식수</td>
+          <td><font color="blue">EPS (주당 순이익)</font><br>당기순이익 / 발행주식수</td>
           <td><font color="red"><span id="eps"></span></font></td>
         </tr>
         <tr>
-          <td>PER (예상 주가 수익 비율)<br>시가총액 / 당기순이익</td>
+          <td><font color="blue">PER (예상 주가 수익 비율)</font><br>시가총액 / 당기순이익</td>
           <td><font color="red"><span id="per"></span></font></td>
         </tr>
         <tr>
-          <td>BPS (주당순자산)<br>(자산총계 - 부채총계) / 발행주식수</td>
+          <td><font color="blue">BPS (주당순자산)</font><br>(자산총계 - 부채총계) / 발행주식수</td>
           <td><font color="red"><span id="bps"></span></font></td>
         </tr>
         <tr>
-          <td>ROE (자기자본이익율)<br>당기순이익 / 자본총계 * 100</td>
+          <td><font color="blue">ROE (자기자본이익율)</font><br>당기순이익 / 자본총계 * 100</td>
           <td><font color="red"><span id="roe"></span></font></td>
         </tr>
         <tr>
-          <td>PBR (주가순자산비율)<br>시가총액 / 자본총계</td>
+          <td><font color="blue">PBR (주가순자산비율)</font><br>시가총액 / 자본총계</td>
           <td><font color="red"><span id="pbr"></span></font></td>
         </tr>
         <tr>
-          <td>배당수익률(%)<br>(배당금 * 현재주가) * 100</td>
+          <td><font color="blue">배당수익률(%)</font><br>(배당금 * 현재주가) * 100</td>
           <td><font color="red"><span id="alotErnrt"></span></font></td>
         </tr>
         <tr>
-          <td>배당성향<br>(배당금 * 주식수) / 당기순이익 * 100</td>
+          <td><font color="blue">배당성향</font><br>(배당금 * 주식수) / 당기순이익 * 100</td>
           <td><font color="red"><span id="alotIncln"></span></font></td>
         </tr>
         <tr>
-          <td>EV (기업가치)<br>자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)</td>
+          <td><font color="blue">EV (기업가치)</font><br>자기자본(시가총액) + 순차입금 (총차입금 - 현금성 자산)</td>
           <td><font color="red"><span id="ev"></span></font></td>
         </tr>
         <tr>
-          <td>EBITDA<br>영업이익 + 감가상각비 등 비현금성 비용 + 제세금</td>
+          <td><font color="blue">EBITDA</font><br>영업이익 + 감가상각비 등 비현금성 비용 + 제세금</td>
           <td><font color="red"><span id="ebitda"></span></font></td>
         </tr>
         <tr>
-          <td>EV/EBITDA</td>
+          <td><font color="blue">EV/EBITDA</font></td>
           <td><font color="red"><span id="evEbitda"></span></font></td>
         </tr>
         <tr>
-          <td>평균 업종PER 적정주가<br>(주당순이익 * 업종 예상주기수익비율)</td>
+          <td><font color="blue">평균 업종PER 적정주가</font><br>(주당순이익 * 업종 예상주기수익비율)</td>
           <td><font color="red"><span id="proprtStkpcByIndutyPer"></span></font></td>
         </tr>
         <tr>
-          <td>슈퍼개미 김정환 적정주가<br>(주당순이익 * 자기자본이익율)</td>
+          <td><font color="blue">슈퍼개미 김정환 적정주가</font><br>(주당순이익 * 자기자본이익율)</td>
           <td><font color="red"><span id="proprtStkpcByEpsRoe"></span></font></td>
         </tr>
       </tbody>
