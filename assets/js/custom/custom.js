@@ -158,7 +158,7 @@ $(document).ready(function() {
 
     // 행정표준용어 정리
     if ($('#business1').length > 0) {
-        $.get('/assets/json/abbr.json', function(jqXHR) {
+        $.get('/assets/json/abbreviation.json', function(jqXHR) {
         }, 'json')
         .done(function(data) {
             $('#searchStdCode').autocomplete({
