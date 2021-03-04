@@ -145,16 +145,126 @@ $(document).ready(function() {
         }
     }, 3000);
 
-    $('.iframe-link').magnificPopup({
-        type:'iframe',
-        iframe: {
-            markup: '<style>.mfp-iframe-holder .mfp-content {max-width: 100%;height:100%}</style>'+
-                    '<div class="mfp-iframe-scaler" >'+
-                    '<div class="mfp-close"></div>'+
-                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-                    '</div></div>'
-        }
-    });
+    // 실전주식 strt
+    if ($('#listingDay').length > 0) {
+        new SimpleCalendar('#listingDay');
+    }
+
+    if ($('#stockCalc').length > 0) {
+        $('.iframe-link').magnificPopup({
+            type:'iframe',
+            iframe: {
+                markup: '<style>.mfp-iframe-holder .mfp-content {max-width: 100%;height:100%}</style>'+
+                        '<div class="mfp-iframe-scaler" >'+
+                        '<div class="mfp-close"></div>'+
+                        '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                        '</div></div>'
+            }
+        });
+        $.ajax({
+            url: "/assets/json/stockCode_A006620.json",
+            method: "GET",
+            dataType: "json"
+        }).done( function(json) {
+            var lastObj = json[json.length - 1];
+            $('input[name="stkpc"]').val(lastObj.stkpc);
+            $('input[name="pblicteStockCnt"]').val(lastObj.pblicteStockCnt);
+            $('input[name="treasuryStockCnt"]').val(lastObj.treasuryStockCnt);
+            $('input[name="ntpfThstrm"]').val(lastObj.ntpfThstrm);
+            $('input[name="assetsTotamt"]').val(lastObj.assetsTotamt);
+            $('input[name="debtTotamt"]').val(lastObj.debtTotamt);
+            $('input[name="ecptl"]').val(lastObj.ecptl);
+            $('input[name="dynmcBrrwDebt"]').val(lastObj.dynmcBrrwDebt);
+            $('input[name="notDynmcBrrwDebt"]').val(lastObj.notDynmcBrrwDebt);
+            $('input[name="cashAssets"]').val(lastObj.cashAssets);
+            $('input[name="bsnProfit"]').val(lastObj.bsnProfit);
+            $('input[name="dprc"]').val(lastObj.dprc);
+            $('input[name="indutyPer"]').val(lastObj.indutyPer);
+            $('input[name="dvdnd"]').val(lastObj.dvdnd);
+            // 현재주가
+            var stkpc = Number($('input[name="stkpc"]').val().replace(/[^0-9]/g, ''));
+            // 발행주식수
+            var pblicteStockCnt = Number($('input[name="pblicteStockCnt"]').val().replace(/[^0-9]/g, ''));
+            // 자사주
+            var treasuryStockCnt = Number($('input[name="treasuryStockCnt"]').val().replace(/[^0-9]/g, ''));
+            // 당기순이익
+            var ntpfThstrm = Number($('input[name="ntpfThstrm"]').val().replace(/[^0-9]/g, ''));
+            // 자산총계
+            var assetsTotamt = Number($('input[name="assetsTotamt"]').val().replace(/[^0-9]/g, ''));
+            // 부채총계
+            var debtTotamt = Number($('input[name="debtTotamt"]').val().replace(/[^0-9]/g, ''));
+            // 자기자본/자본총계
+            var ecptl = Number($('input[name="ecptl"]').val().replace(/[^0-9]/g, ''));
+            // 유동차입부채
+                var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
+            // 비유동차입부채
+                var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
+            // 현금성자산
+            var cashAssets = Number($('input[name="cashAssets"]').val().replace(/[^0-9]/g, ''));
+            // 영업이익
+            var bsnProfit = Number($('input[name="bsnProfit"]').val().replace(/[^0-9]/g, ''));
+            // 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입)
+            var dprc = Number($('input[name="dprc"]').val().replace(/[^0-9]/g, ''));
+            // 업종 멀티플
+            var indutyPer = Number($('input[name="indutyPer"]').val());
+            // 배당금
+            var dvdnd = Number($('input[name="dvdnd"]').val().replace(/[^0-9]/g, ''));
+            $('#stockCalc').click(function (e) {
+                e.preventDefault();
+                // 시가총액
+                var mktcTotamt = Math.round((stkpc * pblicteStockCnt) * 100) / 100;
+                // eps
+                var eps = Math.round((ntpfThstrm / pblicteStockCnt) * 100) / 100;
+                // per
+                var per = Math.round((mktcTotamt / ntpfThstrm) * 100) / 100;
+                // bps
+                var bps = Math.round(((assetsTotamt - debtTotamt) / pblicteStockCnt) * 100) / 100;
+                // pbr
+                var pbr = Math.round((mktcTotamt / ecptl) * 100) / 100;
+                // roe
+                var roe = Math.round((ntpfThstrm / ecptl * 100) * 100) / 100;
+                // ev
+                var ev = mktcTotamt + (dynmcBrrwDebt + notDynmcBrrwDebt - cashAssets);
+                // ebitda
+                var ebitda = bsnProfit + dprc;
+                // 배당수익률(%)
+                var alotErnrt = Math.round(((dvdnd / stkpc) * 100) * 100) / 100;
+                // 배당성향
+                var alotIncln = Math.round((((dvdnd * pblicteStockCnt) / ntpfThstrm) * 100) * 100) / 100;
+                // 적정주가 (업종 멀티플)
+                var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;
+                // 적정주가 (eps * roe)
+                var proprtStkpcByEpsRoe = Math.round((eps * roe) * 100) / 100;
+                
+                $('#mktcTotamt').html(mktcTotamt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#eps').html(Math.floor(eps)).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                $('#per').html(per.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#bps').html(Math.floor(bps).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#roe').html(roe.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '%');
+                $('#pbr').html(pbr.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#ev').html(ev.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#ebitda').html(ebitda.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#evEbitda').html((Math.round((ev / ebitda) * 100) / 100).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#alotErnrt').html(alotErnrt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#alotIncln').html(alotIncln.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#proprtStkpcByIndutyPer').html(Math.floor(proprtStkpcByIndutyPer).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                $('#proprtStkpcByEpsRoe').html(Math.floor(proprtStkpcByEpsRoe).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+
+                var magnificTitl = {};
+                magnificTitl.src = '<div class="white-popup" style="font-size: 1.0em;">' + $('#stockCalcResult').html() +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
+                magnificTitl.type = 'inline';
+                $('#popupBtn').magnificPopup({
+                    items: magnificTitl,
+                    closeBtnInside: false,
+                    preloader: true,
+                    removalDelay: 160,
+                    mainClass: 'mfp-fade'
+                });
+                $('#popupBtn').trigger('click');
+            });
+        });
+    };
+    // 실전주식 end
 
     // 행정표준용어 정리
     if ($('#business1').length > 0) {
@@ -187,96 +297,6 @@ $(document).ready(function() {
 
     }
     // 행정표준용어 정리 end
-
-    if ($('#listingDay').length > 0) {
-        new SimpleCalendar('#listingDay');
-    }
-
-    if ($('#stockCalc').length > 0) {
-        $('#stockCalc').click(function (e) {
-            e.preventDefault();
-            // 현재주가
-            var stkpc = Number($('input[name="stkpc"]').val().replace(/[^0-9]/g, ''));
-            // 당기순이익
-            var ntpfThstrm = Number($('input[name="ntpfThstrm"]').val().replace(/[^0-9]/g, ''));
-            // 발행주식수
-            var pblicteStockCnt = Number($('input[name="pblicteStockCnt"]').val().replace(/[^0-9]/g, ''));
-            // 자기자본/자본총계
-            var ecptl = Number($('input[name="ecptl"]').val().replace(/[^0-9]/g, ''));
-            // 자산총계
-            var assetsTotamt = Number($('input[name="assetsTotamt"]').val().replace(/[^0-9]/g, ''));
-            // 부채총계
-            var debtTotamt = Number($('input[name="debtTotamt"]').val().replace(/[^0-9]/g, ''));
-            // 유동차입부채
-             var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
-            // 비유동차입부채
-             var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
-            // 현금성자산
-            var cashAssets = Number($('input[name="cashAssets"]').val().replace(/[^0-9]/g, ''));
-            // 영업이익
-            var bsnProfit = Number($('input[name="bsnProfit"]').val().replace(/[^0-9]/g, ''));
-            // 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입)
-            var dprc = Number($('input[name="dprc"]').val().replace(/[^0-9]/g, ''));
-
-
-            // 업종 멀티플
-            var indutyPer = Number($('input[name="indutyPer"]').val());
-            // 배당금
-            var dvdnd = Number($('input[name="dvdnd"]').val().replace(/[^0-9]/g, ''));
-
-            // 시가총액
-            var mktcTotamt = Math.round((stkpc * pblicteStockCnt) * 100) / 100;
-            // eps
-            var eps = Math.round((ntpfThstrm / pblicteStockCnt) * 100) / 100;
-            // per
-            var per = Math.round((mktcTotamt / ntpfThstrm) * 100) / 100;
-            // bps
-            var bps = Math.round(((assetsTotamt - debtTotamt) / pblicteStockCnt) * 100) / 100;
-            // pbr
-            var pbr = Math.round((mktcTotamt / ecptl) * 100) / 100;
-            // roe
-            var roe = Math.round((ntpfThstrm / ecptl * 100) * 100) / 100;
-            // ev
-            var ev = mktcTotamt + (dynmcBrrwDebt + notDynmcBrrwDebt - cashAssets);
-            // ebitda
-            var ebitda = bsnProfit + dprc;
-            // 배당수익률(%)
-            var alotErnrt = Math.round(((dvdnd / stkpc) * 100) * 100) / 100;
-            // 배당성향
-            var alotIncln = Math.round((((dvdnd * pblicteStockCnt) / ntpfThstrm) * 100) * 100) / 100;
-            // 적정주가 (업종 멀티플)
-            var proprtStkpcByIndutyPer = Math.round((eps * indutyPer) * 100) / 100;
-            // 적정주가 (eps * roe)
-            var proprtStkpcByEpsRoe = Math.round((eps * roe) * 100) / 100;
-            
-            $('#mktcTotamt').html(mktcTotamt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#eps').html(Math.floor(eps)).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            $('#per').html(per.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#bps').html(Math.floor(bps).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#roe').html(roe.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '%');
-            $('#pbr').html(pbr.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#ev').html(ev.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#ebitda').html(ebitda.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#evEbitda').html((Math.round((ev / ebitda) * 100) / 100).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#alotErnrt').html(alotErnrt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#alotIncln').html(alotIncln.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#proprtStkpcByIndutyPer').html(Math.floor(proprtStkpcByIndutyPer).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#proprtStkpcByEpsRoe').html(Math.floor(proprtStkpcByEpsRoe).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-
-            var magnificTitl = {};
-            magnificTitl.src = '<div class="white-popup" style="font-size: 1.0em;">' + $('#stockCalcResult').html() +'<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>';
-            magnificTitl.type = 'inline';
-            $('#popupBtn').magnificPopup({
-                items: magnificTitl,
-                closeBtnInside: false,
-                preloader: true,
-                removalDelay: 160,
-                mainClass: 'mfp-fade'
-            });
-            $('#popupBtn').trigger('click');
-        });
-    };
-    // 주식공부 end
 
     if ($('#business2').length > 0) {
 

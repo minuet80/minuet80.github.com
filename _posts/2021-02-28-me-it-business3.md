@@ -65,20 +65,20 @@ toc_sticky: true
 - 배당성향 = 배당금 / 주당순이익
 - 적정주가 = EPS * PER (PER > ROE → 고평가)
 - <a class="btn btn--inverse my-popup" id="stockCalc" href="#">계산</a> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
-  - 현재주가 <input type="text" name="stkpc" class="won" placeholder="16,800" value="16,800" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
-  - 발행주식수 <input type="text" name="pblicteStockCnt" placeholder="9,604,000" value="9,604,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 자사주 <input type="text" name="treasuryStockCnt"  placeholder="26,000" value="26,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 당기순이익 <input type="text" name="ntpfThstrm" class="won" placeholder="15,100,532,141" value="15,100,532,141" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 자산총계 <input type="text" name="assetsTotamt" class="won" placeholder="132,725,123,457" value="132,725,123,457" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 부채총계 <input type="text" name="debtTotamt" class="won" placeholder="47,072,945,035" value="47,072,945,035" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 자기자본/자본총계 <input type="text" name="ecptl" class="won" placeholder="85,652,178,422" value="85,652,178,422" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 유동 차입부채 <input type="text" name="dynmcBrrwDebt" class="won" placeholder="10,641,216,633" value="10,641,216,633" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 비유동 차입부채 <input type="text" name="notDynmcBrrwDebt" class="won" placeholder="5,000,000,000" value="5,000,000,000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 현금성 자산 <input type="text" name="cashAssets" class="won" placeholder="10,340,581,763" value="10,340,581,763" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 영업이익 <input type="text" name="bsnProfit" class="won" placeholder="6,460,951,367" value="6,460,951,367" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입) <input type="text" name="dprc" class="won" placeholder="3,906,158,632" value="3,906,158,632" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
-  - 업종 멀티플 <input type="text" name="indutyPer" placeholder="94.04" value="94.04" />
-  - 배당금 <input type="text" name="dvdnd" class="won" placeholder="100" value="100" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 현재주가 <input type="text" name="stkpc" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
+  - 발행주식수 <input type="text" name="pblicteStockCnt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자사주 <input type="text" name="treasuryStockCnt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 당기순이익 <input type="text" name="ntpfThstrm" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자산총계 <input type="text" name="assetsTotamt" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 부채총계 <input type="text" name="debtTotamt" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 자기자본/자본총계 <input type="text" name="ecptl" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 유동 차입부채 <input type="text" name="dynmcBrrwDebt" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 비유동 차입부채 <input type="text" name="notDynmcBrrwDebt" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 현금성 자산 <input type="text" name="cashAssets" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 영업이익 <input type="text" name="bsnProfit" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입) <input type="text" name="dprc" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+  - 업종 멀티플 <input type="text" name="indutyPer" />
+  - 배당금 <input type="text" name="dvdnd" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
 
   <div id="stockCalcResult" style="display: none;">
     <table>
