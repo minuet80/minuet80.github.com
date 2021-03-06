@@ -255,7 +255,7 @@ $(document).ready(function() {
                 var proprtStkpcByEpsRoe = Math.round((eps * roe) * 100) / 100;
                 
                 $('#mktcTotamt').html(mktcTotamt.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-                $('#eps').html(Math.floor(eps)).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                $('#eps').html(Math.floor(eps).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                 $('#per').html(per.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                 $('#bps').html(Math.floor(bps).toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                 $('#roe').html(roe.toString().replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '%');
