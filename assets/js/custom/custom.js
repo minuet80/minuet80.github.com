@@ -99,7 +99,8 @@ var dates = {
             h = (h < 10 ? '0' + h : h);
             m = (m < 10 ? '0' + m : m);
             s = (s < 10 ? '0' + s : s);
-            return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' (' + (h + ':' + m + ':' + s) + ')';
+            //return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' (' + (h + ':' + m + ':' + s) + ')';
+            return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
     }
 }
@@ -111,21 +112,21 @@ $(document).ready(function() {
         var strtDay = new Date(day);
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday1').find('span').html('😢' + 'D+' + result + ' ~ ' + day);
+        $('#dday1').find('span').html('😢' + 'D+' + result);
     }, 1000);
     setInterval(function () {
         var day = $('#dday2').find('span').data('day');
         var strtDay = new Date(day);
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday2').find('span').html('👰' + 'D+' + result + ' ~ ' + day);
+        $('#dday2').find('span').html('👰' + 'D+' + result);
     }, 1000);
     setInterval(function () {
         var day = $('#dday3').find('span').data('day');
         var strtDay = new Date(day);
         var endDay = new Date();
         var result = dates.dday(strtDay, endDay);
-        $('#dday3').find('span').html('😍✈' + 'D+' + result + ' ~ ' + day);
+        $('#dday3').find('span').html('😍✈' + 'D+' + result);
     }, 1000);
 
     var i = 0;
