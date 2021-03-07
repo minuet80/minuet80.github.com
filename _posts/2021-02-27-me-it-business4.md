@@ -12,7 +12,6 @@ toc_sticky: true
 
 ### ✔ PER・PBR・ROE・EV/EBITDA
 {: .wood-text}
----
 
 ![](/assets/images/me/2020-12-27-me-it-business4-1.png)
 <br>
@@ -46,7 +45,7 @@ toc_sticky: true
 
 ### ✔ 유동비율, 부채비율, 총차입금, 순차입금, 순차입금비율, 이자보상비율
 {: .wood-text}
----
+
 - 재무상태표
   - 일정 시점 현재 기업의 재무상태를 보여주는 재무보고서
     - 자산 = 내꺼

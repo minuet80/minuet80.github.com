@@ -11,7 +11,7 @@ toc_sticky: true
 
 ### ✔ 매수시 유의사항 
 {: .neon-text}
----
+
 - 모두 알고있지만 실패하는 이유는 기다림이다
 - 당장의 이익보다는 사업성을 보라
 - CEO의 이력을 보라 (MBA 출신여부)
@@ -23,6 +23,7 @@ toc_sticky: true
 
 ### ✔ 상장일
 {: .wood-text}
+
 <div id="listingDay"></div>
 <br>
 
@@ -34,7 +35,6 @@ toc_sticky: true
 
 ### ✔ 투자지표
 {: .wood-text}
----
 
 - <a class="btn btn--inverse my-popup" id="stockCalc" href="#">계산</a> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
   - 현재주가 <input type="text" name="stkpc" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
