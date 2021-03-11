@@ -185,14 +185,15 @@ $(document).ready(function() {
                     $('input[name="dprc"]').val(json[i].dprc);
                     $('input[name="indutyPer"]').val(json[i].indutyPer);
                     $('input[name="dvdnd"]').val(json[i].dvdnd);
-                    bsnProfitSum += Number(json[i].bsnProfit.replace(/[^0-9]/g, ''));
-                    ntpfThstrmSum += Number(json[i].ntpfThstrm.replace(/[^0-9]/g, ''));
+                    bsnProfitSum += Number(json[i].bsnProfit.replace(/[^0-9-]/g, ''));
+                    ntpfThstrmSum += Number(json[i].ntpfThstrm.replace(/[^0-9-]/g, ''));
                 } else {
-                    if (year = json[i].year) {
-                        bsnProfitSum += Number(json[i].bsnProfit.replace(/[^0-9]/g, ''));
-                        ntpfThstrmSum += Number(json[i].ntpfThstrm.replace(/[^0-9]/g, ''));
+                    if (year == json[i].year) {
+                        ntpfThstrmSum += Number(json[i].ntpfThstrm.replace(/[^0-9-]/g, ''));
+                        bsnProfitSum += Number(json[i].bsnProfit.replace(/[^0-9-]/g, ''));
                     }
                 }
+                console.log(bsnProfitSum);
             }
             $('input[name="ntpfThstrm"]').val(ntpfThstrmSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             $('input[name="bsnProfit"]').val(bsnProfitSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
@@ -202,33 +203,33 @@ $(document).ready(function() {
                 e.preventDefault();
 
                 // 현재주가
-                var stkpc = Number($('input[name="stkpc"]').val().replace(/[^0-9]/g, ''));
+                var stkpc = Number($('input[name="stkpc"]').val().replace(/[^0-9-]/g, ''));
                 // 발행주식수
-                var pblicteStockCnt = Number($('input[name="pblicteStockCnt"]').val().replace(/[^0-9]/g, ''));
+                var pblicteStockCnt = Number($('input[name="pblicteStockCnt"]').val().replace(/[^0-9-]/g, ''));
                 // 자사주
-                var treasuryStockCnt = Number($('input[name="treasuryStockCnt"]').val().replace(/[^0-9]/g, ''));
+                var treasuryStockCnt = Number($('input[name="treasuryStockCnt"]').val().replace(/[^0-9-]/g, ''));
                 // 당기순이익
-                var ntpfThstrm = Number($('input[name="ntpfThstrm"]').val().replace(/[^0-9]/g, ''));
+                var ntpfThstrm = Number($('input[name="ntpfThstrm"]').val().replace(/[^0-9-]/g, ''));
                 // 자산총계
-                var assetsTotamt = Number($('input[name="assetsTotamt"]').val().replace(/[^0-9]/g, ''));
+                var assetsTotamt = Number($('input[name="assetsTotamt"]').val().replace(/[^0-9-]/g, ''));
                 // 부채총계
-                var debtTotamt = Number($('input[name="debtTotamt"]').val().replace(/[^0-9]/g, ''));
+                var debtTotamt = Number($('input[name="debtTotamt"]').val().replace(/[^0-9-]/g, ''));
                 // 자기자본/자본총계
-                var ecptl = Number($('input[name="ecptl"]').val().replace(/[^0-9]/g, ''));
+                var ecptl = Number($('input[name="ecptl"]').val().replace(/[^0-9-]/g, ''));
                 // 유동차입부채
-                    var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
+                    var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
                 // 비유동차입부채
-                    var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9]/g, ''));
+                    var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
                 // 현금성자산
-                var cashAssets = Number($('input[name="cashAssets"]').val().replace(/[^0-9]/g, ''));
+                var cashAssets = Number($('input[name="cashAssets"]').val().replace(/[^0-9-]/g, ''));
                 // 영업이익
-                var bsnProfit = Number($('input[name="bsnProfit"]').val().replace(/[^0-9]/g, ''));
+                var bsnProfit = Number($('input[name="bsnProfit"]').val().replace(/[^0-9-]/g, ''));
                 // 대손상각비 + 감가상각비 + 사용권자산상각비 + 무형자산상각비 + 기타의 대손강각비(환입)
-                var dprc = Number($('input[name="dprc"]').val().replace(/[^0-9]/g, ''));
+                var dprc = Number($('input[name="dprc"]').val().replace(/[^0-9-]/g, ''));
                 // 업종 멀티플
                 var indutyPer = Number($('input[name="indutyPer"]').val());
                 // 배당금
-                var dvdnd = Number($('input[name="dvdnd"]').val().replace(/[^0-9]/g, ''));
+                var dvdnd = Number($('input[name="dvdnd"]').val().replace(/[^0-9-]/g, ''));
 
                 // 시가총액
                 var mktcTotamt = Math.round((stkpc * pblicteStockCnt) * 100) / 100;
