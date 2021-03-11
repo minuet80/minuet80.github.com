@@ -1,6 +1,24 @@
 [
     {
         "year": "2020",
+        "degree": "4",
+        "stkpc": "25,050",
+        "pblicteStockCnt": "9,604,000",
+        "treasuryStockCnt": "173,504",
+        "ntpfThstrm": "-335,319",
+        "assetsTotamt": "144,353,430,476",
+        "debtTotamt": "49,700,619,120",
+        "ecptl": "94,652,811,356",
+        "dynmcBrrwDebt": "18,000,000,000",
+        "notDynmcBrrwDebt": "5,000,000,000",
+        "cashAssets": "4,881,052,587",
+        "bsnProfit": "-28,141,367",
+        "dprc": "5,875,981,017",
+        "indutyPer": "94.04",
+        "dvdnd": "100"
+    },
+    {
+        "year": "2020",
         "degree": "3",
         "stkpc": "24,000",
         "pblicteStockCnt": "9,604,000",
@@ -103,7 +121,7 @@
         "notDynmcBrrwDebt": "6,708,560,454",
         "cashAssets": "8,466,836,798",
         "bsnProfit": "229,038,581",
-        "dprc": "1251959701",
+        "dprc": "1,251,959,701",
         "indutyPer": "94.04",
         "dvdnd": "0"
     },
