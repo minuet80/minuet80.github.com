@@ -19,7 +19,14 @@ toc_sticky: true
 - 독과점 기업
   - 안정적
   - 이미 시장잠식으로 점유율을 올리기 힘듬
-  - <font color="red">메가트랜드가 더 매력적</font>
+  - <font color="red">메가트랜드</font>가 더 매력적
+- SWOT를 분석해라
+  - 강점 (Strength)
+  - 약점 (Weakness)
+  - 기회 (Opportunities)
+  - 위기 (Threats)
+- 1983~1993년 10년동안 나스닥은 10배 상승
+  - 한국 코스닥은 저평가되어 있음
 - 자신만의 원칙으로 단타 패턴을 만들어라
   - 하루 1번
   - 3:8:10 법칙 - 예수금의 30%, 80%, 100% 분할매수
@@ -42,6 +49,132 @@ toc_sticky: true
 {: .wood-text}
 
 ![](/assets/images/me/2020-12-27-me-it-business3-4.png)
+
+
+### ✔ 우리나라의 산업 섹터와 분류
+{: .wood-text}
+
+<table>
+  <thead>
+    <tr>
+      <th>섹터</th>
+      <th>산업분류</th>
+      <th>산업</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5">금융</td>
+      <td>은행</td>
+      <td>상업은행, 상호저축은행</td>
+    </tr>
+    <tr>
+      <td>기타금융</td>
+      <td>창업투자 및 종금, 소비자 금융</td>
+    </tr>
+    <tr>
+      <td>보험</td>
+      <td>보험</td>
+    </tr>
+    <tr>
+      <td>부동산</td>
+      <td>부동산</td>
+    </tr>
+    <tr>
+      <td>증권</td>
+      <td>증권</td>
+    </tr>
+    <tr>
+      <td>소재</td>
+      <td>소재</td>
+      <td>화학 건축소재, 용기 및 포장, 금속 및 광물, 종이 및 목재</td>
+    </tr>
+    <tr>
+      <td rowspan="3">산업재</td>
+      <td>자본재</td>
+      <td>건축자재, 건설, 전기장비, 복합산업, 기계, 무역, 조선</td>
+    </tr>
+    <tr>
+      <td>상업 서비스</td>
+      <td>상업 서비스</td>
+    </tr>
+    <tr>
+      <td>운송</td>
+      <td>항공, 해상, 육상, 운송 인프라</td>
+    </tr>
+    <tr>
+      <td rowspan="5">경기 소비재</td>
+      <td>자동차 및 부품</td>
+      <td>자동차 및 부품</td>
+    </tr>
+    <tr>
+      <td>내부 소비재 및 의류</td>
+      <td>내구소비재, 레저, 섬유 및 의복</td>
+    </tr>
+    <tr>
+      <td>소비자 서비스</td>
+      <td>호텔 및 레저, 교육</td>
+    </tr>
+    <tr>
+      <td>미디어</td>
+      <td>미디어</td>
+    </tr>
+    <tr>
+      <td>유통</td>
+      <td>도소매, 온라인 쇼핑, 백화점</td>
+    </tr>
+    <tr>
+      <td rowspan="2">필수 소비재</td>
+      <td>음식료 및 담배</td>
+      <td>음료, 식료품, 담배</td>
+    </tr>
+    <tr>
+      <td>생활용품</td>
+      <td>가정 및 개인 생활용품</td>
+    </tr>
+    <tr>
+      <td rowspan="2">의료</td>
+      <td>의료장비 및 서비스</td>
+      <td>의료장비, 의료서비스</td>
+    </tr>
+    <tr>
+      <td>제약 및 바이오</td>
+      <td>제약, 바이오</td>
+    </tr>
+    <tr>
+      <td>에너지</td>
+      <td>에너지</td>
+      <td>에너지 시설 및 서비스, 석유 및 가스</td>
+    </tr>
+    <tr>
+      <td rowspan="4">IT</td>
+      <td>소프트웨어</td>
+      <td>인터넷 서비스, IT서비스, 일반 소프트웨어, 게임 소프트웨어</td>
+    </tr>
+    <tr>
+      <td>하드웨어</td>
+      <td>통신장비, 휴대폰 및 관련부품, 셋톱박스, 컴퓨터 및 주변기기, 전자장비 및 기기, 보안장비, 사무기기</td>
+    </tr>
+    <tr>
+      <td>반도체</td>
+      <td>반도체 및 관련 장비</td>
+    </tr>
+    <tr>
+      <td>디스플레이</td>
+      <td>디스플레이 및 관련 부품</td>
+    </tr>
+    <tr>
+      <td>통신</td>
+      <td>통신서비스</td>
+      <td>유선 및 무선 통신</td>
+    </tr>
+    <tr>
+      <td>유틸리티</td>
+      <td>유틸리티</td>
+      <td>전력 및 가스</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ### ✔ 투자지표
