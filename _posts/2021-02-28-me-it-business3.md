@@ -55,6 +55,11 @@ toc_sticky: true
 {: .wood-text}
 
 <table>
+  <colgroup>
+      <col width="10%">
+      <col width="20%">
+      <col width="70%">
+  </colgroup>
   <thead>
     <tr>
       <th>섹터</th>
