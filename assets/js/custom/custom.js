@@ -217,9 +217,9 @@ $(document).ready(function() {
                 // 자기자본/자본총계
                 var ecptl = Number($('input[name="ecptl"]').val().replace(/[^0-9-]/g, ''));
                 // 유동차입부채
-                    var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
+                var dynmcBrrwDebt = Number($('input[name="dynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
                 // 비유동차입부채
-                    var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
+                var notDynmcBrrwDebt = Number($('input[name="notDynmcBrrwDebt"]').val().replace(/[^0-9-]/g, ''));
                 // 현금성자산
                 var cashAssets = Number($('input[name="cashAssets"]').val().replace(/[^0-9-]/g, ''));
                 // 영업이익
