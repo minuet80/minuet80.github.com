@@ -1,5 +1,5 @@
 ---
-title: "실전주식!!"
+title: "실전주식"
 categories:
   - Me
 tags:
