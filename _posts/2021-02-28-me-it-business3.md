@@ -65,282 +65,282 @@ toc_sticky: true
   </thead>
   <tbody>
       <tr>
-          <td class="t_left v_top" rowspan="2">10</td><td rowspan="2" class="t_left v_top">에너지</td>
-          <td class="t_left v_top" rowspan="2">1010</td><td rowspan="2" class="t_left v_top">에너지</td>
-          <td class="t_left">101010</td><td class="t_left">에너지장비및서비스</td>
+          <td rowspan="2" class="t_left v_top">에너지</td>
+          <td rowspan="2" class="t_left v_top">에너지</td>
+          <td class="t_left">에너지장비및서비스</td>
       </tr>
       <tr>
-          <td class="t_left child-row">101020</td><td class="t_left">석유와가스</td>
+          <td class="t_left">석유와가스</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="5">15</td><td class="t_left v_top" rowspan="5">소재</td>
-          <td class="t_left v_top" rowspan="5">1510</td><td class="t_left v_top" rowspan="5">소재</td>
-          <td class="t_left">151010</td><td class="t_left">화학</td>
+          <td class="t_left v_top" rowspan="5">소재</td>
+          <td class="t_left v_top" rowspan="5">소재</td>
+          <td class="t_left">화학</td>
       </tr>
       <tr>
-          <td class="t_left child-row">151030</td><td class="t_left">포장재</td>
+          <td class="t_left">포장재</td>
       </tr>
       <tr>
-          <td class="t_left child-row">151040</td><td class="t_left">비철금속</td>
+          <td class="t_left">비철금속</td>
       </tr>
       <tr>
-          <td class="t_left child-row">151050</td><td class="t_left">철강</td>
+          <td class="t_left">철강</td>
       </tr>
       <tr>
-          <td class="t_left child-row">151060</td><td class="t_left">종이와목재</td>
+          <td class="t_left">종이와목재</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="16">20</td><td class="t_left v_top" rowspan="16">산업재</td>
-          <td class="t_left v_top" rowspan="10">2010</td><td class="t_left v_top" rowspan="10">자본재</td>
-          <td class="t_left">201010</td><td class="t_left">우주항공과국방</td>
+          <td class="t_left v_top" rowspan="16">산업재</td>
+          <td class="t_left v_top" rowspan="10">자본재</td>
+          <td class="t_left">우주항공과국방</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201020</td><td class="t_left">건축제품</td>
+          <td class="t_left">건축제품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201025</td><td class="t_left">건축자재</td>
+          <td class="t_left">건축자재</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201030</td><td class="t_left">건설</td>
+          <td class="t_left">건설</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201035</td><td class="t_left">가구</td>
+          <td class="t_left">가구</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201040</td><td class="t_left">전기장비</td>
+          <td class="t_left">전기장비</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201050</td><td class="t_left">복합기업</td>
+          <td class="t_left">복합기업</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201060</td><td class="t_left">기계</td>
+          <td class="t_left">기계</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201065</td><td class="t_left">조선</td>
+          <td class="t_left">조선</td>
       </tr>
       <tr>
-          <td class="t_left child-row">201070</td><td class="t_left">무역회사와판매업체</td>
+          <td class="t_left">무역회사와판매업체</td>
       </tr>
       <tr>
-          <td class="t_left child-row">2020</td><td class="t_left">상업서비스와공급품</td>
-          <td class="t_left">202010</td><td class="t_left">상업서비스와공급품</td>
+          <td class="t_left">상업서비스와공급품</td>
+          <td class="t_left">상업서비스와공급품</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="5">2030</td><td class="t_left v_top" rowspan="5">운송</td>
-          <td class="t_left">203010</td><td class="t_left">항공화물운송과물류</td>
+          <td class="t_left v_top" rowspan="5">운송</td>
+          <td class="t_left">항공화물운송과물류</td>
       </tr>
       <tr>
-          <td class="t_left child-row">203020</td><td class="t_left">항공사</td>
+          <td class="t_left">항공사</td>
       </tr>
       <tr>
-          <td class="t_left child-row">203030</td><td class="t_left">해운사</td>
+          <td class="t_left">해운사</td>
       </tr>
       <tr>
-          <td class="t_left child-row">203040</td><td class="t_left">도로와철도운송</td>
+          <td class="t_left">도로와철도운송</td>
       </tr>
       <tr>
-          <td class="t_left child-row">203050</td><td class="t_left">운송인프라</td>
+          <td class="t_left">운송인프라</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="14">25</td><td class="t_left v_top" rowspan="14">경기관련소비재</td>
-          <td class="t_left v_top" rowspan="2">2510</td><td class="t_left v_top" rowspan="2">자동차와부품</td>
-          <td class="t_left">251010</td><td class="t_left">자동차부품</td>
+          <td class="t_left v_top" rowspan="14">경기관련소비재</td>
+          <td class="t_left v_top" rowspan="2">자동차와부품</td>
+          <td class="t_left">자동차부품</td>
       </tr>
       <tr>
           <td class="t_left child-row">251020</td><td class="t_left">자동차</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="5">2520</td><td class="t_left v_top" rowspan="5">내구소비재와의류</td>
-          <td class="t_left">252040</td><td class="t_left">가정용기기와용품</td>
+          <td class="t_left v_top" rowspan="5">내구소비재와의류</td>
+          <td class="t_left">가정용기기와용품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">252050</td><td class="t_left">레저용장비와제품</td>
+          <td class="t_left">레저용장비와제품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">252060</td><td class="t_left">섬유,의류,신발,호화품</td>
+          <td class="t_left">섬유,의류,신발,호화품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">252065</td><td class="t_left">화장품</td>
+          <td class="t_left">화장품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">252070</td><td class="t_left">문구류</td>
+          <td class="t_left">문구류</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="2">2530</td><td class="t_left v_top" rowspan="2">호텔,레스토랑,레저 등</td>
-          <td class="t_left">253010</td><td class="t_left">호텔,레스토랑,레저</td>
+          <td class="t_left v_top" rowspan="2">호텔,레스토랑,레저 등</td>
+          <td class="t_left">호텔,레스토랑,레저</td>
       </tr>
       <tr>
-          <td class="t_left child-row">253020</td><td class="t_left">다각화된소비자서비스</td>
+          <td class="t_left">다각화된소비자서비스</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="4">2550</td><td class="t_left v_top" rowspan="4">소매(유통)</td>
-          <td class="t_left">255010</td><td class="t_left">판매업체</td>
+          <td class="t_left v_top" rowspan="4">소매(유통)</td>
+          <td class="t_left">판매업체</td>
       </tr>
       <tr>
-          <td class="t_left child-row">255020</td><td class="t_left">인터넷과카탈로그소매</td>
+          <td class="t_left">인터넷과카탈로그소매</td>
       </tr>
       <tr>
-          <td class="t_left child-row">255030</td><td class="t_left">백화점과일반상점</td>
+          <td class="t_left">백화점과일반상점</td>
       </tr>
       <tr>
-          <td class="t_left child-row">255040</td><td class="t_left">전문소매</td>
+          <td class="t_left">전문소매</td>
       </tr>
       <tr>
-          <td class="t_left child-row">2560</td><td class="t_left">교육서비스</td>
-          <td class="t_left">256010</td><td class="t_left">교육서비스</td>
+          <td class="t_left">교육서비스</td>
+          <td class="t_left">교육서비스</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="5">30</td><td class="t_left v_top" rowspan="5">필수소비재</td>
-          <td class="t_left">3010</td><td class="t_left">식품과기본식료품소매</td>
-          <td class="t_left">301010</td><td class="t_left">식품과기본식료품소매</td>
+          <td class="t_left v_top" rowspan="5">필수소비재</td>
+          <td class="t_left">식품과기본식료품소매</td>
+          <td class="t_left">식품과기본식료품소매</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="3">3020</td><td class="t_left v_top" rowspan="3">식품,음료,담배</td>
-          <td class="t_left">302010</td><td class="t_left">음료</td>
+          <td class="t_left v_top" rowspan="3">식품,음료,담배</td>
+          <td class="t_left">음료</td>
       </tr>
       <tr>
-          <td class="t_left child-row">302020</td><td class="t_left">식품</td>
+          <td class="t_left">식품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">302030</td><td class="t_left">담배</td>
+          <td class="t_left">담배</td>
       </tr>
       <tr>
-          <td class="t_left child-row">3030</td><td class="t_left">가정용품과개인용품</td>
-          <td class="t_left">303010</td><td class="t_left">가정용품</td>
+          <td class="t_left">가정용품과개인용품</td>
+          <td class="t_left">가정용품</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="6">35</td><td class="t_left v_top" rowspan="6">건강관리</td>
-          <td class="t_left v_top" rowspan="3">3510</td><td class="t_left v_top" rowspan="3">건강관리장비와서비스</td>
-          <td class="t_left">351010</td><td class="t_left">건강관리장비와용품</td>
+          <td class="t_left v_top" rowspan="6">건강관리</td>
+          <td class="t_left v_top" rowspan="3">건강관리장비와서비스</td>
+          <td class="t_left">건강관리장비와용품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">351020</td><td class="t_left">건강관리업체및서비스</td>
+          <td class="t_left">건강관리업체및서비스</td>
       </tr>
       <tr>
-          <td class="t_left child-row">351030</td><td class="t_left">건강관리기술</td>
+          <td class="t_left">건강관리기술</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="3">3520</td><td class="t_left v_top" rowspan="3">제약과생물공학</td>
-          <td class="t_left">352010</td><td class="t_left">생물공학</td>
+          <td class="t_left v_top" rowspan="3">제약과생물공학</td>
+          <td class="t_left">생물공학</td>
       </tr>
       <tr>
-          <td class="t_left child-row">352020</td><td class="t_left">제약</td>
+          <td class="t_left">제약</td>
       </tr>
       <tr>
-          <td class="t_left child-row">352030</td><td class="t_left">생명과학도구및서비스</td>
+          <td class="t_left">생명과학도구및서비스</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="8">40</td><td class="t_left v_top" rowspan="8">금융</td>
-          <td class="t_left">4010</td><td class="t_left">은행</td>
-          <td class="t_left">401010</td><td class="t_left">은행</td>
+          <td class="t_left v_top" rowspan="8">금융</td>
+          <td class="t_left">은행</td>
+          <td class="t_left">은행</td>
       </tr>
       <tr>
-          <td class="t_left child-row">4020</td><td class="t_left">증권</td>
-          <td class="t_left">402010</td><td class="t_left">증권</td>
+          <td class="t_left">증권</td>
+          <td class="t_left">증권</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="3">4030</td><td class="t_left v_top" rowspan="3">다각화된금융</td>
-          <td class="t_left">403020</td><td class="t_left">창업투자</td>
+          <td class="t_left v_top" rowspan="3">다각화된금융</td>
+          <td class="t_left">창업투자</td>
       </tr>
       <tr>
-          <td class="t_left child-row">403030</td><td class="t_left">카드</td>
+          <td class="t_left">카드</td>
       </tr>
       <tr>
-          <td class="t_left child-row">403040</td><td class="t_left">기타금융</td>
+          <td class="t_left">기타금융</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="2">4040</td><td class="t_left v_top" rowspan="2">보험</td>
-          <td class="t_left">404010</td><td class="t_left">손해보험</td>
+          <td class="t_left v_top" rowspan="2">보험</td>
+          <td class="t_left">손해보험</td>
       </tr>
       <tr>
-          <td class="t_left child-row">404020</td><td class="t_left">생명보험</td>
+          <td class="t_left">생명보험</td>
       </tr>
       <tr>
-          <td class="t_left child-row">4050</td><td class="t_left">부동산</td>
-          <td class="t_left">405020</td><td class="t_left">부동산</td>
+          <td class="t_left">부동산</td>
+          <td class="t_left">부동산</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="12">45</td><td class="t_left v_top" rowspan="12">IT</td>
-          <td class="t_left v_top" rowspan="2">4510</td><td class="t_left v_top" rowspan="2">소프트웨어와서비스</td>
-          <td class="t_left">451020</td><td class="t_left">IT서비스</td>
+          <td class="t_left v_top" rowspan="12">IT</td>
+          <td class="t_left v_top" rowspan="2">소프트웨어와서비스</td>
+          <td class="t_left">IT서비스</td>
       </tr>
       <tr>
-          <td class="t_left child-row">451030</td><td class="t_left">소프트웨어</td>
+          <td class="t_left">소프트웨어</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="5">4520</td><td class="t_left v_top" rowspan="5">기술하드웨어와장비</td>
-          <td class="t_left">452010</td><td class="t_left">통신장비</td>
+          <td class="t_left v_top" rowspan="5">기술하드웨어와장비</td>
+          <td class="t_left">통신장비</td>
       </tr>
       <tr>
-          <td class="t_left child-row">452015</td><td class="t_left">핸드셋</td>
+          <td class="t_left">핸드셋</td>
       </tr>
       <tr>
-          <td class="t_left child-row">452020</td><td class="t_left">컴퓨터와주변기기</td>
+          <td class="t_left">컴퓨터와주변기기</td>
       </tr>
       <tr>
-          <td class="t_left child-row">452030</td><td class="t_left">전자장비와기기</td>
+          <td class="t_left">전자장비와기기</td>
       </tr>
       <tr>
-          <td class="t_left child-row">452040</td><td class="t_left">사무용전자제품</td>
+          <td class="t_left">사무용전자제품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">4530</td><td class="t_left">반도체와반도체장비</td>
-          <td class="t_left">453010</td><td class="t_left">반도체와반도체장비</td>
+          <td class="t_left">반도체와반도체장비</td>
+          <td class="t_left">반도체와반도체장비</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="2">4535</td><td class="t_left v_top" rowspan="2">전자와 전기제품</td>
-          <td class="t_left">453510</td><td class="t_left">전자제품</td>
+          <td class="t_left v_top" rowspan="2">전자와 전기제품</td>
+          <td class="t_left">전자제품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">453520</td><td class="t_left">전기제품</td>
+          <td class="t_left">전기제품</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="2">4540</td><td class="t_left v_top" rowspan="2">디스플레이</td>
-          <td class="t_left">454010</td><td class="t_left">디스플레이 패널</td>
+          <td class="t_left v_top" rowspan="2">디스플레이</td>
+          <td class="t_left">디스플레이 패널</td>
       </tr>
       <tr>
-          <td class="t_left child-row">454020</td><td class="t_left">디스플레이 장비 및 부품</td>
+          <td class="t_left">디스플레이 장비 및 부품</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="7">50</td><td class="t_left v_top" rowspan="7">커뮤니케이션서비스</td>
-          <td class="t_left v_top" rowspan="2">5010</td><td class="t_left v_top" rowspan="2">전기통신서비스</td>
-          <td class="t_left">501010</td><td class="t_left">다각화된통신서비스</td>
+          <td class="t_left v_top" rowspan="7">커뮤니케이션서비스</td>
+          <td class="t_left v_top" rowspan="2">전기통신서비스</td>
+          <td class="t_left">다각화된통신서비스</td>
       </tr>
       <tr>
-          <td class="t_left child-row">501020</td><td class="t_left">무선통신서비스</td>
+          <td class="t_left">무선통신서비스</td>
       </tr>
       <tr>
-          <td class="t_left v_top child-row" rowspan="5">5020</td><td class="t_left v_top" rowspan="5">미디어와엔터테인먼트</td>
-          <td class="t_left">502010</td><td class="t_left">광고</td>
+          <td class="t_left v_top" rowspan="5">미디어와엔터테인먼트</td>
+          <td class="t_left">광고</td>
       </tr>
       <tr>
-          <td class="t_left child-row">502020</td><td class="t_left">방송과엔터테인먼트</td>
+          <td class="t_left">방송과엔터테인먼트</td>
       </tr>
       <tr>
-          <td class="t_left child-row">502030</td><td class="t_left">출판</td>
+          <td class="t_left">출판</td>
       </tr>
       <tr>
-          <td class="t_left child-row">502040</td><td class="t_left">게임엔터테인먼트</td>
+          <td class="t_left">게임엔터테인먼트</td>
       </tr>
       <tr>
-          <td class="t_left child-row">502050</td><td class="t_left">양방향미디어와서비스</td>
+          <td class="t_left">양방향미디어와서비스</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="5">55</td><td class="t_left v_top" rowspan="5">유틸리티</td>
-          <td class="t_left v_top" rowspan="5">5510</td><td class="t_left v_top" rowspan="5">유틸리티</td>
-          <td class="t_left">551010</td><td class="t_left">전기유틸리티</td>
+          <td class="t_left v_top" rowspan="5">유틸리티</td>
+          <td class="t_left v_top" rowspan="5">유틸리티</td>
+          <td class="t_left">전기유틸리티</td>
       </tr>
       <tr>
-          <td class="t_left child-row">551020</td><td class="t_left">가스유틸리티</td>
+          <td class="t_left">가스유틸리티</td>
       </tr>
       <tr>
-          <td class="t_left child-row">551030</td><td class="t_left">복합유틸리티</td>
+          <td class="t_left">복합유틸리티</td>
       </tr>
       <tr>
-          <td class="t_left child-row">551040</td><td class="t_left">수도유틸리티</td>
+          <td class="t_left">수도유틸리티</td>
       </tr>
       <tr>
-          <td class="t_left child-row">551050</td><td class="t_left">독립전력생산및에너지거래</td>
+          <td class="t_left">독립전력생산및에너지거래</td>
       </tr>
   </tbody>
 </table>
