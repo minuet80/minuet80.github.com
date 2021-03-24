@@ -58,9 +58,9 @@ toc_sticky: true
 <table class="sector">
   <thead>
       <tr>
-          <th colspan="2">WICS 대분류</th>
-          <th colspan="2">WICS 중분류</th>
-          <th colspan="2">WICS 소분류</th>
+          <th>WICS 대분류</th>
+          <th>WICS 중분류</th>
+          <th>WICS 소분류</th>
       </tr>
   </thead>
   <tbody>
