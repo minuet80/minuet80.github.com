@@ -147,7 +147,7 @@ toc_sticky: true
           <td class="t_left">자동차부품</td>
       </tr>
       <tr>
-          <td class="t_left child-row">251020</td><td class="t_left">자동차</td>
+          <td class="t_left">자동차</td>
       </tr>
       <tr>
           <td class="t_left v_top" rowspan="5">내구소비재와의류</td>
