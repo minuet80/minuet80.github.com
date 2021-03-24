@@ -25,6 +25,7 @@ toc_sticky: true
   - 약점 (Weakness)
   - 기회 (Opportunities)
   - 위기 (Threats)
+- 매도시 전량, 매수시 분할
 - 1983~1993년 10년동안 나스닥은 10배 상승
   - 한국 코스닥은 저평가되어 있음
 - 성장성이 내재되어 있는 저평가 종목
@@ -133,7 +134,7 @@ toc_sticky: true
           <td class="t_left">항공사</td>
       </tr>
       <tr>
-          <td class="t_left">해운사</td>
+          <td class="t_left"><font color="red"><u>해운사</u></font></td>
       </tr>
       <tr>
           <td class="t_left">도로와철도운송</td>
@@ -209,25 +210,25 @@ toc_sticky: true
           <td class="t_left">가정용품</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="6">건강관리</td>
-          <td class="t_left v_top" rowspan="3">건강관리장비와서비스</td>
-          <td class="t_left">건강관리장비와용품</td>
+          <td class="t_left v_top" rowspan="6"><font color="red"><u>건강관리</u></font></td>
+          <td class="t_left v_top" rowspan="3"><font color="red"><u>건강관리장비와서비스</u></font></td>
+          <td class="t_left"><font color="red"><u>건강관리장비와용품</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">건강관리업체및서비스</td>
+          <td class="t_left"><font color="red"><u>건강관리업체및서비스</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">건강관리기술</td>
+          <td class="t_left"><font color="red"><u>건강관리기술</u></font></td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="3">제약과생물공학</td>
-          <td class="t_left">생물공학</td>
+          <td class="t_left v_top" rowspan="3"><font color="red"><u>제약과생물공학</u></font></td>
+          <td class="t_left"><font color="red"><u>생물공학</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">제약</td>
+          <td class="t_left"><font color="red"><u>제약</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">생명과학도구및서비스</td>
+          <td class="t_left"><font color="red"><u>생명과학도구및서비스</u></font></td>
       </tr>
       <tr>
           <td class="t_left v_top" rowspan="8">금융</td>
@@ -260,12 +261,12 @@ toc_sticky: true
           <td class="t_left">부동산</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="12">IT</td>
-          <td class="t_left v_top" rowspan="2">소프트웨어와서비스</td>
-          <td class="t_left">IT서비스</td>
+          <td class="t_left v_top" rowspan="12"><font color="red"><u>IT</u></font></td>
+          <td class="t_left v_top" rowspan="2"><font color="red"><u>소프트웨어와서비스</u></font></td>
+          <td class="t_left"><font color="red"><u>IT서비스</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">소프트웨어</td>
+          <td class="t_left"><font color="red"><u>소프트웨어</u></font></td>
       </tr>
       <tr>
           <td class="t_left v_top" rowspan="5">기술하드웨어와장비</td>
@@ -284,15 +285,15 @@ toc_sticky: true
           <td class="t_left">사무용전자제품</td>
       </tr>
       <tr>
-          <td class="t_left">반도체와반도체장비</td>
-          <td class="t_left">반도체와반도체장비</td>
+          <td class="t_left"><font color="red"><u>반도체와반도체장비</u></font></td>
+          <td class="t_left"><font color="red"><u>반도체와반도체장비</u></font></td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="2">전자와 전기제품</td>
-          <td class="t_left">전자제품</td>
+          <td class="t_left v_top" rowspan="2"><font color="red"><u>전자와 전기제품</u></font></td>
+          <td class="t_left"><font color="red"><u>전자제품</u></font></td>
       </tr>
       <tr>
-          <td class="t_left">전기제품</td>
+          <td class="t_left"><font color="red"><u>전기제품</u></font></td>
       </tr>
       <tr>
           <td class="t_left v_top" rowspan="2">디스플레이</td>
@@ -302,25 +303,25 @@ toc_sticky: true
           <td class="t_left">디스플레이 장비 및 부품</td>
       </tr>
       <tr>
-          <td class="t_left v_top" rowspan="7">커뮤니케이션서비스</td>
+          <td class="t_left v_top" rowspan="7"><font color="red"><u>커뮤니케이션서비스</u></font></td>
           <td class="t_left v_top" rowspan="2">전기통신서비스</td>
           <td class="t_left">다각화된통신서비스</td>
       </tr>
       <tr>
-          <td class="t_left">무선통신서비스</td>
+          <td class="t_left"><font color="red"><u>무선통신서비스</u></font></td>
       </tr>
       <tr>
           <td class="t_left v_top" rowspan="5">미디어와엔터테인먼트</td>
           <td class="t_left">광고</td>
       </tr>
       <tr>
-          <td class="t_left">방송과엔터테인먼트</td>
+          <td class="t_left"><font color="red"><u>방송과엔터테인먼트</u></font></td>
       </tr>
       <tr>
           <td class="t_left">출판</td>
       </tr>
       <tr>
-          <td class="t_left">게임엔터테인먼트</td>
+          <td class="t_left"><font color="red"><u>게임엔터테인먼트</u></font></td>
       </tr>
       <tr>
           <td class="t_left">양방향미디어와서비스</td>
