@@ -11,7 +11,7 @@ toc_sticky: true
 
 
 ## 뷰노 (2021-03-21)
-{: .wood-text}
+{: .neon-fire}
 
 ### ✔ 뷰노 기업 개요
 {: .wood-text}
@@ -70,7 +70,7 @@ toc_sticky: true
 - 단기적인 실적향상을 기대하기 어려움
 
 ### ✔ 뷰노 참고
-{: .wood-text}
+{: .neon}
 
 - 개인보다 의무보유 미확약 기관에 공모주 다수 배정
   - 기자

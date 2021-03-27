@@ -359,7 +359,7 @@ toc_sticky: true
 
 
 ### ✔ 투자지표
-{: .wood-text}
+{: .neon}
 
 - <a class="btn btn--inverse my-popup" id="stockCalc" href="#">계산</a> [[참고1]](/assets/images/me/2020-12-27-me-it-business3-2-1.png){: .gallery-enabled-false} [[참고2]](/assets/images/me/2020-12-27-me-it-business3-2-2.png){: .gallery-enabled-false} [[참고3]](/assets/images/me/2020-12-27-me-it-business3-2-3.png){: .gallery-enabled-false}
   - 현재주가 <input type="text" name="stkpc" class="won" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/\B(?=(\d{3})+(?!\d))/g, ',');"/>
