@@ -26,7 +26,7 @@ toc_sticky: true
     1. ![](/assets/images/me/2021-03-27-me-life-tips-4.png)
 
 
-### ✔ 자동자 보험료 70% 까지 할인받는 팁
+### ✔ 자동차 보험료 70% 까지 할인받는 팁
 {: .wood-text}
 
 - 자동차 보험
