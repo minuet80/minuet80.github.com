@@ -132,7 +132,7 @@ toc_sticky: true
   - 동양고속
     - ![영업이익률이 1.12인데 순이익률이 69.21](/assets/images/youtube/darant/2021-02-12-darant-playlist1-15.png)
     - ![자산처분이익 313.0](/assets/images/youtube/darant/2021-02-12-darant-playlist1-16.png)
-    - **<u>자산처분이익으로 배당 (일시적)</u>**
+    - <u>자산처분이익으로 배당 (일시적)</u>
   - 두산, 두산우
     - 부도위기
   - 웅진씽크빅
