@@ -27,7 +27,7 @@ toc_sticky: true
 <cite>--- 윈스턴 처칠 (Winston Churchill)</cite>
 {: .small}
 
-### ✔ 추월차선속 부란?
+### ✔ 추월차선속 '부'란?
 {: .wood-text}
 
 - '부'란 공동체적 삶이자 타인의 인생에 영향을 미치는 일이다.
