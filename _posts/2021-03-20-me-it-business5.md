@@ -50,7 +50,7 @@ toc_sticky: true
 | 3개월 확약 | 95,970 | 8.1 |
 | 1개월 확약 | 74,323 | 6.3 |
 | 15일 확약 | 15,454 | 1.3 |
-| <font color="red"><u>미확약</u></font> | <font color="red"><u>902,983</u></font> | <font color="red"><u>76.2</u></font> |
+| <font color="red">미확약</font> | <font color="red">902,983</font> | <font color="red">76.2</font> |
 
 - 위에서 보는봐와 같이 미확약물량이 902,983 이다
 - 실제로 상장일 기관의 매도수량을 보면 무려 1,034,749 이다

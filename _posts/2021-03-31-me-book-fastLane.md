@@ -22,7 +22,7 @@ toc_sticky: true
 <cite>--- 토마스 제퍼슨 (Thomas Jefferson)</cite>
 {: .small}
 
-> '위대함의 대가는 '책임감' 이다.</cite> 
+> '위대함의 대가는 '책임감' 이다.
 
 <cite>--- 윈스턴 처칠 (Winston Churchill)</cite>
 {: .small}
