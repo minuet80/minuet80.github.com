@@ -1,5 +1,5 @@
 ---
-title: "생활팁"
+title: "생활 Tips"
 categories:
   - Me
 tags:
