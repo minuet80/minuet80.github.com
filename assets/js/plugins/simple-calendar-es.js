@@ -856,6 +856,9 @@ SimpleCalendar.prototype.languageData = {
     '3-17': "바이오다인",
     '3-24': "자이언트스텝, 제노코",
     '4-1': "엔시스",
+    '4-21': "이삭엔지니어링",
+    '4-21': "해성티피씨",
+    '4-28': "쿠콘"
   },
   feativals_EN: {
     '1-1': "new year’s day",
