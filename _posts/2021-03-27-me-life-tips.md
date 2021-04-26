@@ -35,6 +35,7 @@ toc_sticky: true
     - 태깅  
       ![](/assets/images/me/2021-03-27-me-life-tips-8.jpg)
     - 도착 버튼 클릭 (목적지 도착)  
+      ![](/assets/images/me/2021-03-27-me-life-tips-9.jpg)
 
 ### ✔ 자영업자, 프리랜서, 강사 등 건강보험료를 100% 줄이는 5가지 방법
 {: .wood-text}
