@@ -10,6 +10,13 @@ toc_sticky: true
 ---
 
 
+![](/assets/images/me/2021-04-25-me-book-shoeDog-1.png)
+<br><br>
+![](/assets/images/me/2021-04-25-me-book-shoeDog-2.png)
+<br><br>
+![](/assets/images/me/2021-04-25-me-book-shoeDog-3.png)
+<br>
+
 > Just do it
 
 
