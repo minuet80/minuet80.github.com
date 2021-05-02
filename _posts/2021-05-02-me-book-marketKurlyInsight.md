@@ -11,7 +11,7 @@ toc_sticky: true
 
 ![](/assets/images/me/2021-05-02-me-book-marketKurlyInsight-1.png)
 <br>
-![](/assets/images/me/2021-05-02-me-book-marketKurlyInsight-1.png)
+![](/assets/images/me/2021-05-02-me-book-marketKurlyInsight-2.png)
 <br><br>
 
 > 어제의 최적화가 오늘의 비효율인 것 같습니다.
