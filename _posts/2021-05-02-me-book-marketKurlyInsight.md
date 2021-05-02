@@ -10,7 +10,7 @@ toc_sticky: true
 ---
 
 ![](/assets/images/me/2021-05-02-me-book-marketKurlyInsight-1.png)
-<br>
+<br><br>
 ![](/assets/images/me/2021-05-02-me-book-marketKurlyInsight-2.png)
 <br><br>
 
