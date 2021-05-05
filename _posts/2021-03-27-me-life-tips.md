@@ -9,6 +9,19 @@ toc_label: "목차"
 toc_sticky: true
 ---
 
+### ✔ 신용카드
+{: .wood-text}
+
+1. KB국민 탄탄대로 Miz&Mr 카드
+  - | <font color="red">블루팩</font> | 퍼플팩 | 웨딩팩 | 할인율 | 40↑ | 80↑ |
+    | :---: | :---: | :---: | :---: | :---: | :---: |
+    | 스포츠<br>골프 | 미용<br>화장품 | 결혼서비스<br>가전 | 20% | 1만 | 1.5만 |
+    | <font color="red">식품배송</font> | SPA패션 | 인테리어 | 20% | 1만 | 1.5만 |
+    | <font color="red">음식점<br>(건당2만원이상)</font> | 커피<br>/베이커리<br>/아이스크림<br>(건당2만원이상) | 음식점<br>(건당2만원이상) | 10% | 0.5만 | 1만 |
+    | <font color="red">주유<br>(SK, GS)</font> | 대중교통<br>/택시 | 주유<br>(SK, GS) | 80원/L<br>, 10% | 0.5만 | 1만 |
+    | <font color="red">편의점</font> | 백화점 | 백화점 | 10% | 0.5만 | 1만 |
+    | <font color="red">약국</font> | 대형마트 | 대형마트 | 10% | 0.5만 | 1만 |
+
 ### ✔ 지하철, 버스 등 매월 3만원씩 교통비 받아가세요!!
 {: .wood-text}
 
@@ -87,7 +100,6 @@ toc_sticky: true
     1. ![](/assets/images/me/2021-03-27-me-life-tips-2.png)
     1. ![](/assets/images/me/2021-03-27-me-life-tips-3.jpg)
     1. ![](/assets/images/me/2021-03-27-me-life-tips-4.png)
-
 
 ### ✔ 자동차 보험료 70% 까지 할인받는 팁
 {: .wood-text}
