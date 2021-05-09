@@ -3,7 +3,7 @@ title: "[달란트] 주린이 탈출 강좌"
 categories:
   - Darant
 tags:
-  - Asset
+  - Stock
 toc: true
 toc_label: "목차"
 toc_sticky: true

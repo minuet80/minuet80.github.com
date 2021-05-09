@@ -3,7 +3,7 @@ title: "종목분석"
 categories:
   - Me
 tags:
-  - Asset
+  - Stock
 toc: true
 toc_label: "목차"
 toc_sticky: true

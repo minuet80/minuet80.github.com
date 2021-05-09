@@ -3,7 +3,7 @@ title: "주식용어정리"
 categories:
   - Me
 tags:
-  - Asset
+  - Stock
 toc: true
 toc_label: "목차"
 toc_sticky: true

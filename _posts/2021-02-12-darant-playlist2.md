@@ -3,7 +3,7 @@ title: "[달란트] 책 리뷰"
 categories:
   - Darant
 tags:
-  - Asset
+  - Stock
 gallery1:
   - url: /assets/images/youtube/darant/2021-02-12-darant-playlist2-10.jpg
     image_path: /assets/images/youtube/darant/2021-02-12-darant-playlist2-10.jpg
@@ -71,6 +71,19 @@ toc: true
 toc_label: "목차"
 toc_sticky: true
 ---
+
+### ✔ 이런 기업에 투자하세요
+{: .wood-text}
+
+1. 파트너를 잘 구축하는 기업
+  - 수평적인 파트너십을 구축하여 상생
+1. 고객 만족을 위해 집착하는 기업
+  - 아마존의 고객 즐거움 (예, ‘해리포터 불의잔’ 무료배송)
+1. 유기적 조직 문화
+  - 빠른 변화 유동적 지원
+  - 상생에 초점을 맞추는 전략
+  - 비전을 제시하고 동기를 유발하는 리더십
+  - 의사 결정자와 실행자가 동일한 E2E팀 조직
 
 ### ✔ 성장주 발굴 핵심 포인트
 {: .wood-text}

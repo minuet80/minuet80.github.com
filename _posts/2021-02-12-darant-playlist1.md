@@ -3,7 +3,7 @@ title: "[달란트] 투자 꿀 TIP"
 categories:
   - Darant
 tags:
-  - Asset
+  - Stock
 toc: true
 toc_label: "목차"
 toc_sticky: true
