@@ -9,6 +9,34 @@ toc_label: "목차"
 toc_sticky: true
 ---
 
+### ✔ 시장 평가 지침 (하워드 막스)
+{: .neon-text}
+
+| :---: | :---: | :---: | :---: | :---: |
+| 경제 | <input type="radio" name="chk1" /> | 활기찬 | <input type="radio" name="chk1" /> | 부진한 |
+| 전망 | <input type="radio" name="chk2" /> | 긍정적 | <input type="radio" name="chk2" /> | 부정적 |
+| 대출기관 | <input type="radio" name="chk3" /> | 적극적 | <input type="radio" name="chk3" /> | 소극적 |
+| 자본시장 | <input type="radio" name="chk4" /> | 완화 | <input type="radio" name="chk4" /> | 경색 |
+| 자본 | <input type="radio" name="chk5" /> | 풍부 | <input type="radio" name="chk5" /> | 부족 |
+| 조건 | <input type="radio" name="chk6" /> | 완화 | <input type="radio" name="chk6" /> | 엄격 |
+| 금리 | <input type="radio" name="chk7" /> | 낮은 | <input type="radio" name="chk7" /> | 높은 |
+| 투자자 | <input type="radio" name="chk8" /> | 낙관적 | <input type="radio" name="chk8" /> | 비관적 |
+| 자산 보유자 | <input type="radio" name="chk9" /> | 보유에 행복 | <input type="radio" name="chk9" /> | 출구를 향해 돌진 |
+| 매도자 | <input type="radio" name="chk10" /> | 거의 없음 | <input type="radio" name="chk10" /> | 많음 |
+| 시장 | <input type="radio" name="chk11" /> | 활성화 | <input type="radio" name="chk11" /> | 관심부족 |
+| 펀드 | <input type="radio" name="chk12" /> | 가입어려움 | <input type="radio" name="chk12" /> | 누구나 가입할 수 있음 |
+| 펀드 | <input type="radio" name="chk13" /> | 매일 새로운것이 출시됨 | <input type="radio" name="chk13" /> | 최고의 펀드만 자금이 모임 |
+| 최근실적 | <input type="radio" name="chk14" /> | 강함 | <input type="radio" name="chk14" /> | 약함 |
+| 자산가격 | <input type="radio" name="chk15" /> | 높음 | <input type="radio" name="chk15" /> | 낮음 |
+| 예상수익률 | <input type="radio" name="chk16" /> | 낮음 | <input type="radio" name="chk16" /> | 높음 |
+| 리스크 | <input type="radio" name="chk17" /> | 높음 | <input type="radio" name="chk17" /> | 낮음 |
+| 일반적 특징 | <input type="radio" name="chk18" /> | 공격성 | <input type="radio" name="chk18" /> | 신중과 절제 |
+| 유효한 실수 | <input type="radio" name="chk19" /> | 지나치게 많이 매수 | <input type="radio" name="chk19" /> | 매수 안함 |
+
+
+<u><font color="red">★ 표시가 왼쪽에 있으면 지갑을 닫아라</font></u>
+
+
 ### ✔ 매수시 유의사항 
 {: .neon-text}
 
