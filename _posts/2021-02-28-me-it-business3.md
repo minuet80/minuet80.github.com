@@ -13,7 +13,7 @@ toc_sticky: true
 {: .neon-text}
 
 | :---: | :---: | :---: | :---: | :---: |
-| 경제 | <input type="radio" name="chk1" /> | 활기찬 | <input type="radio" name="chk1" /> | 부진한 |
+| 경제  | <input type="radio" name="chk1" /> | 활기찬 | <input type="radio" name="chk1" /> | 부진한 |
 | 전망 | <input type="radio" name="chk2" /> | 긍정적 | <input type="radio" name="chk2" /> | 부정적 |
 | 대출기관 | <input type="radio" name="chk3" /> | 적극적 | <input type="radio" name="chk3" /> | 소극적 |
 | 자본시장 | <input type="radio" name="chk4" /> | 완화 | <input type="radio" name="chk4" /> | 경색 |
