@@ -9,6 +9,15 @@ toc_label: "목차"
 toc_sticky: true
 ---
 
+{% capture a %} 
+★ 기회를 놓치는 것에 대한 두려움은 투자에 뛰어들라는 압박을 높이며 위험부담은 더욱 가중시킨다.  (기회는 많다)
+{% endcapture %}
+<div class="notice--warning" style="text-align: center;">
+{{ a | markdownify | remove: "<p>" | remove: "</p>"}}
+</div>
+
+
+
 ### ✔ 시장 평가 지침 (하워드 막스)
 {: .neon-text}
 
