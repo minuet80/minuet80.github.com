@@ -98,7 +98,7 @@ toc_sticky: true
   - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-25.png)
   - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-26.png)
   - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-27.png)
-    - {% capture a %} **왜 Nexus 4인가요?** <br>되도록 낮은 사양의 에뮬레이터에서 테스트하는 것이 안드로이드 스튜디오의 성능에 영향을 덜 미치기 때문에 Nexus 4와 같은 낮은 사양의 다비이스를 선택하는 것이 좋습니다.{% endcapture %} 
+    - {% capture a %} **왜 Nexus 4인가요?** <br>되도록 낮은 사양의 에뮬레이터에서 테스트하는 것이 안드로이드 스튜디오의 성능에 영향을 덜 미치기 때문에 Nexus 4와 같은 낮은 사양의 디바이스를 선택하는 것이 좋습니다.{% endcapture %} 
       <div class="notice--danger">
         {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
       </div>
@@ -113,10 +113,152 @@ toc_sticky: true
 
 #### 1-4. 스마트폰 설정 및 연결하기
 - 스마트폰에 연결하기 위해서는 설정 화면에 있는 빌드 번호가 적힌 메뉴를 클릭하여 스마트폰의 개발자 옵션을 활성화해야 합니다.
-- {% capture a %} **안드로이드 스마트폰의 빌드 번호 메뉴 위치** <br>[설정]-[에뮬레이트된 기기 정보]-[빌드 번호]{% endcapture %} 
+- {% capture b %} **안드로이드 스마트폰의 빌드 번호 메뉴 위치** <br>[설정]-[에뮬레이트된 기기 정보]-[빌드 번호]{% endcapture %} 
   <div class="notice--danger">
-    {{ a | markdownify | remove: "<p>" | remove: "</p>"}}
+    {{ b | markdownify | remove: "<p>" | remove: "</p>"}}
   </div>
 
 1. 스마트폰을 켜고 [설정] 아이콘을 눌러 이동합니다.
-1. 
+1. [설정] 화면에서 [휴대전화 정보]를 눌러 이동합니다.
+1. [휴대전화 정보] 에서 [소프트에어 정보]를 눌러 이동합니다.
+1. [빌드 번호 (Build Number) ] 를 찾을 수 있습니다. 이 빌드 번호를 5회 이상 연속해서 누르면 개발자 모드가 활성화되었다는 메시지가 나옵니다. [설정] 화면에서 [시스템] - [고급] - [개발자 옵션] 를 클릭해 화면으로 이동합니다.
+1. [USB 디버깅] 옆의 스위치 버튼을 눌러 활성화해줍니다.
+1. USB케이블을 이용해 스마트폰을 컴퓨터에 연결합니다.
+1. 안드로이드 스튜디오 창 상단 툴바에서 [Available devices] 목록 버튼을 클릭한 후 [Run on multiple devices]를 클릭합니다.
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-34.png)
+1. [Available devices] 목록에 나타난 스마트폰 이름을 선택하고 [Run] 버튼을 클릭하면 스마트폰에 앱이 설치된 후 실행됩니다.
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-35.png)
+
+#### 1-5. 개발을 도와주는 유용한 기능
+- 자동저장
+  - 작성한 코드는 실시간으로 저장되기에 따로 저장할 필요가 없습니다. 자동 저장 옵션은 메인 메뉴의 [File] - [Settings] 를 선택하면 나타나는 세팅 창의 [System Settings] 에서 선택 또는 해제할 수 있습니다. 가급적 자동 저장 옵션은 체크된 상태로 사용합니다.
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-36.png)
+
+#### 1-6. 앱 만들어 실행하기 : Say! Hello~
+
+![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-37.png)
+
+- 1단계 : 프로젝트 생성하기
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-38.png)
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-39.png)
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-40.png)
+
+- 2단계 : 레이아웃 편집하기
+  - ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-41.png)
+  - {% capture b %} **화면을 그려주는 함수 setContentView** <br>코드 편집기 창을 보면 setContentView(R.layout.activity_main)라는 코드가 보입니다. 이는 ‘콘텐츠를 화면에 표시하기 위해 res/layout 디렉토리 아래에 있는 activity_main.xml 파일을 사용한다.’라는 의미  {% endcapture %} 
+    <div class="notice--danger">
+      {{ b | markdownify | remove: "<p>" | remove: "</p>"}}
+    </div>
+    <br>
+    ```kotlin
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    ```
+  1. 디자인 모드를 선택하는 아이콘을 클릭하여 [Design] 모드로 변경합니다. 좌측 상단의 팔레트 (Palette) 영역에 있는 커먼 (Common) 카테고리를 클릭합니다. 그리고 우측에 보이는 버튼 (Button)을 드래드하여 화면의 중앙 ‘Hello World!’ 라는 글자 아래에 가져다 놓습니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-42.png)
+
+  1. 버튼이 클릭 된 상태라면 다음 그림과 같이 다른 요소들과 연결할 수 있는 컨스트레인트 (Constraint) 편집기가 화면 우측에 나타납니다.
+
+  1. Constraint editor 위쪽에 있는 [＋]를 더블클릭하면 ‘Hello World!’ 가 쓰여 있는 텍스트뷰 (TextView) 에 버튼의 레이아웃이 연결되고, 편집화면이 다음의 우측 그림과 같이 바뀝니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-43.png)
+  
+  1. 이번에는 모드가 가로세로로 변경될 때 테스트뷰와 버튼이 어떻게 적용되는지 확인하기 위해서 편집 화면을 회전해 보겠습니다. 편집기 상단의 [회전 아이콘]을 클릭하면 나타나는 바로가기 메뉴에서 [Landscape] 를 선택해 화면을 가로로 전환합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-44.png)
+
+  1. 연결이 잘 되었다면 화면이 가로 모드로 변해도 버튼이 화면의 중앙에 위치합니다. 다시 [회전] 아이콘을 클릭해 바로 가기 메뉴에서 [Portrait]를 서택해 화면을 세로로 돌려 놓습니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-45.png)
+
+  1. Constraint editor의 좌우 숫자를 클릭해서 값을 ‘0’으로 변경합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-46.png)
+
+  1. 그리고 사각형 안쪽에 있는 ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-47.png) 를 클릭합니다. 연속으로 클릭하면 세 가지 모드로 변경할 수 있습니다. 계속 클릭해서 주름 모양 ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-48.png) 으로 변경하면 다음 우측 그림과 같이 버튼이 좌우로 화면에 꽉 찬 형태로 변경됩니다.
+  {% capture c %}**컨스트레인트의 세가지 모드**<br><br>* Wrap Content(![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-47.png)) : 위젯의 안쪽의 내용물 (주로 텍스트)에 크기를 맞춥니다<br>* Fixed(![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-49.png)) : 가로세로 속성 필드에 입력된 크기에 맞게 가로세로를 고정합니다.<br>* Match Constraint(![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-48.png)) : 크기를 제약 조건인 Constraint 연결부에 맞춥니다.
+  {% endcapture %} 
+  <div class="notice--danger">
+      {{ c | markdownify | remove: "<p>" | remove: "</p>"}}
+  </div>  
+  <br>
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-50.png)
+
+  1. 이제 버튼과 텍스트뷰 위젯의 아이디를 변경하고 코드와 연결할 준비를 합니다. 먼저 버튼을 클릭하고 속성(Attributes) 영역 가장 위에 있는 id 입력 필드에 ‘btnSay’라고 입력합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-51.png)
+
+  1. ‘Hello World!’라고 쓰여 있는 텍스트뷰를 클릭하고 id 속성에 ‘textSay’라고 입력합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-52.png)
+
+
+#### 1-6. 코틀린 코드와 레이아웃 연결하기
+
+뷰에서 버튼같은 요소를 동작시키기 위해서는 먼저 뷰와 소스 코드를 연결해야 하는데, 안드로이드는 findViewById라는 함수를 제공하고 있으며 이를 조금 효율적으로 사용하기 위해서 코틀린에서는 코틀린 익스텐션 (Kotlin extension) 이라는 부가 기능을 제공해 왔습니다. 하지만 코틀린 익스텐션은 다음과 같은 이유로 최신 버전의 안드로이드 스튜디오에서는 사용을 권장하지 않습니다.
+  - 코틀린에서만 제공하므로 자바에서는 사용할 수 없습니다.
+  - 일부 상황에서 뷰를 찾을 수 없는 오류가 발생합니다.
+  - 어디서나 뷰를 호출할 수 있기 때문에 잘못된 참조로 인해 앱이 강제 종료될 수 있습니다. 예를 들어 activity_main.xml와 fragment_sub.xml 에서 동일하게 button 아이디를 사용하면 실수로 다른 XML 의 아이디를 참조하여 앱이 강제로 종료될 수 도 있습니다.
+  - 모듈화를 추천하고 있는데 코틀린 익스텐션을 사용할 경우 다른 모듈에서 뷰에 대한 접근이 불가능합니다.
+
+여기에서는 코틀린 익스텐션 대시에 뷰 바인딩 방식을 사용해서 뷰와 코드를 연결하는 방법을 공부합니다.
+  1. build.gradle 파일에 viewBinding 설정을 추가합니다.\
+      ```kotlin
+      viewBinding true
+      ```
+  1. 안드로이드 스튜디오 상단에 나타나는 [Sync Now] 버튼을 클릭해서 설정을 적용합니다.
+  1. activity_main.xml 레이아웃 파일을 작성합니다.
+  1. viewBinding이 설정되어 있기 때문에 안드로이드 레이아웃 파일을 바인등으로 생성합니다.
+    - 자동변환 공식 : 레이아웃파일명 (첫 글자와 언더바 다음 영문을 대문자로 변환 ) + Binding
+    - 예) activity_main.xml = ActivityMainBinding 
+  1. MainActivity.kt 파일에 있는 코틀린 코드에서 클래스로 변환된 바인딩의 inflate 함수로 초기화하고 변수에 저장합니다.<br>
+    ```kotlin
+    val 변수 = ActivityMainBinding.inflate(layoutInflater)
+    ```
+  1. 이어서 변수에 저장된 바인딩의 root 뷰를 setContentView에 전달합니다.<br>
+    ```kotlin
+    setContentView(변수.root)
+    ```
+  1. 바인딩을 도트 연산자(.)로 뷰의 id에 접근 후 사용합니다.<br>
+    ```kotlin
+    변수.textView = "Hello"
+    ```
+
+실습)
+  1. 먼저 스튜디오 좌측 프로젝트 영역에서 Gradle Scripts 아래에 있는 build.gradle (Module : 프로젝트명.app) 파일을 더블클릭해서 열고, android{} 코드 영역 바로 아래에 다음 그림과 같이 viewBinding true설정을 추가합니다. 설정을 추가하고 나면 스튜디오 우칙 상단에 [Sync Now]가 나타나는데 클릭해서 설정을 완료합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-53.png)
+
+  1. [MainActivity.kt] 탭을 클릭해서 파일을 열고 소스 코드를 편집합니다. onCreate() 함수 코드 블럭({}) 안에서 setContentView 줄 위에 레이아웃 파일명인 activity_main의 단어 첫 글자를 대문자로 바꿔서 ActivityMain이라고 입력하면 다음과 같은 모드 자동완성이 나타납니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-54.png)
+
+  1. ActivityMainBinding을 추가한 뒤 소스 코드의 class 선언부 위쪽을 보면 다음과 같이 import가 자동으로 추가되어 있습니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-55.png)
+
+  1. ActivityMainBinding을 다음과 같이 수정해서 뷰 바인딩을 사용할 준비를 합니다. ActivityMainBinding이 가지고 있는 inflate 함수에 layoutInflater를 입력한 후 binding변수에 저장합니다. layoutInflater는 모든 Activity에서 호출해서 사용할 수 있습니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-56.png)
+
+  1. 바로 다음 줄에 있는 setContentView에 입력되어 있는 R.layout.activity_main을 삭제하고 binding.root를 대신 입력하면 화면 안의 버튼을 사용할 수 있습니다.<br>
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-57.png)
+
+  1. binding 변수를 통해 뷰에 미리 작성해 두었던 버튼의 id에 접근할 수 있습니다. 다음과 같이 버튼의 id에 리스너(Listener)를 설정합니다.
+
+  ```kotlin
+  package kr.co.hanbit.sayhello
+
+  import androidx.appcompat.app.AppCompatActivity
+  import android.os.Bundle
+  import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+
+  class MainActivity : AppCompatActivity() {
+      override fun onCreate(savedInstanceState: Bundle?) {
+          super.onCreate(savedInstanceState)
+
+          var binding = ActivityMainBinding.inflate(layoutInflater);
+
+          setContentView(binding.root);
+          binding.btnSay.setOnClickListener {
+              binding.textSay.text = "Hello Kotlin!!!";
+          }
+      }
+  }
+  ```
+
+#### 1-7. 앱 실행하기
+
+![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-58.png)
+
+![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-59.png)
