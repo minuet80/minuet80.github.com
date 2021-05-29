@@ -262,3 +262,78 @@ toc_sticky: true
 ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-58.png)
 
 ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-59.png)
+
+
+
+
+
+### ✔ 2. 코틀린 사용을 위한 기본 문법
+{: .wood-text}
+
+‘코딩 준비하기’의 핵심 키워드는 로그 (Log)와 로그캣 (Logcat) 입니다.
+Log 클래스에서 주로 사용하는 다섯 가지 함수 v (verbose), i (information), d (debug), w (warning), e (error) 의 사용방법을 알아보겠습니다.
+
+#### 2-1. 새 프로젝트 생성하기
+
+![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-60.png)
+
+![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-61.png)
+
+#### 2-2. 로그의 활용
+
+```kotlin
+Log.d("태그", "출력 메시지")
+```
+
+  1. 먼저 소스 코드를 작성해서 로그를 안드로이드 스튜디오 내에 있는 로그캣 창에 출력해보겠습니다. MainActivity.kt 파일을 열고 다음 코드를 setContentView... 밑에 입력합니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-62.png)
+
+  1. 코드를 추가하면 ‘Log’라는 글자가 빨간색으로 나타나는데 Log 글자를 클릭하면 다음과 같은 메시지가 나타납니다. 아직 Log 클래스를 import 하지 않았기 때문에 나타나는 메시지 입니다. ‘Alt + Enter’ 키를 누르면 상단에 필요한 import 문구가 자동으로 생성됩니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-63.png)
+
+  1. 소스 코드 상단에 import android.util.Log가 추가됩니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-64.png)
+
+  1. 에뮬레이터를 실행
+
+  1. 안드로이드 스튜디오 하단의 [Logcat] 탭을 클릭해서 창을 열어봅니다. 로그 내용이 많은데, 소스 코드의 Log.d 함수에 입력했던 태크 ‘BasicSyntax’ 를 로그 영역 상단에 있는 돋보기 표시의 검색창에 입력하면 해당 로그만 볼 수 있습니다.
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-65.png)
+ 
+- 로그 (Log) : 코딩을 할 때 코드의 흐름을 파악하기 위해 앱 외부에 출력하는 정보입니다. 디버거를 사용할 수도 있지만 매법 디버깅할 포인트를 지정해야 하는 불편함이 있는 반면, 로그를 사용하면 한 번 설정으로 항상 해당 코드의 흐름을 확인할 수 있습니다.
+- 로그캣 (LogCat) : 출력되는 로그를 모아서 보는 도구입니다. 내가 작성한 앱의 로그만 볼 수도 있고, 태그를 잘 황용하면 해당 태그를 필터로 사용해서 특정 로그만 확인할 수도 있습니다.
+
+| 함수 | 의미 | 내용 |
+| --- | --- | --- |
+| Log.v() | verbose | 상세한 로그 내용을 출력하기 위해 사용 |
+| Log.d() | debug | 개발에 필요한 내용을 출력하기 위해 사용 |
+| Log.i() | information | 정보성 일반적인 메시지 전달을 위해 사용 |
+| Log.w() | warning | 에러는 아니지만 경고성 메시지 전달을 위해 사용 |
+| Log.e() | error | 에러 메시지를 출력하기 위해 사용 |
+
+#### 2-3. 변수
+
+변수란 값을 임시로 메모리에 저장하고 그 저장 공간에 이름을 부여한 것
+
+- 첫째, 변수 선언과 동시에 값 넣기
+  - var myName = "홍길동"
+
+- 둘째, 값으로 추기화하지 않고 선언만 하고 사용하기
+  - var myAge: Int
+  - myAge = 27
+
+- 데이터 타입
+  - 코틀린에서 제공되는 기본 데이터 타입은 다음과 같다
+  - | 데이터 타입 | 설명 | 값의 범위 및 예 |
+    | --- | --- | --- |
+    | Double | 64비트 실수 | -1.7E+308의 근삿값 ~ 1.7E+308의 근삿값 |
+    | Float | 32비트 실수 | -3.4E+38의 근삿값 ~ 3.4E+38의 근삿값 |
+    | Long | 64비트 정수 | -2E63 ~ 2E63-1 |
+    | Int | 32비트 정수 | -2,147,483,648 ~ 2,147,483,647 |
+    | Short | 16비트 정수 | -32,768 ~ 32,767 |
+    | Byte | 8비트 정수 | -128 ~ 127 |
+    | Char | 1개 문자 | ‘글’ (외따음표) |
+    | Strig | 복수문자 | "여러글자입니다." |
+    | Boolean | true, false | true 또는 false |
+
+- Basic Syntax 프로젝트 수정 타입 출력해보기
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-66.png)
