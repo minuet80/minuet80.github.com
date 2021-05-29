@@ -336,4 +336,6 @@ Log.d("태그", "출력 메시지")
     | Boolean | true, false | true 또는 false |
 
 - Basic Syntax 프로젝트 수정 타입 출력해보기
+  ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-67.png)
+  
   ![](/assets/images/me/2021-05-29-me-book-thisIsAnroid-66.png)
