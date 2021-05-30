@@ -22,17 +22,17 @@ width: large
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-2.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 사용 약관에 동의하는 체크박스에 체크하고 [다운로드 : ANDRIOD STUDIO] 를 클릭하여 파일을 다운로드 합니다.<br>
-![2]({{site.baseurl}}/images/this-is-android/this-is-android-3.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-3.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 설치 시작 화면이 나오면 [Next]를 클릭하고 [Android Studio]와 [Android Virtual Device]에 모두 체크한 다음 [Next]를 클릭합니다.<br>
-![3]({{site.baseurl}}/images/this-is-android/this-is-android-4.png){: style="box-shadow: 0 0 5px #777"}<br><br>
-![4]({{site.baseurl}}/images/this-is-android/this-is-android-5.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-4.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-5.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 설치 경로를 선택하고 [Next]를 클릭합니다.<br>
-![5]({{site.baseurl}}/images/this-is-android/this-is-android-6.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-6.png){: style="box-shadow: 0 0 5px #777"}
 
 1. ‘Android Stduio 바로가기’를 추가하는 창입니다. 그대로 두고 [Install]을 클릭합니다.
-![6]({{site.baseurl}}/images/this-is-android/this-is-android-7.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-7.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 설치가 진행됩니다. 설치가 완료되면 [Next]를 클릭합니다.
 
@@ -46,10 +46,10 @@ width: large
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-8.png){: style="box-shadow: 0 0 5px #777"}
 
 1. Welcom 화면에서 [Next]를 클릭하면 Install Type화면이 나타납니다. Install Type화면에서 [Standard]를 선택하고 [Next]를 클릭합니다. Standard를 선택하면 대부분의 컴포넌트를 모두 설치합니다.<br>
-![2]({{site.baseurl}}/images/this-is-android/this-is-android-9.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-9.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 화면의 테마를 선택하고 [Next]를 클릭합니다.<br>
-![3]({{site.baseurl}}/images/this-is-android/this-is-android-10.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-10.png){: style="box-shadow: 0 0 5px #777"}
   - 흰색바탕의 [Light]를 선택하면 장기간 프로그래밍할 때 눈의 피로도가 높아집니다. 보통 검은색 바탕의 ``[Darcula]``를 사용합니다.
 
 1. 설치할 목록을 확인합니다. [Finish]를 클릭하면 목록에 있는 컴포넌트를 다운로드하고 설치합니다.<br>
@@ -69,7 +69,7 @@ width: large
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-11.png){: style="box-shadow: 0 0 5px #777"}
 
 1. [Settings]창 좌측 메뉴에서 [Appearance & Behavior] - [System Settings] - [Android SDK]를 클릭하면 Android SDK Location에서 설치 경로를 확인할 수 있습니다.<br>
-![2]({{site.baseurl}}/images/this-is-android/this-is-android-12.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-12.png){: style="box-shadow: 0 0 5px #777"}
 
 ### SDK Platforms
 현재 설치된 안드로이드 스튜디오의 기본 설정을 확인해보겠습니다. [SDK Platforms]탭을 클릭하면 소스 코드를 빌드할 때 사용하는 플랫폼이 버전별로 표시된 것을 확인할 수 있습니다. 컴퓨터에 설치된 플랫폼은 Status 부분이 ‘Installed’로 표시되어 있습니다.
@@ -112,35 +112,128 @@ Project뷰는 실제 디렉토리의 구조를 그대로 보여줍니다.
 
 
 # 2. 앱을 만들어 실행하기
+이번에는 에뮬레이터<sup>Emulator</sup>를 생성하고 연결하는 방법과 스마트폰을 연결하는 방법을 알아봅니다.
+에뮬레이터에 나타난 버튼을 누르면 문자열 "Hello World!"가 "Hello Kotlin!!!"으로 바뀝니다.
+
+## 2.1 에뮬레이터 생성 및 실행하기
+
+1. 안드로이드 스튜디오 상단 툴바에서 [AVD Manager]를 클릭해 실행합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-16.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [Create Virtual Device]를 클릭해서 에뮬레이터 생성을 시작합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-17.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 에뮬레이터를 설정하는 팝업창 좌측의 Cetegory에서 [Phone]을 선택한 다음 가운데 목록에 [Nexus 4]를 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-18.png){: style="box-shadow: 0 0 5px #777"}
+- ``왜 Nexus 4``인가요? 디바이스 선택 시 유의할 점
+  - ``되도록 낮은 사양의 에뮬레이터``에서 테스트하는 것이 안드로이드 스튜디오의 성능에 영향을 덜 미치기 때문에 Nexus 4와 같은 낮은 사양의 디바이스를 선택하는 것이 좋습니다. 
+
+1. 실행 환경이 압축된 파일을 선택하는 System Image 화면입니다. Select a system image 아래에 보이는 3개의 탭 메뉴 중 가운데 있는 [x86 Images]탭을 클릭하면 ABI가 [x86_64]인 이미지가 있습니다. 64비트 컴퓨터에서 32비트 프로그램을 실행하면 처리 속도가 느리기 때문에 다음 화면과 같이 맨 상단의 [x86_64]를 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-19.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [android-sdk-license] 동의를 확인하는 팝업창이 나오면 [Accept]를 선택하고 [Next]를 클릭합니다.<br>
+
+1. 설치가 완료되면 Q옆의 파란색 Download 글자가 없어지고 이제 에뮬레이터를 생성할 수 있습니다. 다운로드한 [Q]를 선택하고 [Next]를 클릭합니다.<br>
+
+1. AVD Name을 입력하고 [Finish]를 클릭해서 에뮬레이터를 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-20.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 에뮬레이터가 목록에 나타납니다. 목록 우측의 [실행 아이콘]을 클릭해서 에뮬레이터를 실행합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-21.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-22.png){: style="box-shadow: 0 0 5px #777"}
 
 
+## 2.2 스마트폰 설정 및 연결하기
+스마트폰에 연결하기 위해서는 설정 화면에 있는 빌드 번호가 적흰 메뉴를 클릭하여 스마트폰의 개발자 옵션<sup>Developer Options</sup>를 활성화해야 합니다.
+
+- 안드로이드 스마트폰의 빌드 번호 메뉴 위치
+  - [설정] - [에뮬레이트된 기기 정보] - [빌드 번호]
+
+1. 스마트폰을 켜고 [설정(Settings)] 아이콘을 눌러 이동합니다.
+1. [설정]화면에서 [휴대전화 정보]를 눌러 이동합니다.
+1. [휴대전화 정보]에서 [소프트웨어 정보]를 눌러 이동합니다.
+1. [빌드 번호(Build number)]를 찾을 수 있습니다. 이 빌드 번호를 5회 이상 연속해서 누르면 개발자 모드가 활성화되었다는 메시지가 나옵니다. [설정]화면에서 [시스템] - [고급] - [개발자 옵션(Developer Options)]를 클릭해 화면으로 이동합니다.
+1. 그런 다음 [USB 디버깅]옆에 스위치 버튼을 눌러 활성화해줍니다.
+1. USB 케이블을 이용해 스마트폰을 컴퓨터에 연결합니다.
+1. 안드로이드 스튜디오 창의 상단 툴바에서 [Available devices]목록 버튼을 클릭한 후 [Run on multiple devices]를 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-23.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [Available devices]목록에 나타난 스마트폰 이름을 선택하고 [Run]버튼을 클릭하면 스마크톤에 앱이 설치된 후 실행됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-24.png){: style="box-shadow: 0 0 5px #777"}
 
 
+## 2.3 개발을 도와주는 유용한 기능
+
+### 자동 저장
+안드로이드 스튜디오에는 자동 저장<sup>Auto Save</sup>이 기본적으로 적용되어 있습니다.
+자동 저장 옵션은 메인 메뉴의 [File] - [Settings]를 선택하면 나타나는 세팅 창의 [System Settings]에서 선택 또는 헤제할 수 있습니다.
+가급적 자동 저장 옵션은 체크된 상태로 사용합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-25.png){: style="box-shadow: 0 0 5px #777"}
+
+### 코드 완성
+### 디버깅
+### 성능 모니터
+
+앱을 실행하면 하단에 [Profiler]라는 탭이 나타나고 클릭하면 현재 앱이 사용하는 CPU 및 메모리 사용량 등의 성능을 모니터링할 수 있습니다.
 
 
+## 2.4 앱 만들어 실행하기 : Say! Hello~
+
+앱을 만들어 실행하는 과정은 크게 4단계로 진행됩니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-26.png){: style="box-shadow: 0 0 5px #777"}
 
 
+### 1단계 : 프로젝트 생성하기
+1. Welcome 화면에서 [Create New Project]를 클릭해서 새로운 프로젝트를 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-27.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 프로젝트 형태를 선택합니다. [Empty Activity]를 선택하고 [Next]를 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-28.png){: style="box-shadow: 0 0 5px #777"}
 
+1. Language를 꼭 [Kotlin]으로 선택해야 합니다. 그 다음 Minimum API Level이 [API 16]이상에 맞춰져 있는지 확인한 다음 [Finish] 버튼을 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-29.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 프로젝트가 생성됩니다. 
 
+### 2단계 : 레이아웃 편집하기
+레이아웃은 텍스트나 이미지 등을 화면에 배치할 수 있는 도구입니다.
 
+- 화면을 그려주는 함수 setContentView
+  - 코드 편집기 창을 보면 setContentView(R.layout.activity_main)라는 코드가 보입니다. 이는 ‘콘텐츠를 화면에 표시하기 위해서 res/layout 디렉토리 아래에 있는 activity_main.xml 파일을 사용한다’라는 의미입니다. 이 책에서는 View Binding을 사용하기 때문에 실제 코드에서는 레이아웃 파일이 아닌 안드로이드가 생성한 바인딩을 전달합니다.
+  {% highlight java %}
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_main)
+  
+  {% endhighlight %}
 
+1. [activity_main.xml] 탭을 클릭해서 화면을 설정할 수 있는 파일을 엽니다. 편집기 창이 레이아웃을 편집할 수 있는 형태로 바뀝니다. 우측 상단에 있는 모드 버튼을 클릭하면 [Code], [Split], [Design] 모드로 변경되면서 각각의 모드에서 편집이 가능합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-30.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-31.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-32.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 디자인 모드를 선택하는 아이콘을 클릭하여 [Design]모드로 변경합니다.
+좌측 상단의 팔레트 (Palette) 영역에 있는 커먼 (Common) 카테고리를 클릭합니다.
+그리고 우측에 보이는 버튼을 드래그에서 화면 중앙의 "Hello World!"라는 글자 아래에 가져다 놓습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-33.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 버튼이 클릭 된 상태라면 다음 그림과 같이 다른 요소들과 연결할 수 있는 Contraint 편집기가 화면 우측에 나타납니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-34.png){: style="box-shadow: 0 0 5px #777"}
 
+1. Contraint 편집기 위쪽에 있는 [+] 를 더블클릭하면 "Hello World!"가 쓰여 있는 테긋트 뷰에 버튼이 레이아웃에 연결되고, 편집 화면이 다음의 좌측 그림과 같이 바뀝니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-35.png){: style="box-shadow: 0 0 5px #777"}<br>
+- Constraint 편집기 숫자의 의미
+  - 편집기에서 클릭한 [+] 위의 숫자는 현재 연결된 요소와의 거리를 나타냅니다. 예를 들어 우측 위의 그림은 텍스트뷰로부터 44dp (Device independence Pixel) 떨어져 있다는 의미입니다.
 
+1. Contraint 편집기에서 양쪽에 있는 [+]를 클릭합니다. 편집기 화면이 다음의 좌측 그림과 같이 연결된 형태로 바뀌고, 디자인 화면에서도 버튼의 양쪽으로 화살표가 화면 끝까지 이어집니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-36.png){: style="box-shadow: 0 0 5px #777"}<br>
 
+1. 이번에는 모드가 가로세로로 변경될 때 텍스트뷰와 버튼이 어떻게 적용되는지 확인하기 위해서 편집 화면을 회전해 보겠습니다.  폊집기 상단의 [회전 아이콘]을 클릭하면 나타나는 바로 가기 메뉴에서 [Landscape]를 선택해 화면을 가로로 전환합니다.
 
+1. 연결이 잘 되었으면 화면이 가로 모드로 변해도 버튼이 화면의 중앙에 위치합니다. 
 
-
-
-
-
-
-
-
-
+1. Constraint 편집기의 좌우 숫자를 클릭해서 값을 ‘0’으로 변경합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-37.png){: style="box-shadow: 0 0 5px #777"}
 
 
 
