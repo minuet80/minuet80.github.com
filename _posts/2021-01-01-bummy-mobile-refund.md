@@ -4,14 +4,14 @@ title:  "이동전화 단말기 자급제"
 description: 지금 조회하고 신청하세요!! 통신요금 25% 할인 바로 확인해보세요!
 date:   2021-01-01 10:22:30 +0900
 categories: jekyll update
-img: bummy-mobile-refund/bummy-mobile-refund-1.jpg
+img: bummy-mobile-refund/bummy-mobile-refund-1.png
 categories: [one, two]
 color: 1976D2
 author: Bummy
 permalink: /mobile-refund/
 width: large
 ---
-[Watch video](https://www.youtube.com/watch?v=kyHFBybC3RI)
+[Watch video](https://www.youtube.com/watch?v=zOd4MueERnQ)
 
 매달 내는 핸드폰 요금, ``많게는 10만원 이상`` 내는 분들도 있고 적게는 ``1만원대에 요금``을 내는 분들도 있지만, 보통 평균적으로 3~5만원대 요금제를 사용하고 있는데요
 
