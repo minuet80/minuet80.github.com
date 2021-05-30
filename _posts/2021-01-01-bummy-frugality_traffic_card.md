@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "알뜰교통카드"
+title:  "[LIFE] 알뜰교통카드"
 description: 지하철, 버스 등 매월 3만원씩 교통비 받아가세요!!(신청/사용방법 이렇게 하시면 돼요)
 date:   2021-01-01 10:22:30 +0900
 categories: jekyll update
