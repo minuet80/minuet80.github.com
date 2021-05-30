@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "이동전화 단말기 자급제"
+title:  "선택약정할인제도"
 description: 지금 조회하고 신청하세요!! 통신요금 25% 할인 바로 확인해보세요!
 date:   2021-01-01 10:22:30 +0900
 categories: jekyll update
