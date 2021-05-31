@@ -8,7 +8,7 @@ img: this-is-android/this-is-android-1.png
 categories: [one, two]
 color: 00897B
 author: Minuet80
-permalink: /this-is-android/
+permalink: /this-is-android1/
 width: large
 ---
 
@@ -386,3 +386,7 @@ class MainActivity : AppCompatActivity() {
 
 1. 에뮬레이터가 실행되면 다음과 같은 애 화면이 나옵니다. 화면에서 보이는 [Button]을 클릭해보세요. 문자열 "Hello World!"가 "Hello Kotlin!!!"으로 바뀌는 것을 확인할 수 있습니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-46.png){: style="box-shadow: 0 0 5px #777"}
+
+<style>
+.page-container {max-width: 1000px}
+</style>
