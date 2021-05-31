@@ -219,7 +219,7 @@ setContentView(R.layout.activity_main)
 1. 버튼이 클릭 된 상태라면 다음 그림과 같이 다른 요소들과 연결할 수 있는 Contraint 편집기가 화면 우측에 나타납니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-34.png){: style="box-shadow: 0 0 5px #777"}
 
-1. Contraint 편집기 위쪽에 있는 [+] 를 더블클릭하면 "Hello World!"가 쓰여 있는 테긋트 뷰에 버튼이 레이아웃에 연결되고, 편집 화면이 다음의 좌측 그림과 같이 바뀝니다.
+1. Contraint 편집기 위쪽에 있는 [+] 를 더블클릭하면 "Hello World!"가 쓰여 있는 테긋트 뷰에 버튼이 레이아웃에 연결되고, 편집 화면이 다음의 좌측 그림과 같이 바뀝니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-35.png){: style="box-shadow: 0 0 5px #777"}<br>
 - Constraint 편집기 숫자의 의미
   - 편집기에서 클릭한 [+] 위의 숫자는 현재 연결된 요소와의 거리를 나타냅니다. 예를 들어 우측 위의 그림은 텍스트뷰로부터 44dp (Device independence Pixel) 떨어져 있다는 의미입니다.
@@ -381,10 +381,10 @@ class MainActivity : AppCompatActivity() {
 
 ## 2.6 앱 실행하기
 
-1. 이제 소스 코드를 에뮬레이터에서 실행해보겠습니다. 상단 툴바에서 [실행 아이콘]을 클릭해서 프로그램을 에뮬레이터에 설치하고 실행합니다.
+1. 이제 소스 코드를 에뮬레이터에서 실행해보겠습니다. 상단 툴바에서 [실행 아이콘]을 클릭해서 프로그램을 에뮬레이터에 설치하고 실행합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-45.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 에뮬레이터가 실행되면 다음과 같은 애 화면이 나옵니다. 화면에서 보이는 [Button]을 클릭해보세요. 문자열 "Hello World!"가 "Hello Kotlin!!!"으로 바뀌는 것을 확인할 수 있습니다.
+1. 에뮬레이터가 실행되면 다음과 같은 애 화면이 나옵니다. 화면에서 보이는 [Button]을 클릭해보세요. 문자열 "Hello World!"가 "Hello Kotlin!!!"으로 바뀌는 것을 확인할 수 있습니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-46.png){: style="box-shadow: 0 0 5px #777"}
 
 <style>
