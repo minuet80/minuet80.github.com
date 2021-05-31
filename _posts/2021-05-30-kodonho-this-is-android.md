@@ -201,11 +201,10 @@ Project뷰는 실제 디렉토리의 구조를 그대로 보여줍니다.
 
 - 화면을 그려주는 함수 setContentView
   - 코드 편집기 창을 보면 setContentView(R.layout.activity_main)라는 코드가 보입니다. 이는 ‘콘텐츠를 화면에 표시하기 위해서 res/layout 디렉토리 아래에 있는 activity_main.xml 파일을 사용한다’라는 의미입니다. 이 책에서는 View Binding을 사용하기 때문에 실제 코드에서는 레이아웃 파일이 아닌 안드로이드가 생성한 바인딩을 전달합니다.
-  {% highlight java %}
-  super.onCreate(savedInstanceState)
-  setContentView(R.layout.activity_main)
-  
-  {% endhighlight %}
+```java
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+```
 
 1. [activity_main.xml] 탭을 클릭해서 화면을 설정할 수 있는 파일을 엽니다. 편집기 창이 레이아웃을 편집할 수 있는 형태로 바뀝니다. 우측 상단에 있는 모드 버튼을 클릭하면 [Code], [Split], [Design] 모드로 변경되면서 각각의 모드에서 편집이 가능합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-30.png){: style="box-shadow: 0 0 5px #777"}<br><br>
@@ -235,6 +234,155 @@ Project뷰는 실제 디렉토리의 구조를 그대로 보여줍니다.
 1. Constraint 편집기의 좌우 숫자를 클릭해서 값을 ‘0’으로 변경합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-37.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 그리고 사각현 안쪽에 있는 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-38.png){: style="box-shadow: 0 0 5px #777"}를 클릭합니다.  연속해서 클릭하면 세 가지 모드로 변경할 수 있습니다. 계속 클릭해서 주름 모양 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-40.png){: style="box-shadow: 0 0 5px #777"}으로 변경하면 다음 우측 그럼과 같이 버튼이 좌우로 화면에 꽉 찬 형태로 변경됩니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-41.png){: style="box-shadow: 0 0 5px #777"}
+- Constraint 3가지 모드
+  - Wrap Content(![1]({{site.baseurl}}/images/this-is-android/this-is-android-38.png){: style="box-shadow: 0 0 5px #777"}) : 위젯 안쪽의 내용물(주로 텍스트)에 크기를 맞춥니다.
+  - Fixed(![1]({{site.baseurl}}/images/this-is-android/this-is-android-39.png){: style="box-shadow: 0 0 5px #777"}) : 가로세로 속성 필드에 입력된 크기에 맞게 가로세로를 고정합니다.
+  - Match Constraint(![1]({{site.baseurl}}/images/this-is-android/this-is-android-40.png){: style="box-shadow: 0 0 5px #777"}) : 크기를 제약 조건인 Constraint 연결부에 맞춥니다.
+
+1. 이제 버튼과 텍스트뷰 위젯의 아이드를 변경하고 코드와 연결할 준비를 합니다. 먼저 버튼을 클릭하고 속성(Attributes) 영역 가장 위에 있는 id입력 필드에 ‘btnSay’라고 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-42.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-43.png){: style="box-shadow: 0 0 5px #777"}
+- Rename 팝업이 뜹니다.
+  - Scope는 [Current File]를 선택한후 [Refactor]를 클릭해서 반영합니다.
+
+1. ‘Hello World!’라고 쓰여 있는 텍스트뷰를 클릭하고 id속성에 ‘textSay’라고 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-44.png){: style="box-shadow: 0 0 5px #777"}
 
 
-[a]: https://developer.android.com/studio
+## 2.5 코틀린 코드와 레이아웃 연결하기
+뷰에서 버튼 같은 요소를 동작시키기 위해서는 먼저 뷰와 소스 코드를 연결해야 하는데, 안드로이드는 ``findViewById``라는 함수를 제공하고 있으며 이를 조금 효율적으로사용하기 위해서 코틀린에서는 익스텐션<sup>Kotlin Extension</sup>이라는 부가 기능을 제공해 왔습니다. 코틀린은 다음과 같은 이유로 최신 버전의 안드로이드 스튜디오에서는 사용을 권장하지 않습니다.
+1. 코틀린에서만 제공하므로 자바에서는 사용할 수 없습니다.
+1. 일부 상황에서 뷰를 찾을 수 없는 오류가 발생합니다.
+1. 어디서나 뷰를 호출할 수 있기 때문에 잘못된 참조로 인해 앱이 강제 종료될 수 있습니다. 예를 들어 activity_main.xml와 fragment_sub.xml에서 동일하게 button 아이디를 사용하면 실수로 다른 XML의 아이디를 참조하여 앱이 강제로 종료될 수 도 있습니다.
+1. 모듈화를 추천하고 있는데 코틀린 익스텐션을 사용할 경우 다른 모듈에서 뷰에 대한 접근이 불가능합니다.
+
+``★ 뷰 바인딩``으로 뷰와 코드를 연결하는 방법
+1. build.gradle파일에 viewBinding 설정을 추가합니다.
+```gradle
+viewBinding true
+```
+1. 안드로이드 스튜디오 상단에 나타나는 [Sync Now]를 클릭해서 설정을 적용합니다.
+
+3. activity_main.xml 레이아웃 파일을 작성합니다.
+4. viewBinding이 설정되어 있기 때문에 안드로이드가 레이아웃 파일을 바인딩으로 생성합니다.
+  - 자동변환 공식 : 레이아웃 파일명 (첫 글자와 언더바 다음 영문을 대문자로 변환) + Binding
+  - 예) activity_main.xml = ActivityMainBinding
+4. MainActivity.kt파일에 있는 코틀린 코드에서 클래스로 변환된 바인딩의 inflate함수로 초기화하고 변수에 저장합니다.
+```gradle
+val 변수 = ActivityMainBinding.inflate(layoutInflater)
+```
+5. 이어서 변수에 저장된 바인딩의 root뷰를 setContentView에 전달합니다.
+```gradle
+setContentView(변수.root)
+```
+1. 바인딩 도트 연성자(.)로 뷰의 id에 접근 후 사용합니다.
+```gradle
+변수.textView = "Hello"
+```
+
+이제 ``뷰 바인딩``을 사용해서 뷰와 코드를 연결하는 실습을 해보겠습니다.
+1. 먼저 스튜디오 좌측 프로젝트 영역에서 ``Gradle Scripts``아래에 있는 ``build.gradle (Module: 프로젝트명.app)``파일을 더블클릭해서 열고, android{}코드 영역 바로 아래에 다음 그림과 같이 ``viewBinding true`` 설정을 추가합니다. 설정을 추가하고 나면 스튜디오 우측 상단에 [Sync Now]가 나타나는데 클릭해서 설정을 완료합니다.
+```gradle
+plugins {
+  id 'com.android.application'
+  id 'kotlin-android'
+}
+android {
+  buildFeatures {
+      viewBinding true
+  }
+  ...생략
+}
+```
+1. [MainActivity.kt]탭을 클릭해서 파일을 열고 소스 코드를 편집합니다. onCreate()함수 코드 블록({})안에서 setContentview 줄 위에 레이아웃 파일명인 activity_main의 단어 첫 글자를 대문자로 바꿔서 ActivityMain이라고 입력하면 다음과 같은 코드 자동 오나성이 나타납니다. ActivityMainBinding을 클릭해서 선택하거나 ``Enter``키를 입력하면 코드가 자동으로 완성됩니다.
+```java
+package kr.co.hanbit.sayHello
+　
+import ...생략
+　
+class MainActivity : AppCompatActivity() {
+　
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        　
+        ActivityMain
+        　
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+  - ActivityMainBinding이 자동 완성으로 사용할 수 있는 이유는 앞에서 build.gradle 파일에서 viewBinding true를 설정했기 때문이다.
+
+1. ActivityMainBinding을 추가한 뒤 소스 코드의 class 선언부 위쪽을 보면 다음과 같이 import가 자동적으로 추가되어 있습니다.
+```java
+package kr.co.hanbit.sayHello
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+　
+class MainActivity : AppCompatActivity() {
+　
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        　
+        ActivityMainBinding
+        　
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+
+1. ActivityMainBinding을 다음과 같이 수정해서 뷰 바인딩을 사용할 준비를 합니다. ActivityMainBinding이 가지고 있는 inflate 함수에 layoutInflater를 입력한 후 binding변수에 저장합니다. layoutInflater는 모든 Activity에서 호출해서 사용할 수 있습니다.
+```java
+package kr.co.hanbit.sayHello
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+　
+class MainActivity : AppCompatActivity() {
+　
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        　
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        　
+        setContentView(binding.root)
+    }
+}
+```
+  - setContentView에 R.layout.activity_main을 사용해도 화면에는 동일하게 나타나지만, 뷰 바인딩을 사용하기 위해서는 이런 과정이 필요합니다.
+
+1. Binding 변수를 통해 뷰에 미리 작성해두었던 버튼의 id에 접근할 수 있습니다. 다음과 같이 버튼에 id에 Listener를 설정합니다.
+```java
+package kr.co.hanbit.sayHello
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+　
+class MainActivity : AppCompatActivity() {
+　
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        　
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        　
+        setContentView(binding.root)
+        binding.btnSay.setOnClickListener {
+            binding.textSay = "Hello Kotlin!!"  
+        }
+    }
+}
+```
+
+## 2.6 앱 실행하기
+
+1. 이제 소스 코드를 에뮬레이터에서 실행해보겠습니다. 상단 툴바에서 [실행 아이콘]을 클릭해서 프로그램을 에뮬레이터에 설치하고 실행합니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-45.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 에뮬레이터가 실행되면 다음과 같은 애 화면이 나옵니다. 화면에서 보이는 [Button]을 클릭해보세요. 문자열 "Hello World!"가 "Hello Kotlin!!!"으로 바뀌는 것을 확인할 수 있습니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-46.png){: style="box-shadow: 0 0 5px #777"}
