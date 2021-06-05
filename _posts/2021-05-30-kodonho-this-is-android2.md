@@ -720,7 +720,7 @@ val DAT_LIST = listOf("월", "화", "수", "목", "금", "토", "일")
 # 5. 반복문
 
 ## 5.1 for 반복문
-### for in .. ㅣ 일반적인 형태의 for 반복문
+### for in .. : 일반적인 형태의 for 반복문
 ```java
 for (index in 1..10) {
     Log.d("For", "현재 숫자는 ${index}")
