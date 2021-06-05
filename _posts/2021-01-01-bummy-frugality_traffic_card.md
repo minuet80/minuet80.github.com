@@ -61,5 +61,5 @@ width: large
 [a]: https://www.alcard.kr/
 
 <style>
-.page-container {max-width: 100%}
+.page-container {max-width: 1200px}
 </style>
