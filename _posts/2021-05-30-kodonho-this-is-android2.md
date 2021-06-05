@@ -1023,5 +1023,5 @@ Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
 
 
 <style>
-.page-container {max-width: 1000px}‘’
+.page-container {max-width: 100%}‘’
 </style>

@@ -29,5 +29,5 @@ width: large
 [a]: https://www.imei.kr/
 
 <style>
-.page-container {max-width: 1000px}
+.page-container {max-width: 100%}
 </style>

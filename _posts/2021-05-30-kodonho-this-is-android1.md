@@ -388,5 +388,5 @@ class MainActivity : AppCompatActivity() {
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-46.png){: style="box-shadow: 0 0 5px #777"}
 
 <style>
-.page-container {max-width: 1000px}
+.page-container {max-width: 100%}
 </style>
