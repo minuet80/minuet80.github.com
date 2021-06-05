@@ -186,7 +186,7 @@ const val PI = 3.141592
 val과 같이 읽기 전용인 것은 동일하지만, 컴파일 시에 값이 결정되고 때문에 ``Int``, ``Long``과 같은 기본형과 문자열인 ``String``만 입력할 수 있습니다.
 
 
-# 2. 조건문
+# 3. 조건문
 
 ## 3.1 조건문 if
 
@@ -369,7 +369,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-# 배열과 컬렉션
+# 4. 배열과 컬렉션
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-52.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 4.1 배열
@@ -717,17 +717,17 @@ Log.d("Collection", "리스트의 두 번째 값은 ${IMMUTABLE_LIST.get(1)}입�
 val DAT_LIST = listOf("월", "화", "수", "목", "금", "토", "일")
 ```
 
-## 5. 반복문
+# 5. 반복문
 
-### 5.1 for 반복문
-#### for in .. ㅣ 일반적인 형태의 for 반복문
+## 5.1 for 반복문
+### for in .. ㅣ 일반적인 형태의 for 반복문
 ```java
 for (index in 1..10) {
     Log.d("For", "현재 숫자는 ${index}")
 }
 ```
 
-#### until: 마지막 숫자 제외하기
+### until: 마지막 숫자 제외하기
 ```java
 var array = arrayOf("JAN", "FEB", "MAR", "APR", "MAY" "JUN")
 for (index in 0 until array.size) {
@@ -735,21 +735,21 @@ for (index in 0 until array.size) {
 }
 ```
 
-#### step: 건너뛰기
+### step: 건너뛰기
 ```java
 for (index in 0..100 step 3) {
     Log.d("For", "현재 숫자는 ${index}")
 }
 ```
 
-#### downTo: 감소시키기
+### downTo: 감소시키기
 ```java
 for (index in 10 downTo 0) {
     Log.d("For", "현재 숫자는 ${index}")
 }
 ```
 
-#### 배열, 컬렉션에 들어 있는 엘리먼트 반복하기
+### 배열, 컬렉션에 들어 있는 엘리먼트 반복하기
 배열이나 컬렉션을 엘리먼트 개수만큼 반복하면서 사용할 수 있습니다.
 ```java
 var arrayMonth = arrayOf("JAN", "FEB", "MAR", "APR", "MAY", "JUN")
@@ -1021,7 +1021,226 @@ val PI = getPi()
 Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
 ```
 
+## 6.3 함수 파라미터 정의
+``코틀린에서 함수 파라미터는 모두 읽기 전용 키워드 val이 생략된 형태입니다.``
+
+### 파라미터의 기본값 정의와 호출
+```java
+fun newFunction(name: String, age: Int = 20, weight: Double = 65.5) {
+    Log.d("fun", "name의 값은 ${name}입니다.")
+    Log.d("fun", "age의 값은 ${age}입니다.")
+    Log.d("fun", "weight의 값은 ${weight}입니다.")
+}
+```
+
+### 파라미터 이름으로 값을 입력하기
+```java
+newFunction("Michael", weight = 67.5)
+```
+```text
+name의 값은 Michael입니다.
+age의 값은 29입니다.
+weight의 값은 67.5입니다.
+```
+
+```java
+package kr.co.hanbit.controlflow4
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+　
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+　
+        // 1. 반환값이 있는 함수 square 사용하기
+        var squareResult = square(30)
+        Log.d("fun", "30의 제곱은 ${squareResult}입니다.")
+　
+        // 2. 반환값이 없는 함수는 그냥 실행한다.
+        printSum(3, 5)
+　
+        // 3. 입력값이 없는 함수 사용하기
+        val PI = getPi()
+        Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
+　
+        // 4. 기본값이 있는 함수 사용하기
+        newFunction("Hello")
+　
+        // 4-1. 파라미터 이름을 직접 지정하기
+        newFunction("michael", weight = 67.5)
+    }
+    // 1. 반환값이 있는 함수
+    fun square(x: Int): Int {
+        return x * x // <- square함수는 입력받은 값에 제곱하여 반환합니다.
+    }
+    // 2. 반환값이 없는 함수
+    fun printSum(x: Int, y: Int) {
+        Log.d("fun", "x + y = ${x + y}")
+    }
+    // 3. 입력값 없이 반환값만 있는 함수
+    fun getPi(): Double {
+        return 3.14
+    }
+    // 4. 기본값을 갖는 함수
+    fun newFunction(name: String, age: Int = 29, weight: Double = 65.5) {
+        Log.d("fun", "name의 값은 ${name}입니다.")
+        Log.d("fun", "age의 값은 ${age}입니다.")
+        Log.d("fun", "weight의 값은 ${weight}입니다.")
+    }
+}
+```
+```text
+30의 제곱은 900입니다.
+x + y = 8
+지름이 10인 원의 둘레는 31.400000000000002입니다.
+name의 값은 Hello입니다.
+age의 값은 29입니다.
+weight의 값은 65.5입니다.
+name의 값은 michael입니다.
+age의 값은 29입니다.
+weight의 값은 67.5입니다.
+```
+
+# 7. 클래스와 설계
+클래스는 단지 ``변수``와 ``함수``의 모음입니다.
+## 7.1 클래스의 기본 구조
+```java
+class String {
+    var length: Int
+    fun plus(other: Any) {
+        ... // 코드
+    }
+    fun compareTo(other: String) {
+        ... // 코드
+    }
+}
+```
+
+## 7.2 클래스 코드 작성하기
+클래스를 만들기 위해서는 먼저 클래스의 이름을 정하고 이름 앞에 class 키워드를 붙여서 만들 수 있습니다.
+클래스 이름 다음에는 클래스의 범위를 지정하는 중괄호 ({})가 있어야 합니다. 
+이 중괄호를 스코프<sup>Scope</sup>라고 하는데, 클래스에서 사용했기 때문에 클래스 스코프라고 합니다.
+```java
+class 클래스 이름 {
+    // 클래스 스코프 (class scope)
+}
+```
+몇몇 예외는 있지만 대부분의 코드는 클래스 스코프 안에 작성됩니다.
+작성된 클래스를 사용하기 위해서는 생성자라고 불리는 함수가 호출되어야 하는데, 코틀린은 ``Primary``와 ``Secondary`` 2개의 생성자를 제공합니다.
+
+### 프라이머리 생성자
+클래스도 마찬가지로 클래스를 사용한다는 것은 곧 클래스라는 이름으로 묶여 있는 코드를 실행하는 것이기 때문에 함수 형태로 제공되는 생성자를 호출해야지만 클래스가 실행됩니다.
+constructor키워드를 사용해서 정의하는데 조건에 따라 생략할 수 있습니다.
+```java
+class Person constructor(value: String) {
+    // 코드
+}
+```
+
+생성자에 접근 제한자나 다른 옵션이 없다면 constructor 키워드를 생략할 수 있습니다.
+```java
+class Person(value: String) {
+    // 코드
+}
+```
+
+프라이머리 생성자는 마치 헤더처럼 class 키워드와 같은 위치에 작성됩니다.
+클래스의 생성자가 호출되면 init 블록의 코드가 실행되고, init 블록에서는 생성자를 통해 넘어온 파라미터에 접근할 수 있습니다.
+```java
+class Person(value: String) {
+    init {
+        Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.")
+    }
+}
+```
+하지만 init 초기화 작업이 필요하지 않다면 init 블록을 작성하지 않아도 됩니다. 
+대신 파라미터로 전달된 값을 사용하기 위해서는 파라미터 앞에 변수 키워드인 val을 붙여주면 클래스 스코프 전체에서 해당 파라미터를 사용할 수 있습니다.
+```java
+class Person(val value: String) {
+    fun process() {
+        print(value)
+    }
+}
+```
+``생성자 파라미터 앞에 var도 사용할 수 있지만, 읽기 전용인 val을 사용하는 것을 권장합니다.``
+
+### 세컨더리 생성자
+세컨더리<sup>Secondary</sup> 생성자는 constructor키워드를 마치 함수처럼 클래스 스코프 안에 직접 작성할 수 있습니다.
+```java
+class Person {
+    constructor (value: String) {
+        Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.")
+    }
+}
+```
+
+세컨더리 생성자는 파라미터의 개수, 또는 파라미터의 타입이 다르다면 여러 개를 중복해서 만들 수 있습니다.
+```java
+class Kotlin {
+    constructor (value: String) {
+        Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.)
+    }
+    constructor (value: Int) {
+        Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.)
+    }
+    constructor (value1: Int, value2: String) {
+        Log.d("class", "생성자로부터 전달받은 값은 ${value1}, ${value2}입니다.)
+    }
+}
+```
+### Default 생성자
+생성자는 작성하지 않을 경우 파라미터가 없는 프라이머리 생성자가 하나 있는 것과 동일합니다.
+```java
+class Student { // 생성자를 작성하지 않아도 기본 생성자가 동작합니다.
+    init {
+        // 기본 생성자가 없더라도 초기화가 필요하면 여기에 코드를 작성합니다.
+    }
+}
+```
+
+## 7.3 클래스의 사용
+아무런 파리머터 없이 클래스명에 괄호를 붙여주면 생성자가 호출되면서 ``init``블록 안의 코드가 자동으로 실행됩니다.
+세컨더리 생성자의 경우 ``init``블록이 먼저 실행되고, constructor 블록 안의 코드가 실행됩니다.
+```java
+var kotlin = Kotlin()
+var one = Person("value")
+var two = Person(1004)
+```
+
+1. 프로퍼티와 메서드를 사용하기 위해서 먼저 다음과 같이 프로퍼티 1개와 메서드 1개를 갖는 클래스를 만듭니다.
+```java
+class Pig {
+    var name: String = "Pinky"
+    fun printName() {
+        Log.d("class", "Pig 의 이름은 ${name}입니다.")
+    }
+}
+```
+
+1. 위에서 정의한 클래스를 생성자로 인스턴스화해서 변수에 담습니다.
+```java
+var pig = Pig()
+```
+
+1. 인스턴스가 담긴 변수명 다음에 (.)를 붙여서 프로퍼티와 메서드를 사용합니다.
+```java
+pig.name = "Pooh"
+pig.printName()
+```
+
+1. 실행결과
+```text
+Pig의 이름은 Pooh입니다.
+```
+
+
+
+
 
 <style>
 .page-container {max-width: 1200px}‘’
 </style>
+
