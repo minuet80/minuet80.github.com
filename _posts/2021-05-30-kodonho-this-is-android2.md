@@ -1236,6 +1236,285 @@ pig.printName()
 Pig의 이름은 Pooh입니다.
 ```
 
+## 7.4 오브젝트
+오브젝트(Object)를 사용하면 클래스를 생성자로 인스턴스화 하지 않아도 블록 안의 프로퍼티와 메서드를 호출해서 사용할 수 있습니다.
+자바를 알고 있다면 static과 같은 역할입니다.
+```java
+object Pig {
+    var name: String = "Pinky"
+    fun printName() {
+        Log.d("class", "Pig의 이름은 ${name}입니다.")
+    }
+}
+```
+object코드 블록 안의 프로퍼티와 메서드는 클래스명에 도트 연산자를 붙여서 생성자 없이 직접 호출할 수 있습니다.
+```java
+Pig.name = "Mikey"
+Pig.printName()
+```
+
+### 컴패니언 오브젝트 (companion object)
+companion object는 일반 클래스에 object 기능을 추가하기 위해서 사용합니다.
+```java
+class Pig {
+    companion object {
+        var name: String = "None"
+        fun printName() {
+            Log.d("class", "Pig의 이름은 ${name}입니다.")
+        }
+    }
+    fun walk() {
+        Log.d("class", "Pig가 걸어갑니다.")
+    }
+}
+```
+그리고 class로 선언했기 때문에 일반 함수인 walk()는 생성자인 Pig()를 호출한 다음 변수에 저장한 후에 사용할 수 있습니다.
+```java
+// companion object 안의 코드 사용하기
+Pig.name = "Linda"
+Pig.printName()
+```
+```java
+// companion object 밖의 코드 사용하기
+val cutePig = Pig()
+cutePig.walk()
+```
+
+## 7.5 데이터 클래스
+코틀린은 간단한 값의 저장 용도로 데이터 클래스<sup>data class</sup>를 제공합니다.
+```java
+// 정의 - 주로 코드 블록 (클래스 스코프)를 사용하지 않고 간단하게 사용합니다.
+data class UserData(val name: String , val age: Int)
+// 생성 - 일반 class의 생성자 함수를 호출하는 것과 동일합니다.
+var userData = UserData("Michael", 21)
+　
+// name은 val로 선언되었기 때문에 변경 불가능합니다.
+userData.name = "Sindy" (☓)
+userData.age = 18 (◯)
+```
+### toString() 메서드와 copy() 메서드
+일반 클래스에서 toString() 메서드를 호출하면 인스턴스의 주소 값을 반환하지만, 데이터 클래스는 값을 반환하기 때문에 실제 값을 모니터링할 때 좋습니다.
+```java
+Log.d("DataClass", "DataUser는 ${dataUser.toString()}")
+```
+
+copy() 메서드로 간단하게 값을 복사할 수 있습니다.
+```java
+var newData = datUser.copy()
+```
+
+이처럼 클래스와 사용법이 동일하지만 주로 네트워크를 통해 데이터를 주고받거나, 혹은 로컬 앱의 데이터베이스에서 데이터를 다루기 위한 용도로 사용하는 것이 데이터 클래스입니다.
+
+## 7.6 클래스의 상속과 확장
+코틀린은 클래스의 재사용을 위해 상속을 지원합니다.
+상속을 사용하면 부모 클래스의 메서드와 프로퍼티를 마치 내 클래스의 일부처럼 사용할 수 있습니다.
+그러면 왜 상속을 사용할까요?
+안드로이드에는 Activity라는 클래스가 미리 만들어져 있으며, 이 Activity ``클래스 내부``에는 ``글자를 쓰는 기능``,  ``화면에 새로운 창을 보여주는 기능``이 미리 정의되어 있습니다.
+상속이 있기에 이런 기능을 직접 구현하지 않고 Activity 클래스를 상속받아 약간의 코드만 추가하면 앱에 필요한 기능을 추가할 수 있습니다.
+
+```java
+class Activity {
+    fun drawText()
+    fun draw()
+    fun showWindow()
+}
+```
+```java
+class MainActivity: Activity {
+    fun onCreate() {
+        draw("새 그림")
+    }
+}
+```
+
+### 클래스 상속
+상속 대상이 되는 부모 클래스는 open 키워드로 만들어야만 자식 클래스에서 사용할 수 있습니다.
+
+### 생성자 파라미터가 있는 클래스의 상속
+상속될 부모 클래스의 생성자에 파라미터가 있다면 자식 클래스의 생성자를 통해 값을 전달할 수 있습니다.
+```java
+class CustomView: View {
+    constructor(ctx: Context): super(ctx)
+    constructor(ctx: Context, attrs: AttributeSet): super(ctx, attrs)
+}
+```
+
+### 부모 클래스의 프로퍼티와 메서드 사용하기
+부모 클래스에서 정의된 프로퍼티와 메서드를 내 것처럼 사용할 수 있습니다.
+```java
+open class Parent {
+    var hello: String = "안녕하세요"
+    fun sayHello() {
+        Log.d("inheritance", "${hello}")
+    }
+}
+```
+
+### 프로퍼티와 메서드의 재정의: 오버라이드
+상속받은 부모 클래스의 프로퍼티와 메서드 중에 자식 클래스에서는 다른 용도로 사용해야 하는 경우도 있습니다.
+오버라이드로 Child클래스의 메서드도 sayHello라고 하는 것이 의미상 더 적합합니다.
+동일한 이름의 메서드나 프로퍼티를 사용할 필요가 있을 경우에 override 키워드를 사용해서 재정의할 수 있습니다.
+오버라이드할 때는 프로퍼티나 메서드도 클래스처럼 앞에 open을 붙여서 상속할 준비가 되어 있어야 합니다.
+
+### 메서드 오버라이드
+상속할 메서드 앞에 open 키워드를 붙이면 오버라이드할 수 있지만, open 키워드가 없는 메서드는 오버라이드할 수 없습니다.
+```java
+open class BaseClass {
+    open fun opened() {
+
+    }
+    fun notOpen() {
+
+    }
+}
+```
+```java
+class ChildClass: BaseClass() {
+    override fun opened() {
+
+    }
+}
+```
+
+### 프로퍼티 오버라이드
+메서드 오버라이드처럼 프로퍼티 역시 open으로 열려 있어야만 오버라이드를 할 수 있습니다.
+```java
+open class BaseClass2 {
+    open var opened: String = "I am"
+}
+class ChildClass2: BaseClass2() {
+    override var opened: String = "You are"
+}
+```
+
+### 익스텐션
+코틀린은 클래스, 메서드, 프로퍼티에 대해 익스텐션<sup>Extensions</sup>를 지원합니다.
+이미 만들어져 있는 클래스에 다음과 같은 형태로 메서드를 추가할 수 있습니다.
+상속이 미리 만들어져 있는 클래스를 가져다 쓰는 개념이라면 익스텐션은 미리 만들어져 있는 클래스에 메서드를 넣는 개념입니다. 
+```java
+class MyClass {
+    fun say()
+    fun walk()
+    fun eat()
+}
+MyClass.sleep() {
+    // 실행코드
+}
+```
+```java
+package kr.co.hanbit.controlflow4
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+　
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+　
+        testStringExtension()
+    }
+　
+    // String 익스텐션 테스트 하기
+    fun testStringExtension() {
+        var original = "Hello"
+        var added = "Guys~"
+        // plus 메서드를 사용해서 문자열을 더할 수 없습니다.
+        Log.d("Extension", "added를 더한 값은 ${original.plus(added)}입니다.")
+    }
+}
+fun String.plus(word: String): String {
+    return this + word;
+}
+```
+```text
+added를 더한 값은 Hello Guys~입니다.
+```
+
+이어서 클래스의 상속과 확장을 코드 하나로 살펴보겠습니다.
+```java
+package kr.co.hanbit.controlflow4
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+　
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+　
+        // 1. 부모 클래스 직접 호출하기
+        var parent = Parent()
+        parent.sayHello()
+        // 2. 자식 클래스 호출해서 사용하기
+        var child = Child()
+        child.myHello()
+　
+        testStringExtension()
+    }
+    // String 익스텐션을테스트 합니다.
+    fun testStringExtension() {
+        var original = "Hello"
+        var added = " Guys~"
+        // plus메서드를 사용해서 문자열을 더할 수 있습니다.
+        Log.d("Extension", "added를 더한 값은 ${original.plus(added)}입니다.")
+    }
+}
+// 상속 연습
+open class Parent {
+    var hello: String = "안녕하세요"
+    fun sayHello() {
+        Log.d("Extension", "${hello}")
+    }
+}
+class Child: Parent() {
+    fun myHello() {
+        hello = "Hello"
+        sayHello();
+    }
+}
+// 메서드 오버라이드 연습
+open class BaseClass {
+    open fun opened() {
+　
+    }
+    fun notOpened() {
+　
+    }
+}
+class ChildClass: BaseClass() {
+    override fun opened() {
+　
+    }
+    //override fun notOpened() {}
+}
+// 프로퍼티 오버라이드 연습
+open class BaseClass2 {
+    open var opened: String = "I am"
+}
+class ChildClass2: BaseClass2() {
+    override var opened: String = "You are"
+}
+fun String.plus(word: String): String {
+    return this + word
+}
+```
+```text
+안녕하세요
+Hello
+added를 더한 값은 Hello Guys~입니다.
+```
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1243,4 +1522,3 @@ Pig의 이름은 Pooh입니다.
 <style>
 .page-container {max-width: 1200px}‘’
 </style>
-
