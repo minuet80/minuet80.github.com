@@ -1507,10 +1507,67 @@ Hello
 added를 더한 값은 Hello Guys~입니다.
 ```
 
+## 7.7 설계 도구
 
+### 추상화
+프로그래밍을 하기 전 개념 설계를 하는 단계에서 클래스의 이름과 클래스 안에 있음 직한 기능을 유추해서 메서들 이름을 먼저 나열합니다.
+이때 명확한 코드는 설계 단계에서 메서드 블록 안에 직접 코드를 작성하는데, 그렇지 않은 경우에는 구현 단계에서 코드를 작성하도록 메서드의 이름만 작성합니다.
+이것을 추상화<sup>Abstract</sup>라고 합니다.
+```java
+abstract class Animal {
+    fun walk() {
+        Log.d("abstract", "걷습니다")
+    }
+}
+```
+walk 는 명확하게 걸어가는 행위지만 move는 어떤 동물이냐에 따라서 달라질 수 있습니다.
+```java
+class Bird: Animal() {
+    override fun move() {
+        Log.d("abstract", "날아서 이동합니다.")
+    }
+}
+```
 
+### 인터페이스
+인터페이스<sup>Interface</sup>는 실행 코드 없이 메서드 이름만 가진 추상 클래스입니다.
+인터페이스는 상속 관계의 설계보다는 외부 모듈에서 내가 만든 모듈을 사용할 수 있도록 메서드의 이름을 나열해둔 일종의 명세서로 제공됩니다.
 
+### 인터페이스 만들기
+```java
+interface InterfaceKotlin {
+    var variable: String
+    fun get()
+    fun set()
+}
+```
 
+### 클래스에서 구현하기
+인터페이스를 클래스에서 구현할 때는 상속과는 다르게 생성자를 호출하지 않고 인터페이스 이름만 지정해주면 됩니다.
+```java
+class KotlinImpl: InterfaceKotlin {
+    override var variable: String = "init value"
+    override fun get() {
+        // 코드 구현
+    
+    }
+    override fun set() {
+        // 코드 구현
+    }
+}
+```
+인터페이스를 클래스의 상속 형태가 아닌 소드 코드에서 직접 구현할 때도 있는데, object 키워드를 사용해서 구현해야 합니다.
+```java
+var kotlinImpl = object: InterfaceKotlin {
+    override var variable: String = "init"
+    override fun get() {
+        // 코드
+    }
+    override fun set() {
+        // 코드
+    }
+}
+```
 
 
 
