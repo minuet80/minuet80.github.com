@@ -1969,8 +1969,6 @@ println("반환값 with = $lastItemWith")
 반환값 with = With
 ```
 
-
-
 <style>
-.page-container {max-width: 1200px}‘’
+.page-container {max-width: 1200px}
 </style>
