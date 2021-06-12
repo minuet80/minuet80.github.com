@@ -74,6 +74,53 @@ width: large
 1. ``GuideLine`` : 레이아웃 안의 모든 위젯에 공통의 여백을 지정할 때 사용합니다. 가로 또는 세로 가이드라인을 삽입하면 위젯은 가이드라인에 컨스트레인트를 연결할 수 있습니다.
 
 ### 체인으로 연결하기
+체이닝은 컨스트레인트로 연결된 위젯끼지 서로의 위칫값을 공유해서 상대적인 값으로 크기와 위치를 결정해주는데 각 화면 전체를 기준으로 했을 때는 물론, 화면을 가로세로로 전환했을 때도 위젯의 상대 비율을 유지해 줍니다.
+
+ConstraintChain 프로젝트를 하나 새로 생성하고 레이아웃 파일을 엽니다.
+화면 가운데 있는 텍스트뷰는 삭제합니다.
+
+1. 팔레트의 버튼 카테고리에서 버튼 4개를 차례대로 UI편집기로 드래그하여 컨스트레인트를 연결하지 않은 채 그림과 같이 배치합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-64.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 먼저 위쪽에 있는 버튼 2개를 선택한 다음 마우스 우클릭하면 나타나는 메뉴에서 [Chains] - [Create Horizontal Chain]을 선택합니다. 
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-65.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-66.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 같은 방법으로 아래쪽 버튼 2개도 체인으로 연결합니다.
+1. 정상적으로 연결되었다면 버튼 4개를 모두 클릭했을 때 다음과 같은 화면이 나타납니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-67.png){: style="box-shadow: 0 0 5px #777"}
+1. 이번에는 세로축 체인을 연결해보세요. 한 번에 한 줄 씩 해야 합니다. 4개를 모두 선택하고 적용하면 원하지 않은 결과가 나타나므로 좌측의 버튼 2개를 먼저 선택합니다. 그리고 마우스 우클릭한 다음 메뉴에서 [Chains] - [Create Vertical Chain]을 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-68.png){: style="box-shadow: 0 0 5px #777"}
+1. 남은 2개의 버튼도 같은 방법으로 [Vertical Chain]을 연결합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-69.png){: style="box-shadow: 0 0 5px #777"}
+1. 버튼 4개가 모두 체인으로 연결되었습니다. 체인은 컨스트레인트와는 다르게 체인 모양 (![1]({{site.baseurl}}/images/this-is-android/this-is-android-70.png){: style="box-shadow: 0 0 5px #777"}) 의 인터페이스로 되어 있습니다. 이제 4개의 버튼을 모두 선택하고 속성에서 ``layout_width``와 ``layout_height``값을 ``‘0dp (match_constraint)’``으로 변경합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-71.png){: style="box-shadow: 0 0 5px #777"}
+1. match_constraint로 설정하면 ‘0dp’로 설정됩니다.
+1. 버튼이 모두 꽉 찬 형태로 보여집니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-72.png){: style="box-shadow: 0 0 5px #777"}
+
+### 가이드 라인
+가이드라인<sup>GuideLine</sup>은 컨스트레인트 레이아웃에서만 사용할 수 있는 보조 도구입니다.
+가로/세로 두 가지 가이드라인이 있는데, 가이드라인을 드래드해서 화면 임의의 위치에 가져다 놓으면 레이아웃 안에 배치되는 위젯에 가장의 앵커 포인트를 제공합니다.<br>
+
+
+## 1.3 리니어 레이아웃
+리니어 레이아웃<sup>LinearLayout</sup>은 위젯을 가로 또는 세로 한 줄로 배치하기 위한 레이아웃 입니다.
+레이아웃 속성 중에 orientation의 가로, 세로만 변경해주면 기존에 배치되어 있던 위젯들도 방향을 바꿀 수 있습니다.
+
+### 리니어 레이아웃을 기본 레이아웃으로 사용하기
+리니어 레이아웃을 사용하기 위해서 컨스트레인트 레이아웃 안에 리니어 레이아웃을 추가할 수도 있지만 레이아웃이 중첩되면 그만큼 그래픽 처리 속도가 느려지기 때문에 기본 레이아웃인 컨스트레인트 레이아웃을 바꾼 후에 작업하도록 하겠습니다.
+
+1. 속성 영역 위에 있는 [Code] 버튼을 클릭해서 모드를 변경합니다.
+1. 화면이 XML 코드를 직접 편집할 수 있는 모양으로 변경됩니다.
+1. XML코드에서 2행에 있는 androidx.constraintlayout.widget.ConstraintLayout을 ``‘LinearLayout’``으로 수정합니다.
+1. 다시 우측 상단에 있는 [Design]버튼을 클릭해서 모드를 변경하면 컴포넌트 트리 (Component Tree)의 최상위 레이아웃이 리니어 레이아웃으로 변경된 것을 볼 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-73.png){: style="box-shadow: 0 0 5px #777"}
+
+#### orientation속성
+orientation하위 버전의 안드로이드 스튜디오에서는 필수 속성이었지만 3.1부터는 입력하지 않으면 가로로 배치됩니다.
+레이아웃 안에 있는 기본 텍스트뷰를 삭제하고, 팔레트에서 새로운 텍스트뷰 3개를 드래드해서 레이아웃 안에 가져다 놓습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-74.png){: style="box-shadow: 0 0 5px #777"}
 
 
 <style>
