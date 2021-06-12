@@ -1569,10 +1569,405 @@ var kotlinImpl = object: InterfaceKotlin {
 }
 ```
 
+### 접근 제한자
+코틀린에서 정의되는 클래스, 인터페이스, 메서드, 프로퍼티는 모두 접근 제한자<sup>Visibility Modifiers</sup>를 가질 수 있습니다.
+internal 접근 제한자로 모듈 간에 접근을 제한할 수 있습니다.
+
+#### 접근 제한자의 종류
+| 접근 제한자 | 제한 범위 |
+| --- | --- |
+| private | 다른 파일에서 접근할 수 없습니다. |
+| internal | 같은 모듈에 있는 파일만 접근할 수 있습니다. |
+| protected | private 와 같으나 상속 관계에서 자식 클래스가 접근할 수 있습니다. |
+| public | 제한 없이 모든 파일에서 접근할 수 있습니다. |
+
+#### 접근 제한자의 적용
+접근 제한자를 붙이면 해당 클래스, 맴버 프로퍼티 또는 메서드에 대한 사용이 제한됩니다.
+```java
+open class Parent {
+    private val privateVal = 1
+    protected open val protectedVal = 2
+    internal val internalVal = 3
+    val detaultVal = 4
+}
+```
+자식 클래스에서 부모 클래스를 상속받고 테스트 합니다.
+```java
+class Child: Parent() {
+    fun callVariables() {
+        // privateVal은 호출이 안됩니다.
+        // protected 맴버 protectedVal은 상속 관계이므로 접근할 수 있습니다.
+        Log.d("Modifier", "protected 변수의 값은 ${protectedVal}")
+        // internal 맴버 internalVal은 동일한 모듈이므로 접근할 수 있습니다.
+        Log.d("Modifier", "internal 변수의 값은 ${internalVal}")
+        // 접근 제한자가 없는 맴버 defaultVal에는 public이 적용되어 접근할 수 있습니다.
+        Log.d("Modifier", "기본 제한자 변수 defaultVal의 값은 ${defaultVal}")
+    }
+}
+```
+상속 관계가 아닌 외부 클래스에서 Parent 클래스를 생성하고 사용해봅니다. 
+상속 관계가 아니기 때문에 public 과 internal에만 접근할 수 있습니다.
+```java
+class Stranger {
+    fun callVariables() {
+        val parent = Parent()
+        Log.d("Modifier", "internal 변수의 값은 ${parent.internalVal}입니다.");
+    }
+}
+```
+
+### 제네릭
+제네릭<sup>Generics</sup>은 입력되는 값의 타입을 자유롭게 사용하기 위한 설계 도구입니다.
+다음은 자주 사용되는 MutableList클래스의 원본 코드를이해하기 쉽게 변형한 코드입니다.
+```java
+public interface MutableList<E> {
+    var list = Array<E>
+    ...
+}
+```
+
+클래스명 옆에 ``<E>``라고 되어 있는 부분에 String과 같은 특정 타입이 지정되면 클래스 내부에 선언된 모든 ``E``는 ``String`` 타입으로 지정됩니다.
+결과적으로 ``var list: Array<E>``가 ``var list: Array<String>``으로 변형되는 것입니다.
+
+```java
+var list: MutableList<제네릭> = mutableListOf("월", "화", "수")
+```
+```java
+fun testGenerics() {
+    // String을 제네릭으로 사용했기 때문에 list 변수에는 문자열만 담을 수 있습니다.
+    var list: MutableList<String> = mutableListOf()
+    list.add("월")
+    list.add("화")
+    list.add("수")
+    // list.add(35) // <- 입력오류가 발생함
+    // String 타입의 item 변수로 꺼내서 사용할 수 있음
+    for (item in list) {
+        Log.d("Generic", "list에 입력된 값은 ${item}입니다.")
+    }
+
+}
+```
+지금까지 배운 내용을 코드로 살펴보겠습니다.
+```java
+package kr.co.hanbit.designtool
+　
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+　
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+　
+        // 접근 제한자 테스트
+        var child = Child()
+        child.callVariables()
+　
+        // 부모 클래스 직접 호출해보기
+        var parent = Parent()
+        Log.d("Visibility", "Parent : 기본 제한자 defaultVal 의 값은 ${parent.defaultVal}")
+        Log.d("Visibility", "Parent : internalVal의 값은 ${parent.internalVal}")
+    }
+}
+// 추상 클래스 설계
+abstract class Animal {
+    fun walk() {
+        Log.d("abstract", "걷습니다.")
+    }
+    abstract fun move()
+}
+// 구현
+class Bird: Animal() {
+    override fun move() {
+        Log.d("abstract", "날아서 이동합니다.")
+    }
+}
+// 인터페이스 설계
+interface InterfaceKotlin {
+    var variable: String
+    fun get()
+    fun set()
+}
+// 구현
+class KotlinImpl: InterfaceKotlin {
+    override var variable: String = "init value"
+    override fun get() {
+        // 코드 구현
+    }
+    override fun set() {
+        // 코드 구현
+    }
+}
+// 접근제한자 테스크를 위한 부모 클래스
+open class Parent() {
+    private val privateVal = 1
+    protected open val protectedVal = 2
+    internal val internalVal = 3
+    val defaultVal = 4
+}
+// 자식 클래스
+class Child: Parent() {
+    fun callVariables() {
+        // private은 호출이 안 됩니다.
+        Log.d("Visibility", "Child: protectedVal의 값은 ${protectedVal}")
+        Log.d("Visibility", "Child: internalVal의 값은 ${internalVal}")
+        Log.d("Visibility", "Child: 기본 제한자 defaultVal의 값은 ${defaultVal}")
+    }
+}
+```
+```text
+Child: protectedVal의 값은 2
+Child: internalVal의 값은 3
+Child: 기본 제한자 defaultVal의 값은 4
+Parent : 기본 제한자 defaultVal 의 값은 4
+Parent : internalVal의 값은 3
+```
+
+# 8. null값에 대한 안정적인 처리: Null Safety
+코틀린은 null값의 처리에 많은 공을 들인 언어입니다.
+
+## 8.1 null 값 허용하기: ?
+코틀린에서 지정하는 기본 변수는 모두 null이 입력되지 않습니다.
+null값을 입력하기 위해서는 변수를 선언할 때 타입 뒤에 ? (Nullable, 물음표)를 입력합니다.
+
+### 변수에 null 허용 설정하기
+```java
+var nullable: String? // 타입 다음에 물음표를 붙여서 null 값을 입력할 수 있습니다.
+nullable = null
+　
+var notNullable: String
+notNullable = null // 일반 변수에는 null을 입력할 수 없습니다.
+```
+
+### 함수 파라미터에 null 허용 설정하기
+안드로이드의 onCreate() 메서드의 Bundle 파라미터처럼 함수의 파라미터에도 null 허용 여부를 설정할 수 있습니다.
+```java
+fun nullParameters(str: String?) {
+    if (str != null) {
+        var length2 = str.lengths
+    }
+}
+```
+이 코드에서처럼 str파라미터를 조건문 if에서 null인지 아닌지 체크해야지만 사용할 수 있습니다.
+
+### 함수의 리턴 타입에 null 허용 설정하기
+함수의 리턴 타입에도 물음표를 붙여서 null 허용 여부를 설정할 수 있습니다.
+```java
+fun nullReturn(): String? {
+    return null
+}
+```
+함수의 리턴 타입에 Nullable이 지정되어 있지 않으면 null값을 리턴할 수 없습니다.
+
+## 8.2 안전한 호출: ?.
+변수를 Nullable로 만들기 위해서 물음표를 사용했습니다. 이제는 ```?.```(Safe Call, 물음표와 온점)을 사용해서 null체크를 좀 더 간결하게 하겠습니다.
+Nullable인 변수 다음에 ``?.``을 사용하면 해당 변수가 null일 경우 ``?.`` 다음의 메서드나 프로퍼티를 호출하지 않습니다.
+다음 코드에서처럼 문자열의 길이를 반환하는 length 프로퍼티를 호출했는데 str변수 자체가 null일 경우 length프로퍼티를 호출하지 않고 바로 null을 반환합니다.
+```
+fun testSafeCall(str: String?): Int? {
+    // str이 null이면 length를 체크하지 않고 null을 반환합니다.
+    var resultNull: int? = str?.length
+    return resultNull
+}
+```
+
+### 8.3 Null 값 대체하기: ?:
+``?:``(Elvis Operator, 물음표와 콜론) 을 사용해서 원본 변수와 null일 때 넘겨줄 기본값을 설정해보겠습니다.
+다음 코드에서 Safe Call다음에 호출되는 프로퍼티 뒤에 다시 ``?:`` 을 붙였습니다.
+그리고 0이라는 값을 표시했습니다.
+이렇게 호출하면 str변수가 null일 경우 가장 뒤에 표시한 0을 반환합니다.
+```java
+fun testElvis(str: String?): Int {
+    // length 오른쪽에 ?:을 사용하면 null일 경우 ?:오른쪽 값이 반환됩니다.
+    var resultNotNull: Int = str?.length?:0
+    return resultNotNull
+}
+```
 
 
+# 9. 지연 초기화
+코틀린은 지연 초기화를 사용하는데 이는 클래스의 코드에 Nullable(?)처리가 남용되는 것을 방지해줍니다.
+
+## 9.1 lateinit
+개발을 하다 보면 클래스 안에서 변수(프로퍼티)만 Nullable로 미리 선언하고 초기화(생성자 호출)를 나중에 해야할 경우가 있는데, 이럴 경우 lateinit키워드를 사용할 수 있습니다.
+
+### Nullable로 선언하는 일반적인 방법
+일반적인 선언 방식으로 처음에 null값을 입력해두고, 클래스의 다른 메서드 영역에서 값을 입력합니다.
+```java
+class Person {
+    var name: String? = null
+    init {
+        name = "Lione1"
+    }
+    fun process() {
+        name?.plus(" Messi")
+        print("이름의 길이 = ${name?.length}")
+        print("이름의 첫 글자 = ${name?.substring(0, 1)}")
+    }
+}
+```
+
+### lateinit을 사용하는 방법
+lateinit을 사용하면 Safe Call을 쓰지 않을 수 있기 때문에 코드에서 발생할 수 있는 수많은 ``?``를 방지할 수 있습니다.
+```java
+class Person {
+    lateinit var name: String
+    init {
+        name = "Lione1"
+    }
+    fun process() {
+        name.plus(" Messi")
+        print("이름의 길이 = ${name.length}")
+        print("이름의 첫 글자 = ${name.substring(0, 1)}")
+    }
+}
+```
+
+lateinit의 특징은 다음 세 가지를 들 수 있습니다.
+- var 로 선언된 클래스의 프로퍼티에만 사용할 수 있습니다.
+- null은 허용되지 않습니다.
+- 기본 자료형 Int, Long, Double, Float등은 사용할 수 없습니다.
 
 
+## 9.2 lazy
+lazy는 읽기 전용 변수인 val을 사용하는 지연 초기화입니다.
+lateinit이 입력된 값을 변경할 수 있는 반면, lazy는 입력값을 변경할 수 없습니다.
+```java
+class Company {
+    val person: Person by lazy { Person() }
+    init {
+        // lazy는 선언 시에 초기화를 하기 때문에 초기화 과정이 필요없습니다.
+    }
+    fun process() {
+        print("person의 이름은 ${person.name}") // 최초 호출하는 시점에 초기화됩니다.
+    }
+}
+```
+lazy는 주의해서 사용해야 합니다.
+지연 초기화는 말 그대로 최초 호출되는 시점에 초기화 작업이 일어나기 때문에 초기화하는 데 사용하는 리소스가 너무 크면 (메모리를 많이 쓰거나 코드가 복잡한 경우) 전체 처리 속도에 나쁜 영향을 미칠수 있습니다.
+
+
+# 10. 스코프 함수
+스코프 함수<sup>Scope functions</sup>는 코들르 축약해서 표현할 수 있도록 도와주는 함수이며 영역 함수라고도 합니다.
+사용법은 함수처럼 쓰지 않고 ``run``, ``let``처럼 괄호 없이 일종의 키워드같이 사용할 수 있습니다.
+
+## 10.1 run과 let으로 보는 스코프 함수
+``run``과 ``let``은 자신의 함수 스코프(코드 블록) 안에서 호출한 대상을 this와 it로 대체해서 사용할 수 있습니다.
+
+### run
+다음 예제에서는 MutableList를 run함수를 이용해서 스코프를 지정한 후 내부에서 size 프로퍼티를 직접 호출하였습니다.
+```java
+var list = mutableListOf("Scope", "Function")
+list.run {
+    var listSize = size
+    println("리스트의 길이 run = $listSize")
+}
+```
+
+### let
+함수 영역 안에서 호출한 대상을 it으로 사용할 수 있습니다.
+it을 생략할 수는 없지만 target등 다른 이름으로 바꿀 수 있습니다.
+```java
+var list = mutableListOf("Scope", "Function")
+list.let {
+    // it -> 생략된 형태. it -> 대신에 target -> 등으로 변경 가능합니다.
+    val listSize = it.size // 모든 속성과 함수를 it 맴버로 사용할 수 있습니다.
+    println("리스트의 길이 let = $listSize")
+}
+```
+
+## 10.2 this와 it으로 구분하기
+
+### this로 사용되는 스코프 함수: run, apply, with
+다음은 apply와 with의 사용 예제입니다. 스코프 함수 안에서 this로 사용되기 때문에 메서드나 프로퍼티를 직접 호출합니다.
+```java
+var list = mutableListOf("Scope", "Function")
+list.apply {
+    val listSize = size
+    println("리스트의 길이 apply = $listSize")
+}
+　
+with (list) {
+    val listSize = size
+    println("리스트의 길이 with = $listSize)
+}
+```
+
+### it으로 사용되는 스코프 함수: let, also
+```java
+var list = mutableListOf("Scope", "Function")
+list.let {
+    target ->  // it을 target등과 같이 다른 이름으로 변경 가능합니다.
+    val listSize = target.size // target으로 변경했기 때문에 맴버 접근은 target.속성입니다.
+    println("리스트의 길이 let = $listSize")
+}
+　
+list.also {
+    val listSize = it.size
+    println("리스트의 길이 also = $listSize")
+}
+```
+
+## 10.3 반환값으로 구분하기
+
+### 호출 대상인 this 자체를 반환하는 스코프 함수: apply, also
+``apply``를 사용하면 스코프 함수 안에서 코드가 모두 완료된 후 자기 자신을 되돌려줍니다.
+예제에서 apply 스코프의 마지막 줄에서 count()를 호출했지만 마지막 코드와 상관없이 그냥 MutableList자신을 돌려주기 때문에 Cope, Function에 Apply가 추가된 값이 출력됩니다.
+```java
+var list = mutableListOf("Scope", "Function")
+
+var afterApply = list.apply {
+    add("Apply")
+    count()
+}
+println("반환값 apply = $afterApply")
+
+val afterAlso = list.also {
+    it.add("Also")
+    it.count()
+}
+println("반환값 also = $afterAlso")
+```
+```text
+반환값 apply = [Scope, Function, Apply]
+반환값 also = [Scope, Function, Apply, Also]
+```
+
+### 마지막 실행 코드를 반환하는 스코프 함수: let, run, with
+let, run, with 의 결괏값을 반환하는 경우에는 앞의 2개와는 완전히 다른 결과가 나올 수 있으므로 주의해야 합니다.
+자기 자신이 아닌 스코프의 마지막 코드를 반환하기 때문입니다.
+
+``let``에서 스코프 마지막 코드가 ``it.count()``로 종료되었습니다.
+``apply``나 ``also``라면 마지막 코드에 상관없이 ``Scope, Function, Run``이 출력되지만 ``let``은 마지막 코드가 반환되기 때문에 출력값으로 리스트의 개수인 ``3``이 출력됩니다.
+``run``과 ``with``역시 마지막 코드가 반환됩니다.
+
+```java
+var list = mutableListOf("Scope", "Function")
+
+var lastCount = list.let {
+    it.add("Run")
+    it.count()
+}
+println("반환값 let = $lastCount")
+
+val lastItem = list.run {
+    add("Run")
+    get(size - 1)
+}
+println("반환값 run = $lastItem")
+
+val lastItemWith = with (list) {
+    add("With")
+    get(size - 1)
+}
+println("반환값 with = $lastItemWith")
+```
+```text
+반환값 let = 3
+반환값 run = Run
+반환값 with = With
+```
 
 
 
