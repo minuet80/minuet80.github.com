@@ -38,39 +38,39 @@ Log.d("태그", "출력 메시지")
 Log.d에서 d는 debug를 의미하며 첫 번째 인자에는 검색 용도로 사용되는 ‘태그’를 입력하고, 두번째 인자에는 ‘실제 출력할 메시지’를 입력합니다.
 
 1. MainActivity.kt 파일을 열고 다음 코드를 setContentView... 밑에 입력합니다.<br>
-```java
-package kr.co.hanbit.basicsyntax
-　
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-　
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-　
-        Log.d("BasicSyntax", "로그를 출력합니다. method = Log.d")
+    ```kotlin
+    package kr.co.hanbit.basicsyntax
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+
+            Log.d("BasicSyntax", "로그를 출력합니다. method = Log.d")
+        }
     }
-}
-```
+    ```
 
 1. 코르를 추가하면 ‘Log’라는 글자가 빨간색으로 나타나는데 Log 글자를 클릭하면 다음과 같은 메시지가 나타납니다. 안드로이드에서 기본으로 제공하는 클래스나 함수를 사용하기 위해서는 import라는 과정을 거쳐야 하는데, 아직 Log클래스를 import하지 않았기 때문에 나타나는 메시지입니다.
-``Alt`` + ``Enter``키를 누르면 상단에 필요한 import문구가 자동으로 생성됩니다.
+``Alt`` + ``Enter``키를 누르면 상단에 필요한 import문구가 자동으로 생성됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-48.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 소스 코드 상단에 import android.util.Log가 추가됩니다.
-```java
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.util.Log
-```
+    ```kotlin
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    ```
 
-1. 이제 앱을 에뮬레이터에서 실행하기 위해 안드로이드 스튜디오 상단 툴바의 [Run ‘App’ 아이콘]을 클릭합니다.
+1. 이제 앱을 에뮬레이터에서 실행하기 위해 안드로이드 스튜디오 상단 툴바의 [Run ‘App’ 아이콘]을 클릭합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-49.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 에뮬레이터를 통해 앱 화면을 보면 ‘Hello World!’라고만 적혀 있고 아무런 동작을 하지 않습니다.
 
-1. 안드로이드 스튜디어 하단 [Logcat] 탭을 클릭해서 창을 열어봅니다. 로그 내용이 많은데, 소스 코드의 Log.d 함수에 입력했던 태그 ‘BasicSyntax’를 로그 영역 상단에 있는 돋보기 표시의 검색창에 입력하면 해당 로그만 볼 수 있습니다.
+1. 안드로이드 스튜디어 하단 [Logcat] 탭을 클릭해서 창을 열어봅니다. 로그 내용이 많은데, 소스 코드의 Log.d 함수에 입력했던 태그 ``‘BasicSyntax’``를 로그 영역 상단에 있는 돋보기 표시의 검색창에 입력하면 해당 로그만 볼 수 있습니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-50.png){: style="box-shadow: 0 0 5px #777"}
 - ``로그캣(Logcat)`` : 출력되는 로그를 모아서 보는 도구입니다.
 
@@ -79,11 +79,11 @@ import android.util.Log
 
 ## 2.1 변수 var
 ### 첫째. 변수 선언과 동시에 값 넣기
-```java
+```kotlin
 var myName = "홍길동"
 ```
 ### 둘째. 값으로 초기화하지 않고 선언만 하기 사용하기
-```java
+```kotlin
 var myAge: Int
 myAge = 27
 ```
@@ -106,14 +106,14 @@ myAge = 27
 
 ### Double
 소수점이 있는 값을 저장할 때 사용합니다.
-```java
+```kotlin
 var doubleValue: Double
 doubleValue = 3.141592
 ```
 
 ### Float
 Double과 동일한 용도이지만 더 작은 밤위의 숫자를 저장할 때 사용합니다. 안드로이드 스튜디오는 Double과 구분하기 위해 Float의 경우 숫자 끝에 ‘F’를 붙여줍니다.
-```java
+```kotlin
 var floatValue: Float
 floatValue = 3.141592F
 ```
@@ -121,49 +121,49 @@ floatValue = 3.141592F
 ### Int
 소수점이 없는 정숫값을 저장할 때 사용합니다.
 다음 처럼 가독성을 높이기 위해 언더바(_)로 자릿수를 구분해 줄 수 있습니다.
-```java
+```kotlin
 var intValue: Int
 intValue = 2_147_483_647
 ```
 
 ### Long
 Int보다 큰 범위의 정수를 저장할 수 있습니다. Int와 구분하기 위해 숫자의 끝에 ‘L’를 붙여줍니다.
-```java
+```kotlin
 var longValue: Long
 longValue = 2147483647L
 ```
 
 ### Short와 Byte
 역시 정숫값을 저장할 때 사용하는데 입력할 수 있는 값의 크기가 Int보다 작습니다.
-```java
+```kotlin
 var shortValue: Short = 32_767
 var byteValue: Byte = 127
 ```
 
 ### String
 여러 개의 문자를 저장할 수 있습니다.
-```java
+```kotlin
 var stringValue: String = "ABCDEF"
 ```
 
 ### Boolean
-```java
+```kotlin
 var boolValue = true
 ```
 
 BasicSyntax 프로젝트 수정 타입 출력해보기
-```java
+```kotlin
 package kr.co.hanbit.basicsyntax
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var myName = "홍길동"
         var myAge: Int
         myAge = 27
@@ -180,7 +180,7 @@ val로 정의된 변수는 값을 변경할 수 없습니다.
 
 ## 2.4 상수 const
 상수는 주로 기준이 되는 변하지 않는 값을 입력해 둘 때 사용하며, 읽기 전용 변수인 val앞에 const키워드를 붙여 만듭니다.
-```java
+```kotlin
 const val PI = 3.141592
 ```
 val과 같이 읽기 전용인 것은 동일하지만, 컴파일 시에 값이 결정되고 때문에 ``Int``, ``Long``과 같은 기본형과 문자열인 ``String``만 입력할 수 있습니다.
@@ -191,18 +191,18 @@ val과 같이 읽기 전용인 것은 동일하지만, 컴파일 시에 값이 �
 ## 3.1 조건문 if
 
 ### if ~ else 문 사용하기
-```java
+```kotlin
 package kr.co.hanbit.controlflow1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var ball = 4
         if (ball > 3) {
             // ball이 3보다 크면 여기 블록의 코드가 실행됩니다.
@@ -216,22 +216,22 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### if ~ else if ~ else 문 사용하기
-```java
+```kotlin
 package kr.co.hanbit.controlflow2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var a = 1
         var b = 2
         var c = 3
-　
+
         // 1. if 문 두번 사용하기
         if (a < b) {
             Log.d("ControlFlow", "1: a는 b보다 작습니다.")
@@ -239,7 +239,7 @@ class MainActivity : AppCompatActivity() {
         if (a < c) {
             Log.d("ControlFlow", "1: a는 c보다 작습니다.")
         }
-　
+
         // 2. else if 문 사용하기
         if (a < b) {
             Log.d("ControlFlow", "2: a는 b보다 작습니다.")
@@ -252,18 +252,18 @@ class MainActivity : AppCompatActivity() {
 
 ## 3.2 조건문 When
 ### 일반적인 형태의 when 사용하기
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var now = 10
         when (now) {
             8 -> {
@@ -283,18 +283,18 @@ class MainActivity : AppCompatActivity() {
 
 ### 콤마로 구분해서 사용하기
 특정 값을 비교하는데 결과 처리가 동일하다면 콤마(,)로 구분해서 한 번에 비교할 수 있습니다.
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var now = 9
         when (now) {
             8, 9 -> {
@@ -311,18 +311,18 @@ class MainActivity : AppCompatActivity() {
 
 ### 범위 값을 비교하기
 in을 사용해서 범위 값을 비교할 수도 있습니다. if문의 비교 연산자 중 ``<=``, ``>=``과 같은 기능을 구현할 수 있습니다.
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var ageOfMichael = 19
         when (ageOfMichael) {
             in 10..19 -> {
@@ -341,18 +341,18 @@ class MainActivity : AppCompatActivity() {
 
 ### 파라미터 없는 when 사용하기
 when 다음에 오는 괄호를 생략하고 마치 if문 처럼 사용할 수도 있습니다.
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         var currentTime = 6
         when {
             currentTime == 5 -> {
@@ -374,7 +374,7 @@ class MainActivity : AppCompatActivity() {
 
 ## 4.1 배열
 여러 개의 값을 담을 수 있는 대표적인 자료현인 배열<sup>Array</sup>은 값을 담기 전에 먼저 배열 공간의 개수를 할당하거나 초기화 시에 데이터를 저장해두면 데이터의 개수만큼 배열의 크기가 결정됩니다.
-```java
+```kotlin
 var students = IntArray(10)
 var longArray = LongArray(10)
 var charArray = CharArray(10)
@@ -385,45 +385,45 @@ var doubleArray = DoubleeArray(10)
 ### 문자 배열에 빈 공간 할당하기
 String은 기본 타입이 아니기 때문에 StringArray는 없지만 다음과 같이 사용할 수 있습니다.
 괄호 안의 ``첫 번째 숫자인 10만 변경해서 사용하면 그 숫자만큼 빈 문자열로 된 배열 공간을 할당``합니다.
-```java
+```kotlin
 var stringArray = Array(10, {item->""})
 ```
 
 ### 값으로 배열 공간 할당하기
 arrayOf함수를 사용해서 String값을 직접 할당할 수도 있습니다.
-```java
+```kotlin
 var dayArray = arrayOf("MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN")
 ```
 
 ### 배열에 값 입력하기
 1. 배열을 선언한 변수명 옆에 대괄호 ([])를 사용하고, 대괄호 안에 값을 저장할 위치의 인덱스 번호를 작성합니다.
-```java
-students[9] = 99
-```
+    ```kotlin
+    students[9] = 99
+    ```
 1. set함수를 사용할 수 있습니다
-```java
-students.set(8, 98)
-```
+    ```kotlin
+    students.set(8, 98)
+    ```
 
 ### 배열에 있는 값 꺼내기
 값을 입력할 때 같은 방식으로 인덱스로 값을 가져올 수 있습니다. 저장할 때와 마찬가지로 대괄호 안에 인덱스를 입력해서 가져올 수 있으며 꺼너낸 배열의 함수는 get() 입니다.
-```java
+```kotlin
 var student = students[9]
 var student = students.get(8)
 ```
 
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 기본 타입 배열 선언하기 - 각 기본 타입별로 10개의 빈 공간이 할당됩니다.
         var students = IntArray(10)
         var longArray = LongArray(10)
@@ -433,12 +433,12 @@ class MainActivity : AppCompatActivity() {
         // arrayOf 함수를 사용하면 선언과 동시에 값을 입력할 수 있습니다.
         var intArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
         // intArray 변수에는 1부터 10까지의 값이 각각의 배열 공간에 저장되어 있습니다.
-　
+
         // 2. 문자열 타입 배열 선언하기
         var stringArray = Array(10, {item -> ""})
         // arrayOf 함수로 값을 직접 입력해서 배열을 생성할 수 있습니다.
         var dayArray = arrayOf("MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN")
-　
+
         // 3. 앞에서 선언한 students 변수에 값 넣기
         // 가. 대괄호를 사용하는 방법
         students[0] = 90
@@ -452,11 +452,11 @@ class MainActivity : AppCompatActivity() {
         students.set(7, 97)
         students.set(8, 93)
         students.set(9, 99)
-　
+
         // 4. 값 변경해보기
         intArray[6] = 137 // 6번 인덱스인 일곱 번째 값 7이 137로 변경됩니다.
         intArray.set(9, 200) // 9번 인덱스인 열 번째 값 99가 200으로 변경됩니다.
-　
+
         // 5. 배열 값 사용하기
         var seventhValue = intArray[6]
         Log.d("Array", "일곱 번째 intArray의 값은 ${seventhValue}입니다.")
@@ -482,35 +482,35 @@ class MainActivity : AppCompatActivity() {
 ### ‘List’
 #### ‘List’ 생성하기
 리스트 자료형 앞에 뮤터블<sup>Mutable</sup>이라는 접두어가 붙습니다.
-```java
+```kotlin
 var mutableList = mutableListOf("MON", "TUE", "WED")
 ```
 
 #### ‘List’에 값 추가히기: add
-```java
+```kotlin
 mutableList.add("TUE")
 ```
 add 함수를 사용하면 입력될 위치인 인덱스를 따로 지정해주지 않아도 입력되는 순서대로 인덱스가 저장됩니다.
 
 #### ‘List’에 입력된 값 사용하기: get
-```java
+```kotlin
 var variable = mutableList.get(1)
 ```
 
 #### ‘List’값 수정하기: set
-```java
+```kotlin
 mutableList.set(1, "수정할 값")
 ```
 
 #### ‘List’에 입력된 값 제거하기: removeAt
-```java
+```kotlin
 mutableList.removeAt(1)
 ```
 
 #### ‘Empty List’ 사용하기
 아무것도 없는 빈 리스트를 생성하면 앞으로 입력되는 값의 데이터 타입을 알 수 없기 때문에 값의 타입을 추론할 수 없습니다.
 그래서 빈 컬렉션의 경우 앞에서처럼 ``‘데이터 타입Of’``만으로는 생성되지 않고 데이터 타입을 직접적으로 알려주는 방법을 사용해야 합니다.
-```java
+```kotlin
 // 생성
 var stringList = mutableListOf<String>() // 문자열로 된 빈 컬렉션을 생성합니다.
 
@@ -530,18 +530,18 @@ stringList.removeat(1) // 두 번째 값이 삭제됩니다.
 
 #### 컬렉션 개수 가져오기: size
 size 프로퍼티를 사용하면 컬렉션의 개수를 가져올 수 있습니다.
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 값으로 컬렉션 생성하기
         var mutableList = mutableListOf("MON", "TUE", "WED")
         // 값을 추가합니다.
@@ -549,7 +549,7 @@ class MainActivity : AppCompatActivity() {
         // 값을 꺼냅니다.
         Log.d("Collection", "mutableList의 첫 번째 값은 ${mutableList.get(0)} 입니다.")
         Log.d("Collection", "mutableList의 두 번째 값은 ${mutableList.get(1)} 입니다.")
-　
+
         // 2. 빈 컬렉션 생성하기
         var stringList = mutableListOf<String>() // 문자열로 된 빈 컬렉션을 생성합니다.
         // 값을 추가합니다.
@@ -579,12 +579,12 @@ stringList에는 2개의 값이 있습니다.
 ### ‘Set’
 ``Set``은 중복을 허용하지 않는 ``List``라고 할 수 있습니다.
 List와 유사한 구조이지만 인덱스로 조회할 수 없고, get함수도 지원하지 않습니다.
-```java
+```kotlin
 var set = mutableSetOf<String>()
 ```
 
 #### ‘Empty Set’ 으로 초기화하고 값 입력하기
-```java
+```kotlin
 var set = mutableSetOf<String>()
 set.add("JAN")
 set.add("FEB")
@@ -593,37 +593,37 @@ set.add("MAR")
 
 #### ‘Set’ 사용하기
 ``Set``은 인덱스로 조회하는 함수가 없기 때문에 특정 위치의 값을 직접 사용할 수 없습니다.
-```java
+```kotlin
 Log.d("Collection", "Set 전체 출력 = ${set}")
 ```
 
 #### ‘Set’ 삭제하기
 ``Set``은 값이 중복되지 않기 때문에 값으로 직접 조회해서 삭제할 수 있습니다.
-```java
+```kotlin
 set.remove("FEB")
 ```
 
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 셋 생성하기 값 추가하기
         var set = mutableSetOf<String>()
         set.add("JAN")
         set.add("FEB")
         set.add("MAR")
-　
+
         // 2. 전체 데이터 출력해보기
         Log.d("Collection", "Set 전체 출력 = ${set}")
-　
+
         // 3. 특정 값 삭제하기
         set.remove("FEB")
         Log.d("Collection", "Set 전체 출력 = ${set}")
@@ -640,13 +640,13 @@ Set 전체 출력 = [JAN, MAR]
 
 #### ‘Map’ 생성하기
 ``Map``은 ``Key``와 ``value`` 형태의 컬렉션입니다.
-```java
+```kotlin
 var mpa = mutableMapOf<String, String>()
 ```
 
 #### ‘Empty Map’ 으로 생성하고 값 추가히기
 값을 추가하기 위해 제공되는 ``map``에서 제공되는 ``put``함수에 키와 값을 입력하면 됩니다.
-```java
+```kotlin
 var map = mutableMapOf<String, String>()
 map.put("key1", "value1")
 map.put("key2", "value2")
@@ -655,33 +655,33 @@ map.put("key3", "value3")
 
 #### ‘Map’ 사용하기
 ``get`` 함수에 ``key``를 직접 입력해서 값을 꺼낼 수 있습니다.
-```java
+```kotlin
 Log.d("CollectionMap", "map에 입력된 key1의 값은 ${map.get("key1")}입니다.")
 ```
 
 #### ‘Map’ 수정하기
 ``put``함수를 사용할 때 동일한 키를 가진 값이 있으면 키는 유지된 채로 그 값만 수정됩니다.
-```java
+```kotlin
 map.put("key2", "수정")
 ```
 #### ‘Map’ 삭제하기
 ``remove``함수에 key를 입력해서 value을 삭제할 수 있습니다. 리스트와는 다르게 인덱스에 해당하는 key의 값이 변경되지 않고 그대로 유지됩니다.
-```java
+```kotlin
 map.remove("key2")
 ```
 
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 맵 생성하기
         var map = mutableMapOf<String, String>()
         // 2. 값 넣기
@@ -709,11 +709,11 @@ class MainActivity : AppCompatActivity() {
 
 ## 4.3 Imutable Collection
 코틀린은 일반 배열처럼 크기를 변경할 수 없으면서 값 또한 변경할 수 없는 Immutable Collection을 지원합니다.
-```java
+```kotlin
 val IMMUTABLE_LIST = listOf("JAN", "FEB", "MAR") // 생성
 Log.d("Collection", "리스트의 두 번째 값은 ${IMMUTABLE_LIST.get(1)}입니다.") // 사용
 ```
-```java
+```kotlin
 val DAT_LIST = listOf("월", "화", "수", "목", "금", "토", "일")
 ```
 
@@ -721,14 +721,14 @@ val DAT_LIST = listOf("월", "화", "수", "목", "금", "토", "일")
 
 ## 5.1 for 반복문
 ### for in .. : 일반적인 형태의 for 반복문
-```java
+```kotlin
 for (index in 1..10) {
     Log.d("For", "현재 숫자는 ${index}")
 }
 ```
 
 ### until: 마지막 숫자 제외하기
-```java
+```kotlin
 var array = arrayOf("JAN", "FEB", "MAR", "APR", "MAY" "JUN")
 for (index in 0 until array.size) {
     Log.d("For", "현재 월은 ${array.get(index)}입니다.")
@@ -736,14 +736,14 @@ for (index in 0 until array.size) {
 ```
 
 ### step: 건너뛰기
-```java
+```kotlin
 for (index in 0..100 step 3) {
     Log.d("For", "현재 숫자는 ${index}")
 }
 ```
 
 ### downTo: 감소시키기
-```java
+```kotlin
 for (index in 10 downTo 0) {
     Log.d("For", "현재 숫자는 ${index}")
 }
@@ -751,24 +751,24 @@ for (index in 10 downTo 0) {
 
 ### 배열, 컬렉션에 들어 있는 엘리먼트 반복하기
 배열이나 컬렉션을 엘리먼트 개수만큼 반복하면서 사용할 수 있습니다.
-```java
+```kotlin
 var arrayMonth = arrayOf("JAN", "FEB", "MAR", "APR", "MAY", "JUN")
 for (month in arrayMonth) {
     Log.d("for", "현재 월은 ${month}입니다.")
 }
 ```
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 일반적인 반복문 사용으로 열 번 반복하기
         for (index in 1..10) {
             Log.d("For", "현재 숫자는 ${index}")
@@ -839,7 +839,7 @@ class MainActivity : AppCompatActivity() {
 
 ## 5.2 while 반복문
 ### 일반적인 while 반복문
-```java
+```kotlin
 var current = 1
 val until = 12
 while (current < until) {
@@ -849,7 +849,7 @@ while (current < until) {
 ```
 ### do와 함께 사용하기
 do와 함께 사용하면 while 문의 조건식과 관계없이 do 블록 안의 코드를 한 번 실행합니다.
-```java
+```kotlin
 var game = 1
 val match = 6
 do {
@@ -860,7 +860,7 @@ do {
 
 ## 5.3 반복문 제어하기
 ### break: 반복문 탈출하기
-```java
+```kotlin
 for (index in 1..10) {
     Log.d("break", "현재 index는 ${index}입니다.")
     if (index > 5) {
@@ -872,7 +872,7 @@ for (index in 1..10) {
 ### continue: 다음 반복문으로
 반복문 내에서 continue를 만나면 continue다음 코드는 실행하지 않고 반복문이 처음으로 돌아갑니다.
 다음의 예시 코드를 보면 except가 3보다 크고 8보다 작으면 continue명령으로 로그를 찍지 않고 for문의 처음으로 돌아가기 때문에 4, 5, 6, 7은 출력되지 않습니다.
-```java
+```kotlin
 for (except in 1..10) {
     if (except > 3 && except < 8) {
         continue
@@ -881,18 +881,18 @@ for (except in 1..10) {
 }
 ```
 
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 일반적인 while 사용하기
         var current = 1
         val until = 12
@@ -979,7 +979,7 @@ continue > 현재 index는 10입니다.
 ## 6.1 함수의 정의
 
 ### 반환값과 입력값이 있는 함수의 정의
-```java
+```kotlin
 fun square(x: Int): Int {
     return x * x;
 }
@@ -988,7 +988,7 @@ square 함수가 호출되면 입력값을 제곱해서 호출한 측으로 반�
 
 ### 반환값이 없는 함수의 정의
 다음은 반환값 없이 입력값을 받아서 Log로 출력하는 함수 printSum()을 정의했습니다.
-```java
+```kotlin
 fun printSum(x: Int, y: Int) {
     Log.d("fun", "x + y = ${x + y}")
 }
@@ -996,7 +996,7 @@ fun printSum(x: Int, y: Int) {
 
 ### 입력값 없이 반환값만 있는 함수의 정의
 getPi 함수는 호출한 측으로 3.14 를 반환하고 실행이 종료됩니다.
-```java
+```kotlin
 fun getPi(): Double {
     return 3.14
 }
@@ -1005,18 +1005,18 @@ fun getPi(): Double {
 ## 6.2 함수의 사용
 
 ### 반환값과 입력값이 있는 함수의 호출
-```java
+```kotlin
 var squareResult = square(30)
 Log.d("fun", "30의 제곱은 ${squareResult}입니다.")
 ```
 
 ### 반환값이 없는 함수의 호출
-```java
+```kotlin
 printSum(3, 5)
 ```
 
 ### 입력값이 없는 함수의 호출
-```java
+```kotlin
 val PI = getPi()
 Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
 ```
@@ -1025,7 +1025,7 @@ Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
 ``코틀린에서 함수 파라미터는 모두 읽기 전용 키워드 val이 생략된 형태입니다.``
 
 ### 파라미터의 기본값 정의와 호출
-```java
+```kotlin
 fun newFunction(name: String, age: Int = 20, weight: Double = 65.5) {
     Log.d("fun", "name의 값은 ${name}입니다.")
     Log.d("fun", "age의 값은 ${age}입니다.")
@@ -1034,7 +1034,7 @@ fun newFunction(name: String, age: Int = 20, weight: Double = 65.5) {
 ```
 
 ### 파라미터 이름으로 값을 입력하기
-```java
+```kotlin
 newFunction("Michael", weight = 67.5)
 ```
 ```text
@@ -1043,32 +1043,32 @@ age의 값은 29입니다.
 weight의 값은 67.5입니다.
 ```
 
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 반환값이 있는 함수 square 사용하기
         var squareResult = square(30)
         Log.d("fun", "30의 제곱은 ${squareResult}입니다.")
-　
+
         // 2. 반환값이 없는 함수는 그냥 실행한다.
         printSum(3, 5)
-　
+
         // 3. 입력값이 없는 함수 사용하기
         val PI = getPi()
         Log.d("fun", "지름이 10인 원의 둘레는 ${10 * PI}입니다.")
-　
+
         // 4. 기본값이 있는 함수 사용하기
         newFunction("Hello")
-　
+
         // 4-1. 파라미터 이름을 직접 지정하기
         newFunction("michael", weight = 67.5)
     }
@@ -1107,7 +1107,7 @@ weight의 값은 67.5입니다.
 # 7. 클래스와 설계
 클래스는 단지 ``변수``와 ``함수``의 모음입니다.
 ## 7.1 클래스의 기본 구조
-```java
+```kotlin
 class String {
     var length: Int
     fun plus(other: Any) {
@@ -1123,7 +1123,7 @@ class String {
 클래스를 만들기 위해서는 먼저 클래스의 이름을 정하고 이름 앞에 class 키워드를 붙여서 만들 수 있습니다.
 클래스 이름 다음에는 클래스의 범위를 지정하는 중괄호 ({})가 있어야 합니다. 
 이 중괄호를 스코프<sup>Scope</sup>라고 하는데, 클래스에서 사용했기 때문에 클래스 스코프라고 합니다.
-```java
+```kotlin
 class 클래스 이름 {
     // 클래스 스코프 (class scope)
 }
@@ -1134,14 +1134,14 @@ class 클래스 이름 {
 ### 프라이머리 생성자
 클래스도 마찬가지로 클래스를 사용한다는 것은 곧 클래스라는 이름으로 묶여 있는 코드를 실행하는 것이기 때문에 함수 형태로 제공되는 생성자를 호출해야지만 클래스가 실행됩니다.
 constructor키워드를 사용해서 정의하는데 조건에 따라 생략할 수 있습니다.
-```java
+```kotlin
 class Person constructor(value: String) {
     // 코드
 }
 ```
 
 생성자에 접근 제한자나 다른 옵션이 없다면 constructor 키워드를 생략할 수 있습니다.
-```java
+```kotlin
 class Person(value: String) {
     // 코드
 }
@@ -1149,7 +1149,7 @@ class Person(value: String) {
 
 프라이머리 생성자는 마치 헤더처럼 class 키워드와 같은 위치에 작성됩니다.
 클래스의 생성자가 호출되면 init 블록의 코드가 실행되고, init 블록에서는 생성자를 통해 넘어온 파라미터에 접근할 수 있습니다.
-```java
+```kotlin
 class Person(value: String) {
     init {
         Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.")
@@ -1158,7 +1158,7 @@ class Person(value: String) {
 ```
 하지만 init 초기화 작업이 필요하지 않다면 init 블록을 작성하지 않아도 됩니다. 
 대신 파라미터로 전달된 값을 사용하기 위해서는 파라미터 앞에 변수 키워드인 val을 붙여주면 클래스 스코프 전체에서 해당 파라미터를 사용할 수 있습니다.
-```java
+```kotlin
 class Person(val value: String) {
     fun process() {
         print(value)
@@ -1169,7 +1169,7 @@ class Person(val value: String) {
 
 ### 세컨더리 생성자
 세컨더리<sup>Secondary</sup> 생성자는 constructor키워드를 마치 함수처럼 클래스 스코프 안에 직접 작성할 수 있습니다.
-```java
+```kotlin
 class Person {
     constructor (value: String) {
         Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.")
@@ -1178,7 +1178,7 @@ class Person {
 ```
 
 세컨더리 생성자는 파라미터의 개수, 또는 파라미터의 타입이 다르다면 여러 개를 중복해서 만들 수 있습니다.
-```java
+```kotlin
 class Kotlin {
     constructor (value: String) {
         Log.d("class", "생성자로부터 전달받은 값은 ${value}입니다.)
@@ -1193,7 +1193,7 @@ class Kotlin {
 ```
 ### Default 생성자
 생성자는 작성하지 않을 경우 파라미터가 없는 프라이머리 생성자가 하나 있는 것과 동일합니다.
-```java
+```kotlin
 class Student { // 생성자를 작성하지 않아도 기본 생성자가 동작합니다.
     init {
         // 기본 생성자가 없더라도 초기화가 필요하면 여기에 코드를 작성합니다.
@@ -1204,42 +1204,42 @@ class Student { // 생성자를 작성하지 않아도 기본 생성자가 동�
 ## 7.3 클래스의 사용
 아무런 파리머터 없이 클래스명에 괄호를 붙여주면 생성자가 호출되면서 ``init``블록 안의 코드가 자동으로 실행됩니다.
 세컨더리 생성자의 경우 ``init``블록이 먼저 실행되고, constructor 블록 안의 코드가 실행됩니다.
-```java
+```kotlin
 var kotlin = Kotlin()
 var one = Person("value")
 var two = Person(1004)
 ```
 
 1. 프로퍼티와 메서드를 사용하기 위해서 먼저 다음과 같이 프로퍼티 1개와 메서드 1개를 갖는 클래스를 만듭니다.
-```java
-class Pig {
-    var name: String = "Pinky"
-    fun printName() {
-        Log.d("class", "Pig 의 이름은 ${name}입니다.")
+    ```kotlin
+    class Pig {
+        var name: String = "Pinky"
+        fun printName() {
+            Log.d("class", "Pig 의 이름은 ${name}입니다.")
+        }
     }
-}
-```
+    ```
 
 1. 위에서 정의한 클래스를 생성자로 인스턴스화해서 변수에 담습니다.
-```java
-var pig = Pig()
-```
+    ```kotlin
+    var pig = Pig()
+    ```
 
 1. 인스턴스가 담긴 변수명 다음에 (.)를 붙여서 프로퍼티와 메서드를 사용합니다.
-```java
-pig.name = "Pooh"
-pig.printName()
-```
+    ```kotlin
+    pig.name = "Pooh"
+    pig.printName()
+    ```
 
 1. 실행결과
-```text
-Pig의 이름은 Pooh입니다.
-```
+    ```text
+    Pig의 이름은 Pooh입니다.
+    ```
 
 ## 7.4 오브젝트
 오브젝트(Object)를 사용하면 클래스를 생성자로 인스턴스화 하지 않아도 블록 안의 프로퍼티와 메서드를 호출해서 사용할 수 있습니다.
 자바를 알고 있다면 static과 같은 역할입니다.
-```java
+```kotlin
 object Pig {
     var name: String = "Pinky"
     fun printName() {
@@ -1248,14 +1248,14 @@ object Pig {
 }
 ```
 object코드 블록 안의 프로퍼티와 메서드는 클래스명에 도트 연산자를 붙여서 생성자 없이 직접 호출할 수 있습니다.
-```java
+```kotlin
 Pig.name = "Mikey"
 Pig.printName()
 ```
 
 ### 컴패니언 오브젝트 (companion object)
 companion object는 일반 클래스에 object 기능을 추가하기 위해서 사용합니다.
-```java
+```kotlin
 class Pig {
     companion object {
         var name: String = "None"
@@ -1269,12 +1269,12 @@ class Pig {
 }
 ```
 그리고 class로 선언했기 때문에 일반 함수인 walk()는 생성자인 Pig()를 호출한 다음 변수에 저장한 후에 사용할 수 있습니다.
-```java
+```kotlin
 // companion object 안의 코드 사용하기
 Pig.name = "Linda"
 Pig.printName()
 ```
-```java
+```kotlin
 // companion object 밖의 코드 사용하기
 val cutePig = Pig()
 cutePig.walk()
@@ -1282,24 +1282,24 @@ cutePig.walk()
 
 ## 7.5 데이터 클래스
 코틀린은 간단한 값의 저장 용도로 데이터 클래스<sup>data class</sup>를 제공합니다.
-```java
+```kotlin
 // 정의 - 주로 코드 블록 (클래스 스코프)를 사용하지 않고 간단하게 사용합니다.
 data class UserData(val name: String , val age: Int)
 // 생성 - 일반 class의 생성자 함수를 호출하는 것과 동일합니다.
 var userData = UserData("Michael", 21)
-　
+
 // name은 val로 선언되었기 때문에 변경 불가능합니다.
 userData.name = "Sindy" (☓)
 userData.age = 18 (◯)
 ```
 ### toString() 메서드와 copy() 메서드
 일반 클래스에서 toString() 메서드를 호출하면 인스턴스의 주소 값을 반환하지만, 데이터 클래스는 값을 반환하기 때문에 실제 값을 모니터링할 때 좋습니다.
-```java
+```kotlin
 Log.d("DataClass", "DataUser는 ${dataUser.toString()}")
 ```
 
 copy() 메서드로 간단하게 값을 복사할 수 있습니다.
-```java
+```kotlin
 var newData = datUser.copy()
 ```
 
@@ -1312,14 +1312,14 @@ var newData = datUser.copy()
 안드로이드에는 Activity라는 클래스가 미리 만들어져 있으며, 이 Activity ``클래스 내부``에는 ``글자를 쓰는 기능``,  ``화면에 새로운 창을 보여주는 기능``이 미리 정의되어 있습니다.
 상속이 있기에 이런 기능을 직접 구현하지 않고 Activity 클래스를 상속받아 약간의 코드만 추가하면 앱에 필요한 기능을 추가할 수 있습니다.
 
-```java
+```kotlin
 class Activity {
     fun drawText()
     fun draw()
     fun showWindow()
 }
 ```
-```java
+```kotlin
 class MainActivity: Activity {
     fun onCreate() {
         draw("새 그림")
@@ -1332,7 +1332,7 @@ class MainActivity: Activity {
 
 ### 생성자 파라미터가 있는 클래스의 상속
 상속될 부모 클래스의 생성자에 파라미터가 있다면 자식 클래스의 생성자를 통해 값을 전달할 수 있습니다.
-```java
+```kotlin
 class CustomView: View {
     constructor(ctx: Context): super(ctx)
     constructor(ctx: Context, attrs: AttributeSet): super(ctx, attrs)
@@ -1341,7 +1341,7 @@ class CustomView: View {
 
 ### 부모 클래스의 프로퍼티와 메서드 사용하기
 부모 클래스에서 정의된 프로퍼티와 메서드를 내 것처럼 사용할 수 있습니다.
-```java
+```kotlin
 open class Parent {
     var hello: String = "안녕하세요"
     fun sayHello() {
@@ -1358,7 +1358,7 @@ open class Parent {
 
 ### 메서드 오버라이드
 상속할 메서드 앞에 open 키워드를 붙이면 오버라이드할 수 있지만, open 키워드가 없는 메서드는 오버라이드할 수 없습니다.
-```java
+```kotlin
 open class BaseClass {
     open fun opened() {
 
@@ -1368,7 +1368,7 @@ open class BaseClass {
     }
 }
 ```
-```java
+```kotlin
 class ChildClass: BaseClass() {
     override fun opened() {
 
@@ -1378,7 +1378,7 @@ class ChildClass: BaseClass() {
 
 ### 프로퍼티 오버라이드
 메서드 오버라이드처럼 프로퍼티 역시 open으로 열려 있어야만 오버라이드를 할 수 있습니다.
-```java
+```kotlin
 open class BaseClass2 {
     open var opened: String = "I am"
 }
@@ -1391,7 +1391,7 @@ class ChildClass2: BaseClass2() {
 코틀린은 클래스, 메서드, 프로퍼티에 대해 익스텐션<sup>Extensions</sup>를 지원합니다.
 이미 만들어져 있는 클래스에 다음과 같은 형태로 메서드를 추가할 수 있습니다.
 상속이 미리 만들어져 있는 클래스를 가져다 쓰는 개념이라면 익스텐션은 미리 만들어져 있는 클래스에 메서드를 넣는 개념입니다. 
-```java
+```kotlin
 class MyClass {
     fun say()
     fun walk()
@@ -1401,21 +1401,21 @@ MyClass.sleep() {
     // 실행코드
 }
 ```
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         testStringExtension()
     }
-　
+
     // String 익스텐션 테스트 하기
     fun testStringExtension() {
         var original = "Hello"
@@ -1433,25 +1433,25 @@ added를 더한 값은 Hello Guys~입니다.
 ```
 
 이어서 클래스의 상속과 확장을 코드 하나로 살펴보겠습니다.
-```java
+```kotlin
 package kr.co.hanbit.controlflow4
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 1. 부모 클래스 직접 호출하기
         var parent = Parent()
         parent.sayHello()
         // 2. 자식 클래스 호출해서 사용하기
         var child = Child()
         child.myHello()
-　
+
         testStringExtension()
     }
     // String 익스텐션을테스트 합니다.
@@ -1478,15 +1478,15 @@ class Child: Parent() {
 // 메서드 오버라이드 연습
 open class BaseClass {
     open fun opened() {
-　
+
     }
     fun notOpened() {
-　
+
     }
 }
 class ChildClass: BaseClass() {
     override fun opened() {
-　
+
     }
     //override fun notOpened() {}
 }
@@ -1513,7 +1513,7 @@ added를 더한 값은 Hello Guys~입니다.
 프로그래밍을 하기 전 개념 설계를 하는 단계에서 클래스의 이름과 클래스 안에 있음 직한 기능을 유추해서 메서들 이름을 먼저 나열합니다.
 이때 명확한 코드는 설계 단계에서 메서드 블록 안에 직접 코드를 작성하는데, 그렇지 않은 경우에는 구현 단계에서 코드를 작성하도록 메서드의 이름만 작성합니다.
 이것을 추상화<sup>Abstract</sup>라고 합니다.
-```java
+```kotlin
 abstract class Animal {
     fun walk() {
         Log.d("abstract", "걷습니다")
@@ -1521,7 +1521,7 @@ abstract class Animal {
 }
 ```
 walk 는 명확하게 걸어가는 행위지만 move는 어떤 동물이냐에 따라서 달라질 수 있습니다.
-```java
+```kotlin
 class Bird: Animal() {
     override fun move() {
         Log.d("abstract", "날아서 이동합니다.")
@@ -1534,7 +1534,7 @@ class Bird: Animal() {
 인터페이스는 상속 관계의 설계보다는 외부 모듈에서 내가 만든 모듈을 사용할 수 있도록 메서드의 이름을 나열해둔 일종의 명세서로 제공됩니다.
 
 ### 인터페이스 만들기
-```java
+```kotlin
 interface InterfaceKotlin {
     var variable: String
     fun get()
@@ -1544,7 +1544,7 @@ interface InterfaceKotlin {
 
 ### 클래스에서 구현하기
 인터페이스를 클래스에서 구현할 때는 상속과는 다르게 생성자를 호출하지 않고 인터페이스 이름만 지정해주면 됩니다.
-```java
+```kotlin
 class KotlinImpl: InterfaceKotlin {
     override var variable: String = "init value"
     override fun get() {
@@ -1557,7 +1557,7 @@ class KotlinImpl: InterfaceKotlin {
 }
 ```
 인터페이스를 클래스의 상속 형태가 아닌 소드 코드에서 직접 구현할 때도 있는데, object 키워드를 사용해서 구현해야 합니다.
-```java
+```kotlin
 var kotlinImpl = object: InterfaceKotlin {
     override var variable: String = "init"
     override fun get() {
@@ -1583,7 +1583,7 @@ internal 접근 제한자로 모듈 간에 접근을 제한할 수 있습니다.
 
 #### 접근 제한자의 적용
 접근 제한자를 붙이면 해당 클래스, 맴버 프로퍼티 또는 메서드에 대한 사용이 제한됩니다.
-```java
+```kotlin
 open class Parent {
     private val privateVal = 1
     protected open val protectedVal = 2
@@ -1592,7 +1592,7 @@ open class Parent {
 }
 ```
 자식 클래스에서 부모 클래스를 상속받고 테스트 합니다.
-```java
+```kotlin
 class Child: Parent() {
     fun callVariables() {
         // privateVal은 호출이 안됩니다.
@@ -1607,7 +1607,7 @@ class Child: Parent() {
 ```
 상속 관계가 아닌 외부 클래스에서 Parent 클래스를 생성하고 사용해봅니다. 
 상속 관계가 아니기 때문에 public 과 internal에만 접근할 수 있습니다.
-```java
+```kotlin
 class Stranger {
     fun callVariables() {
         val parent = Parent()
@@ -1619,7 +1619,7 @@ class Stranger {
 ### 제네릭
 제네릭<sup>Generics</sup>은 입력되는 값의 타입을 자유롭게 사용하기 위한 설계 도구입니다.
 다음은 자주 사용되는 MutableList클래스의 원본 코드를이해하기 쉽게 변형한 코드입니다.
-```java
+```kotlin
 public interface MutableList<E> {
     var list = Array<E>
     ...
@@ -1629,10 +1629,10 @@ public interface MutableList<E> {
 클래스명 옆에 ``<E>``라고 되어 있는 부분에 String과 같은 특정 타입이 지정되면 클래스 내부에 선언된 모든 ``E``는 ``String`` 타입으로 지정됩니다.
 결과적으로 ``var list: Array<E>``가 ``var list: Array<String>``으로 변형되는 것입니다.
 
-```java
+```kotlin
 var list: MutableList<제네릭> = mutableListOf("월", "화", "수")
 ```
-```java
+```kotlin
 fun testGenerics() {
     // String을 제네릭으로 사용했기 때문에 list 변수에는 문자열만 담을 수 있습니다.
     var list: MutableList<String> = mutableListOf()
@@ -1648,22 +1648,22 @@ fun testGenerics() {
 }
 ```
 지금까지 배운 내용을 코드로 살펴보겠습니다.
-```java
+```kotlin
 package kr.co.hanbit.designtool
-　
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-　
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-　
+
         // 접근 제한자 테스트
         var child = Child()
         child.callVariables()
-　
+
         // 부모 클래스 직접 호출해보기
         var parent = Parent()
         Log.d("Visibility", "Parent : 기본 제한자 defaultVal 의 값은 ${parent.defaultVal}")
@@ -1732,17 +1732,17 @@ Parent : internalVal의 값은 3
 null값을 입력하기 위해서는 변수를 선언할 때 타입 뒤에 ? (Nullable, 물음표)를 입력합니다.
 
 ### 변수에 null 허용 설정하기
-```java
+```kotlin
 var nullable: String? // 타입 다음에 물음표를 붙여서 null 값을 입력할 수 있습니다.
 nullable = null
-　
+
 var notNullable: String
 notNullable = null // 일반 변수에는 null을 입력할 수 없습니다.
 ```
 
 ### 함수 파라미터에 null 허용 설정하기
 안드로이드의 onCreate() 메서드의 Bundle 파라미터처럼 함수의 파라미터에도 null 허용 여부를 설정할 수 있습니다.
-```java
+```kotlin
 fun nullParameters(str: String?) {
     if (str != null) {
         var length2 = str.lengths
@@ -1753,7 +1753,7 @@ fun nullParameters(str: String?) {
 
 ### 함수의 리턴 타입에 null 허용 설정하기
 함수의 리턴 타입에도 물음표를 붙여서 null 허용 여부를 설정할 수 있습니다.
-```java
+```kotlin
 fun nullReturn(): String? {
     return null
 }
@@ -1777,7 +1777,7 @@ fun testSafeCall(str: String?): Int? {
 다음 코드에서 Safe Call다음에 호출되는 프로퍼티 뒤에 다시 ``?:`` 을 붙였습니다.
 그리고 0이라는 값을 표시했습니다.
 이렇게 호출하면 str변수가 null일 경우 가장 뒤에 표시한 0을 반환합니다.
-```java
+```kotlin
 fun testElvis(str: String?): Int {
     // length 오른쪽에 ?:을 사용하면 null일 경우 ?:오른쪽 값이 반환됩니다.
     var resultNotNull: Int = str?.length?:0
@@ -1794,7 +1794,7 @@ fun testElvis(str: String?): Int {
 
 ### Nullable로 선언하는 일반적인 방법
 일반적인 선언 방식으로 처음에 null값을 입력해두고, 클래스의 다른 메서드 영역에서 값을 입력합니다.
-```java
+```kotlin
 class Person {
     var name: String? = null
     init {
@@ -1810,7 +1810,7 @@ class Person {
 
 ### lateinit을 사용하는 방법
 lateinit을 사용하면 Safe Call을 쓰지 않을 수 있기 때문에 코드에서 발생할 수 있는 수많은 ``?``를 방지할 수 있습니다.
-```java
+```kotlin
 class Person {
     lateinit var name: String
     init {
@@ -1833,7 +1833,7 @@ lateinit의 특징은 다음 세 가지를 들 수 있습니다.
 ## 9.2 lazy
 lazy는 읽기 전용 변수인 val을 사용하는 지연 초기화입니다.
 lateinit이 입력된 값을 변경할 수 있는 반면, lazy는 입력값을 변경할 수 없습니다.
-```java
+```kotlin
 class Company {
     val person: Person by lazy { Person() }
     init {
@@ -1857,7 +1857,7 @@ lazy는 주의해서 사용해야 합니다.
 
 ### run
 다음 예제에서는 MutableList를 run함수를 이용해서 스코프를 지정한 후 내부에서 size 프로퍼티를 직접 호출하였습니다.
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 list.run {
     var listSize = size
@@ -1868,7 +1868,7 @@ list.run {
 ### let
 함수 영역 안에서 호출한 대상을 it으로 사용할 수 있습니다.
 it을 생략할 수는 없지만 target등 다른 이름으로 바꿀 수 있습니다.
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 list.let {
     // it -> 생략된 형태. it -> 대신에 target -> 등으로 변경 가능합니다.
@@ -1881,13 +1881,13 @@ list.let {
 
 ### this로 사용되는 스코프 함수: run, apply, with
 다음은 apply와 with의 사용 예제입니다. 스코프 함수 안에서 this로 사용되기 때문에 메서드나 프로퍼티를 직접 호출합니다.
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 list.apply {
     val listSize = size
     println("리스트의 길이 apply = $listSize")
 }
-　
+
 with (list) {
     val listSize = size
     println("리스트의 길이 with = $listSize)
@@ -1895,14 +1895,14 @@ with (list) {
 ```
 
 ### it으로 사용되는 스코프 함수: let, also
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 list.let {
     target ->  // it을 target등과 같이 다른 이름으로 변경 가능합니다.
     val listSize = target.size // target으로 변경했기 때문에 맴버 접근은 target.속성입니다.
     println("리스트의 길이 let = $listSize")
 }
-　
+
 list.also {
     val listSize = it.size
     println("리스트의 길이 also = $listSize")
@@ -1914,7 +1914,7 @@ list.also {
 ### 호출 대상인 this 자체를 반환하는 스코프 함수: apply, also
 ``apply``를 사용하면 스코프 함수 안에서 코드가 모두 완료된 후 자기 자신을 되돌려줍니다.
 예제에서 apply 스코프의 마지막 줄에서 count()를 호출했지만 마지막 코드와 상관없이 그냥 MutableList자신을 돌려주기 때문에 Cope, Function에 Apply가 추가된 값이 출력됩니다.
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 
 var afterApply = list.apply {
@@ -1942,7 +1942,7 @@ let, run, with 의 결괏값을 반환하는 경우에는 앞의 2개와는 완�
 ``apply``나 ``also``라면 마지막 코드에 상관없이 ``Scope, Function, Run``이 출력되지만 ``let``은 마지막 코드가 반환되기 때문에 출력값으로 리스트의 개수인 ``3``이 출력됩니다.
 ``run``과 ``with``역시 마지막 코드가 반환됩니다.
 
-```java
+```kotlin
 var list = mutableListOf("Scope", "Function")
 
 var lastCount = list.let {

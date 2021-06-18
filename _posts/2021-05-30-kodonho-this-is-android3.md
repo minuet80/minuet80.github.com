@@ -123,6 +123,318 @@ orientation하위 버전의 안드로이드 스튜디오에서는 필수 속성�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-74.png){: style="box-shadow: 0 0 5px #777"}
 
 
+#### layout_weight속성
+레이아웃 안에 배치되는 위젯의 크기를 비율로 나타낼 수 있는 옵션입니다.
+리니어 레이아웃에 배치되는 위젯은 layout_weight 속성의 기본 설정값이 1입니다.
+따라서 앞의 그림에서 텍스트뷰 3개의 가로 비율은 1:1:1입니다.
+리니어 레이아웃의 orientation 속성이 vertical이면 세로 비율이 1:1:1입니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-74.png){: style="box-shadow: 0 0 5px #777"}
+
+그런데 자세히 보면 각각의 넓이가 1:2:1이 아닌 1:1.5:1 정도로 보입니다.
+이것은 텍스트뷰의 layout_width 속성의 기본값이 wrap_content이기 때문인데 3개의 텍스트뷰를 모두 선택한 상태에서 layout_width의 값을 ‘0dp’로 변경해주면 정확히 1:2:1로 설정됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-75.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-76.png){: style="box-shadow: 0 0 5px #777"}
+
+
+- ``layout_weight``속성값 변경에 따른 정확한 비율 설정 방법
+  - layout_weight속성을 정확하게 해주기 위해서는 layout_width 또는 layout_height 속성값을 ‘0dp’로 입력하고 사용해야 합니다.
+
+#### gravity속성
+레이아웃에 삽입되는 위젯을 gravity속성에서 설정된 방향으로 정렬합니다. 동시에 2개 이상의 방향을 선택할 수 있습니다.
+gravity 하위 속성 중에 center 의 체크박스를 체크하면 ``‘true’``로 변경되며 ``글자가 가운데로 정렬됩니다.``<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-77.png){: style="box-shadow: 0 0 5px #777"}
+
+
+#### layout_gravity속성
+자신이 속한 레이아웃(부모 레이아웃)을 기준으로 자신의 위치를 설정할 때 사용합니다.
+
+#### 스코롤뷰와 함께 사용하기
+리니어 레이아웃과 같은 일반 레이아웃들은 화면 크기 (높이 또는 넓이)를 넘어가는 위젯이 삽입돼도 스크롤이 되지 않습니다.
+이럴 때는 최상위 레이아웃을 스크롤 할 수 있는 요소로 감싸야 합니다. 
+스크롤뷰를 사용하려면 기본 레이아웃 (컨스트레인트 레이아웃)을 스크롤뷰로 변경해서 사용하거나 기본 레이아웃 안에 스크롤뷰를 추가해야 합니다.
+
+1. 시본 레이아웃을 스크롤뷰로 변경하는 방법은 컨스트레인트 레이아웃을 리니어 레이아웃으로 변경하는 방법과 동리합니다. XML 코드를 편집하기 위해 UI편집기를 [Code]모드로 변경한후 ``andriodx.constraintlayout.widget.ConstraintLayout문자열을 ``‘ScrollView’``로 변경합니다.<br>  
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    </ScrollView>
+    ```
+1. 다시 UI편집기를 [Design]모드로 변경하고, 기본으로 있는 텍스트뷰를 삭제합니다. 그리고 팔레트 영역의 레이아웃 카테고리에 있는 리니어 레이아웃 1개를 드래그해서 스크롤뷰 안에 가져다 놓습니다. 그런 다음 orientation속성을 ``‘vertical’``로 변경합니다.
+1. 리니어 레이아웃 안에 버튼 20개 정도 삽입한 다음 에뮬레이터에서 실행해보면 스크롤 되는 것을 확인할 수 있습니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-78.png){: style="box-shadow: 0 0 5px #777"}
+
+#### 빈 여백을 만드는 Space 도구
+레이아웃에 있는 스페이스<sup>Space</sup>는 빈 여백을 만들 수 있는 레이아웃 보조 도구입니다.
+리니어 레이아웃에 여러 개의 버튼을 배치하면서 버튼 사이에 일정한 간격을 두고 싶을 때 사용합니다.
+
+
+## 1.4 프레임 레이아웃
+프레임 레이아웃<sup>Framelayout</sup>은 입력되는 위젯의 위치를 결정하기 보다는 위젯을 중첩해서 사용하기 위한 레이아웃입니다.
+주로 게임 화면 처럼 배경과 플레이어가 서로 다른 레이어에서 겹쳐 움직여야 할 때 사용하면 좋습니다.
+레이아웃 중에서 처리 속도가 가장 빠르기 때문에 1개의 이미지만 화면에 보여준다든지 하는 단순한 형태로 사용할 경우에 성능이 가장 좋습니다.
+프레임 레이아웃은 주로 삽입되는 다른 레이아웃이나 위젯을 겹쳐 놓는 용도이기 때문에 레이아웃으로의 필수 속성이 따로 없습니다.
+정렬도 프레임 레이아웃이 아닌 삽입되는 위젯의 layout_gravity속성을 사용합니다.
+
+### 프레임 레이아웃으로 살펴보는 XML 코드의 구조
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+</FrameLayout>
+```
+
+## 1.5 레이아웃의 기본 사용법
+- ``컨스트레인트 레이아웃(ConstraintLayout)``을 사용하면 간단한 드래드 앤 드롭만으로 각각의 화면 요소들을 원하는 곳에 배치할 수 있습니다.
+- ``리니어 레이아웃(LinearLayout)``은 위젯을 가로 또는 세로 한 줄로 배치하기 위한 레이아웃입니다.
+- ``프레인 레이아웃(FrameLayout)``은 입력되는 위젯의 위치를 결정하기보다는 위젯을 중첩해서 사용하기 위한 레이아웃입니다.
+
+
+# 2. 화면에 그려지는 디자인 요소 위젯
+
+## 2.1 위젯의 대표 메뉴
+
+### Common
+### Text
+### Button
+### Widget
+위젯<sup>Widget</sup>은 이미지, 웹 사이트, 별점 표시, 진행 상태 등의 정보를 화면에 그리는 위젯 모음입니다.
+
+## 2.2 텍스트 뷰
+
+### 사용할 텍스트 정의 및 적용하기: text
+``text``는 화면에 나타낼 택스트(글자)를 입력하는 속성입니다.
+text속성에 직접 입력할 수도 있지만 권장하지 않습니다.
+앱을 개발할 때 ``strings.xml``에 사용할 텍스트를 미리 정의해 놓고 가져다가 사용하는 것이 ``다국어 처리``, ``텍스트 수정`` 등 앱을 관리하기에 용이하기 때문입니다.
+
+1. 프로젝트 탐색기의 뷰가 Android 인 상태에서 [app] - [res] - [values] 디렉토리 아래 ``strings.xml`` 파일이 있습니다.
+1. 파일을 열어서 다음 3행과 4행을 추가합니다. 태그 형식은 <string name="스트링 이름"> 보여질 텍스트 </string> 형식으로 사용합니다. 3행에는 ``<string name="string_01">화면에 보여질 글자 01</string>``라고 입력하고, 4행에는 ``<string name="string_02">화면에 보여질 글자 02</string>``라고 입력합니다.<br>
+    ```xml
+    <resources>
+        <string name="app_name">Framelayout</string>
+        <string name="string_01">화면에 보여질 글자 01</string>
+        <string name="string_02">화면에 보여질 글자 02</string>
+    </resources>
+    ```
+1. ``TextView``에 적용하기 위해 activity_main.xml파일을 열고 UI편집기에 기본으로 생성되어 있는 텍스트뷰를 선택합니다. 우측 속성 영역에서 ‘Hello World!’가 입력된 text속성의 입력 필드에 strings.xml에서 미리 작성해두었던 스트링 name하나를 ``‘@string/id_01’``형태로 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-79.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 텍스트 색상 지정하기:textColor
+안드로이드의 모든 색상은 빛의 기본색인 RGS(+투명)를 기준으로 각각 0부터 255까지의 숫자를 16진수(0~F)로 입력해서 표현합니다.
+
+#### 색상 지정 예
+```text
+#FFFFFFFF(흰색), #FF888888(회색), #FFFF0000(빨간색)
+```
+
+| 색상 | 투명 | 빨간색 | 녹색 | 파란색 |
+| --- | --- | --- | --- | --- |
+| 범위 | 00 ~ FF | 00 ~ FF | 00 ~ FF | 00 ~ FF |
+{: .table .table-striped .table-hover}
+
+색상도 문자열과 같이 직접 입력하지 않고 ``colors.xml`` 에 작성된 값을 참조해서 사용합니다.
+colors.xml 파일은 strings.xml 과 같은 디렉토리에 있습니다.
+파일이 없을 경우에는 values디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Value] - [Resource File]을 선택해 생성할 수 있습니다.
+
+1. ``colors.xml`` 파일을 열면 앱에서 사용하는 기본 컬러가 이미 작성되어 있습니다. 기본 컬러 아래에 2개 정도의 컬러를 추가합니다.
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="purple_200">#FFBB86FC</color>
+        <color name="purple_500">#FF6200EE</color>
+        <color name="purple_700">#FF3700B3</color>
+        <color name="teal_200">#FF03DAC5</color>
+        <color name="teal_700">#FF018786</color>
+        <color name="black">#FF000000</color>
+        <color name="white">#FFFFFFFF</color>
+        <!-- 새로 추가 -->
+        <color name="color_blue">#0000FF</color>
+        <color name="color_red">#FF0000</color>
+    </resources>
+    ```
+1. 적용 시에는 텍스트를 적용했던 것과 같이 텍스트뷰를 선택한 상태에서 속성 영역의 textColor속성에 ``‘@color/컬러이름’``을 입력하면 됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-80.png){: style="box-shadow: 0 0 5px #777"}
+
+### 텍스트 크기 지정하기: textSize
+안드로이드에서는 ``dp, px, sp`` 등과 같은 단위를 사용하는데, 텍스트가 입력되는 위젯 (텍스트뷰, 에디트텍스트)은 주로 sp를 사용합니다.
+``sp``는 Scale-independent Pixels의 약자로 문자열 크기를 나타내기 위해 사용하는 단위입니다.
+다른 위젯이 모두 dp를 사용하는 것과 달리 텍스트 위젯이 sp단위를 사용하는 이유는 같은 해상도에서 문자열의 크기를 다르게 사용하는 경우가 있기 때문입니다.
+이름에서도 유추할 수 있듯이 화면 스케일에 독립적으로 크기를 조절할 수 있는 단위입니다.
+
+1. 크기를 조절하는 textSize도 ``dimens.xml``이라는 파일에 따로 입력한 후에 참조해서 사용할 수 있습니다. ``dimens.xml``은 기본으로 제공되는 파일이 아니라 values 디렉토리에 따로 생성해서 사용해야 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-81.png){: style="box-shadow: 0 0 5px #777"}
+1. File name에 ``‘dimens’``를 입려갛고 [OK]를 클릭해 파일을 생성합니다. 확장자인 ``.xml``은 자동으로 생성되기 때문에 입력하지 않습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-82.png){: style="box-shadow: 0 0 5px #777"}
+1. ``<dimen name="단위이름">150sp</dimen>``의 형태로 작성합니다.
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <dimen name="text_dimen">24sp</dimen>
+        <dimen name="size_dimen">24dp</dimen>
+    </resources>
+    ```
+1. 값을 적용할 때는 앞의 방법과 동리하게 텍스트뷰를 선택한 상태에서 textSize속성의 입력 필드에 ``‘@dimen/단위이름’``을 입력합니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-83.png){: style="box-shadow: 0 0 5px #777"}
+
+### 텍스트 스타일 지정하기: textStyle
+시스템에서 제공해주는 스타일은 ``normal, bold, italic`` 세가지가 있습니다.
+
+
+### 입력 가능한 줄 수 설정하기: maxLines, minLines
+``maxLines``속성은 텍스트뷰에 입력 가능한 최대 줄 수를 설정합니다. 1로 설정한 상태에서 한 줄 이상의 글자가 입력되면 두 번째 줄부터는 화면에 출력되지 않습니다.
+
+### 텍스트뷰 한 줄로 보이기: singleLine
+``singleLine``은 텍스튜뷰를 한 줄로 보이게 하는 속성입니다. 
+maxLines 속성을 1로 설정할 때와 다른점은 여러 줄이 있을 때 두 번째 줄을 없애는 것이 아니라 줄 사이의 ``‘\n’``를 없애 한 줄로 보이게 합니다.
+
+### 말줄임 표시하기: ellipsize
+ellipsize는 처음, 중간, 또는 마지막 부분에 말줄임(...) 표시를 하거나 marquee로 글자를 좌우로 움직이게 할 수 있습니다.
+- none: 설정하지 않습니다.
+- start: 텍스트의 첫 부분을 말줄임표로 바꿈니다.
+- end: 텍스트의 끝 부분을 말줄임표로 바꿈니다.
+- marquee: 글자가 흐르는 효과를 줍니다.  marquee 기능을 주기 위해서는 ``singleLine``을 ``true``, 텍스트가 포커스를 받아야 하므로 ``focusable`` 속성은 ``auto``, ``focusableInTouchMode`` 속성은 `true`로 설정하고, 완료된 후 앱을 실행하면 전광판처럼 텍스트가 움직입니다.
+
+### 텍스트 글꼴 지정하기: fontFamily
+``fontFamily`` 는 글꼴을 지정하는 속성으로 기본으로 제공하는 글꼴 이외에 외부 폰트도 지정할 수 있습니다.
+입력 필드를 클릭하면 나타나는 메뉴에서 스크롤을 밑으로 내리면 ``[More Fonts...]`` 로 사용할 글꼴을 추가할 수 있습니다.
+
+### 비율로 글꼴 크기 지정하기: ems
+ems속성은 텍스트뷰의 크기를 나타낼 때 현재 글꼴의 크기를 기준으로 설정하는 상댓값입니다.
+예를 들어, ``텍스트뷰에 설정된 크기가 12sp라면, 1em = 12sp 이고 2em = 24sp`` 입니다.
+즉, 글꼴 크기에 텍스트뷰를 맞춰 글꼴이 커질 때 텍스트와 텍스트뷰의 비율을 유지하는 것입니다.
+
+### 텍스트뷰 높이 고정하기: lines
+line속성은 텍스트뷰의 높이를 고정할 때 사용합니다. 
+maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 경우 5로 설정해도 입력되는 문자열의 줄 수가 한 줄이면 텍스트뷰의 높이도 화면에서 한 줄만 차지하는 반면에, lines는 높이가 5로 항상 고정됩니다.
+
+### 텍스트 전체 길이 제한하기: maxLength
+
+
+## 2.3 에디트 텍스트
+
+### 에디트텍스트에 입력되는 글자를 실시간으로 처리하기
+실제 앱을 개발할 때 실시간으로 아이디의 유효성을 검사하거나, 패스워드를 검사할 때 사용하는 코드 형태입니다.
+
+1. activity_main.xml 파일을 열고 텍스트 카테고리의 플레인텍스트(PlainText)를 드래그해서 화면 가운데에 미리 생성되어 있는 텍스트뷰 아래에 가져다 놓습니다. 좌우 양쪽 컨스트레인트는 레이아웃 가장자리에, 위쪽은 텍스트뷰에 연결합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-84.png){: style="box-shadow: 0 0 5px #777"}
+
+1. id속성 입력 필드에는 `‘editText’`를 입력합니다. (id변경시 Rename팝업이 나타나며 [Refactor]버튼을 클릭해서 적용합니다.)
+1. 위젯을 처음 생성하면 text속성에 기본값이 적혀 있는데 이것을 삭제합니다. text속성은 Common Attributes에 있습니다.
+1. ``build.gradle (Module: WidgetsEditText.app)``파일을 열고 android스코프(범위)에 다음과 같이 ``viewBinding true`` 설정을 추가합니다. 설정 후 우측 상단의 ``[Sync Now]``를 클릭하는 것을 잊으면 안됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-85.png){: style="box-shadow: 0 0 5px #777"}
+1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. ``class MainActivity``에 binding프로퍼티를 하나 생성하고 ``by lazy``를 사용해서 안드로이드가 생성해둔 ``ActivityMainBinding``을 ``inflate`` 합니다.<br>
+    ```kotlin
+    package kr.co.hanbit.widgetsedittext
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.widgetsedittext.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+        }
+    }
+    ```
+1. 이제 onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
+    ```kotlin
+    package kr.co.hanbit.widgetsedittext
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.widgetsedittext.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+    }
+    ```
+1. 이어서 binding으로 앞에서 작성해둔 에디트텍스트의 id에 연결합니다. 간단하게 ``‘binding.e’``까지만 작성하면 자동 완성 코드가 나타납니다. 코드에서 editText를 선택합니다.
+1. 에디트텍스트의 변경 사항을 캐치할 수 있는 리스너를 달아야 합니다. 
+    ```kotlin
+    package kr.co.hanbit.widgetsedittext
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import androidx.core.widget.addTextChangedListener
+    import kr.co.hanbit.widgetsedittext.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.editText.addTextChangedListener {  }
+        }
+    }
+    ```
+1. 추가된 코드의 여는 중괄호 ({) 안에서 ``Enter``키를 입력하여 줄을 바꾼 후에 다음과 같이 로그를 출력하는 코드를 작성해줍니다.<br>
+    ```kotlin
+    package kr.co.hanbit.widgetsedittext
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import androidx.core.widget.addTextChangedListener
+    import kr.co.hanbit.widgetsedittext.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.editText.addTextChangedListener {
+                Log.d("EditText", "현재 입력된 값은 = ${it.toString()}")
+            }
+        }
+    }
+    ```
+1. [Run ‘app’]아이콘을 클릭해서 에뮬레이터를 실행합니다.
+    ```text
+    현재 입력된 값은 = 1
+    현재 입력된 값은 = 12
+    현재 입력된 값은 = 123
+    현재 입력된 값은 = 1234
+    현재 입력된 값은 = 12345
+    현재 입력된 값은 = 123456
+    현재 입력된 값은 = 1234567
+    현재 입력된 값은 = 12345678
+    ```
+
+- 한글 키보드 설정
+  1. 에뮬레이터에서 화면 하단을 클릭한 다음에 위쪽으로 드래그하면 앱 목록이 펼쳐집니다.
+  1. 목록에서 Settings를 선택해서 설정 화면으로 이동합니다.
+  1. 설정 화면을 아래쪽으로 스크롤 해서 System 메뉴를 선택합니다.
+  1. Languages & Input을 선택합니다.
+  1. 다시 한번 Languages(English)를 선택합니다.
+  1. English가 이미 추가되어 있는 화면이나오고, 아래에 +Add a language가 있습니다. 클릭합니다.
+  1. 우측 상단 돋보기 아이콘을 클릭한 후 ‘Korean’을 입력하면 한국어가 검색됩니다. 
+
+
 <style>
 .page-container {max-width: 1200px}‘’
 </style>

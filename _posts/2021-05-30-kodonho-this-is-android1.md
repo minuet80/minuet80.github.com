@@ -31,7 +31,7 @@ width: large
 1. 설치 경로를 선택하고 [Next]를 클릭합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-6.png){: style="box-shadow: 0 0 5px #777"}
 
-1. ‘Android Stduio 바로가기’를 추가하는 창입니다. 그대로 두고 [Install]을 클릭합니다.
+1. ‘Android Stduio 바로가기’를 추가하는 창입니다. 그대로 두고 [Install]을 클릭합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-7.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 설치가 진행됩니다. 설치가 완료되면 [Next]를 클릭합니다.
@@ -201,7 +201,7 @@ Project뷰는 실제 디렉토리의 구조를 그대로 보여줍니다.
 
 - 화면을 그려주는 함수 setContentView
   - 코드 편집기 창을 보면 setContentView(R.layout.activity_main)라는 코드가 보입니다. 이는 ‘콘텐츠를 화면에 표시하기 위해서 res/layout 디렉토리 아래에 있는 activity_main.xml 파일을 사용한다’라는 의미입니다. 이 책에서는 View Binding을 사용하기 때문에 실제 코드에서는 레이아웃 파일이 아닌 안드로이드가 생성한 바인딩을 전달합니다.
-```java
+```kotlin
 super.onCreate(savedInstanceState)
 setContentView(R.layout.activity_main)
 ```
@@ -260,9 +260,9 @@ setContentView(R.layout.activity_main)
 
 ``★ 뷰 바인딩``으로 뷰와 코드를 연결하는 방법
 1. build.gradle파일에 viewBinding 설정을 추가합니다.
-```gradle
-viewBinding true
-```
+    ```gradle
+    viewBinding true
+    ```
 1. 안드로이드 스튜디오 상단에 나타나는 [Sync Now]를 클릭해서 설정을 적용합니다.
 
 3. activity_main.xml 레이아웃 파일을 작성합니다.
@@ -270,114 +270,114 @@ viewBinding true
   - 자동변환 공식 : 레이아웃 파일명 (첫 글자와 언더바 다음 영문을 대문자로 변환) + Binding
   - 예) activity_main.xml = ActivityMainBinding
 4. MainActivity.kt파일에 있는 코틀린 코드에서 클래스로 변환된 바인딩의 inflate함수로 초기화하고 변수에 저장합니다.
-```gradle
-val 변수 = ActivityMainBinding.inflate(layoutInflater)
-```
+    ```gradle
+    val 변수 = ActivityMainBinding.inflate(layoutInflater)
+    ```
 5. 이어서 변수에 저장된 바인딩의 root뷰를 setContentView에 전달합니다.
-```gradle
-setContentView(변수.root)
-```
+    ```gradle
+    setContentView(변수.root)
+    ```
 1. 바인딩 도트 연성자(.)로 뷰의 id에 접근 후 사용합니다.
-```gradle
-변수.textView = "Hello"
-```
+    ```gradle
+    변수.textView = "Hello"
+    ```
 
 이제 ``뷰 바인딩``을 사용해서 뷰와 코드를 연결하는 실습을 해보겠습니다.
 1. 먼저 스튜디오 좌측 프로젝트 영역에서 ``Gradle Scripts``아래에 있는 ``build.gradle (Module: 프로젝트명.app)``파일을 더블클릭해서 열고, android{}코드 영역 바로 아래에 다음 그림과 같이 ``viewBinding true`` 설정을 추가합니다. 설정을 추가하고 나면 스튜디오 우측 상단에 [Sync Now]가 나타나는데 클릭해서 설정을 완료합니다.
-```gradle
-plugins {
-  id 'com.android.application'
-  id 'kotlin-android'
-}
-android {
-  buildFeatures {
-      viewBinding true
-  }
-  ...생략
-}
-```
-1. [MainActivity.kt]탭을 클릭해서 파일을 열고 소스 코드를 편집합니다. onCreate()함수 코드 블록({})안에서 setContentview 줄 위에 레이아웃 파일명인 activity_main의 단어 첫 글자를 대문자로 바꿔서 ActivityMain이라고 입력하면 다음과 같은 코드 자동 오나성이 나타납니다. ActivityMainBinding을 클릭해서 선택하거나 ``Enter``키를 입력하면 코드가 자동으로 완성됩니다.
-```java
-package kr.co.hanbit.sayHello
-　
-import ...생략
-　
-class MainActivity : AppCompatActivity() {
-　
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        　
-        ActivityMain
-        　
-        setContentView(R.layout.activity_main)
+    ```gradle
+    plugins {
+      id 'com.android.application'
+      id 'kotlin-android'
     }
-}
-```
+    android {
+      buildFeatures {
+          viewBinding true
+      }
+      ...생략
+    }
+    ```
+1. [MainActivity.kt]탭을 클릭해서 파일을 열고 소스 코드를 편집합니다. onCreate()함수 코드 블록({})안에서 setContentview 줄 위에 레이아웃 파일명인 activity_main의 단어 첫 글자를 대문자로 바꿔서 ActivityMain이라고 입력하면 다음과 같은 코드 자동 오나성이 나타납니다. ActivityMainBinding을 클릭해서 선택하거나 ``Enter``키를 입력하면 코드가 자동으로 완성됩니다.
+    ```kotlin
+    package kr.co.hanbit.sayHello
+
+    import ...생략
+
+    class MainActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            ActivityMain
+
+            setContentView(R.layout.activity_main)
+        }
+    }
+    ```
   - ActivityMainBinding이 자동 완성으로 사용할 수 있는 이유는 앞에서 build.gradle 파일에서 viewBinding true를 설정했기 때문이다.
 
 1. ActivityMainBinding을 추가한 뒤 소스 코드의 class 선언부 위쪽을 보면 다음과 같이 import가 자동적으로 추가되어 있습니다.
-```java
-package kr.co.hanbit.sayHello
-　
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
-　
-class MainActivity : AppCompatActivity() {
-　
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        　
-        ActivityMainBinding
-        　
-        setContentView(R.layout.activity_main)
+    ```kotlin
+    package kr.co.hanbit.sayHello
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            ActivityMainBinding
+
+            setContentView(R.layout.activity_main)
+        }
     }
-}
-```
+    ```
 
 1. ActivityMainBinding을 다음과 같이 수정해서 뷰 바인딩을 사용할 준비를 합니다. ActivityMainBinding이 가지고 있는 inflate 함수에 layoutInflater를 입력한 후 binding변수에 저장합니다. layoutInflater는 모든 Activity에서 호출해서 사용할 수 있습니다.
-```java
-package kr.co.hanbit.sayHello
-　
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
-　
-class MainActivity : AppCompatActivity() {
-　
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        　
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        　
-        setContentView(binding.root)
+    ```kotlin
+    package kr.co.hanbit.sayHello
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            val binding = ActivityMainBinding.inflate(layoutInflater)
+
+            setContentView(binding.root)
+        }
     }
-}
-```
+    ```
   - setContentView에 R.layout.activity_main을 사용해도 화면에는 동일하게 나타나지만, 뷰 바인딩을 사용하기 위해서는 이런 과정이 필요합니다.
 
 1. Binding 변수를 통해 뷰에 미리 작성해두었던 버튼의 id에 접근할 수 있습니다. 다음과 같이 버튼에 id에 Listener를 설정합니다.
-```java
-package kr.co.hanbit.sayHello
-　
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
-　
-class MainActivity : AppCompatActivity() {
-　
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        　
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        　
-        setContentView(binding.root)
-        binding.btnSay.setOnClickListener {
-            binding.textSay = "Hello Kotlin!!"  
+    ```kotlin
+    package kr.co.hanbit.sayHello
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.sayhello.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            val binding = ActivityMainBinding.inflate(layoutInflater)
+
+            setContentView(binding.root)
+            binding.btnSay.setOnClickListener {
+                binding.textSay = "Hello Kotlin!!"  
+            }
         }
     }
-}
-```
+    ```
 
 ## 2.6 앱 실행하기
 
