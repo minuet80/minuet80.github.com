@@ -434,6 +434,94 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
   1. English가 이미 추가되어 있는 화면이나오고, 아래에 +Add a language가 있습니다. 클릭합니다.
   1. 우측 상단 돋보기 아이콘을 클릭한 후 ‘Korean’을 입력하면 한국어가 검색됩니다. 
 
+### 클릭하면 사라지는 미리보기: hint
+클릭하면 사라지는 미리보기를 작성할 수 있습니다.
+
+### 키보드 모양 설정하기: inputType
+
+| inputType | 옵션값 |
+| --- | --- |
+| textUrl | URI형식의 문자 입력 |
+| textEmailAddress | email주소 형식의 문자 입력 |
+| textPostalAddress | 우편 번호 형식의 문자 입력 |
+| textPassword | 비밀번호 입력 |
+| textVisibliePassword | 비밀번호를 문자 그대로 표시 |
+| number | 숫자 형식 |
+| numberPassword | 숫자로만 구성된 비밀번호 입력 |
+| phone | 전화번호 형식 |
+| date | 날짜 형식 |
+
+### 이벤트 설정하기
+입력 완료 후 실행할 이벤트를 설정합니다.
+``ime``는 ``input method editor``의 약자로 텍스트 편집기를 뜻합니다.
+inputType 속성을 통해서 어떤 입력을 가능하게 할지 결정했다면 imeOptions 속성에서는 입력이 완료된 상황에서 다음 이벤트로 어떤 처리를 할 것인지 결정하는 것입니다.
+예를 들어 키보드 오른쪽 아래에 확인 키가 나타나는데 ``imeOptions``를 ``‘actionSearch’``로 설정하면 돋보기 모양의 키가 나타납니다.
+
+| imeOptions 옵션 | 옵션값 |
+| --- | --- |
+| normal | 특변한 기능 없음 |
+| actionUnspecified | 특별한 액션 없음 |
+| actionNone | 액션을 사용하지 않음 |
+| actionGo | 어딘가로 넘어감, URL 입력 후 해당 페이지로 넘어가기 |
+| actionSearch | 검색하기 구글, 네이버, 다음 검색 |
+| actionSend | 메일, 메시지 보내기 |
+| actionNext | 다음으로 넘어가기, 다음 입력창으로 이동 |
+| actionDone | 입력 완료, 키보드 숨김 |
+| actionPrevious | 이전 단계로 돌아가기, 이전 입력창으로 이동 |
+
+## 2.4 이미지 버튼
+버튼, 이미지버튼 둘 다 백그라운드 속성으로 이미지를 부여할 수 있는데 버튼은 백그라운드 이미지 위에 텍스트만, 이미지 버튼은 백그라운드 이미지 위에 아이콘과 같은 이미지를 추가할 수 있습니다.
+
+| 버튼 | 이미지 버튼 |
+| --- | --- |
+| 이미지 위에 텍스트 | 이미지 위에 이미지 |
+
+
+### 기본 이미지 사용하기
+activity_main.xml을 열고 이미지버튼을 드래그해서 UI편집기에 가져다 놓으면 사용할 이미지를 선택하는 창이 나타납니다.
+[Drawable]을 선택하면 임시로 사용할 수 있는 Sample Data가 나오고, 그중에서 하나를 선택할 수 있습니다. Saple data중에서 ``[avatars]``를 선택하고 [OK]를 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-86.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 새로운 이미지 사용하기
+
+1. 구글에서 PNG이미지를 검색해서 내려받습니다. 준비한 이미지를 drawable 디렉토리에 붙여넣기한 다음 그림과 같은 팝업창이 나타나면 [Refactor]를 클릭해 drawable 디렉토리에 저장됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-87.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 팔레트에서 이미지버튼을 드래그해서 UI편집기에 가져다 놓습니다. 이미지버튼을 선택한 상태에서 속성 영역의 src옆의 버튼을 클릭하면 이미지를 선택할 수 있는 팝업창이 다시 나타납니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-88.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 선택한 이미지가 나타납니다.
+
+### 투명 배경 설정하기
+이미지버튼은 기본적으로 배경에 회색 영역을 포함하고 있는데 속성 중 ``background`` 속성에 ``‘@android:color/transparent’``를 적용하면 회색 영역을 없애고 투명하게 만들 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-89.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 이미지 크기 설정하기
+``scaleType``은 이미지뿐만 아니라 이미지뷰에서도 많이 사용하는 속성으로 다음과 같은 효과가 있습니다.
+
+| scaleType | status |
+| --- | --- |
+| ``matrix`` : 실제 이미지를 좌측 상탄부터 이미지버튼 크기만큼 보여줍니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-90.png){: style="box-shadow: 0 0 5px #777"} |
+| ``fitXY`` : 상하좌우를 이미지뷰 또는 이미지버튼 크기에 맞춰 늘려줍니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-91.png){: style="box-shadow: 0 0 5px #777"} | 
+| ``fitStart`` : 좌측 상단부터 시작해서 비율에 맞게 이미지 크기를 조절하여 위젯 안에 채워줍니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-92.png){: style="box-shadow: 0 0 5px #777"} |
+| ``fitCenter`` : 중앙을 기준으로 비율에 맞게 이미지 크기를 조절하여 위젯 안에 채워줍니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-93.png){: style="box-shadow: 0 0 5px #777"} |
+| ``fitEnd`` : 우측 하단부터 시작해서 비율에 맞게 이미지 크기를 조절하여 위젯 안에 채워줍니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-94.png){: style="box-shadow: 0 0 5px #777"} |
+| ``center`` : 실제 이미지 사이즈대로 정중앙에 위치시킵니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-95.png){: style="box-shadow: 0 0 5px #777"} |
+| ``centerCrop`` : 가로세로 사이즈 중 근접한 길이를 기준으로 나머지 한쪽을 잘라 비율을 맞춰줍니다 뷰에 이미지를 가득 채워주기 때문에 앨범 이미지를 섬네일로 보여줄 때 많이 사용합니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-96.png){: style="box-shadow: 0 0 5px #777"} |
+| ``centerInside`` : 이미지가 위젯보다 크면 fitCenter와 동일하게 동작하고, 작으면 위젯의 중앙에 위치시킵니다. | ![1]({{site.baseurl}}/images/this-is-android/this-is-android-97.png){: style="box-shadow: 0 0 5px #777"} |
+
+
+### 이미지 영역에 색 채우기: tint
+tint는 이미지 영역에 색을 채우는 속성입니다. [스포이드 아이콘]을 클릭해서 색을 선택할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-98.png){: style="box-shadow: 0 0 5px #777"}
+tint속성의 경우 이미지의 투명도를 기준으로 색이 적용되기 때문에 ``일반적으로 투명 배경을 가진 이미지에 사용합니다.``
+
+
+### 투명도 조절하기: alpha
+alpha는 투명도를 조절합니다. 
+1부터 0까지의 값을 입력하여 1이면 투명하지 않은 상태, 0이면 투명한 상태가 됩니다.
 
 <style>
 .page-container {max-width: 1200px}‘’
