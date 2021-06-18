@@ -153,7 +153,7 @@ gravity 하위 속성 중에 center 의 체크박스를 체크하면 ``‘true�
 이럴 때는 최상위 레이아웃을 스크롤 할 수 있는 요소로 감싸야 합니다. 
 스크롤뷰를 사용하려면 기본 레이아웃 (컨스트레인트 레이아웃)을 스크롤뷰로 변경해서 사용하거나 기본 레이아웃 안에 스크롤뷰를 추가해야 합니다.
 
-1. 시본 레이아웃을 스크롤뷰로 변경하는 방법은 컨스트레인트 레이아웃을 리니어 레이아웃으로 변경하는 방법과 동리합니다. XML 코드를 편집하기 위해 UI편집기를 [Code]모드로 변경한후 ``andriodx.constraintlayout.widget.ConstraintLayout문자열을 ``‘ScrollView’``로 변경합니다.<br>  
+1. 시본 레이아웃을 스크롤뷰로 변경하는 방법은 컨스트레인트 레이아웃을 리니어 레이아웃으로 변경하는 방법과 동리합니다. XML 코드를 편집하기 위해 UI편집기를 [Code]모드로 변경한후 ``andriodx.constraintlayout.widget.ConstraintLayout``문자열을 ``‘ScrollView’``로 변경합니다.<br>  
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
