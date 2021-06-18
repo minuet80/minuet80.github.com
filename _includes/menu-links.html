@@ -8,13 +8,14 @@ $(document).ready(function() {
     if(userAgent.match('.*Android.*')) {
       location.href = $(this).data('alink');
     } else if(userAgent.match('.*iPhone.*') || userAgent.match('.*iPad.*')) {
+      var $element = $(this);
       setTimeout(function () { 
         if (new Date().getTime() - visiteTm < 3000 ) { 
-          location.href = 'https://itunes.apple.com/app/'+ $(this).data('istore');
+          location.href = 'https://itunes.apple.com/app/'+ $element.data('istore');
         } 
-      } ,2500 ); 
+      }, 2500); 
       setTimeout(function () { 
-        location.href = $(this).data('ilink');
+        location.href = $element.data('ilink');
       }, 0);
     } else {
       alert('앱전용');
@@ -30,5 +31,5 @@ $(document).ready(function() {
 </a>
 -->
 <a href="{{site.baseurl}}/">Home</a>
-<a class="app" target="_blank" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="myappandroi://" data-istore="id673085116">네이버사전</a>
+<a class="app" target="_blank" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="naverdic://" data-istore="id673085116">네이버사전</a>
 <a>Version: {{site.version}}</a>
