@@ -1,11 +1,34 @@
+<script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
+<script>
+$(document).ready(function() {
+  var userAgent = navigator.userAgent;
+  var visiteTm = new Date().getTime();
+  $('.app').click(function (e) {
+    e.preventDefault();
+    if(userAgent.match('.*Android.*')) {
+      location.href = $(this).data('alink');
+    } else if(userAgent.match('.*iPhone.*') || userAgent.match('.*iPad.*')) {
+      setTimeout(function () { 
+        if (new Date().getTime() - visiteTm < 3000 ) { 
+          location.href = 'https://itunes.apple.com/app/'+ $(this).data('istore');
+        } 
+      } ,2500 ); 
+      setTimeout(function () { 
+        location.href = $(this).data('ilink');
+      }, 0);
+    } else {
+      alert('앱전용');
+    }
+  });
+});
+</script>
+<!--
 <a href="{{site.baseurl}}/">
   <h1 class="header-title" style="font-size: 1.5em;color: #999">{{site.title}}
-    <!--<i class="" aria-hidden="true"></i>-->
+    <i class="" aria-hidden="true"></i>
   </h1>
 </a>
-  <a href="{{site.baseurl}}/">Home</a>
-  <a href="{{site.baseurl}}/about/">About</a>
-  <a href="{{site.baseurl}}/contact/">Contact</a>
-  <a target="_blank" href="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end">네이버사전</a>
-  <a href="https://github.com/sharu725/karna/archive/master.zip">Download</a>
-  <a>Version: {{site.version}}</a>
+-->
+<a href="{{site.baseurl}}/">Home</a>
+<a class="app" target="_blank" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="myappandroi://" data-istore="id673085116">네이버사전</a>
+<a>Version: {{site.version}}</a>
