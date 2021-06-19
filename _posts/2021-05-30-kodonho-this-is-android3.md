@@ -628,9 +628,178 @@ alpha는 투명도를 조절합니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-106.png){: style="box-shadow: 0 0 5px #777"}
 
 
+## 2.6 체크박스
 
+1. 체크박스를 라디오버튼처럼 구성하기 위해서 기본 텍스트뷰는 삭제하고 리니어 레이아웃 (horizontal) 을 화면 가운데 배치합니다. 컨스트레인트를 네 방향 모두 연결하여 화면 가운데 배치합니다. 그런 다음 3개의 체크박스를 리니어 레이아웃 안에 가져다 놓고 각각의 id속성에는 ‘checkedApple’, ‘checkedBanana’, ‘checkedOrange’를 입력합니다. 그리고 text속성도 ‘사과’, ‘바나나’, ‘오렌지’를 순서대로 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-107.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 리니어 레이아웃의 외곽선이 입력된 체크박스에 맞추기 위해 각 체크박스의 layout_width와 layout_height 속성을 모두 ``‘wrap_content’``로 설정합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-108.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 소스 코드와 연결하기 위해서 그래들 설정에 viewBinding을 추가합니다. build.gradle 파일을 열고 android 스코프에 viewBinding true 설정을 추가합니다. 설정 후 우측 상단의 [Sync Now]를 클릭하는 것을 잊으면 안됩니다.
+
+1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. onCreate() 위에 binding프로퍼티를 하나 생성하고 by lazy를 사용해서 ActivityMainBinding을 inflate합니다.
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    ```
+
+1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
+    ```kotlin
+    setContentView(binding.root)
+    ```
+
+1. 이어서 binding으로 앞에서 작성해둔 체크박스에 id를 연결합니다.
+1. 이어서 ‘setOnChecked’까지 입력하면 나타나는 리스너 중에 중괄호로 시작하는 코드를 선택합니다.
+    ```kotlin
+    package kr.co.hanbit.widgetscheckbox
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.widgetscheckbox.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.checkApple.setOnCheckedChangeListener { buttonView, isChecked ->  }
+        }
+    }
+    ```
+1. 생성되는 코드 블록의 두 번째 파라미터가 영문 이니셜 (b 또는 다른 글자)로 표시되어 있으면 알아보기 쉽게 ‘isChecked’로 바꿔줍니다. 체크박스 리스너의 첫 번째 파라미터에는 상태 변화가 있는 체크박스 위젯이 그대로 전달되고, 두 번째 파라미터에는 라디오그룹과는 다르게 체크 여부가 Boolean 타입으로 전달됩니다.
+    ```kotlin
+    package kr.co.hanbit.widgetscheckbox
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import kr.co.hanbit.widgetscheckbox.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.checkApple.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    Log.d("CheckBox", "사과가 선택되었습니다.")
+                } else {
+                    Log.d("CheckBox", "사과가 선택 해제되었습니다.")
+                }
+            }
+        }
+    }
+    ```
+1. 이런 방식으로 코딩하면 모든 체크박스에 리스너를 달아줘야 해서 코드량이 늘어나는 단점이 있습니다. 라디오 그룹에서 처럼 하나의 코드 블록을 처리하기 위해 코드를 조금 바꿔보겠습니다. onCreate() 메서드 위에 listener 프로퍼티를 하나 만듭니다.  그리고 by lazy 를 사용해서 CompoundButton 클래스에 있는 OnCheckedChangeListener를 직접 작성합니다. 
+    ```kotlin
+    package kr.co.hanbit.widgetscheckbox
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import android.widget.CompoundButton
+    import kr.co.hanbit.widgetscheckbox.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        val listener by lazy { CompoundButton.OnCheckedChangeListener
+            { buttonView, isChecked ->  }
+        }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+    }
+    ```
+1. 이 리스너를 모든 체크박스에서 사용할 것이기 때문에 when 문으로 어떤 체크박스가 이 리스너로 전달되는지 확인하는 코드를 작성합니다.
+    ```kotlin
+    package kr.co.hanbit.widgetscheckbox
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import android.widget.CompoundButton
+    import kr.co.hanbit.widgetscheckbox.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        val listener by lazy { CompoundButton.OnCheckedChangeListener {
+                buttonView, isChecked -> when (buttonView.id) {
+                    R.id.checkApple -> Log.d("CheckBox", "사과가 선택되었습니다.")
+                    R.id.checkBanana -> Log.d("CheckBox", "바나나가 선택되었습니다.")
+                    R.id.checkOrange -> Log.d("CheckBox", "오렌지가 선택되었습니다.")
+                }
+            }
+        }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+    }
+    ```
+1. onCreate() 메서드 안에 작성했던 리스너의 중괄호 ({})를 괄호 (())로 변경한 다음 앞에서 작성한 listener프로퍼티를 입력해서 세 줄의 코드를 한줄로 변경합니다.
+    ```kotlin
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        binding.checkApple.setOnCheckedChangeListener(listener);
+        binding.checkBanana.setOnCheckedChangeListener(listener);
+        binding.checkOrange.setOnCheckedChangeListener(listener);
+    }
+    ```
+
+1. 에뮬레이터에서 실행하고 로그를 확인합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-109.png){: style="box-shadow: 0 0 5px #777"}<br>
+다음은 MainActivity.kt의 전체 코드입니다. 체크박스는 보통 체크와 해제를 모두 확인해야 하기 때문에 실제 프로젝트에서는 다음처럼 체크박스 해제 코드도 추가해야 합니다.<br>
+    ```kotlin
+    package kr.co.hanbit.widgetscheckbox
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import android.widget.CompoundButton
+    import kr.co.hanbit.widgetscheckbox.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        val listener by lazy {
+            CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    when (buttonView.id) {
+                        R.id.checkApple -> Log.d("CheckBox", "사과가 선택되었습니다.")
+                        R.id.checkBanana -> Log.d("CheckBox", "바나나가 선택되었습니다.")
+                        R.id.checkOrange -> Log.d("CheckBox", "오렌지가 선택되었습니다.")
+                    }
+                } else {
+                    when (buttonView.id) {
+                        R.id.checkApple -> Log.d("CheckBox", "사과가 선택 해제되었습니다.")
+                        R.id.checkBanana -> Log.d("CheckBox", "바나나가 선택 해제되었습니다.")
+                        R.id.checkOrange -> Log.d("CheckBox", "오렌지가 선택 해제되었습니다.")
+                    }
+                }
+            }
+        }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+            binding.checkApple.setOnCheckedChangeListener(listener);
+            binding.checkBanana.setOnCheckedChangeListener(listener);
+            binding.checkOrange.setOnCheckedChangeListener(listener);
+        }
+    }
+    ```
 
 
 <style>
