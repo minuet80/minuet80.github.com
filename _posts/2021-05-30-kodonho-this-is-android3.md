@@ -801,6 +801,151 @@ alpha는 투명도를 조절합니다.
     }
     ```
 
+## 2.7 토글버튼, 스위치, 이미지뷰
+토글버튼<sup>ToggleButton</sup>은 체크박스와 동일합니다. 부모 클래스인 CompoundButton을 상속받아 사용하기 때문에 체크박스의 리스너와 구현이 완전 동일합니다.
+
+스위치도 체크박스와 구현이 동일하며 체크박스, 토글버튼, 스위치는 모두 CompoundButton을 상속받아 사용하므로 하나의 사용법만 익히면 동일한 리스너로 컨트롤 할 수 있습니다.
+
+## 2.8 프로그래스바
+프로그래스바<sup>ProgressBar</sup>는 진행 상태를 나타내는 위젯입니다.
+
+### 프로그래스바의 진행 상태 표시하기
+
+1. activity_main.xml 에서 화면에 리니어 레이아웃 (vertical)을 가져다 놓고 컨스트레인트는 네방향 모두 연결합니다. 리니어 레이아웃의 id속성에 ‘progressLayout’이라고 입력하고 gravity속성을 ‘center’로 설정합니다.
+1. 그다음 팔레트의 위젯 카테고리에서 프로그래스바(ProgressBar)와 텍스트 카테고리의 텍스트뷰를 1개씩 리니어 레이아웃 안에 가져다 놓습니다. 텍스튜뷰의 gravity속성도 ‘center’로 설정합니다.
+1. 텍스트뷰의 text 속성에 ‘Downloading...’이라고 입력해주면 다음 그림과 같이 됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-110.png){: style="box-shadow: 0 0 5px #777"}
+1. build.gradle 파일에 viewBinding을 설정하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+1. 클래스 안에 showProgress메서드를 만들고 리니어 레이아웃을 숨겼다 보였다 할 수 있는 코드를 추가합니다.
+    ```kotlin
+    package kr.co.hanbit.widgetsprogressbar
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.view.View
+    import kr.co.hanbit.widgetsprogressbar.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+
+        fun showProgress(show: Boolean) {
+            if (show) {
+                binding.progressLayout.visibility = View.VISIBLE
+            } else {
+                binding.progressLayout.visibility = View.GONE
+            }
+        }
+    }
+    ```
+    - ``공통 속성 visiblity``
+      - ``VISIBLE`` : 현재 보이는 상태
+      - ``INVISIBLE`` : 현재 안 보이는 상태. 보이지는 않지만 공간을 차지하고 있습니다.
+      - ``GONE`` : 현재 안보이는 상태. 보이지도 않고 공간도 차지하지 않습니다.
+
+1. 앱이 실행되고 3초 후에 showProgress(false)를 호출하는 코드를 onCreate() 메서드 안에 작성합니다. Thread.sleep() 메서드를 사용하면 지정된 시간 동안 다음 코드가 실행되지 않습니다.
+    ```kotlin
+    setContentView(binding.root)
+
+    Thread.sleep(3000) // 3초
+    showProgress(false)
+    ```
+1. 에뮬레이터에서 실행해봅니다. 실행해도 에뮬레이터 화면에는 아무것도 보이지 않습니다. 메인 스레드에서 동작을 멈추는 Thread.sleep() 메서드를 호출했기 때문입니다.
+1. Thread.sleep 메서드를 백그라운드 (서브 스레드)에서 동작시키기 위해 코드를 추가합니다. thread(start=true) 함수를 사용하면 함수 블록 안의 코드가 모두 백그라운드에서 동작합니다.
+    ```kotlin
+    thread(start=true) {
+        Thread.sleep(3000)
+        showProgress(false)
+    }
+    ```
+    이대로 실행하면 3초간 프로그래스바가 동작하다가 앱이 죽습니다. UI와 관련된 모든 코드는 메인 스레드에서 실행해야만 합니다. 앞의 코드에서 showProgress메서드를 백그라운드에서 호출하기 때문에 앱이 강제 종료되는 것입니다.
+1. showProgress메서드만 메인 스레드에서 실행하도록 코드를 한 줄 더 추가합니다. 
+    ```kotlin
+    thread(start=true) {
+        Thread.sleep(3000)
+        runOnUiThread {
+            showProgress(false)
+        }
+    }
+    ```
+1. 이제 앱을 다시 실행하면 3초간 프로그래스바가 동작하다가 없어집니다.
+
+
+## 2.9 시크바
+시크바<sup>SeekBar</sup>는 ``볼륨을 조절``하거나 ``뮤직플레이어에서 재생 시간을 조절``하는 용도로 많이 사용합니다.
+
+1. 위젯 카테고리의 시크바 (SeekBar)를 드래드해서 화면 가운데에 가져다 놓고 컨스트레인트를 네 방향 모두 연결합니다. 그리고 layout-width 속성은 ‘0dp’, layout_height 속성은 ‘wrap_content’로 입력합니다.
+1. id속성에 seekBar가 입력되어 있는 것을 확인합니다. 없으면 입력합니다.
+1. 시크바 위에 텍스트뷰를 하나 가져다 놓고 컨스트레인트를 연결합니다. 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0’을 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-111.png){: style="box-shadow: 0 0 5px #777"}
+1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후, setContentView에 binding.root를 전달합니다.
+1. setContentView 아랫줄에 ‘binding.seekBar.set’까지만 입력하면 나타나는 목록에서 setOnSeekBarChangeListnener를 선택합니다.
+1. 앞에서 생성된 리스너의 괄호 안에 ‘object: SeekBar.OnSeekBarChangeListener {}’ 코드를 다음과 같이 추가합니다.
+    ```kotlin
+    binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+
+    })
+    ```
+1. 리스너의 코드 블록 사이를 클릭한 채로 (중괄호 안에 마우스 포인터를 두고) ``Ctrl`` + `I`키를 입력한 후 나타나는 [Implement Members]팝업창에서 3개의 메서드를 모두 선택하고 [OK]를 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-112.png){: style="box-shadow: 0 0 5px #777"}
+1. onProgressChanged 메서드 안에 다음의 코드를 한 줄 추가합니다.
+    ```kotlin
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        binding.textView.text = "$progress"
+    }
+    ```
+    - ``텍스트뷰의 text속성``
+      - 텍스트뷰의 text속성에는 문자열만 입력이 가능합니다. 텍스트뷰의 text에 Int타입의 숫자를 입력하면 리소스 아이디로 인식해서 오류가 발생합니다. 따라서 Int타입의 숫자를 입력할 때는 쌍따음표 ("") 안에 $변수를 넣는 형태로 입력해야 합니다.
+1. 에뮬레이터에서 실행한 후 시크바를 드래그하면 상단의 숫자가 바뀌는 것을 확인할 수 있습니다.
+    OnSeekBarChangeListener의 첫 번째 메서드인 onProgressChanged의 파라미터는 다음과 같습니다.
+    - ``seekBar`` : 리스너가 동작하고 있는 시크바 위젯
+    - ``progress`` : 현재 시크바의 현재 progress값
+    - ``fromUser`` : 사용자 터치 여부 (코드에서 시크바를 움직일 수도 있기 때문에 사용자의 터치에 의해 동작하는 것인지를 알기위한 값)
+
+    ```kotlin
+    package kr.co.hanbit.widgetsseekbar
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.widget.SeekBar
+    import kr.co.hanbit.widgetsseekbar.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                    binding.textView.text = "$progress"
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    //TODO("Not yet implemented")
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    //TODO("Not yet implemented")
+                }
+            })
+        }
+    }
+    ```
+    시크바의 주요 속성은 다음과 같습니다.
+    - ``max`` : 시크바의 최대값을 설정합니다. 위의 예제에서 드래그를 좌측 끝까지 설정하면 100이 되는데, max값을 200으로 설정하면 200까지 표현할 수 있습니다.
+    - ``progress`` : 처음 시작하는 시크바의 값을 설정합니다. 기본값은 0
+
+
+
+
 
 <style>
 .page-container {max-width: 1200px}‘’
