@@ -527,7 +527,108 @@ alpha는 투명도를 조절합니다.
 ## 2.5 라디오그룹과 라디오버튼
 
 ### 라디오그룹과 라디오버튼 사용하기
-1. 버튼 카테고리에서 라디오그룹을 찾아 UI편집기에 드래그해서 가져다 놓고 id속성에 ``‘raioGroup’``이 입력되어 있는지 확인합니다. 없다면 ``‘radioGroup’``이라고 입력합니다.
+1. 버튼 카테고리에서 라디오그룹을 찾아 UI편집기에 드래그해서 가져다 놓고 id속성에 ``‘raioGroup’``이 입력되어 있는지 확인합니다. 없다면 ``‘radioGroup’``이라고 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-99.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 라디오그룹의 경우 UI편집기에는 아무것도 나타나지 않을 수 있습니다. 찾기 힘들 때는 컴포넌트 트리에서 [radioGroup]을 찾아 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-100.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 컨스트레인트를 네 방향 모두 연결해서 화면 가운데에 배치합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-101.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 라디오그룹 안에 3개의 라디오버튼을 가져다 놓습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-102.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 라디오버튼은 스마트폰 화면에서 볼 수 있도록 이름을 입력해줍니다. text속성에 각각 ‘사과’, ‘바나나’, ‘오렌지’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-103.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 모두 작성하면 다음과 같은 레이아웃이 구성됩니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-104.png){: style="box-shadow: 0 0 5px #777"}
+
+1. build.gradle 파일을 열고 android 스코프에 다음과 같이 viewBinding true 설정을 추가합니다.
+    ```gradle
+    buildFeatures {
+        viewBinding true
+    }
+    ```
+
+1. [MainActivity.kt]탭을 클릭해서 소스 코드를 이동합니다. onCreate() 메서드 위에 binding 프로퍼티를 하나 생성하고 by lazy를 사용하여 ActivityMainBinding을 inflate 합니다. <br>
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    ```
+
+1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.<br>
+    ```kotlin
+    setContentView(binding.root)
+    ```
+
+1. 다음 줄에 binding으로 앞에서 작성해둔 라디오그룹의 id에 연결합니다.<br>
+    ```kotlin
+    package kr.co.hanbit.widgetsradio
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.widgetsradio.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->  }
+        }
+    }
+    ```
+
+1. 코드 블록 끝에 있는 화살표 (->) 다음에서 ``Enter``키를 입력하고 블록 안에 다음과 같이 코드를 추가합니다.
+    ```kotlin
+    package kr.co.hanbit.widgetsradio
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import kr.co.hanbit.widgetsradio.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    R.id.radioApple -> Log.d("RadioButton", "사과가 선택되었습니다.")
+                    R.id.radioBanana -> Log.d("RadioButton", "바나나가 선택되었습니다.")
+                    R.id.radioOrange -> Log.d("RadioButton", "오렌지가 선택되었습니다.")
+                }
+            }
+        }
+    }
+    ```
+
+1. 에뮬레이터를 실행하고 라디오버튼을 클릭해보면 로그캣창에 메시지가 출력되는 것을 확인합니다.
+    ```text
+    사과가 선택되었습니다.
+    바나나가 선택되었습니다.
+    오렌지가 선택되었습니다.
+    ```
+
+### 라디오버튼 배치하기: orientation
+라디오그룹은 리니어 레이아웃에 라디오버튼을 담을 수 있는 형태의 레이아웃입니다. 리니어 레이아웃 처럼 orientation속성을 조절해서 배치되는 라디오버튼들을 가로로 정렬할 건지 세로로 정렬할 건지를 결정할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-105.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 선택된 라디오버튼 설정하기: checkedButton
+미리 선택되어 있는 라디오버튼을 설정할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-106.png){: style="box-shadow: 0 0 5px #777"}
+
+
+
 
 
 
