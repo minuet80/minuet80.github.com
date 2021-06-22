@@ -944,8 +944,80 @@ alpha는 투명도를 조절합니다.
     - ``progress`` : 처음 시작하는 시크바의 값을 설정합니다. 기본값은 0
 
 
+## 2.10 레이팅바
+
+1. 화면 중앙에 위젯의 레이팅바<sup>RatingBar</sup>를 가져다 놓고 컨스트레인트를 네 방향 모두 연결합니다. id속성에는 ‘ratingBar’가 입력되어 있는지 확인합니다.
+1. 레이팅바 오른쪽에 텍스트뷰를 배치하고 컨스트레인트를 레이팅바에 연결합니다. 그리고 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0.0’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-113.png){: style="box-shadow: 0 0 5px #777"}
+1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+    ```kotlin
+    package kr.co.hanbit.wdgetsratingbar
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.wdgetsratingbar.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            
+        }
+    }
+    ```
+1. setContentView 다음 줄에 ‘binding.ratingBar.setOn’까지만 입력하면 나타나는 리스너 메서드 중에 중괄호로 시작하는 코드를 선택합니다. 그러면 다음과 같이 코드가 생성됩니다.
+    ```kotlin
+    binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+        
+    }
+    ```
+1. 시크바와 마찬가지로 안드로이드 스튜디오 버전에 따라 파라미터 이름이 다를 수 있습니다.  앞의 순서대로 변경해서 사용하면 됩니다.
+  - rating : 현재별점
+  - fromUser : 사용자 입력 여부
+1. 시크바와는 인터페이스 구조가 다르기 때문에 중괄호 안에 식을 바로 사용할 수 있습니다.
+    ```kotlin
+    binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+        binding.textView.text = "$rating"
+    }
+    ```
+1. 에뮬레이터에서 실행하고 드래그해보면 숫자의 값이 바뀌는 것을 확인할 수 있습니다.<br>
+  레이팅바에서 사용되는 주요 속성은 다음과 같습니다.
+  - numStars : 전체 표시되는 별의 개수를 설정할 수 있습니다.
+  - rating : 기본 별점 처음 시작하는 별점값입니다.
+  - stepSize : 별을 드래그했을 때 움직이는 최소 단위 0.1로 설정하면 별 하나를 10단위로 쪼개서 표시해줍니다.
 
 
+# 3. 리소스 다루기
+
+## 3.1 drawable과 단위
+안드로이는 스마트폰마다 가로세로 화소(픽셀)의 개수가 다르기 때문에 사이즈를 표시하는 단위로 가상 화소 개념인 dp를 사용합니다. dp는 화면 밀도인 DPI에 따라서 실세 픽셀로 변환되는 크기가 달라지는데 drawable 또한 DPI에 따라서 서로 다른 이름의 디렉토리를 사용합니다.
+
+### DPI
+DPI<sup>Dots Per Inch</sup>는 가로세로 1인치 (2.54cm)의 정사각형 공간에 들어 있는 픽셀의 숫자를 나타내는 단위 입니다. 안드로이드는 160DPI를 기본으로 사용하는데 이를 mdpi라고 합니다. 내 스마트폰의 DPI가 mdpi라면 화면을 켰을 때 1인치의 사각형 안에 160개의 화소가 그려집니다. 
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-114.png){: style="box-shadow: 0 0 5px #777"}
+
+### dp
+DP<sup>Density-independent Pixels</sup>는 안드로이드에서 사용하는 독립적 수치 단위로, 해상도와 관계없이 동일한 크기로 화면에 표시하기 위해서 사용됩니다. 예를들어 가로세로가 각각 3dp인 사각형을 mdpi스마트폰에 그릴 때와 xhdpi스마트폰에 그릴 때 두 화면에서 같은 크기로 보이기 위해서 다음과 같이 그립니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-115.png){: style="box-shadow: 0 0 5px #777"}
+
+### sp
+텍스트뷰에서 한 번 언급한 바와 같이, 문자열 크기를 나타내기 위해 사용하는 단위입니다. 단위에 sp<sup>Scale-independent pixcels</sup>를 사용하면 줌인이나 줌아웃 시에 다른 위젯에는 영향을 주지 않고 해당 위젯의 글자만 커지거나 작아지게 할 수 있습니다.
+
+
+### drawable 디렉토리 구성
+앞서 설명한 DPI구조로 인해 각각의 해상도에 맞는 drawable디렉토리에 이미지를 넣고 사용합니다.
+실무에서 디자이너와 함께 협업하면 총 5개의 디렉토리에 각 사이즈에 맞는 이미지를 전달해줍니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-116.png){: style="box-shadow: 0 0 5px #777"}
+
+안드로이드 스튜디오의 좌측 탐색 영역 모드를 Project로 놓고 사용하는 것이 디렉토리 구조를 그대로 보여주기 때문에 이미지와 같은 리소스를 관리하기에 편합니다.
+중간에 ``-v24``가 붙어 있는 ``drawable-v24`` 디렉토리에 있는 이미지는 안드로이드 디바이스의 버전이 24이상일 대 자동으로 선택됩니다.
+이처럼 앱을 개발할 때는 동일한 이미지를 최소 5개의 해상도로 만들어서 사용해야 합니다.
+뒤에 아무런 접미사<sup>suffix</sup>가 없는 drawable 디렉토리는 이미지 외에 화면과 관련된 XML파일을 관리하는 용도로 제공됩니다.
+예를 들어 안드로이드 XML로 벡터 기반 (좌표로 이루어진)의 그림을 그릴 수 있는데 이렇게 만들어진 XML파일을 drawable에 저장하면 해상도와 상관없이 사용할 수 있습니다.
 
 <style>
 .page-container {max-width: 1200px}‘’
