@@ -1,29 +1,3 @@
-<script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
-<script>
-$(document).ready(function() {
-  var userAgent = navigator.userAgent;
-  var visiteTm = new Date().getTime();
-  $('.app').click(function (e) {
-    var $element = $(this);
-    if(userAgent.match('.*Android.*')) {
-      e.preventDefault();
-      location.href = $(this).data('alink');
-    } else if(userAgent.match('.*iPhone.*') || userAgent.match('.*iPad.*')) {
-      e.preventDefault();
-      setTimeout(function () { 
-        if (new Date().getTime() - visiteTm < 3000 ) { 
-          location.href = 'https://itunes.apple.com/app/'+ $element.data('istore');
-        } 
-      }, 2500); 
-      setTimeout(function () {
-        location.href = $element.data('ilink');
-      }, 0);
-    } else {
-      ;
-    }
-  });
-});
-</script>
 <!--
 <a href="{{site.baseurl}}/">
   <h1 class="header-title" style="font-size: 1.5em;color: #999">{{site.title}}
@@ -32,5 +6,3 @@ $(document).ready(function() {
 </a>
 -->
 <a href="{{site.baseurl}}/">Home</a>
-<a class="app" target="_blank" href="https://en.dict.naver.com/#/main" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="naverdicapp://" data-istore="id673085116">네이버사전</a>
-<a class="app" target="_blank" href="https://kr.investing.com/" data-alink="intent://main_web#Intent;scheme=investing;package=com.fusionmedia.investing;end" data-ilink="investingapp://" data-istore="id909998122">인베스팅</a>

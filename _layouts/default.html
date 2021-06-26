@@ -5,6 +5,32 @@ layout: compress
 <html lang="en">
 {% include head.html %}
 <body>
+<script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
+<script>
+$(document).ready(function() {
+  var userAgent = navigator.userAgent;
+  var visiteTm = new Date().getTime();
+  $('.app').click(function (e) {
+    var $element = $(this);
+    if(userAgent.match('.*Android.*')) {
+      e.preventDefault();
+      location.href = $(this).data('alink');
+    } else if(userAgent.match('.*iPhone.*') || userAgent.match('.*iPad.*')) {
+      e.preventDefault();
+      setTimeout(function () { 
+        if (new Date().getTime() - visiteTm < 3000 ) { 
+          location.href = 'https://itunes.apple.com/app/'+ $element.data('istore');
+        } 
+      }, 2500); 
+      setTimeout(function () {
+        location.href = $element.data('ilink');
+      }, 0);
+    } else {
+      ;
+    }
+  });
+});
+</script>
 <header>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -19,7 +45,13 @@ layout: compress
     <!--<i class="fa fa-sun-o" aria-hidden="true"></i>-->
   </h1>
 </a>
-<h2 class="header-tagline">{{site.description}}</h2>
+<h2>
+  <a class="app" target="_blank" href="https://en.dict.naver.com/#/main" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="naverdicapp://" data-istore="id673085116"><img src="{{site.baseurl}}/icon/naverdic.png" /></a>
+  <a class="app" target="_blank" href="https://translate.google.com/" data-alink="intent://main_web#Intent;scheme=translate;package=com.google.android.apps.translate;end" data-ilink="translateapp://" data-istore="id673085116"><img src="{{site.baseurl}}/icon/translate.png" /></a>
+  <a class="app" target="_blank" href="https://kr.investing.com/" data-alink="intent://main_web#Intent;scheme=investing;package=com.fusionmedia.investing;end" data-ilink="investingapp://" data-istore="id909998122"><img src="{{site.baseurl}}/icon/investing.png" /></a>
+</h2>
+<!-- <h2 class="header-tagline">{{site.description}}</h2> -->
+<!-- <h2 class="header-tagline">{{site.description}}</h2> -->
 </header>
 <div id="main">
 
