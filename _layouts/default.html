@@ -4,60 +4,35 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-<body>
 <script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
-<script>
-$(document).ready(function() {
-  var userAgent = navigator.userAgent;
-  var visiteTm = new Date().getTime();
-  $('.app').click(function (e) {
-    var $element = $(this);
-    if(userAgent.match('.*Android.*')) {
-      e.preventDefault();
-      location.href = $(this).data('alink');
-    } else if(userAgent.match('.*iPhone.*') || userAgent.match('.*iPad.*')) {
-      e.preventDefault();
-      setTimeout(function () { 
-        if (new Date().getTime() - visiteTm < 3000 ) { 
-          location.href = 'https://itunes.apple.com/app/'+ $element.data('istore');
-        } 
-      }, 2500); 
-      setTimeout(function () {
-        location.href = $element.data('ilink');
-      }, 0);
-    } else {
-      ;
-    }
-  });
-
-  var currentPosition = parseInt($(".quickmenu").css("top"));
-  $(window).scroll(function() {
-    var position = $(window).scrollTop();
-    $(".quickmenu").stop().animate({"top":position+currentPosition+"px"},1000);
-  });
-});
-</script>
+<body>
 <header>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="mySidenav1" class="sidenav1">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">&times;</a>
 
-  {% include menu-links.html %}
+  {% include menu-links1.html %}
 </div>
 
 <!-- Use any element to open the sidenav -->
-<span id="slid" onclick="openNav()"><i class="fa fa-align-left" aria-hidden="true"></i></span>
+<span id="slid1" onclick="openNav(1)"><i class="fa fa-align-left" aria-hidden="true"></i></span>
+
+
+<div id="mySidenav2" class="sidenav2">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a>
+
+  {% include menu-links2.html %}
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span id="slid2" onclick="openNav(2)"><i class="fa fa-align-right" aria-hidden="true"></i></span>
+
 <a href="{{site.baseurl}}/">
   <h1 class="header-title">{{site.title}}
     <!--<i class="fa fa-sun-o" aria-hidden="true"></i>-->
   </h1>
 </a>
-<h2>
-  <a class="app" target="_blank" href="https://www.youtube.com/" data-alink="intent://main_web#Intent;scheme=youtube;package=com.google.android.youtube;end" data-ilink="youtubeapp://" data-istore="id544007664"><img src="{{site.baseurl}}/icon/youtube.png" /></a>
-  <a class="app" target="_blank" href="https://en.dict.naver.com/#/main" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="naverdicapp://" data-istore="id673085116"><img src="{{site.baseurl}}/icon/naverdic.png" /></a>
-  <a class="app" target="_blank" href="https://translate.google.com/" data-alink="intent://main_web#Intent;scheme=translate;package=com.google.android.apps.translate;end" data-ilink="translateapp://" data-istore="id414706506"><img src="{{site.baseurl}}/icon/translate.png" /></a>
-  <a class="app" target="_blank" href="https://kr.investing.com/" data-alink="intent://main_web#Intent;scheme=investing;package=com.fusionmedia.investing;end" data-ilink="investingapp://" data-istore="id909998122"><img src="{{site.baseurl}}/icon/investing.png" /></a>
-</h2>
-<!-- <h2 class="header-tagline">{{site.description}}</h2> -->
+
+<h2 class="header-tagline">{{site.description}}</h2>
 </header>
 <div id="main">
 
@@ -67,11 +42,19 @@ $(document).ready(function() {
 
 </div>
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+function openNav(mode) {
+  if (mode == 1) {
+    document.getElementById("mySidenav1").style.width = "250px";
+  } else {
+    document.getElementById("mySidenav2").style.width = "85px";
+  }
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";    
+function closeNav(mode) {
+  if (mode == 1) {
+    document.getElementById("mySidenav1").style.width = "0";
+  } else {
+    document.getElementById("mySidenav2").style.width = "0";
+  }
 }
 </script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
