@@ -29,6 +29,12 @@ $(document).ready(function() {
       ;
     }
   });
+
+  var currentPosition = parseInt($(".quickmenu").css("top"));
+  $(window).scroll(function() {
+    var position = $(window).scrollTop();
+    $(".quickmenu").stop().animate({"top":position+currentPosition+"px"},1000);
+  });
 });
 </script>
 <header>
@@ -52,16 +58,10 @@ $(document).ready(function() {
   <a class="app" target="_blank" href="https://kr.investing.com/" data-alink="intent://main_web#Intent;scheme=investing;package=com.fusionmedia.investing;end" data-ilink="investingapp://" data-istore="id909998122"><img src="{{site.baseurl}}/icon/investing.png" /></a>
 </h2>
 <!-- <h2 class="header-tagline">{{site.description}}</h2> -->
-<!-- <h2 class="header-tagline">{{site.description}}</h2> -->
 </header>
 <div id="main">
 
-
-
-
 {{content}}
-
-
 
 {% include footer.html %}
 
