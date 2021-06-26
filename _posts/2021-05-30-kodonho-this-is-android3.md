@@ -1076,5 +1076,5 @@ Translations Editor의 원래 기능은 단순히 ``<string>`` 태그를 생성�
 
 
 <style>
-.page-container {max-width: 1200px}‘’
+.page-container {max-width: 1200px}
 </style>
