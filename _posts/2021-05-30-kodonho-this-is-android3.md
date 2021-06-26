@@ -1019,6 +1019,62 @@ DP<sup>Density-independent Pixels</sup>는 안드로이드에서 사용하는 �
 뒤에 아무런 접미사<sup>suffix</sup>가 없는 drawable 디렉토리는 이미지 외에 화면과 관련된 XML파일을 관리하는 용도로 제공됩니다.
 예를 들어 안드로이드 XML로 벡터 기반 (좌표로 이루어진)의 그림을 그릴 수 있는데 이렇게 만들어진 XML파일을 drawable에 저장하면 해상도와 상관없이 사용할 수 있습니다.
 
+
+## 3.2 mipmap 앱 아이콘 사용하기
+
+### mipmap
+안드로이드는 drawable과 더불어 앱의 아이콘에 사용하는 용도로 mipmap디렉토리를 제공합니다.
+mipmap은 앱 아이콘 관리용으로만 사용하도록 권장하므로 일반 이미지는 drawable에 넣고 사용해야 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-117.png){: style="box-shadow: 0 0 5px #777"}
+
+안드로이드 버전 26부터는 아이콘에 백그라운드, 포어그라운드 개념이 도입되면서 mipmap-anydpi-v26디렉토리가 추가되었습니다.
+각각의 디렉토리에 아이콘 이미지를 넣고 AndroidManifest.xml에 있는 <application> 태그의 icon 속성에 설정하면 앱 설치 후 안드로이드 화면에 나타납니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-118.png){: style="box-shadow: 0 0 5px #777"}
+
+roundIcon속성은 버전 25부터 지원한 속성으로 안드로이드 런처가 둥그란 아이콘을 사용하면 해당 속성에 지정된 mipmap이미지를 사용합니다.
+
+### adaptive icon
+mipmap-anydpi-v26 디렉토리 안에 있는 ic_launcher.xml 파일을 열어보면 다음과 같은 xml코드가 작성되어 있는데, 태그명에서 유추할 수 있듯이 백그라운드 이미지와 포어그라운드 이미지 2개를 포개어서 아이콘으로 그려주는 역활을 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-119.png){: style="box-shadow: 0 0 5px #777"}
+
+``<background>`` 태그값에 @drawable/ic_launcher_background 파일명이 지정되어 잇는데, 이 파일에 앞서 설명한 백터 기반의 이미지가 입력되어 있습니다.
+이런 구조를 어댑티브 아이콘<sup>adaptive icon</sup>이라고 합니다
+
+## 3.3 strings와 다국어 처리
+
+### strings 다루기
+
+안드로이드는 strings.xml 을 Translations Editor를 통해서 관리할 수 있습니다.
+
+1. strings.xml 파일을 열어 우측 상단에 있는 [Open editor]링크를 클릭합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-120.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 링크를 클릭하면 Translation Editor가 나타나는데 [Code]모드에서 직접 XML을 수정하는 대신에 이 에디터를 통해서 strings를 추가하거나 삭제할 수 있습니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-121.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 에디터 상단에 [+]버튼을 클릭하면 ``<string>`` 태그를 생성할 수 있는 팝업창이 나타납니다. Key와 Value를 입력해서 하나를 생성해보세요
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-122.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [-]버튼은 ``<string>``을 삭제하는데 사용합니다.
+
+
+### 다국어 처리하기
+Translations Editor의 원래 기능은 단순히 ``<string>`` 태그를 생성하는게 아니라 다국어를 처리하는데 목적이 있습니다.
+
+1. [+]와 [-]버튼 오른쪽에 있는 지구본을 클릭하면 나타나는 선택 메뉴에서 [Korean(ko)]을 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-123.png){: style="box-shadow: 0 0 5px #777"}
+
+1. ‘Korean(ko)’을 선택하면 기존 strings목록의 컬럼에 Korean(ko)가 추가됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-124.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 좌측의 탐색기를 보면 새로운 디렉토리인 values-ko가 생성되어 있고 그 안에 strings.xml이 추가되어 있습니다. 다국어 처리시에도 Project뷰로 놓고 사용하는 것이 좋습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-125.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 다시 Translations Editor로 돌아가서 새로 생긴 Korean(ko)컬럼에 한글을 입력합니다.
+
+1. 입력을 완료하고  strings.xml(ko)파일을 열어보면 원본 strings.xml에 있는 key와 같은 key로 된 ``<string>``태그에 한글 value가 입력되어 있습니다.
+
+
 <style>
 .page-container {max-width: 1200px}‘’
 </style>
