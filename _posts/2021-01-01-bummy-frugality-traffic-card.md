@@ -7,7 +7,7 @@ categories: jekyll update
 img: frugality_traffic_card/frugality_traffic_card-1.png
 categories: [one, two]
 color: 1976D2
-author: Bummy
+author: Minuet80
 permalink: /frugality_traffic_card/
 width: large
 ---
