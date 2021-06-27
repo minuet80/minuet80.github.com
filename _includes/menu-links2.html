@@ -15,7 +15,13 @@ $(document).ready(function() {
         } 
       }, 2500); 
       setTimeout(function () {
-        location.href = $element.data('ilink');
+        var ilink = $element.data('ilink');
+        if (ilink == '') {
+          alert('not supported');
+          return;
+        } else {
+          location.href = $element.data('ilink');
+        }
       }, 0);
     } else {
       ;
@@ -27,3 +33,4 @@ $(document).ready(function() {
 <a class="app" target="_blank" href="https://en.dict.naver.com/#/main" data-alink="intent://main_web#Intent;scheme=naverdic;package=com.nhn.android.naverdic;end" data-ilink="naverdicapp://" data-istore="id673085116"><img src="{{site.baseurl}}/icon/naverdic.png" /></a>
 <a class="app" target="_blank" href="https://translate.google.com/" data-alink="intent://main_web#Intent;scheme=translate;package=com.google.android.apps.translate;end" data-ilink="translateapp://" data-istore="id414706506"><img src="{{site.baseurl}}/icon/translate.png" /></a>
 <a class="app" target="_blank" href="https://kr.investing.com/" data-alink="intent://main_web#Intent;scheme=investing;package=com.fusionmedia.investing;end" data-ilink="investingapp://" data-istore="id909998122"><img src="{{site.baseurl}}/icon/investing.png" /></a>
+<a class="app" target="_blank" href="https://www.projectvanilla.kr/" data-alink="intent://main_web#Intent;scheme=projectvanilla;package=kr.projectvanilla.production;end" data-ilink="projectvanillaapp://" data-istore=""><img src="{{site.baseurl}}/icon/vanilla.png" /></a>
