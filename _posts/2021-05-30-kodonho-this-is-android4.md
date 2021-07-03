@@ -900,8 +900,205 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
         
     }
     ```
-    - ``반인딩 생성은 어댑터에서``
+    - ``바인딩 생성은 어댑터에서``
       - 뷰홀더가 사용하는 바인딩은 어댑터에서 생성한 후에 넘겨줍니아. 이 어댑터에서 사용할 레이아웃의 이름이 item_recycler이기 때문에 안드로이드에서 생성해주는 바인딩의 이름은 ItemRecyclerBinding이 됩니다.
+
+1. Holder 내부의 코드가 실행되기 전에 어댑터 클래스 코드가 먼저 선행되어야 하므로 어댑터 클래스를 먼저 수정하겠습니다. 다음과 같이 CustomAdapter 코드는 RecyclerView의 Adapter를 상속받고 앞에서 생성한 Holder를 제네릭으로 지정합니다.
+    ```kotlin
+    class CustomAdapter: RecyclerView.Adapter<Holder>() {
+        
+    }
+    ```
+    - ``어댑터 클래스의 기본 구성``
+      - 어댑터가 정상적으로 동작하려면 미리 정의된 Holder 클래스를 제네릭으로 지정한 후 어댑터에 설계되어 있는 3개의 인터페이스를 반드시 구현해야 합니다.
+
+    ```kotlin
+    class 어댑터: RecyclerView.Adapter<Holder> {
+        onCreateViewHolder()
+        getItemCount()
+        onBindViewHolder()
+    }
+    ```
+
+1. class CustomAdapter... 코드 블록 ({}) 의 중간에서 ``Ctrl`` + ``I``키를 눌러 팝업창에서 3개의 인터페이스를 모두 선택해서 import하면 코드가 자동으로 추가됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-164.png){: style="box-shadow: 0 0 5px #777"}<br>
+    ```kotlin
+    class CustomAdapter: RecyclerView.Adapter<Holder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        }
+
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+        }
+
+        override fun getItemCount(): Int {
+        }
+    }
+    ```
+
+1. 추가된 코드의 맨 윗줄에 이 어댑터에서 사용할 데이터 목록 변수를 하나 선언합니다. 목록형 컬렉션은 listOf() 계열의 메서드로 초기화할 수 있습니다. 앞에서 미리 작성해둔 loadData() 메서드에서 리턴해주는 값을 사용할 것이기 때문에 ``mutableListOf<Memo>()``를 사용합니다.
+    ```kotlin
+    var listData = mutableListOf<Memo>()
+    ```
+
+1. 리사이클러뷰에서 사용할 데이터의 총 개수를 리턴하는 getItemCount() 메서드부터 구현합니다.
+    ```kotlin
+    override fun getItemCount(): Int {
+        return listData.size
+    }
+    ```
+
+1. 이어서 아이템 레이아웃을 생성하는 onCreateViewHolder() 메서드를 구현합니다. ``스마트폰의 한 화면에 보이는 개수만큼 안드로이드가 이 메서드를 호출합니다. 한 화면에 여덟 줄이 보이면 여덟 번 호출합니다.``
+액티비티와는 다르게 어댑터에서 사용하는 바인딩인 ItemRecyclerBinding의 inflate 메서드는 3개의 파라미터가 사용됩니다.
+첫 번째 파라미터로 전달되는 인플리이터는 LayoutInflater.from으로 생성해서 입력합니다. from에는 파라미터로 context가 전달돼야 하는데, 이는 안드로이드가 넘겨주는 parent에서 꺼낼 수 있습니다. 두 번째는 parent를 그대로 사용하고, 세 번째는 항상 false를 사용하면 됩니다. 그리고 다음 줄에서 생성된 바인딩을 Holder 클래스에 담아서 반환합니다.
+안드로이드는 이런 과정을 거쳐 전달된 Holder 클래스를 메모리에 저장했다가 요청이 있을 때마다 꺼내서 사용합니다.
+    ```kotlin
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+    ```
+    - inflate(inflater, parent, attachToRoot) 파라미터의 의미
+      - ``inflater`` : 바인딩을 생성할 때 사용하는 인프레이터입니다. 액티비티에서와는 다르게 LayoutInflater.from 을 사용해서 생성해야 합니다.
+      - ``parent`` : 생성되는 바인딩이 속하는 부모 뷰(레이아웃)입니다.
+      - ``attachToRoot`` : true일 경우 attach 해야 하는 대상으로 root를 지정하고 아래에 붙입니다. false일 경우 뷰의 최상위 레이아웃의 속성을 기본으로 레이아웃이 적용됩니다.
+
+1. 생성된 뷰홀더를 화면에 보여주는 onBindViewHolder() 메서드를 구현합니다. 먼저 listData에서 현재 위치에 해당하는 메모를 하나 꺼내 memo 변수에 저장한 후 홀더에 전달합니다. 임의로 홀더에 setMemo() 라는 메서드가 있다고 가정하고 다음과 같이 작성합니다.
+    ```kotlin
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val memo = listData.get(position)
+        holder.setMemo(memo)
+    }
+    ```
+
+1. 이제 마지막으로 Holder 클래스에서 화면에 데이터를 세팅하는 setMemo() 메서드를 구현합니다.
+    ```kotlin
+    class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        fun setMemo(memo: Memo) {
+            
+        }
+    }
+    ```
+
+1. setMemo() 메서드 안의 다음 코드를 추가합니다. texTNo 웨젯에는 memo의 no값을 입력합니다.
+    ```kotlin
+    binding.textNo.text = "${memo.no}"
+    ```
+
+1. 마찬가지로 나머지 2개의 위젯도 메모 데이터와 연결합니다. 날짜에 해당하는 timestamp값은 SimpleDataFormat을 사용해서 날짜 형식으로 먼저 변환합니다.
+SimpledateFormat을 import하면 선택지가 2개 나타나는데 java.text의 SimpleDateFormat을 선택합니다.
+SimpleDateFormat을 생성하면서 생성자에 날짜가 보여질 형식을 ‘yyyy/MM/dd’로 정의합니다.
+
+다음은 CustomAdapter.kt의 전체 코드입니다.
+```kotlin
+package kr.co.hanbit.containerrecyclerview
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import kr.co.hanbit.containerrecyclerview.databinding.ItemRecyclerBinding
+import java.text.SimpleDateFormat
+
+class CustomAdapter: RecyclerView.Adapter<Holder>() {
+
+    var listData = mutableListOf<Memo>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val memo = listData.get(position)
+        holder.setMemo(memo)
+    }
+
+    override fun getItemCount(): Int {
+        return listData.size
+    }
+}
+
+class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+    fun setMemo(memo: Memo) {
+        binding.textNo.text = "${memo.no}"
+        binding.textTitle.text = memo.title
+        var sdf = SimpleDateFormat("yyyyMMdd")
+        var formattedDate = sdf.format(memo.timestamp)
+        binding.textDate.text = formattedDate
+    }
+}
+```
+
+### MainActivity.kt에서 어댑터 사용하기
+
+지금까지 생성한 레이아웃과 소스 코드를 MainActivity.kt에서 모두 연결합니다.
+
+1. setContentView 메서드 아래에 먼저 사용할 데이터를 생성하는 코드를 추가합니다.
+    ```kotlin
+    val data: MutableList<Memo> = loadData()
+    ```
+
+1. 어댑터를 생성하고 어댑터의 listData 변수에 위에서 생성한 데이터 목록을 저장합니다.
+    ```kotlin
+    var adapter = CustomAdapter()
+    adapter.listData =data
+    ```
+
+1. recyclerView 위젯의 adapter 속성에 생성할 어댑터를 연결합니다.
+    ```kotlin
+    binding.recyclerView.adapter = adapter
+    ```
+
+1. 마지막으로 리사이클러뷰에서 확인해봅니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-165.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+다음은 MainActivity.kt의 전체 코드입니다.
+```kotlin
+package kr.co.hanbit.containerrecyclerview
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.hanbit.containerrecyclerview.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        val data: MutableList<Memo> = loadData()
+        var adapter = CustomAdapter()
+        adapter.listData = data
+        binding.recyclerView.adapter = adapter
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+    }
+
+    fun loadData(): MutableList<Memo> {
+        val data: MutableList<Memo> = mutableListOf()
+        for (no in 1..1000) {
+            val title = "이것이 안드로이드다 ${no}"
+            var date = System.currentTimeMillis()
+            var memo = Memo(no, title, date)
+            data.add(memo)
+        }
+        return data
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
 
 <style>
 .page-container {max-width: 1200px}‘’
