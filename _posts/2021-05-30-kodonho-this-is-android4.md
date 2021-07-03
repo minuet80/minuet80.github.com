@@ -735,6 +735,174 @@ ContainerRecyclerView 프로젝트를 생성합니다.
 1. 다운로드가 완료되면 Item0, Item1... 이라는 글자가 여러 줄 쓰여 있는 리사이클러뷰가 화면에 그려집니다. id 속성에 ‘recyclerView’라고 입력합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-151.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 컨스트레이트는 상하좌우를 모두 연결합니다. 네 방향을 모두 연결해야 할 때는 아이콘을 하나씩 클릭하는 대신 UI 편집기 상단 [Infer Constraints 아이콘 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-152.png){: style="box-shadow: 0 0 5px #777"}]을 클릭하면 컨스트레인트를 가장 가까운 곳에 모두 연결해줍니다.
+
+1. 여러 개의 정보를 하나의 아이템에 보여줘야 하니 아이템 레이아웃을 레이아웃 파일로 직접 생성하여 사용합니다. [app] - [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]를 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-153.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+1. File name 에 ‘item_recycler’를, Root element에 ‘LinearLayout’을 입력하고 [OK]를 클릭해서 파일을 생성합니다. 다른 값은 건드리지 않습니다. activity_main.xml 아래에 item_recycler.xml이 생성된 걸 확인할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-154.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-155.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+1. 리니어 레이아웃의 속성 영역에서 layout_height를 ‘50dp’로 변경합니다. 대부분 match_parent일 텐데 ‘50dp’을 입력하면 바로 수정됩니다. 반드시 뒤에 ‘dp’를 같이 입력해야 합니다. 숫자만 입력하면 오류가 발생할 수 있습니다. 이어서 orientation속성을 ‘horizontal’로 변경하고, gravity 속성에 ‘center_vertical’을 적용합니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-156.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+1. 레이아웃 안에 텍스트뷰를 3개 배치합니다. 각각 번호, 제목, 날짜 데이터를 표시할 텍스트뷰입니다. 이어서 layout-weight 속성을 각각 ‘1, 5, 3’으로 수정하면 다음과 같이 보입니다. 가로 비율이 맞지 않으면 각 텍스트뷰의 layout_width 속성을 ‘0dp’로 설정합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-157.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+1. 첫 번째 텍스튜브의 text속성은 ‘01’, id속성은 ‘textNo’로 입력합니다. 두 번째 텍스뷰의 text속성은 ‘Title’, id속성은 ‘textTitle’로 입력하고, 세 번째 텍스트뷰의 text속성은 ‘2021-01-01’, id속성은 ‘textDate’로 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-158.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+
+### 데이터를 정의하고 가상 데이터 만들기
+이제 아이템 레이아웃에 맞춰서 화면에 뿌려질 데이터 클래스를 하나 생성하겠습니다.
+
+번호, 타이틀, 날짜 세 종류의 값을 담을 데이터 클래스를하나 만들겠습니다.
+
+1. java 디렉토리 아래에 있는 기본 패키지명을 마우스 우클릭하여 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택합니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-159.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 입력 필드에 ‘Memo’를 입력하고, 바로 아래 목록 중에 Data Class를 더블클릭하면 파일이 생성됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-160.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 Memo 클래스를 열어보면 기본 코드가 있는데 class 코드를 약간 수정하여 파라미터 3개 가지는 데이터 클래스로 만듭니다. 마지막 날짜 파라미터의 이름을 timestamp로 만들고 Long 타입을 선언하였습니다. 날짜는 실제 개발할 때에도 타임스탬프라고 불리는 숫자형을 저장해 놓고 변환해서 많이 사용하기 때문에 여기서도 그렇게 사용하겠습니다.
+    ```kotlin
+    package kr.co.hanbit.containerrecyclerview
+
+    data class Memo(var no: Int, var title: String, var timestamp: Long)
+    ```
+1. 이어서 MainActivity.kt 안에 100개의 가상 데이터를 만드는 코드를 작성해보겠습니다. MainActivity.kt를 열고 MutableList<Memo>를 반환하는 loadData() 메서드를 onCreate() 메서드 아래에 만듭니다.
+    ```kotlin
+    fun loadData(): MutableList<Memo> {
+
+    }
+    ```
+1. 메서드 안에 리턴할 MutableList 컬렉션을 선언합니다.
+    ```kotlin
+    val data: MutableList<Memo> = mutableListOf()
+    ```
+
+1. 100개의 가상 데이터를 만들어야 하니 for문을 사용해서 백 번 반복합니다. for문에 사용한 no 변수는 그래도 Memo 클래스의  번호로 사용할 것입니다.
+    ```kotlin
+    for (no in 1..100) {
+        
+    }
+    ```
+
+1. for문 안에 타이틀과 날짜로 사용할 데이터를 가상으로 생성해서 변수에 담아둡니다. title 변수에는 ‘이것이 안드로이드다 1’, ‘이것이 안드로이드다 2’ ... 의 형태의 제목이 백 번 반복하여 저장되고, date 변수에는 안드로이드 스마트폰의 현재 시간이 숫자 값으로 저장됩니다.
+    ```kotlin
+    var title = "이것이 안드로이드다 ${no}"
+    var date = System.currenttimeMillis()
+    ```
+
+1. 변수에 저장된 값과 번호로 Memo클래스를 생성하고, 위에서 선언해둔 data변수에 추가합니다.
+    ```kotlin
+    var memo = Memo(no, title, date)
+    data.add(memo)
+    ```
+
+1. 마지막으로 반복문이 끝나면 100개의 Memo 클래스가 담겨 있는 data변수를 리턴해서 호출한 측에 전달합니다.
+    ```kotlin
+    return data
+    ```
+
+여기까지 입력한 MainActivity.kt의 추가 코드를 살펴보면 다음과 같습니다.
+
+```kotlin
+    fun loadData(): MutableList<Memo> {
+        val data: MutableList<Memo> = mutableListOf()
+        for (no in 1..1000) {
+            val title = "이것이 안드로이드다 ${no}"
+            var date = System.currentTimeMillis()
+            var memo = Memo(no, title, date)
+            data.add(memo)
+        }
+        return data
+    }
+```
+
+### 어댑터 정의하기
+리사이클리뷰는 리사이클러뷰어댑터라는 메서드 어댑터를 사용해서 데이터를 연결합니다.
+
+스피너보다는 헐씬 복잡한 구조이며 상속이 필요합니다.
+
+상속을 하면 어댑터와 관련된 대부분의 기능을 사용할 수 있고 추가로 필요한 몇 개의 요소만 개발자가 직접 구현합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-161.png){: style="box-shadow: 0 0 5px #777"}
+
+리사이클러뷰어댑터는 개별 데이터에 대응하는 뷰홀더 클래스를 사용합니다. 상속하는 리사이클러뷰어댑터에 뷰홀더 클래스를 제네릭으로 지정해야 하므로 뷰홀더 클래스를 먼저 만들고 나서 어댑터 클래스를 생성하는 것이 더 편합니다.
+
+```kotlin
+class 커스텀어댑터: RecyclerView.Adapter<여기에 사용할 뷰홀더 지정> {
+
+}
+```
+
+상속받는 Adapter 클래스에 제네릭으로 뷰홀더를 지정해두면, Implement Methods로 코드를 자동 완성할 때에 자동 완성된 메서드 중 하나가 파라미터 타입에 제네릭으로 지정해둔 뷰홀더를 사용합니다
+
+```kotlin
+class 커스텀어댑터: RecyclerView.Adapter<뷰홀더> {
+    ...
+    override fun onBindViewHolder(뷰홀더, 아이템 위치) {
+
+    }
+}
+```
+
+뷰홀더 클래스도 기본 기능이 이미 만들어져 있는 ViewHolder 클래스를 상속받아서 만듭니다. 뷰홀더 클래스는 아이템 레이아웃을 포함하고 있는데 1,000개의 데이터가 있다고 가정했을 때 이것들을 모두 화면에 그리기 위해서 1,000개의 아이템 레이아웃을 생성하면 시스템 자원이 낭비되고, 심각할 경우 앱이 종료될 수 도 있습니다.
+
+``뷰홀더는 현재 화면에 보여지는 개수만큼만 생성되고 목록이 위쪽으로 스크롤 될 경우 가장 위의 뷰홀더를 아래에서 재사용한  후 데이터만 바꿔주기 때문에 앱의 효율이 향상됩니다.``
+
+ViewHolder 클래스의 생성자에는 다음에 만들 어댑터의 아이템 레이아웃을 넘겨줘야 하므로 Holder 클래스를 생성할 때 생성자에게서 레이아웃의 바인딩을 넘겨받아야 합니다.
+
+```kotlin
+class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
+```
+
+앞서 작성한 ConstrainerRecyclerView 프로젝트에서 이어서 코드를 작성하겠습니다.
+
+1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+1. java 디렉토리 밑에 있는 패키지에 CustomAdapter 클래스를 하나 생성하고 같은 파일 안에 Holder 클래스를 작성하겠습니다.  패키지명을 마우스 우클릭하여 [New] - [Kotlin File/Class]를 선택한 후 나타나는 팝업의 입력란에 ‘CustomAdapter’를 입력하고 그 아래 목록에서 Class를 더블클릭해서 파일을 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-162.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-163.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+1. 소스 코드가 생성되면 class CustomAdapter 아래에 ㅇclass Holder를 추가로 작성합니다.
+    ```kotlin
+    package kr.co.hanbit.containerrecyclerview
+
+    class CustomAdapter {
+    }
+
+    class Holder {
+        
+    }
+    ```
+
+1. Holder 클래스에 RecyclerView의 ViewHolder를 상속받습니다.
+    ```kotlin
+    class Holder: RecyclerView.ViewHolder {
+        
+    }
+    ```
+
+1. ViewHolder에 빨간색 밑줄이 생기는데 생성자에 1개의 값이 필수로 입력되야 하기 때문에 그렇습니다.  아이템 레이아웃은 ViewHolder 자체에서 만들지 않고 어댑터가 만들어서 넘겨주므로 코드를 다음과 같이 수정해야 합니다. 어댑터에서 넘겨주는 바인딩을 Holder 클래스의 생성자에게서 받아 ViewHolder의 생성자에게로 넘겨주는 구조입니다. ViewHolder의 생성자는 바인딩이 아닌 View를 필요로 하기 때문에 binding.root를 전달합니다. 그리고 binding은 Holder 클래스안에서 전역변수 (프로퍼티)로 사용돼야 하기 때문에 val 키워드를 앞에 붙여줍니다.
+    ```kotlin
+    class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        
+    }
+    ```
+    - ``반인딩 생성은 어댑터에서``
+      - 뷰홀더가 사용하는 바인딩은 어댑터에서 생성한 후에 넘겨줍니아. 이 어댑터에서 사용할 레이아웃의 이름이 item_recycler이기 때문에 안드로이드에서 생성해주는 바인딩의 이름은 ItemRecyclerBinding이 됩니다.
+
 <style>
 .page-container {max-width: 1200px}‘’
 </style>
