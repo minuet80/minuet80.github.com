@@ -532,6 +532,194 @@ class Activity_B: AppCompatActivity() {
 - ``카메라 기능도 하나의 앱``
   - 짧은 코드로 호출해서 사용하는 카메라도 하나의 앱으로 안드로이드에 미리 만들어져 있습니다. 카메라를 호출한다는 것은 카메라의 액티비티 이름을 담은 인텐트를 안드로이드에 전달하는 것입니다.
 
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-143.png){: style="box-shadow: 0 0 5px #777"}
+
+카메라를 사용하기 위한 인텐트를 시스템으로 전달하면 카메라 액티비티가 다른 앱 (카메라도 하나의 독립적인 앱)이 있기 때문에 프로세스를 새로 생성합니다. 호출된 카메라 액티비티가 새로운 프로세스를 통해 동작하지만 하나의 작업 단위인 태스크로 묶입니다. 또한 마치 하나의 앱처럼 동일한 태스크로 묶이고 백스택에 쌓이게 됩니다.
+
+같은 태스크의 백스택에 쌓이기 때문에 뒤로가기 버튼을 누르면 같은 앱의 액티비티처럼 백스택에서 제거되고, 홈 버튼을 누르면 마치 하나의 앱 처럼 전체가 백그라운드로 이동합니다.
+
+
+### 액티비티 태스크 관리하기
+
+액티비티 태스크는 두가지 방법으로 관리할 수 있습니다.
+
+먼저 매니페스트의 설정으로 관리하는 방법을 살펴보겠습니다. 
+
+태스크와 백스택으로 관리되는 액티비티는 설정 파일인 ``AndroidManifest.xml에 작성되는 <activity>태그 안에`` 다음 코드 처럼 속성으로 사용할 수 있습니다.
+```xml
+<activity android:name=".MainActivity" android:launchMode="singleInstance"></activity>
+```
+
+| 속성 | 설명 |
+| --- | --- |
+| launchMode | 호출할 엑티비티를 새로 생성할 것인지 재사용할 것인지를 결정합니다. 기본값은 항상 새로 생성하게 되어 있습니다.<br> 네 가지 모드: ``standard``, ``singleTop``, ``singleTask``, ``singleInstance`` |
+| taskAffinity | affinity가 동일한 액티비티들은 같은 task에 들어갑니다. 기본값은 manifest에 정의된 패키지명이므로 기본적으로 한 앱의 모든 앱티비티들은 동일한 affinity를 가집니다. affinity를 사용하여 액티비티를 서로 다르게 그룹화하거나, 서로 다른 앱(프로세스)에 정의된 액티비티를 같은 태스크에 둘 수도 있습니다. |
+| allowTaskReparenting | 기본값은 false이며, true일 경우 호출한 액티비티를 동일한 affinity를 가진 태스크에 쌓이도록 합니다. |
+| clearTaskOnLaunch | true이면 액티비티가 재실행될 때 실행한 액티비티의 수와 관계없이 메인 액티비티를 제외하고 모두 제거합니다. 기본값은 false 입니다. |
+| alwaysRetainTaskState | 기본값은 false이며 사용자가 특정 시간 동안 앱을 사용하지 않을 경우 시스템 루트 액티비티(태스크에서 가장 먼저 실행된 액티비티)를 제외한 액티비티들을 제거합니다. true일 경우 시스템이 관여하지 않습니다. |
+| finishOnTaskLaunch | 앱을 다시 사용할 때 태스크에 이 옵션이 true인 액티비티가 있다면 해당 태스크를 종료시킵니다. |
+{: .table .table-striped .table-hover}
+
+액티비티 태스크를 관리하는 또 다른 방법으로는 소스 코드에서 startActivity() 메서드에 전달하는 intent의 플래그 값으로 태스크를 관리하는 방법입니다.
+```kotlin
+val intent = Intent(this, SubActivity::class.java)
+intent.addFlag(Intent.FLAG_ACTIVITY_NEW_TASK)
+```
+
+일반적으로 많이 사용하는 플래그는 다음과 같습니다.
+
+| 플래그 | 설명 |
+| --- | --- |
+| FLAG_ACTIVITY_CLEAR_TOP | 호출하는 액티비티가 스택에 있으면 해당 액티비티를 Top으로 만들기 위해 그 위에 존재하던 액티비티를 모두 삭제합니다. 예를 들어 액티비티 A/B/C/D/E가 스택에 있을 때 C를 호출하면 D/E를 삭제해서 C를 화면에 나타냅니다. |
+| FLAG_ACTIVITY_NEW_TASK | 새로운 태스크를 생성하여 안에 액티비티를 추가할 때 사용합니다. 단, 기존에 존재하는 태스크 중에 생성하려는 액티비티와 동일한 AFFINITY를 가지고 있는 태스크가 있으면 해당 태스크로 액티비티가 들어갑니다. |
+| FLAG_ACTIVITY_MULTIPLE_TASK | 호출되는 액티비티를 메인으로 하는 새로운 태스크를 생성합니다. 이렇게 하면 동일한 액티비티를 하나 이상의 태스크에서 열 수 있습니다. FLAG_ACTIVITY_NEW_TASK와 함께 사용하지 않는다면 아무 효과 없는 플래그입니다. |
+| FLAG_ACTIVITY_SINGLE_TOP | 호출되는 액티비티가 Top에 있으면 해당 액티비티를 다시 생성하지 않고, 존재하던 액티비티를 다시 사용합니다. 액티비티 A/B/C가 있을 때 C를 호출하면 기존과 동리하게 A/B/C가 나옵니다. |
+{: .table .table-striped .table-hover}
+
+
+# 2. 컨테이너: 목록 만들기
+위젯의 위치를 다룰 때에 레이아웃을 사용했다면 위젯이나 다른 레이아웃에 데이터를 동적으로 표현해줄 때에는 컨테이너를 사용합니다.
+
+컨테이너는 데이터를 반복적으로 표시하는 용도로 사용하며 대표적인 컨테이너로는 목록<sup>List</sup>을 화면에 출력할 때 사용하는 리사이클러뷰<sup>RecyclerView</sup>가 있습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-144.png){: style="box-shadow: 0 0 5px #777"}
+
+## 2.1 스피너
+스피너<sup>Spinner</sup>는 여러 개의 목록 중에서 하나를 선택할 수 있는 선택 도구입니다.
+
+스피너는 어댑터<sup>Adapter</sup>라는 연결 도구를 사용해 화면에 나타낼 데이터와 화면에 보여주는 스피너를 연결합니다.
+
+여러 개의 데이터가 어댑터에 입력되면 1개의 데이터당 1개의 아이템 레이아웃이 생성되어 화면에 목록 형태로 나타납니다. 
+
+목록에서 한 줄은 1개의 아이템 레이아웃입니다.
+
+### 스피너로 보는 어댑터의 동작 구조
+
+이제부터 안드로이드 프로젝트를 만들어서 실제 스피너에 값을 입력하고 동작시켜 보겠습니다.
+
+ContainerSpinner 프로젝트를 생성합니다.
+
+1. activity_main.xml의 [Degisn] 모드에서 ‘Hello World!’ 텍스트뷰의 id속성을 ‘result’로 변경합니다. 그리고 text속성에는 ‘선택 결과’라고 입력합니다.
+
+1. 팔레트의 컨테이너 (Containers) 카테고리에서 스피너 (Spinner) 를 드래그해서 텍스트뷰 아래에 가져다 놓습니다. 스피너의 id속성에 ‘spinner’라고 입력되어 있는 것을 확인합니다.
+
+1. 스피너의 컨스트레인트를 좌우는 끝까지 연결하고 위는 텍스트뷰와 연결합니다. 마진은 좌우는 ‘50’, 위는 ‘25’로 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-145.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 혹시 그림과 같이 마진값이 적용되지 않는다면 사각형 중앙의 가로 측 사이즈 조절바를 클릭해서 매치 컨스트레인트(![1]({{site.baseurl}}/images/this-is-android/this-is-android-40.png){: style="box-shadow: 0 0 5px #777"}) 로 만들어줍니다. 또는 layout_width 속성에 ‘0dp’라고 입력해도 됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-146.png){: style="box-shadow: 0 0 5px #777"}
+
+1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt] 탭을 클릭해서 소스코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.<br>
+    ```kotlin
+    package kr.co.hanbit.containerspinner
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.containerspinner.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+    }
+    ```
+
+1. 위 코드에 이어서 다음 행에 스피너에 입력될 가상의 데이터를 작성합니다. data변수를 만들고 listOf 를 사용해서 여러 개의 데이터를 입력합니다. 첫번째 데이터는 아직 데이터가 선택하지 않았기 때문에 기본으로 보여주는 ‘- 선택하세요 `’로 입력합니다.
+```kotlin
+var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월", "6월")
+```
+
+1. 앞에서 만든 데이터와 스피너를 연결해줄 ArrayAdapter 클래스를 만들어 adapter 변수에 저장합니다. ArrayAdapter클래스는 adapter에서 사용할 데이터 타입을 제네릭으로 지정해야 합니다. 앞에서 문자열로 데이터를 구성했기 때문에 ``<String>``으로 지정합니다. ArrayAdapter의 파라미터는 총 3개이며 (스피너를 화면에 그리기 위한 컨텍스트, 스피너에 보여줄 목록 하나하나가 그려질 레이아웃, 어댑터에서 사용할 데이터) 순으로 입력합니다. 컨텍스트는 this를 사용하고, 레이아웃은 기본으로 제공하는 simple_list_item1을 사용합니다. 마지막 값으로 미리 만들어둔 data변수를 입력합니다.<br>
+    ```kotlin
+    var dapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
+    ```
+
+1. 다음 코드를 입력해 어댑터를 스피너 위젯에 연결합니다. 스피너의 adapter속성에 담아주는 것만으로 간단하게 연결됩니다. <br>
+    ```kotlin
+    binding.spinner.adapter = adapter
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-147.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 이번에는 사용자가 스피너를 선택하면 선택한 값을 선택 결과에 보여주는 코드를 작성하겠습니다. 스피너를 선택하는 동작을 인식하기 위해서 onItemSelectedListener를 사용하는데, 이름 그대로 스피너에 있는 아이템이 선택되면 동작하는 리스너입니다.
+
+1. 이어서 ‘=object: OnItem’까지만 입력하면 나타나는 자동 완성 코드에서 OnItemSelectedListener를 선택하고 중괄호 ({})를 붙여서 코드를 작성합니다.
+    ```kotlin
+    binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+        
+    }
+    ```
+
+1. 코드 블럭 사이를 클릭한 다음 마우스 오른쪽 버튼을 클릭해서 [Generate] - [Implements Methods]를 선택합니다. 나오는 메서드 목록 2개를 모두 선택하면 코드가 자동 완서오디는데 TODO()행은 모두 삭제합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-148.png){: style="box-shadow: 0 0 5px #777"}
+    ```kotlin
+    override fun onItemSelected(
+        parent: AdapterView<*>?,
+        view: View?,
+        position: Int,
+        id: Long
+    ) {
+
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        
+    }
+    ```
+
+1. 자동 완성된 코드 중에서 onItemSelected() 메서드만 사용할 예정입니다. 이 메서드에 파라미터가 4개 있는데 OnItemSelectedListener를 사용할 때는 대부분 세 번째 position만 사용합니다. 사용자가 스피너에서 선택을 하면 몇 번째 아이템인지를 알려주는 파라미터입니다. 혹시 파라미터 이름이 다르면 책과 동일하게 수정한 다음 진행합니다. 두 번째 메서드 안에 다음 코드를 추가합니다. 리스너에서 넘겨주는 position값으로 data의 해당 위치에 있는 문자 값을 선택 결과 텍스트뷰에 입력하는 코드입니다.
+```kotlin
+binding.result.text = data.get(position)
+```
+
+1. 이제 스피너를 선택하면 해당 값이 선택 결과의 위치에 표시됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-149.png){: style="box-shadow: 0 0 5px #777"}<br>
+    ```kotlin
+    package kr.co.hanbit.containerspinner
+
+    import android.R
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.view.View
+    import android.widget.AdapterView
+    import android.widget.ArrayAdapter
+    import kr.co.hanbit.containerspinner.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월", "6월");
+            var adapter = ArrayAdapter<String>(this, R.layout.simple_list_item_1, data);
+            binding.spinner.adapter = adapter
+            binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    binding.result.text = data.get(position)
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+            }
+
+        }
+    }
+    ```
+
+
+
 
 <style>
 .page-container {max-width: 1200px}‘’
