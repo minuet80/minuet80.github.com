@@ -718,8 +718,22 @@ binding.result.text = data.get(position)
     }
     ```
 
+## 2.2 리사이클러뷰
+리사이클러뷰<sup>RecyclerView</sup>는 스피너가 조금 더 확장된 형태입니다. 리사이클러뷰도 스피너처럼 목록을 화면에 출력하는데, 레이아웃 매니저를 이용하면 간단한 코드만으로 리스트를 그리도로 바꿀 수도 있습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-150.png){: style="box-shadow: 0 0 5px #777"}<br>
+
+리사이클러뷰처럼 목록을 표시하는 컨테이너들은 표시될 데이터와 아이템 레이아웃을 어댑터에서 연결해주므로 어댑터에서 어떤 아이템 레이아웃을 사용하느냐에 따라 표시되는 모양을 다르게 만들 수 있습니다.
 
 
+### 화면 구성하기
+
+ContainerRecyclerView 프로젝트를 생성합니다.
+
+1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다. 리사이클러뷰 (RecyclerView)를 처음 사용한다면 팔레트의 컨테이너를 클릭했을 때 리사이클러뷰 오른쪽에 [다운로드 아이콘]이 보일 것입니다. 이 상태에서 리사이클러뷰를 드래그해서 UI편집기에 가져다 놓습니다.
+
+1. 다운로드가 완료되면 Item0, Item1... 이라는 글자가 여러 줄 쓰여 있는 리사이클러뷰가 화면에 그려집니다. id 속성에 ‘recyclerView’라고 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-151.png){: style="box-shadow: 0 0 5px #777"}
 
 <style>
 .page-container {max-width: 1200px}‘’
