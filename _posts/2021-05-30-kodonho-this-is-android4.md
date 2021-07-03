@@ -570,10 +570,10 @@ intent.addFlag(Intent.FLAG_ACTIVITY_NEW_TASK)
 
 | 플래그 | 설명 |
 | --- | --- |
-| FLAG_ACTIVITY_CLEAR_TOP | 호출하는 액티비티가 스택에 있으면 해당 액티비티를 Top으로 만들기 위해 그 위에 존재하던 액티비티를 모두 삭제합니다. 예를 들어 액티비티 A/B/C/D/E가 스택에 있을 때 C를 호출하면 D/E를 삭제해서 C를 화면에 나타냅니다. |
-| FLAG_ACTIVITY_NEW_TASK | 새로운 태스크를 생성하여 안에 액티비티를 추가할 때 사용합니다. 단, 기존에 존재하는 태스크 중에 생성하려는 액티비티와 동일한 AFFINITY를 가지고 있는 태스크가 있으면 해당 태스크로 액티비티가 들어갑니다. |
-| FLAG_ACTIVITY_MULTIPLE_TASK | 호출되는 액티비티를 메인으로 하는 새로운 태스크를 생성합니다. 이렇게 하면 동일한 액티비티를 하나 이상의 태스크에서 열 수 있습니다. FLAG_ACTIVITY_NEW_TASK와 함께 사용하지 않는다면 아무 효과 없는 플래그입니다. |
-| FLAG_ACTIVITY_SINGLE_TOP | 호출되는 액티비티가 Top에 있으면 해당 액티비티를 다시 생성하지 않고, 존재하던 액티비티를 다시 사용합니다. 액티비티 A/B/C가 있을 때 C를 호출하면 기존과 동리하게 A/B/C가 나옵니다. |
+| FLAG_ACTIVITY<br>_CLEAR_TOP | 호출하는 액티비티가 스택에 있으면 해당 액티비티를 Top으로 만들기 위해 그 위에 존재하던 액티비티를 모두 삭제합니다. 예를 들어 액티비티 A/B/C/D/E가 스택에 있을 때 C를 호출하면 D/E를 삭제해서 C를 화면에 나타냅니다. |
+| FLAG_ACTIVITY<br>_NEW_TASK | 새로운 태스크를 생성하여 안에 액티비티를 추가할 때 사용합니다. 단, 기존에 존재하는 태스크 중에 생성하려는 액티비티와 동일한 AFFINITY를 가지고 있는 태스크가 있으면 해당 태스크로 액티비티가 들어갑니다. |
+| FLAG_ACTIVITY<br>_MULTIPLE_TASK | 호출되는 액티비티를 메인으로 하는 새로운 태스크를 생성합니다. 이렇게 하면 동일한 액티비티를 하나 이상의 태스크에서 열 수 있습니다. FLAG_ACTIVITY<br>_NEW_TASK와 함께 사용하지 않는다면 아무 효과 없는 플래그입니다. |
+| FLAG_ACTIVITY<br>_SINGLE_TOP | 호출되는 액티비티가 Top에 있으면 해당 액티비티를 다시 생성하지 않고, 존재하던 액티비티를 다시 사용합니다. 액티비티 A/B/C가 있을 때 C를 호출하면 기존과 동리하게 A/B/C가 나옵니다. |
 {: .table .table-striped .table-hover}
 
 
