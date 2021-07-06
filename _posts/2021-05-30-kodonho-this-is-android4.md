@@ -1090,16 +1090,227 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
+### 레이아웃 매니저의 종류
+
+리사이클러뷰에서 사용할 수 있는 레이아웃 매니저<sup>Layout Manager</sup>의 종류는 세 가지 입니다. 이중에서 세 번째 StaggeredGridLayoutManager는 핀터레스트 같은 사진 앱에서 자주 사용되는 형태입니다. 
+
+1. ``LinearLayoutManager``
+  - ``세로 스크롤`` : 기본으로 세로 스크롤을 하며 일반 리스트처럼 한 줄로 목록을 생성합니다. 추가로 설정하면 가로 스크롤도 할 수 있습니다. 
+    ```kotlin
+    LinearLayoutManager(this)
+    ```
+  - ``가로 스크롤`` : 컬럼 개수를 지정해서 개수만큼 그리드 형태로 목록을 생성합니다. 리니어 레이아웃 매니저의 두 번째 파라미터에 가로 스크롤 옵션을 설정합니다.
+    ```kotlin
+    LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+    ```
+
+1. ``GridLayoutManager``
+  - 데이터의 사이즈에 따라 그리드의 크기가 결정됩니다. 두 번째 파라미터에 한 줄에 몇 개의 아이템을 표시할 건지 개수를 설정합니다.
+    ```kotlin
+    GridLayoutManager(this, 3)
+    ```
+
+1. ``StaggeredGridLayoutManager``<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-166.png){: style="box-shadow: 0 0 5px #777"}<br>
+  - ``세로 스크롤`` : 컨텍스트를 사용하지 않으므로 this를 넘기지 않아도 됩니다. 첫 번째 파라미터에는 한 줄에 표시되는 아이템의 개수, 두 번째 파라미터에는 세로 방향을 설정합니다.
+    ```kotlin
+    StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
+    ```
+  - ``가로 스크롤`` : 두 번째 파라미터에 가로 방향을 설정합니다.
+    ```kotlin
+    StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
+    ```
+
+### 목록 클릭 이벤트 처리
+
+이번에는 목록에서 아이템 1개가 클릭 되었을 때 처리하는 방법을 알아보겠습니다.
+
+간단하게 홀더가 가지고 있는 아이템뷰에 클릭리스너를 달고, 리스너 블록에 실행할 코드만 추가하면 목록이 클릭 될 때마다 해당 코드가 실행됩니다.
+
+1. CustomAdapter.kt 파일을 열어 Holder 클래스가 생성되는 시점에 클릭리스너를 추가하려면 먼저 Holder 클래스에 init를 추가해야 합니다. init에서 아이템뷰에 클릭 리스너를 달고 리스너 블록 안에 토스트로 간단한 메시지를 보여주는 코드를 setMemo() 메서드 위에 작성합니다.
+    ```kotin
+    init {
+        binding.root.setOnClickListener {
+            Toast.makeText(binding.root.context, "클릭된 아이템 = ${binding.textTitle.text}", Toast.LENGTH_LONG).show()
+        }
+    }
+    ```
+    Toast.makeText 메서드가 사용하는 첫 번째 파라미터인 context는 binding.root에서 꺼낼 수 있습니다.
+
+1. 에뮬레이터를 실행하고 목록을 클릭해보면 토스트 메시지가 나타납니다. 목록에서 클릭 처리는 이렇게 뷰홀더 안에서 간단하게 만들 수 있습니다. 목록에서 상세화면으로 이동이 일어날 경우는 클릭리스너 안에서 startActivity를 호출하는 형태로 처리할 수 있습니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-167.png){: style="box-shadow: 0 0 5px #777"}
 
 
 
+# 3. 액티비티의 조각 프래그먼트 다루기
+
+안드로이드의 액티비티는 화면을 표현하기 위한 기본 단위입니다.
+
+액티비티를 구성하다 보면 화면이 너무 복잡하거나 또는 코드의 양이 너무 많아졌거나 하는 이유로 화면 부위별로 따로 동작시키고 싶을 때가 있습니다.
+
+그럴 때 화면을 각각 분할해서 독립적인 코드로 구성할 수 있게 도와주는 것이 프래그먼트<sup>Fragment</sup>입니다.
+
+프래그먼트는 서로 다른 크기의 화면을 가진 기기 (태블릿, 스마트폰 등) 에서 하나의 액티비티로 서로 다른 레이아웃을 구성할 수 있도록 설계되었습니다.
+
+목록 프래그먼트<sup>List Fragment</sup>와 상세 프래그먼트<sup>Detail Fragment</sup>가 있을 때 태블릿과 같은 큰 화면에서는 두 프래그먼트를 한 화면에 표시하고, 스마트폰처럼 작은 화면에서는 먼저 목록 프래그먼트만 표시한 후 목록을 클릭하면 상세가 나타나는 구조입니다.
 
 
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-168.png){: style="box-shadow: 0 0 5px #777"}
 
 
+구글의 설계 의도는 앞의 구조처럼 사용하는 것이지만, 실제 개발할 때에는 태블릿 환경을 고려하기 보다는 다음과 같은 구조로 더 많이 사용합니다.
+
+- 한 번에 1개의 프래그먼트가 화면에 나타나는 형태로 프래그먼트를 여러 개를 미리 만들어두고 탭 메뉴나 스와이프<sup>Swipe</sup>로 화면 간 이동할 때 사용됩니다.
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-169.png){: style="box-shadow: 0 0 5px #777"}
+
+- 한 번에 여러 개의 프래그먼트가 동시에 화면에 나타나는 형태로 태블릿과 같은 대형 화면을 가진 디바이스에서 메뉴와 뷰를 함께 나타내거나 여러 개의 섹션을 모듈화 한 후 한 화면에 나타낼 때 사용됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-170.png){: style="box-shadow: 0 0 5px #777"}
 
 
+## 3.1 프래그먼트를 만들어 액티비티에 추가하기
+
+프래그먼트는 단독으로 사용되지 않고 액티비티의 일부로 사용됩니다.
+
+이번에는 프래그먼트를 액티비티에 추가하는 방법을 예제롤 통해서 알아보겠습니다.
+
+Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 build.gradle 파일을 열고 viewBinding 설정을 합니다.
+
+### 목록 프래그먼트 만들기
+
+1. java 디렉토리 밑에 있는 패키지명을 선택하여 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Black)]를 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-171.png){: style="box-shadow: 0 0 5px #777"}
+
+1. Fragment Name에 ‘ListFragment’를 입력하면 해당 프래그먼트가 사용하는 레이아웃인 fragment_list를 자동으로 생성해줍니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-172.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 이제 layout 디렉토리 아래에 fragment_list.xml 과 java 디렉토리 아래의 패키지명 밑에 ListFragment.kt 파일이 생성되고 화면에 열려 있습니다.  ListFragment.kt의 onCreateView() 메서드는 리사이클러뷰의 onCreateViewHolder() 메서드처럼 동작합니다.  액티비티가 프래그먼트를 요청하면 onCreateView() 메서드를 통해 뷰를 만들어서 보여줍니다. inflate 메서드는 리사이클러뷰에서와 동일하게 동작합니다.  다음은 프래그먼트 생성 후 ListFragment.kt의 기본 코드입니다.
+    ```kotiln
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private const val ARG_PARAM1 = "param1"
+    private const val ARG_PARAM2 = "param2"
+
+    /**
+    * A simple [Fragment] subclass.
+    * Use the [ListFragment.newInstance] factory method to
+    * create an instance of this fragment.
+    */
+    class ListFragment : Fragment() {
+        // TODO: Rename and change types of parameters
+        private var param1: String? = null
+        private var param2: String? = null
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            arguments?.let {
+                param1 = it.getString(ARG_PARAM1)
+                param2 = it.getString(ARG_PARAM2)
+            }
+        }
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            // Inflate the layout for this fragment
+            return inflater.inflate(R.layout.fragment_list, container, false)
+        }
+
+        companion object {
+            /**
+            * Use this factory method to create a new instance of
+            * this fragment using the provided parameters.
+            *
+            * @param param1 Parameter 1.
+            * @param param2 Parameter 2.
+            * @return A new instance of fragment ListFragment.
+            */
+            // TODO: Rename and change types and number of parameters
+            @JvmStatic
+            fun newInstance(param1: String, param2: String) =
+                ListFragment().apply {
+                    arguments = Bundle().apply {
+                        putString(ARG_PARAM1, param1)
+                        putString(ARG_PARAM2, param2)
+                    }
+                }
+        }
+    }
+    ```
+    현재 실습을 하지 않는 코드가 많이 있기 때문에 가독성을 위해 모두 지웁니다.<br>
+    ``수정 후 전체코드``
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private const val ARG_PARAM1 = "param1"
+    private const val ARG_PARAM2 = "param2"
+
+    /**
+    * A simple [Fragment] subclass.
+    * Use the [ListFragment.newInstance] factory method to
+    * create an instance of this fragment.
+    */
+    class ListFragment : Fragment() {
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            // Inflate the layout for this fragment
+            return inflater.inflate(R.layout.fragment_list, container, false)
+        }
+    }
+    ```
+    - onCreateView 의 파라미터
+      - ``inflater`` : 레이아웃 파일을 로드하기 위한 레이아웃 인플레이터를 기본으로 제공합니다.
+      - ``container`` : 프래그먼트 레이아웃이 배치되는 부모 레이아웃입니다. (액티비티의 레이아웃입니다.)
+      - ``savedInstanceState`` : 상태 값 저장을 위한 보조 도구. 액티비티의 onCreate 의 파라미터와 동일하게 동작합니다.
+
+1. 이제 목록 프래그먼트의 레이아웃을 작성합니다.  fragment_list.xml 파일을 열어보면 프래그먼트의 기본 레이아웃에는 프레임 레이아웃과 그 안에 1개의 텍스트뷰 위젯이 있습니다.  그리고 텍스트뷰 위젯의 layout_width 와 layout_height 속성의 설정값이 ‘match_parent’로 설정되어 있어 텍스트뷰 영역이 화면 전체를 차지합니다.
+
+1. 화면 우측 상단의 [Code] 버튼을 클릭해서 모드를 변경합니다. [Code] 모드에서 두 번째 줄에 있는 ``<FrameLayout>`` 태그를 ``‘ConstraintLayout’``으로 변경합니다.
+    ```kotlin
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ListFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/hello_blank_fragment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    ```
+
+1. 편집기 우측 상단의 [Design] 버튼을 클릭해서 모드를 변경합니다.  텍스트뷰의 layout_width 와 layout_height 속성을 모두 ‘wrap_content’로 바꿉니다. 그 당ㅁ text 속성에 ‘List’를 입력하고 드래드해서 화면 상단 중앙에 가져다 놓고 좌우 그리고 위쪽의 컨스트레인트를 화면 끝에 연결합니다. 위쪽의 거리는 컨스트레인트 편집기에서 ‘32’로 설정해줍니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-173.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 팔레트 영역에서 버튼을 화면 중앙에 추가합니다. 버튼의 좌우 컨스트레인트는화면 가장자리에 연결하고, 위쪽은 텍스트뷰에 연결하며 거리는 ‘24’로 설정합니다. text 속성에 ‘Next’를 입력하고, id 속성에 ‘btnNext’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-174.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 액티비티에 프래그먼트 추가하기 
 
 <style>
-.page-container {max-width: 1200px}‘’
+.page-container {max-width: 1200px}‘362’
 </style>
