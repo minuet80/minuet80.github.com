@@ -1311,6 +1311,179 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 
 ### 액티비티에 프래그먼트 추가하기 
 
+프래그먼트의 기본 화면을 구성한 상태에서 액티비티와 연결하겠습니다.
+프래그먼트는 기본적으로 하나의 뷰로 동작하기 때문에 액티비티 안에 뷰를 삽입할 수 있는 레이아웃을 준비해야 합니다.
+
+프래그먼트를 삽입하기 위한 전용 레이아웃으로 컨테이너 카테고리의 ``<fragment>``와 레이아웃 카테고리의 프레임 레이아웃이 있는데, 화면 전환 (목록 <-> 상세)이 필요할 때는 프레임 레이아웃을 사용하는 것이 좋습니다.
+
+``<fragment>``화면 전환 없이 프래그먼트 하나만 화면에 표시할 때 사용합니다.
+
+1. activity_main.xml 파일을 열고 액티비티 영역과 프래그먼트 영역을 구분해주기 위해서 레이아웃을 수정합니다.  기본 텍스트뷰를 화면 상단으로 옮기고 text 속성에 ‘Activity’를 입력합니다. 컨스트레인트는 아래르 제외하고 모두 연결하며 위쪽과의 거리는 ‘16’으로 설정합니다.
+
+1. 레이아웃 카테고리의 프레임 레이아웃을 드래그해서 화면에 가져다 놓고 텍스트뷰 아래 화면이 꽉 차도록 컨스트레인트를 설정합니다. id속성에 ‘frameLayout’을 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-175.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 앞에서 만든 프래그먼트를 액티비티에 삽입하는 코드를 작성해야 하는데, 이번 절에서는 액티비티에서 레이아웃에 접근하는 코드가 없기 때문에 MainActivity에는 바인딩 관련 코드를 작성하지 않습니다.  MainActivity.kt파일을 열고 onCreate() 메서드 아래에 프래그먼트를 삽입하는 빈 메서드인 setFragment()를 만들고 onCreate() 안에서 미리 호출합니다. 
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+
+            setFragment()
+        }
+
+        fun setFragment() {
+            
+        }
+    }
+    ```
+
+1. 액티비티에 프래그먼트를 삽입하기 위해서는 프래그먼트 매니저를 통해 삽입할 레이아웃의 id를 지정합니다. 프래그먼트를 삽입하는 과정은 하나의 트랜잭션으로 관리되기 때문에 트랜잭션 매니저를 통해 begin transaction > add fragment > commit transaction 의 순서로 처리됩니다. setFragment() 메서드 안에 다음과 같이 ListFragment를 생성합니다.
+    ```kotlin
+    val listFragment: ListFragment = ListFragment()
+    ```
+
+1. 이어서 액티비티가 가지고 있는 프래그먼트 매니저를 통해서 트랜잭션을 시작하고, 시작한 트랜잭션을 변수에 저장해둡니다.
+    ```kotlin
+    val transaction = supportFragmentmanager.beginTrasaction()
+    ```
+
+1. 트랜잭션 add() 메서드로 frameLayout을 id로 가지고 있는 레이아웃에 앞에서 생성한 listFragment를 삽입합니다.
+    ```kotlin
+    transaction.add(R.id.frameLayout, listFragment)
+    ```
+
+1. commit() 메서드로 모든 작업이 정상적으로 처리되었음을 트랜잭션에 알려주면 작업이 반영됩니다.
+    ```kotlin
+    transaction.commit()
+    ```
+    - ``프래그먼트를 화면에 삽입하는 메서드``
+      - add(레이아웃, 프래그먼트): 프래그먼트를 레이아웃에 추가합니다.
+      - replace(레이아웃, 프래그먼트): 레이아웃에 삽입되어 있는 프래그먼트를 교체합니다.
+      - remove(프래그먼트): 지정한 프래그먼트를 제거합니다.
+
+1. 에뮬레이터에서 실행하면 Activity안에 List가 나타납니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-176.png){: style="box-shadow: 0 0 5px #777"}<br>
+  다음은 MainActivity.kt 파일에 작성된 코드의 일부입니다.
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+
+            setFragment()
+        }
+
+        fun setFragment() {
+            val listFragment: ListFragment = ListFragment()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.add(R.id.frameLayout, listFragment)
+            transaction.commit()
+        }
+    }
+    ```
+
+### 레이아웃에서 프래그먼트 추가하기
+
+fragment 컨테이너를 사용하면 소스 코드를 거치지 않고 레이아웃 파일에서도 위젯처럼 프래그먼트를 추가할 수 있습니다. 하나의 프래그먼트를 화면 전환 없이 사용하면 소스 코드에스 추가하는 것보다 레이아웃에서 추가하는 것이 훨씬 효율적입니다.
+
+레이아웃 파일에서 프래그먼트를 추가하기 위해서는 메인 액티비티의 레이아웃에 추가했던 ‘FrameLayout’을 ‘Fragment’로 변경해야 합니다.
+
+1. activity_main.xml 파일을 열고 [Code]버튼을 클릭해서 모드를 변경합니다. XML 태그 중간에 ``<FrameLayout> ~ </FrameLayout>``까지 주석으로 처리합니다.
+
+1. 다시 디자인 모드로 변경하고 컨테이너 카테고리의 ``<fragment>``를 화면에 가져다 놓습니다. 이 때 ``<fragment>``태그를 삽입할 클래스 선택 팝업창이 뜨는데 앞에서 작성한 [ListFragment]를 선택합니다. ``책에서 잘 안되어 다음 그림과 같이 처리함!!``<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-177.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 속성 영역에서 id를 ‘fragmentLayout’으로 변경합니다. ``<fragment>``의 컨스트레인트를 네 방향 모두 연결합니다. 위쪽은 텍스트뷰에 연결합니다. layout_width와 layout_height 속성을 모두 ‘match_constraint’로 변경합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-178.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt 파일을 열고 setFragment() 메서드 안의 내용을 모두 주석 처리합니다.<br>
+    ```kotlin
+    fun setFragment() {
+    /*
+
+        val listFragment: ListFragment = ListFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frameLayout, listFragment)
+        transaction.commit()
+    */
+
+    }
+    ```
+
+1. 에뮬레이터에서 확인하면 05에서 본 화면과 같은 화면이 나타납니다.
+
+## 3.2 프래그먼트 화면 전환
+
+DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next버튼을 클릭하면 DetailFragment로 화면이 전환되는 과정을 알아보겠습니다.
+
+### 상세 프래그먼트 만들기
+
+1. 파일 탐색기에 있는 java 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나오는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)] 를 선택합니다. Fragment Name을 ‘DetailFragment’로 수정하고 [Finish]버튼을 클릭하면 프래그먼트 파일과 레이아웃 파일이 생성됩니다.
+
+1. fragment_detail.xml 파일을 열고 [Code] 모드에서 ‘FrameLayout’을 ‘ConstraintLayout’으로 변경합니다.
+
+1. [Design] 버튼을 클릭해서 모드를 바꿈니다.  기존 텍스트뷰의 text 속성에는 ‘Detail’을 입력하고 layout_width와 layout_height 속성은 모두 ‘wrap_content’로 바꿉니다. 텍스트뷰를 화면 상단 중앙으로 옮기고 컨스트레인트는 좌우와 위쪽을 연결합니다. 위쪽 거리는 ‘24’로 설정합니다.<br>
+
+1. 텍스트뷰 아래에 버튼을 하나 드래그해서 가져다 놓고, id속성에 ‘btnBlank’, text속성에는 ‘Back’을 입력합니다. 컨스트레인트의 위쪽은 텍스트뷰와 연결하고 거리를 ‘24’로 설정하고 좌우로도 화면 가장자리에 연결합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-179.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 메인 액티비티에 두 프래그먼트 연결하기
+
+이제 앞에서 만든 목록 프래그먼트의 Next 버튼을 클릭하면 상세 프래그먼트로 이동하고 다시 상세 프래그먼트의 [Back] 버튼을 클릭하면 목록 프래그먼트로 돌아가는 코드를 작성하겠습니다.  프래그먼트를 메인 액티비티에서 생성하고 프래그먼트를 담는 레이아웃도 메인 액티비티에 있으므로 화면 전환을 위한 기본적인 소스 코드는 메인 액티비티에서 작성합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-180.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt을 열고 ListFragment의 Next 버튼을 클릭했을 때 호출할 goDetail() 메서드를 setFragment() 메서드 아래에 작성합니다. goDetail() 메서드가 호출되면 DetailFragment를 생성해서 메인 액티비티의 frameLayout에 삽입할 겁니다.<br>
+    ```kotlin
+    fun goDetail()
+    ```
+
+1. goDetail() 메서드 안에서 DetailFragment를 생성하고 detailFragment 변수에 저장합니다.<br>
+    ```kotlin
+    fun goDetail() {
+        val detailFragment = DetailFragment()
+    }
+    ```
+
+1. 생성된 DetailFragment를 액티비티에 삽입하기 위해 setFragment에 작성했던 코드 세 줄을 복사해서 붙여넣습니다. 그리고 listFragment만 detailFragment로 다음처럼 수정합니다.
+    ```kotlin
+    val transaction = supportFragmentManager.beginTransaction()
+    transaction.add(R.id.frameLayout, detailFragment)
+    transaction.commit()
+    ```
+
+1. transaction의 add()와 commit() 사이에 addToBackStack()을 추가합니다. ``이렇게 하면 스마트폰의 뒤로가기 버틍을 사용할 수 있습니다.``
+    ```kotlin
+    transaction.addToBackStack("detail")
+    ```
+    - ``addToBackStack으로 프래그먼트 트랜잭션을 백스택에 담을 수 있습니다.``
+      - 스마트폰의 삽입하기 위해 사용되는 트랜잭션을 마치 하나의 액티비티처럼 백스택에 담아 둘 수 있습니다. 따라서 스마트폰의 뒤로가기 버튼으로 트랜잭션 전체를 마치 액티비티처럼 제거할 수 있게 됩니다. 주의할 점은 개별 프래그먼트가 스택에 담기는 것이 아니라 트랜잭션 전체가 담기기 때문에 add나 replace에 상관없이 해당 트랜잭션 전체가 제거됩니다.
+
+
+1. DetailFragment.kt의 Back 버튼을 클릭하면 호출되는 goBack() 메서드를 작성합니다. Back 버튼 역시 DetailFragment에 있지만 코드는 MainActivity.kt에 작성합니다. 상세 프래그먼트에서 목록으로 돌아가는 코드는 트랜잭션 없이 뒤로가기로 간단하게 처리할 수 있으므로 메서드의 이름을 goBack()으로 작성합니다. ``onBackPressed()``는 뒤로가기가 필요할 때 액티비티에서 사용할 수 있는 기본 메서드 입니다.
+    ```kotlin
+    fun goBack() {
+        onBackPressed()
+    }
+    ```
+
+
+
+
+
 <style>
-.page-container {max-width: 1200px}‘362’
+.page-container {max-width: 1200px}372‘’
 </style>
