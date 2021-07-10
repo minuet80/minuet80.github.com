@@ -1480,10 +1480,146 @@ DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next
     }
     ```
 
+### ListFragment.kt 코드 수정하기
 
+이번에는 ListFragment.kt에서 Next버튼의 클릭리스너를 작성합니다. 
+
+프래그먼트의 버튼으로 사용자의 클릭이 전달되면 메인 액티비티의 goDetail() 메서드를 호출하는 형태로 만들어집니다.
+MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 MainActivity를 전달받는 코드를 먼저 작성해야 합니다.
+프래그먼트의 생명 주기 메서드 중에 onAttach()를 통해 코드를 전달받는 것이 가장 일반적인 방법입니다.
+
+1. MainActivity를 담아둘 멤버 변수 mainActivity를 class 바로 밑에 선언합니다.
+    ```kotlin
+    class ListFragment: Fragment() {
+        var mainActivity: MainActivity? = null
+    }
+    ```
+    - 인터페이스를 사용하지 않고 액티비티를 직접 변수에 담아 사용합니다.
+      - 프래그먼트를 만들면 자동으로 생성되는 기본 코드에서는 인터페이스를 통해 의존성을 제거하는 코드로 작성되어 있지만, 처음 공부할 때는 이런 코드가 오히려 이해하는 데 방해가 될 수 있어서 액티비티를 그대로 사용하는 것을 권장합니다.
+
+1. ListFragment 의 빈 공간을 클릭한 상태에서 키보드의 ``Ctrl`` + ``O``키를 입력하면 메서드를 오버라이드할 수 있는 팝업창이 나타납니다. onAttach(context: Context)메서드를 오버라이드 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-181.png){: style="box-shadow: 0 0 5px #777"}
+
+
+1. onAttach() 메서드를 통해 넘어온 Context를 캐스팅해서 MainActivity에 담습니다. 프래그먼트의 onAttach() 메서드를 통해 넘어오는 Context는 부모 액티비티 전체가 담겨 있습니다. context의 타입이 MainActivity인 것을 확인하고 mainActivity 프로퍼티에 저장해둡니다.
+    ```kotlin
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        if (context is MainActivity) mainActivity = context
+    }
+    ```
+
+1. 목록 플래그먼트의 레이아웃에 있는 버튼을 사용하기 위해서 onCreateView() 메서드에 만들어져 있는 코드 한 줄을 수정합니다.
+    ```kotlin
+    /* 원본 코드 : inflater로 생성한 뷰를 바로 리턴하는 구조입니다. */
+    return inflater.inflate(R.layout.fragment_list, container, false)
+
+    /* 수정 코드 : 바인딩으로 생성한 후 레이아웃에 있는 btnNext 버튼에 리스너를 등록한 후에 binding.root를 리턴합니다. */
+    val binding = FragmentListBinding.inflate(inflater, container, false)
+    binding.btnNext.setOnClickListener { mainActivity?.getDetail() }
+    return binding.root
+    ```
+    코드의 마지막 줄이 return binding이 아니라 binding.root인 이유는 onCreateView() 메서드의 반환값이 View이기 때문에 바인딩이 가지고 있는 root뷰를 넘겨주는 것입니다.
+    ``ListFragment의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.content.Context
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import kr.co.hanbit.fragment.databinding.FragmentListBinding
+
+    class ListFragment : Fragment() {
+
+        var mainActivity: MainActivity? = null
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            // Inflate the layout for this fragment
+            /* 원본 코드 : inflater로 생성한 뷰를 바로 리턴하는 구조입니다. */
+            return inflater.inflate(R.layout.fragment_list, container, false)
+
+            /* 수정 코드 : 바인딩으로 생성한 후 레이아웃에 있는 btnNext 버튼에 리스너를 등록한 후에 binding.root를 리턴합니다. */
+            val binding = FragmentListBinding.inflate(inflater, container, false)
+            binding.btnNext.setOnClickListener { mainActivity?.goDetail() }
+            return binding.root
+        }
+
+        override fun onAttach(context: Context) {
+            super.onAttach(context)
+
+            if (context is MainActivity) mainActivity = context
+        }
+    }
+    ```
+
+1. 에뮬레이터에서 실행한 후 Next 버튼을 클릭하면 Detail 프래그먼트가 화면에 겹쳐 보입니다. 프래그먼트는 하나의 레이아웃에 한 층씩 쌓이는 형태라서 기본 배경색을 설정하지 않으면 화면이 중첩된 채로 그려집니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-182.png){: style="box-shadow: 0 0 5px #777"}
+
+
+1. fragment_detail.xml 파일을 열고 컴포넌트 트리의 컨스트레인트 레이아웃을 선택한 다음 속성 영역의 background 속성에 ‘#ff0000’을 입력해서 배경을 빨강색으로 설정합니다.
+
+1. 여기서 한가지 더 해야할 것이 있습니다. 프래그먼트가 중첩되었을 때 아래쪽 프래그먼트에 버튼과 같은 클릭 가능한 요소가 있으면 위쪽 프래그먼트를 통과해서 클릭됩니다. 그래서 예상치 못한 이벤트가 발생할 수 있는데 이를 방지하기 위해서 컴포넌트 트리의 컨스트레인트 레이아웃의 clickable속성을 체크해서 ‘true’로 변경합니다.
+
+
+1. 이제 마지막으로 DetailFragment.kt의 Back 버튼을 클릭했을 때 ListFragment.kt로 돌아가는 코드를 작성하겠습니다. DetailFragment.kt 파일을 열고 ListFragment.kt에서 한 것과 같은 순서로 코드를 추가합니다. clsss... 바로 밑 첫 줄에 메인 액티비티를 담아두는 변수 miainActivity를 선언합니다. 여기서는 앞의 코드와 조금 다르게 앞에서 공부했던 lateinit을 사용해 보겠습니다.
+    ```kotlin
+    lateinit var mainActivity: MainActivity
+    ```
+
+1. onCreateView() 아래에 onAttach() 메서드를 오버라이드하고 context를 MainActivity로 캐스팅해서 미리 선언한 mainActivity로 캐스팅해서 미리 선언한 mainActivity 변수에 담습니다. if 문으로 타입을 비교하는 대신 as 키워드로 타입 캐스팅 (형 변환) 해서 사용할 수 있습니다.
+    ```kotlin
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mainActivity = context as MainActivity
+    }
+    ```
+
+1. onCreateView()의 코드에서 인플레이트한 레이아웃을 view변수에 담고 버튼에 리스너를 등록한 후 mainActivity의 goBack() 메서드를 호출하도록 수정합니다.
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.content.Context
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import kr.co.hanbit.fragment.databinding.FragmentDetailBinding
+
+    class DetailFragment : Fragment() {
+
+        lateinit var mainActivity: MainActivity
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            val binding = FragmentDetailBinding.inflate(inflater, container, false)
+            binding.btnBack.setOnClickListener { mainActivity.goBack() }
+            return binding.root
+        }
+
+        override fun onAttach(context: Context) {
+            super.onAttach(context)
+
+            mainActivity = context as MainActivity
+        }
+    }
+    ```
+
+1. 에뮬레이터를 실행하고 테스트합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-183.png){: style="box-shadow: 0 0 5px #777"}
 
 
 
 <style>
-.page-container {max-width: 1200px}372‘’
+.page-container {max-width: 1200px}378‘’
 </style>
