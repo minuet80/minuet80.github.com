@@ -6,7 +6,7 @@ date:   2021-01-01 10:22:30 +0900
 categories: jekyll update
 img: bummy-mobile-refund/bummy-mobile-refund-1.png
 categories: [one, two]
-color: 1976D2
+color: 663399
 author: Minuet80
 permalink: /mobile-refund/
 width: large

@@ -6,7 +6,7 @@ date:   2021-01-01 10:22:30 +0900
 categories: jekyll update
 img: frugality_traffic_card/frugality_traffic_card-1.png
 categories: [one, two]
-color: 1976D2
+color: 663399
 author: Minuet80
 permalink: /frugality_traffic_card/
 width: large
