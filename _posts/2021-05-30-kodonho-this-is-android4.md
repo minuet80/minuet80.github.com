@@ -1619,6 +1619,18 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-183.png){: style="box-shadow: 0 0 5px #777"}
 
 
+## 3.3 프래그먼트로 값 전달하기
+
+프래그먼트로 값을 전달하는 방법에는 크게 두 가지가 있습니다.
+
+하나는 프래그먼트 생성 시에 값을 전달하는 것이고, 또 하나는 이미 생성되어 있는 프래그먼트에 값을 전달하는 것입니다.
+
+### 프래그먼트 생성 시 값 전달하기
+
+안드로이드에서는 프래그먼트를 생성하면서 값을 전달하는 방법으로 arguments 를 제공합니다.
+
+arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없이 사용할 수 있습니다.
+
 
 <style>
 .page-container {max-width: 1200px}378‘’
