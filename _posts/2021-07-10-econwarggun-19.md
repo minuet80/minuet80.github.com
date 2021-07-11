@@ -15,7 +15,7 @@ width: large
 ## 1. 삼성전자 2분기 잠정실적 전문가 분석은?
 
 ### 김영우
-{: style="background-color: #FFFFCC"}
+{{ article | remove: "<h3>" | remove: "</h3>"}}
 
 ``삼성전자 우려 요인``
 1분기에 비해 2분기 모바일 분야 ‘실적저조’ 예상
