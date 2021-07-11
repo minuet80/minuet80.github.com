@@ -423,5 +423,5 @@ DDR5로 손해보는 회사는 하이닉스
 
 
 <style>
-.page-container {max-width: 800px}‘’
+.page-container {max-width: 800px}
 </style>
