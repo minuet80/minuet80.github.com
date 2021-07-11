@@ -1631,7 +1631,471 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
 
 arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없이 사용할 수 있습니다.
 
+번들을 arguments에 전달하면 생성된 프래그먼트에서 arguments로 꺼낼 수 있습니다.
+
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-184.png){: style="box-shadow: 0 0 5px #777"}
+
+
+앞의 프로젝트에 이어서 작성합니다.
+
+1. MainActivity.kt 파일을 열고 setFragment() 메서드의 첫 번째 줄 val listFragment... 바로 다음 줄에 다음과 같이 번들을 하나 생성한 후 전달할 값을 담습니다. 
+    ```kotlin
+    var bundle = Bundle()
+    bundle.putString("key1", "List Fragment")
+    bundle.putInt("ket2", 20210101)
+    ```
+
+1. 값이 담긴 번들을 프래그먼트의 arguments에 담습니다.
+    ```kotlin
+    listFragment arguments = bundle
+    ```
+    나머지 코드는 그대로 두면 됩니다. 이제 프래그먼트 매너저를 통해서 프래그먼트를 액티비티에 삽입하면 값이 전달됩니다.
+
+1. setFragment() 메서드의 전체 코드입니다.
+    ```kotlin
+    fun setFragment() {
+        val listFragment: ListFragment = ListFragment()
+
+        var bundle = Bundle()
+        bundle.putString("key1", "List Fragment")
+        bundle.putInt("key2", 20210101)
+        listFragment.arguments = bundle
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frameLayout, listFragment)
+        transaction.commit()
+    }
+    ```
+
+1. ListFragment에서 사용하는 레이아웃 파일인 fragment_list.xml 파일을 열고, 화면의 Next 버튼 바로 아래에 텍스트뷰 2개를 추가한 후 다음과 같이 설정합니다. 왼쪽 텍스트의 id속성은 ‘textTitle’, 오른쪽 텍스트의 id속성은 ‘textValue’를 각각 입력하고 컨스트레인트를 연결해서 화면과 비슷하게 배치합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-185.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 프래그먼트에서 전달받은 값을 꺼낼 때에는 arguments에서 직접 꺼낼 수 있습니다. ListFragment.kt파일을 열고 onCreateView() 메서드의 마지막 줄에 있는 return binding.root 바로 윗줄에 코드를 입력합니다. arguements 에서 값을 꺼낸 후 레이아웃에 작성해둔 텍스트뷰에 입력하는 코드입니다.
+    ```kotlin
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        /* 원본 코드 : inflater로 생성한 뷰를 바로 리턴하는 구조입니다. */
+        //return inflater.inflate(R.layout.fragment_list, container, false)
+        /* 수정 코드 : 바인딩으로 생성한 후 레이아웃에 있는 btnNext 버튼에 리스너를 등록한 후에 binding.root를 리턴합니다. */
+        val binding = FragmentListBinding.inflate(inflater, container, false)
+        binding.btnNext.setOnClickListener { mainActivity?.goDetail() }
+        binding.textTitle.text = arguments?.getString("key1")
+        binding.textValue.text = "${arguments?.getInt("key2")}"
+        return binding.root
+    }
+    ```
+
+1. 이제 에뮬레이터에서 실행하면 ListFragment에 액티비티에서 전달한 2개의 값이 표시되는 것을 확인할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-186.png){: style="box-shadow: 0 0 5px #777"}
+
+### 생성되어 화면에 보이는 프래그먼트에 값 전달하기
+
+액티비티에서 이미 생성되어 화면에 보이는 프래그먼트로 값을 전달하기 위해서는 프래그먼트에 메서드를 정의하고 fragment.setValue() 의 형태로 만들어둔 메서드를 직접 호출하면 되기 때문에 앞의 코드를 조금 응용해서 사용할 수 있습니다.
+
+1. 앞의 코드에 이어서 따라 해보겠습니다. fragment_list.xml 파일을 열고 텍스트뷰를 하나 더 추가하고 다음과 같이 설정합니다. text속성과 id속성에 ‘textFromActivity’를 입력하고 컨스트레인트를 연결해서 그림과 같이 배치합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-187.png){: style="box-shadow: 0 0 5px #777"}
+
+1. ListFragment.kt를 열고 액티비티로부터 전달받을 문자열을 출력하는 setValue() 메서드를 하나 추가합니다. 메서드 안에서 textFromActivity에 전달받은 문자열을 세팅하는 코드를 다음과 같이 작성하면 되는데 binding이 아직 프로퍼티로 생성되지 않았기 때문에 빨간색으로 나타납니다. 
+    ```kotlin
+    fun setValue(value: String) {
+        binding.textFromActivity.text = value
+    }
+    ```
+
+1. onCreateView() 메서드의 가장 윗줄에 선언된 binding 변수를 메서드 밖으로 빼서 프로퍼티로 만들어줍니다. 그리고 onCreateView() 메서드 안에서 val 예약어를 삭제하면 클래스 안에서 모두 사용할 수 있게 바뀌면서, 앞에서 빨간색으로 보였던 binding이 정상적으로 보입니다.
+    ```kotlin
+    lateinit var binding:FragmentListBinding
+
+    var mainActivity: MainActivity? = null
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        /* 원본 코드 : inflater로 생성한 뷰를 바로 리턴하는 구조입니다. */
+        //return inflater.inflate(R.layout.fragment_list, container, false)
+        /* 수정 코드 : 바인딩으로 생성한 후 레이아웃에 있는 btnNext 버튼에 리스너를 등록한 후에 binding.root를 리턴합니다. */
+        binding = FragmentListBinding.inflate(inflater, container, false)
+        binding.btnNext.setOnClickListener { mainActivity?.goDetail() }
+        binding.textTitle.text = arguments?.getString("key1")
+        binding.textValue.text = "${arguments?.getInt("key2")}"
+        return binding.root
+    }
+    ```
+1. activity_main.xml 파일을열고 화면에 버튼을 하나 추가하고 id 속성에 ‘btnSend’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-188.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt 파일을 열고 onCreate() 메서드 위에 바인딩을 추가하고, setContentView에는 binding.root를 입력합니다.
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        setFragment()
+    }
+    ```
+
+1. onCreate() 메서드의 가장 아랫줄에 버튼이 클릭되면 listFragment를 통해서 setValue를 호출하는 코드를 작성합니다. 
+    ```kotlin
+    binding.btnSend.setOnClickListener { 
+        listFragment.setValue("전달할 값")
+    }
+    ```
+
+1. setFragment() 메서드 안에서 변수로 선언된 val listFragment를 메서드 밖으로 빼서 프로퍼티로 만들어줍니다.
+    ```kotlin
+    ...
+        lateinit var listFragment: ListFragment
+        ...
+        fun setFragment() {
+            listFragment = ListFragment() // 수정한 코드
+        ...
+    ```
+    ``MainActivity.kt의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.util.Log
+    import kr.co.hanbit.fragment.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        lateinit var listFragment: ListFragment
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            setFragment()
+
+            binding.btnSend.setOnClickListener {
+                listFragment.setValue("전달할 값")
+            }
+        }
+
+        fun setFragment() {
+            listFragment = ListFragment()
+
+            var bundle = Bundle()
+            bundle.putString("key1", "List Fragment")
+            bundle.putInt("key2", 20210101)
+            listFragment.arguments = bundle
+
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.add(R.id.frameLayout, listFragment)
+            transaction.commit()
+        }
+
+        fun goDetail() {
+            val detailFragment = DetailFragment()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.add(R.id.frameLayout, detailFragment)
+            transaction.addToBackStack("detail")
+            transaction.commit()
+        }
+
+        fun goBack() {
+            onBackPressed()
+        }
+    }
+    ```
+
+1. 이제 에뮬레이터에서 실행한 후 SEND 버튼을 클릭하면 setValue() 메서드를 통해서 전달한 값이 ListFragment 화면에 나타나는 것을 확인할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-189.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 프래그먼트에 프래그먼트로 값 전달하기
+
+안드로이드는 fragment 버전 1.3.x 부터 프래그먼트 간 통신을 위해 Fragment Listener라는 새로운 기능을 제공합니다.
+
+1. 액티비티를 통한 액션이나 값 전달은 앞의 예제와 같이 사용할 수 있는데, 프래그먼트에서 다른 프로그먼트로 직접 값을 전달하기 위해서는 부가적인 설정이 필요합니다. build.gradle 파일을 열고 아래쪽 dependencies 영역에 프래그먼트 버전 1.3.0-beta02와 코틀린용 fragment 1.3.0 버전을 추가하고 우측 상단에 [Sync Now]를 클릭해 설정을 반영합니다. 
+    ```gradle
+    dependencies {
+
+        ...
+
+        def fragment_version = "1.3.0-beta02"
+        // 자바용 fragment 1.3.0
+        //implementation "androidx.fragment:fragment:$fragment_version"
+        // 코틀린용 fragment 1.3.0
+        implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    }
+    ```
+    - ``fragment 버전 확인``
+      - 책을 쓰는 시점에서 fragment의 버전이 1.3.0-beta02이지만, 책이 출시된 시점에서는 버전이 변경되거나 내장 모듈로 탑재될 수도 있습니다. 
+      - [https://developer.android.com/jetpack/androidx/releases/fragment](https://developer.android.com/jetpack/androidx/releases/fragment)
+
+
+1. 위쪽 android 스코프에 viewBinding 설정도미리 추가합니다.
+    ```gradle
+    android {
+        buildFeatures {
+            viewBinding true
+        }
+    }
+    ```
+
+1. java 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)]를 선택합니다. ReceiverFragment 를 생성합니다.
+
+1. 자동으로 같이 생성된 Fragment_receiver.xml 파일을 열고, 가운데 있는 텍스트뷰를 선택한 후 id에 ‘textView’를 입력하고, gravity속성에 ‘center’를 적용합니다. 그리고 text속성에 알아보기 쉽게 ‘리시버’라고 입력해둡니다.
+
+1. ReceiverFragment.kt 파일을 열고 onCreateView() 메서드만 남기고 코드를 모두 삭제합니다.
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+
+    class ReceiverFragment : Fragment() {
+        
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            // Inflate the layout for this fragment
+            return inflater.inflate(R.layout.fragment_receiver, container, false)
+        }
+
+    }
+    ```
+
+1. onCreateView() 메서드 위에 lateinit으로 binding 선언을 다음과 같이 추가합니다. 다른 메서드에서도 사용하기 위해 onCreateView() 메서드 밖에 바인딩을 생성했습니다. 그리고 프래그먼트는 바인딩 생성 시에 onCreateView() 메서드 안에서만 사용할 수 있는 파라미터가 필요하므로 이렇게 앞에서 미리 lateinit으로 선언만하고 진행합니다.
+    ```kotlin
+    lateinit var binding:FragmentReceiverBinding
+
+    override fun onCreateView(...)
+    ```
+
+1. onCreateView() 메서드 안에서 바인딩을 생성해서 binding 프로퍼티에 저장하고 return... 을 수정해서 binding.root를 반환합니다.  이제 binding 프로퍼티에 바인딩을 저장했기 때문에 다른 메서드에서도 가져다 쓸 수 있습니다.
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import kr.co.hanbit.fragment.databinding.FragmentReceiverBinding
+
+    class ReceiverFragment : Fragment() {
+
+        lateinit var binding: FragmentReceiverBinding
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            binding = FragmentReceiverBinding.inflate(inflater, container, false)
+            return binding.root
+        }
+
+    }
+    ```
+
+1. onCreateView() 아래에서 ``Ctrl`` + ``O`` 키를 눌러 onViewCreated 메서드를 오버라이드합니다.  자동 생선된 onViewCreated... 코드 아랫줄에 다음과 같이 setFragmentResultListener() 메서드를 추가합니다. 파라미터는 "request"를 입력해둡니다. 이제 값을 보내는 측 프래그먼트에서 "request"라는 키로 값을 보내면 이 리스너 안의 코드가 실행됩니다.
+    ```kotlin
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setFragmentResultListener("request") {
+            key, bundle ->
+        }
+    }
+    ```
+
+1. 계속해서 리스너 블록 안에 코드를 추가합니다. 리스너는 값을 수신하면 key와 bundle 2개의 파라미터를 사용할 수 있는데, 실제 값은 bundle안에 Map 형태로 담겨 있습니다. bundle.getString("키") 로 값을 꺼낼 수 있습니다. 스코프 함수 let을 사용해서 꺼낸 값이 있을 때만 화면의 textView에 값을 세팅하도록 합니다.  setFragmentResultListener에 입력되는 "request" 는 요청 전체에 대한 키이고, bundle.getString에 입력되는 "valueKey"는 요청에 담겨 있는 여러 개의 값 중에 하나의 값을 가르키는 키입니다.
+    ```kotlin
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setFragmentResultListener("request") { key, bundle ->
+            bundle.getString("valueKey")?.let {
+                binding.textView.setText(it)
+            }
+        }
+    }
+    ```
+    이제 수신 측의 코드는 완료되었습니다.<br>
+    ``ReceiverFragment.kt의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import androidx.fragment.app.setFragmentResult
+    import androidx.fragment.app.setFragmentResultListener
+    import kr.co.hanbit.fragment.databinding.FragmentReceiverBinding
+
+    class ReceiverFragment : Fragment() {
+
+        lateinit var binding: FragmentReceiverBinding
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            binding = FragmentReceiverBinding.inflate(inflater, container, false)
+            return binding.root
+        }
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            setFragmentResultListener("request") { key, bundle ->
+                bundle.getString("valueKey")?.let {
+                    binding.textView.setText(it)
+                }
+            }
+        }
+    }
+    ```
+
+1. 값을 전달하는 송식 측 프래그먼트를 만들 차례입니다. 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)]를 선택하고 SenderFragment를 생성합니다.
+
+1. 자동 생성된 fragment_sender.xml 파일을 열과 다음과 같이 화면을 구성합니다. [Code]모드에서 두 번째 줄에 있는 ``<FrameLayout>`` 태그를 ‘ConstraintLayout’으로 변경합니다. 그리고 화면 가운데 2개의 버튼을 배치하고 버튼 이름에 각각 'YES', 'NO' 를 입력합니다. id에도 각각 ‘btnYes’, ‘btnNo’를 입력해 둡니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-190.png){: style="box-shadow: 0 0 5px #777"}
+
+1. SenderFragment.kt 파일을 열고 ReceiverFragment.kt 파일과 마찬가지로 onCreateView 메서드만 남기고 코드를 모두 삭제합니다. onCreateView 메서드 위에 바인딩을 선언합니다. 레이아웃의 이름이 fragment_sender.xml 이기 때문에 바인딩 이름은 FragmentSenderBinding 입니다.
+
+1. 계속해서 onCreateView 안에서 바인딩을 생성하고, binding.root를 반환합니다.
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import kr.co.hanbit.fragment.databinding.FragmentSenderBinding
+
+    class SenderFragment : Fragment() {
+
+        lateinit var binding:FragmentSenderBinding
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            binding = FragmentSenderBinding.inflate(inflater, container, false)
+            return binding.root
+        }
+    }
+    ```
+
+1. onCreateView 메서드 아래에서 ``Ctrl`` + ``O``키를 눌러 onViewCreated 메서드를 오버라이드 합니다.
+    ```kotlin
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+    ```
+
+1. super.onView... 코드 아랫줄에 다음과 같이 코드를 추가합니다. 먼저 YES 버튼이 클릭 됐을 때 값을 전송하는 코드입니다. btnYes에 클릭리스너를 달고, 리스너 안에서 "valueKey" 를 키로 "Yes"를 값으로 갖는 번들을 생성하고 bundle 변수에 저장합니다. 그리고 setFragmentResult 메서드를 "request"와 번들을 입력해서 호출하면 수신 측 프래그먼트로 전달됩니다.
+    ```kotlin
+    binding.btnYes.setOnClickListener {
+        val bundle = bundleOf("valueOf" to "Yes")
+        setFragmentResult("request", bundle)
+    }
+    ```
+    - ``번들 만들기``
+      - 앞에서 Bundle() 생성자를 통해서 번들을 사용해봤습니다. bundleOf("키" to "값") 메서드를 사용하면 더 간단하게 번들을 만들 수 있습니다.
+
+1. NO 버튼이 클릭 됐을 때 값을 전송하는 코드를 작성합니다. 각각 키는 동일하고 값만 "NO"로 다릅니다.
+    ```kotlin
+    binding.btnNo.setOnClickListener {
+        val bundle = bundleOf("valueOf" to "No")
+        setFragmentResult("request", bundle)
+    }
+    ```
+    이제 송신 측도 준비가 되었습니다.
+    ``SenderFragment.kt의 전체코드``
+    ```kotlin
+    package kr.co.hanbit.fragment
+
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import androidx.core.os.bundleOf
+    import androidx.fragment.app.setFragmentResult
+    import kr.co.hanbit.fragment.databinding.FragmentSenderBinding
+
+    class SenderFragment : Fragment() {
+
+        lateinit var binding:FragmentSenderBinding
+
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            binding = FragmentSenderBinding.inflate(inflater, container, false)
+            return binding.root
+        }
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            binding.btnYes.setOnClickListener {
+                val bundle = bundleOf("valueOf" to "Yes")
+                setFragmentResult("request", bundle)
+            }
+
+            binding.btnNo.setOnClickListener {
+                val bundle = bundleOf("valueOf" to "No")
+                setFragmentResult("request", bundle)
+            }
+        }
+    }
+    ```
+
+1. 이제 마지막으로 activity_main.xml 파일을 열고 화면의 위쪽 절반에는 SenderFragment를 배치하고, 아래쪽 절반에는 ReceiverFragment를 배치하겠습니다.
+
+    - ``안드로이드 스튜디오 버전별 Fragment 컨테이너 사용``
+        - **``4.2.x 이상``**: Containers 팔레트에 있는 FragmentContainerView를 사용
+        - **``4.`.x 미만``**: Containers 팔레트에 있는 Fragment를 사용
+
+1. 사용할 프래그먼트를 선택하는 팝업창이 나타납니다. 먼저 SenderFragment를 선택해서 화면 위쪽에 배치합니다. 위쪽과 좌우 컨스트레인트를 연결하고 높이를 3dp 정도로 미리 고정해두는 것이 배치하기 편합니다.
+
+1. ReceiverFragment를 같은 방식으로 화면 아래쪽에 배치합니다. SenderFragment의 높이를 고정했기 때문에 ReceiverFragment는 상하좌우 컨스트레인트를 모두 연결합니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-191.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 에뮬레이터를 실행하고 YES와 NO 버튼을 클릭하면 ‘리시버’에 값이 각각 전달되는 것을 확인할 수 있습니다.
+
+
+
+## 3.4 프래그먼트의 생명 주기 관리
+
+프래그먼트는 액티비티와 마찬가지로 화면에 보이는 것을 기준으로 생명 주기 메서드를 가지는데, 생성에 관련된 5개와 소멸에 관련된 5개를 가지고 있습니다.
+
+
+
+### 생성 주기 메서드
+
+생성과 관련된 5개의 생명 주기 메서드가 있지만 프래그먼트를 포함하고 있는 액티비티가 화면에 계속 나타나고 있는 상태에서는 onAttach() 부터 onResume() 까지의 메서드가 모두 한 번에 호출됩니다. 
+
+1. 
+
+
+
+
+
 
 <style>
-.page-container {max-width: 1200px}378‘’
+.page-container {max-width: 1200px}394‘’
 </style>
