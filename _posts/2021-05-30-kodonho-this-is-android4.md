@@ -3018,8 +3018,40 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
         tab.text = tabTitles[position]
     }.attach()
     ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-223.png){: style="box-shadow: 0 0 5px #777"}
+
+    ``MainActivity.kt의 전체코드``
+
+    ```kotlin
+    package kr.co.hanbit.viewpagerview
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import com.google.android.material.tabs.TabLayoutMediator
+    import kr.co.hanbit.viewpagerview.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            val textList = listOf("뷰A", "뷰B", "뷰C", "뷰D")
+            val customAdapter = CustomPagerAdapter()
+            customAdapter.textList = textList
+            binding.viewPager.adapter = customAdapter
+
+            val tabTitles = listOf("View A", "View B", "View C", "View D")
+            TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+                tab.text = tabTitles[position]
+            }.attach()
+        }
+    }
+    ```
 
 
 <style>
-.page-container {max-width: 1200px}404‘’
+.page-container {max-width: 1200px}
 </style>
