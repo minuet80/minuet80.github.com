@@ -2576,6 +2576,448 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 - ``custom``: attrs.xml에 정의한 새로운 속성을 custom이라는 Prefix로 레이아웃에서 사용할 수 있습니다.
 
 
+# 5. 탭 메뉴로 화면 구성하기: 뷰 페이저와 탭 레이아웃
+
+안드로이드나 아이폰에서 가장 많이 사용되는 메뉴의 형태는 탭이나 스와이프<sup>swipe</sup>로 화면을 전환하는 혀앹입니다.
+
+아래 그림에서 메뉴를 클릭하면 화면이 전환되고, 화면을 좌우로 스와이프하면 화면 전환과 동시에 메뉴의 인디케이터도 함께 동작합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-207.png){: style="box-shadow: 0 0 5px #777"}
+
+안드로이드에서는 ``스와이프로 화면을 전환할 수 있도록 컨테이너인 뷰페이저<sup>ViewPager</sup>를 제공하고, 탭 메뉴 구성을 위해서는 탭 레이아웃<sup>TabLayout</sup>를 제공합니다.
+
+
+## 5.1 뷰페이저에서 프래그먼트 사용하기
+
+탭 메뉴와 함께 4개의 화면을 프래그먼트로 구성해보겠습니다. 각 프래그먼트에 해당하는 4개의 메뉴를 탭으로 구성한 다음 탭 메뉴를 클릭하거나 스와이프 (손가락으로 화면을 쓸어 넘기는 동작)을 하면 다음 화면으로 전환됩니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-208.png){: style="box-shadow: 0 0 5px #777"}
+
+### 프래그먼트 화면 4개 만들기
+
+ViewPager 프로젝트를 하나 새로 생성하고, build.gradle 파일에 viewBinding 설정을 추가합니다.
+
+FragmentA.kt 부터 설명합니다.
+
+FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
+
+1. 탐색기의 [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)]를 선택합니다.
+
+1. Fragment Name에 ‘FragmentA’라고 입력합니다. 레이아웃 이름이 자동으로 생성되는데 fragment_만 있거나 fragment_fragment_a와 같은 이름이 중복되어 있다면 fragment_a로 변경합니다.  클래스의 이름을 참조해 레이아웃 파일의 이름이 결정되는데, fragment_a.xml 형식으로 된 이름을 자동으로 만들기 위해서는 A를 이름 앞에 작성하고 Fragment를 뒤에 붙여서 AFragment라고 하면 됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-209.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [Finish] 버튼을 클릭해서 프래그먼트를 생성합니다.
+
+1. fragment_a.xml 파일을 열고 기본으로 생성된 텍스트뷰의 layout_width와 layout_height속성을 ‘wrap_content’로 변경하고, 화면 가운데에 배치합니다. FrameLayout에는 정렬 기능이 따로 없기 때문에 텍스트뷰를 선택한 상태에서 텍스트뷰 속성인 layout_gravity의 값을 ‘center’로 바꿔주면 가운데 정렬이 됩니다. text속성에 ‘프래그먼트A’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-210.png){: style="box-shadow: 0 0 5px #777"}
+
+    FragmentB.kt, FragmentC.kt, FragmentD.kt도 위와 같은 순서대로 작성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-211.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 뷰페이저와 어댑터 만들기
+
+뷰페이저<sup>ViewPager</sup>는 리사이클러뷰와 구현 방식이 비슷한데 한 화면에 하나의 아이템만 보이는 리사이클러뷰라고 생각하면 됩니다.
+
+페이저어댑터<sup>PagerAdapter</sup>를 통해서 뷰페이저에서 보일 화면들을 연결하는 구조도 리사이클러뷰와 같습니다.
+
+먼저 메인 레이아웃에 뷰페이저를 배치하고 소스 코드에서 연결하겠습니다.
+
+그 다음 뷰페이저와 연결하기 위한 프래그먼트 어댑터를 만들겠습니다.
+
+1. activity_main.xml 파일을 열고 화면 가운데 있는 텍스트뷰는 삭제합니다.
+
+1. 팔레트의 컨테이너 카테고리에 있는 ViewPager2(안드로이드 스튜디오 4버전 부터 ViewPager가 ViewPager2로 변경됨)를 드래그해서 추가하고, 상하좌우 컨스트레인트를 화면 가장자리에 연결합니다.
+
+1. id에 ‘viewPager’를 입력합니다.
+
+1. 이제 프래그먼트를 뷰페이지에 보여주기 위한 프래그먼트 어댑터를 만들 차례입니다. 마치 리사이클러뷰에서 Adapter를 상속받아 커스텀어댑터를 만들었던 것처럼 프래그먼트를 담을 수 있는 FragmentStateAdapter를 상속받아서 FragmentAdapter를 만들겠습니다. java 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 우측과 같이 FragmentAdapter 클래스를 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-212.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 클래스 파일에서 FragmentStateAdapter를 상속받도록 소스 코드를 수정합니다. 끝에 괄호를 생략하고 상속받습니다.
+    ```kotlin
+    class FragmentAdapter: FragmentStateAdapter {
+    }
+    ```
+
+1. FragmentPagerAdapter 아래에 빨간색 밑줄이 생기는데 글자를 클릭한 후 ``Alt`` + ``Enter`` 키를 눌러 목록에서 [Add constructor parameters...(FragmentActivity)]를 선택해 생성자를 추가합니다.
+    ```kotlin
+    class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+    }
+    ```
+
+1. 아직 클래스명 아래에 빨간색 밑줄이 생기는데 클릭한 후 ``Alt`` + ``Enter``키를 눌러 목록에서 Implement members를 선택합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-213.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 그 다음 선택 창에서 2개의 메서드를 모두 선택하고 [OK]버튼을 클릭하면 코드가 자동 생성됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-214.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+        override fun getItemCount(): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun createFragment(position: Int): Fragment {
+            TODO("Not yet implemented")
+        }
+    }
+    ```
+
+    ``FragmentStateAdapter의 필수 메서드``
+    - ``createFragment()``: 현재 페이지의 position이 파라미터로 넘어옵니다. position에 해당하는 위치 프래그먼트를 만들어서 안드로이드에 반환해야 합니다.
+    - ``getItemCount()``: 어댑터가 화면에 보여줄 전체 프래그먼트의 개수를 반환해야 합니다.
+
+
+1. 리사이클러뷰어댑터에서 사용했던 것 처럼 페이저어댑터도 화면에 표시해줄 아이템의 목록이 필요합니다. class FragmentAdapter... 밑에 fragmentList 변수를 하나 만들고 초기화합니다. 메뉴 형태로 사용하는 뷰페이저의 화면 아이템은 대부분 중간에 개수가 늘거나 줄지 않고, 처음에 정해진 개수만큼 사용합니다. 그래서 mutableListOf가 아닌 listOf를 사용하는 것이 효율적입니다.
+    ```kotlin
+    var fragmentList = listOf<Fragment>()
+    ```
+
+1. 앞에서 implement 했던 2개의 메서드를 마저 구현합니다. 먼저 페이지의 개수를 결정하기 위해 getItemCount 메서드에서 프래그먼트의 개수를 리턴합니다.
+    ```kotlin
+    override fun getItemCount(): Int {
+        return fragmentList.size
+    }
+    ```
+1. 페이지가 요청될 때 getItem으로 요청되는 페이지의 position값이 넘어옵니다. position값을 이용해서 프래그먼트 목록에서 해당 position에 있는 프래그먼트 1개를 리턴합니다.
+    ```kotlin
+    override fun createFragment(position: Int): Fragment {
+        return fragmentList.get(position)
+    }
+    ```
+    ``FragmentAdapter.kt의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.viewpager
+
+    import androidx.fragment.app.Fragment
+    import androidx.fragment.app.FragmentActivity
+    import androidx.viewpager2.adapter.FragmentStateAdapter
+
+    class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+
+        var fragmentList = listOf<Fragment>()
+
+        override fun getItemCount(): Int {
+            return fragmentList.size
+        }
+
+        override fun createFragment(position: Int): Fragment {
+            return fragmentList.get(position)
+        }
+    }
+    ```
+
+### MainActivity에서 연결하기
+
+1. mainActivity.kt 파일을 열고 onCreate() 메서드 위에 바인딩을 생성하여 binding 변수에 저장하고 setCotentView() 에 binding.root를 입력합니다.
+    ```kotlin
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+        }
+    }
+    ```
+
+1. setContentView 아랫줄에 프래그먼트 목록을 생성하는 코드를 추가합니다.
+    ```kotlin
+    val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
+    ```
+
+1. 어댑터를 생성하고, 앞에서 생성해둔 프래그먼트 목록을 저장합니다. 어댑터의 첫 번째 파라미터에는 항상 supportFragmentManager를 사용합니다.
+    ```kotlin
+    val adapter = FragmentAdapter(this)
+    adapter.fragmentList = fragmentList
+    ```
+
+1. 레이아웃의 viewPAger를 import하고 어댑터를 적용합니다.
+    ```kotlin
+    binding.viewPager.adapter = adapter
+    ```
+    ``MainActivity.kt의 전체코드``
+    ```kotlin
+    package kr.co.hanbit.viewpager
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import kr.co.hanbit.viewpager.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
+            val adapter = FragmentAdapter(this)
+            adapter.fragmentList = fragmentList
+            binding.viewPager.adapter = adapter
+        }
+    }
+    ```
+
+1. 작성한 코드를 실행합니다. 화면을 양옆으로 스와이프해보면 프래그먼트 A부터 D까지 화면이 이동하는 것을 확인할 수 있습니다.
+
+
+### 탭 레이아웃 적용하기
+
+앞에서 만든 화면의 상단의 탭 메뉴를 배치하고 탭 메뉴 클릭 시 해당 프래그먼트로 이동하는 코드를 작성해보겠습니다.
+
+1. activity_main.xml 파일을 열고 팔레트의 컨테이너에 있는 탭 레이아웃(TabLayout)을 드래그해서 뷰페이저 위에 배치하고 id는 ‘tabLayout’으로 변경합니다. 뷰페이저의 위쪽 컨스트레인트를 삭제한 후 작업하는 것이 편합니다. 탭 레이아웃이 정상적으로 배치되었으면 뷰페이저의 위쪽 컨스트레인트를 탭 레이아웃 아래에 연결하여 다음 그림과 같이 만들어줍니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-215.png){: style="box-shadow: 0 0 5px #777"}
+
+1. ViewPager1과는 다르게 ViewPager2에서는 TabLayoutMediator를 사용하여 TabLayout과 뷰페이저를 연결합니다. 먼저 메뉴명으로 사용할 이름들을 배열에 저장합니다. 앞에서 작성한 MainActivity.kt 파일을 열어 binding.viewPAger.... 다음 줄에 작성합니다.
+```kotlin
+val tabTitles = listOf<String>("A", "B", "C", "D")
+```
+
+1. TabLayoutMediator 를 사용해서 TabLayout과 뷰페이저를 연결합니다. 코드 블럭으로 전달되는 tab 파라미터의 text속성에 앞에서 미리 정의해둔 메뉴명을 입력합니다. 그 다음 코드 블록의 끝에서 attach() 메서드를 호출해서 적용합니다.
+    ```kotlin
+    TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+        tab.text = tabTitles[position]
+    }.attach()
+    ```
+
+1. 에뮬레이터에서 실행하면 메뉴와 뷰페이저가 모두 정상적으로 동작합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-216.png){: style="box-shadow: 0 0 5px #777"}
+
+    ``TabLayoutMediator가 추가된 MainActivity.kt의 전체코드``
+    ```kotlin
+    package kr.co.hanbit.viewpager
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import com.google.android.material.tabs.TabLayoutMediator
+    import kr.co.hanbit.viewpager.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
+            val adapter = FragmentAdapter(this)
+            adapter.fragmentList = fragmentList
+            binding.viewPager.adapter = adapter
+
+            val tabTitles = listOf<String>("A", "B", "C", "D")
+            TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+                tab.text = tabTitles[position]
+            }.attach()
+        }
+    }
+    ```
+
+## 5.2 뷰를 사용하는 뷰페이저 만들기
+
+앞에서 프래그먼트를 사용하여 뷰페이저를 구현해봤는데 이는 각각의 화면들이 독립적으로 구성될 필요가 있을 때 사용할 수 있습니다.
+
+그런데 리사이클러뷰에서 하나의 아이템 레이아웃을 사용해서 반복적으로 동일한 구조의 텍스트나 이미지를 보여주는 용도라면 프래그먼트 보다는 뷰를 사용합니다.
+
+목록을 가로로 스와이프해서 보여줄 필요가 있을 때 사용하는데, 일반적인 사진 갤러리 앱이 동작하는 방식을 생각하시면 됩니다.
+
+프래그먼트 대신에 뷰를 사용해서 레이아웃 안의 내용을 교체해보겠습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-217.png){: style="box-shadow: 0 0 5px #777"}
+
+ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일에 viewBinding 설정을 추가합니다.
+
+### 아이템 레이아웃 만들기
+
+1. 리사이클러뷰의 아이템 레이아웃처럼 하나의 뷰에서 사용할 아이템 레이아웃을 생성합니다. [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]을 선택합니다.
+
+1. File name에 ‘item_viewpager’라고 입력하고 파일을 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-218.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이아웃 파일 가운데에 텍스트뷰를 하나 가져다 놓고 상하좌우 컨스트레인트를 연결해서 가운데에 오도록 배치합니다. 텍스트뷰의 text속성에 ‘여기제목’을 입력합니다. 텍스트뷰의 id에 ‘textView’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-219.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### CustomPagerAdapter 만들기
+
+앞에서 생성한 레이아웃을 사용하는 커스텀어댑터를 생성합니다.
+
+목록을 만들 때 사용하는 Recyclerview.Adapter를 상속받아서 사용합니다.
+
+1. CustomPagerAdapter 클래스를 하나 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-220.png){: style="box-shadow: 0 0 5px #777"}
+
+    *이후부터는 리사이클러뷰를 사용하는 방법과 같습니다. 뷰페이저에 리사이클러뷰어댑터를 사용하면 기존에는 세로로 출력되는 것을 가로로 출력되도록 해준다고 생각하면 이해하기가 더 쉽습니다.*
+
+1. 먼저 RecyclerView.ViewHolder를 상속받는 Holder 클래스를 파일 아래쪽에 하나 만듭니다. Holder 클래스의 binding 파라미터로 onCreateViewHolder에서 생성할 바인딩이 전달됩니다. 바인딩 이름은 앞에서 작성한 레이아웃의 이름이 변환된 ItemViewpagerBinding입니다. ViewHolder 클래스의 생성자에는 binding.root를 전달합니다.
+    ```kotlin
+    class Holder(val binding: ItemViewpagerBinding): RecyclerView.ViewHolder(binding.root) {
+
+    }
+    ```
+
+1. Holder 클래스 안에 setText() 메서드를 하나 만들고 item_viewpager 레이아웃 안에 미리 만들어둔 텍스트뷰(id: textView)에 값을 입력하는 코드를 작성합니다. setText() 메서드의 파라미터에는 가상으로 text:String 이라고 미리 정의하고 사용합니다.
+    ```kotlin
+    class Holder(val binding: ItemViewpagerBinding): RecyclerView.ViewHolder(binding.root) {
+
+        fun setText(text: String) {
+            binding.textView.text = text
+        }
+    }
+    ```
+
+1. CustomPagerAdapter에서 RecyclerView.Adapter를 상속받고 제네릭으로 앞에서 만든 Holder 클래스를 지정합니다.
+    ```kotlin
+    class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
+    }
+    ```
+
+1. 클래스 안쪽을 클릭한 상태로 키보드의 ``Ctrl`` + ``I`` 키를 눌러 나타나는 메뉴에서 3개의 메서드를 선택하고 오버라이드 합니다. 자동 생성된 코드에서 TODO 행은 모두 삭제합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-221.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+
+        }
+
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+        }
+
+        override fun getItemCount(): Int {
+        }
+    }
+    ```
+
+1. 어댑터에서 사용할 textList변수를 선언하고 listOf 함수로 초기화합니다. MainActivity에서 어댑터를 생성한 후 textList 변수로 각각의 페이지에서 보여줄 텍스트를 전달합니다.
+    ```kotlin
+    var textList = listOf<String>()
+    ```
+
+1. getItemCount 메서드는 몇 개의 페이지가 보일 건지 결정합니다.
+    ```kotlin
+    override fun getItemCount(): Int {
+        return textList.size
+    }
+    ```
+
+1. onCreateViewHolder() 에서 바인딩을 생성한 후 Holder에 전달합니다.
+    ```kotlin
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemViewpagerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+    ```
+
+1. 마지막으로 onBindViewHolder() 에서 Holder에 만들어준 setText 메서드를 호출해서 화면에 출력합니다.
+    ```kotlin
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val text = textList[position]
+        holder.setText(text)
+    }
+    ```
+    ``CustomPagerAdapter.kt의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.viewpagerview
+
+    import android.view.LayoutInflater
+    import android.view.ViewGroup
+    import androidx.recyclerview.widget.RecyclerView
+    import kr.co.hanbit.viewpagerview.databinding.ItemViewpagerBinding
+
+    class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
+
+        var textList = listOf<String>()
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+            val binding = ItemViewpagerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return Holder(binding)
+        }
+
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+            val text = textList[position]
+            holder.setText(text)
+        }
+
+        override fun getItemCount(): Int {
+            return textList.size
+        }
+    }
+
+    class Holder(val binding: ItemViewpagerBinding): RecyclerView.ViewHolder(binding.root) {
+
+        fun setText(text: String) {
+            binding.textView.text = text
+        }
+    }
+    ```
+
+### 레이아웃 파일에 ViewPager와 TabLayout 추가하기
+
+앞에서 만든 어댑터를 연결할 화면을 작성합니다. 
+
+프래그먼트에서 작성했던 것과 동일합니다.
+
+1. activity_main.xml 파일을 열고 화면에 있는 텍스트뷰는 삭제합니다. 그래고 팔레트에서 탭 레이아웃을 드래그해서 화면에 가져다 놓습니다.
+
+1. 좌우와 위쪽 컨스트레인트를 연결한 후 id에 ‘tabLayout’을 입력합니다.
+
+1. ViewPager2를 드래그해서 탭 레이아웃 아래에 배치하고 상하좌우 컨스트레인트를 연결합니다.
+
+1. id에 ‘viewPager’를 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-222.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### MainActivity 소스 코드 연결하기
+
+끝으로 MainActivity 소스 코드를 연결하겠습니다.
+
+1. MainActivity.kt 파일을 열고 바인딩을 생성해서 binding 변수에 담고 setContentView에 binding.root 를 입력합니다.
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+1. 계속해서 setContentView 아래에 소스 코드를 추가합니다. 뷰페이저에서 사용할 데이터를 가상으로 생성한 후 textList 변수에 담습니다.
+    ```kotlin
+    val textList = listOf<String>("뷰A", "뷰B", "뷰C", "뷰D")
+    ```
+
+1. 커스텀어댑터를 생성합니다.
+    ```kotlin
+    val customAdapter = CustomPagerAdapter()
+    ```
+
+1. 생성해둔 가상 데이터를 어댑터에 전달합니다.
+    ```kotlin
+    customAdapter.textList = textList
+    ```
+
+1. viewPAger에 어댑터를 연결합니다.
+    ```kotlin
+    binding.viewPager.adapter = customAdapter
+    ```
+
+1. 메뉴명으로 사용할 이름들을 배열에 저장합니다.
+    ```kotlin
+    val tabTitles = listOf<String>("View A", "View B", "View C", "View D")
+    ```
+
+1. TabLayoutMediator를 사용해서 탭 레이아웃과 뷰페이저를 연결합니다. 코드 블록으로 전달되는 tab 파라미터의 text속성에 앞에서 미리 정의해둔 메뉴명을 입력합니다. 코드블록 끝 attach() 메서드를 호출해서 적용합니다. 에뮬레이터에서 실행하고 확인합니다.
+    ```kotlin
+    TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+        tab.text = tabTitles[position]
+    }.attach()
+    ```
 
 
 <style>
