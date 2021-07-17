@@ -2310,6 +2310,129 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 ### 뷰에 그림 그리기
 
+텍스튜뿐만 아니라 일반적인 도형도 뷰에 그릴 수 있습니다.
+
+도형을 그리는데 필요한 Paint의 프로퍼티를 먼저 간단히 정리하겠습니다.
+
+- ``color`` : 대상의 색상. 도형의 색상을 정의합니다.
+- ``style`` : 도형의 형태. 외곽선을 그리거나 면을 채우는 등의 모양을 정의합니다. 색상이 Color 클래스에 정의된 것 처럼 사용할 스타일이 Style 클래스에 상수로 미리 정의되어 있습니다. 
+  - Style.STROKE, Style.FILL, Style.STROKE_AND_FILL
+- ``strokeWidth`` : 외곽선을 그릴 경우 외곽선의 두께를 정의합니다.
+
+
+
+1. ``drawCircle()`` : 원그리기
+    drawCircle 의 파라미터는 순서대로 (원의 x축 중심, 원의 y축 중심, 반지름, 페인트) 입니다.
+    ```kotlin
+    val blue = Paint()
+    blue.style = Paint.Style.FILL
+    blue.color = Color.BLUE
+    canvas?.drawCircle(150f, 300f, 100f, blue)
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-198.png){: style="box-shadow: 0 0 5px #777"}
+
+
+1. ``drawArc()``: 원호 그리기
+    STROKKE 스타일을 사용하면 도형의 외곽선을 그릴 수 있습니다.
+    ```kotlin
+    val red = Paint()
+    red.style = Paint.Style.STROKE
+    red.color = Color.RED
+    canvas?.drawCircle(400f, 300f, 100f, red)
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-199.png){: style="box-shadow: 0 0 5px #777"}
+
+
+1. ``drawRect()``: 사각형 그리기
+    drawRect는 사각형을 그리기 전에 Rect 클래스에 사각형의 left, top, right, bottom 좌표를 입력해서 생성합니다.
+    ```kotlin
+    val green = Paint()
+    green.style = Paint.Style.STROKE
+    green.strokeWidth = 20f
+    green.color = Color.GREEN
+    val rect = Rect(50f, 450f, 250f, 650f)
+    canvas?.drawRect(rect, green)
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-200.png){: style="box-shadow: 0 0 5px #777"}
+
+1. ``drawRoundRect()``: 라운드 사각형 그리기
+    drawRoundrect는 사각형의 네 귀퉁이에 라운드를 줄 수 있는 메서드인데, roundrect와는 다르게 RectF 클래스를 사용합니다. RectF 클래스는 좌푯값을 Float로 입력하기 때문에 소수점 이하 좌표를 입력해서 조금 더 정밀하게 표현할 수 있습니다. 메서드의 두 번째 (rx)와 세 번째 (ry) 파라미터가 라운드의 크기를 결정하는데 동일한 값을 입력해야만 일반적인 형태의 라운드 사각형이 그려집니다. 
+    ```kotlin
+    var cyan = Paint()
+    cyan.style = Paint.Style.FILL
+    cyan.color = Color.CYAN
+    val recF = RectF(300f, 450f, 500f, 650f)
+    canvas?.frawRoundRect(rectF, 50f, 50f, cyan)s
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-201.png){: style="box-shadow: 0 0 5px #777"}
+
+
+이런 식으로 View 클래스를 상속받은 후에 onDraw() 메서드로 전달되는 Canvas를 사용하면 원하는 그림을 그릴 수 있습니다.
+
+``<Button>`` 같은 태그로 사용하는 위젯들도 실제로는 View를 상속한 후에 이와 비슷한 형태의 코드로 구성되어 있습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-202.png){: style="box-shadow: 0 0 5px #777"}
+
+
+## 4.2 커스텀 위젯 만들기
+
+회사에서는 프로젝트를 진행하면 텍스트뷰와 같은 기본 위젯은 잘 사용하지 않습니다.
+
+보통 기본 위젯을 상속받아 앞에 접두어<sup>Prefix</sup>를 붙여 커스템 위젯으로 사용하는데, 예를 들어 카카오를 다닌다면 KakaoTextView와 같은 이름의 위젯을 사용합니다.
+
+커스텀 위젯에 사용할 접두어<sup>Prefix</sup>를 정하고 나면 위젯의 커스터마이징은 크게 3단계로 진행됩니다.
+
+1. attrs.xml 파일 생성
+    새로운 위젯을 생성하고 사용할 때 위젯 이름뿐만 아니라 속성의 이름과 입력되는 값의 타입을 정의하고 사용할 수 있도록 해줍니다.
+
+    ```xml
+    <declare-styleable name="CustomWidget">
+        <attr name="새로운 속성" format="string" />
+    </declare-styleable>
+    ```
+
+    레이아웃 파일에서는 태그 속성의 prefix가 android가 아닌 custom을 사용해서 attrs.xml에 저으이된 새로운 속성값을 사용할 수 있습니다.
+
+    ```xml
+    <CustomWidtget
+        android:id="@+id/button"
+        custom: 새로운 속성="값"
+        android:text="새로 만든 위젯이에요" />
+    ```
+
+1. 커스텀 위젯 클래스 생성
+    커스터마이징을 하기 위한 위젯 클래스를 상속받아 클래스를 생성하고 위에서 새롭게 정의한 속성을 처리하는 코드를 작성합니다.
+    ```kotlin
+    class CustomWidget: TextView {
+        constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
+
+        }
+    }
+    ```
+
+1. 레이아웃에 태그 적용
+    생성된 커스텀 클래스를 레이아웃 파일에 태그로 적용합니다. 커스텀 위젯은 컨스트레인트 레이아웃 처럼 클래스의 패키지 경로명도 함께 입력해서 사용합니다.
+    ```kotin
+    <패키지명.customWidget
+        android:id="@+id/button"
+        custom:새로운 속성="값"
+        android:text="새로 만든 위젯이에요" />
+    ```
+
+### 커스텀 TextView 설계
+
+text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구분하기 위해 연월일 사이에 구분값으로 ‘-(하이픈)’을 자동으로 입력해서 화면에 출력하는 위젯을 만들겠습니다.
+
+부가적으로 구분값에 해당하는 delimeter 속성을 하나 만들 텐데, 값이 없으면 Default 로 ‘-’를 사용하고 delimeter에 값이 입력되면 delimeter를 구분자로 사용합니다. 
+
+예를 들어 text 속성에 ‘20210101’이 입력되고 delimeter 속성에 ‘+(더하기)’가 입력되는 화면에서는 ‘2021+01+01’이 나타나야 합니다.
+
+실습을 위해 CustomText 프로젝트를 생성합니다.
+
+### attrs.xml 속성 파일을 생성하고 CustomText 클래스 생성하기
+
+
+
 
 
 <style>
