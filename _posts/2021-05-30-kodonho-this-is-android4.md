@@ -290,15 +290,18 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 
 1. MainActivity.kt 안에 SubActivity에서 돌려준 값을 받는 코드를 추가합니다. onCreate() 메서드의 블록 밖을 클릭한 후 ``Ctrl`` + ``O``키를 누릅니다. 메서드 목록 중에서 onActivityResult를 선택하고 [OK]버튼을 클릭하면 코드가 자동으로 생성됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-136.png){: style="box-shadow: 0 0 5px #777"}<br>
+
     ```kotlin
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
     }
     ```
-    - onActivityResult() 메서드 구조
-      - ``requestCode`` : 호출 시에 메인 액티비티에서 입력하는 코드 ``startActivityForResult`` 메서드에 인텐트와 함께 입력해서 호출한 코드를 구분합니다.
-      - ``resultCode`` : 결과 처리 후 서브 액티비티에서 입력하는 코드, 앞에서 RESULT_OK를 담아서 보냈습니다.
-      - ``data`` : 결과 처리 후 서브 액티비티가 넘겨주는 인텐트가 담겨 있습니다.
+
+    ``onActivityResult() 메서드 구조``
+    
+    - ``requestCode`` : 호출 시에 메인 액티비티에서 입력하는 코드 ``startActivityForResult`` 메서드에 인텐트와 함께 입력해서 호출한 코드를 구분합니다.
+    - ``resultCode`` : 결과 처리 후 서브 액티비티에서 입력하는 코드, 앞에서 RESULT_OK를 담아서 보냈습니다.
+    - ``data`` : 결과 처리 후 서브 액티비티가 넘겨주는 인텐트가 담겨 있습니다.
 
 1. onActivityResult() 메서드 안에 서브 액티비티에서 돌려받은 resultCode가 정상인지 체크하는 코드를 추가합니다.
     ```kotlin
@@ -316,10 +319,11 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     ```kotlin
     Toast.makeText(this, messsage, Toast.LENGTH_LONG).show()
     ```
-    - Toast.makeText의 파라미터
-      - ``첫번째 파라미터`` : 화면을 위한 기본 도구인 컨텍스트가 필요한데, 액티비티가 이미 가지고 있습니다. this라고 입력하면 됩니다.
-      - ``두번째 파라미터`` : 출력될 메시지를 문자열로 전달합니다.
-      - ``세번째 파라미터`` : 메시지가 얼마동안 출력될지를 결정합니다. LENGTH_LONG과 LENGTH_SHORT가 있습니다.
+    
+    Toast.makeText의 파라미터
+    - ``첫번째 파라미터`` : 화면을 위한 기본 도구인 컨텍스트가 필요한데, 액티비티가 이미 가지고 있습니다. this라고 입력하면 됩니다.
+    - ``두번째 파라미터`` : 출력될 메시지를 문자열로 전달합니다.
+    - ``세번째 파라미터`` : 메시지가 얼마동안 출력될지를 결정합니다. LENGTH_LONG과 LENGTH_SHORT가 있습니다.
 
     지금까지 추가한 MainActivity.kt의 onActivityResult() 메서드 코드입니다.
     ```kotlin
@@ -1831,9 +1835,10 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
         implementation "androidx.fragment:fragment-ktx:$fragment_version"
     }
     ```
-    - ``fragment 버전 확인``
-      - 책을 쓰는 시점에서 fragment의 버전이 1.3.0-beta02이지만, 책이 출시된 시점에서는 버전이 변경되거나 내장 모듈로 탑재될 수도 있습니다. 
-      - [https://developer.android.com/jetpack/androidx/releases/fragment](https://developer.android.com/jetpack/androidx/releases/fragment)
+    
+    ``fragment 버전 확인``
+    - 책을 쓰는 시점에서 fragment의 버전이 1.3.0-beta02이지만, 책이 출시된 시점에서는 버전이 변경되거나 내장 모듈로 탑재될 수도 있습니다. 
+    - [안드로이드 사이트 이동](https://developer.android.com/jetpack/androidx/releases/fragment)
 
 
 1. 위쪽 android 스코프에 viewBinding 설정도미리 추가합니다.
