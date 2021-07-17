@@ -2129,11 +2129,189 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 1. onDetach()<br>
   액티비티에서 연결이 해제됩니다.
 
+# 4. 뷰 사용하기
+
+뷰<sup>View</sup>는 화면을 구성하는 최소 단위의 컴포넌트라고 할 수 있습니다.
+
+지금까지 화면을 구성하기 위해 컨스트레인트 레이아웃, 리니어 레이아웃 등의 레이아웃과 텍스트 뷰, 버튼 등을 사용했는데 모두 최상위 클래스인 View 클래스를 상속받아서 구현합니다.
+
+TextView 클래스도 View 클래스를 상속받아서 구현되어 있습니다.
+
+```kotlin
+open class TextView: View {
+    constructor(context: Context): super(context, null, 0) {
+
+    }
+    constructor(context: Context, attrs: AttributeSet?): super(context, attrs, 0) {
+
+    }
+    constructor(context: Context, attrs: AttributeSet?, defStyleAtr: Int): super(context, attrs, defStyleAttr) {
+
+    }
+}
+```
+
+레이아웃 파일에서 UI 편집기로 만들어진 텍스트뷰는 다음과 같은 XML 태그로 표현되는데 클래스화 (Inflating) 하는 과정을 거쳐서 TextView 클래스로 변환됩니다.
+
+태그 안의 속성들은 AttributeSet 으로 만들어진 후에 TextView 클래스의 생성자에 파라미터로 전달되고, 안드로이드는 입력된 속성들을 분석해서 화면에 그려줍니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-193.png){: style="box-shadow: 0 0 5px #777"}
 
 
+TextView 클래스 앞에 ``open 키워드``가 있는 것은 상속으로 확장이 가능하다는 의미입니다.
+
+TextView가 View를 상속받아서 만든 것처럼 TextView 를 상속받아서 얼마든지 확장할 수 있습니다.
+
+## 4.1 뷰 클래스 다루기
+
+위젯과 레이아웃의 최상위 클래스인 View는 화면에 그림을 그리기 위한 메서드를 가지고 있습니다.
+
+텍스트뷰 위젯의 text속성에 ‘안녕하세요’라고 입력하면 TextView는 부모 클래스인 View에 이벽된 문자열을 전달하고, View는 문자열을 받아서 글자 크기, 색상, 위치 등을 결정하고 onDraw() 메서드를 사용해서 화면에 그려줍니다.
+
+onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯이 없어도 직접 만들어서 사용할 수 있습니다.
+
+### 뷰에 텍스트 출력하기
+
+예제를 따라할 CustomView 프로젝트를 하나 새로 만든 후에 build.gradle 파일을 열고 viewBinding 설정을 추가합니다.
+
+1. MainActivity.kt 파일을 열어서 class MainActivity...밖에 다음과 같이 View를 상속받는 CustomView 클래스를 하나 만듭니다.  View는 컨텍스트를 생성자에서 입력받아야 하므로 CustomView에는 컨텍스트를 입력받는 생성자가 하나 꼭 있어야만 합니다.
+    ```kotlin
+    class MainActivity: AppCompatActivity() {
+        //...
+    }
+
+    class CustomView(context: Context): View(context) {
+        
+    }
+    ```
+
+1. customView 안에서 onDraw() 메서드를 오버라이드 합니다. onDraw() 메서드의 파라미터로 넘어오는 Canvas는 일종의 그리기 도구입니다. ``Canvas``에는 그림판과 함께 그림을 그리기 위해서 draw로 시작하는 메서드들이 제공됩니다.
+    ```kotlin
+    class CustomView(context: Context): View(context) {
+
+        override fun onDraw(canvas: Canvas?) {
+            super.onDraw(canvas)
+        }
+    }
+    ```
+
+1. 텍스트를 출력하기 위해서는 Canvas의 drawText() 메서드를 사용하는데, drawText() 메서드는 출력할 문자열, 가로세로 좌표 그리고 글자의 색과 두께 정보를 가지고 있는 Paint가 필요합니다. super.onDraw(canvas) 아랫줄에 Paint를 하나 만들어서 paint 변수에 저장하고, Paint의 color 프로퍼티에 ‘Color.Black’을 입력합니다. 그리고 textSize 프로퍼티에는 ‘100f’를 입력합니다. 값이 타입이 Float 형이기 때문에 숫자 뒤에 f를 같이 입력해야 합니다.
+    ```kotlin
+    val paint = Paint()
+    paint.color = Color.BLACK
+    paint.textSize = 100f
+    ```
+
+1. 이제 onDraw() 메서드의 파라미터로 전달되는 canvas의 drawText() 메서드를 호출해서 텍스트를 그려줍니다. 첫 번째 파라미터로부터 순서대로 출력할 글자, x좌표, y좌표, 색상 정보입니다. CustomView의 전체 코드는 다음과 같습니다.
+    ```kotlin
+    class CustomView(context: Context): View(context) {
+
+        override fun onDraw(canvas: Canvas?) {
+            super.onDraw(canvas)
+
+            val paint = Paint()
+            paint.color = Color.BLACK
+            paint.textSize = 100f
+            // drawText 메서드
+            canvas?.drawText("안녕하세요", 0f, 0f, paint)
+
+        }
+    }
+    ```
+
+1. activity_main.xml 파일을 열고 ‘Hello World!’가 적인 텍스트뷰의 text속성을 ‘Draw Text’로 바꿔주고 위쪽으로부터 거리는 ‘24’로 설정합니다. 그리고 팔레트의 레이아웃 프레임을 하나 추가하고 텍스트뷰의 위치를 조정하여 다음과 같은 화면을 만듭니다. 프레임 레이아웃의 id속성에는 ‘frameLayout’을 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-194.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt 파일을 열고 바인딩을 생성한 후 binding 변수에 담아둡니다. 그리고 setCnotextView에 binding.root를 입력합니다.
+    ```kotlin
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            
+        }
+    }
+    ```
+
+1. setContentView 아랫줄에 앞에서 만든 CustomView를 생성한 후 frameLayout에 삽입합니다. 레이아웃의 addView() 메서드를 사용하면 소스 코드에서 생성한 뷰를 레이아웃에 삽입할 수 있습니다.
+    ```kotlin
+    val customView = CustomView(this)
+    binding.frameLayout.addView(customView)
+    ```
+
+1. 에뮬레이터에서 실행합니다. 다음처럼 ‘안녕하세요’글자의 아래쪽만 살짝 걸친 듯이 출력됩니다. drawText를 할 때 좌표의 기준이 문자열의 좌측 하단이기 때문에 그렇습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-195.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 정상적으로 표시하기 위해서 drawText의 세 번째 파라미터인 y 좌푯값에 텍스트의 크기인 ‘100f’를 입력한 후 다시 한번 실행합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-196.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 앞의 코드에서 CustomView는 항상 ‘안녕하세요’라는 글자면 출력할 수 있습니다. CustomView의 생성자에 문자열을 입력받는 파라미터를 추가해서 내가 원하는 글자를 출력할 수 있도록 변경하겠습니다. CustomView의 생성자에 문자열 타입인 text 파라미터를 추가해보겠습니다. class CustomView(context: Context): View(context) 코드에 ‘text: String’을 다음과 같이 입력합니다. 
+    ```kotlin
+    class CustomView(text: String, context: Context): View(context)
+    ```
+
+1. text 파라미터를 onDraw() 메서드에서 사용하기 위해 text 변수를 하나 선언하고, init 블록에서 생성자를 통해 넘어온 문자열을 저장합니다. onDraw() 메서드 위에 다음 내용을 저장합니다.
+    ```kotlin
+    val customView = CustomView("안녕 코틀린!", this)
+    //..
+    canvas?.drawText(text, 0f, 100f, paint)
+    ```
+
+1. 에뮬레이터에서 실행하고 확인합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-197.png){: style="box-shadow: 0 0 5px #777"}
+
+    ``MainActiity.kt의 전체 소스``
+
+    ```kotlin
+    package kr.co.hanbit.customview
+
+    import android.content.Context
+    import android.graphics.Canvas
+    import android.graphics.Color
+    import android.graphics.Paint
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.view.View
+    import kr.co.hanbit.customview.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            val customView = CustomView("안녕 코틀린!", this)
+            binding.frameLayout.addView(customView)
+        }
+    }
+
+    class CustomView(text: String, context: Context): View(context) {
+
+        val text: String = text
+
+        override fun onDraw(canvas: Canvas?) {
+            super.onDraw(canvas)
+
+            val paint = Paint()
+            paint.color = Color.BLACK
+            paint.textSize = 100f
+            // drawText 메서드
+            canvas?.drawText(text, 0f, 100f, paint)
+
+        }
+    }
+    ```
+
+### 뷰에 그림 그리기
 
 
 
 <style>
-.page-container {max-width: 1200px}394‘’
+.page-container {max-width: 1200px}404‘’
 </style>
