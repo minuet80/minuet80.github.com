@@ -2431,6 +2431,144 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 
 ### attrs.xml 속성 파일을 생성하고 CustomText 클래스 생성하기
 
+1. [app] - [res] - [values] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Value Resource File]을 선택합니다.
+
+1. File name에 ‘attrs’를 입력하고 [OK] 버튼을 클릭하면 파일이 생성됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-203.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 파일의 ``<resources>`` 태그 사이에 다음과 같이 입력합니다. strings나 dimens와는 다르게 정의하는 클래스와 속성을 계층형으로 입력해야 하므로 여러 줄이 필요합니다.
+    ```kotlin
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <declare-styleable name="CustomText">
+            <attr name="delimeter" format="string" />
+        </declare-styleable>
+    </resources>
+    ```
+    이렇게 커스텀 속성 정보를 정의하면 activity_main.xml과 같은 레이아웃 파일에서 새로운 태그로 사용할 수 있습니다.
+    ```kotlin
+    <CustomText
+        android:id="@+id/customtext"
+        custom:delimeter="/"
+        android:text="20210101" />
+    ```
+
+1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택하여 나타난 팝업창의 입력란에 ‘CustomText’를 입력한 후 목록에서 Class를 더블클릭해서 파일을 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-204.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 파일이 열리면 다음과 같이 수정해서 ``AppCompatTextView`` 클래스를 상속받습니다.
+
+    *버전 호환을 위해 기본 위젯인 TextView가 아니라 AppCompatTextView를 상속받습니다.*{: style="color: #ff0000"}
+
+    ```kotlin
+    class CustomText: AppCompatTextView {
+    }
+    ```
+
+1. AppCompatTextView에 빨간색 밑줄이 생기는데 아래와 같이 생성자 3개를 추가하고 super예약어로 AppCompatTextView의 생성자에게 파라미터를 전달합니다. 위젯 클래스를 소스 코드에서 사용할 때는 Context 하나만 입력받는 첫 번째 생성자가 호출되고, 레이아웃 파일에서는 두 번째 생성자가 주로 호출됩니다. 커스텀 위젯은 레이아웃에서도 사용되지만 코드에서도 직접 사용할 수 있게 때문에 항상 3개의 생성자를 모두 작성해두는 것이 좋습니다.
+    ```kotlin
+    class CustomText: AppCompatTextView {
+
+        constructor(context: Context): super(context) {
+
+        }
+        constructor(context: Context, attrs: AttributeSet): super(context, attrs) {
+
+        }
+        constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
+            
+        }
+    }
+    ```
+
+1. 두 번째 생성자에 다음과 같은 코드를 작성합니다.
+    ```kotlin
+    constructor(context: Context, attrs: AttributeSet): super(context, attrs) {
+        val typed = context.obtainStyledAttributes(attrs, R.styleable.CustomText)
+        val size = typed.indexCount
+
+        for (i in 0 until size) {
+            when (typed.getIndex(i)) {
+                R.styleable.CustomText_delimeter -> {
+                    val delimeter = typed.getString(typed.getIndex(i)) ?: "-"
+                    process(delimeter)
+                }
+            }
+        }
+    }
+    ```
+
+1. delimeter와 입력된 값을 조합해서 처리하는 process() 메서드를 첫 번째 class CustomText... 바로 밑에 다음과 같이 작성합니다.
+    ```kotlin
+    fun process(delimeter: String) {
+        var one = text.substring(0, 4)
+        var two = text.substring(4, 6)
+        var three = text.substring(6)
+
+        setText("$one $delimeter $two $delimeter $three")
+    }
+    ```
+    ``CustomText.kt의 전체 코드``
+    ```kotlin
+    package kr.co.hanbit.customtext
+
+    import android.content.Context
+    import android.util.AttributeSet
+    import androidx.appcompat.widget.AppCompatTextView
+
+
+    class CustomText: AppCompatTextView {
+
+        constructor(context: Context): super(context) {
+
+        }
+        constructor(context: Context, attrs: AttributeSet): super(context, attrs) {
+            val typed = context.obtainStyledAttributes(attrs, R.styleable.CustomText)
+            val size = typed.indexCount
+
+            for (i in 0 until size) {
+                when (typed.getIndex(i)) {
+                    R.styleable.CustomText_delimeter -> {
+                        val delimeter = typed.getString(typed.getIndex(i)) ?: "-"
+                        process(delimeter)
+                    }
+                }
+            }
+        }
+        constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
+
+        }
+
+        fun process(delimeter: String) {
+            var one = text.substring(0, 4)
+            var two = text.substring(4, 6)
+            var three = text.substring(6)
+
+            setText("$one $delimeter $two $delimeter $three")
+        }
+    }
+    ```
+
+### 레이아웃에서 CustomText 사용하기
+
+1. activity_main.xml 파일을 열고 화면 가운데 있는 텍스트뷰를 삭제합니다.
+
+1. 팔레트의 가장 아래에 프로젝트(Project)라는 카테고리가 생성되어 있고, 프로젝트 카테고리를 클릭하면 우측에 커스텀텍스트(CustomText) 위젯이 추가된 것을 확인할 수 있습니다.<br>
+    *``반드시 안드로이드 스튜디오를 재시작해야 합니다.``*<br>
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-205.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 커스텀 텍스트를 드래그해서 화면 가운데 가져다 놓고 컨스트레인트를 상하좌우 모두 연결합니다. 커스텀 텍스트 위젯을 클릭한 상태에서 text 속성에 ‘20210101’을 입력합니다.
+
+1. 속성 영역의 All Attributes를 펼치면 중간쯤에 delimeter 속성이 추가되어 있습니다. ‘-’을 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-206.png){: style="box-shadow: 0 0 5px #777"}
+
+
+- ``View``: 화면에 보이는 모든 요소의 최상위 클래스입니다. 화면에 무엇인가를 그리기 위해서는 View클래스가 상속받아져 있어야 합니다.
+- ``onDraw() 메서드``: View클래스가 화면에 텍스트를 출력하거나 그림을 그릴 때 호출하는 메서드입니다.
+- ``Canvas``: onDraw() 메서드를 통해 전달되는 그리기 도구입니다. drawText(), drawCircle() 등의 메서드를 사용하여 화면에 그릴 수 있습니다.
+- ``Paint``: 화면에 그려지는 요소들의 색상, 스타일, 굵기 정보 등을 정의하는 클래스입니다.
+- ``attrs.xml``: 내가 만든 위젯에 새로운 속성을 정의할 때 사용되는 리소스 파일입니다.
+- ``custom``: attrs.xml에 정의한 새로운 속성을 custom이라는 Prefix로 레이아웃에서 사용할 수 있습니다.
 
 
 
