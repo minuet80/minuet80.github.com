@@ -125,7 +125,7 @@ width: large
 | 에스디바이오센서 | 31.4% | **9.6%**{: style="color: #ff0000"} | **7.2%**{: style="color: #ff0000"} |
 {: .table .table-striped .table-hover}
 
-> 6조 2,996 억원
+*코로나 백신접종으로 미래 성장성 불확실성이 투심 매력 저하로 이어짐*
 
 ## 결론
 
