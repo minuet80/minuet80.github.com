@@ -749,5 +749,5 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 {: style="color: #ff0000"}
 
 <style>
-.page-container {max-width: 1200px}‘’
+.page-container {max-width: 1200px}
 </style>
