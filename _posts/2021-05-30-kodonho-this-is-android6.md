@@ -177,6 +177,216 @@ Log.d("File", "이 파일(디렉토리)의 절대경로는 ${file.absolutePath}�
 
 ### 파일을 읽고 쓰는 스트림
 
+파일의 기본 정보는 File 클래스를 사용해서 간단하게 처리할 수 있는데 반해서, 파일의 실제 데이터를 읽고 쓰려면 스트림<sup>stream</sup>이라는 복잡한 클래스를 사용합니다.
+
+스트림은 파일에 파이프를 하나 연결해 놓고 해당 파이프를 통해서 데이터를 꺼내오는 방식으로 동작합니다.
+
+파일의 크기를 특정할 수 없기 때문에 읽거나 쓸 때만 파이프를 연결하고 사용이 끝나면 파이프를 제거하는 방식으로 컴퓨터 자원을 효율적으로 사용합니다.
+
+스트림은 읽는 용도와 쓰는 용도가 구분되어 있으며 읽기 위해서는 읽기 전용 스트림을, 쓰기 위해서는 쓰는 전용 스트림을 사용해야 합니다.
+
+
+### 텍스트 파일 읽기
+
+텍스트 파일을 읽을 때는 Reader 계열의 스트림을 사용합니다.
+
+FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파라미터로 전달받아 파일 정보를 읽은 후에 스트림을 사용해서 파일의 실제 데이터를 읽는 방법을 하나씩 알아보겠습니다.
+
+1. [app] - [java] 디렉토리 밑에 있는 패키지 밑에 FileUtil 클래스를 생성합니다.
+
+1. FileUtil.kt 파일을 열고 fullPath 파라미터로 파일의 경로를 전달받는 메서드를 FileUtil 클래스 안에 생성합니다. 그리고 result 변수로 파일을 읽은 결괏값을 리턴합니다.
+    ```kotlin
+    fun readTextFile(fullPath: String): String {
+        // 이 후 작성하는 코드는 이 안에 적습니다.
+    }
+    ```
+
+1. 여기서부터는 readTextFile() 메서드의 코드 블록 안에 한 줄씩 순서대로 코드를 작성합니다.  먼저 전달된 fullPath 경로를 File로 생성하고 실제 파일이 있는지 검사합니다. 없으면 공백값을 리턴합니다.
+    ```kotlin
+    val file = File(fullPath)
+    if (!file.exists()) {
+        return ""
+    }
+    ]
+    ```
+
+1. FileReader로 file을 읽고 BufferedReader에 담아서 속도를 향상시킵니다.
+    ```kotlin
+    val reader = FileReader(file)
+    val buffer = BufferedReader(reader)
+    ```
+
+1. buffer를 통해 한 줄씩 읽은 내용을 임시로 저장할 temp 변수를 선언하고 모든 내용을 저장할 StringBuffer를 result 변수로 선언합니다.
+    ```kotlin
+    var temp = ""
+    val result = StringBuffer()
+    ```
+
+1. while문을 반복하면서 buffer에서 한 줄씩 꺼내 temp변수에 담고 그 값이 null이라면 더 이상 읽을 내용이 없으니 반복문을 빠져나갑니다.  값이 있다면 (null이 아니라면 ) result 변수에 append() 합니다.
+    ```kotlin
+    while (true) {
+        temp = buffer.readLine()
+        if (temp = null) {
+            break
+        } else {
+            result.append(buffer)
+        }
+    }
+    ```
+
+1. buffer를 close()로 닫고 결괏값을 리턴합니다.
+    ```kotlin
+    buffer.close()
+    return result.toString()
+    ```
+
+    ``파일 읽기 메서드의 전체 코드``
+
+    ```kotlin
+    fun readTextFile(fullPath: String): String {
+        val file = File(fullPath)
+        if (!file.exists()) {
+            return ""
+        }
+
+        val reader = StringBuffer()
+        while (true) {
+            temp = buffer.readLine()
+            if (temp == null ) {
+                break
+            } else {
+                result.append(buffer)
+            }
+        }
+        buffer.close()
+        return result.toString()
+    }
+    ```
+
+    내부 저장소에서 파일을 읽으려면 내부 저장소인 filesDir과 파일명을 조합합니다. 그리고 readTextFile() 파라미터로 넘기면 됩니다. 디렉토리와 파일명 사이를 슬래시(/)로 구분하거나 File.pathSeparator로 구분할 수 있습니다. 
+
+    ```kotlin
+    var content = readTextFile("${filesDir}/파일명.txt")
+    ```
+
+### openFileInput을 사용해서 코드 축약하기
+
+안드로이드는 파일을 읽어서 스트림으로 반환해주는 openFileInput을 읽기 메서드로 제공합니다. 
+
+openFileInput과 함께 몇 개의 메서드들을 조합하면 다음과 같이 짧은 코드로 텍스트 파일을 읽을 수 있습니다.
+
+```kotlin
+var contents = ""
+context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
+    contents = lines.joinToString("\n")
+}
+```
+
+## 1.3 내부 저장소에 파일 쓰기
+
+쓰기도 역시 일기와 동일합니다.
+
+### 텍스트 파일 쓰기
+
+파일은 읽기보다 쓰기가 조금 더 단순한 로직으로 구성되어 있습니다. 
+
+계속해서 FileUtil 클래스에 코드를 작성합니다.
+
+1. 쓰기 파일은 총 3개의 파라미터를 사용합니다. 파일을 생성할 디렉토리, 파일명, 작성할 내용 이렇게 3개의 값이 전달되어야 합니다.  먼저 3개의 파라미터를 가진 메서드를 생성합니다.
+    ```kotlin
+    fun writeTextFile(directory: String, filename: String, content: String) {
+        // 이후 작성하는 코드는 이 안에 작성합니다.
+    }
+    ```
+
+1. directory가 존재하는지 검사하고 없으면 생성합니다. 파일처럼 디렉토리도 File객체에 경로를 전달하면 상태를 체크할 수 있습니다.
+    ```kotlin
+    val dir = File(directory)
+    if (!dir.exists()) {
+        dir.mkdirs()
+    }
+    ```
+
+1. 디렉토리가 생성되었다면 디렉토리에 파일명을 합해서 FileWriter로 생성합니다. 생성된 FileWriter를 buffer에 담으면 쓰기 속도가 향상됩니다.
+    ```kotlin
+    val writer = FileWriter(directory + "/" + filename)
+    val buffer = BufferedWriter(writer)
+    ```
+
+1. buffer로 내용을 쓰고 close()로 닫습니다.
+    ```kotlin
+    buffer.write(content)
+    buffer.close()
+    ```
+
+    ``파일 쓰기 메서드의 전체 코드``
+
+    ```kotlin
+    fun writeTextFile(directory: String, filename: String, content: String) {
+        val dir = File(directory)
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+        val writer = FileWriter(directory + "/" + filename)
+        val buffer = BufferedWriter(writer)
+        buffer.write(content)
+        buffer.close()
+    }
+    ```
+
+    내부 저장소에 텍스트 파일을 쓸 때는 다음과 같이 사용합니다.
+
+    ```kotlin
+    writeTextFile(filesDir, "filename.txt", "글의 내용")
+    ```
+
+### openFileOutput으로 쓰기 코드 축약하기
+
+읽기와 마찬가지로 파일 쓰기도 openFileOutput() 메서드러 다음과 같이 축약해서 사용할 수 있습니다.
+
+파일명 다음에 입력되는 Context.MODE_PRIVATE 대신에 Context.MODE_APPEND를 사용하면 기존에 동일한 파일명이 있을 경우 기존 내용에 이어서 새로운 내용을 저장할 수 있습니다.
+
+```kotlin
+val contents = "Hello\nworld!"
+context.openFileOutput("파일명", Context.MODE_PRIVATE).use { stream -> 
+    stream.write(contents.toByteArray())
+}
+```
+
+내용이 담긴 contents 변수는 스트림에 쓸 때 바이트 배열 (ByteArray)로 변환해야 합니다.
+
+외부 저장소에 쓰이는 9장의 ‘카메라 갤러리’에서, 읽기는 11장의 ‘컨텐트 리졸버’에서 다루겠습니다.
+
+
+# 2. SharedPreferences
+
+안ㄷ로이드 플랫폼은 간단한 데이터의 저장을 목적으로 SharedPreferences를 제공합니다.
+
+앞에서 공부한 파일은 사용하기가 까다롭고 외부 저장소에 저장할 때는 권한 설정이 필요한 반면, SharedPreferences는 내부 저장소를 이용하기 때문에 권한 설정이 필요 없고 훨씬 간단한 코드로 사용할 수 있습니다.
+
+주로 로그인 정보나 앱의 상태 정보를 저장하는 용도로 사용되는데 액티비티에서 인텐트에 값을 넣고 빼는 것과 비슷한 형태로 동작합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-231.png){: style="box-shadow: 0 0 5px #777"}
+
+## 2.1 SharedPreferences를 사용하고 데이터 저장하기
+
+SharedPreferences는 인텐트에 값을 전달하듯이 데이터를 키와 값 쌍으로 저장할 수 있습니다.
+
+데이터는 XML 형식으로 된 파일로 저장되며 앱이 종료되어도 남아 있습니다.
+
+### SharedPreference 사용하기
+
+SharedPreference를 사용하기 위해선는 몇 가지 과정이 필요합니다.
+
+값을 저장하기 위해서는 마지막에 꼭 apply()를 해줘야 하지만 읽어올 때는 필요하지 않습니다.
+
+먼저 4단계를 거쳐 값을 저장합니다.
+
+
+
+
+
+
 <style>
 .page-container {max-width: 1200px}476‘’
 </style>
