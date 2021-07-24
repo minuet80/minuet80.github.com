@@ -2,10 +2,10 @@
 layout: post
 title: SD바이오센서 상장
 description: 진단 토탈플랫폼을 갖춘 글러벌 체외진단 전문 기업
-img: biosensor/biosensor-1.png
+img: flotation-biosensor/flotation-biosensor-1.png
 color: 212121
 author: Minuet80
-permalink: /biosensor/
+permalink: /flotation-biosensor/
 width: large
 ---
 
@@ -26,7 +26,7 @@ width: large
 
 ## 2. 공모 후 주주구성
 
-![1]({{site.baseurl}}/images/biosensor/biosensor-2.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/flotation-biosensor/flotation-biosensor-2.png){: style="box-shadow: 0 0 5px #777"}
 
 | 주주명 | 주식수 | 지분율 | 기간 |
 | --- | --- | --- | --- |
@@ -43,9 +43,9 @@ width: large
 
 ## 3. 에스디바이오센서의 주요 제품 포토폴리오 
 
-![1]({{site.baseurl}}/images/biosensor/biosensor-3.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/flotation-biosensor/flotation-biosensor-3.png){: style="box-shadow: 0 0 5px #777"}
 
-![1]({{site.baseurl}}/images/biosensor/biosensor-4.png){: style="box-shadow: 0 0 5px #777"}
+![1]({{site.baseurl}}/images/flotation-biosensor/flotation-biosensor-4.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 4. 연결재무상태표 (단위, 백만원)
 

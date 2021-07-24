@@ -4,7 +4,7 @@ title: 짐 로저스, 올 연말 거품 터진다…"난 이 자산 산다"
 description: 글로벌 구루에게 듣는다
 color: 212121
 author: Minuet80
-permalink: /test/
+permalink: /talks-with-global-guru/
 width: large
 ---
 
