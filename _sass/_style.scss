@@ -246,7 +246,8 @@ header {
     color: $text-color;
     font-size: 1.2em;
     padding: 4px;
-    margin-top: 1em;
+    //margin-top: 1em;
+    margin-top: 6em;
     &:hover{
        border: 1px dashed $highlight-color;
     }
