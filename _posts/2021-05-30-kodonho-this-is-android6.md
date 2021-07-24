@@ -502,9 +502,196 @@ AndroidX Preference를 사용하기 위해서는 라이브러리가 설치되어
 
 1. Gradle Scripts 디렉토리 밑에 있는 build.gradle 파일을 엽니다.
 
+1. 다음처럼 dependencies { 바로 밑에 androidx.preference 의존성을 추가합니다. }
+    ```kotlin
+    def preference_version = "1.1.1"
+    implementation "androidx.preference:preference-ktx:$preference_version"
+    ```
+
+    ``프로젝트 스트럭처에서 의존성 추가하기``
+    1. build.gradle 파일 열기
+    1. 에디터 우측 상단에 [Open] 버튼 클릭
+    1. 좌측 메뉴에서 Dependencies 선택
+    1. 가운데 Declared Dependencies 아래에 있는 + 버튼 (Add Dependency) 클릭
+    1. Library Dependency 선택
+    1. [Step 1.]의 입력 필드에 preference 입력 후 Search 버큰 클릭
+    1. 검색된 목록에서 Group ID가 androidx.preference인 것 선택
+    1. 오른쪽 Versions에서 rc, 또는 beta없이 숫자로만 이루어진 버전 선택 (2021년 2월 기준으로 1.1.1)
+    1. [Step 2.]에 implementation 선택된 것 확인
+    1. OK버튼을 클릭하여 의존성 추가
 
 
+### PreferenceScreen 화면 정의
+
+preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 정의해두면 안드로이드가 정의된 XML의 구조를 분석해서 화면을 그려줍니다.
+
+1. 리소스 디렉토리 res를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Android Resource File]를 선택합니다.
+
+1. 다음 그림과 같이 입력 필드를 채우고 [OK] 버튼을 클릭해 파일을 생성합니다.
+    - File name: preferences
+    - resource type: XML
+    - Root element: PreferenceScreen
+    - Source set: main
+    - Directory name: xml (xml 디렉토리가 생성되고 그 안에 preferences.xml이 생깁니다.)
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-232.png){: style="box-shadow: 0 0 5px #777"}
+
+1. preferences.xml 파일을 [Code] 모드로 변경한 다음 화면에 보여줄 설정 화면의 구조를 XML로 작성합니다. \<PreferenceScreen\>태그 다음 계층에 설정하는 화면에 보여질 카테고리를 구성합니다. 카테고리는 주로 입력 필드의 그룹명을 출력하는 용도로 사용됩니다.
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <PreferenceCategory
+            android:title="기능 설정"
+            app:iconSpaceReserved="false">
+
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="옵션 설정"
+            app:iconSpaceReserved="false">
+
+        </PreferenceCategory>
+
+    </PreferenceScreen>
+    ```
+
+1. 각각의 카테고리 안에 실제 입력 필드를 구성합니다. 각각의 입력 필드를 2개의 타케고리에 골고루 배치합니다. 다음 코드와 똑같이 배치할 필요는 없지만 key, title, icon속성은 타입에 맞춰서 그래돌 사용하는게 좋습니다.  중간에 ListPreference에는 XML 로 정의된 목록 데이터가 필요하므로 일단 이름만 먼저 정의합니다.
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <PreferenceCategory
+            android:title="기능 설정"
+            app:iconSpaceReserved="false">
+
+            <CheckBoxPreference
+                android:key="key_add_shortcut"
+                android:title="바로가기 아이콘"
+                android:icon="@mipmap/ic_launcher"
+                android:defaultValue="true" />
+
+            <SwitchPreference
+                android:key="key_switch_on"
+                android:title="화면 꺼짐"
+                android:icon="@mipmap/ic_launcher"
+                android:defaultValue="false" />
+
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="옵션 설정"
+            app:iconSpaceReserved="false">
+
+            <EditTextPreference
+                android:key="key_edit_name"
+                android:title="이름"
+                android:summary="이름을 입력하세요"
+                android:dialogTitle="이름 입력"
+                app:iconSpaceReserved="false" />
+
+            <ListPreference
+                android:key="key_set_item"
+                android:title="목록 선택형"
+                android:summary="목록"
+                android:entries="@array/action_list"
+                android:entryValues="@array/action_values"
+                android:dialogTitle="목록 선택 제목"
+                app:iconSpaceReserved="false" />
+
+
+            <PreferenceScreen
+                android:title="설정 화면 타이틀"
+                android:summary="설정 화면 요약"
+                app:iconSpaceReserved="false">
+
+                <intent android:action="android:intent.action.VIEW"
+                    android:data="http://www.android.com" />
+
+            </PreferenceScreen>
+
+        </PreferenceCategory>
+
+    </PreferenceScreen>
+    ```
+
+1. ListPreference에서 사용할 리소스 파일을 생성하고 목록 데이터를 입력합니다.   [res] - [values] 디렉토리를 마우스 우클릭한 다음 [New] - [Values Resource File]을 선택하고, File name에 ‘array’를 입력하여 array.xml 파일을 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-233.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 array.xml에 다음과 같이 작성합니다. 각 태그의 name에 해당하는 부분이 ListPreference의 entries와 entryValues의 값으로 사용됩니다.
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <string-array name="action_list">
+            <item>action 1</item>
+            <item>action 2</item>
+            <item>action 3</item>
+            <item>action 4</item>
+        </string-array>
+        <string-array name="action_values">
+            <item>value 1</item>
+            <item>value 2</item>
+            <item>value 3</item>
+            <item>value 4</item>
+        </string-array>
+    </resources>
+    ```
+
+1. 이어서 java 디렉토리 밑에 있는 기본 패키지를 마우스 우클릭한 다음 [New] - [Kotlin File/Class]를 클릭합니다. 다음과 같이 입력하여 SettingFragment 클래스를 생성합니다.
+
+1. 생성된 SettingFragment.kt 파일을 열고 PreferenceFragmentCompat 추상 클래스를 상속받습니다. 그리고 onCreatePreferences() 메서드를 오버라이드 합니다.
+    ```kotlin
+    package kr.co.hanbit.base
+
+    import android.os.Bundle
+    import androidx.preference.PreferenceFragmentCompat
+
+    class SettingFragment: PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        }
+    }
+    ```
+
+1. onCreatePreferences() 메서드 블록 안에서 addPreferencesFromResource를 호출하고 PreferenceScreen이 정의된 preference파일을 파라미터로 전달하면 설정 항목에 대한 View가 자동으로 생성됩니다.
+    ```kotlin
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        addPreferencesFromResource(R.xml.preferences)
+    }
+    ```
+
+1. 이제 activity_main.xml 을 열고 SettingFragment를 추가하겠습니다. [Design] 모드에서 화면 중앙의 기본 텍스트뷰는 삭제합니다. 그리고 팔레트의 커먼 또는 컨테이너에 있는 \<fragment\>를 화면에 드래그하면 나타나는 팝업창에서 SettingFragment를 추가하면 됩니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-234.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 컨스트레인트의 네 방향을 화면 가장자리에 연결하고 layout_width와 layout_height의 속성을 ‘match_constraint’로 바꿔서 화면에 꽉 차게 배치합니다.
+
+1. 에뮬레이터에스 실행하면 다음 그림처럼 설정 화면이 나타나며 기능과 옵션 설정을 사용할 수 있습니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-235.png){: style="box-shadow: 0 0 5px #777"}
+
+### 설정값 사용하기
+
+``PreferenceScreen에서 값을 조절하면 설정값이 자동으로 지정된 SharedPreferences파일에 저장됩니다. ``
+
+해당 파일은 PreferenceManager.getDefaultSharedPreferences() 메서드를 호출해서 사용할 수 있습니다.
+
+사용법은 일반적인 SharedPreferences를 사용하는 방법과 동일합니다.
+
+```kotlin
+val shared = PreferenceManager.getDefaultSharedPreferences(this)
+
+val checkboxValue = shared.getBoolean("key_add_shortcut", false)
+val switchValue = shared.getBoolean("key_switch_on", false)
+val name = shared.getString("key_edit_name", "")
+val selected = shared.getString("key_set_item", "")
+```
+
+CheckBoxPerference와 SwitchPreference는 저장값이 참과 거짓인 Boolean 타입이기 때문에 getBoolean() 메서드로 사용할 수 있고 EditPreference와 ListPreference는 입력된 값과 선택된 값을 모두 getString() 메서드로 사용할 수 있습니다.
+
+onCreate() 메서드에서 PreferenceManager를 이용해서 입력된 값들을 Log로 출력해보세요.
 
 <style>
-.page-container {max-width: 1200px}‘’“”
+.page-container {max-width: 1200px}
 </style>
