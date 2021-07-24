@@ -676,6 +676,231 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     }
     ```
 
+1.  삭제 버튼을 클릭하면 어댑터의 helper와 listData에 접근해야 되는데, 지금은 어댑터 밖에 Holder 클래스가 있기 때문에 접근할 수 없습니다. Holder 클래스 전체를 어댑터 클래스 안으로 옮기고 class 앞에 inner 키워드를 붙여줍니다.
+    ```kotlin
+    class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
+
+        //.. 중략
+
+        inner class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+
+            init {
+                binding.btnDelete.setOnClickListener {
+                    
+                }
+            }
+
+            fun setMemo(memo: Memo) {
+                binding.textNo.text = "${memo.no}"
+                binding.textContent.text = memo.content
+                val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
+                // 날짜 포맷은 SimpleDateFormat으로 설정합니다.
+                binding.textDatetime.text = "${sdf.format(memo.datetime)}"
+            }
+        }
+    }
+    ```
+
+1. 홀더는 한 화면에 그려지는 개수만큼 만든 후 재사용하므로 1번 메모가 있는 홀더를 스크롤해서 위로 올리면 아래에서 올라오는 새로운 메모가 1번 홀더를 재사용하는 구조입니다. 따라서 클릭하는 시점에 어떤 데이터가 있는지 알아야 하므로 Holder 클래스의 init 위에 변수를 하나 선언하고 setMemo() 메서드로 넘어온 Memo를 임시로 저장합니다.
+    ```kotlin
+    var mMemo: Memo?= null
+    // 중략..
+    fun setMemo(memo: Memo) {
+        // 중략..
+        this.mMemo = memo
+    }
+    ```
+
+1. init 블록 안에 있는 btnDelete의 클릭 리스너 블록 안에서 SQLite의 데이터를 먼제 삭제하고, listData의 데이터도 삭제합니다. 그리고 어댑터를 갱신합니다.
+    ```kotlin
+    // deleteMemo()는 null을 허용하지 않았는데, 
+    // mMemo는 null을 허용하도록 설정되었기 때문에 !!를 사용해서 강제해야 합니다.
+    helper?.deleteMemo(mMemo!!)
+    listData.remove(mMemo)
+    notifyDataSetChanged()
+    ```
+
+1. 에뮬레이터에서 실행하고 테스트합니다. 메모 데이터 하나를 삭제한 후 앱을 껏다 켰을 때도 삭제되어 있으면 정상적으로 동작하는 것입니다.
+
+### 메모 내용 전체 보기
+
+앞서 메모 앱의 목록은 두 줄까지만 보여주도록 설계했습니다. 전체 내용을 모두 보여주도록 레이아웃을 조금 수정하겠습니다.
+
+1. item_recycler.xml 파일을 열고 최상위 레이아웃인 컨스트레인트 레이아웃의 layout_height속성을 ‘wrap_content’로 변경합니다.
+
+1. 메모 내용이 표시되는 텍스트뷰의 maxlines 속성값을 삭제하고 layout_height 속성을 ‘wrap_content’로 변경합니다.
+
+1. 에뮬레이터에서 실행하고 여러 줄의 데이터를 작성해보세요.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-245.png){: style="box-shadow: 0 0 5px #777"}
+
+### 프로젝트 전체 코드
+
+다음은 MainActivity.kt의 전체 코드입니다.
+
+```kotlin
+package kr.co.hanbit.sqlite
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.hanbit.sqlite.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    val helper = SqliteHelper(this, "memo", 1)
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        val adapter = RecyclerAdapter()
+        adapter.helper = helper // 추가한 코드
+
+        adapter.listData.addAll(helper.selectMemo())
+
+        binding.recyclerMemo.adapter = adapter
+        binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
+
+        binding.btnSave.setOnClickListener {
+            if (binding.editMemo.text.toString().isNotEmpty()) {
+                val memo = Memo(null, binding.editMemo.text.toString(), System.currentTimeMillis())
+                helper.insertMemo(memo)
+                adapter.listData.clear()
+                adapter.listData.addAll(helper.selectMemo())
+                adapter.notifyDataSetChanged()
+                binding.editMemo.setText("")
+            }
+        }
+    }
+}
+```
+
+다음은 RecyclerAdapter.kt의 전체 코드 입니다.
+
+```kotlin
+package kr.co.hanbit.sqlite
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import kr.co.hanbit.sqlite.databinding.ItemRecyclerBinding
+import java.text.SimpleDateFormat
+
+class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
+
+    var listData = mutableListOf<Memo>()
+    var helper: SqliteHelper? = null
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val memo = listData.get(position)
+        holder.setMemo(memo)
+    }
+
+    override fun getItemCount(): Int {
+        return listData.size
+    }
+
+    inner class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+
+        var mMemo: Memo?= null
+
+        init {
+            binding.btnDelete.setOnClickListener {
+                helper?.deleteMemo(mMemo!!)
+                listData.remove(mMemo)
+                notifyDataSetChanged()
+            }
+        }
+
+        fun setMemo(memo: Memo) {
+            binding.textNo.text = "${memo.no}"
+            binding.textContent.text = memo.content
+            val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
+            // 날짜 포맷은 SimpleDateFormat으로 설정합니다.
+            binding.textDatetime.text = "${sdf.format(memo.datetime)}"
+
+            this.mMemo = memo
+        }
+    }
+}
+```
+
+다음은 item_recycler.xml의 전체 코드입니다.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <TextView
+        android:id="@+id/textNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="32dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:text="메모 내용 표시"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textNo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDatetime"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="2021/01/01 13:57"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContent" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="삭제"
+        app:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textContent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+
+
 
 
 
