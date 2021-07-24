@@ -37,8 +37,7 @@ width: large
 
 - ``보호예수 주식수 68.6%``
 
-- **``유통물량 31.4%``**
-{: style="color: #FF0000"}
+- ``유통물량 31.4%``{: style="background-color: #ffcccc"}
 
 
 ## 3. 에스디바이오센서의 주요 제품 포토폴리오 
@@ -122,7 +121,7 @@ width: large
 | 네오이뮨텍(Reg.S) | 20% | 100% | 91% |
 | 카카오게임즈 | 21% | 100% | 160% |
 | 프레스티지바이오파마 | 21% | -10% | 2% |
-| 에스디바이오센서 | 31.4% | **9.6%**{: style="color: #ff0000"} | **17.3%**{: style="color: #ff0000"} |
+| 에스디바이오센서 | 31.4% | ``9.6``{: style="background-color: #ffcccc"} | ``17.3%``{: style="background-color: #ffcccc"} |
 {: .table .table-striped .table-hover}
 
 *코로나 백신접종으로 미래 성장성 불확실성이 투심 매력 저하로 이어짐*
