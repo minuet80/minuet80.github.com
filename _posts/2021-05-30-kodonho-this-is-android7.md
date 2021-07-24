@@ -900,11 +900,219 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
 ```
 
 
+# 3. Room: ORM 라이브러리
+
+ORM<sup> (Object-Relational Mapping) </sup>은 객체와 관계형 데이터베이스의 데이터를 매핑하고 변환하는 기술로 복잡한 쿼리를 잘 몰라도 코드만으로 데이터베이스의 모든 것을 컨트롤 할 수 있도록 도와줍니다.
+
+안드로이드는 SQLite를 코드 관점에서 접근할 수 있도록 ORM 라이브러리인 Room을 제공합니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-246.png){: style="box-shadow: 0 0 5px #777"}
+
+## 3.1 Room 추가하기
+
+Room 프로젝트를 하나 새로 생성합니다.
+
+앞에서 작성했던 SQLite프로젝트에서 몇 개의 화면과 액티비티는 복사해서 재사용하겠습니다.
+
+1. build.gradle 파일을 열고 가장 윗줄 plugins 블록에 다음과 같이 입력해 kotlin-kapt를 사용한다는 것을 명시하고, andriod블록에 viewBinding 설정도 같이 추가합니다.
+    ```gradle
+    plugins {
+        id 'com.android.application'
+        id 'kotlin-andriod'
+        id 'kotlin-kapt'
+    }
+
+    android {
+        buildFeatures {
+            viewBinding true
+        }
+    }
+    ```
+
+1. 그리고 dependencies 블록 앞부분에 다음과 같이 입력해서 Room을 추가합니다. Room은 빠른 처리 속도를 위해서 어노테이션 프로세서 <sup> (annotation processor) </sup>를 사용하는데, 콜틀린에서는 이것을 대신해서 kapt를 사용합니다. kapt 를 사용하기 위해서는 먼저 build.gradle 파일의 상단에 kotalin-kapt 플러그인을 추가해야 합니다. dependencies 블록에 추가한 코드 중 세번째줄에 kapt라고 작성되어 있는 부분을 주의해서 작성해야 합니다.
+    ```gradle
+    dependencies {
+
+        def room_version = "2.2.6"
+        implementation "androidx.room:room-runtime:$room_version"
+        kapt "androidx.room:room-compiler:$room_version"
+        implementation "androidx.room:room-ktx:$room_version"
+        //.. 생략
+    }
+    ```
+
+1. build.gradle 파일의 우측 상단을 보면 [Sync Now] 가 생겼을 겁니다. 클릭해서 설정사항을 적용합니다.
+
+## 3.2 RoomMemo 클래스 정의하기
+
+1. 먼저 앞 절 SQLite 프로젝트에서 사용한 파일 중에서 java 패키지 아래에 있는 MainActivity, RecyclerAdapter를 복사해서 이 프로젝트에 붙여넣기 합니다. 동일한 파일인 MainActivity가 이미 있기 때문에 붙여넣기 여부를 묻는 팝업창에서 [Overwrite]를 클릭합니다. 붙여넣기 한 ActivityMain을 열어보면 패키지명과 네 번째 import인 ActivityMainBinding의 경로가 다릅니다. 둘 다 sqlite를 현재 패키지명인 room으로 수정합니다.
+
+    ``MainActivity 변경 전``
+
+    ```kotlin
+    package kr.co.hanbit.sqlite
+    
+    ...
+    import kr.co.hanbit.sqlite.databinding.ActivityMainBinding
+    ```
+
+    ``MainActivity 변경 후``
+
+    ```kotlin
+    package kr.co.hanbit.room
+    
+    ...
+    import kr.co.hanbit.room.databinding.ActivityMainBinding
+    ```
+
+    RecyclerAdapter도 열어서 같은 위치의 패키지명을 수정합니다.
+
+    ``RecyclerAdapter 변경 후``
+
+    ```kotlin
+    package krco.hanbit.room
+
+    ...
+    import kr.co.hanbit.room.databinding.ItemRecyclerBinding
+    ```
+
+1. [res] - [layout] 밑에 있는 activity_main.xml 과 item_recycler.xml도 마저 복사해서 붙여넣기 합니다. 
+
+1. 이제 패키지 이름에서 [New] - [Kotlin File/Class]를 선택해서 RoomMemo로 클래스를 생성합니다. 그리고 @Entity 어노테이션을 class RoomMemo위에 작성합니다. Room 라이브러리는 @Entity 어노테이션이 적용된 클래스를 찾아 테이블로 변환합니다.  데이터베이스에서 테이블명을 클래스명과 다르게 하고 싶을 때는 @Entity(tableName = "테이블명")과 같이 작성하면 됩니다. 여기서는 테이블명을 room_memo로 만듭니다.
+    ```kotlin
+    @Entity(tableName = "room_memo)
+    class RoomMemo {
+        // 04는 여기에 작성합니다.
+    }
+    ```
+
+1. 맴버 변수 no, content, date 3개를 선언하고 변수명 위에 @ColumnInfo 어노테이션을 작성해서 테이블의 컬럼으로 사용된다는 것을 명시합니다. 컬럼명도 테이블명처럼 변수명과 다르게 하고 싶을 때는 @ColumnInfo(name = "컬럼명")과 같이 작성하면 됩니다.
+    ```kotlin
+    @ColumnInfo
+    var no: Long? = null
+
+    @ColumnInfo
+    var content: String = ""
+
+    @ColumnInfo(name = "date")
+    var datetime: Long = 0
+    ```
+
+1. no 변수에는 @PrimaryKey 어노테이션을 사용해서 키 (Key)라는 점을 명시하고 자동 증가 옵션을 추가합니다.
+    ```kotlin
+    @PrimaryKey(autoGenerate = true) // 추가한 코드
+    @ColumnInfo
+    var no: Long? = null
+    ```
+
+1. content와 datetime을 받는 생성자를 작성합니다.
+    ```kotlin
+    constructor(content: String, datetime: Long) {
+        this.content = content
+        this.datetime = datetime
+    }
+    ```
+
+1. 코드를 따라서 작성해보고, 빨간색으로 나타나는 코드는 ``Alt`` + ``Enter`` 키로 모두 import 합니다.
+
+    ``RoomMemo.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.room.ColumnInfo
+    import androidx.room.Entity
+    import androidx.room.PrimaryKey
 
 
+    @Entity(tableName = "room_memo")
+    class RoomMemo {
 
+        @PrimaryKey(autoGenerate = true)
+        @ColumnInfo
+        var no: Long? = null
+
+        @ColumnInfo
+        var content: String = ""
+
+        @ColumnInfo(name = "date")
+        var datetime: Long = 0
+
+        constructor(content: String, datetime: Long) {
+            this.content = content
+            this.datetime = datetime
+        }
+    }
+    ```
+
+    ``변수를 테이블의 컬럼으로 사용하고 싶지 않을 때``
+
+    @Ignore 어노테이션을 적용하면 해당 변수가 테이블과 관계없는 변수라는 정보를 알릴 수 있습니다.
+    ```kotlin
+    @Ignore
+    var temp: String = "임시로 사용되는 데이터입니다."
+    ```
+
+## 3.3 RoomMemoDAO 인터페이스 정의하기
+
+Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태로 설계하고 사용합니다.
+
+코드 없이 이름만 명시하는 형태로 인터페이스를 만들면 Room이 나머지 코드를 자동생성합니다.
+
+``DAO란?``: *Data Access Object의 약어로 데이터베이스에 접근해서 DML 쿼리를 실행하는 메서드의 모음입니다.*
+
+1. [app] - [java] 밑의 패키지 아래에 다음처럼 RoomMemoDao 인터페이스를 생성합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-247.png){: style="box-shadow: 0 0 5px #777"}
+
+1. RoomMemoDao.kt 파일 class 위에 @Dao 어노테이션을 작성해서 Dao라는 것을 명시하고 ``Alt`` + ``Enter``키를 눌러 import합니다.
+    ```kotlin
+    @Dao
+    interface RoomMemoDao {
+        
+    }
+    ```
+
+1. 삽입, 조회, 수정, 삭제에 해당하는 3개의 메서드를 만들고 각각의 어노테이션을 붙여줍니다.
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.room.Dao
+    import androidx.room.Insert
+    import androidx.room.OnConflictStrategy.REPLACE
+    import androidx.room.Query
+    import androidx.room.Delete
+
+    @Dao
+    interface RoomMemoDao {
+
+        @Query("select * from room_memo")
+        fun getAll(): List<RoomMemo>
+
+        @Insert(onConflict = REPLACE)
+        fun insert(memo: RoomMemo)
+
+        @Delete
+        fun delete(memo: RoomMemo)
+    }
+    ```
+
+    두 번째 @Insert 어노테이션의 경우 옵션으로 onConflict = REPLACE를 적용하면 동일한 키를 가진 값이 입력되었을 때 UPDATE 쿼리로 실행됩니다.
+
+    어노테이션의 종류를 표로 살펴보겠습니다.
+
+    | 어노테이션 | 위치 | 옵션 | 설명 |
+    | :--- | :--- | :--- | :--- |
+    | @Database | 클래스 | entities, version | 데이터베이스 |
+    | @Entity | 클래스 | (tableNAme = "테이블명") | 테이블 |
+    | @ColumnInfo | 맴버변수 | (name = "컬럼명") | 컬럼 |
+    | @PrimaryKey | 맴버변수 | (autoGenerate = true) | 컬럼옵션 |
+    | @Dao | 인터페이스 |  | 실행 메서드 인터페이스 |
+    | @Query | 맴버 메서드 | ("쿼리") | 쿼리를 직접 작성하고 실행 |
+    | @Insert | 맴버 메서드 | (onConflict = REPLACE) | 중복시 수정 |
+    | @Delete | 맴버 메서드 |  | 삭제 |
+    {: .table .table-striped .table-hover}
 
 
 <style>
 .page-container {max-width: 1200px}‘’“”
-</style
+</style>
