@@ -609,6 +609,48 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 1. 에뮬레이터에서 실행하고 테스트합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-243.png){: style="box-shadow: 0 0 5px #777"}
 
+    ``activity_main.xml의 전체 코드``
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMemo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/editMemo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editMemo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="메모를 입력하세요"
+            android:inputType="textMultiLine|textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSave"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    ```
+
     ``MainActivity.kt의 전체 코드``
 
     ```kotlin
@@ -1112,7 +1154,203 @@ Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태�
     | @Delete | 맴버 메서드 |  | 삭제 |
     {: .table .table-striped .table-hover}
 
+    ``RoomMemoDao.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.room.Dao
+    import androidx.room.Insert
+    import androidx.room.OnConflictStrategy.REPLACE
+    import androidx.room.Query
+    import androidx.room.Delete
+
+    @Dao
+    interface RoomMemoDao {
+
+        @Query("select * from room_memo")
+        fun getAll(): List<RoomMemo>
+
+        @Insert(onConflict = REPLACE)
+        fun insert(memo: RoomMemo)
+
+        @Delete
+        fun delete(memo: RoomMemo)
+    }
+    ```
+
+## 3.4 RoomHelper 클래스 정의하기
+
+마치 SQLiteOpenHelper를 상속받아서 구현했던 것처럼 Room도 유사한 구조로 사용할 수 있습니다.
+
+Room은 RoomDatabase를 제공하는데 RoomDatabase를 상속받아 클래스를 생성하면 됩니다.
+
+주의할 점은 추상 클래스로 생성해야 한다는 점입니다.
+
+기존 클래스와 동일하게 생성하고 class 앞에 abstract 키워드를 붙이면 추상 클래스가 됩니다.
+
+1. [app] - [java] 밑의 패키지 아래에 RoomHelper 클래스를 생성하고 앞에 abstract 키워드를 붙여서 추상 클래스로 만듭니다. 이 클래스는 RoomDatabase를 상속받습니다.
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.room.RoomDatabase
+
+    abstract class RoomHelper: RoomDatabase() {
+    }
+    ```
+
+1. 클래스명 위에 @Database 어노테이션을 작성합니다.
+    ```kotlin
+    @Database(entities = arrayOf(RoomMemo::class), version = 1, exportSchema = false)
+    ```
+
+    ``@Database 어노테이션 속성``
+
+    | 옵션 | 설명 |
+    | :--- | :--- |
+    | entities | Room 라이브러리가 사용할 엔티티(테이블) 클래스 목록 |
+    | version | 데이터베이스의 버전 |
+    | exportSchema | true면 스키마 정보를 파일로 출력 |
+    {: .table .table-striped .table-hover}
+
+1. RoomHelper 클래스 안에 앞에서 정의한 RoomMemoDao 인터페이스의 구현체를 사용할 수 있는 메서드명을 정의합니다.
+    ```kotlin
+    abstract fun roomMemoDao(): RoomMemoDao
+    ```
+
+    ``RoomHelper.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.room.Database
+    import androidx.room.RoomDatabase
+
+    @Database(entities = arrayOf(RoomMemo::class), version = 1, exportSchema = false)
+    abstract class RoomHelper: RoomDatabase() {
+        abstract fun roomMemoDao(): RoomMemoDao
+    }
+    ```
+
+    이렇게 빈 껍데기 코드만 작성해두는 검나으로 Room라이브러리를 통해서 미리 만들어져 있는 코드를 사용할 수 있게 됩니다.
+
+## 3.5 어댑터에서 사용하는 Memo 클래스를 RoomMemo 클래스로 변경하기
+
+RecyclerAdapter.kt를 열고 코드를 수정합니다.
+
+1. ``Ctrl`` + ``R`` 키를 누른 후 Memo 문자열을 모두 RoomMemo로 수정합니다. 대소문자를 구분해야 하기 위해서 ``Aa``라고 써 있는 아이콘을 클릭해서 활성화 한 후 [Replace all]을 눌러서 문자열을 모두 수정합니다. <br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-248.png){: style="box-shadow: 0 0 5px #777"}
+
+1. helper변수가 선언된 부분을 RoomHelper를 사용할 수 있도록 수정합니다.
+    ``수정 전``
+    ```kotlin
+    var helper: SqliteHelper? = null
+    ```
+
+    ``수정 후``
+    ```kotlin
+    var helper: RoomHelper? = null
+    ```
+
+1. buttonDelete 클릭리스너에 있는 deleteMemo() 메서드를 RoomHelper의 메서드로 수정합니다. RoomHelper를 사용할 때는 여러 개의 Dao가 있을 수 있기 때문에 ‘헬퍼.Dao.메서드()’형태로 어떤 Dao를 쓸 것인지를 명시해야 합니다.
+    ``수정 전``
+    ```kotlin
+    helper?.deleteMemo(mRoomMemo!!)
+    ```
+
+    ``수정 후``
+    ```kotlin
+    helper?.roomMemoDao()?.delete(mRoomMemo!!)
+    ```
+
+## 3.6 MainActivity에서 RoomHelper 사용하기
+
+MainActivity.kt 파일을 열고 앞에서 작성한 SqliteHelper를 RoomHelper로 교체하겠습니다.
+
+1. MainActivity 맨 윗줄에 정의된 helper 변수를 RoomHelper를 사용할 수 있도록 코드를 수정합니다.
+    ``수정 전``
+    ```kotlin
+    var helper = SqliteHelper(this, "memo", 1)
+    ```
+
+    ``수정 후``
+    ```kotlin
+    var helper: RoomHelper? = null
+    ```
+
+1. onCreate() 의 setContentView 바로 아랫줄에 helper를 생성하는 부분을 추가합니다. databaseBuilder() 메서드의 세 번째 파라미터가 실제 생성되는 DB파일의 이름입니다. Room은 기본적으로 서브 스레드에서 동작하도록 설계되어 있기 때문에 allowMainThreadQueries() 옵션이 적용되지 않으면 앱이 동작을 멈춥니다.
+    *``실제 프로젝트에서는 allowMainThreadQueries옵션을 사용하지 않기를 권합니다.``*{: style="background-color: #FFCCCC"}
+    ```kotlin
+    helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_memo")
+            .allowMainThreadQueries()
+            .build()
+    ```
+
+1. 어댑터의 데이터 목록에 세팅하는 코드 (코드 중간 빨간색 selectMemo가 보이는 행입니다.)를 RoomHelper를 사용하는 것으로 수정합니다. helper에 null이 허용되므로 helper안의 코드를 사용하기 위해서는 hepler?.의 형태로 사용해야 합니다. 이어지는 roomMemoDao()?.도 같은 맥ㄱ락이고 adapter의 listData에 null이 허용되지 않기 때문에 마지막에 ?:(Elvis Operator)를 사용해서 앞의 2개가 null일 경우 사용하기 위한 디폴트값을 설정합니다.
+    ```kotlin
+    adapter.listData.addAll(helper?.roomMemoDao()?.getAll()?: listOf())
+    ```
+
+1. 저장 버튼을 클릭 시 사용하는 코드도 RoomHelper로 책과 대조하면서 바꿔줍니다.
+    ```kotlin
+    binding.btnSave.setOnClickListener {
+        if (binding.editMemo.text.toString().isNotEmpty()) {
+            val memo = RoomMemo(binding.editMemo.text.toString(), System.currentTimeMillis())
+            helper?.roomMemoDao()?.insert(memo)
+            adapter.listData.clear()
+            adapter.listData.addAll(helper?.roomMemoDao()?.getAll()?: listOf())
+            adapter.notifyDataSetChanged()
+            binding.editMemo.setText("")
+        }
+    }
+    ```
+
+1. 에뮬레이터에서 실행하고 테스트합니다.
+    ``MainActivity.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.room
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import androidx.recyclerview.widget.LinearLayoutManager
+    import androidx.room.Room
+    import kr.co.hanbit.room.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        var helper: RoomHelper? = null
+
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_memo").allowMainThreadQueries().build()
+
+            val adapter = RecyclerAdapter()
+            adapter.listData.addAll(helper?.roomMemoDao()?.getAll()?: listOf())
+
+            binding.recyclerMemo.adapter = adapter
+            binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
+
+            binding.btnSave.setOnClickListener {
+                if (binding.editMemo.text.toString().isNotEmpty()) {
+                    val memo = RoomMemo(binding.editMemo.text.toString(), System.currentTimeMillis())
+                    helper?.roomMemoDao()?.insert(memo)
+                    adapter.listData.clear()
+                    adapter.listData.addAll(helper?.roomMemoDao()?.getAll()?: listOf())
+                    adapter.notifyDataSetChanged()
+                    binding.editMemo.setText("")
+                }
+            }
+        }
+    }
+    ```
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-249.png){: style="box-shadow: 0 0 5px #777"}
 
 <style>
-.page-container {max-width: 1200px}‘’“”
+.page-container {max-width: 1200px}
 </style>
