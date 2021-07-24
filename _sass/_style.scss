@@ -303,7 +303,8 @@ table {
 #markdown-toc {
     border: 1px solid $brand-color;
     padding: 1.5em;
-    list-style: decimal;
+    //list-style: decimal;
+    list-style: none;
     display: inline-block;
 }
 

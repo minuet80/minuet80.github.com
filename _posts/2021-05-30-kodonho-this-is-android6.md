@@ -382,11 +382,80 @@ SharedPreference를 사용하기 위해선는 몇 가지 과정이 필요합니�
 
 먼저 4단계를 거쳐 값을 저장합니다.
 
+- 1단계: SharedPreference 생성하기
+- 2단계: Editor꺼내기
+- 3단계: putInt(), putString() 메서드로 저장하기
+- 4단계: apply()러 파일에 반영하기
+
+그리고 2단계에 걸쳐 값을 읽어옵니다.
+
+- 1단계: SharedPreference 생성하기
+- 2단계: getInt(), getString() 메서드로 값 읽어오기
+
+값을 읽어올 때는 apply() 가 필요하지 않습니다.
+
+#### getSharedPreferences()
+
+getSharedPreferences() 는 Context를 가지고 있는 모든 컴포넌트에서 접근과 호출이 가능합니다.
+
+getSharedPreferences(이름, 모드)를 액티비티에서 호출하면 SharedPreferences가 반환됩니다.
+
+```kotlin
+val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
+```
+
+첫 번째 파라미터에는 입력된 데이터가 저장될 파일명을, 두 번째 파라미터에는 파일 접근 권한을 설정합니다.
+
+MODE_PRIVATE, MODE_WORLD_READABLE, MODE_WORLD, WRITEABLE의 접근 권한이 있지만, API Level 17 부터 보안상의 이유로 MODE_PRIVATE만 사용합니다.
 
 
+#### getPreferences()
+
+개별 액티비티에서 사용하거나 액티비티가 하나밖에 없는 앱이라면 getPreferences()를 호출해서 사용할 수 있습니다.
+
+호출하는 액티비티의 이름으로 저장 파일이 생성됩니다.
+
+```kotlin
+var preference = getPreferences(Context.MODE_PRIVATE)
+```
+
+#### Editor로 데이터를 저장하고 불러오기
+
+SharedPreferences로 데이터를 저장하기 위해서는 Editor 인터페이스를 사용해야 합니다.
+
+Editor 인터페이스는 edit() 메서드를 호출해서 사용할 수 있습니다.
+
+```kotin
+val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
+val editor = shared.edit();
+```
+
+데이터를 저장할 때는 입력될 값의 타입에 맞는 Editor의 메서드를 사용해서 저장할 수 있는데, 마지막에 apply() 메서드를 호출해야 하지만 실제 파일에 반영됩니다.
+
+```kotlin
+val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
+val editor = shared.edit()
+editor.putString("키", "값")
+editor.apply()
+```
+
+다음 메서드로 데이터를 저장할 수 있습니다.
+
+메서드 이름의 접두사<sup>prefix</sup>인 put 다음에 나오는 문자가 입력값의 타입입니다.
+
+putFloat() 이면 Float형을 저장하는 메서드입니다.
+
+또 key = 이름표, value = 타입별 저장할 값이 들어갑니다.
+
+- putFloat(key: String, value: Float)
+- putLong(key: String, value: Long)
+- putInt(key: String, value: Int)
+- putString(key: String, value: String)
+- putBoolean(key: String, value: Boolean)
+- putStringSet(key: String, value: Set\<String\>)
 
 
 
 <style>
-.page-container {max-width: 1200px}476‘’
+.page-container {max-width: 1200px}‘’“”
 </style>
