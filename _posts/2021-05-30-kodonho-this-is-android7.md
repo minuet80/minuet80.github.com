@@ -335,13 +335,122 @@ SqliteHelper 클래스에 데이터 수정 메서드 (UPDATE)를 정의합니다
     }
     ```
 
-1. writableDatabase의 update() 메서드를 사용하여 수정한 다음 close()를 호출합니다. update() 메서드의 파라미터는 총 4개인데 (테이블명, 수정할 값, 수정할 조건) 순서입니다. 수정할 조건은 PRIMARY KEY로 지정된 컬럼을 사용하며 여기서는 PRIMARY KEY인 컬럼이 no이기 때문에 "no = 숫자" 가 됩니다. 
+1. writableDatabase의 update() 메서드를 사용하여 수정한 다음 close()를 호출합니다. update() 메서드의 파라미터는 총 4개인데 (테이블명, 수정할 값, 수정할 조건) 순서입니다. 수정할 조건은 PRIMARY KEY로 지정된 컬럼을 사용하며 여기서는 PRIMARY KEY인 컬럼이 no이기 때문에 "no = 숫자" 가 됩니다.  네 번째 값은 ‘null’을 입력합니다. 세 번째 값을 "no = ?"의 형태로 입력하고, 네 번째에 ?에 매핑할 값을 arrayOf("${memo.no}")의 형태로 전달할 수도 있습니다. 여기서는 세 번째에 조건과 값을 모두 할당했기 때문에 네 번째에 null을 사용하는 것입니다.
+    ```kotlin
+    val wd = writableDatabase
+    wd.update("memo", values, "no = ${memo.no}", null)
+    wd.close()
+    ```
 
 
+### 삭제 메서드
 
+SqliteHelper 클래스를 사용하면 앞에서처럼 insert(), update() 메서드의 사용법만 알면 쿼리를 몰라도 데이터베이스를 사용할 수 있습니다.
 
+하지만 복잡한 데이터베이스를 다룰 때에는 쿼리를 직접 작성하면 데이터를 더 정밀하게 다룰 수 있으므로 쿼리를 공부하는 것은 중요합니다. 
 
+삭제 메서드 (DELETE) 는 쿼리를 직접 입력해서 데이터를 삭제하는 코드로 작성해보겠습니다.
 
+삭제 쿼리를 미리 보면 다음과 같은 구조입니다.
+
+```sql
+DELETE FROM 테이블명 WHERE 조건식
+```
+
+1. SqliteHelper 클래스에 데이터 삭제 메서드를 정의합니다. 조건식은 "컬럼명 = 값" 형태가 됩니다.
+    ```kotlin
+    fun deleteMemo(memo: Memo) {
+        val delete = "delete from memo where no = ${meno.no}"
+        // 02는 여기에 입력합니다.
+    }
+    ```
+
+1. writableDatabase의 execSQL() 메서드로 쿼리를 실행한 후 close()를 호출합니다. execSQL() 메서드로 쿼리를 직접 실행할 수 있습니다.
+    ```kotlin
+    val db = writableDatabase
+    db.execSQL(delete)
+    db.close()
+    ```
+
+    ``SqliteHelper.kt의 전체 코드는 다음과 같습니다.``
+
+    ```kotlin
+    package kr.co.hanbit.sqlite
+
+    import android.content.ContentValues
+    import android.content.Context
+    import android.database.sqlite.SQLiteDatabase
+    import android.database.sqlite.SQLiteOpenHelper
+
+    class SqliteHelper(
+        context: Context?,
+        name: String?,
+        version: Int
+    ) : SQLiteOpenHelper(context, name, null, version) {
+        override fun onCreate(db: SQLiteDatabase?) {
+            val create = "create table memo (" +
+                    "no integer primary key, " +
+                    "content text, " +
+                    "datetime interger" +
+                    ")"
+            db?.execSQL(create)
+        }
+
+        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        }
+
+        fun insertMemo(memo: Memo) {
+            val values = ContentValues()
+            values.put("content", memo.content)
+            values.put("datetime", memo.datetime)
+
+            val wd =writableDatabase
+            wd.insert("memo", null, values)
+            wd.close()
+
+        }
+
+        fun selectMemo(): MutableList<Memo> {
+            val list = mutableListOf<Memo>()
+
+            val select = "select * from memo"
+            val rd = readableDatabase
+            val cursor = rd.rawQuery(select, null)
+            while (cursor.moveToNext()) {
+                val no = cursor.getLong(cursor.getColumnIndex("no"))
+                val content = cursor.getString(cursor.getColumnIndex("content"))
+                val datetime = cursor.getLong(cursor.getColumnIndex("datetime"))
+
+                list.add(Memo(no, content, datetime))
+            }
+
+            cursor.close()
+            rd.close()
+
+            return list
+        }
+
+        fun updateMemo(memo: Memo) {
+            val values = ContentValues()
+            values.put("content", memo.content)
+            values.put("datetime", memo.datetime)
+
+            val wd = writableDatabase
+            wd.update("memo", values, "no = ${memo.no}", null)
+            wd.close()
+        }
+        
+        fun deleteMemo(memo: Memo) {
+            val delete = "delete from memo where no = ${memo.no}"
+            
+            val db = writableDatabase
+            db.execSQL(delete)
+            db.close()
+        }
+    }
+
+    data class Memo(var no: Long?, var content: String, val datetime: Long)
+    ```
 
 
 
