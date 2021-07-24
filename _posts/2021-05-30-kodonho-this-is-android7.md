@@ -470,6 +470,216 @@ SqliteHelper를 만들었으니 이제 화면을 만들고 MainActivity.kt에 �
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-240.png){: style="box-shadow: 0 0 5px #777"}
 
 
+### item_recycler.xml 추가하기
+
+리사이클러뷰의 아이템 용도로 사용할 item_recycler.xml 레이아웃 파일을 생성해서 편집하겠습니다.
+
+1. [app] - [res] - [layout] 디렉토리에서 새 리소스 파일을 생성해서 다음과 같이 입력합니다. File name과 Root element를 주의해서 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-241.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이아웃 파일이 생성되면 [Degign] 모드에서 컴포넌트 트리의 최상위 컨스트레인트 레이아웃을 클릭합니다. 그리고 우측의 layout_height 속성을 ‘100dp’로 수정해서 아이템의 높이를 미리 정해 놓습니다.
+
+1. 번호와 메모의 내용을 표시할 텍스트뷰를 배치합니다. 그리고 내용을 표시하는 텍스트뷰 아래에 날자를 표시할 텍스트뷰를 하나 배치합니다. 각 속성의 수정 내용은다음 그림을 참고합니다. 이중 ellipsize속성은 maxLines에서 ‘2’로 텍스트뷰의 줄을 제한했는데 두 줄이 넘어가면 말줄임표(...)가 나오도록 하는 속성입니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-242.png){: style="box-shadow: 0 0 5px #777"}
+    - 01: textNo
+    - 메모 내용 표시
+        - id: textContent
+        - maxLines: 2
+        - ellipsize: end
+        - gravity: center_vertical
+    - 2021/01/01 13:57
+        - id: textDatetime
+
+## 2.2 소스 코드 연결하기
+
+이제 레이아웃과 소스 코드를 연결합니다.
+
+아래 코드에서 binding을 사용하므로 build.gradle 파일에 viewBinding 설정을 추가해주세요.
+
+### RecyclerAdapter 클래스 만들기
+
+먼저 Memo 클래스를 데이터로 사용하는 RecyclerAdapter 클래스를 정의합니다.
+
+[app] - [java] 밑에 있는 패키지에 RecyclerAdapter라는 이름의 클래스를 생성합니다.
+
+다음 코드가 RecyclerAdapter.kt 파일이며 설명은 생략합니다.
+
+5장의 ‘2. 컨테이너: 목록 만들기’에서 사용했던 어댑터와 비교했을 때 위젯의 id와 Memo클래스의 변수명만 달라질 뿐 코드는 그대로 입니다.
+
+```kotlin
+package kr.co.hanbit.sqlite
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import kr.co.hanbit.sqlite.databinding.ItemRecyclerBinding
+import java.text.SimpleDateFormat
+
+class RecyclerAdapter: RecyclerView.Adapter<Holder>() {
+
+    var listData = mutableListOf<Memo>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val memo = listData.get(position)
+        holder.setMemo(memo)
+    }
+
+    override fun getItemCount(): Int {
+        return listData.size
+    }
+
+}
+
+class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+    fun setMemo(memo: Memo) {
+        binding.textNo.text = "${memo.no}"
+        binding.textContent.text = memo.content
+        val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
+        // 날짜 포맷은 SimpleDateFormat으로 설정합니다.
+        binding.textDatetime.text = "${sdf.format(memo.datetime)}"
+    }
+}
+```
+
+### MainActivty에서 코드 조합하기
+
+1. MainActivity.kt를 열고 클래스 코드 블록 맨 윗줄에서 바인딩을 생성하고 binding 변수에 저장합니다. 그리고 바로 아랫줄에서 SqliteHelper를 생성하고 변수에 저장합니다.
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    val helper = SqliteHelper(this, "memo", 1)
+    ```
+
+1. onCreate()의 contentView에 binding.root를 전달하고, 다음 줄에서 RecyclerAdapter를 생성합니다.
+    ```kotlin
+    val adapter = RecyclerAdapter()
+    ```
+
+1. 이어서 adapter의 listData에 데이터베이스에서 가져온 데이터를 세팅합니다.
+    ```kotlin
+    adapter.listData.addAll(helper.selectMemo())
+    ```
+
+1. 화면의 리사이클러뷰 위젯에 adapter를 연결하고 레이아웃 매니저를 설정합니다.
+    ```kotlin
+    binding.recyclerMemo.adapter = adapter
+    binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
+    ```
+
+1. 저장 버튼에 클릭 리스너를 달아줍니다.
+    ```kotlin
+    binding.btnSave.setOnClickListener {
+        // 06은 여기에 입력합니다.
+    }
+    ```
+
+1. 메모를 입력하는 플레인 텍스트를 검사해서 값이 있으면 해당 내용으로 Memo 클래스를 생성합니다.
+    ```kotlin
+    if (binding.editMemo.text.toString().isNotEmpty()) {
+        val memo = Memo(null, binding.editMemo.text.toString(), System.currentTimeMillis())
+        // 07은 여기에 입력합니다.
+    }
+    ```
+
+1. helper 클래스의 insertMemo() 메서드에 앞에서 생성한 Memo를 전달해 데이터베이스에 저장합니다.
+    ```kotlin
+    helper.insertMemo(memo)
+    ```
+
+1. 아랫줄에 다음 코드를 입력하여 어댑터의 데이터를 모두 초기화합니다.
+    ```kotlin
+    adapter.listData.clear()
+    ```
+
+1. 그리고 데이터베이스에서 새로운 목록을 읽어와 어댑터에 세팅하고 갱신합니다. 새로 생성되는 메모에는 번호가 자동 입력되므로 번호를 갱신하기 위해서 새로운 데이터를 세팅하는 것입니다.
+    ```kotlin
+    adapter.listData.addAll(helper.selectMemo())
+    adapter.notifyDataSetChanged()
+    ```
+
+1. 끝으로 메모 내용을 입력하는 위젯의 내용을 지워서 초기화합니다.
+    ```kotlin
+    binding.editMemo.setText("")
+    ```
+
+1. 에뮬레이터에서 실행하고 테스트합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-243.png){: style="box-shadow: 0 0 5px #777"}
+
+    ``MainActivity.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.sqlite
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import androidx.recyclerview.widget.LinearLayoutManager
+    import kr.co.hanbit.sqlite.databinding.ActivityMainBinding
+
+    class MainActivity : AppCompatActivity() {
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        val helper = SqliteHelper(this, "memo", 1)
+
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            val adapter = RecyclerAdapter()
+            adapter.listData.addAll(helper.selectMemo())
+
+            binding.recyclerMemo.adapter = adapter
+            binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
+
+            binding.btnSave.setOnClickListener {
+                if (binding.editMemo.text.toString().isNotEmpty()) {
+                    val memo = Memo(null, binding.editMemo.text.toString(), System.currentTimeMillis())
+                    helper.insertMemo(memo)
+                    adapter.listData.clear()
+                    adapter.listData.addAll(helper.selectMemo())
+                    adapter.notifyDataSetChanged()
+                    binding.editMemo.setText("")
+                }
+            }
+        }
+    }
+    ```
+
+### 삭제 버튼 추가하기
+
+메모 목록에 삭제 버튼을 추가하여 메모를 삭제할 수 있도록 만들겠습니다.
+
+1. item_recycler.xml 파일을 열고 목록 아이템의 우측에 삭제 버튼을 배치합니다. id는 btnDelete로 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-244.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 메모를 삭제하려면 SQLite의 데이터와 어댑터에 있는 Memo컬렉션의 데이터를 삭제해야 합니다.  SQLite의 데이터를 삭제하기 위해서 MainActivity.kt를 열고 클래스의 두 번째 줄에 생성해 둔 helper를 어댑터에 전달합니다. 어댑터 생성 코드 바로 아랫줄에 작성하는데 어댑터에는 아직 helper 프로퍼티가 없기 때문에 빨간색으로 나옵니다.
+    ```kotlin
+    val adapter = RecyclerAdapter()
+    adapter.helper = helper // 추가한 코드
+    ```
+
+1. RecyclerAdapter.kt를 열고 클래스 블록 가장 윗줄에 helper 프로퍼티를 만듭니다. 아랫줄에는 listData 프로퍼티가 있습니다.
+    ```kotlin
+    var helper: SqliteHelper? = null
+    ```
+
+1. 계속해서 RecyclerAdapter.kt의 Holder 클래스에 init 블록을 만듭니다. 그리고 추가한 btnDelete에 클릭리스너를 달아줍니다.
+    ```kotlin
+    init {
+        binding.btnDelete.setOnClickListener {
+            
+        }
+    }
+    ```
+
+
+
+
+
 <style>
 .page-container {max-width: 1200px}‘’“”
 </style
