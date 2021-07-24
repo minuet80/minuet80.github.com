@@ -454,6 +454,55 @@ putFloat() 이면 Float형을 저장하는 메서드입니다.
 - putBoolean(key: String, value: Boolean)
 - putStringSet(key: String, value: Set\<String\>)
 
+반면 데이터를 불러올 때는 저장할 때와는 다르게 중간에 Editor를 사용하는 단계가 없으며, SharedPreferences 의 메서드를 직접 호출해서 데이터를 불러옵니다.
+
+defaultValue를 지정하면 해당 키의 데이터가 없으면 지정한 기본값을 반환합니다.
+
+```kotlin
+val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
+shared.getString("키", "기본값")
+```
+
+다은 메서드들로 데이터를 불러올 수 있습니다.
+
+메서드의 사용법은 put과는 다르게 입력값이 들어가는 파라미터 대신에 기본값을 지정할 수 있습니다.
+
+- getFloat(key: String, defaultValue: Float)
+- getLong(key: String, defaultValue: Long)
+- getInt(key: String, defaultValue: Int)
+- getString(key: String, defaultValue: String)
+- getBoolean(key: String, defaultValue: Boolean)
+- getStringSet(key: String, defaultValue: Set\<String\>)
+
+그 외에도 Editor를 사용해서 삭제 처리도 할 수 있습니다. 
+
+삭제 처리 후에도 apply() 를 호출해야 합니다.
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| remove(String key) | 해당 키의 데이터를 삭제합니다. |
+| clear() | 모든 데이터를 삭제합니다. |
+| apply() | 변경한 업데이트를 파일에 비동기적으로 저장합니다. |
+| commit() | 변경한 업데이트를 동기적으로 저장합니다. 동기 작업이므로 UI 스레드에서 호출하는 것을 피해야 합니다. |
+
+
+## 2.2 설정 화면 만들기
+
+안드로이드는 레이아웃 파일을 이용해서 화면을 구성하지 않아도 설정 화면을 만들 수 있는 SharedPreferences API를 제공합니다.
+
+안드로이드 10부터 AndriodX Preference 라이브러리의 PreferenceFragment를 사용해 설정 화면을 만들 수 있습니다.
+
+예제를 따라 하면서 설정 화면을 만드는 방법을 알아보겠습니다.
+
+### androidx.preference 의존성 추가하기
+
+AndroidX Preference를 사용하기 위해서는 라이브러리가 설치되어야 합니다.
+
+특정 라이브러리가 있어야만 프로그램이 동작하며 해당 라이브러리 의존성<sup>dependency</sup>이 있다고 표현합니다.
+
+1. Gradle Scripts 디렉토리 밑에 있는 build.gradle 파일을 엽니다.
+
+
 
 
 <style>

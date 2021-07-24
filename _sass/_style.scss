@@ -57,7 +57,7 @@
 
 
 #grid[data-columns]::before {
-	content: '4 .column.size-1of4';
+	content: '3 .column.size-1of3';
     @include media-query($on-laptop){
         content: '3 .column.size-1of3';
     }
@@ -178,7 +178,7 @@
 article {
     border-bottom: 1px solid #ddd;
     color: $text-color;
-    padding: 1em 0;
+    //padding: 1em 0;
 }
 
 .social-full h4, .social-full fa  {
@@ -197,7 +197,7 @@ article {
 }
 
 .content {
-        padding: 2em;
+        //padding: 2em;
 }
 
 footer {
