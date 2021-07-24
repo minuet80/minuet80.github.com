@@ -452,9 +452,22 @@ DELETE FROM 테이블명 WHERE 조건식
     data class Memo(var no: Long?, var content: String, val datetime: Long)
     ```
 
+# 2. 화면을 만들고 소스 코드 연결하기
 
+SqliteHelper를 만들었으니 이제 화면을 만들고 MainActivity.kt에 연결해보겠습니다.
 
+## 2.1 화면 만들기
 
+화면을 구성하려면 두 XML파일을 수정해야 합니다.
+
+### activity_main.xml 편집하기
+
+1. 파일의 [Design]모드에서 기존이 텍스트뷰는 지우고 팔레트 컨테이너 카테고리에서 리사이클러뷰를 선택해 화면 상단에 배치합니다. 그리고 id속성에 ‘recyclerMemo’을 입력합니다. 
+
+1. 팔레트의 텍스트 카테고리에서 플레인텍스트를 드래그해서 화면 하단에 배치합니다. 여기에 메모를 입력할 겁니다. id속성은 ‘editMemo’, text속성은 지우고 hint속성을 “메모를 입력하세요”라고 수정합니다. 여러 줄을 입력할 수 있어야 하므로 inputType속성의 아래 화살표를 눌러 textMultiLine을 ‘true’로 변경합니다. textPErsionName도 그대로 체크 상태입니다.
+
+1. 팔레트의 버튼 카테고리에서 버튼을 하나 드래그해서 우측 하단에 가져다둡니다. id속성에는 ‘btnSave’, text속성에는 ‘저장’이라고 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-240.png){: style="box-shadow: 0 0 5px #777"}
 
 
 <style>
