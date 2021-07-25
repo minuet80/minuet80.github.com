@@ -54,7 +54,7 @@ width: large
 
 카메라 및 활영한 사진을 저장할 외부 저장소의 권한을 요청하는 코드를 작성합니다.
 
-1. 먼저 6장 3절에서 작성했던 Base 프로젝트를 불러온 후 BaseActivity를 복사해서 현재 프로젝트에 붙여넣기 합니다.
+1. 먼저 5장 3절에서 작성했던 Base 프로젝트를 불러온 후 BaseActivity를 복사해서 현재 프로젝트에 붙여넣기 합니다.
 
 1. MainActivity.kt 를 열고 BaseActivity를 상속하도록 class 코드를 수정합니다.
     ```java
@@ -62,6 +62,61 @@ width: large
 
     }
     ```
+
+1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-252.png){: style="box-shadow: 0 0 5px #777"}
+
+    생성된 코드에서 TODO() 행만 삭제하고 일단 빈 채로 두겠습니다.
+
+    ```java
+    override fun permissionGranted(requestCode: Int) {
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+    }
+    ```
+
+1. 바인딩을 생성해서 binding 프로퍼티에 저장하고, setContentView()에 binding.root를 전달합니다.  그리고 binding 바로 윗줄에 3개이 상수를 정의합니다. const 예약어를 사용하려면 companion object 블록이 있어야 되기 때문에 그냥 val로 정의합니다.  각각은 주석처럼 2개의 권한 처리와 1개의 카메라 요청 requestCode로 사용할 예정입니다.
+    ```java
+    // 외부 저장소 권한 처리
+    val PERM_STORAGE = 99
+    // 카메라 권한 처리
+    val PERM_CAMERA = 100
+    // 카메라 촬영 요청
+    val REQ_CAMERA = 101
+    
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+## 1.3 MainActivity에서 카메라 앱 호출하기
+
+Intent에 카메라 앱을 호출하기 위한 플래그인 MediaStore.ACTOIN_IMAGE_CAPTURE를 담아 startActivityForResult() 메서드로 호출하면 카메라 앱의 활영 화면을 호출할 수 있습니다. 
+
+1. 카메라에서 찍은 사진을 외부 저장소 (포토갤러리)에 저장할 것이기 때문에 setContentView 아랫줄에 저장소 권한을 요청하는 코드를 작성합니다.  저장소 권한과 함께 두 번째 파라미터인 requestCode에는 앞에서 미리 정의해둔 PERM_STORAGE를 전달합니다. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <style>

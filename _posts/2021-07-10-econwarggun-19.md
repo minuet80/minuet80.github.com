@@ -110,7 +110,7 @@ width: large
 반도체 하락세가 예상되는 4분기 ``‘신중론’``{: style="background-color: #FFFFCC"} 전망
  {: style="text-decoration: underline"}
 
-__``2022년 기저효과, 기고효과 없이 반도체주에 관심 집중될 것``__
+``2022년 기저효과, 기고효과 없이 반도체주에 관심 집중될 것``
 
 #### DDR5 공정 전환시
 ![1]({{site.baseurl}}/images/econwarggun-19/econwarggun-19-3.png){: style="box-shadow: 0 0 5px #777"}
@@ -136,7 +136,7 @@ D램, 낸드 사업에 새로운 기기가 등장하거나 장기적 수요를 �
 
 5년 ~ 10년 전부터 지속된 상황이므로 ``‘빅사이클의 근거로 보기 어려움’``
 
-**``‘중립’``**{: style="background-color: #CCCCFF"} 전망
+``‘중립’``{: style="background-color: #CCCCFF"} 전망
 
 
 ## 3. 서버 D램 수요 생산 조절할까?
@@ -239,11 +239,11 @@ TSMC 발표 기준 2020년 상반기 기준 EUV 생산 비중 60(TSMC) : 40 (나
 
 ![1]({{site.baseurl}}/images/econwarggun-19/econwarggun-19-5.png){: style="box-shadow: 0 0 5px #777"}
 
-``삼성전자와 TSMC 같은 반도체 공정이라도 수율 차이가 있겠지?라고 의심해야함 ``
+``삼성전자와 TSMC 같은 반도체 공정이라도 수율 차이가 있겠지?라고 의심해야함``{: style="background-color: #FFCCCC"}
 {: style="color: #FF0000"}
 
 삼성전자와 TSMC비교 
-- 케파 (생산 능력) 수율문제
+- 케파<sup> (생산 능력) </sup> 수율문제
 
 삼성전자의 강점은 ``1z나노``, ``1a나노``, ``1b나노`` 등 경쟁사 보다 빠른 EUV 적용
 
@@ -413,9 +413,9 @@ DDR5로 손해보는 회사는 하이닉스
 
 ## 용어
 
-- **``EUV``**<sup> (Extreme Ultraviolet) </sup>: 극자와선 파장의 광원을 사용하는 반도체 제도 장비
-- **``생산자물가지수``**<sup> (PPI) </sup>: 생산자가 내수 시장에 공급하는 상품 및 서비스 가격의 변동성을 나타내는 지수
-- **``엣지 컴퓨팅``**<sup> (edge computing) </sup>: 분산된 소형 서버를 통해 데이터를 실시간으로 처리
+- ``EUV``<sup> (Extreme Ultraviolet) </sup>: 극자와선 파장의 광원을 사용하는 반도체 제도 장비
+- ``생산자물가지수``<sup> (PPI) </sup>: 생산자가 내수 시장에 공급하는 상품 및 서비스 가격의 변동성을 나타내는 지수
+- ``엣지 컴퓨팅``<sup> (edge computing) </sup>: 분산된 소형 서버를 통해 데이터를 실시간으로 처리
 
 
 
