@@ -198,7 +198,7 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-238.png){: style="box-shadow: 0 0 5px #777"}
 
 1. SQLite 데이터베이스를 사용하려면 SQLiteOpenHelper 클래스를 상속받아야 합니다. SQLiteOpenHelper는 생성 시에 Context, 데이터베이스명, 팩토리, 버전 정보가 필요합니다. 팩토리는 사용하지 않아도 되므로 나머지 세 가지 정보를 내가 만든 클래스의 생성자에 파라미터로 정의한 후에 상속받은 SQLiteOpenHelper에 전달합니다. SqliteHelper.kt 파일의 class SqliteHelper를 다음과 같이 수정합니다. 
-    ```kotlin
+    ```java
     package kr.co.hanbit.sqlite
 
     import android.content.Context
@@ -218,7 +218,7 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-239.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 2개의 메서드가 자동으로 생성됩니다. TODO가 입력된 행은 삭제합니다.  생성되는 메서드의 첫 번째 파라미터로 우리가 사용할 데이터베이스가 전달됩니다.
-    ```kotlin
+    ```java
     override fun onCreate(db: SQLiteDatabase?) {
     }
 
@@ -230,7 +230,7 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
     onUpdate() 메서드는 SqliteHelper에 전달되는 버전 정보가 변경되었을 때 현재 생성되어 있는 데이터베이스의 버전과 비교해서 더 높으면 호출됩니다. 버전 변경 사항이 없으면 호출되지 않습니다.
 
 1. 아직 데이터베이스가 생성되지 않았기 때문에 onCreate() 메서드에서 테이블을 생성합니다. 이 메서드 안에 테이블 생성 쿼리를 작성하고 실행하면 됩니다. 데이터베이스가 생성되어 있으면 더 이상 실행되지 않습니다. onCreate() 메서드 안에 앞에서 만든 테이블 생성 쿼리를 문자열로 입력 한 후, db의 execSQL() 메서드에 전달해서 실행합니다. 문자열을 한 줄에 늘어놓을 수도 있지만 보기 어려워지니 다음처럼 문자열 끝에 ‘+’를 입력해서 다음 줄과 연결합니다.
-    ```kotlin
+    ```java
     override fun onCreate(db: SQLiteDatabase?) {
         val create = "create table memo (" +
                 "no integer primary key, " +
@@ -242,7 +242,7 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
     ```
 
 1. SqliteHelper 클래스 바깥에 Memo 클래스를 하나 생성하고 다음과 같이 정의합니다. no와 datetime의 타입을 데이터베이스에서는 INTEGER로 정의했는데, 여기서는 Long입니다. 숫자의 범위가 서로 다르기 때문입니다. 특별한 이유가 없다면 SQLite에서 INTEGER로 선언한 것은 소스 코드에서는 Long으로 사용합니다. 그리고 no만 null을 허용한 것은 PRIMARY KEY옵션으로 값이 자동으로 증가되기 때문에 데이터 삽입 시에는 필요하지 않아서 입니다. Memo 클래스의 INSERT, SELECT, UPDATE, DELETE에 모두 사용됩니다. 
-    ```kotlin
+    ```java
     data class Memo(var no: Long?, var content: String, var datetime: Long)
     ```
 
@@ -253,7 +253,7 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
 SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다.
 
 1. SQLiteOpenHelper를 이용해서 값을 입력할 때는 코틀린의 Map클래스처럼 키, 값 형태로 사용되는 ContentValues클래스를 사용합니다. 
-    ```kotlin
+    ```java
     fun insertMemo(memo: Memo) {
         val values = ContentValues()
         values.put("content", memo.content)
@@ -263,7 +263,7 @@ SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다
     ```
 
 1. 상속받은 SQLiteOpenHelper에 이미 구현된 writableDatabase에 테이블명과 함께 앞에서 작성한 값을 전달해서 insert() 하고, 사용한 후에는 close()를 호출해서 꼭 닫아줘야 합니다.
-    ```kotlin
+    ```java
     val wd = writableDatabase
     wd.insert("memo", null, values)
     wd.close()
@@ -272,7 +272,7 @@ SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다
 ### 조회 메서드
 
 1. 조회 메서드는 반환값이 있으므로 메서드의 가장 윗줄에 반환할 값을 변수로 선언하고, 가장 아랫줄에서 반환하는 코드를 작성한 후 그 사이에 구현 코드를 작성하는 것이 좋습니다. 앞서 생성한 insertMemo클래스 아래에 다음 코드를 입력합니다.
-    ```kotlin
+    ```java
     fun selectMemo(): MutableList<Memo> {
         val list = mutableListOf<Memo>()
         // 02부터 08까지는 여기에 입력합니다.
@@ -281,22 +281,22 @@ SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다
     ```
 
 1. 메모의 전체 데이터를 조회하는 쿼리를 작성합니다.
-    ```kotlin
+    ```java
     val select = "select * from memo"
     ```
 
 1. 읽기 전용 데이터베이스를 변수에 담습니다.
-    ```kotlin
+    ```java
     val rd = readableDatabase
     ```
 
 1. 데이터베이스의 rawQuery() 메서드에 앞에서 작성해둔 쿼리를 담아서 실행하면 커서(cursor)형태로 값이 반환됩니다.
-    ```kotlin
+    ```java
     val cursor = rd.rawQuery(select, null)
     ```
 
 1. 커서의 moveToNext() 메서드가 실행되면 다음 줄에 사용할 수 있는 레코드가 있는지 여부를 반환하고, 해당 커서를 다음 위치로 이동시킵니다. 레코드가 없으면 반복문을 빠져나갑니다. 모든 레코드를 읽을 때까지 반복합니다.
-    ```kotlin
+    ```java
     while (cursor.moveToNext()) {
         // 06, 07은 여기에 입력합니다.
     }
@@ -304,19 +304,19 @@ SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다
     ```
 
 1. 반복문을 돌면서 테이블에 정의된 3개의 컬럼에서 값을 꺼낸 후 각각 변수에 담습니다.
-    ```kotlin
+    ```java
     val no = cursor.getLong(cursor.getColumIndex("no"))
     val content = cursor.getString(cursor.getColumnIndex("content"))
     val datetime = cursor.getLong(cursor.getColumnIndex("datetime"))
     ```
 
 1. 앞에서 변수에 저장해두었던 값들로 Memo 클래스를 생성하고 반환할 목록에 더합니다.
-    ```kotlin
+    ```java
     list.add(Memo(no, content, datetime))
     ```
 
 1. while 문의 블록 밖에서 커서와 읽기 전용 데이터베이스를 모두 닫아줍니다.
-    ```kotlin
+    ```java
     cursor.close()
     rd.close()
     ```
@@ -326,7 +326,7 @@ SqliteHelper 클래스에 데이터 삽입 메서드 (INSERT)를 구현합니다
 SqliteHelper 클래스에 데이터 수정 메서드 (UPDATE)를 정의합니다.
 
 1. INSERT와 동일하게 ContentValues를 사용해서 수정할 값을 저장합니다.
-    ```kotlin
+    ```java
     fun updateDemo(memo: Memo) {
         val values = ContentValues()
         values.put("content", memo.content)
@@ -336,7 +336,7 @@ SqliteHelper 클래스에 데이터 수정 메서드 (UPDATE)를 정의합니다
     ```
 
 1. writableDatabase의 update() 메서드를 사용하여 수정한 다음 close()를 호출합니다. update() 메서드의 파라미터는 총 4개인데 (테이블명, 수정할 값, 수정할 조건) 순서입니다. 수정할 조건은 PRIMARY KEY로 지정된 컬럼을 사용하며 여기서는 PRIMARY KEY인 컬럼이 no이기 때문에 "no = 숫자" 가 됩니다.  네 번째 값은 ‘null’을 입력합니다. 세 번째 값을 "no = ?"의 형태로 입력하고, 네 번째에 ?에 매핑할 값을 arrayOf("${memo.no}")의 형태로 전달할 수도 있습니다. 여기서는 세 번째에 조건과 값을 모두 할당했기 때문에 네 번째에 null을 사용하는 것입니다.
-    ```kotlin
+    ```java
     val wd = writableDatabase
     wd.update("memo", values, "no = ${memo.no}", null)
     wd.close()
@@ -358,7 +358,7 @@ DELETE FROM 테이블명 WHERE 조건식
 ```
 
 1. SqliteHelper 클래스에 데이터 삭제 메서드를 정의합니다. 조건식은 "컬럼명 = 값" 형태가 됩니다.
-    ```kotlin
+    ```java
     fun deleteMemo(memo: Memo) {
         val delete = "delete from memo where no = ${meno.no}"
         // 02는 여기에 입력합니다.
@@ -366,7 +366,7 @@ DELETE FROM 테이블명 WHERE 조건식
     ```
 
 1. writableDatabase의 execSQL() 메서드로 쿼리를 실행한 후 close()를 호출합니다. execSQL() 메서드로 쿼리를 직접 실행할 수 있습니다.
-    ```kotlin
+    ```java
     val db = writableDatabase
     db.execSQL(delete)
     db.close()
@@ -374,7 +374,7 @@ DELETE FROM 테이블명 WHERE 조건식
 
     ``SqliteHelper.kt의 전체 코드는 다음과 같습니다.``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.sqlite
 
     import android.content.ContentValues
@@ -506,7 +506,7 @@ SqliteHelper를 만들었으니 이제 화면을 만들고 MainActivity.kt에 �
 
 5장의 ‘2. 컨테이너: 목록 만들기’에서 사용했던 어댑터와 비교했을 때 위젯의 id와 Memo클래스의 변수명만 달라질 뿐 코드는 그대로 입니다.
 
-```kotlin
+```java
 package kr.co.hanbit.sqlite
 
 import android.view.LayoutInflater
@@ -549,36 +549,36 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 ### MainActivty에서 코드 조합하기
 
 1. MainActivity.kt를 열고 클래스 코드 블록 맨 윗줄에서 바인딩을 생성하고 binding 변수에 저장합니다. 그리고 바로 아랫줄에서 SqliteHelper를 생성하고 변수에 저장합니다.
-    ```kotlin
+    ```java
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     val helper = SqliteHelper(this, "memo", 1)
     ```
 
 1. onCreate()의 contentView에 binding.root를 전달하고, 다음 줄에서 RecyclerAdapter를 생성합니다.
-    ```kotlin
+    ```java
     val adapter = RecyclerAdapter()
     ```
 
 1. 이어서 adapter의 listData에 데이터베이스에서 가져온 데이터를 세팅합니다.
-    ```kotlin
+    ```java
     adapter.listData.addAll(helper.selectMemo())
     ```
 
 1. 화면의 리사이클러뷰 위젯에 adapter를 연결하고 레이아웃 매니저를 설정합니다.
-    ```kotlin
+    ```java
     binding.recyclerMemo.adapter = adapter
     binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
     ```
 
 1. 저장 버튼에 클릭 리스너를 달아줍니다.
-    ```kotlin
+    ```java
     binding.btnSave.setOnClickListener {
         // 06은 여기에 입력합니다.
     }
     ```
 
 1. 메모를 입력하는 플레인 텍스트를 검사해서 값이 있으면 해당 내용으로 Memo 클래스를 생성합니다.
-    ```kotlin
+    ```java
     if (binding.editMemo.text.toString().isNotEmpty()) {
         val memo = Memo(null, binding.editMemo.text.toString(), System.currentTimeMillis())
         // 07은 여기에 입력합니다.
@@ -586,23 +586,23 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     ```
 
 1. helper 클래스의 insertMemo() 메서드에 앞에서 생성한 Memo를 전달해 데이터베이스에 저장합니다.
-    ```kotlin
+    ```java
     helper.insertMemo(memo)
     ```
 
 1. 아랫줄에 다음 코드를 입력하여 어댑터의 데이터를 모두 초기화합니다.
-    ```kotlin
+    ```java
     adapter.listData.clear()
     ```
 
 1. 그리고 데이터베이스에서 새로운 목록을 읽어와 어댑터에 세팅하고 갱신합니다. 새로 생성되는 메모에는 번호가 자동 입력되므로 번호를 갱신하기 위해서 새로운 데이터를 세팅하는 것입니다.
-    ```kotlin
+    ```java
     adapter.listData.addAll(helper.selectMemo())
     adapter.notifyDataSetChanged()
     ```
 
 1. 끝으로 메모 내용을 입력하는 위젯의 내용을 지워서 초기화합니다.
-    ```kotlin
+    ```java
     binding.editMemo.setText("")
     ```
 
@@ -653,7 +653,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 
     ``MainActivity.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.sqlite
 
     import androidx.appcompat.app.AppCompatActivity
@@ -699,18 +699,18 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-244.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 메모를 삭제하려면 SQLite의 데이터와 어댑터에 있는 Memo컬렉션의 데이터를 삭제해야 합니다.  SQLite의 데이터를 삭제하기 위해서 MainActivity.kt를 열고 클래스의 두 번째 줄에 생성해 둔 helper를 어댑터에 전달합니다. 어댑터 생성 코드 바로 아랫줄에 작성하는데 어댑터에는 아직 helper 프로퍼티가 없기 때문에 빨간색으로 나옵니다.
-    ```kotlin
+    ```java
     val adapter = RecyclerAdapter()
     adapter.helper = helper // 추가한 코드
     ```
 
 1. RecyclerAdapter.kt를 열고 클래스 블록 가장 윗줄에 helper 프로퍼티를 만듭니다. 아랫줄에는 listData 프로퍼티가 있습니다.
-    ```kotlin
+    ```java
     var helper: SqliteHelper? = null
     ```
 
 1. 계속해서 RecyclerAdapter.kt의 Holder 클래스에 init 블록을 만듭니다. 그리고 추가한 btnDelete에 클릭리스너를 달아줍니다.
-    ```kotlin
+    ```java
     init {
         binding.btnDelete.setOnClickListener {
             
@@ -719,7 +719,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     ```
 
 1.  삭제 버튼을 클릭하면 어댑터의 helper와 listData에 접근해야 되는데, 지금은 어댑터 밖에 Holder 클래스가 있기 때문에 접근할 수 없습니다. Holder 클래스 전체를 어댑터 클래스 안으로 옮기고 class 앞에 inner 키워드를 붙여줍니다.
-    ```kotlin
+    ```java
     class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
 
         //.. 중략
@@ -744,7 +744,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     ```
 
 1. 홀더는 한 화면에 그려지는 개수만큼 만든 후 재사용하므로 1번 메모가 있는 홀더를 스크롤해서 위로 올리면 아래에서 올라오는 새로운 메모가 1번 홀더를 재사용하는 구조입니다. 따라서 클릭하는 시점에 어떤 데이터가 있는지 알아야 하므로 Holder 클래스의 init 위에 변수를 하나 선언하고 setMemo() 메서드로 넘어온 Memo를 임시로 저장합니다.
-    ```kotlin
+    ```java
     var mMemo: Memo?= null
     // 중략..
     fun setMemo(memo: Memo) {
@@ -754,7 +754,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     ```
 
 1. init 블록 안에 있는 btnDelete의 클릭 리스너 블록 안에서 SQLite의 데이터를 먼제 삭제하고, listData의 데이터도 삭제합니다. 그리고 어댑터를 갱신합니다.
-    ```kotlin
+    ```java
     // deleteMemo()는 null을 허용하지 않았는데, 
     // mMemo는 null을 허용하도록 설정되었기 때문에 !!를 사용해서 강제해야 합니다.
     helper?.deleteMemo(mMemo!!)
@@ -779,7 +779,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 
 다음은 MainActivity.kt의 전체 코드입니다.
 
-```kotlin
+```java
 package kr.co.hanbit.sqlite
 
 import androidx.appcompat.app.AppCompatActivity
@@ -821,7 +821,7 @@ class MainActivity : AppCompatActivity() {
 
 다음은 RecyclerAdapter.kt의 전체 코드 입니다.
 
-```kotlin
+```java
 package kr.co.hanbit.sqlite
 
 import android.view.LayoutInflater
@@ -991,7 +991,7 @@ Room 프로젝트를 하나 새로 생성합니다.
 
     ``MainActivity 변경 전``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.sqlite
     
     ...
@@ -1000,7 +1000,7 @@ Room 프로젝트를 하나 새로 생성합니다.
 
     ``MainActivity 변경 후``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
     
     ...
@@ -1011,7 +1011,7 @@ Room 프로젝트를 하나 새로 생성합니다.
 
     ``RecyclerAdapter 변경 후``
 
-    ```kotlin
+    ```java
     package krco.hanbit.room
 
     ...
@@ -1021,7 +1021,7 @@ Room 프로젝트를 하나 새로 생성합니다.
 1. [res] - [layout] 밑에 있는 activity_main.xml 과 item_recycler.xml도 마저 복사해서 붙여넣기 합니다. 
 
 1. 이제 패키지 이름에서 [New] - [Kotlin File/Class]를 선택해서 RoomMemo로 클래스를 생성합니다. 그리고 @Entity 어노테이션을 class RoomMemo위에 작성합니다. Room 라이브러리는 @Entity 어노테이션이 적용된 클래스를 찾아 테이블로 변환합니다.  데이터베이스에서 테이블명을 클래스명과 다르게 하고 싶을 때는 @Entity(tableName = "테이블명")과 같이 작성하면 됩니다. 여기서는 테이블명을 room_memo로 만듭니다.
-    ```kotlin
+    ```java
     @Entity(tableName = "room_memo)
     class RoomMemo {
         // 04는 여기에 작성합니다.
@@ -1029,7 +1029,7 @@ Room 프로젝트를 하나 새로 생성합니다.
     ```
 
 1. 맴버 변수 no, content, date 3개를 선언하고 변수명 위에 @ColumnInfo 어노테이션을 작성해서 테이블의 컬럼으로 사용된다는 것을 명시합니다. 컬럼명도 테이블명처럼 변수명과 다르게 하고 싶을 때는 @ColumnInfo(name = "컬럼명")과 같이 작성하면 됩니다.
-    ```kotlin
+    ```java
     @ColumnInfo
     var no: Long? = null
 
@@ -1041,14 +1041,14 @@ Room 프로젝트를 하나 새로 생성합니다.
     ```
 
 1. no 변수에는 @PrimaryKey 어노테이션을 사용해서 키 (Key)라는 점을 명시하고 자동 증가 옵션을 추가합니다.
-    ```kotlin
+    ```java
     @PrimaryKey(autoGenerate = true) // 추가한 코드
     @ColumnInfo
     var no: Long? = null
     ```
 
 1. content와 datetime을 받는 생성자를 작성합니다.
-    ```kotlin
+    ```java
     constructor(content: String, datetime: Long) {
         this.content = content
         this.datetime = datetime
@@ -1059,7 +1059,7 @@ Room 프로젝트를 하나 새로 생성합니다.
 
     ``RoomMemo.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.room.ColumnInfo
@@ -1090,7 +1090,7 @@ Room 프로젝트를 하나 새로 생성합니다.
     ``변수를 테이블의 컬럼으로 사용하고 싶지 않을 때``
 
     @Ignore 어노테이션을 적용하면 해당 변수가 테이블과 관계없는 변수라는 정보를 알릴 수 있습니다.
-    ```kotlin
+    ```java
     @Ignore
     var temp: String = "임시로 사용되는 데이터입니다."
     ```
@@ -1107,7 +1107,7 @@ Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-247.png){: style="box-shadow: 0 0 5px #777"}
 
 1. RoomMemoDao.kt 파일 class 위에 @Dao 어노테이션을 작성해서 Dao라는 것을 명시하고 ``Alt`` + ``Enter``키를 눌러 import합니다.
-    ```kotlin
+    ```java
     @Dao
     interface RoomMemoDao {
         
@@ -1115,7 +1115,7 @@ Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태�
     ```
 
 1. 삽입, 조회, 수정, 삭제에 해당하는 3개의 메서드를 만들고 각각의 어노테이션을 붙여줍니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.room.Dao
@@ -1156,7 +1156,7 @@ Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태�
 
     ``RoomMemoDao.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.room.Dao
@@ -1190,7 +1190,7 @@ Room은 RoomDatabase를 제공하는데 RoomDatabase를 상속받아 클래스�
 기존 클래스와 동일하게 생성하고 class 앞에 abstract 키워드를 붙이면 추상 클래스가 됩니다.
 
 1. [app] - [java] 밑의 패키지 아래에 RoomHelper 클래스를 생성하고 앞에 abstract 키워드를 붙여서 추상 클래스로 만듭니다. 이 클래스는 RoomDatabase를 상속받습니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.room.RoomDatabase
@@ -1200,7 +1200,7 @@ Room은 RoomDatabase를 제공하는데 RoomDatabase를 상속받아 클래스�
     ```
 
 1. 클래스명 위에 @Database 어노테이션을 작성합니다.
-    ```kotlin
+    ```java
     @Database(entities = arrayOf(RoomMemo::class), version = 1, exportSchema = false)
     ```
 
@@ -1214,13 +1214,13 @@ Room은 RoomDatabase를 제공하는데 RoomDatabase를 상속받아 클래스�
     {: .table .table-striped .table-hover}
 
 1. RoomHelper 클래스 안에 앞에서 정의한 RoomMemoDao 인터페이스의 구현체를 사용할 수 있는 메서드명을 정의합니다.
-    ```kotlin
+    ```java
     abstract fun roomMemoDao(): RoomMemoDao
     ```
 
     ``RoomHelper.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.room.Database
@@ -1243,23 +1243,23 @@ RecyclerAdapter.kt를 열고 코드를 수정합니다.
 
 1. helper변수가 선언된 부분을 RoomHelper를 사용할 수 있도록 수정합니다.
     ``수정 전``
-    ```kotlin
+    ```java
     var helper: SqliteHelper? = null
     ```
 
     ``수정 후``
-    ```kotlin
+    ```java
     var helper: RoomHelper? = null
     ```
 
 1. buttonDelete 클릭리스너에 있는 deleteMemo() 메서드를 RoomHelper의 메서드로 수정합니다. RoomHelper를 사용할 때는 여러 개의 Dao가 있을 수 있기 때문에 ‘헬퍼.Dao.메서드()’형태로 어떤 Dao를 쓸 것인지를 명시해야 합니다.
     ``수정 전``
-    ```kotlin
+    ```java
     helper?.deleteMemo(mRoomMemo!!)
     ```
 
     ``수정 후``
-    ```kotlin
+    ```java
     helper?.roomMemoDao()?.delete(mRoomMemo!!)
     ```
 
@@ -1269,30 +1269,30 @@ MainActivity.kt 파일을 열고 앞에서 작성한 SqliteHelper를 RoomHelper�
 
 1. MainActivity 맨 윗줄에 정의된 helper 변수를 RoomHelper를 사용할 수 있도록 코드를 수정합니다.
     ``수정 전``
-    ```kotlin
+    ```java
     var helper = SqliteHelper(this, "memo", 1)
     ```
 
     ``수정 후``
-    ```kotlin
+    ```java
     var helper: RoomHelper? = null
     ```
 
 1. onCreate() 의 setContentView 바로 아랫줄에 helper를 생성하는 부분을 추가합니다. databaseBuilder() 메서드의 세 번째 파라미터가 실제 생성되는 DB파일의 이름입니다. Room은 기본적으로 서브 스레드에서 동작하도록 설계되어 있기 때문에 allowMainThreadQueries() 옵션이 적용되지 않으면 앱이 동작을 멈춥니다.
     *``실제 프로젝트에서는 allowMainThreadQueries옵션을 사용하지 않기를 권합니다.``*{: style="background-color: #FFCCCC"}
-    ```kotlin
+    ```java
     helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_memo")
             .allowMainThreadQueries()
             .build()
     ```
 
 1. 어댑터의 데이터 목록에 세팅하는 코드 (코드 중간 빨간색 selectMemo가 보이는 행입니다.)를 RoomHelper를 사용하는 것으로 수정합니다. helper에 null이 허용되므로 helper안의 코드를 사용하기 위해서는 hepler?.의 형태로 사용해야 합니다. 이어지는 roomMemoDao()?.도 같은 맥ㄱ락이고 adapter의 listData에 null이 허용되지 않기 때문에 마지막에 ?:(Elvis Operator)를 사용해서 앞의 2개가 null일 경우 사용하기 위한 디폴트값을 설정합니다.
-    ```kotlin
+    ```java
     adapter.listData.addAll(helper?.roomMemoDao()?.getAll()?: listOf())
     ```
 
 1. 저장 버튼을 클릭 시 사용하는 코드도 RoomHelper로 책과 대조하면서 바꿔줍니다.
-    ```kotlin
+    ```java
     binding.btnSave.setOnClickListener {
         if (binding.editMemo.text.toString().isNotEmpty()) {
             val memo = RoomMemo(binding.editMemo.text.toString(), System.currentTimeMillis())
@@ -1308,7 +1308,7 @@ MainActivity.kt 파일을 열고 앞에서 작성한 SqliteHelper를 RoomHelper�
 1. 에뮬레이터에서 실행하고 테스트합니다.
     ``MainActivity.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.room
 
     import androidx.appcompat.app.AppCompatActivity

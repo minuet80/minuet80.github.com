@@ -332,7 +332,7 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
 1. ``build.gradle (Module: WidgetsEditText.app)``파일을 열고 android스코프(범위)에 다음과 같이 ``viewBinding true`` 설정을 추가합니다. 설정 후 우측 상단의 ``[Sync Now]``를 클릭하는 것을 잊으면 안됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-85.png){: style="box-shadow: 0 0 5px #777"}
 1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. ``class MainActivity``에 binding프로퍼티를 하나 생성하고 ``by lazy``를 사용해서 안드로이드가 생성해둔 ``ActivityMainBinding``을 ``inflate`` 합니다.<br>
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsedittext
 
     import androidx.appcompat.app.AppCompatActivity
@@ -350,7 +350,7 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
     }
     ```
 1. 이제 onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsedittext
 
     import androidx.appcompat.app.AppCompatActivity
@@ -369,7 +369,7 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
     ```
 1. 이어서 binding으로 앞에서 작성해둔 에디트텍스트의 id에 연결합니다. 간단하게 ``‘binding.e’``까지만 작성하면 자동 완성 코드가 나타납니다. 코드에서 editText를 선택합니다.
 1. 에디트텍스트의 변경 사항을 캐치할 수 있는 리스너를 달아야 합니다. 
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsedittext
 
     import androidx.appcompat.app.AppCompatActivity
@@ -390,7 +390,7 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
     }
     ```
 1. 추가된 코드의 여는 중괄호 ({) 안에서 ``Enter``키를 입력하여 줄을 바꾼 후에 다음과 같이 로그를 출력하는 코드를 작성해줍니다.<br>
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsedittext
 
     import androidx.appcompat.app.AppCompatActivity
@@ -553,17 +553,17 @@ alpha는 투명도를 조절합니다.
     ```
 
 1. [MainActivity.kt]탭을 클릭해서 소스 코드를 이동합니다. onCreate() 메서드 위에 binding 프로퍼티를 하나 생성하고 by lazy를 사용하여 ActivityMainBinding을 inflate 합니다. <br>
-    ```kotlin
+    ```java
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     ```
 
 1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.<br>
-    ```kotlin
+    ```java
     setContentView(binding.root)
     ```
 
 1. 다음 줄에 binding으로 앞에서 작성해둔 라디오그룹의 id에 연결합니다.<br>
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsradio
 
     import androidx.appcompat.app.AppCompatActivity
@@ -584,7 +584,7 @@ alpha는 투명도를 조절합니다.
     ```
 
 1. 코드 블록 끝에 있는 화살표 (->) 다음에서 ``Enter``키를 입력하고 블록 안에 다음과 같이 코드를 추가합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsradio
 
     import androidx.appcompat.app.AppCompatActivity
@@ -639,18 +639,18 @@ alpha는 투명도를 조절합니다.
 1. 소스 코드와 연결하기 위해서 그래들 설정에 viewBinding을 추가합니다. build.gradle 파일을 열고 android 스코프에 viewBinding true 설정을 추가합니다. 설정 후 우측 상단의 [Sync Now]를 클릭하는 것을 잊으면 안됩니다.
 
 1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. onCreate() 위에 binding프로퍼티를 하나 생성하고 by lazy를 사용해서 ActivityMainBinding을 inflate합니다.
-    ```kotlin
+    ```java
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     ```
 
 1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
-    ```kotlin
+    ```java
     setContentView(binding.root)
     ```
 
 1. 이어서 binding으로 앞에서 작성해둔 체크박스에 id를 연결합니다.
 1. 이어서 ‘setOnChecked’까지 입력하면 나타나는 리스너 중에 중괄호로 시작하는 코드를 선택합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetscheckbox
 
     import androidx.appcompat.app.AppCompatActivity
@@ -670,7 +670,7 @@ alpha는 투명도를 조절합니다.
     }
     ```
 1. 생성되는 코드 블록의 두 번째 파라미터가 영문 이니셜 (b 또는 다른 글자)로 표시되어 있으면 알아보기 쉽게 ‘isChecked’로 바꿔줍니다. 체크박스 리스너의 첫 번째 파라미터에는 상태 변화가 있는 체크박스 위젯이 그대로 전달되고, 두 번째 파라미터에는 라디오그룹과는 다르게 체크 여부가 Boolean 타입으로 전달됩니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetscheckbox
 
     import androidx.appcompat.app.AppCompatActivity
@@ -697,7 +697,7 @@ alpha는 투명도를 조절합니다.
     }
     ```
 1. 이런 방식으로 코딩하면 모든 체크박스에 리스너를 달아줘야 해서 코드량이 늘어나는 단점이 있습니다. 라디오 그룹에서 처럼 하나의 코드 블록을 처리하기 위해 코드를 조금 바꿔보겠습니다. onCreate() 메서드 위에 listener 프로퍼티를 하나 만듭니다.  그리고 by lazy 를 사용해서 CompoundButton 클래스에 있는 OnCheckedChangeListener를 직접 작성합니다. 
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetscheckbox
 
     import androidx.appcompat.app.AppCompatActivity
@@ -720,7 +720,7 @@ alpha는 투명도를 조절합니다.
     }
     ```
 1. 이 리스너를 모든 체크박스에서 사용할 것이기 때문에 when 문으로 어떤 체크박스가 이 리스너로 전달되는지 확인하는 코드를 작성합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetscheckbox
 
     import androidx.appcompat.app.AppCompatActivity
@@ -748,7 +748,7 @@ alpha는 투명도를 조절합니다.
     }
     ```
 1. onCreate() 메서드 안에 작성했던 리스너의 중괄호 ({})를 괄호 (())로 변경한 다음 앞에서 작성한 listener프로퍼티를 입력해서 세 줄의 코드를 한줄로 변경합니다.
-    ```kotlin
+    ```java
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -761,7 +761,7 @@ alpha는 투명도를 조절합니다.
 1. 에뮬레이터에서 실행하고 로그를 확인합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-109.png){: style="box-shadow: 0 0 5px #777"}<br>
 다음은 MainActivity.kt의 전체 코드입니다. 체크박스는 보통 체크와 해제를 모두 확인해야 하기 때문에 실제 프로젝트에서는 다음처럼 체크박스 해제 코드도 추가해야 합니다.<br>
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetscheckbox
 
     import androidx.appcompat.app.AppCompatActivity
@@ -817,7 +817,7 @@ alpha는 투명도를 조절합니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-110.png){: style="box-shadow: 0 0 5px #777"}
 1. build.gradle 파일에 viewBinding을 설정하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
 1. 클래스 안에 showProgress메서드를 만들고 리니어 레이아웃을 숨겼다 보였다 할 수 있는 코드를 추가합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsprogressbar
 
     import androidx.appcompat.app.AppCompatActivity
@@ -849,7 +849,7 @@ alpha는 투명도를 조절합니다.
       - ``GONE`` : 현재 안보이는 상태. 보이지도 않고 공간도 차지하지 않습니다.
 
 1. 앱이 실행되고 3초 후에 showProgress(false)를 호출하는 코드를 onCreate() 메서드 안에 작성합니다. Thread.sleep() 메서드를 사용하면 지정된 시간 동안 다음 코드가 실행되지 않습니다.
-    ```kotlin
+    ```java
     setContentView(binding.root)
 
     Thread.sleep(3000) // 3초
@@ -857,7 +857,7 @@ alpha는 투명도를 조절합니다.
     ```
 1. 에뮬레이터에서 실행해봅니다. 실행해도 에뮬레이터 화면에는 아무것도 보이지 않습니다. 메인 스레드에서 동작을 멈추는 Thread.sleep() 메서드를 호출했기 때문입니다.
 1. Thread.sleep 메서드를 백그라운드 (서브 스레드)에서 동작시키기 위해 코드를 추가합니다. thread(start=true) 함수를 사용하면 함수 블록 안의 코드가 모두 백그라운드에서 동작합니다.
-    ```kotlin
+    ```java
     thread(start=true) {
         Thread.sleep(3000)
         showProgress(false)
@@ -865,7 +865,7 @@ alpha는 투명도를 조절합니다.
     ```
     이대로 실행하면 3초간 프로그래스바가 동작하다가 앱이 죽습니다. UI와 관련된 모든 코드는 메인 스레드에서 실행해야만 합니다. 앞의 코드에서 showProgress메서드를 백그라운드에서 호출하기 때문에 앱이 강제 종료되는 것입니다.
 1. showProgress메서드만 메인 스레드에서 실행하도록 코드를 한 줄 더 추가합니다. 
-    ```kotlin
+    ```java
     thread(start=true) {
         Thread.sleep(3000)
         runOnUiThread {
@@ -886,7 +886,7 @@ alpha는 투명도를 조절합니다.
 1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후, setContentView에 binding.root를 전달합니다.
 1. setContentView 아랫줄에 ‘binding.seekBar.set’까지만 입력하면 나타나는 목록에서 setOnSeekBarChangeListnener를 선택합니다.
 1. 앞에서 생성된 리스너의 괄호 안에 ‘object: SeekBar.OnSeekBarChangeListener {}’ 코드를 다음과 같이 추가합니다.
-    ```kotlin
+    ```java
     binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
 
     })
@@ -894,7 +894,7 @@ alpha는 투명도를 조절합니다.
 1. 리스너의 코드 블록 사이를 클릭한 채로 (중괄호 안에 마우스 포인터를 두고) ``Ctrl`` + `I`키를 입력한 후 나타나는 [Implement Members]팝업창에서 3개의 메서드를 모두 선택하고 [OK]를 클릭합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-112.png){: style="box-shadow: 0 0 5px #777"}
 1. onProgressChanged 메서드 안에 다음의 코드를 한 줄 추가합니다.
-    ```kotlin
+    ```java
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         binding.textView.text = "$progress"
     }
@@ -907,7 +907,7 @@ alpha는 투명도를 조절합니다.
     - ``progress`` : 현재 시크바의 현재 progress값
     - ``fromUser`` : 사용자 터치 여부 (코드에서 시크바를 움직일 수도 있기 때문에 사용자의 터치에 의해 동작하는 것인지를 알기위한 값)
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.widgetsseekbar
 
     import androidx.appcompat.app.AppCompatActivity
@@ -950,7 +950,7 @@ alpha는 투명도를 조절합니다.
 1. 레이팅바 오른쪽에 텍스트뷰를 배치하고 컨스트레인트를 레이팅바에 연결합니다. 그리고 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0.0’를 입력합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-113.png){: style="box-shadow: 0 0 5px #777"}
 1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.wdgetsratingbar
 
     import androidx.appcompat.app.AppCompatActivity
@@ -970,7 +970,7 @@ alpha는 투명도를 조절합니다.
     }
     ```
 1. setContentView 다음 줄에 ‘binding.ratingBar.setOn’까지만 입력하면 나타나는 리스너 메서드 중에 중괄호로 시작하는 코드를 선택합니다. 그러면 다음과 같이 코드가 생성됩니다.
-    ```kotlin
+    ```java
     binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
         
     }
@@ -979,7 +979,7 @@ alpha는 투명도를 조절합니다.
   - rating : 현재별점
   - fromUser : 사용자 입력 여부
 1. 시크바와는 인터페이스 구조가 다르기 때문에 중괄호 안에 식을 바로 사용할 수 있습니다.
-    ```kotlin
+    ```java
     binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
         binding.textView.text = "$rating"
     }

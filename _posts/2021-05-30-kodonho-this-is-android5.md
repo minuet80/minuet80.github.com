@@ -302,7 +302,7 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
 - 3단계: 사용자 승인 후 처리
 
 1. MainActivity.kt 파일을 열고 바인딩을 생성합니다.  그리고 binding 프로퍼티를 저장한 후 setContentView에 binding.root 를 전달합니다.
-    ```kotlin
+    ```java
     class MainActivity : AppCompatActivity() {
 
         val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -315,21 +315,21 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
     ```
 
 1. onCreate() 메서드 아래에 권한을 확인하는 checkPermission() 메서드를 하나 만듭니다.
-    ```kotlin
+    ```java
     fun checkPermission() {
         
     }
     ```
 
 1. checkPermission() 메서드 안에 카메라 권한의 승인 상태를 먼저 확인한 다음 결괏값을 cameraPermission 변수에 저장하는 코드를 작성합니다. 권한은 모두 Manifest(andriod) 클래스에 문자열 상수로 정의되어 있습니다. 
-    ```kotlin
+    ```java
     // 카메라 권한의 승인 상태 가져오기
     val cameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
     // import 할 때 2개가 나타납니다. 꼭 android로 선택하세요
     ```
 
 1. 이어서 바로 아래에 cameraPermission 에 저장된 값이 승인되었는지 아닌지에 따라 분기하는 코드를 작성합니다.
-    ```kotlin
+    ```java
     if (cameraPermission == PackageManager.PERMISSION_GRANTED) {
         // 1. 승인이면 프로그램 진행s
     } else {
@@ -338,7 +338,7 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
     ```
 
 1. 카메라 권한이 승인이라면 startProcess() 메서드를 호춣해서 카메라를 실행하고 승인되지 않았다면 requestPermission() 메서드를 호출합니다. requestPermission() 메서드는 권한 승인을 요청하는 메서드로 다음 단계에서 새로 만들 것입니다.
-    ```kotlin
+    ```java
     if (cameraPermission == PackageManager.PERMISSION_GRANTED) {
         startProcess() // 1. 승인이면 프로그램 진행
     } else {
@@ -347,7 +347,7 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
     ```
 
 1. startProcess() 메서드를 checkPermission() 메서드 아래에 만들고 startProcess() 메서드 안에 카메라를 실행한다는 메시지를 토스트로 알려주는 코드를 작성합니다.
-    ```kotlin
+    ```java
     fun startProcess() {
         // 1 승인이면 프로그램을 진행하는 메서드
         Toast.makeText(this, "카메라를 실행합니다.", Toast.LENGTH_LONG).show()
@@ -361,7 +361,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
 
 
 1. startProcess() 메서드 아래에 requestPermission() 메서드를 만들고 미승인된 권한을 사용자에게 요청하는 ActivityCompat.requestPermissions() 메서드를 호출합니다. 파라미터는 배열입니다. 이는 권한이 복수일 때를 대비해서 배열로 입력합니다. 세 번째 파라미터는 리퀘스트 코드로 startActivityForResult에서 사용했던 것처럼 권한을 요청한 주체가 어떤 것인지 구분하기 위해서 코드를 숫자로 입력해서 사용합니다.
-    ```kotlin
+    ```java
     fun requestPermission() {
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 99)
     }
@@ -374,7 +374,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
 권한 승인을 묻는 팝업창에 사용자가 DENY(거절) 또는 ALLOW(수락)을 클릭하면 앱티비티의 onRequestPermissionResult() 메서드가 호출됩니다.
 
 1. onRequestPermissionResult() 메서드를 오버라이드합니다.
-    ```kotlin
+    ```java
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -390,7 +390,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
     - ``grantResults``: 권한 목록에 대한 승인/미승인 값. 권한 목록의 개수와 같은 수의 결괏값이 전달됩니다.
 
 1. super.onRequest... 로 시작하는 줄을 지우고 requestCode가 요청 시에 입력했던 99인지를 확인하는 코드를 작성합니다.
-    ```kotlin
+    ```java
     when (requestCode) {
         99 -> {
             // 권한 결괏값을 확인 후 실행 내용을 결정합니다.
@@ -399,7 +399,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
     ```
 
 1. 권한 결괏값을 체크해서 승인 여부를 체크하고, 승인이면 startProcess() 메서드를 실행하고 미승인이면 앱을 종료합니다.
-    ```kotlin
+    ```java
     when (requestCode) {
         99 -> {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -412,7 +412,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
     ```
 
 1. 마지막으로 onCreate() 메서드 안에 작성해둔 checkPermission() 코드를 다음과 같이 btnCamera를 클릭하면 호출하는 형태로 수정합니다.
-    ```kotlin
+    ```java
     binding.btnCamera.setOnClickListener {
         checkPermission()
     }
@@ -431,7 +431,7 @@ ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 �
 
     ``MainActivity.kt의 전체코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.permission
 
     import android.Manifest
@@ -509,7 +509,7 @@ Base 프로젝트를 하나 새로 생성하고, build.gradle 파일에 viewBind
 1. 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Kotlin Class/File]을 선택합니다.  클래스 이름에 ‘BaseActivity’를 입력하고 아래 목록에서 Class 를 선택하여 코틀린 클래스를 생성합니다.
 
 1. 권한 처리를 하기 위해서는 액티비티의 기본 기능이 필요하기 때문에 AppCompatActivity를 상속받아서 기본 기능을 사용할 수 있도록 작성합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.permission
 
     import androidx.appcompat.app.AppCompatActivity
@@ -519,7 +519,7 @@ Base 프로젝트를 하나 새로 생성하고, build.gradle 파일에 viewBind
     ```
 
 1. 2개의 추상 메서드 permissionGranted와 permissionDenyed를 만들겠습니다. abstract로 메서드를 선언하면 BaseActivity를 상속받은 측에 구현을 강제하므로 반드시 두 멧드가 존재합니다. 이렇게 상속받은 메서드가 있으면 사용자가 권한을 허용하거나 거부했을 때 이 메서드를 통해서 부가적인 처리를 할 수 있습니다. 파라미터로 requestCode를 전달하므로 권한 요청이 어디에서 일어났는지에 따른 처리도 함께 할 수 있습니다.
-    ```kotlin
+    ```java
     abstract fun permissionGranted(requestCode: Int)
     abstract fun permissionDenied(requestCode: Int)
 
@@ -528,13 +528,13 @@ Base 프로젝트를 하나 새로 생성하고, build.gradle 파일에 viewBind
     ```
 
 1. 이제 자식 액티비티에서 권한 요청 시 직접 호출하는 requirePermissions 메서드를 작성합니다. 메서드의 파라미터로 권한 배열과 함께 requestCode를 전달받을 겁니다.
-```kotlin
+```java
 fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 }
 ```
 
 1. 메서드 안에 안드로이드의 버전을 체크하는 코드르 작성합니다. 안드로이드 6.0 (마시멜로우) 미만이면 permissionGranted() 메서드를 호출하면서 전달받은 requestCode를 함께 전달합니다.
-    ```kotlin
+    ```java
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
         permissionGranted(requestCode)
     } else {
@@ -544,14 +544,14 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     ```
 
 1. 권한 체크를 해야 되는 버전이면 else 블록 안에서 권한이 모두 승인된 것을 확인합니다. 파라미터로 전달받은 permissions에는 권한 배열이 들어 있는데, all 메서드를 사용하면 배열 속에 들어 있는 모든 값을 체크할 수 있습니다. 권한이 모두 승인되었는지 여부를 다음과 같이 변수에 저장합니다.
-    ```kotlin
+    ```java
     val isAllPermissionsGranted = permissions.all {
         checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED
     }
     ```
 
 1. 계속해서 조건문에서 isAllPermissionsGranted가 true면 그냥 permissionGranted() 메서드를 호출하고, false면 사용자에 권한 승인을 요청합니다.
-    ```kotlin
+    ```java
     if (isAllPermissionsGranted) {
         permissionGranted(requestCode)
     } else {
@@ -561,7 +561,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 
 
 1. 이어서 사용자가 권한을 승인하거나 거부한 다음에 호출되는 onRequestPermissionsResult메서드를 오버라이드합니다.  super.onRequest...로 시작하는 코드 줄은 삭제합니다.
-    ```kotlin
+    ```java
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -574,7 +574,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     ```
 
 1. 메서드 안에서 먼저 grantResults에 all 메서드를 이용하여 결괏값이 모두 승인된 것인지를 확인합니다. true면 permissionGranted() 메서드를, false 면 permissionDenied() 메서드를 호출합니다.
-    ```kotlin
+    ```java
     if (grantResults.all { it == PackageManager.PERMISSION_GRANTED}) {
         permissionGranted(requestCode)
     } else {
@@ -588,7 +588,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 
     ``BaseActivity.kt의 전체 코드``
 
-    ```kotlin
+    ```java
     package kr.co.hanbit.base
 
     import android.annotation.SuppressLint
@@ -636,7 +636,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 ## 3.2 MainActivity에서 BaseActivity를 상속받고 사용하기
 
 1. 먼저 AndroidManifest.xml 에 카메라 권한을 하나 추가합니다.
-    ```kotlin
+    ```java
     <uses-permission android:name="android.permission.CAMERA" />
     ```
 
@@ -644,13 +644,13 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-228.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity를 열고 클래스 이름 옆의 AppCompatActivity를 BaseActivity로 변경합니다.
-    ```kotlin
+    ```java
     class MainActivity: BaseActivity {
         
     }
     ```
 1. onCreate() 메서드 블록 아랫줄에서 ``Ctrl`` + ``I`` 키를 입력해서 BaseActivity에 설꼐해둔 2개의 추상 메서드를 구현합니다. permissionGranted() 메서드에는 카메라를 호출하는 코드를 작성하고, permissionDenied() 메서드에는 권한이 거부되었다는 토스트 메시지를 보여주는 코드를 작성합니다. 두 번째 파라미터에는 ‘99’를 입력한 후 onActivityResult에서 받아서 처리합니다.
-    ```kotlin
+    ```java
     override fun permissionGranted(requestCode: Int) {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(intent, 99)
@@ -662,7 +662,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     ```
 
 1. onCreate() 메서드는 바로 윗줄에 바인딩을 생성한 후 binding 프로퍼티에 저장하고, setContentView에 binding.root를 전달합니다.
-    ```kotlin
+    ```java
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -674,14 +674,14 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     ```
 
 1. btnCamera에 클릭리스너를 달고, BaseActivity에 구현된 requirePermission() 메서드르르 호출합니다. 첫 번째 파라미터에는 요청할 권한 배열을, 두 번째 파라미터에는 임의의 숫자 1개를 전달합니다. 이 액티비티 전체에는 하나의 권한 처리밖에 없기 때문에 의미 없는 값을 넣어도 됩니다. 이제 권한 요청이 있는 후 사용자의 승인 여부에 따라 액티비티에 구현한 permissionGranted() 메서드와 permissionDenied() 메서드가 호출됩니다.
-    ```kotlin
+    ```java
     binding.btnCamera.setOnClickListener {
         requirePermissions(arrayOf(Manifest.permission.CAMERA), 10)
     }
     ```
 
 1. onActivityResult() 메서드를 오버라이드하고 카메라 촬영을 처리하는 코드를 작성합니다.
-    ```kotlin
+    ```java
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 10) {
@@ -695,7 +695,7 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     ```
 
 1. 앱을 실행하고 버튼을 클릭해서 권한 코드가 정상적으로 동작하는지 확인해봅니다. 앞으로 작성하는 프로젝트에서 이 BaseActivity를 권한이 필요한 액티비티에서 상속받아 사용하면 반복되는 권한 처리 코드를 보다 효율적으로 사용할 수 있습니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.base
 
     import android.Manifest

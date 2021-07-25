@@ -81,7 +81,7 @@ File은 파일 또는 디렉토리의 경로를 생성자에 입력해서 생성
 
 이렇게 생성된 File을 변수에 저장해두고 File에 제공하는 메서드를 이용해서 정보를 처리하면 됩니다.
 
-```kotlin
+```java
 val file = File("경로")
 ```
 
@@ -91,7 +91,7 @@ val file = File("경로")
 
 컨텍스트를 상속받은 액티비티나 프래그먼트에서 바로 사용할 수 있기 때문에 files라는 동일한 공간에 읽고 쓰기를 한다면 다음과 같은 방식이 편리합니다.
 
-```kotlin
+```java
 val file = File(baseContext.filesDir, "파일명")
 // 액티비티의 경우 filesDir이 기본 프로퍼티 입니다.
 val file = File(filesDir, "파일명")
@@ -103,7 +103,7 @@ File 클래스를 사용해 생성된 파일은 코드에서 다음과 같이 �
 
 File의 존재 여부를 확인합니다.
 
-```kotlin
+```java
 if (file.exists()) {
     Log.d("File", "파일이 존재합니다.")
 }
@@ -113,7 +113,7 @@ if (file.exists()) {
 
 File의 생성자에 전달된 경로가 파일인지를 확인합니다.
 
-```kotlin
+```java
 if (file.isFile) {
     Log.d("File", "파일입니다.")
 }
@@ -123,7 +123,7 @@ if (file.isFile) {
 
 File의 생성자에 전달된 경로가 디렉토리인지를 확인합니다.
 
-```kotlin
+```java
 Log.d("File", "디렉토리입니다.")
 ```
 
@@ -131,7 +131,7 @@ Log.d("File", "디렉토리입니다.")
 
 생성된 파일 또는 디렉토리의 이름을 반환합니다.
 
-```kotlin
+```java
 Log.d("File", "이 파일(디렉토리)의 이름은 ${file.name}입니다.")
 ```
 
@@ -139,7 +139,7 @@ Log.d("File", "이 파일(디렉토리)의 이름은 ${file.name}입니다.")
 
 해당 경로에 파일이 존재하지 않으면 createNewFile()로 파일을 생성하며 보통 exists()와 함께 사용합니다.
 
-```kotlin
+```java
 if (!file.exists()) {
     file.createNewFile()
 }
@@ -149,7 +149,7 @@ if (!file.exists()) {
 
 디렉토리를 생성합니다.
 
-```kotlin
+```java
 if (!file.exists()) {
     file.mkdirs()
 }
@@ -159,7 +159,7 @@ if (!file.exists()) {
 
 파일이나 디렉토리를 삭제합니다. 디렉토리 내부에 파일이 존재한다면 삭제되지 않습니다.
 
-```kotlin
+```java
 file.delete()
 ```
 
@@ -171,7 +171,7 @@ file.delete()
 
 일반적으로 파일을 저장하거나 읽을 때는 절대경로를 기준으로 사용합니다.
 
-```kotlin
+```java
 Log.d("File", "이 파일(디렉토리)의 절대경로는 ${file.absolutePath}입니다.")
 ```
 
@@ -195,14 +195,14 @@ FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파
 1. [app] - [java] 디렉토리 밑에 있는 패키지 밑에 FileUtil 클래스를 생성합니다.
 
 1. FileUtil.kt 파일을 열고 fullPath 파라미터로 파일의 경로를 전달받는 메서드를 FileUtil 클래스 안에 생성합니다. 그리고 result 변수로 파일을 읽은 결괏값을 리턴합니다.
-    ```kotlin
+    ```java
     fun readTextFile(fullPath: String): String {
         // 이 후 작성하는 코드는 이 안에 적습니다.
     }
     ```
 
 1. 여기서부터는 readTextFile() 메서드의 코드 블록 안에 한 줄씩 순서대로 코드를 작성합니다.  먼저 전달된 fullPath 경로를 File로 생성하고 실제 파일이 있는지 검사합니다. 없으면 공백값을 리턴합니다.
-    ```kotlin
+    ```java
     val file = File(fullPath)
     if (!file.exists()) {
         return ""
@@ -211,19 +211,19 @@ FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파
     ```
 
 1. FileReader로 file을 읽고 BufferedReader에 담아서 속도를 향상시킵니다.
-    ```kotlin
+    ```java
     val reader = FileReader(file)
     val buffer = BufferedReader(reader)
     ```
 
 1. buffer를 통해 한 줄씩 읽은 내용을 임시로 저장할 temp 변수를 선언하고 모든 내용을 저장할 StringBuffer를 result 변수로 선언합니다.
-    ```kotlin
+    ```java
     var temp = ""
     val result = StringBuffer()
     ```
 
 1. while문을 반복하면서 buffer에서 한 줄씩 꺼내 temp변수에 담고 그 값이 null이라면 더 이상 읽을 내용이 없으니 반복문을 빠져나갑니다.  값이 있다면 (null이 아니라면 ) result 변수에 append() 합니다.
-    ```kotlin
+    ```java
     while (true) {
         temp = buffer.readLine()
         if (temp = null) {
@@ -235,14 +235,14 @@ FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파
     ```
 
 1. buffer를 close()로 닫고 결괏값을 리턴합니다.
-    ```kotlin
+    ```java
     buffer.close()
     return result.toString()
     ```
 
     ``파일 읽기 메서드의 전체 코드``
 
-    ```kotlin
+    ```java
     fun readTextFile(fullPath: String): String {
         val file = File(fullPath)
         if (!file.exists()) {
@@ -265,7 +265,7 @@ FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파
 
     내부 저장소에서 파일을 읽으려면 내부 저장소인 filesDir과 파일명을 조합합니다. 그리고 readTextFile() 파라미터로 넘기면 됩니다. 디렉토리와 파일명 사이를 슬래시(/)로 구분하거나 File.pathSeparator로 구분할 수 있습니다. 
 
-    ```kotlin
+    ```java
     var content = readTextFile("${filesDir}/파일명.txt")
     ```
 
@@ -275,7 +275,7 @@ FileIO 프로젝트를 만들어 예제를 따라 하면서 파일 경로를 파
 
 openFileInput과 함께 몇 개의 메서드들을 조합하면 다음과 같이 짧은 코드로 텍스트 파일을 읽을 수 있습니다.
 
-```kotlin
+```java
 var contents = ""
 context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
     contents = lines.joinToString("\n")
@@ -293,14 +293,14 @@ context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
 계속해서 FileUtil 클래스에 코드를 작성합니다.
 
 1. 쓰기 파일은 총 3개의 파라미터를 사용합니다. 파일을 생성할 디렉토리, 파일명, 작성할 내용 이렇게 3개의 값이 전달되어야 합니다.  먼저 3개의 파라미터를 가진 메서드를 생성합니다.
-    ```kotlin
+    ```java
     fun writeTextFile(directory: String, filename: String, content: String) {
         // 이후 작성하는 코드는 이 안에 작성합니다.
     }
     ```
 
 1. directory가 존재하는지 검사하고 없으면 생성합니다. 파일처럼 디렉토리도 File객체에 경로를 전달하면 상태를 체크할 수 있습니다.
-    ```kotlin
+    ```java
     val dir = File(directory)
     if (!dir.exists()) {
         dir.mkdirs()
@@ -308,20 +308,20 @@ context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
     ```
 
 1. 디렉토리가 생성되었다면 디렉토리에 파일명을 합해서 FileWriter로 생성합니다. 생성된 FileWriter를 buffer에 담으면 쓰기 속도가 향상됩니다.
-    ```kotlin
+    ```java
     val writer = FileWriter(directory + "/" + filename)
     val buffer = BufferedWriter(writer)
     ```
 
 1. buffer로 내용을 쓰고 close()로 닫습니다.
-    ```kotlin
+    ```java
     buffer.write(content)
     buffer.close()
     ```
 
     ``파일 쓰기 메서드의 전체 코드``
 
-    ```kotlin
+    ```java
     fun writeTextFile(directory: String, filename: String, content: String) {
         val dir = File(directory)
         if (!dir.exists()) {
@@ -336,7 +336,7 @@ context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
 
     내부 저장소에 텍스트 파일을 쓸 때는 다음과 같이 사용합니다.
 
-    ```kotlin
+    ```java
     writeTextFile(filesDir, "filename.txt", "글의 내용")
     ```
 
@@ -346,7 +346,7 @@ context.openFileInput("파일 경로").bufferedReader().useLines { lines -> {
 
 파일명 다음에 입력되는 Context.MODE_PRIVATE 대신에 Context.MODE_APPEND를 사용하면 기존에 동일한 파일명이 있을 경우 기존 내용에 이어서 새로운 내용을 저장할 수 있습니다.
 
-```kotlin
+```java
 val contents = "Hello\nworld!"
 context.openFileOutput("파일명", Context.MODE_PRIVATE).use { stream -> 
     stream.write(contents.toByteArray())
@@ -400,7 +400,7 @@ getSharedPreferences() 는 Context를 가지고 있는 모든 컴포넌트에서
 
 getSharedPreferences(이름, 모드)를 액티비티에서 호출하면 SharedPreferences가 반환됩니다.
 
-```kotlin
+```java
 val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
 ```
 
@@ -415,7 +415,7 @@ MODE_PRIVATE, MODE_WORLD_READABLE, MODE_WORLD, WRITEABLE의 접근 권한이 있
 
 호출하는 액티비티의 이름으로 저장 파일이 생성됩니다.
 
-```kotlin
+```java
 var preference = getPreferences(Context.MODE_PRIVATE)
 ```
 
@@ -432,7 +432,7 @@ val editor = shared.edit();
 
 데이터를 저장할 때는 입력될 값의 타입에 맞는 Editor의 메서드를 사용해서 저장할 수 있는데, 마지막에 apply() 메서드를 호출해야 하지만 실제 파일에 반영됩니다.
 
-```kotlin
+```java
 val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
 val editor = shared.edit()
 editor.putString("키", "값")
@@ -458,7 +458,7 @@ putFloat() 이면 Float형을 저장하는 메서드입니다.
 
 defaultValue를 지정하면 해당 키의 데이터가 없으면 지정한 기본값을 반환합니다.
 
-```kotlin
+```java
 val shared = getSharedPreferences("이름", Context.MODE_PRIVATE)
 shared.getString("키", "기본값")
 ```
@@ -503,7 +503,7 @@ AndroidX Preference를 사용하기 위해서는 라이브러리가 설치되어
 1. Gradle Scripts 디렉토리 밑에 있는 build.gradle 파일을 엽니다.
 
 1. 다음처럼 dependencies { 바로 밑에 androidx.preference 의존성을 추가합니다. }
-    ```kotlin
+    ```java
     def preference_version = "1.1.1"
     implementation "androidx.preference:preference-ktx:$preference_version"
     ```
@@ -644,7 +644,7 @@ preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 
 1. 이어서 java 디렉토리 밑에 있는 기본 패키지를 마우스 우클릭한 다음 [New] - [Kotlin File/Class]를 클릭합니다. 다음과 같이 입력하여 SettingFragment 클래스를 생성합니다.
 
 1. 생성된 SettingFragment.kt 파일을 열고 PreferenceFragmentCompat 추상 클래스를 상속받습니다. 그리고 onCreatePreferences() 메서드를 오버라이드 합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.base
 
     import android.os.Bundle
@@ -657,7 +657,7 @@ preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 
     ```
 
 1. onCreatePreferences() 메서드 블록 안에서 addPreferencesFromResource를 호출하고 PreferenceScreen이 정의된 preference파일을 파라미터로 전달하면 설정 항목에 대한 View가 자동으로 생성됩니다.
-    ```kotlin
+    ```java
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.preferences)
     }
@@ -679,7 +679,7 @@ preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 
 
 사용법은 일반적인 SharedPreferences를 사용하는 방법과 동일합니다.
 
-```kotlin
+```java
 val shared = PreferenceManager.getDefaultSharedPreferences(this)
 
 val checkboxValue = shared.getBoolean("key_add_shortcut", false)

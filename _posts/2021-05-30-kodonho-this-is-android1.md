@@ -201,7 +201,7 @@ Project뷰는 실제 디렉토리의 구조를 그대로 보여줍니다.
 
 - 화면을 그려주는 함수 setContentView
   - 코드 편집기 창을 보면 setContentView(R.layout.activity_main)라는 코드가 보입니다. 이는 ‘콘텐츠를 화면에 표시하기 위해서 res/layout 디렉토리 아래에 있는 activity_main.xml 파일을 사용한다’라는 의미입니다. 이 책에서는 View Binding을 사용하기 때문에 실제 코드에서는 레이아웃 파일이 아닌 안드로이드가 생성한 바인딩을 전달합니다.
-```kotlin
+```java
 super.onCreate(savedInstanceState)
 setContentView(R.layout.activity_main)
 ```
@@ -297,7 +297,7 @@ setContentView(R.layout.activity_main)
     }
     ```
 1. [MainActivity.kt]탭을 클릭해서 파일을 열고 소스 코드를 편집합니다. onCreate()함수 코드 블록({})안에서 setContentview 줄 위에 레이아웃 파일명인 activity_main의 단어 첫 글자를 대문자로 바꿔서 ActivityMain이라고 입력하면 다음과 같은 코드 자동 오나성이 나타납니다. ActivityMainBinding을 클릭해서 선택하거나 ``Enter``키를 입력하면 코드가 자동으로 완성됩니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.sayHello
 
     import ...생략
@@ -316,7 +316,7 @@ setContentView(R.layout.activity_main)
   - ActivityMainBinding이 자동 완성으로 사용할 수 있는 이유는 앞에서 build.gradle 파일에서 viewBinding true를 설정했기 때문이다.
 
 1. ActivityMainBinding을 추가한 뒤 소스 코드의 class 선언부 위쪽을 보면 다음과 같이 import가 자동적으로 추가되어 있습니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.sayHello
 
     import androidx.appcompat.app.AppCompatActivity
@@ -336,7 +336,7 @@ setContentView(R.layout.activity_main)
     ```
 
 1. ActivityMainBinding을 다음과 같이 수정해서 뷰 바인딩을 사용할 준비를 합니다. ActivityMainBinding이 가지고 있는 inflate 함수에 layoutInflater를 입력한 후 binding변수에 저장합니다. layoutInflater는 모든 Activity에서 호출해서 사용할 수 있습니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.sayHello
 
     import androidx.appcompat.app.AppCompatActivity
@@ -357,7 +357,7 @@ setContentView(R.layout.activity_main)
   - setContentView에 R.layout.activity_main을 사용해도 화면에는 동일하게 나타나지만, 뷰 바인딩을 사용하기 위해서는 이런 과정이 필요합니다.
 
 1. Binding 변수를 통해 뷰에 미리 작성해두었던 버튼의 id에 접근할 수 있습니다. 다음과 같이 버튼에 id에 Listener를 설정합니다.
-    ```kotlin
+    ```java
     package kr.co.hanbit.sayHello
 
     import androidx.appcompat.app.AppCompatActivity
