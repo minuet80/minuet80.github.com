@@ -128,6 +128,13 @@ Intent에 카메라 앱을 호출하기 위한 플래그인 MediaStore.ACTOIN_IM
     }
     ```
 
+1. 외부 저장소 권한이 승인되었을 때 호출할 setViews() 메서드를 만듭니다. 메서드 안에 버튼 클릭 시 카메라 권한을 요청하는 코드를 작성합니다. 두 번째 파라미터인 requestCode 에는 역시 앞에서 정의한 PERM_CAMERA를 전달합니다. 카메라를 직접 호출하는 것이 아니라 권한 요청의 결과에 따라 승인되었을 경우에만 perissionGranted() 메서드에서 카메라를 요청할 것입니다.
+    ```kotlin
+    fun setViews() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(intent, REQ_CAMERA)
+    }
+    ```
 
 
 

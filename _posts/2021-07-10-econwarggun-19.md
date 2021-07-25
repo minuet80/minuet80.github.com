@@ -15,7 +15,7 @@ width: large
 ## 1. 삼성전자 2분기 잠정실적 전문가 분석은?
 
 ### 김영우
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFFFCC"}
 
 ``삼성전자 우려 요인``
 1분기에 비해 2분기 모바일 분야 ‘실적저조’ 예상
@@ -34,7 +34,7 @@ width: large
 
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 
 삼성전자 비메모리 사업 ‘기대이하’
 
@@ -59,7 +59,7 @@ width: large
 ## 2. K-반도체 강세론 VS 신중론 선택은?
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 
 반도체 빅사이클 ‘구조적 이유’는 ``공급``・``수요`` 측면 이유가 존재
 
@@ -107,7 +107,7 @@ width: large
 
 12월 ~ 3월 1 분기 ``‘시장 비수기’`` , ``DDR4의 4분기 공급 충분``, ``수요 불확실`` 하므로 투자에 의문
 
-반도체 하락세가 예상되는 4분기 ``‘신중론’``{: style="background-color: #FFFFCC"} 전망
+반도체 하락세가 예상되는 4분기 ``‘신중론’``{: style="background-color: #FFCCCC"} 전망
  {: style="text-decoration: underline"}
 
 ``2022년 기저효과, 기고효과 없이 반도체주에 관심 집중될 것``
@@ -136,13 +136,13 @@ D램, 낸드 사업에 새로운 기기가 등장하거나 장기적 수요를 �
 
 5년 ~ 10년 전부터 지속된 상황이므로 ``‘빅사이클의 근거로 보기 어려움’``
 
-``‘중립’``{: style="background-color: #CCCCFF"} 전망
+``‘중립’``{: style="background-color: #FFCCCC"} 전망
 
 
 ## 3. 서버 D램 수요 생산 조절할까?
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 
 서버 수요 측면에서 분석에서 구글 케펙스<sup> (설비투자) </sup>2년 연속 감소 추세지만
 
@@ -214,7 +214,7 @@ D램, 낸드 사업에 새로운 기기가 등장하거나 장기적 수요를 �
 ## 5. 반도체 사업 지각 변동 오나?
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 
 메모리 반도체의 빅사이클로 진입할 수 있었던 이유
 1. ``공급제약``
@@ -299,7 +299,7 @@ AMD는 자일링스 합병
 
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 
 삼성전자 비메모리의 경쟁력 3가지
 1. 납기대응능력
@@ -358,7 +358,7 @@ SK그룹, 새로운 청사진 설계 가능
 
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 10만 5천원
 {: style="color: #FF0000;"} 
 
@@ -395,7 +395,7 @@ SK그룹, 새로운 청사진 설계 가능
 
 
 ### 최도윤
-{: style="background-color: #FFCCCC"}
+{: style="background-color: #FFE4E1"}
 18만 5천원
 {: style="color: #FF0000"} 
 
