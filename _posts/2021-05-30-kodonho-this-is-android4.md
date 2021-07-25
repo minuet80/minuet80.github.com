@@ -79,7 +79,7 @@ width: large
 ### 메인 액티비티에서 서브 액티비티 실행하기
 
 1. build.gradle 파일에 viewBinding을 설정하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다.  그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import androidx.appcompat.app.AppCompatActivity
@@ -100,19 +100,19 @@ width: large
     ```
 
 1. setContentView(binding.root) 아래에 다음 코드를 추가해 인텐트를 생성합니다. 인텐트를 생성할 때 호출할 클래스 뒤에 ``‘::class.java’``라고 정확하게 입력해야 합니다.
-```java
+```kotlin
 val intent = Intent(this, SubActivity::class.java)
 ```
 
 1. Intent 부분이 또 빨간색으로 보일 겁니다. 이때는 ``Alt + Enter`` 키를 눌러 [Import]를 선택합니다.
 
 1. 이어서 버튼이 id인 ‘btnStart’를 입력하고 import한 후에 클릭리스너를 달아줍니다.
-```java
+```kotlin
 binding.btnStart.setOnClickListener { }
 ```
 
 1. 클릭리스너 코드 블록 안에서 startActivity() 메서드를 호출하면서, 01에서 미리 만들어둔 인텐트를 값으로 넘겨줍니다
-```java
+```kotlin
 binding.btnStart.setOnClickListener { startActivity(intent) }
 ```
 
@@ -124,7 +124,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 인텐트 내부에는 번들<sup>Bundle</sup>이라는 데이터 저장 공간이 있는데, 이 번들에 데이터를 담아서 주고받을 수 있습니다.
 
 1. 인텐트를 생성하는 ``val intent = ...`` 와 ``binding.btnStart...`` 코드 사이에 ``putExtra()`` 메서드를 사용해서 인텐트에 값을 전달하는 코드를 추가합니다.
-    ```java
+    ```kotlin
     val intent = Intent(this, SubActivity::class.java)
     intent.putExtra("from1", "Hello Bundle")
     intent.putExtra("from2", 2021)
@@ -134,7 +134,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-133.png){: style="box-shadow: 0 0 5px #777"}
 
 1. SubActivity.kt 파일을 열고 binding 을 생성한 후 setContentView 에 binding.root를 전달합니다. SubActivityt에서 사용하는 레이아웃 파일의 이름이 activity_sub.xml이기 때문에 바인딩도 ActivitySubBinding이 됩니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import androidx.appcompat.app.AppCompatActivity
@@ -154,7 +154,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     ```
 
 1. setContentView 아래에 다음 코드를 추가합니다. 먼저 텍스트뷰와 연결하기 위해 ‘to1’을 입력하고 ``Enter`` 키를 눌러 [Import]를 선택합니다. 상단에 새로운 Import가 추가됩ㄴ다ㅣ 다음으로 to1의 text에 인텐트에 담겨온 값을 from1키로 꺼내서 입력합니다.인텐트에 담겨온 값이 문자열이기 때문에 문자열을 꺼내는 getStringExtra() 메서드를 사용해야 합니다.
-    ```java
+    ```kotlin
     binding.to1.text = intent.getStringExtra("from1")
     ```  
 
@@ -162,11 +162,11 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
       - intent가 액티비티의 기본 프로퍼티이기 때문에 전달된 인텐트는 intent로 바로 호출해서 사용할 수 있습니다.
 
 1. 전달받은 인텐트에서 from2도 같은 방법으로 꺼내서 to2의 text에 입력합니다. from2에 전달 값의 타입이 숫자이기 때문에 getIntExtra() 메서드를 사용합니다. getIntExtra() 메서드는 파라미터를 2개 가지고 있는데, 두 번째 파라미터는 일단 ‘0’이라고 입력해둡니다.
-    ```java
+    ```kotlin
     binding.to2.text = intent.getIntExtra("from2", 0)
     ```
     그런데 입력해 보면 intent.getInt... 로 시작하는 코드에 빨간색 밑줄이 생깁니다. 텍스트뷰의 text속성은 문자열만 받을 수 있는데 숫자 값이 입력되었기 때문입니다. 쌍따옴표("") 로 감싸고 문자열 템플릿 (${}) 을 사용해서 문자열로 변환해줍니다.
-    ```java
+    ```kotlin
     binding.to2.text = "${intent.getIntExtra("from2", 0)}"
     ```
 
@@ -176,7 +176,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 1. 에뮬레이터에서 실행한 다음 결과를 확인합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-134.png){: style="box-shadow: 0 0 5px #777"}<br><br>
     여기까지 MainActivity.kt 코드
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import android.content.Intent
@@ -201,7 +201,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     }
     ```
     여기까지 SubActivity.kt 코드
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import androidx.appcompat.app.AppCompatActivity
@@ -232,34 +232,34 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-135.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 서브 액티비티가 종료될 때 자신을 호출했던 액티비티로 값을 돌려주는 코드를 추가하겠습니다. SubActivity.kt 파일을 열고 onCreate() 메서드 안에 ‘btnClose’를 입력한 후에 클릭리스너를 달아줍니다.<br>
-    ```java
+    ```kotlin
     binding.btnClose.setOnClickListener {
         
     }
     ```
 
 1. 리스너 블록 안에 호출한 메인 액티비티에 돌려줄 인텐트를 하나 생성하고 변수에 저장합니다. 돌려줄 때는 대상을 지정하지 않아도 되므로 Intent 안에는 아무것도 담지 않습니다. 앞서 비워둔 행에 다음 코드를 입력합니다. Intent 에 다시 빨간색 밑줄이 생길 겁니다. ``Alt`` + ``Enter``키를 눌러 import 합니다. 
-    ```java
+    ```kotlin
     val returnIntent = Intent()
     ```
 
 1. 앞에서 생성한 returnIntent에 editMessage의 값을 담는 코드를 다음 줄에 입력합니다.
-    ```java
+    ```kotlin
     val returnIntent = Intent()
     returnIntent.putExtra("returnValue", binding.editMessage.text.toString())
     ```
 
 1. returnIntent와 상태 값을 setResult() 메서드에 담아서 실행하면 호출한 측으로 전달됩니다. 상태 값은 RESULT_OK와 RESULT_CANCELED로 안드로이드에 이미 상수로 정의되어 있습니다. 처리한 결괏값에 따라 성공이면 OK를, 실패하거나 취소되었으면 CANCELED을 사용하면 됩니다. setResult() 메서드의 첫 번째 파라미터가 상태 값, 두 번째가 전달하려는 인텐트입니다.
-    ```java
+    ```kotlin
     setResult(RESULT_OK, returnIntent)
     ```
 
 1. 이어서 finish() 메서드를 호출하면 서브 액티비티가 종료되면서 메인 액티비티에 값이 전달됩니다.
-    ```java
+    ```kotlin
     finish()
     ```
     다음은 지금까지 작성한 SubActivity.kt코드입니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import android.content.Intent
@@ -291,7 +291,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 1. MainActivity.kt 안에 SubActivity에서 돌려준 값을 받는 코드를 추가합니다. onCreate() 메서드의 블록 밖을 클릭한 후 ``Ctrl`` + ``O``키를 누릅니다. 메서드 목록 중에서 onActivityResult를 선택하고 [OK]버튼을 클릭하면 코드가 자동으로 생성됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-136.png){: style="box-shadow: 0 0 5px #777"}<br>
 
-    ```java
+    ```kotlin
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
     }
@@ -304,19 +304,19 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     - ``data`` : 결과 처리 후 서브 액티비티가 넘겨주는 인텐트가 담겨 있습니다.
 
 1. onActivityResult() 메서드 안에 서브 액티비티에서 돌려받은 resultCode가 정상인지 체크하는 코드를 추가합니다.
-    ```java
+    ```kotlin
     if (resultCode == RESULT_OK) {
 
     }
     ```
 
 1. 정상이라면 돌려받은 인텐트에서 메시지를 꺼내 변수에 저장해둡니다.
-    ```java
+    ```kotlin
     val message = data?.getStringExtra("returnValue")
     ```
 
 1. 해당 메시지를 토스트(Toast)로 화면에 보여주는 코드를 작성합니다. 토스트는 화면에 잠깐 나타났다 사라지는 메시지 출력 도구입니다. 메서드의 닫는 괄호()) 다음에 반드시 .show() 를 호출해야지만 화면에 나타납니다. <br>
-    ```java
+    ```kotlin
     Toast.makeText(this, messsage, Toast.LENGTH_LONG).show()
     ```
     
@@ -326,7 +326,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     - ``세번째 파라미터`` : 메시지가 얼마동안 출력될지를 결정합니다. LENGTH_LONG과 LENGTH_SHORT가 있습니다.
 
     지금까지 추가한 MainActivity.kt의 onActivityResult() 메서드 코드입니다.
-    ```java
+    ```kotlin
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -347,16 +347,16 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 1. 이어서 MainActivity.kt의 onCreate() 메서드 코드 블록 안에 있는 클릭리스너에서 호출하는 startActivity() 메서드를 startActivityForResult() 로 변경하고 첫 번째 인텐트와 함께 두번째 파라미터는 임시로 ‘99’라는 값을 입력합니다. 두 번째 파라미터는 메인 액티비티에서 서브 액티비티를 호출하는 버튼이 여러 개 있을 때 어떤 버튼에서 호출된 것인지를 구분하는 용도입니다.<br>
 
     **변경전**
-    ```java
+    ```kotlin
     binding.btnStart.setOnClickListener { startActivity(intent) }
     ```
     **변경후**
-    ```java
+    ```kotlin
     binding.btnStart.setOnClickListener { startActivityForResult(intent, 99) }
     ```
 
 1. onActivityResult() 메서드 안에 작성한 코드에 when 문을 추가해서 requestCode가 요청코드와 같은 99인지 체크합니다. if 문을 사용해도 되지만 케이스가 다양할 수 있기 때문에 when문을 사용하는게 좋습니다.
-```java
+```kotlin
 if (resultCode == RESULT_OK) {
     when (requestCode) {
         99 -> {
@@ -369,7 +369,7 @@ if (resultCode == RESULT_OK) {
 
 1. 전체 코드<br>
     **MainActivity.kt**
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import android.content.Intent
@@ -408,7 +408,7 @@ if (resultCode == RESULT_OK) {
     }
     ```
     **SubActivity.kt**
-    ```java
+    ```kotlin
     package kr.co.hanbit.activity
 
     import android.content.Intent
@@ -453,7 +453,7 @@ if (resultCode == RESULT_OK) {
 {: .table .table-striped .table-hover}
 
 이 메서드들은 다음처럼 override를 통해서 사용합니다. 편의상 01번 부터 행 번호를 붙여서 설명합니다.
-```java
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
@@ -486,7 +486,7 @@ override fun onDestroy() {
 
 그렇지 않으면 그만큼의 자원(배터리, 네트워크 트래픽 등이) 낭비되기 때문입니다.
 
-```java
+```kotlin
 override fun onPause() {
     super.onPause()
     videoView.stopPlayBack()
@@ -523,7 +523,7 @@ override fun onPause() {
 카메라 기능을 간단히 코드로 호출해서 사용하면 실제로는 카메라 액의 독자적인 프로세스가 실행되고 카메라 액티비티 또한 카메라 앱의 프로세스에 의해 처리됩니다.
 
 다음은 특정 앱의 액티비티에서 카메라를 사용할 때 인텐트를 시스템을 통해 카메라 앱에 전달하는 예제 코드입니다. 
-```java
+```kotlin
 class Activity_B: AppCompatActivity() {
     val REQ_CAMERA = 100
     // 중략...
@@ -565,7 +565,7 @@ class Activity_B: AppCompatActivity() {
 {: .table .table-striped .table-hover}
 
 액티비티 태스크를 관리하는 또 다른 방법으로는 소스 코드에서 startActivity() 메서드에 전달하는 intent의 플래그 값으로 태스크를 관리하는 방법입니다.
-```java
+```kotlin
 val intent = Intent(this, SubActivity::class.java)
 intent.addFlag(Intent.FLAG_ACTIVITY_NEW_TASK)
 ```
@@ -614,7 +614,7 @@ ContainerSpinner 프로젝트를 생성합니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-146.png){: style="box-shadow: 0 0 5px #777"}
 
 1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt] 탭을 클릭해서 소스코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.<br>
-    ```java
+    ```kotlin
     package kr.co.hanbit.containerspinner
 
     import androidx.appcompat.app.AppCompatActivity
@@ -633,17 +633,17 @@ ContainerSpinner 프로젝트를 생성합니다.
     ```
 
 1. 위 코드에 이어서 다음 행에 스피너에 입력될 가상의 데이터를 작성합니다. data변수를 만들고 listOf 를 사용해서 여러 개의 데이터를 입력합니다. 첫번째 데이터는 아직 데이터가 선택하지 않았기 때문에 기본으로 보여주는 ‘- 선택하세요 `’로 입력합니다.
-```java
+```kotlin
 var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월", "6월")
 ```
 
 1. 앞에서 만든 데이터와 스피너를 연결해줄 ArrayAdapter 클래스를 만들어 adapter 변수에 저장합니다. ArrayAdapter클래스는 adapter에서 사용할 데이터 타입을 제네릭으로 지정해야 합니다. 앞에서 문자열로 데이터를 구성했기 때문에 ``<String>``으로 지정합니다. ArrayAdapter의 파라미터는 총 3개이며 (스피너를 화면에 그리기 위한 컨텍스트, 스피너에 보여줄 목록 하나하나가 그려질 레이아웃, 어댑터에서 사용할 데이터) 순으로 입력합니다. 컨텍스트는 this를 사용하고, 레이아웃은 기본으로 제공하는 simple_list_item1을 사용합니다. 마지막 값으로 미리 만들어둔 data변수를 입력합니다.<br>
-    ```java
+    ```kotlin
     var dapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
     ```
 
 1. 다음 코드를 입력해 어댑터를 스피너 위젯에 연결합니다. 스피너의 adapter속성에 담아주는 것만으로 간단하게 연결됩니다. <br>
-    ```java
+    ```kotlin
     binding.spinner.adapter = adapter
     ```
     ![1]({{site.baseurl}}/images/this-is-android/this-is-android-147.png){: style="box-shadow: 0 0 5px #777"}
@@ -651,7 +651,7 @@ var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월",
 1. 이번에는 사용자가 스피너를 선택하면 선택한 값을 선택 결과에 보여주는 코드를 작성하겠습니다. 스피너를 선택하는 동작을 인식하기 위해서 onItemSelectedListener를 사용하는데, 이름 그대로 스피너에 있는 아이템이 선택되면 동작하는 리스너입니다.
 
 1. 이어서 ‘=object: OnItem’까지만 입력하면 나타나는 자동 완성 코드에서 OnItemSelectedListener를 선택하고 중괄호 ({})를 붙여서 코드를 작성합니다.
-    ```java
+    ```kotlin
     binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
         
     }
@@ -659,7 +659,7 @@ var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월",
 
 1. 코드 블럭 사이를 클릭한 다음 마우스 오른쪽 버튼을 클릭해서 [Generate] - [Implements Methods]를 선택합니다. 나오는 메서드 목록 2개를 모두 선택하면 코드가 자동 완서오디는데 TODO()행은 모두 삭제합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-148.png){: style="box-shadow: 0 0 5px #777"}
-    ```java
+    ```kotlin
     override fun onItemSelected(
         parent: AdapterView<*>?,
         view: View?,
@@ -675,13 +675,13 @@ var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월",
     ```
 
 1. 자동 완성된 코드 중에서 onItemSelected() 메서드만 사용할 예정입니다. 이 메서드에 파라미터가 4개 있는데 OnItemSelectedListener를 사용할 때는 대부분 세 번째 position만 사용합니다. 사용자가 스피너에서 선택을 하면 몇 번째 아이템인지를 알려주는 파라미터입니다. 혹시 파라미터 이름이 다르면 책과 동일하게 수정한 다음 진행합니다. 두 번째 메서드 안에 다음 코드를 추가합니다. 리스너에서 넘겨주는 position값으로 data의 해당 위치에 있는 문자 값을 선택 결과 텍스트뷰에 입력하는 코드입니다.
-```java
+```kotlin
 binding.result.text = data.get(position)
 ```
 
 1. 이제 스피너를 선택하면 해당 값이 선택 결과의 위치에 표시됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-149.png){: style="box-shadow: 0 0 5px #777"}<br>
-    ```java
+    ```kotlin
     package kr.co.hanbit.containerspinner
 
     import android.R
@@ -770,49 +770,49 @@ ContainerRecyclerView 프로젝트를 생성합니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-160.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 Memo 클래스를 열어보면 기본 코드가 있는데 class 코드를 약간 수정하여 파라미터 3개 가지는 데이터 클래스로 만듭니다. 마지막 날짜 파라미터의 이름을 timestamp로 만들고 Long 타입을 선언하였습니다. 날짜는 실제 개발할 때에도 타임스탬프라고 불리는 숫자형을 저장해 놓고 변환해서 많이 사용하기 때문에 여기서도 그렇게 사용하겠습니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.containerrecyclerview
 
     data class Memo(var no: Int, var title: String, var timestamp: Long)
     ```
 1. 이어서 MainActivity.kt 안에 100개의 가상 데이터를 만드는 코드를 작성해보겠습니다. MainActivity.kt를 열고 MutableList<Memo>를 반환하는 loadData() 메서드를 onCreate() 메서드 아래에 만듭니다.
-    ```java
+    ```kotlin
     fun loadData(): MutableList<Memo> {
 
     }
     ```
 1. 메서드 안에 리턴할 MutableList 컬렉션을 선언합니다.
-    ```java
+    ```kotlin
     val data: MutableList<Memo> = mutableListOf()
     ```
 
 1. 100개의 가상 데이터를 만들어야 하니 for문을 사용해서 백 번 반복합니다. for문에 사용한 no 변수는 그래도 Memo 클래스의  번호로 사용할 것입니다.
-    ```java
+    ```kotlin
     for (no in 1..100) {
         
     }
     ```
 
 1. for문 안에 타이틀과 날짜로 사용할 데이터를 가상으로 생성해서 변수에 담아둡니다. title 변수에는 ‘이것이 안드로이드다 1’, ‘이것이 안드로이드다 2’ ... 의 형태의 제목이 백 번 반복하여 저장되고, date 변수에는 안드로이드 스마트폰의 현재 시간이 숫자 값으로 저장됩니다.
-    ```java
+    ```kotlin
     var title = "이것이 안드로이드다 ${no}"
     var date = System.currenttimeMillis()
     ```
 
 1. 변수에 저장된 값과 번호로 Memo클래스를 생성하고, 위에서 선언해둔 data변수에 추가합니다.
-    ```java
+    ```kotlin
     var memo = Memo(no, title, date)
     data.add(memo)
     ```
 
 1. 마지막으로 반복문이 끝나면 100개의 Memo 클래스가 담겨 있는 data변수를 리턴해서 호출한 측에 전달합니다.
-    ```java
+    ```kotlin
     return data
     ```
 
 여기까지 입력한 MainActivity.kt의 추가 코드를 살펴보면 다음과 같습니다.
 
-```java
+```kotlin
     fun loadData(): MutableList<Memo> {
         val data: MutableList<Memo> = mutableListOf()
         for (no in 1..1000) {
@@ -836,7 +836,7 @@ ContainerRecyclerView 프로젝트를 생성합니다.
 
 리사이클러뷰어댑터는 개별 데이터에 대응하는 뷰홀더 클래스를 사용합니다. 상속하는 리사이클러뷰어댑터에 뷰홀더 클래스를 제네릭으로 지정해야 하므로 뷰홀더 클래스를 먼저 만들고 나서 어댑터 클래스를 생성하는 것이 더 편합니다.
 
-```java
+```kotlin
 class 커스텀어댑터: RecyclerView.Adapter<여기에 사용할 뷰홀더 지정> {
 
 }
@@ -844,7 +844,7 @@ class 커스텀어댑터: RecyclerView.Adapter<여기에 사용할 뷰홀더 지
 
 상속받는 Adapter 클래스에 제네릭으로 뷰홀더를 지정해두면, Implement Methods로 코드를 자동 완성할 때에 자동 완성된 메서드 중 하나가 파라미터 타입에 제네릭으로 지정해둔 뷰홀더를 사용합니다
 
-```java
+```kotlin
 class 커스텀어댑터: RecyclerView.Adapter<뷰홀더> {
     ...
     override fun onBindViewHolder(뷰홀더, 아이템 위치) {
@@ -859,14 +859,14 @@ class 커스텀어댑터: RecyclerView.Adapter<뷰홀더> {
 
 ViewHolder 클래스의 생성자에는 다음에 만들 어댑터의 아이템 레이아웃을 넘겨줘야 하므로 Holder 클래스를 생성할 때 생성자에게서 레이아웃의 바인딩을 넘겨받아야 합니다.
 
-```java
+```kotlin
 class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 ```
 
 앞서 작성한 ConstrainerRecyclerView 프로젝트에서 이어서 코드를 작성하겠습니다.
 
 1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
-    ```java
+    ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -880,7 +880,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-163.png){: style="box-shadow: 0 0 5px #777"}<br>
 
 1. 소스 코드가 생성되면 class CustomAdapter 아래에 ㅇclass Holder를 추가로 작성합니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.containerrecyclerview
 
     class CustomAdapter {
@@ -892,14 +892,14 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. Holder 클래스에 RecyclerView의 ViewHolder를 상속받습니다.
-    ```java
+    ```kotlin
     class Holder: RecyclerView.ViewHolder {
         
     }
     ```
 
 1. ViewHolder에 빨간색 밑줄이 생기는데 생성자에 1개의 값이 필수로 입력되야 하기 때문에 그렇습니다.  아이템 레이아웃은 ViewHolder 자체에서 만들지 않고 어댑터가 만들어서 넘겨주므로 코드를 다음과 같이 수정해야 합니다. 어댑터에서 넘겨주는 바인딩을 Holder 클래스의 생성자에게서 받아 ViewHolder의 생성자에게로 넘겨주는 구조입니다. ViewHolder의 생성자는 바인딩이 아닌 View를 필요로 하기 때문에 binding.root를 전달합니다. 그리고 binding은 Holder 클래스안에서 전역변수 (프로퍼티)로 사용돼야 하기 때문에 val 키워드를 앞에 붙여줍니다.
-    ```java
+    ```kotlin
     class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
         
     }
@@ -908,7 +908,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
       - 뷰홀더가 사용하는 바인딩은 어댑터에서 생성한 후에 넘겨줍니아. 이 어댑터에서 사용할 레이아웃의 이름이 item_recycler이기 때문에 안드로이드에서 생성해주는 바인딩의 이름은 ItemRecyclerBinding이 됩니다.
 
 1. Holder 내부의 코드가 실행되기 전에 어댑터 클래스 코드가 먼저 선행되어야 하므로 어댑터 클래스를 먼저 수정하겠습니다. 다음과 같이 CustomAdapter 코드는 RecyclerView의 Adapter를 상속받고 앞에서 생성한 Holder를 제네릭으로 지정합니다.
-    ```java
+    ```kotlin
     class CustomAdapter: RecyclerView.Adapter<Holder>() {
         
     }
@@ -916,7 +916,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     - ``어댑터 클래스의 기본 구성``
       - 어댑터가 정상적으로 동작하려면 미리 정의된 Holder 클래스를 제네릭으로 지정한 후 어댑터에 설계되어 있는 3개의 인터페이스를 반드시 구현해야 합니다.
 
-    ```java
+    ```kotlin
     class 어댑터: RecyclerView.Adapter<Holder> {
         onCreateViewHolder()
         getItemCount()
@@ -926,7 +926,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 
 1. class CustomAdapter... 코드 블록 ({}) 의 중간에서 ``Ctrl`` + ``I``키를 눌러 팝업창에서 3개의 인터페이스를 모두 선택해서 import하면 코드가 자동으로 추가됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-164.png){: style="box-shadow: 0 0 5px #777"}<br>
-    ```java
+    ```kotlin
     class CustomAdapter: RecyclerView.Adapter<Holder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         }
@@ -940,12 +940,12 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. 추가된 코드의 맨 윗줄에 이 어댑터에서 사용할 데이터 목록 변수를 하나 선언합니다. 목록형 컬렉션은 listOf() 계열의 메서드로 초기화할 수 있습니다. 앞에서 미리 작성해둔 loadData() 메서드에서 리턴해주는 값을 사용할 것이기 때문에 ``mutableListOf<Memo>()``를 사용합니다.
-    ```java
+    ```kotlin
     var listData = mutableListOf<Memo>()
     ```
 
 1. 리사이클러뷰에서 사용할 데이터의 총 개수를 리턴하는 getItemCount() 메서드부터 구현합니다.
-    ```java
+    ```kotlin
     override fun getItemCount(): Int {
         return listData.size
     }
@@ -955,7 +955,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 액티비티와는 다르게 어댑터에서 사용하는 바인딩인 ItemRecyclerBinding의 inflate 메서드는 3개의 파라미터가 사용됩니다.
 첫 번째 파라미터로 전달되는 인플리이터는 LayoutInflater.from으로 생성해서 입력합니다. from에는 파라미터로 context가 전달돼야 하는데, 이는 안드로이드가 넘겨주는 parent에서 꺼낼 수 있습니다. 두 번째는 parent를 그대로 사용하고, 세 번째는 항상 false를 사용하면 됩니다. 그리고 다음 줄에서 생성된 바인딩을 Holder 클래스에 담아서 반환합니다.
 안드로이드는 이런 과정을 거쳐 전달된 Holder 클래스를 메모리에 저장했다가 요청이 있을 때마다 꺼내서 사용합니다.
-    ```java
+    ```kotlin
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
@@ -967,7 +967,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
       - ``attachToRoot`` : true일 경우 attach 해야 하는 대상으로 root를 지정하고 아래에 붙입니다. false일 경우 뷰의 최상위 레이아웃의 속성을 기본으로 레이아웃이 적용됩니다.
 
 1. 생성된 뷰홀더를 화면에 보여주는 onBindViewHolder() 메서드를 구현합니다. 먼저 listData에서 현재 위치에 해당하는 메모를 하나 꺼내 memo 변수에 저장한 후 홀더에 전달합니다. 임의로 홀더에 setMemo() 라는 메서드가 있다고 가정하고 다음과 같이 작성합니다.
-    ```java
+    ```kotlin
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val memo = listData.get(position)
         holder.setMemo(memo)
@@ -975,7 +975,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. 이제 마지막으로 Holder 클래스에서 화면에 데이터를 세팅하는 setMemo() 메서드를 구현합니다.
-    ```java
+    ```kotlin
     class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
         fun setMemo(memo: Memo) {
             
@@ -984,7 +984,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. setMemo() 메서드 안의 다음 코드를 추가합니다. texTNo 웨젯에는 memo의 no값을 입력합니다.
-    ```java
+    ```kotlin
     binding.textNo.text = "${memo.no}"
     ```
 
@@ -993,7 +993,7 @@ SimpledateFormat을 import하면 선택지가 2개 나타나는데 java.text의 
 SimpleDateFormat을 생성하면서 생성자에 날짜가 보여질 형식을 ‘yyyy/MM/dd’로 정의합니다.
 
 다음은 CustomAdapter.kt의 전체 코드입니다.
-```java
+```kotlin
 package kr.co.hanbit.containerrecyclerview
 
 import android.view.LayoutInflater
@@ -1037,18 +1037,18 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 지금까지 생성한 레이아웃과 소스 코드를 MainActivity.kt에서 모두 연결합니다.
 
 1. setContentView 메서드 아래에 먼저 사용할 데이터를 생성하는 코드를 추가합니다.
-    ```java
+    ```kotlin
     val data: MutableList<Memo> = loadData()
     ```
 
 1. 어댑터를 생성하고 어댑터의 listData 변수에 위에서 생성한 데이터 목록을 저장합니다.
-    ```java
+    ```kotlin
     var adapter = CustomAdapter()
     adapter.listData =data
     ```
 
 1. recyclerView 위젯의 adapter 속성에 생성할 어댑터를 연결합니다.
-    ```java
+    ```kotlin
     binding.recyclerView.adapter = adapter
     ```
 
@@ -1056,7 +1056,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-165.png){: style="box-shadow: 0 0 5px #777"}<br>
 
 다음은 MainActivity.kt의 전체 코드입니다.
-```java
+```kotlin
 package kr.co.hanbit.containerrecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
@@ -1100,28 +1100,28 @@ class MainActivity : AppCompatActivity() {
 
 1. ``LinearLayoutManager``
   - ``세로 스크롤`` : 기본으로 세로 스크롤을 하며 일반 리스트처럼 한 줄로 목록을 생성합니다. 추가로 설정하면 가로 스크롤도 할 수 있습니다. 
-    ```java
+    ```kotlin
     LinearLayoutManager(this)
     ```
   - ``가로 스크롤`` : 컬럼 개수를 지정해서 개수만큼 그리드 형태로 목록을 생성합니다. 리니어 레이아웃 매니저의 두 번째 파라미터에 가로 스크롤 옵션을 설정합니다.
-    ```java
+    ```kotlin
     LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     ```
 
 1. ``GridLayoutManager``
   - 데이터의 사이즈에 따라 그리드의 크기가 결정됩니다. 두 번째 파라미터에 한 줄에 몇 개의 아이템을 표시할 건지 개수를 설정합니다.
-    ```java
+    ```kotlin
     GridLayoutManager(this, 3)
     ```
 
 1. ``StaggeredGridLayoutManager``<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-166.png){: style="box-shadow: 0 0 5px #777"}<br>
   - ``세로 스크롤`` : 컨텍스트를 사용하지 않으므로 this를 넘기지 않아도 됩니다. 첫 번째 파라미터에는 한 줄에 표시되는 아이템의 개수, 두 번째 파라미터에는 세로 방향을 설정합니다.
-    ```java
+    ```kotlin
     StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
     ```
   - ``가로 스크롤`` : 두 번째 파라미터에 가로 방향을 설정합니다.
-    ```java
+    ```kotlin
     StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
     ```
 
@@ -1251,7 +1251,7 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
     ```
     현재 실습을 하지 않는 코드가 많이 있기 때문에 가독성을 위해 모두 지웁니다.<br>
     ``수정 후 전체코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -1289,7 +1289,7 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 1. 이제 목록 프래그먼트의 레이아웃을 작성합니다.  fragment_list.xml 파일을 열어보면 프래그먼트의 기본 레이아웃에는 프레임 레이아웃과 그 안에 1개의 텍스트뷰 위젯이 있습니다.  그리고 텍스트뷰 위젯의 layout_width 와 layout_height 속성의 설정값이 ‘match_parent’로 설정되어 있어 텍스트뷰 영역이 화면 전체를 차지합니다.
 
 1. 화면 우측 상단의 [Code] 버튼을 클릭해서 모드를 변경합니다. [Code] 모드에서 두 번째 줄에 있는 ``<FrameLayout>`` 태그를 ``‘ConstraintLayout’``으로 변경합니다.
-    ```java
+    ```kotlin
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -1328,7 +1328,7 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-175.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 앞에서 만든 프래그먼트를 액티비티에 삽입하는 코드를 작성해야 하는데, 이번 절에서는 액티비티에서 레이아웃에 접근하는 코드가 없기 때문에 MainActivity에는 바인딩 관련 코드를 작성하지 않습니다.  MainActivity.kt파일을 열고 onCreate() 메서드 아래에 프래그먼트를 삽입하는 빈 메서드인 setFragment()를 만들고 onCreate() 안에서 미리 호출합니다. 
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import androidx.appcompat.app.AppCompatActivity
@@ -1349,22 +1349,22 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
     ```
 
 1. 액티비티에 프래그먼트를 삽입하기 위해서는 프래그먼트 매니저를 통해 삽입할 레이아웃의 id를 지정합니다. 프래그먼트를 삽입하는 과정은 하나의 트랜잭션으로 관리되기 때문에 트랜잭션 매니저를 통해 begin transaction > add fragment > commit transaction 의 순서로 처리됩니다. setFragment() 메서드 안에 다음과 같이 ListFragment를 생성합니다.
-    ```java
+    ```kotlin
     val listFragment: ListFragment = ListFragment()
     ```
 
 1. 이어서 액티비티가 가지고 있는 프래그먼트 매니저를 통해서 트랜잭션을 시작하고, 시작한 트랜잭션을 변수에 저장해둡니다.
-    ```java
+    ```kotlin
     val transaction = supportFragmentmanager.beginTrasaction()
     ```
 
 1. 트랜잭션 add() 메서드로 frameLayout을 id로 가지고 있는 레이아웃에 앞에서 생성한 listFragment를 삽입합니다.
-    ```java
+    ```kotlin
     transaction.add(R.id.frameLayout, listFragment)
     ```
 
 1. commit() 메서드로 모든 작업이 정상적으로 처리되었음을 트랜잭션에 알려주면 작업이 반영됩니다.
-    ```java
+    ```kotlin
     transaction.commit()
     ```
     - ``프래그먼트를 화면에 삽입하는 메서드``
@@ -1375,7 +1375,7 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 1. 에뮬레이터에서 실행하면 Activity안에 List가 나타납니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-176.png){: style="box-shadow: 0 0 5px #777"}<br>
   다음은 MainActivity.kt 파일에 작성된 코드의 일부입니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import androidx.appcompat.app.AppCompatActivity
@@ -1413,7 +1413,7 @@ fragment 컨테이너를 사용하면 소스 코드를 거치지 않고 레이�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-178.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt 파일을 열고 setFragment() 메서드 안의 내용을 모두 주석 처리합니다.<br>
-    ```java
+    ```kotlin
     fun setFragment() {
     /*
 
@@ -1451,26 +1451,26 @@ DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-180.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt을 열고 ListFragment의 Next 버튼을 클릭했을 때 호출할 goDetail() 메서드를 setFragment() 메서드 아래에 작성합니다. goDetail() 메서드가 호출되면 DetailFragment를 생성해서 메인 액티비티의 frameLayout에 삽입할 겁니다.<br>
-    ```java
+    ```kotlin
     fun goDetail()
     ```
 
 1. goDetail() 메서드 안에서 DetailFragment를 생성하고 detailFragment 변수에 저장합니다.<br>
-    ```java
+    ```kotlin
     fun goDetail() {
         val detailFragment = DetailFragment()
     }
     ```
 
 1. 생성된 DetailFragment를 액티비티에 삽입하기 위해 setFragment에 작성했던 코드 세 줄을 복사해서 붙여넣습니다. 그리고 listFragment만 detailFragment로 다음처럼 수정합니다.
-    ```java
+    ```kotlin
     val transaction = supportFragmentManager.beginTransaction()
     transaction.add(R.id.frameLayout, detailFragment)
     transaction.commit()
     ```
 
 1. transaction의 add()와 commit() 사이에 addToBackStack()을 추가합니다. ``이렇게 하면 스마트폰의 뒤로가기 버틍을 사용할 수 있습니다.``
-    ```java
+    ```kotlin
     transaction.addToBackStack("detail")
     ```
     - ``addToBackStack으로 프래그먼트 트랜잭션을 백스택에 담을 수 있습니다.``
@@ -1478,7 +1478,7 @@ DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next
 
 
 1. DetailFragment.kt의 Back 버튼을 클릭하면 호출되는 goBack() 메서드를 작성합니다. Back 버튼 역시 DetailFragment에 있지만 코드는 MainActivity.kt에 작성합니다. 상세 프래그먼트에서 목록으로 돌아가는 코드는 트랜잭션 없이 뒤로가기로 간단하게 처리할 수 있으므로 메서드의 이름을 goBack()으로 작성합니다. ``onBackPressed()``는 뒤로가기가 필요할 때 액티비티에서 사용할 수 있는 기본 메서드 입니다.
-    ```java
+    ```kotlin
     fun goBack() {
         onBackPressed()
     }
@@ -1493,7 +1493,7 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
 프래그먼트의 생명 주기 메서드 중에 onAttach()를 통해 코드를 전달받는 것이 가장 일반적인 방법입니다.
 
 1. MainActivity를 담아둘 멤버 변수 mainActivity를 class 바로 밑에 선언합니다.
-    ```java
+    ```kotlin
     class ListFragment: Fragment() {
         var mainActivity: MainActivity? = null
     }
@@ -1506,7 +1506,7 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
 
 
 1. onAttach() 메서드를 통해 넘어온 Context를 캐스팅해서 MainActivity에 담습니다. 프래그먼트의 onAttach() 메서드를 통해 넘어오는 Context는 부모 액티비티 전체가 담겨 있습니다. context의 타입이 MainActivity인 것을 확인하고 mainActivity 프로퍼티에 저장해둡니다.
-    ```java
+    ```kotlin
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -1515,7 +1515,7 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     ```
 
 1. 목록 플래그먼트의 레이아웃에 있는 버튼을 사용하기 위해서 onCreateView() 메서드에 만들어져 있는 코드 한 줄을 수정합니다.
-    ```java
+    ```kotlin
     /* 원본 코드 : inflater로 생성한 뷰를 바로 리턴하는 구조입니다. */
     return inflater.inflate(R.layout.fragment_list, container, false)
 
@@ -1526,7 +1526,7 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     ```
     코드의 마지막 줄이 return binding이 아니라 binding.root인 이유는 onCreateView() 메서드의 반환값이 View이기 때문에 바인딩이 가지고 있는 root뷰를 넘겨주는 것입니다.
     ``ListFragment의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.content.Context
@@ -1573,12 +1573,12 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
 
 
 1. 이제 마지막으로 DetailFragment.kt의 Back 버튼을 클릭했을 때 ListFragment.kt로 돌아가는 코드를 작성하겠습니다. DetailFragment.kt 파일을 열고 ListFragment.kt에서 한 것과 같은 순서로 코드를 추가합니다. clsss... 바로 밑 첫 줄에 메인 액티비티를 담아두는 변수 miainActivity를 선언합니다. 여기서는 앞의 코드와 조금 다르게 앞에서 공부했던 lateinit을 사용해 보겠습니다.
-    ```java
+    ```kotlin
     lateinit var mainActivity: MainActivity
     ```
 
 1. onCreateView() 아래에 onAttach() 메서드를 오버라이드하고 context를 MainActivity로 캐스팅해서 미리 선언한 mainActivity로 캐스팅해서 미리 선언한 mainActivity 변수에 담습니다. if 문으로 타입을 비교하는 대신 as 키워드로 타입 캐스팅 (형 변환) 해서 사용할 수 있습니다.
-    ```java
+    ```kotlin
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -1587,7 +1587,7 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     ```
 
 1. onCreateView()의 코드에서 인플레이트한 레이아웃을 view변수에 담고 버튼에 리스너를 등록한 후 mainActivity의 goBack() 메서드를 호출하도록 수정합니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.content.Context
@@ -1644,20 +1644,20 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 앞의 프로젝트에 이어서 작성합니다.
 
 1. MainActivity.kt 파일을 열고 setFragment() 메서드의 첫 번째 줄 val listFragment... 바로 다음 줄에 다음과 같이 번들을 하나 생성한 후 전달할 값을 담습니다. 
-    ```java
+    ```kotlin
     var bundle = Bundle()
     bundle.putString("key1", "List Fragment")
     bundle.putInt("ket2", 20210101)
     ```
 
 1. 값이 담긴 번들을 프래그먼트의 arguments에 담습니다.
-    ```java
+    ```kotlin
     listFragment arguments = bundle
     ```
     나머지 코드는 그대로 두면 됩니다. 이제 프래그먼트 매너저를 통해서 프래그먼트를 액티비티에 삽입하면 값이 전달됩니다.
 
 1. setFragment() 메서드의 전체 코드입니다.
-    ```java
+    ```kotlin
     fun setFragment() {
         val listFragment: ListFragment = ListFragment()
 
@@ -1676,7 +1676,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-185.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 프래그먼트에서 전달받은 값을 꺼낼 때에는 arguments에서 직접 꺼낼 수 있습니다. ListFragment.kt파일을 열고 onCreateView() 메서드의 마지막 줄에 있는 return binding.root 바로 윗줄에 코드를 입력합니다. arguements 에서 값을 꺼낸 후 레이아웃에 작성해둔 텍스트뷰에 입력하는 코드입니다.
-    ```java
+    ```kotlin
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -1704,14 +1704,14 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-187.png){: style="box-shadow: 0 0 5px #777"}
 
 1. ListFragment.kt를 열고 액티비티로부터 전달받을 문자열을 출력하는 setValue() 메서드를 하나 추가합니다. 메서드 안에서 textFromActivity에 전달받은 문자열을 세팅하는 코드를 다음과 같이 작성하면 되는데 binding이 아직 프로퍼티로 생성되지 않았기 때문에 빨간색으로 나타납니다. 
-    ```java
+    ```kotlin
     fun setValue(value: String) {
         binding.textFromActivity.text = value
     }
     ```
 
 1. onCreateView() 메서드의 가장 윗줄에 선언된 binding 변수를 메서드 밖으로 빼서 프로퍼티로 만들어줍니다. 그리고 onCreateView() 메서드 안에서 val 예약어를 삭제하면 클래스 안에서 모두 사용할 수 있게 바뀌면서, 앞에서 빨간색으로 보였던 binding이 정상적으로 보입니다.
-    ```java
+    ```kotlin
     lateinit var binding:FragmentListBinding
 
     var mainActivity: MainActivity? = null
@@ -1735,7 +1735,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-188.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt 파일을 열고 onCreate() 메서드 위에 바인딩을 추가하고, setContentView에는 binding.root를 입력합니다.
-    ```java
+    ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -1747,14 +1747,14 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
 
 1. onCreate() 메서드의 가장 아랫줄에 버튼이 클릭되면 listFragment를 통해서 setValue를 호출하는 코드를 작성합니다. 
-    ```java
+    ```kotlin
     binding.btnSend.setOnClickListener { 
         listFragment.setValue("전달할 값")
     }
     ```
 
 1. setFragment() 메서드 안에서 변수로 선언된 val listFragment를 메서드 밖으로 빼서 프로퍼티로 만들어줍니다.
-    ```java
+    ```kotlin
     ...
         lateinit var listFragment: ListFragment
         ...
@@ -1763,7 +1763,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
         ...
     ```
     ``MainActivity.kt의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import androidx.appcompat.app.AppCompatActivity
@@ -1855,7 +1855,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 1. 자동으로 같이 생성된 Fragment_receiver.xml 파일을 열고, 가운데 있는 텍스트뷰를 선택한 후 id에 ‘textView’를 입력하고, gravity속성에 ‘center’를 적용합니다. 그리고 text속성에 알아보기 쉽게 ‘리시버’라고 입력해둡니다.
 
 1. ReceiverFragment.kt 파일을 열고 onCreateView() 메서드만 남기고 코드를 모두 삭제합니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -1878,14 +1878,14 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
 
 1. onCreateView() 메서드 위에 lateinit으로 binding 선언을 다음과 같이 추가합니다. 다른 메서드에서도 사용하기 위해 onCreateView() 메서드 밖에 바인딩을 생성했습니다. 그리고 프래그먼트는 바인딩 생성 시에 onCreateView() 메서드 안에서만 사용할 수 있는 파라미터가 필요하므로 이렇게 앞에서 미리 lateinit으로 선언만하고 진행합니다.
-    ```java
+    ```kotlin
     lateinit var binding:FragmentReceiverBinding
 
     override fun onCreateView(...)
     ```
 
 1. onCreateView() 메서드 안에서 바인딩을 생성해서 binding 프로퍼티에 저장하고 return... 을 수정해서 binding.root를 반환합니다.  이제 binding 프로퍼티에 바인딩을 저장했기 때문에 다른 메서드에서도 가져다 쓸 수 있습니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -1911,7 +1911,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
 
 1. onCreateView() 아래에서 ``Ctrl`` + ``O`` 키를 눌러 onViewCreated 메서드를 오버라이드합니다.  자동 생선된 onViewCreated... 코드 아랫줄에 다음과 같이 setFragmentResultListener() 메서드를 추가합니다. 파라미터는 "request"를 입력해둡니다. 이제 값을 보내는 측 프래그먼트에서 "request"라는 키로 값을 보내면 이 리스너 안의 코드가 실행됩니다.
-    ```java
+    ```kotlin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -1922,7 +1922,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
 
 1. 계속해서 리스너 블록 안에 코드를 추가합니다. 리스너는 값을 수신하면 key와 bundle 2개의 파라미터를 사용할 수 있는데, 실제 값은 bundle안에 Map 형태로 담겨 있습니다. bundle.getString("키") 로 값을 꺼낼 수 있습니다. 스코프 함수 let을 사용해서 꺼낸 값이 있을 때만 화면의 textView에 값을 세팅하도록 합니다.  setFragmentResultListener에 입력되는 "request" 는 요청 전체에 대한 키이고, bundle.getString에 입력되는 "valueKey"는 요청에 담겨 있는 여러 개의 값 중에 하나의 값을 가르키는 키입니다.
-    ```java
+    ```kotlin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -1935,7 +1935,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
     이제 수신 측의 코드는 완료되었습니다.<br>
     ``ReceiverFragment.kt의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -1979,7 +1979,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 1. SenderFragment.kt 파일을 열고 ReceiverFragment.kt 파일과 마찬가지로 onCreateView 메서드만 남기고 코드를 모두 삭제합니다. onCreateView 메서드 위에 바인딩을 선언합니다. 레이아웃의 이름이 fragment_sender.xml 이기 때문에 바인딩 이름은 FragmentSenderBinding 입니다.
 
 1. 계속해서 onCreateView 안에서 바인딩을 생성하고, binding.root를 반환합니다.
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -2004,14 +2004,14 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
 
 1. onCreateView 메서드 아래에서 ``Ctrl`` + ``O``키를 눌러 onViewCreated 메서드를 오버라이드 합니다.
-    ```java
+    ```kotlin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
     ```
 
 1. super.onView... 코드 아랫줄에 다음과 같이 코드를 추가합니다. 먼저 YES 버튼이 클릭 됐을 때 값을 전송하는 코드입니다. btnYes에 클릭리스너를 달고, 리스너 안에서 "valueKey" 를 키로 "Yes"를 값으로 갖는 번들을 생성하고 bundle 변수에 저장합니다. 그리고 setFragmentResult 메서드를 "request"와 번들을 입력해서 호출하면 수신 측 프래그먼트로 전달됩니다.
-    ```java
+    ```kotlin
     binding.btnYes.setOnClickListener {
         val bundle = bundleOf("valueOf" to "Yes")
         setFragmentResult("request", bundle)
@@ -2021,7 +2021,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
       - 앞에서 Bundle() 생성자를 통해서 번들을 사용해봤습니다. bundleOf("키" to "값") 메서드를 사용하면 더 간단하게 번들을 만들 수 있습니다.
 
 1. NO 버튼이 클릭 됐을 때 값을 전송하는 코드를 작성합니다. 각각 키는 동일하고 값만 "NO"로 다릅니다.
-    ```java
+    ```kotlin
     binding.btnNo.setOnClickListener {
         val bundle = bundleOf("valueOf" to "No")
         setFragmentResult("request", bundle)
@@ -2029,7 +2029,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     ```
     이제 송신 측도 준비가 되었습니다.
     ``SenderFragment.kt의 전체코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.fragment
 
     import android.os.Bundle
@@ -2142,7 +2142,7 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 
 TextView 클래스도 View 클래스를 상속받아서 구현되어 있습니다.
 
-```java
+```kotlin
 open class TextView: View {
     constructor(context: Context): super(context, null, 0) {
 
@@ -2180,7 +2180,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 예제를 따라할 CustomView 프로젝트를 하나 새로 만든 후에 build.gradle 파일을 열고 viewBinding 설정을 추가합니다.
 
 1. MainActivity.kt 파일을 열어서 class MainActivity...밖에 다음과 같이 View를 상속받는 CustomView 클래스를 하나 만듭니다.  View는 컨텍스트를 생성자에서 입력받아야 하므로 CustomView에는 컨텍스트를 입력받는 생성자가 하나 꼭 있어야만 합니다.
-    ```java
+    ```kotlin
     class MainActivity: AppCompatActivity() {
         //...
     }
@@ -2191,7 +2191,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     ```
 
 1. customView 안에서 onDraw() 메서드를 오버라이드 합니다. onDraw() 메서드의 파라미터로 넘어오는 Canvas는 일종의 그리기 도구입니다. ``Canvas``에는 그림판과 함께 그림을 그리기 위해서 draw로 시작하는 메서드들이 제공됩니다.
-    ```java
+    ```kotlin
     class CustomView(context: Context): View(context) {
 
         override fun onDraw(canvas: Canvas?) {
@@ -2201,14 +2201,14 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     ```
 
 1. 텍스트를 출력하기 위해서는 Canvas의 drawText() 메서드를 사용하는데, drawText() 메서드는 출력할 문자열, 가로세로 좌표 그리고 글자의 색과 두께 정보를 가지고 있는 Paint가 필요합니다. super.onDraw(canvas) 아랫줄에 Paint를 하나 만들어서 paint 변수에 저장하고, Paint의 color 프로퍼티에 ‘Color.Black’을 입력합니다. 그리고 textSize 프로퍼티에는 ‘100f’를 입력합니다. 값이 타입이 Float 형이기 때문에 숫자 뒤에 f를 같이 입력해야 합니다.
-    ```java
+    ```kotlin
     val paint = Paint()
     paint.color = Color.BLACK
     paint.textSize = 100f
     ```
 
 1. 이제 onDraw() 메서드의 파라미터로 전달되는 canvas의 drawText() 메서드를 호출해서 텍스트를 그려줍니다. 첫 번째 파라미터로부터 순서대로 출력할 글자, x좌표, y좌표, 색상 정보입니다. CustomView의 전체 코드는 다음과 같습니다.
-    ```java
+    ```kotlin
     class CustomView(context: Context): View(context) {
 
         override fun onDraw(canvas: Canvas?) {
@@ -2228,7 +2228,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-194.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt 파일을 열고 바인딩을 생성한 후 binding 변수에 담아둡니다. 그리고 setCnotextView에 binding.root를 입력합니다.
-    ```java
+    ```kotlin
     class MainActivity : AppCompatActivity() {
 
         val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -2243,7 +2243,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     ```
 
 1. setContentView 아랫줄에 앞에서 만든 CustomView를 생성한 후 frameLayout에 삽입합니다. 레이아웃의 addView() 메서드를 사용하면 소스 코드에서 생성한 뷰를 레이아웃에 삽입할 수 있습니다.
-    ```java
+    ```kotlin
     val customView = CustomView(this)
     binding.frameLayout.addView(customView)
     ```
@@ -2255,12 +2255,12 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-196.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 앞의 코드에서 CustomView는 항상 ‘안녕하세요’라는 글자면 출력할 수 있습니다. CustomView의 생성자에 문자열을 입력받는 파라미터를 추가해서 내가 원하는 글자를 출력할 수 있도록 변경하겠습니다. CustomView의 생성자에 문자열 타입인 text 파라미터를 추가해보겠습니다. class CustomView(context: Context): View(context) 코드에 ‘text: String’을 다음과 같이 입력합니다. 
-    ```java
+    ```kotlin
     class CustomView(text: String, context: Context): View(context)
     ```
 
 1. text 파라미터를 onDraw() 메서드에서 사용하기 위해 text 변수를 하나 선언하고, init 블록에서 생성자를 통해 넘어온 문자열을 저장합니다. onDraw() 메서드 위에 다음 내용을 저장합니다.
-    ```java
+    ```kotlin
     val customView = CustomView("안녕 코틀린!", this)
     //..
     canvas?.drawText(text, 0f, 100f, paint)
@@ -2271,7 +2271,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
     ``MainActiity.kt의 전체 소스``
 
-    ```java
+    ```kotlin
     package kr.co.hanbit.customview
 
     import android.content.Context
@@ -2328,7 +2328,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 1. ``drawCircle()`` : 원그리기
     drawCircle 의 파라미터는 순서대로 (원의 x축 중심, 원의 y축 중심, 반지름, 페인트) 입니다.
-    ```java
+    ```kotlin
     val blue = Paint()
     blue.style = Paint.Style.FILL
     blue.color = Color.BLUE
@@ -2339,7 +2339,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 1. ``drawArc()``: 원호 그리기
     STROKKE 스타일을 사용하면 도형의 외곽선을 그릴 수 있습니다.
-    ```java
+    ```kotlin
     val red = Paint()
     red.style = Paint.Style.STROKE
     red.color = Color.RED
@@ -2350,7 +2350,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 1. ``drawRect()``: 사각형 그리기
     drawRect는 사각형을 그리기 전에 Rect 클래스에 사각형의 left, top, right, bottom 좌표를 입력해서 생성합니다.
-    ```java
+    ```kotlin
     val green = Paint()
     green.style = Paint.Style.STROKE
     green.strokeWidth = 20f
@@ -2362,7 +2362,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 1. ``drawRoundRect()``: 라운드 사각형 그리기
     drawRoundrect는 사각형의 네 귀퉁이에 라운드를 줄 수 있는 메서드인데, roundrect와는 다르게 RectF 클래스를 사용합니다. RectF 클래스는 좌푯값을 Float로 입력하기 때문에 소수점 이하 좌표를 입력해서 조금 더 정밀하게 표현할 수 있습니다. 메서드의 두 번째 (rx)와 세 번째 (ry) 파라미터가 라운드의 크기를 결정하는데 동일한 값을 입력해야만 일반적인 형태의 라운드 사각형이 그려집니다. 
-    ```java
+    ```kotlin
     var cyan = Paint()
     cyan.style = Paint.Style.FILL
     cyan.color = Color.CYAN
@@ -2407,7 +2407,7 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
 
 1. 커스텀 위젯 클래스 생성
     커스터마이징을 하기 위한 위젯 클래스를 상속받아 클래스를 생성하고 위에서 새롭게 정의한 속성을 처리하는 코드를 작성합니다.
-    ```java
+    ```kotlin
     class CustomWidget: TextView {
         constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
 
@@ -2442,7 +2442,7 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-203.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 파일의 ``<resources>`` 태그 사이에 다음과 같이 입력합니다. strings나 dimens와는 다르게 정의하는 클래스와 속성을 계층형으로 입력해야 하므로 여러 줄이 필요합니다.
-    ```java
+    ```kotlin
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
         <declare-styleable name="CustomText">
@@ -2451,7 +2451,7 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
     </resources>
     ```
     이렇게 커스텀 속성 정보를 정의하면 activity_main.xml과 같은 레이아웃 파일에서 새로운 태그로 사용할 수 있습니다.
-    ```java
+    ```kotlin
     <CustomText
         android:id="@+id/customtext"
         custom:delimeter="/"
@@ -2465,13 +2465,13 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 
     *버전 호환을 위해 기본 위젯인 TextView가 아니라 AppCompatTextView를 상속받습니다.*{: style="color: #ff0000"}
 
-    ```java
+    ```kotlin
     class CustomText: AppCompatTextView {
     }
     ```
 
 1. AppCompatTextView에 빨간색 밑줄이 생기는데 아래와 같이 생성자 3개를 추가하고 super예약어로 AppCompatTextView의 생성자에게 파라미터를 전달합니다. 위젯 클래스를 소스 코드에서 사용할 때는 Context 하나만 입력받는 첫 번째 생성자가 호출되고, 레이아웃 파일에서는 두 번째 생성자가 주로 호출됩니다. 커스텀 위젯은 레이아웃에서도 사용되지만 코드에서도 직접 사용할 수 있게 때문에 항상 3개의 생성자를 모두 작성해두는 것이 좋습니다.
-    ```java
+    ```kotlin
     class CustomText: AppCompatTextView {
 
         constructor(context: Context): super(context) {
@@ -2487,7 +2487,7 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
     ```
 
 1. 두 번째 생성자에 다음과 같은 코드를 작성합니다.
-    ```java
+    ```kotlin
     constructor(context: Context, attrs: AttributeSet): super(context, attrs) {
         val typed = context.obtainStyledAttributes(attrs, R.styleable.CustomText)
         val size = typed.indexCount
@@ -2504,7 +2504,7 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
     ```
 
 1. delimeter와 입력된 값을 조합해서 처리하는 process() 메서드를 첫 번째 class CustomText... 바로 밑에 다음과 같이 작성합니다.
-    ```java
+    ```kotlin
     fun process(delimeter: String) {
         var one = text.substring(0, 4)
         var two = text.substring(4, 6)
@@ -2514,7 +2514,7 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
     }
     ```
     ``CustomText.kt의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.customtext
 
     import android.content.Context
@@ -2636,13 +2636,13 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-212.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 클래스 파일에서 FragmentStateAdapter를 상속받도록 소스 코드를 수정합니다. 끝에 괄호를 생략하고 상속받습니다.
-    ```java
+    ```kotlin
     class FragmentAdapter: FragmentStateAdapter {
     }
     ```
 
 1. FragmentPagerAdapter 아래에 빨간색 밑줄이 생기는데 글자를 클릭한 후 ``Alt`` + ``Enter`` 키를 눌러 목록에서 [Add constructor parameters...(FragmentActivity)]를 선택해 생성자를 추가합니다.
-    ```java
+    ```kotlin
     class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     }
     ```
@@ -2653,7 +2653,7 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 1. 그 다음 선택 창에서 2개의 메서드를 모두 선택하고 [OK]버튼을 클릭하면 코드가 자동 생성됩니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-214.png){: style="box-shadow: 0 0 5px #777"}
 
-    ```java
+    ```kotlin
     class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
         override fun getItemCount(): Int {
             TODO("Not yet implemented")
@@ -2671,24 +2671,24 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 
 
 1. 리사이클러뷰어댑터에서 사용했던 것 처럼 페이저어댑터도 화면에 표시해줄 아이템의 목록이 필요합니다. class FragmentAdapter... 밑에 fragmentList 변수를 하나 만들고 초기화합니다. 메뉴 형태로 사용하는 뷰페이저의 화면 아이템은 대부분 중간에 개수가 늘거나 줄지 않고, 처음에 정해진 개수만큼 사용합니다. 그래서 mutableListOf가 아닌 listOf를 사용하는 것이 효율적입니다.
-    ```java
+    ```kotlin
     var fragmentList = listOf<Fragment>()
     ```
 
 1. 앞에서 implement 했던 2개의 메서드를 마저 구현합니다. 먼저 페이지의 개수를 결정하기 위해 getItemCount 메서드에서 프래그먼트의 개수를 리턴합니다.
-    ```java
+    ```kotlin
     override fun getItemCount(): Int {
         return fragmentList.size
     }
     ```
 1. 페이지가 요청될 때 getItem으로 요청되는 페이지의 position값이 넘어옵니다. position값을 이용해서 프래그먼트 목록에서 해당 position에 있는 프래그먼트 1개를 리턴합니다.
-    ```java
+    ```kotlin
     override fun createFragment(position: Int): Fragment {
         return fragmentList.get(position)
     }
     ```
     ``FragmentAdapter.kt의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.viewpager
 
     import androidx.fragment.app.Fragment
@@ -2712,7 +2712,7 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 ### MainActivity에서 연결하기
 
 1. mainActivity.kt 파일을 열고 onCreate() 메서드 위에 바인딩을 생성하여 binding 변수에 저장하고 setCotentView() 에 binding.root를 입력합니다.
-    ```java
+    ```kotlin
     class MainActivity : AppCompatActivity() {
 
         val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -2725,22 +2725,22 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
     ```
 
 1. setContentView 아랫줄에 프래그먼트 목록을 생성하는 코드를 추가합니다.
-    ```java
+    ```kotlin
     val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
     ```
 
 1. 어댑터를 생성하고, 앞에서 생성해둔 프래그먼트 목록을 저장합니다. 어댑터의 첫 번째 파라미터에는 항상 supportFragmentManager를 사용합니다.
-    ```java
+    ```kotlin
     val adapter = FragmentAdapter(this)
     adapter.fragmentList = fragmentList
     ```
 
 1. 레이아웃의 viewPAger를 import하고 어댑터를 적용합니다.
-    ```java
+    ```kotlin
     binding.viewPager.adapter = adapter
     ```
     ``MainActivity.kt의 전체코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.viewpager
 
     import androidx.appcompat.app.AppCompatActivity
@@ -2774,12 +2774,12 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-215.png){: style="box-shadow: 0 0 5px #777"}
 
 1. ViewPager1과는 다르게 ViewPager2에서는 TabLayoutMediator를 사용하여 TabLayout과 뷰페이저를 연결합니다. 먼저 메뉴명으로 사용할 이름들을 배열에 저장합니다. 앞에서 작성한 MainActivity.kt 파일을 열어 binding.viewPAger.... 다음 줄에 작성합니다.
-```java
+```kotlin
 val tabTitles = listOf<String>("A", "B", "C", "D")
 ```
 
 1. TabLayoutMediator 를 사용해서 TabLayout과 뷰페이저를 연결합니다. 코드 블럭으로 전달되는 tab 파라미터의 text속성에 앞에서 미리 정의해둔 메뉴명을 입력합니다. 그 다음 코드 블록의 끝에서 attach() 메서드를 호출해서 적용합니다.
-    ```java
+    ```kotlin
     TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
         tab.text = tabTitles[position]
     }.attach()
@@ -2789,7 +2789,7 @@ val tabTitles = listOf<String>("A", "B", "C", "D")
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-216.png){: style="box-shadow: 0 0 5px #777"}
 
     ``TabLayoutMediator가 추가된 MainActivity.kt의 전체코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.viewpager
 
     import androidx.appcompat.app.AppCompatActivity
@@ -2855,14 +2855,14 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     *이후부터는 리사이클러뷰를 사용하는 방법과 같습니다. 뷰페이저에 리사이클러뷰어댑터를 사용하면 기존에는 세로로 출력되는 것을 가로로 출력되도록 해준다고 생각하면 이해하기가 더 쉽습니다.*
 
 1. 먼저 RecyclerView.ViewHolder를 상속받는 Holder 클래스를 파일 아래쪽에 하나 만듭니다. Holder 클래스의 binding 파라미터로 onCreateViewHolder에서 생성할 바인딩이 전달됩니다. 바인딩 이름은 앞에서 작성한 레이아웃의 이름이 변환된 ItemViewpagerBinding입니다. ViewHolder 클래스의 생성자에는 binding.root를 전달합니다.
-    ```java
+    ```kotlin
     class Holder(val binding: ItemViewpagerBinding): RecyclerView.ViewHolder(binding.root) {
 
     }
     ```
 
 1. Holder 클래스 안에 setText() 메서드를 하나 만들고 item_viewpager 레이아웃 안에 미리 만들어둔 텍스트뷰(id: textView)에 값을 입력하는 코드를 작성합니다. setText() 메서드의 파라미터에는 가상으로 text:String 이라고 미리 정의하고 사용합니다.
-    ```java
+    ```kotlin
     class Holder(val binding: ItemViewpagerBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun setText(text: String) {
@@ -2872,7 +2872,7 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     ```
 
 1. CustomPagerAdapter에서 RecyclerView.Adapter를 상속받고 제네릭으로 앞에서 만든 Holder 클래스를 지정합니다.
-    ```java
+    ```kotlin
     class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
     }
     ```
@@ -2880,7 +2880,7 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 1. 클래스 안쪽을 클릭한 상태로 키보드의 ``Ctrl`` + ``I`` 키를 눌러 나타나는 메뉴에서 3개의 메서드를 선택하고 오버라이드 합니다. 자동 생성된 코드에서 TODO 행은 모두 삭제합니다.<br>
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-221.png){: style="box-shadow: 0 0 5px #777"}
 
-    ```java
+    ```kotlin
     class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
 
@@ -2895,19 +2895,19 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     ```
 
 1. 어댑터에서 사용할 textList변수를 선언하고 listOf 함수로 초기화합니다. MainActivity에서 어댑터를 생성한 후 textList 변수로 각각의 페이지에서 보여줄 텍스트를 전달합니다.
-    ```java
+    ```kotlin
     var textList = listOf<String>()
     ```
 
 1. getItemCount 메서드는 몇 개의 페이지가 보일 건지 결정합니다.
-    ```java
+    ```kotlin
     override fun getItemCount(): Int {
         return textList.size
     }
     ```
 
 1. onCreateViewHolder() 에서 바인딩을 생성한 후 Holder에 전달합니다.
-    ```java
+    ```kotlin
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemViewpagerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
@@ -2915,14 +2915,14 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     ```
 
 1. 마지막으로 onBindViewHolder() 에서 Holder에 만들어준 setText 메서드를 호출해서 화면에 출력합니다.
-    ```java
+    ```kotlin
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val text = textList[position]
         holder.setText(text)
     }
     ```
     ``CustomPagerAdapter.kt의 전체 코드``
-    ```java
+    ```kotlin
     package kr.co.hanbit.viewpagerview
 
     import android.view.LayoutInflater
@@ -2978,7 +2978,7 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 끝으로 MainActivity 소스 코드를 연결하겠습니다.
 
 1. MainActivity.kt 파일을 열고 바인딩을 생성해서 binding 변수에 담고 setContentView에 binding.root 를 입력합니다.
-    ```java
+    ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -2988,32 +2988,32 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     ```
 
 1. 계속해서 setContentView 아래에 소스 코드를 추가합니다. 뷰페이저에서 사용할 데이터를 가상으로 생성한 후 textList 변수에 담습니다.
-    ```java
+    ```kotlin
     val textList = listOf<String>("뷰A", "뷰B", "뷰C", "뷰D")
     ```
 
 1. 커스텀어댑터를 생성합니다.
-    ```java
+    ```kotlin
     val customAdapter = CustomPagerAdapter()
     ```
 
 1. 생성해둔 가상 데이터를 어댑터에 전달합니다.
-    ```java
+    ```kotlin
     customAdapter.textList = textList
     ```
 
 1. viewPAger에 어댑터를 연결합니다.
-    ```java
+    ```kotlin
     binding.viewPager.adapter = customAdapter
     ```
 
 1. 메뉴명으로 사용할 이름들을 배열에 저장합니다.
-    ```java
+    ```kotlin
     val tabTitles = listOf<String>("View A", "View B", "View C", "View D")
     ```
 
 1. TabLayoutMediator를 사용해서 탭 레이아웃과 뷰페이저를 연결합니다. 코드 블록으로 전달되는 tab 파라미터의 text속성에 앞에서 미리 정의해둔 메뉴명을 입력합니다. 코드블록 끝 attach() 메서드를 호출해서 적용합니다. 에뮬레이터에서 실행하고 확인합니다.
-    ```java
+    ```kotlin
     TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
         tab.text = tabTitles[position]
     }.attach()
@@ -3022,7 +3022,7 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 
     ``MainActivity.kt의 전체코드``
 
-    ```java
+    ```kotlin
     package kr.co.hanbit.viewpagerview
 
     import androidx.appcompat.app.AppCompatActivity
