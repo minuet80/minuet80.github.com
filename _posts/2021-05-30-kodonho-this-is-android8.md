@@ -131,26 +131,215 @@ Intent에 카메라 앱을 호출하기 위한 플래그인 MediaStore.ACTOIN_IM
 1. 외부 저장소 권한이 승인되었을 때 호출할 setViews() 메서드를 만듭니다. 메서드 안에 버튼 클릭 시 카메라 권한을 요청하는 코드를 작성합니다. 두 번째 파라미터인 requestCode 에는 역시 앞에서 정의한 PERM_CAMERA를 전달합니다. 카메라를 직접 호출하는 것이 아니라 권한 요청의 결과에 따라 승인되었을 경우에만 perissionGranted() 메서드에서 카메라를 요청할 것입니다.
     ```kotlin
     fun setViews() {
+        binding.btnCamera.setOnClickListener {
+            requirePermissions(arrayOf(Manifest.permission.CAMERA), PERM_CAMERA)
+        }
+    }
+    ```
+
+1. 카메라를 요청하는 openCamera() 메서드를 작성합니다. startActivityForResult의 두 번째 파라미터에는 앞에서 정의했던 REQ_CAMERA를 사용하면 됩니다.
+    ```kotlin
+    fun openCamera() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(intent, REQ_CAMERA)
     }
     ```
 
+    이제 권한 승인 요청과 카메라를 요청하는 코드는 모두 준비되었습니다.  오버라이드했던 권한 처리 메서드에서 각각의 코드를 완성해줍니다.
+
+1. permissionGranted() 메서드에 카메라 권한 승인 시 openCamera()를 호출하는 코드를 추가합니다.
+    ```kotlin
+    override fun permissionGranted(requestCode: Int) {
+        when (requestCode) {
+            PERM_STORAGE -> setViews()
+            PERM_CAMERA -> openCamera()
+        }
+    }
+    ```
+
+1. permissionDenied() 에도 카메라 권한 요청이 거부되었을 때 토스트 메시지를 보여주는 코드를 추가합니다.  카메라 권한은 승인이 거부되어도 앱을 종료하지 않습니다.
+    ```kotlin
+    override fun permissionDenied(requestCode: Int) {
+        when (requestCode) {
+            PERM_STORAGE -> {
+                Toast.makeText(baseContext, "외부 저장소 권한을 승인해야 앱을 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+            PERM_CAMERA -> {
+                Toast.makeText(baseContext, "카메라 권한을 승인해야 카메라를 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+    ```
+
+1. openCamera() 메서드를 통해서 카메라가 정상적으로 호출되고, 사진 촬영이 완료하면 onActivityResult() 메서드로 결괏값이 전달됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-253.png){: style="box-shadow: 0 0 5px #777"}
+
+    ``MainActivity.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.cameraandgallery
+
+    import android.Manifest
+    import android.content.Intent
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.provider.MediaStore
+    import android.widget.Toast
+    import kr.co.hanbit.cameraandgallery.databinding.ActivityMainBinding
+
+    @Suppress("DEPRECATION")
+    class MainActivity : BaseActivity() {
+
+        // 외부 저장소 권한 처리
+        val PERM_STORAGE = 99
+        // 카메라 권한 처리
+        val PERM_CAMERA = 100
+        // 카메라 촬영 요청
+        val REQ_CAMERA = 101
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            requirePermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), PERM_STORAGE)
+        }
+
+        override fun permissionGranted(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> setViews()
+                PERM_CAMERA -> openCamera()
+            }
+        }
+
+        override fun permissionDenied(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> {
+                    Toast.makeText(baseContext, "외부 저장소 권한을 승인해야 앱을 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+                PERM_CAMERA -> {
+                    Toast.makeText(baseContext, "카메라 권한을 승인해야 카메라를 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+        fun setViews() {
+            binding.btnCamera.setOnClickListener {
+                requirePermissions(arrayOf(Manifest.permission.CAMERA), PERM_CAMERA)
+            }
+        }
+
+        fun openCamera() {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intent, REQ_CAMERA)
+        }
+    }
+    ```
+
+1. 촬영한 사진 정보는 세 번째 파라미터인 data에 인텐트로 전달됩니다.  전달받은 data파라미터에서 사진을 꺼낸 후 이미지뷰에 세팅합니다. onActivitResult() 메서드를 override하고 다음과 같은 코드를 추가합니다.
+    ```kotlin
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK)  {
+            when (requestCode) {
+                REQ_CAMERA -> {
+                    if (data?.extras?.get("data") != null) {
+                        val bitmap = data?.extras?.get("data") as Bitmap
+                        binding.imagePreview.setImageBitmap(bitmap)
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+여기까지 작성하면 BaseActivity를 사용해서 2개의 권한을 각각의 requestCode로 처리하는 방법을 알게 됩니다.
+
+이제 앱에서 촬영한 이미지를 선택하면 이미지 프리뷰 화면에 촬영한 이미지가 나타납니다.
+
+하지만 약간 깨져 있는 것을 확인할 수 있습니다.
+
+onActivityResult의 세 번째 파라미터로 전달되는 data에는 해당 이미지의 프리뷰가 들어 있기 때문입니다.
+
+코드를 조금 수정해서 실제 이미지를 미디어스토어에 저장하고 저장된 이미지를 가져와서 화면에 보여주는 코드로 변경해보겠습니다.
+
+1. 먼저 MainActivity의 binding 프로퍼티 아랫줄에 이미지의 Uri를 가져와서 저장할 photoUri 프로퍼티를 추가합니다. Uri가 빨간색으로 보이면 ``Alt`` + ``Enter``키로 import해야 합니다.
+    ```kotlin
+    var realUri: Uri? = null
+    ```
+
+    ``URI?``
+    
+    통합 자원 식별자<sup> (Uniform Resuorce Identifier, URI) </sup>는 특정 리소스 자원을 고유하게 실벽할 수 있는 식별자를 의미합니다.
+    URI의 하위 개념으로 웹 서버의 특정 리소스의 위치를 나타내는 URL<sup> (Uniform Resource Locator) </sup>과 위치와 관계없이 유일한 URN<sup> (Uniform Resource Name) </sup>이 있습니다.
+
+    안드로이드의 Uri는 다음과 같이 한 줄의 텍스트 형태로 구성되어 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-254.png){: style="box-shadow: 0 0 5px #777"}
+
+    1. ``프로토콜``: 가장 앞의 content://는 가져올 리소스를 주고받는 방식을 정의한 것으로, 우리가 웹 브라우저의 주소창에 주소를 입력할 때 http://를 붙이는 것과 같은 방식으로 동작합니다.
+    1. ``프로토콜ID (리소스ID)``: 리소스를 제공하는 앱의 이름 또는 안드로이드에서 해당 리소스를 구분하기 위해서 사용하는 고유한 값입니다.
+    1. ``데이터 경로``: 실제 경로가 아닌 가상으로 매핑된 데이터의 주소입니다.
+    1. ``데이터ID``: 데이터 경로에는 복수 개의 데이터가 있는데, 그 하나하나를 구분하기 위한 ID입니다.
 
 
+1. 촬영한 이미지를 저장할 Uri를 미디어스토어에 생성하는 createImageUri() 메서드를 만듭니다. 다음과 같이 ContentValues 클래스를 사용해서 파일명과 파일의 타입을 입력한 후, contentResolver의 insert() 메서드를 통해 저장할 수 있습니다.
+    ```kotlin
+    fun createImageUri(filename: String, mimeType: String): Uri? {
+        var values = ContentValues()
+        values.put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+        values.put(MediaStore.Images.Media.MIME_TYPE, mimeType)
+        return contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+    }
+    ```
 
+    ``MediaStore란?``
+    안드로이드에서 외부 저장소를 관리하는 데이터베이스입니다. 안드로이드 10(Q)부터는 MediaStore를 통해서만 외부 저장소에 파일을 읽고 쓰도록 보안 정책이 변경되었습니다.
 
+1. openCamera() 메서드를 다음과 같이 수정합니다. createImageUri로 Uri를 생성하고 정상적으로 생성되었으면 위에서 선언한 realUri에 저장합니다. 그리고 startActivityForResult에 전달할 인텐트에 MediaStore.EXTRA_OUTPUT을 키로 해서 생성한 uri를 같이 전달합니다. newFileName() 메서드는 바로 이어 04에서 작성합디ㅏ.
+    ```kotlin
+    fun openCamera() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
+        createImageUri(newFileName(), "images/jpg")?.let { uri ->
+            realUri = uri
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, realUri)
+            startActivityForResult(intent, REQ_CAMERA)
+        }
+    }
+    ```
 
+1. 파일명을 만들어주는 newFileName() 메서드를 작성합니다. 파일명이 중복되지 않도록 시간 값을 활용해서 다음과 같이 만들었습니다. SimpleDateFormat은 ``Alt`` + ``Enter``키로 import 합니다. newFileName() 메서드를 사용하면 “연월일_시간.jpg”형태의 파일명을 얻을 수 있습니다.
+    ```kotlin
+    fun newFileName: String {
+        val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+        val filename = sdf.format(System.currentTimeMillis())
 
+        return "$filename.jpg"
+    }
+    ```
 
+1. 이제 Uri를 사용해서 미디어스토어에 저장된 이미지를 읽어오는 메서드를 작성합니다. 입력 파라미터로 Uri를 받아서 결괏값을 Bitmap으로 반환해주는 메서드입니다. API 버전이 27이하이면 MediaStore에 있는 getBitmap메서드를 사용하고, 27보다 크면 ImageDecoder를 사용합니다. 
+    ```kotlin
+    fun loadBitmap(photoUri: Uri): Bitmap? {
+        var image: Bitmap? = null
 
-
-
-
-
-
-
+        try {
+            image = if (Build.VERSION.SDK_INT > 27) {
+                val source: ImageDecoder.Source = ImageDecoder.createSource(this.contentResolver, photoUri)
+                ImageDecoder.decodeBitmap(source)
+            } else {
+                MediaStore.Images.Media.getBitmap(this.contentResolver, photoUri)
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return image
+    }
+    ```
 
 
 <style>
