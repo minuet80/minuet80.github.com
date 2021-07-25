@@ -314,7 +314,7 @@ onActivityResult의 세 번째 파라미터로 전달되는 data에는 해당 �
 
 1. 파일명을 만들어주는 newFileName() 메서드를 작성합니다. 파일명이 중복되지 않도록 시간 값을 활용해서 다음과 같이 만들었습니다. SimpleDateFormat은 ``Alt`` + ``Enter``키로 import 합니다. newFileName() 메서드를 사용하면 “연월일_시간.jpg”형태의 파일명을 얻을 수 있습니다.
     ```kotlin
-    fun newFileName: String {
+    fun newFileName(): String {
         val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
         val filename = sdf.format(System.currentTimeMillis())
 
@@ -341,7 +341,367 @@ onActivityResult의 세 번째 파라미터로 전달되는 data에는 해당 �
     }
     ```
 
+1. 이제 결과 처리 메서드인 onActivityResult에서 realUri에 저장된 값이 있는 것을 확인하고 있을 경우 loadBitmap 메서드를 이용해서 화면에 세팅하면 됩니다. 세팅 후에 realUri는 null 처리해줘야 다음 번에도 사용할 수 있습니다.
+    ```kotlin
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK)  {
+            when (requestCode) {
+                REQ_CAMERA -> {
+                    realUri?.let { uri ->
+                        val bitmap = loadBitmap(uri)
+                        binding.imagePreview.setImageBitmap(bitmap)
+
+                        realUri = null
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+    ``MainActivity.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.cameraandgallery
+
+    import android.Manifest
+    import android.content.ContentValues
+    import android.content.Intent
+    import android.graphics.Bitmap
+    import android.graphics.ImageDecoder
+    import android.net.Uri
+    import android.os.Build
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.provider.MediaStore
+    import android.widget.Toast
+    import kr.co.hanbit.cameraandgallery.databinding.ActivityMainBinding
+    import java.io.IOException
+    import java.text.SimpleDateFormat
+
+    @Suppress("DEPRECATION")
+    class MainActivity : BaseActivity() {
+
+        // 외부 저장소 권한 처리
+        val PERM_STORAGE = 99
+        // 카메라 권한 처리
+        val PERM_CAMERA = 100
+        // 카메라 촬영 요청
+        val REQ_CAMERA = 101
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        var realUri: Uri? = null
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            requirePermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), PERM_STORAGE)
+        }
+
+        override fun permissionGranted(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> setViews()
+                PERM_CAMERA -> openCamera()
+            }
+        }
+
+        override fun permissionDenied(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> {
+                    Toast.makeText(baseContext, "외부 저장소 권한을 승인해야 앱을 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+                PERM_CAMERA -> {
+                    Toast.makeText(baseContext, "카메라 권한을 승인해야 카메라를 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+        fun setViews() {
+            binding.btnCamera.setOnClickListener {
+                requirePermissions(arrayOf(Manifest.permission.CAMERA), PERM_CAMERA)
+            }
+        }
+
+        fun openCamera() {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+            createImageUri(newFileName(), "images/jpg")?.let { uri ->
+                realUri = uri
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, realUri)
+                startActivityForResult(intent, REQ_CAMERA)
+            }
+        }
+
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (resultCode == RESULT_OK)  {
+                when (requestCode) {
+                    REQ_CAMERA -> {
+                        realUri?.let { uri ->
+                            val bitmap = loadBitmap(uri)
+                            binding.imagePreview.setImageBitmap(bitmap)
+
+                            realUri = null
+                        }
+                    }
+                }
+            }
+        }
+
+        fun createImageUri(filename: String, mimeType: String): Uri? {
+            var values = ContentValues()
+            values.put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+            values.put(MediaStore.Images.Media.MIME_TYPE, mimeType)
+            return contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        }
+
+        fun newFileName(): String {
+            val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+            val filename = sdf.format(System.currentTimeMillis())
+
+            return "$filename.jpg"
+        }
+
+        fun loadBitmap(photoUri: Uri): Bitmap? {
+            var image: Bitmap? = null
+
+            try {
+                image = if (Build.VERSION.SDK_INT > 27) {
+                    val source: ImageDecoder.Source = ImageDecoder.createSource(this.contentResolver, photoUri)
+                    ImageDecoder.decodeBitmap(source)
+                } else {
+                    MediaStore.Images.Media.getBitmap(this.contentResolver, photoUri)
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            return image
+        }
+    }
+    ```
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-255.png){: style="box-shadow: 0 0 5px #777"}
+
+
+# 2. 갤러리에서 사진 가져오기
+
+Intent 와 startActivityForResult() 메서드로 갤러리 앱을 호출한 후 사용자가 선택한 사진의 Uri를 onActivityResult() 메서드에서 받아서 사용하는 코드를 작성해보겠습니다.
+
+1. activity_main.xml 의 [Degisn] 모드에서 버튼을 추가하고, text 속성은 ‘갤러리’, id속성은 ‘btnGallery’로 입력합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-256.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt를 열고 setViews() 메서드 안에 btnGallery.setOnClickListener를 추가하고 openGallery() 메서드를 호출합니다. openGallery() 메서드는 04에서 작성합니다.
+    ```kotlin
+    fun setViews() {
+        binding.btnCamera.setOnClickListener {
+            requirePermissions(arrayOf(Manifest.permission.CAMERA), PERM_CAMERA)
+        }
+        binding.btnGallery.setOnClickListener {
+            openGallery()
+        }
+    }
+    ```
+
+1. 클래스 상단에 있는 REQ_CAMERA 아랫줄에 REQ_STORAGE를 추가합니다.
+    ```kotlin
+    ...
+    val REQ_CAMERA = 101
+    val REQ_STORAGE = 102
+    ```
+
+1. openGallery() 메서드를 추가하고 갤러리를 호출하는 코드를 작성합니다. intent의 파라미터로 ACTION_PICK을 사용하면 INTENT.TYPE에서 설정한 종류의 데이터를 mEDIAsTORE에서 불러와 목록으로 나열한 후 선택할 수 있는 앱이 실행됩니다. 다음과 같이 설정하면 이미지만 불러옵니다.
+    ```kotlin
+    fun openGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
+        startActivityForResult(intent, REQ_STORAGE)
+    }
+    ```
+
+    *``갤러리도 외부 저장소 권한이 필요하지만 이미 앞 절에서 앱을 시작함과 동시에 승인을 받도록 처리했었습니다.``*{: style="background-color: #FFCCCC"}
+
+1. onActivityResult() 메서드에서 when 블록에 REQ_STORAGE를 처리하는 코드를 추가합니다.
+    ```kotlin
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK)  {
+            when (requestCode) {
+                REQ_CAMERA -> {
+                    realUri?.let { uri ->
+                        val bitmap = loadBitmap(uri)
+                        binding.imagePreview.setImageBitmap(bitmap)
+
+                        realUri = null
+                    }
+                }
+                REQ_STORAGE -> {
+                    // 06에서 작성합니다.   
+                }
+            }
+        }
+    }
+    ```
+
+1. 갤러리 버튼을 통해 전달된 이미지 데이터를 imagesPreview에 세팅합니다. 호출된 갤러리에서 이미지를 선택하면 data의 data속성으로 해당 이미지의 Uri가 전달됩니다. 전달된 Uri를 이미지뷰에 세팅할 수 있습니다.
+    ```kotlin
+    REQ_STORAGE -> {
+        data?.data?.let { uri ->
+            binding.imagePreview.setImageURI(uri)
+        }
+    }
+    ```
+
+    ``MainActivity.kt의 전체 코드``
+
+    ```kotlin
+    package kr.co.hanbit.cameraandgallery
+
+    import android.Manifest
+    import android.content.ContentValues
+    import android.content.Intent
+    import android.graphics.Bitmap
+    import android.graphics.ImageDecoder
+    import android.net.Uri
+    import android.os.Build
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.provider.MediaStore
+    import android.util.Log
+    import android.widget.Toast
+    import kr.co.hanbit.cameraandgallery.databinding.ActivityMainBinding
+    import java.io.IOException
+    import java.text.SimpleDateFormat
+
+    @Suppress("DEPRECATION")
+    class MainActivity : BaseActivity() {
+
+        // 외부 저장소 권한 처리
+        val PERM_STORAGE = 99
+        // 카메라 권한 처리
+        val PERM_CAMERA = 100
+        // 카메라 촬영 요청
+        val REQ_CAMERA = 101
+        // 저장소 요청
+        val REQ_STORAGE = 102
+
+        val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+        var realUri: Uri? = null
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(binding.root)
+
+            requirePermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), PERM_STORAGE)
+        }
+
+        override fun permissionGranted(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> setViews()
+                PERM_CAMERA -> openCamera()
+            }
+        }
+
+        override fun permissionDenied(requestCode: Int) {
+            when (requestCode) {
+                PERM_STORAGE -> {
+                    Toast.makeText(baseContext, "외부 저장소 권한을 승인해야 앱을 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+                PERM_CAMERA -> {
+                    Toast.makeText(baseContext, "카메라 권한을 승인해야 카메라를 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+        fun setViews() {
+            binding.btnCamera.setOnClickListener {
+                requirePermissions(arrayOf(Manifest.permission.CAMERA), PERM_CAMERA)
+            }
+            binding.btnGallery.setOnClickListener {
+                openGallery()
+            }
+        }
+
+        fun openCamera() {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+            createImageUri(newFileName(), "images/jpg")?.let { uri ->
+                realUri = uri
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, realUri)
+                startActivityForResult(intent, REQ_CAMERA)
+            }
+        }
+
+        fun createImageUri(filename: String, mimeType: String): Uri? {
+            var values = ContentValues()
+            values.put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+            values.put(MediaStore.Images.Media.MIME_TYPE, mimeType)
+
+            Log.d("camera1", "uri ${MediaStore.Images.Media.EXTERNAL_CONTENT_URI}")
+            return contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        }
+
+        fun newFileName(): String {
+            val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
+            val filename = sdf.format(System.currentTimeMillis())
+
+            Log.d("camera1", "filename : " + "$filename.jpg")
+            return "$filename.jpg"
+        }
+
+        fun loadBitmap(photoUri: Uri): Bitmap? {
+            var image: Bitmap? = null
+
+            try {
+                Log.d("camera1", "sdk_version : " + Build.VERSION.SDK_INT)
+                Log.d("camera1", "sdk_version : " + photoUri)
+
+                image = if (Build.VERSION.SDK_INT > 27) {
+                    val source: ImageDecoder.Source = ImageDecoder.createSource(this.contentResolver, photoUri)
+                    ImageDecoder.decodeBitmap(source)
+                } else {
+                    MediaStore.Images.Media.getBitmap(this.contentResolver, photoUri)
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            return image
+        }
+
+        fun openGallery() {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = MediaStore.Images.Media.CONTENT_TYPE
+            startActivityForResult(intent, REQ_STORAGE)
+        }
+
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (resultCode == RESULT_OK)  {
+                when (requestCode) {
+                    REQ_CAMERA -> {
+                        realUri?.let { uri ->
+                            val bitmap = loadBitmap(uri)
+                            binding.imagePreview.setImageBitmap(bitmap)
+
+                            realUri = null
+                        }
+                    }
+                    REQ_STORAGE -> {
+                        data?.data?.let { uri ->
+                            binding.imagePreview.setImageURI(uri)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ```
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-257.png){: style="box-shadow: 0 0 5px #777"}
+
 
 <style>
-.page-container {max-width: 1200px}‘’“”
+.page-container {max-width: 1200px}
 </style>
