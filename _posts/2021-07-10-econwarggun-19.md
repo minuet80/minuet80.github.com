@@ -240,7 +240,6 @@ TSMC 발표 기준 2020년 상반기 기준 EUV 생산 비중 60(TSMC) : 40 (나
 ![1]({{site.baseurl}}/images/econwarggun-19/econwarggun-19-5.png){: style="box-shadow: 0 0 5px #777"}
 
 ``삼성전자와 TSMC 같은 반도체 공정이라도 수율 차이가 있겠지?라고 의심해야함``{: style="background-color: #FFCCCC"}
-{: style="color: #FF0000"}
 
 삼성전자와 TSMC비교 
 - 케파<sup> (생산 능력) </sup> 수율문제
