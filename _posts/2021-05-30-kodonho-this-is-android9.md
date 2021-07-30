@@ -747,5 +747,5 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
     ```
 
 <style>
-.page-container {max-width: 1200px}582‘’“”
+.page-container {max-width: 1200px}
 </style>
