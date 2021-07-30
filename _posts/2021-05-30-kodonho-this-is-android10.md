@@ -23,7 +23,7 @@ width: large
 
 ``서비스``가 백그라운드에서 동작하는 컴포넌트로 알려져 있는데 실제로 서비스만으로는 백그라운드에서 동작하지 않습니다.
 
-그리고 *화면이 없는 액티비티라고 표현한 이유는 서비스가 메인 스레드를 사용하기 때문입니다*{: style="text-decoration: underline"}.
+그리고 *화면이 없는 액티비티라고 표현한 이유는 서비스가 메인 스레드를 사용하기 때문입니다*{: style="text-decoration: underline"}
 
 액티비티와 서비스 양쪽에 10초 동안, 1초마다 컴포넌트의 이름을 출력하는 코드를 작성합니다.
 
@@ -231,6 +231,79 @@ width: large
 ### Bound Service 만들기
 
 바운드 서비스를 만들려면 먼저 서비스와 액티비티를 연결하기 위한 ServiceConnection을 생성해야 합니다.
+
+1. MyService.kt 파일을 열고 서비스 클래스 안에 바인더 클래스를 하나 만들고 변수에 담아둡니다. 액티비티와 서비스가 연결되면 바인더의 getService() 메서드를 통해 서비스에 접근할 수 있습니다.
+    ```kotlin
+    inner class MyBinder: Binder() {
+        fun getService(): MyService {
+            return this@MyService
+        }
+    }
+    val binder = MyBinder()
+    ```
+
+1. 앞서 Started Service에서는 사용하지 않았던 onBind() 메서드를 사용할 차례입니다. TODO() 행은 삭제하고 다음과 같이 onBind() 메서드에서 binder 변수를 반환하도록 수정합니다.
+    ```kotlin
+    override fun onBind(intent: Intent): IBinder {
+        return binder
+    }
+    ```
+
+1. MainActivity.kt 파일을 열고 서비스와 연결할 수 있는 서비스 커넥션을 만듭니다. 만든 서비스 커넥션을 bindService() 메서드를 통해 시스템에 전달하면 서비스와 연결할 수 있습니다.  onServiceConnected() 는 서비스가 연결되면 호출되는 데 반해, (이름과 달리) onServiceDisconnected() 는 서비스가 정상적으로 연결 해제되었을 때는 호출되지 않습니다. 이 말은 unbindService() 로 연결을 끊어도 호출되지 않는다는 것입니다. *비정상적으로 서비스가 종료되었을 때만 onServiceConnected() 가 호출됩니다.*{: style="text-decoration: underline"} 이런 구조 때문에 서비스가 연결되면 isService 변수에 ‘true’를 입력해두고 현재 서비스가 연결되어 있는지를 확인하는 로직이 필요합니다.
+    ```kotlin
+    var myService: MyService? = null
+    var isService = false
+    val connection = object: ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            val binder = service as MyService.MyBinder
+            myService = binder.getService()
+            isService = true
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            isService = false
+        }
+    }
+    ```
+
+1. bindService 로 서비스를 호출하면서 앞에서 생성한 커넥션을 같이 넘겨줍니다. 세 번째 옵션인 Context.BIND_AUTO_CREATE를 설정하면 서비스가 생성되어 있지 않으면 생성 후 바인딩을 하고 이미 생성되어 있으면 바로 바인딩을 합니다.
+    ```kotlin
+    fun serviceBind(view: View) {
+        val intent = Intent(this, MyService::class.java)
+        bindService(intent, connection, Context.BIND_AUTO_CREATE)
+    }
+    ```
+
+1. 연결을 해제하기 위해서는 unbindService에 커넥션을 담아 실행하면 되는데 서비스가 실행되지 않고 있을 때 unbindService를 실행하면 오류가 발생합니다. 그렇기 때문에 isService가 true인지를 먼저 체크하고 바인드를 해제한 후에 isService를 false로 변경해야 합니다.
+    ```kotlin
+    fun serviceUnbind(view: View) {
+        if (isService) {
+            unbindService(connection)
+            isService = false
+        }
+    }
+    ```
+
+1. activity_main.xml 파일을 열고 서비스 BIND 와 서비스 UNBIND 버튼을 다음 그림처럼 배치합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-270.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 서비스 BIND 버튼의 onClick 속성에는 ‘serviceBind’를 연결하고, 서비스 UNBIND 버튼에는 ‘serviceUnbind’를 연결합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-271.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 앱을 실행하고 버큰을 클릭해서 테스트합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-272.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 서비스의 메서드 호출하기
+
+바운드 서비스는 Started Service와는 다르게 액티비티에서 서비스의 메서드를 직접 호출해서 사용할 수 있습니다.
+
+1. MyService.kt 를 열고 문자열 하나를 반환하는 serviceMessage() 메서드를 추가합니다.
+    ```kotlin
+    fun serviceMessage(): String {
+        return "Hello Activity! I am Service!"
+    }
+    ```
 
 
 
