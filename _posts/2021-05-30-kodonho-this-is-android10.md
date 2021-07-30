@@ -31,6 +31,18 @@ width: large
 
 그리고 액티비티에서 startService를 실행함과 동시에 반복문으로 ‘Activity’를 출력하는 코드를 실행하면, 어느 한쪽의 코드가 끝나야만 다른 쪽 코드가 실행됩니다.
 
+보통 동일한 코드를 백그라운드 스레드로 작성하면 2개가 뒤섞여서 출력됩니다.
+
+| 서비스로 동작할 때 로그캣 | 백그라운드 스레드로 동작할 때 로그캣 |
+| :--- | :--- |
+| Activity | Activity |
+| Activity | Service |
+| Activity | Service |
+| ..10번 완료후 | Activity |
+| Service | Service |
+| Service | ... |
+| ... |  |
+{: .table .table-striped .table-hover}
 
 
 
