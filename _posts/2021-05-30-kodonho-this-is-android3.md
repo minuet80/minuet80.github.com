@@ -2,7 +2,7 @@
 layout: post
 title:  "[IT] - [BOOK] 3강 - 이것이 안드로이드다 with 코틀린 "
 description: 위젯과 리소스 다루기
-date:   2021-05-30 10:22:30 +0900
+date:   2021-06-01 10:22:30 +0900
 categories: jekyll update
 img: this-is-android/this-is-android-1.png
 categories: [one, two]
