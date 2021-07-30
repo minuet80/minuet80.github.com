@@ -920,8 +920,454 @@ val proj = arrayOf(
 
 이제 화면을 만들어 보겠습니다. 
 
-1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다.  그 다음 
+1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다.  그 다음 팔레트의 커먼 카테고리에 있는 리사이클러뷰를 드래그해서 화면 전체에 배치합니다. id속성은 ‘recyclerView’로 하고 컨스트레인트는 상하좌우를 모두 연결합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-280.png){: style="box-shadow: 0 0 5px #777"}
 
+1. 리사이클러뷰에 사용할 item_recycler.xml 파일을 [app] - [res] - [layout] 디렉토리에 생성합니다. 입력은 다음 그림과 같이 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-281.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 최상위 레이아웃인 컨스트레인트 레이아웃의 layout_height 속성을 ‘100dp’로 설정합니다. 1개의 음원 파일 정보가 표시될 크기입니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-282.png){: style="box-shadow: 0 0 5px #777"}
+    - 이미지의 id는 ‘imageAlbum’
+    - Artist의 id는 ‘textArtist’
+    - Title의 id는 ‘textTitle’
+    - Duration의 id는 ‘textDuration’
+
+### 어댑터 만들기
+
+리사이클러뷰에 사용할 어댑터를 생성하고 코드를 작성하겠습니다.
+
+1. [app] - [java] 디렉토리 밑의 패키지 아래에 MusicRecyclerAdapter 클래스를 생성합니다.
+
+1. Holder클래스를 어댑터 클래스 아래에 작성합니다. Holder 클래스는 항상 바인딩 1개를 파라미터로 가지고 상속받는 ViewHolder에 binding.root를 넘겨주는 구조입니다.
+    ```kotlin
+    package kr.co.hanbit.music
+
+    import androidx.recyclerview.widget.RecyclerView
+    import kr.co.hanbit.music.databinding.ItemRecyclerBinding
+
+    class MusicRecyclerAdapter {
+    }
+
+    class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        // 09에서 구현합니다.
+    }
+    ```
+
+1. MusicRecyclerAdapter에 Adapter클래스를 상속받습니다. 그리고 제네릭으로 위에서 만들어둔 Holder를 지정합니다.
+    ```kotlin
+    class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
+        // 04를 여기에 작성합니다.
+    }
+    ```
+
+1. 어댑터 필수 메서드 3개를 자동 생성합니다. 클래스 안쪽을 클릭한 상태에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 3개 모두 선택합니다. 자동 생성된 코드에서 TODO()행은 모두 삭제합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-283.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
+        // 05는 여기에 작성합니다.
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+            // 07은 여기에 작성합니다.
+        }
+
+       override fun getItemCount(): Int {
+            // 06은 여기에 작성합니다.
+        }
+
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+            // 08은 여기에 작성합니다.
+        }
+
+ 
+    }
+    ```
+
+1. MusicRecyclerAdapter 클래스 가장 윗줄에 음악 목록을 저장해둘 변수 1개 만듭니다. 제네릭으로 Music을 사용하는 컬렉션입니다.
+    ```kotlin
+    var musicList = mutableListOf<Music>()
+    ```
+
+1. 목록의 개수를 알려주는 getItemCount()를 구현합니다.
+    ```kotlin
+    return musicList.size
+    ```
+
+1. 화면에 보이는 아이템 레이아웃의 바인딩을 생성하는 onCreateViewHolder()를 구현합니다.
+    ```kotlin
+    val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    return Holder(binding)
+    ```
+
+1. 아이템 레이아웃에 데이터를 출력하는 onBindViewHolder()를 구현합니다. setMusic메서드는 아직 만들지 않았기 때문에 빨간색으로 나타납니다.
+    ```kotlin
+    val music = musicList.get(position)
+    holder.setMusic(music)
+    ```
+
+1. Holder 클래스 안에 setMusic() 메서드를 구현합니다. setMusic() 메서드의 파라미터로 넘어온 music은 메서드가 실행되는 순간만 사용할 수 있기 때문에 클릭 시 음원이 플레이하는 것을 대비해서 musicUri변수를 하나 만들고 현재 Music 클래스가 가지고 있는 Uri를 저장해두는 것이 좋습니다. 먼저 앨범 이미지가 보일 이미지뷰에 setImageURI를 사용해서 이미지를 세팅하고, 각각의 텍스트뷰, 즉 Artist, Title, Duration의 text 속성에도 값을 입력합니다. 음악 재생 시간은 SimpleDataFormat을 사용해서 ‘분:초’ 형태로 변환해서 사용하면 됩니다.
+    ```kotlin
+    var musicUri: Uri? = null
+
+    fun setMusic(music: Music) {
+        // run 함수를 사용하면 매번 binding.을 입력하지 않아도 됩니다.
+        binding.run {
+            imageAlbum.setImageURI(music.getAlbumUri())
+            textArtist.text = music.artist
+            textTitle.text = music.title
+
+            val duration = SimpleDateFormat("mm:ss").format(music.duration)
+            textDuration.text = duration
+        }
+        this.musicUri = music.getMusicUri()
+    }
+    ```
+
+
+지금 까지 입력한 MusicRecyclerAdapter.kt의 전체 코드는 다음과 같습니다.
+
+```kotlin
+package kr.co.hanbit.music
+
+import android.net.Uri
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import kr.co.hanbit.music.databinding.ItemRecyclerBinding
+import java.text.SimpleDateFormat
+
+class MusicRecyclerAdapter : RecyclerView.Adapter<Holder>() {
+
+    var musicList = mutableListOf<Music>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding =
+            ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun getItemCount(): Int {
+        return musicList.size
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val music = musicList.get(position)
+        holder.setMusic(music)
+    }
+
+
+}
+
+class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+    var musicUri: Uri? = null
+
+    fun setMusic(music: Music) {
+        // run 함수를 사용하면 매번 binding.을 입력하지 않아도 됩니다.
+        binding.run {
+            imageAlbum.setImageURI(music.getAlbumUri())
+            textArtist.text = music.artist
+            textTitle.text = music.title
+
+            val duration = SimpleDateFormat("mm:ss").format(music.duration)
+            textDuration.text = duration
+        }
+        this.musicUri = music.getMusicUri()
+    }
+}
+```
+
+### MainActivity에서 음원 목록 보여주기
+
+MainActivity.kt에 음원 정보를 읽어오고 리사이클러뷰에 음원 목록을 보여주는 코드를 작성하겠습니다.
+
+1. MainActivity.kt를 열고 음원을 읽어오는 getMusicList() 메서드를 하나 만듭니다.
+    ```kotlin
+    fun getMusicList(): List<Music> {
+        // 02~07을 여기에 작성합니다.
+    }
+    ```
+
+1. 메서드 안에 음원을 읽어오는 코드를 하나씩 작성니다. 먼저 음원 정보의 주소를 listUrl 변수에 저장합니다.
+    ```kotlin
+    val listUrl = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+    ```
+
+1. 앞의 변수 선언에 이어서 음원 정보 테이블에서 읽어올 컬럼명을 배열로 정의합니다. MediaStore에 상수로 이미 정의되어 있습니다.
+    ```kotlin
+    val proj = arrayOf(
+        MediaStore.Audio.Media._ID,
+        MediaStore.Audio.Media.TITLE,
+        MediaStore.Audio.Media.ARTIST,
+        MediaStore.Audio.Media.ALBUM_ID,
+        MediaStore.Audio.Media.DURATION
+    )
+    ```
+
+1. 콘텐트 리졸버의 query() 메서드에 앞에서 설정한 주소와 컬럼명을 담아서 호출하면 실행결과를 커서로 반환해줍니다.
+    ```kotlin
+    var cursor = contentResolver.query(listUrl, proj, null, null, null)
+    ```
+
+1. 커서로 전달받은 데이터를 꺼내서 저장할 목록 변수를 하나 만듭니다.
+    ```kotlin
+    val musicList = mutableListOf<Music>()
+    ```
+
+1. 반복문으로 커서를 이동하면서 데이터를 한 줄씩 읽습니다. 읽은 데이터를 Music 클래스에 옮긴 후 앞에서 만들어둔 musicList에 하나씩 담습니다. 커서에서 데이터를 꺼낼 때 사용하는 getString()은 컬럼 타입이 문자일 때, getLong() 은 컬럼 타입이 숫자일 때 사용할 수 있습니다. *getString()과 getLong() 에 입력되는 숫자는 커서에 있는 컬럼 데이터의 순서인데 앞에서 proj 변수에 저장해두었던 컬럼의 순서와 같습니다.*{: style="text-decoration: underline"}
+    ```kotlin
+    while (cursor?.moveToNext() == true) {
+        val id = cursor.getString(0)
+        val title = cursor.getString(1)
+        val artist = cursor.getString(2)
+        val albumId = cursor.getString(3)
+        val duration = cursor.getLong(4)
+
+        val music = Music(id, title, artist, albumId, duration)
+        musicList.add(music)
+    }
+    ```
+
+1. 데이터가 다 담긴 musicList를 호출한 측에 반환합니다.
+    ```kotlin
+    return musicList
+    ```
+
+1. 이제 startProcess() 메서드 안에서 지금까지 생성한어댑터와 화면 그리고 데이터를 가져오는 메서드를 연결하는 코드를 작성하겠습니다. 먼저 adapter를 생성하고 저으이해둔 musicList에 음원 데이터를 adapter에 넘겨줍니다.
+    ```kotlin
+    val adapter = MusicRecyclerAdapter()
+    adapter.musicList.addAll(getMusicList())
+    ```
+
+1. 이어서 데이터가 담긴 adapter를 리사이클러뷰에 연결하고 레이아웃 매니저를 설정합니다.
+    ```kotlin
+    binding.recyclerView.adapter = adapter
+    binding.recyclerView.layoutManager = LinearLayoutManager(this)
+    ```
+
+1. 애뮬레이터에서 실행하고 테스트해 봅니다. 애뮬레이터에는 음원 파일이 없기 때문에 목록에 아무것도 나오지 않습니다. 이메일로 MP3파일을 전송한 후에 에뮬레이터에서 다운로드해서 사용할 수 있고, 아니면 스마트폰에서 실행해서 확인해야 합니다. 그림과 같이 이미지와 제목이 표시됩니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-284.png){: style="box-shadow: 0 0 5px #777"}
+
+MainActivity.kt의 전체 코드
+
+```kotlin
+package kr.co.hanbit.music
+
+import android.Manifest
+import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.hanbit.music.databinding.ActivityMainBinding
+
+class MainActivity : BaseActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        requirePermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 999)
+    }
+
+    override fun permissionGranted(requestCode: Int) {
+        startProcess()
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+        Toast.makeText(this, "외부 저장소 권한 승인이 필요합니다. 앱을 종료합니다.", Toast.LENGTH_LONG).show()
+        finish()
+    }
+
+    fun startProcess() {
+        val adapter = MusicRecyclerAdapter()
+        adapter.musicList.addAll(getMusicList())
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
+    fun getMusicList(): List<Music> {
+        val listUrl = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val proj = arrayOf(
+            MediaStore.Audio.Media._ID,
+            MediaStore.Audio.Media.TITLE,
+            MediaStore.Audio.Media.ARTIST,
+            MediaStore.Audio.Media.ALBUM_ID,
+            MediaStore.Audio.Media.DURATION
+        )
+        var cursor = contentResolver.query(listUrl, proj, null, null, null)
+        val musicList = mutableListOf<Music>()
+        while (cursor?.moveToNext() == true) {
+            val id = cursor.getString(0)
+            val title = cursor.getString(1)
+            val artist = cursor.getString(2)
+            val albumId = cursor.getString(3)
+            val duration = cursor.getLong(4)
+
+            val music = Music(id, title, artist, albumId, duration)
+            musicList.add(music)
+        }
+        return musicList
+    }
+}
+```
+
+### 목록을 클릭해서 음원 실행하기
+
+마지막으로 목록을 클릭하면 음원을 실행하는 코드를 작성해보겠습니다.
+
+클릭 이벤트를 어댑터의 홀더에서 받아야 하기 때문에 모든 코드를 MusicRecyclerAdapter.kt에서 작성하겠습니다.
+
+1. 음원을 실행하기 위해서는 MediaPlayer 클래스를 사용해야 하는데 Holder 클래스 안에 생성하면 Holder 개수만큼 생성되기 때문에 스마트폰의 자원이 낭비됩니다. MediaPlayer를 어댑터에 생성하고 사용하기 위해서 먼저 Holder 클래스 전체를 어댑터 클래스 블록 안으로 이동합니다.
+
+    ``Holder클래스를 MusicRecyclerAdapter 내부로 옮겨 inner 클래스로 만듭니다.``
+    ``class MusicRecyclerAdapter : RecyclerView.Adapter<Holder>`` 를 ``class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>``로 수정합니다.
+
+    ```kotlin
+    package kr.co.hanbit.music
+
+    import android.net.Uri
+    import android.view.LayoutInflater
+    import android.view.ViewGroup
+    import androidx.recyclerview.widget.RecyclerView
+    import kr.co.hanbit.music.databinding.ItemRecyclerBinding
+    import java.text.SimpleDateFormat
+
+    class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>() {
+
+        var musicList = mutableListOf<Music>()
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+            val binding =
+                ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return Holder(binding)
+        }
+
+        override fun getItemCount(): Int {
+            return musicList.size
+        }
+
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+            val music = musicList.get(position)
+            holder.setMusic(music)
+        }
+
+        inner class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+            var musicUri: Uri? = null
+
+            fun setMusic(music: Music) {
+                // run 함수를 사용하면 매번 binding.을 입력하지 않아도 됩니다.
+                binding.run {
+                    imageAlbum.setImageURI(music.getAlbumUri())
+                    textArtist.text = music.artist
+                    textTitle.text = music.title
+
+                    val duration = SimpleDateFormat("mm:ss").format(music.duration)
+                    textDuration.text = duration
+                }
+                this.musicUri = music.getMusicUri()
+            }
+        }
+
+    }
+    ```
+
+1. 앞 단계에서 Holder를 클릭한 후 ``Alt`` + ``Enter`` 키를 눌러 import했다면 다음처럼 제네릭에 선언된 Holder 클래스 모양이 바뀌었을 겁니다. 이는 Holder 클래스 이동으로 인한 수정이었습니다. 다음처럼 MediaPlayer를 담아두는 mediaPlayer 변수를 선언합니다.
+    ```kotlin
+    class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>() {
+
+        var musicList = mutableListOf<Music>()
+        var mediaPlayer: MediaPlayer? = null
+    ```
+
+1. 이제 Holder 클래스 안의 musicUri 선언 부분 아래에 init 블록을 하나 만들고 생성자로 넘어온 itemView에 클릭리스너를 연결해줍니다.
+    ```kotlin
+    init {
+        binding.root.setOnClickListener {
+            // 04는 여기에 작성합니다.
+        }
+    }
+    ``` 
+
+1. 클릭리스너 블록 안에서 MediaPlayer에 사용할 음원의 Uri를 설정하고 시작 메서드를호출합니다. 이제 목록이 클릭되면 음원이 플레이됩니다.
+    ```kotlin
+    mediaPlayer = MediaPlayer.create(binding.root.context, musicUri)
+    mediaPlayer?.start()
+    ```
+
+1. 그럴듯해 보이지만, 실은 이대로 실행하면 목록의 아이템을 클릭할 때마다 음악이 중복해서 실행되는 문제점이 있습니다. 이를 해결하기 위해서 음원 Uri를 설정하기 전에 현재 mediaPlayer에 설정된 값이 있으면 해제한 후 실행하도록 04의 코드 위에 다음의 코드를 추가합니다.
+    ```kotlin
+    if (mediaPlayer != null) {
+        mediaPlayer?.release()
+        mediaPlayer = null
+    }
+    ```
+
+1. 앱을 실행하고 테스트합니다.
+
+
+``MusicRecyclerAdapter.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.music
+
+import android.media.MediaPlayer
+import android.net.Uri
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import kr.co.hanbit.music.databinding.ItemRecyclerBinding
+import java.text.SimpleDateFormat
+
+class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>() {
+
+    var musicList = mutableListOf<Music>()
+    var mediaPlayer: MediaPlayer? = null
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding =
+            ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun getItemCount(): Int {
+        return musicList.size
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val music = musicList.get(position)
+        holder.setMusic(music)
+    }
+
+    inner class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+        var musicUri: Uri? = null
+
+        init {
+            binding.root.setOnClickListener {
+                if (mediaPlayer != null) {
+                    mediaPlayer?.release()
+                    mediaPlayer = null
+                }
+                mediaPlayer = MediaPlayer.create(binding.root.context, musicUri)
+                mediaPlayer?.start()
+            }
+        }
+
+        fun setMusic(music: Music) {
+            // run 함수를 사용하면 매번 binding.을 입력하지 않아도 됩니다.
+            binding.run {
+                imageAlbum.setImageURI(music.getAlbumUri())
+                textArtist.text = music.artist
+                textTitle.text = music.title
+
+                val duration = SimpleDateFormat("mm:ss").format(music.duration)
+                textDuration.text = duration
+            }
+            this.musicUri = music.getMusicUri()
+        }
+    }
+}
+```
 
 
 <style>
