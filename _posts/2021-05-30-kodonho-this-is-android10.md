@@ -687,8 +687,243 @@ ForegroundService 프로젝트를 생성하고 build.gradle 파일에 viewBindin
 
 # 2. 콘텐트 리졸버
 
+콘텐트 리졸버는 다른 앱에서 콘텐트 프로바이더를 통해 제공하는 데이터를 사용하기 위한 도구입니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-277.png){: style="box-shadow: 0 0 5px #777"}
+
+만약 내가 만든 앱의 데이터를 다른 앱에서도 사용할 수 있게 제공하려면 콘텐트 프로바이더를 구현해야 합니다.
+
+하지만 보통 앱을 개발하면서 콘텐트 프로바이더를 사용하는 일은 거의 없습니다.
+
+대부분 다른 앱 또는 안드로이드 OS에 이미 구현되어 있는 콘텐트 프로바이더로부터 데이터를 제공받아 사용합니다.
+
+실제 안드로이드에 있는 연락처, 갤러리, 음악 파일과 같은 기본 데이터를 이용하는 용도로 가장 많이 사용하는데 이렇게 미리 만들어져 있는 콘텐트 프로바이더로부터 데이터를 가져오는 도구가 콘텐트 리졸버<sup> (Content Resolver) </sup>
+
+## 2.1 콘텐츠  리졸버 사용하기
+
+콘텐트 리졸버로 사진, 음악 파일 등을 읽어오려면 미디어 정보가 저장된 구조를 이해해야 합니다.
+
+안드로이드는 미디어 정보를 저장하는 저장소 용도로 MediaStore를 사용합니다.
+
+MediaStore안에 각각의 미디어가 종류별로 DB의 테이블처럼 있고, 각 테이블당 주소가 하나씩 제공됩니다. (물론 실제 구조는 그렇지 않지만 이해를 돕기 위한 설명입니다.)
+
+미디어의 종류마다 1개의 주소를 가진 콘텐트 프로바이더가 구현되어 있다고 생각하면 됩니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-278.png){: style="box-shadow: 0 0 5px #777"}
+
+그리고 미디어를 읽어오기 위해서 콘텐트 리졸버를 사용합니다.
+
+콘텐트 리졸버로 미디어 정보를 읽어오는 과정은 다음과 같습니다.
+
+1. 데이터 주소를 정의합니다. MediaStore는 데이블 주소들을 상수로 제공하며 데이터베이스에서 테이블명과 같은 역활을 합니다. 데이터를 가져올 주소를 변수에 미리 저장합니다.
+```kotlin
+val listUrl = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+```
+
+1. 가져올 컬럼명을 정의합니다. 미디어 정보의 상세 데이터 중 원하는 데이터만 선택해서 읽어올 수 있습니다. 테이블 주소와 마찬가지로 컬럼명도 상수로 제공됩니다. 가졍ㄹ 컬럼명을 배열에 저장해서 사용합니다.
+```kotlin
+val proj = arrayOf(
+    MediaStore.Audio.Media._ID,
+    MediaStore.Audio.Media.TITLE
+)
+```
+
+1. 데이터 클래스를 정의합니다. 앞에서 정의한 컬럼명에 맞춰서 클래스를 만들면 되고, 클래스를 미리 만들어두면 일거온 미디어 정보를 다루기가 쉬워집니다. 꼭 데이터 클래스를 사용해야 하는 것은 아닙니다.
+    ```kotlin
+    data class Music(val id: String, val title: String)
+    ```
+
+1. 쿼리를 실행합니다. 콘텐트 리졸버가 제공하는 query() 메서드에 앞에서 정의한 주소와 컬럼명을 담아서 호출하면 쿼리를 실행한 결과를 커서라는 형태로 반환합니다. 세 번째, 다섯 번째 파라미터는 쿼리에 조건을 설정하는 옵션용입니다. ‘null’을 입력하면 전체 데이터를 읽어옵니다.
+    ```kotlin
+    val cursor = contentResolver.query(listUrl, proj, null, null, null)
+    ```
+
+    ``query()의 파라미터 5개``
+
+    | 파라미터 | 설명 |
+    | :--- | :--- |
+    | uri: Uri | 테이블의 주소 Uri |
+    | projection: String[] | 테이블 컬럼명 배열 |
+    | selection: String | 데이터 검색조건, 어떤 컬럼을 검색할 것인지 컬럼명 지정 (name = ?, title = ? 의 형태로 물음표와 함께 검색 컬럼을 지정합니다.)
+    | selectionArgs: String[] | 조건의 값, 세번째 컬럼명에 입력할 값 (selection에서 지정한 물음표(?)를 앞에서부터 순서대로 대체하는데 물음표가 2개면 2개의 배열이 필요합니다.) |
+    | sortOrder: String | 정렬 순서, 정렬할 컬럼이 오름차순인지 내림차순인지를 설정 (ORDER BY title ASC) |
+    {: .table .table-striped .table-hover}
+
+1. 전달받은 커서 객체를 반복문으로 반복하여 레코드 (컬럼으로 구성된 데이터 한 줄)를 한 줄씩 읽어서 데이터 클래스에 저장합니다. getColumnIndex() 메서드는 접근할 컬럼이 현재 테이블의 몇 번째 컬럼인지 확인한 다음 인덱스를 반환합니다.
+    ```kotlin
+    val musicList = mutableListOf<Music>()
+    while (cursor.moveToNext()) {
+        var index = cursor.getColumnIndex(proj[0])
+        val id = cursor.getString(index)
+        
+        index = cursor.getColumnIndex(proj[1])
+        val title = cursor.getString(index)
+
+        val music = Music(id, title)
+        musicList.add(music)
+    }
+    ```
+
+## 2.2 음원 목록 앱 만들기
+
+앞에서 사용해본 콘텐트 리졸버 사용법을 응용해서 MediaStore에서 실제 음원 목록을 가져와 화면에 출력하는 방법을 예제를 통해 알아보겠습니다.
+
+새로운 프로젝트 ContentResolver를 생성하고 build.gradle 파일에 viewBinding 설정을 추가합니다.
+
+
+### 매니페스트에 명세하고 권한 요청하기
+
+1. 저장소의 음원에 접근하기 위해 AndroidManifest.xml 파일에 권한을 선언합니다. MediaStore는 안드로이드의 외부 저장소에 있기 때문에 외부 저장소를 읽는 권한이 필요합니다.
+    ```xml
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    ```
+
+1. 6장에서 만들었던 Base 프로젝트를 열어서 BaseActivity를 복사해서 붙여넣기 한 다음 MainActivity.kt를 열고 BaseActivity를 상속하도록 class 코드를 수정합니다. 
+    ```kotlin
+    class MainActivity: BaseActivity {
+        
+    }
+    ```
+
+1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 누르면 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-279.png){: style="box-shadow: 0 0 5px #777"}
+    
+    생성된 코드에서 TODO() 행만 삭제하고 일단 빈 채로 두겠습니다.
+
+    ```kotlin
+    override fun permissionGranted(requestCode: Int) {
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+    }
+    ```
+
+1. 바인딩을 생성해서 binding 프로퍼티에 저장하고, setContentView() 에 binding.root를 전달합니다. 
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+1. setContentView 아랫줄에 외부 저장소 권한을 요청하는 코드를 작성합니다. 권한이 하나일 때는 requestCode에 임의의 숫자 값을 전달하면 됩니다.
+    ```kotlin
+    requirePermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 999)
+    ```
+
+1. 아무것도 없는 startProcess() 메서드를 만들고 permissionGranted() 메서드 안에서 호출합니다. 음원 목록을 불러오는 코드를 여기서 작성할 것입니다. 그리고 permissionDenied() 에는 권한 승인이 필요하다는 메시지를 띄운 후에 앱을 종료하는 코드를 작성합니다.
+    ```kotlin
+    override fun permissionGranted(requestCode: Int) {
+        // 이어서 구현할 예정입니다.
+        startProcess()
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+        Toast.makeText(this, "외부 저장소 권한 승인이 필요합니다. 앱을 종료합니다.", Toast.LENGTH_LONG).show()
+        finish()
+    }
+
+    fun startProcess() {
+        
+    }
+    ```
+
+### 음원 클래스 정의하기
+
+음원과 관련된 클래스를 정의하기 전에 프로퍼티 (속성)를 먼저 정의하겟습니다.
+
+| 프로퍼티 | 설명 |
+| :--- | :--- |
+| id | MediaStore가 음원을 구분하는 유니크 ID |
+| title | 음원의 제목 |
+| artist | 음원의 아티스트 |
+| albumId | 앨범을 구분하는 ID |
+| duration | 음원이 길이 |
+{: .table .table-striped .table-hover}
+
+
+1. [app] - [java] 디렉토리 밑의 패키지에 Music 클래스를 생성하고 음원 데이터에 대한 클래스를 다음과 같이 정의합니다
+    ```kotlin
+    package kr.co.hanbit.music
+
+    class Music(id: String, title: String?, artist: String?, albumId: String?, duration: Long?) {
+
+        var id: String = ""
+        var title: String?
+        var artist: String?
+        var albumId: String?
+        var duration: Long?
+
+        init {
+            this.id = id
+            this.title = title
+            this.artist = artist
+            this.albumId = albumId
+            this.duration = duration
+        }
+
+        // 02를 여기에 작성합니다.
+    }
+    ```
+
+1. 음원의 URI를 생성하는 getMusicUri() 메서드를 정의합니다. 음원 URI는 기본 MediaStore의 주소와 음원 ID를 조합해서 만들기 때문에 메서드로 만들어 놓고 사용하는 것이 편리합니다.
+    ```kotlin
+    fun getMusicUri(): Uri {
+        return Uri.withAppendedPath(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id)
+    }
+    ```
+
+1. 이어서 음원 파일별로 썸네일을 지정할 수 있습니다. 보통 앨범 이미지를 사용하며 이것을 앨범아트라고 하는데, 앨범 아트 URI를 생성하는 getAlbumUri() 메서드를 정의합니다. 앨범 아트의 URI 문자열을 Uri.parse() 메서드로 해석해서 URI를 생성합니다.
+    ```kotlin
+    fun getAlbumUri(): Uri {
+        return Uri.parse("content://media/external/audio/albumart/" + albumId)
+    }
+    ```
+
+    ``다음은 지금까지 입력한 Music.kt 파일의 코드입니다.``
+
+    ```kotlin
+    package kr.co.hanbit.music
+
+    import android.net.Uri
+    import android.provider.MediaStore
+
+    class Music(id: String, title: String?, artist: String?, albumId: String?, duration: Long?) {
+
+        var id: String = ""
+        var title: String?
+        var artist: String?
+        var albumId: String?
+        var duration: Long?
+
+        init {
+            this.id = id
+            this.title = title
+            this.artist = artist
+            this.albumId = albumId
+            this.duration = duration
+        }
+
+        fun getMusicUri(): Uri {
+            return Uri.withAppendedPath(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id)
+        }
+
+        fun getAlbumUri(): Uri {
+            return Uri.parse("content://media/external/audio/albumart/" + albumId)
+        }
+    }
+    ```
+
+### 음원 목록 화면 만들기
+
+이제 화면을 만들어 보겠습니다. 
+
+1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다.  그 다음 
+
 
 
 <style>
-.page-container {max-width: 1200px}609‘’“”
+.page-container {max-width: 1200px}620‘’“”
 </style>
