@@ -1371,5 +1371,5 @@ class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>()
 
 
 <style>
-.page-container {max-width: 1200px}620‘’“”
+.page-container {max-width: 1200px}
 </style>
