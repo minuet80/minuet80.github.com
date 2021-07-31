@@ -27,17 +27,21 @@ Log클래스에서 주로 사용하는 다섯가지 함수
   - e(error)
 
 ## 1.1 새 프로젝트 생성하기
-1. [File] - [New] - [New Project]를 클릭하고, 프로젝트 형태는 [Empty Activity]를 선택한 후 [Next]를 클릭합니다.<br>
-1. Name에 ‘BasicSyntax’를 입력합니다. Package name은 프로젝트명(Name)에 따라 자동 생성됩니다. Minimum SDK도 기본값인 API 16을 그대로 사용합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-47.png){: style="box-shadow: 0 0 5px #777"}
+1. [File] - [New] - [New Project]를 클릭하고, 프로젝트 형태는 [Empty Activity]를 선택한 후 [Next]를 클릭합니다.
+
+1. Name에 ‘BasicSyntax’를 입력합니다. Package name은 프로젝트명(Name)에 따라 자동 생성됩니다. Minimum SDK도 기본값인 API 16을 그대로 사용합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-47.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 1.2 로그의 활용
+
 ```kotlin
 Log.d("태그", "출력 메시지")
 ```
 Log.d에서 d는 debug를 의미하며 첫 번째 인자에는 검색 용도로 사용되는 ‘태그’를 입력하고, 두번째 인자에는 ‘실제 출력할 메시지’를 입력합니다.
 
-1. MainActivity.kt 파일을 열고 다음 코드를 setContentView... 밑에 입력합니다.<br>
+1. MainActivity.kt 파일을 열고 다음 코드를 setContentView... 밑에 입력합니다.
+
     ```kotlin
     package kr.co.hanbit.basicsyntax
 
@@ -55,24 +59,29 @@ Log.d에서 d는 debug를 의미하며 첫 번째 인자에는 검색 용도로 
     ```
 
 1. 코르를 추가하면 ‘Log’라는 글자가 빨간색으로 나타나는데 Log 글자를 클릭하면 다음과 같은 메시지가 나타납니다. 안드로이드에서 기본으로 제공하는 클래스나 함수를 사용하기 위해서는 import라는 과정을 거쳐야 하는데, 아직 Log클래스를 import하지 않았기 때문에 나타나는 메시지입니다.
-``Alt`` + ``Enter``키를 누르면 상단에 필요한 import문구가 자동으로 생성됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-48.png){: style="box-shadow: 0 0 5px #777"}
+``Alt`` + ``Enter``키를 누르면 상단에 필요한 import문구가 자동으로 생성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-48.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 소스 코드 상단에 import android.util.Log가 추가됩니다.
+
     ```kotlin
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import android.util.Log
     ```
 
-1. 이제 앱을 에뮬레이터에서 실행하기 위해 안드로이드 스튜디오 상단 툴바의 [Run ‘App’ 아이콘]을 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-49.png){: style="box-shadow: 0 0 5px #777"}
+1. 이제 앱을 에뮬레이터에서 실행하기 위해 안드로이드 스튜디오 상단 툴바의 [Run ‘App’ 아이콘]을 클릭합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-49.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 에뮬레이터를 통해 앱 화면을 보면 ‘Hello World!’라고만 적혀 있고 아무런 동작을 하지 않습니다.
 
-1. 안드로이드 스튜디어 하단 [Logcat] 탭을 클릭해서 창을 열어봅니다. 로그 내용이 많은데, 소스 코드의 Log.d 함수에 입력했던 태그 ``‘BasicSyntax’``를 로그 영역 상단에 있는 돋보기 표시의 검색창에 입력하면 해당 로그만 볼 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-50.png){: style="box-shadow: 0 0 5px #777"}
-- ``로그캣(Logcat)`` : 출력되는 로그를 모아서 보는 도구입니다.
+1. 안드로이드 스튜디어 하단 [Logcat] 탭을 클릭해서 창을 열어봅니다. 로그 내용이 많은데, 소스 코드의 Log.d 함수에 입력했던 태그 ``‘BasicSyntax’``를 로그 영역 상단에 있는 돋보기 표시의 검색창에 입력하면 해당 로그만 볼 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-50.png){: style="box-shadow: 0 0 5px #777"}
+    
+    ``로그캣(Logcat)`` : 출력되는 로그를 모아서 보는 도구입니다.
 
 
 # 2. 변수
@@ -172,6 +181,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-51.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 2.3 읽기 전용 변수 val
@@ -370,6 +380,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 # 4. 배열과 컬렉션
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-52.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 4.1 배열

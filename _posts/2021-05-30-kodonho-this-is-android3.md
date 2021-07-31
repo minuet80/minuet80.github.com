@@ -25,23 +25,28 @@ width: large
 컨스트레인트 레이아웃<sup>ConstraintLayout</sup>은 안드로이드 기본<sup>Default</sup>레이아웃으로 화면에 배치되는 위젝 사이에 간단한 제약조건<sup>Constraint</sup> 설정만으로 전체 화면을 쉽게 구성할 수 있습니다.
 
 ### 핸들러 사용하기
-컴포넌트 트리 또는 UI 편집기에서 컨스트레인트 레이아웃 안에 있는 텍스트뷰를 클릭하면 다음 그림과 같은 선택 영역이 텍스트뷰 주위에 표시됩니다.<br>
+컴포넌트 트리 또는 UI 편집기에서 컨스트레인트 레이아웃 안에 있는 텍스트뷰를 클릭하면 다음 그림과 같은 선택 영역이 텍스트뷰 주위에 표시됩니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-53.png){: style="box-shadow: 0 0 5px #777"}
 
-텍스튜뷰 상하좌우로 그림과 같은 4개의 동그라미가 보이는데 이것을 핸들러<sup>Handler</sup>라고 합니다.<br>
-핸들러가 ``연결상태이면 파란색``으로, ``연결되어 있지 않으면 흰색``으로 나타납니다.<br>
+텍스튜뷰 상하좌우로 그림과 같은 4개의 동그라미가 보이는데 이것을 핸들러<sup>Handler</sup>라고 합니다.
+핸들러가 ``연결상태이면 파란색``으로, ``연결되어 있지 않으면 흰색``으로 나타납니다.
+
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-54.png){: style="box-shadow: 0 0 5px #777"}
 
 핸들러를 드래그해서 연결하고자 하는 다른 위쩻의 핸들러에 가져다 놓거나, 자신을 포함하고 있는 레이아웃의 가장자리에 가져다 놓으면 주름무늬선 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-55.png){: style="box-shadow: 0 0 5px #777"} 이 생성됩니다. 이렇게 연결되는 선을 컨스트레인트<sup>Constraint</sup>라고 하고, 컨스트레인트가 연결될 수 있는 부위를 앵커 포인트<sup>Anchor Point</sup>라고 합니다.
 
 ### 컨스트레인트 편집기
-컨스트레인트 레이아웃 안에 있는 위젯(지금 화면에서 ‘Hello World!’) 를 컨스트레인트를 조절할 수 있는 편집기가 속성 영역에 나타납니다.<br>
+컨스트레인트 레이아웃 안에 있는 위젯(지금 화면에서 ‘Hello World!’) 를 컨스트레인트를 조절할 수 있는 편집기가 속성 영역에 나타납니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-56.png){: style="box-shadow: 0 0 5px #777"}
 
 편집기의 검은색 도윽라미가 UI편집기의 파란색 동그라미와 같은 핸들러입니다. 컨스트레인트 편집기에서 연결되어 있는 핸들러를 클릭하면 현재 연결을 해제할 수 있습니다. 연결이 해제되면 다음의 그림처럼 컨스트레인트 편집기의 위아래 핸들러에 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-57.png){: style="box-shadow: 0 0 5px #777"} 표시가 나타나고, UI편집기의 파란색 핸들러도 우측 그림처럼 흰색으로 바뀜니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-58.png){: style="box-shadow: 0 0 5px #777"}
 
-편집기에서 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-57.png){: style="box-shadow: 0 0 5px #777"}를 클릭하면 가장 가까이에 있는 다른 위젯 또는 레이아웃의 앵커 포인트에 컨스트레인트가 생성됩니다.<br>
+편집기에서 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-57.png){: style="box-shadow: 0 0 5px #777"}를 클릭하면 가장 가까이에 있는 다른 위젯 또는 레이아웃의 앵커 포인트에 컨스트레인트가 생성됩니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-59.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 크기 조절 핸들러
@@ -58,7 +63,8 @@ width: large
 
 ### 바이어스
 상하 또는 좌우 양쪽이 같이 연결되었을 때 ``바이어스``<sup>Bias</sup>라는 위치 조절 버튼이 활성화 됩니다.
-처음에 50으로 설정되어 있는 값은 비율을 의미하며, 위젯을 양쪽 컨스트레인트의 중앙에 위치 시킵니다.<br>
+처음에 50으로 설정되어 있는 값은 비율을 의미하며, 위젯을 양쪽 컨스트레인트의 중앙에 위치 시킵니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-62.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -79,29 +85,43 @@ width: large
 ConstraintChain 프로젝트를 하나 새로 생성하고 레이아웃 파일을 엽니다.
 화면 가운데 있는 텍스트뷰는 삭제합니다.
 
-1. 팔레트의 버튼 카테고리에서 버튼 4개를 차례대로 UI편집기로 드래그하여 컨스트레인트를 연결하지 않은 채 그림과 같이 배치합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-64.png){: style="box-shadow: 0 0 5px #777"}
+1. 팔레트의 버튼 카테고리에서 버튼 4개를 차례대로 UI편집기로 드래그하여 컨스트레인트를 연결하지 않은 채 그림과 같이 배치합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-64.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 먼저 위쪽에 있는 버튼 2개를 선택한 다음 마우스 우클릭하면 나타나는 메뉴에서 [Chains] - [Create Horizontal Chain]을 선택합니다. 
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-65.png){: style="box-shadow: 0 0 5px #777"}<br><br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-66.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-65.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-66.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 같은 방법으로 아래쪽 버튼 2개도 체인으로 연결합니다.
-1. 정상적으로 연결되었다면 버튼 4개를 모두 클릭했을 때 다음과 같은 화면이 나타납니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-67.png){: style="box-shadow: 0 0 5px #777"}
-1. 이번에는 세로축 체인을 연결해보세요. 한 번에 한 줄 씩 해야 합니다. 4개를 모두 선택하고 적용하면 원하지 않은 결과가 나타나므로 좌측의 버튼 2개를 먼저 선택합니다. 그리고 마우스 우클릭한 다음 메뉴에서 [Chains] - [Create Vertical Chain]을 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-68.png){: style="box-shadow: 0 0 5px #777"}
-1. 남은 2개의 버튼도 같은 방법으로 [Vertical Chain]을 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-69.png){: style="box-shadow: 0 0 5px #777"}
-1. 버튼 4개가 모두 체인으로 연결되었습니다. 체인은 컨스트레인트와는 다르게 체인 모양 (![1]({{site.baseurl}}/images/this-is-android/this-is-android-70.png){: style="box-shadow: 0 0 5px #777"}) 의 인터페이스로 되어 있습니다. 이제 4개의 버튼을 모두 선택하고 속성에서 ``layout_width``와 ``layout_height``값을 ``‘0dp (match_constraint)’``으로 변경합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-71.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 정상적으로 연결되었다면 버튼 4개를 모두 클릭했을 때 다음과 같은 화면이 나타납니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-67.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 이번에는 세로축 체인을 연결해보세요. 한 번에 한 줄 씩 해야 합니다. 4개를 모두 선택하고 적용하면 원하지 않은 결과가 나타나므로 좌측의 버튼 2개를 먼저 선택합니다. 그리고 마우스 우클릭한 다음 메뉴에서 [Chains] - [Create Vertical Chain]을 선택합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-68.png){: style="box-shadow: 0 0 5px #777"}
+    
+1. 남은 2개의 버튼도 같은 방법으로 [Vertical Chain]을 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-69.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 버튼 4개가 모두 체인으로 연결되었습니다. 체인은 컨스트레인트와는 다르게 체인 모양 (![1]({{site.baseurl}}/images/this-is-android/this-is-android-70.png){: style="box-shadow: 0 0 5px #777"}) 의 인터페이스로 되어 있습니다. 이제 4개의 버튼을 모두 선택하고 속성에서 ``layout_width``와 ``layout_height``값을 ``‘0dp (match_constraint)’``으로 변경합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-71.png){: style="box-shadow: 0 0 5px #777"}
+
 1. match_constraint로 설정하면 ‘0dp’로 설정됩니다.
-1. 버튼이 모두 꽉 찬 형태로 보여집니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-72.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 버튼이 모두 꽉 찬 형태로 보여집니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-72.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 가이드 라인
 가이드라인<sup>GuideLine</sup>은 컨스트레인트 레이아웃에서만 사용할 수 있는 보조 도구입니다.
-가로/세로 두 가지 가이드라인이 있는데, 가이드라인을 드래드해서 화면 임의의 위치에 가져다 놓으면 레이아웃 안에 배치되는 위젯에 가장의 앵커 포인트를 제공합니다.<br>
+가로/세로 두 가지 가이드라인이 있는데, 가이드라인을 드래드해서 화면 임의의 위치에 가져다 놓으면 레이아웃 안에 배치되는 위젯에 가장의 앵커 포인트를 제공합니다.
 
 
 ## 1.3 리니어 레이아웃
@@ -112,14 +132,19 @@ ConstraintChain 프로젝트를 하나 새로 생성하고 레이아웃 파일�
 리니어 레이아웃을 사용하기 위해서 컨스트레인트 레이아웃 안에 리니어 레이아웃을 추가할 수도 있지만 레이아웃이 중첩되면 그만큼 그래픽 처리 속도가 느려지기 때문에 기본 레이아웃인 컨스트레인트 레이아웃을 바꾼 후에 작업하도록 하겠습니다.
 
 1. 속성 영역 위에 있는 [Code] 버튼을 클릭해서 모드를 변경합니다.
+
 1. 화면이 XML 코드를 직접 편집할 수 있는 모양으로 변경됩니다.
+
 1. XML코드에서 2행에 있는 androidx.constraintlayout.widget.ConstraintLayout을 ``‘LinearLayout’``으로 수정합니다.
-1. 다시 우측 상단에 있는 [Design]버튼을 클릭해서 모드를 변경하면 컴포넌트 트리 (Component Tree)의 최상위 레이아웃이 리니어 레이아웃으로 변경된 것을 볼 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-73.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 다시 우측 상단에 있는 [Design]버튼을 클릭해서 모드를 변경하면 컴포넌트 트리 (Component Tree)의 최상위 레이아웃이 리니어 레이아웃으로 변경된 것을 볼 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-73.png){: style="box-shadow: 0 0 5px #777"}
 
 #### orientation속성
 orientation하위 버전의 안드로이드 스튜디오에서는 필수 속성이었지만 3.1부터는 입력하지 않으면 가로로 배치됩니다.
-레이아웃 안에 있는 기본 텍스트뷰를 삭제하고, 팔레트에서 새로운 텍스트뷰 3개를 드래드해서 레이아웃 안에 가져다 놓습니다.<br>
+레이아웃 안에 있는 기본 텍스트뷰를 삭제하고, 팔레트에서 새로운 텍스트뷰 3개를 드래드해서 레이아웃 안에 가져다 놓습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-74.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -127,12 +152,15 @@ orientation하위 버전의 안드로이드 스튜디오에서는 필수 속성�
 레이아웃 안에 배치되는 위젯의 크기를 비율로 나타낼 수 있는 옵션입니다.
 리니어 레이아웃에 배치되는 위젯은 layout_weight 속성의 기본 설정값이 1입니다.
 따라서 앞의 그림에서 텍스트뷰 3개의 가로 비율은 1:1:1입니다.
-리니어 레이아웃의 orientation 속성이 vertical이면 세로 비율이 1:1:1입니다.<br>
+리니어 레이아웃의 orientation 속성이 vertical이면 세로 비율이 1:1:1입니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-74.png){: style="box-shadow: 0 0 5px #777"}
 
 그런데 자세히 보면 각각의 넓이가 1:2:1이 아닌 1:1.5:1 정도로 보입니다.
-이것은 텍스트뷰의 layout_width 속성의 기본값이 wrap_content이기 때문인데 3개의 텍스트뷰를 모두 선택한 상태에서 layout_width의 값을 ‘0dp’로 변경해주면 정확히 1:2:1로 설정됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-75.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+이것은 텍스트뷰의 layout_width 속성의 기본값이 wrap_content이기 때문인데 3개의 텍스트뷰를 모두 선택한 상태에서 layout_width의 값을 ‘0dp’로 변경해주면 정확히 1:2:1로 설정됩니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-75.png){: style="box-shadow: 0 0 5px #777"}
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-76.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -141,7 +169,8 @@ orientation하위 버전의 안드로이드 스튜디오에서는 필수 속성�
 
 #### gravity속성
 레이아웃에 삽입되는 위젯을 gravity속성에서 설정된 방향으로 정렬합니다. 동시에 2개 이상의 방향을 선택할 수 있습니다.
-gravity 하위 속성 중에 center 의 체크박스를 체크하면 ``‘true’``로 변경되며 ``글자가 가운데로 정렬됩니다.``<br>
+gravity 하위 속성 중에 center 의 체크박스를 체크하면 ``‘true’``로 변경되며 ``글자가 가운데로 정렬됩니다.``
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-77.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -153,7 +182,8 @@ gravity 하위 속성 중에 center 의 체크박스를 체크하면 ``‘true�
 이럴 때는 최상위 레이아웃을 스크롤 할 수 있는 요소로 감싸야 합니다. 
 스크롤뷰를 사용하려면 기본 레이아웃 (컨스트레인트 레이아웃)을 스크롤뷰로 변경해서 사용하거나 기본 레이아웃 안에 스크롤뷰를 추가해야 합니다.
 
-1. 시본 레이아웃을 스크롤뷰로 변경하는 방법은 컨스트레인트 레이아웃을 리니어 레이아웃으로 변경하는 방법과 동리합니다. XML 코드를 편집하기 위해 UI편집기를 [Code]모드로 변경한후 ``ConstraintLayout`` 문자열을 ``‘ScrollView’``로 변경합니다.<br>  
+1. 시본 레이아웃을 스크롤뷰로 변경하는 방법은 컨스트레인트 레이아웃을 리니어 레이아웃으로 변경하는 방법과 동리합니다. XML 코드를 편집하기 위해 UI편집기를 [Code]모드로 변경한후 ``ConstraintLayout`` 문자열을 ``‘ScrollView’``로 변경합니다.
+
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -216,7 +246,9 @@ text속성에 직접 입력할 수도 있지만 권장하지 않습니다.
 앱을 개발할 때 ``strings.xml``에 사용할 텍스트를 미리 정의해 놓고 가져다가 사용하는 것이 ``다국어 처리``, ``텍스트 수정`` 등 앱을 관리하기에 용이하기 때문입니다.
 
 1. 프로젝트 탐색기의 뷰가 Android 인 상태에서 [app] - [res] - [values] 디렉토리 아래 ``strings.xml`` 파일이 있습니다.
-1. 파일을 열어서 다음 3행과 4행을 추가합니다. 태그 형식은 <string name="스트링 이름"> 보여질 텍스트 </string> 형식으로 사용합니다. 3행에는 ``<string name="string_01">화면에 보여질 글자 01</string>``라고 입력하고, 4행에는 ``<string name="string_02">화면에 보여질 글자 02</string>``라고 입력합니다.<br>
+
+1. 파일을 열어서 다음 3행과 4행을 추가합니다. 태그 형식은 <string name="스트링 이름"> 보여질 텍스트 </string> 형식으로 사용합니다. 3행에는 ``<string name="string_01">화면에 보여질 글자 01</string>``라고 입력하고, 4행에는 ``<string name="string_02">화면에 보여질 글자 02</string>``라고 입력합니다.
+
     ```xml
     <resources>
         <string name="app_name">Framelayout</string>
@@ -224,8 +256,9 @@ text속성에 직접 입력할 수도 있지만 권장하지 않습니다.
         <string name="string_02">화면에 보여질 글자 02</string>
     </resources>
     ```
-1. ``TextView``에 적용하기 위해 activity_main.xml파일을 열고 UI편집기에 기본으로 생성되어 있는 텍스트뷰를 선택합니다. 우측 속성 영역에서 ‘Hello World!’가 입력된 text속성의 입력 필드에 strings.xml에서 미리 작성해두었던 스트링 name하나를 ``‘@string/id_01’``형태로 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-79.png){: style="box-shadow: 0 0 5px #777"}
+1. ``TextView``에 적용하기 위해 activity_main.xml파일을 열고 UI편집기에 기본으로 생성되어 있는 텍스트뷰를 선택합니다. 우측 속성 영역에서 ‘Hello World!’가 입력된 text속성의 입력 필드에 strings.xml에서 미리 작성해두었던 스트링 name하나를 ``‘@string/id_01’``형태로 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-79.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 텍스트 색상 지정하기:textColor
@@ -261,8 +294,9 @@ colors.xml 파일은 strings.xml 과 같은 디렉토리에 있습니다.
         <color name="color_red">#FF0000</color>
     </resources>
     ```
-1. 적용 시에는 텍스트를 적용했던 것과 같이 텍스트뷰를 선택한 상태에서 속성 영역의 textColor속성에 ``‘@color/컬러이름’``을 입력하면 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-80.png){: style="box-shadow: 0 0 5px #777"}
+1. 적용 시에는 텍스트를 적용했던 것과 같이 텍스트뷰를 선택한 상태에서 속성 영역의 textColor속성에 ``‘@color/컬러이름’``을 입력하면 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-80.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 텍스트 크기 지정하기: textSize
 안드로이드에서는 ``dp, px, sp`` 등과 같은 단위를 사용하는데, 텍스트가 입력되는 위젯 (텍스트뷰, 에디트텍스트)은 주로 sp를 사용합니다.
@@ -270,11 +304,16 @@ colors.xml 파일은 strings.xml 과 같은 디렉토리에 있습니다.
 다른 위젯이 모두 dp를 사용하는 것과 달리 텍스트 위젯이 sp단위를 사용하는 이유는 같은 해상도에서 문자열의 크기를 다르게 사용하는 경우가 있기 때문입니다.
 이름에서도 유추할 수 있듯이 화면 스케일에 독립적으로 크기를 조절할 수 있는 단위입니다.
 
-1. 크기를 조절하는 textSize도 ``dimens.xml``이라는 파일에 따로 입력한 후에 참조해서 사용할 수 있습니다. ``dimens.xml``은 기본으로 제공되는 파일이 아니라 values 디렉토리에 따로 생성해서 사용해야 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-81.png){: style="box-shadow: 0 0 5px #777"}
-1. File name에 ``‘dimens’``를 입려갛고 [OK]를 클릭해 파일을 생성합니다. 확장자인 ``.xml``은 자동으로 생성되기 때문에 입력하지 않습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-82.png){: style="box-shadow: 0 0 5px #777"}
+1. 크기를 조절하는 textSize도 ``dimens.xml``이라는 파일에 따로 입력한 후에 참조해서 사용할 수 있습니다. ``dimens.xml``은 기본으로 제공되는 파일이 아니라 values 디렉토리에 따로 생성해서 사용해야 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-81.png){: style="box-shadow: 0 0 5px #777"}
+
+1. File name에 ``‘dimens’``를 입려갛고 [OK]를 클릭해 파일을 생성합니다. 확장자인 ``.xml``은 자동으로 생성되기 때문에 입력하지 않습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-82.png){: style="box-shadow: 0 0 5px #777"}
+
 1. ``<dimen name="단위이름">150sp</dimen>``의 형태로 작성합니다.
+
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
@@ -282,8 +321,9 @@ colors.xml 파일은 strings.xml 과 같은 디렉토리에 있습니다.
         <dimen name="size_dimen">24dp</dimen>
     </resources>
     ```
-1. 값을 적용할 때는 앞의 방법과 동리하게 텍스트뷰를 선택한 상태에서 textSize속성의 입력 필드에 ``‘@dimen/단위이름’``을 입력합니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-83.png){: style="box-shadow: 0 0 5px #777"}
+1. 값을 적용할 때는 앞의 방법과 동리하게 텍스트뷰를 선택한 상태에서 textSize속성의 입력 필드에 ``‘@dimen/단위이름’``을 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-83.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 텍스트 스타일 지정하기: textStyle
 시스템에서 제공해주는 스타일은 ``normal, bold, italic`` 세가지가 있습니다.
@@ -324,14 +364,20 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
 ### 에디트텍스트에 입력되는 글자를 실시간으로 처리하기
 실제 앱을 개발할 때 실시간으로 아이디의 유효성을 검사하거나, 패스워드를 검사할 때 사용하는 코드 형태입니다.
 
-1. activity_main.xml 파일을 열고 텍스트 카테고리의 플레인텍스트(PlainText)를 드래그해서 화면 가운데에 미리 생성되어 있는 텍스트뷰 아래에 가져다 놓습니다. 좌우 양쪽 컨스트레인트는 레이아웃 가장자리에, 위쪽은 텍스트뷰에 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-84.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 텍스트 카테고리의 플레인텍스트(PlainText)를 드래그해서 화면 가운데에 미리 생성되어 있는 텍스트뷰 아래에 가져다 놓습니다. 좌우 양쪽 컨스트레인트는 레이아웃 가장자리에, 위쪽은 텍스트뷰에 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-84.png){: style="box-shadow: 0 0 5px #777"}
 
 1. id속성 입력 필드에는 `‘editText’`를 입력합니다. (id변경시 Rename팝업이 나타나며 [Refactor]버튼을 클릭해서 적용합니다.)
+
 1. 위젯을 처음 생성하면 text속성에 기본값이 적혀 있는데 이것을 삭제합니다. text속성은 Common Attributes에 있습니다.
-1. ``build.gradle (Module: WidgetsEditText.app)``파일을 열고 android스코프(범위)에 다음과 같이 ``viewBinding true`` 설정을 추가합니다. 설정 후 우측 상단의 ``[Sync Now]``를 클릭하는 것을 잊으면 안됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-85.png){: style="box-shadow: 0 0 5px #777"}
-1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. ``class MainActivity``에 binding프로퍼티를 하나 생성하고 ``by lazy``를 사용해서 안드로이드가 생성해둔 ``ActivityMainBinding``을 ``inflate`` 합니다.<br>
+
+1. ``build.gradle (Module: WidgetsEditText.app)``파일을 열고 android스코프(범위)에 다음과 같이 ``viewBinding true`` 설정을 추가합니다. 설정 후 우측 상단의 ``[Sync Now]``를 클릭하는 것을 잊으면 안됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-85.png){: style="box-shadow: 0 0 5px #777"}
+
+1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. ``class MainActivity``에 binding프로퍼티를 하나 생성하고 ``by lazy``를 사용해서 안드로이드가 생성해둔 ``ActivityMainBinding``을 ``inflate`` 합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetsedittext
 
@@ -389,7 +435,8 @@ maxLines 속성과 사용법이 비슷해 보이나 다른 점은 maxLines의 �
         }
     }
     ```
-1. 추가된 코드의 여는 중괄호 ({) 안에서 ``Enter``키를 입력하여 줄을 바꾼 후에 다음과 같이 로그를 출력하는 코드를 작성해줍니다.<br>
+1. 추가된 코드의 여는 중괄호 ({) 안에서 ``Enter``키를 입력하여 줄을 바꾼 후에 다음과 같이 로그를 출력하는 코드를 작성해줍니다.
+
     ```kotlin
     package kr.co.hanbit.widgetsedittext
 
@@ -479,22 +526,26 @@ inputType 속성을 통해서 어떤 입력을 가능하게 할지 결정했다�
 
 ### 기본 이미지 사용하기
 activity_main.xml을 열고 이미지버튼을 드래그해서 UI편집기에 가져다 놓으면 사용할 이미지를 선택하는 창이 나타납니다.
-[Drawable]을 선택하면 임시로 사용할 수 있는 Sample Data가 나오고, 그중에서 하나를 선택할 수 있습니다. Saple data중에서 ``[avatars]``를 선택하고 [OK]를 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-86.png){: style="box-shadow: 0 0 5px #777"}
+[Drawable]을 선택하면 임시로 사용할 수 있는 Sample Data가 나오고, 그중에서 하나를 선택할 수 있습니다. Saple data중에서 ``[avatars]``를 선택하고 [OK]를 클릭합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-86.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 새로운 이미지 사용하기
 
-1. 구글에서 PNG이미지를 검색해서 내려받습니다. 준비한 이미지를 drawable 디렉토리에 붙여넣기한 다음 그림과 같은 팝업창이 나타나면 [Refactor]를 클릭해 drawable 디렉토리에 저장됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-87.png){: style="box-shadow: 0 0 5px #777"}
+1. 구글에서 PNG이미지를 검색해서 내려받습니다. 준비한 이미지를 drawable 디렉토리에 붙여넣기한 다음 그림과 같은 팝업창이 나타나면 [Refactor]를 클릭해 drawable 디렉토리에 저장됩니다.
 
-1. 팔레트에서 이미지버튼을 드래그해서 UI편집기에 가져다 놓습니다. 이미지버튼을 선택한 상태에서 속성 영역의 src옆의 버튼을 클릭하면 이미지를 선택할 수 있는 팝업창이 다시 나타납니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-88.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-87.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 팔레트에서 이미지버튼을 드래그해서 UI편집기에 가져다 놓습니다. 이미지버튼을 선택한 상태에서 속성 영역의 src옆의 버튼을 클릭하면 이미지를 선택할 수 있는 팝업창이 다시 나타납니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-88.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 선택한 이미지가 나타납니다.
 
 ### 투명 배경 설정하기
-이미지버튼은 기본적으로 배경에 회색 영역을 포함하고 있는데 속성 중 ``background`` 속성에 ``‘@android:color/transparent’``를 적용하면 회색 영역을 없애고 투명하게 만들 수 있습니다.<br>
+이미지버튼은 기본적으로 배경에 회색 영역을 포함하고 있는데 속성 중 ``background`` 속성에 ``‘@android:color/transparent’``를 적용하면 회색 영역을 없애고 투명하게 만들 수 있습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-89.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -514,7 +565,8 @@ activity_main.xml을 열고 이미지버튼을 드래그해서 UI편집기에 �
 
 
 ### 이미지 영역에 색 채우기: tint
-tint는 이미지 영역에 색을 채우는 속성입니다. [스포이드 아이콘]을 클릭해서 색을 선택할 수 있습니다.<br>
+tint는 이미지 영역에 색을 채우는 속성입니다. [스포이드 아이콘]을 클릭해서 색을 선택할 수 있습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-98.png){: style="box-shadow: 0 0 5px #777"}
 tint속성의 경우 이미지의 투명도를 기준으로 색이 적용되기 때문에 ``일반적으로 투명 배경을 가진 이미지에 사용합니다.``
 
@@ -527,42 +579,51 @@ alpha는 투명도를 조절합니다.
 ## 2.5 라디오그룹과 라디오버튼
 
 ### 라디오그룹과 라디오버튼 사용하기
-1. 버튼 카테고리에서 라디오그룹을 찾아 UI편집기에 드래그해서 가져다 놓고 id속성에 ``‘raioGroup’``이 입력되어 있는지 확인합니다. 없다면 ``‘radioGroup’``이라고 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-99.png){: style="box-shadow: 0 0 5px #777"}
+1. 버튼 카테고리에서 라디오그룹을 찾아 UI편집기에 드래그해서 가져다 놓고 id속성에 ``‘raioGroup’``이 입력되어 있는지 확인합니다. 없다면 ``‘radioGroup’``이라고 입력합니다.
 
-1. 라디오그룹의 경우 UI편집기에는 아무것도 나타나지 않을 수 있습니다. 찾기 힘들 때는 컴포넌트 트리에서 [radioGroup]을 찾아 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-100.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-99.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 컨스트레인트를 네 방향 모두 연결해서 화면 가운데에 배치합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-101.png){: style="box-shadow: 0 0 5px #777"}
+1. 라디오그룹의 경우 UI편집기에는 아무것도 나타나지 않을 수 있습니다. 찾기 힘들 때는 컴포넌트 트리에서 [radioGroup]을 찾아 클릭합니다.
 
-1. 라디오그룹 안에 3개의 라디오버튼을 가져다 놓습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-102.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-100.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 라디오버튼은 스마트폰 화면에서 볼 수 있도록 이름을 입력해줍니다. text속성에 각각 ‘사과’, ‘바나나’, ‘오렌지’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-103.png){: style="box-shadow: 0 0 5px #777"}
+1. 컨스트레인트를 네 방향 모두 연결해서 화면 가운데에 배치합니다.
 
-1. 모두 작성하면 다음과 같은 레이아웃이 구성됩니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-104.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-101.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 라디오그룹 안에 3개의 라디오버튼을 가져다 놓습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-102.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 라디오버튼은 스마트폰 화면에서 볼 수 있도록 이름을 입력해줍니다. text속성에 각각 ‘사과’, ‘바나나’, ‘오렌지’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-103.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 모두 작성하면 다음과 같은 레이아웃이 구성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-104.png){: style="box-shadow: 0 0 5px #777"}
 
 1. build.gradle 파일을 열고 android 스코프에 다음과 같이 viewBinding true 설정을 추가합니다.
+
     ```gradle
     buildFeatures {
         viewBinding true
     }
     ```
 
-1. [MainActivity.kt]탭을 클릭해서 소스 코드를 이동합니다. onCreate() 메서드 위에 binding 프로퍼티를 하나 생성하고 by lazy를 사용하여 ActivityMainBinding을 inflate 합니다. <br>
+1. [MainActivity.kt]탭을 클릭해서 소스 코드를 이동합니다. onCreate() 메서드 위에 binding 프로퍼티를 하나 생성하고 by lazy를 사용하여 ActivityMainBinding을 inflate 합니다.
+
     ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     ```
 
-1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.<br>
+1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
     ```kotlin
     setContentView(binding.root)
     ```
 
-1. 다음 줄에 binding으로 앞에서 작성해둔 라디오그룹의 id에 연결합니다.<br>
+1. 다음 줄에 binding으로 앞에서 작성해둔 라디오그룹의 id에 연결합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetsradio
 
@@ -619,37 +680,45 @@ alpha는 투명도를 조절합니다.
     ```
 
 ### 라디오버튼 배치하기: orientation
-라디오그룹은 리니어 레이아웃에 라디오버튼을 담을 수 있는 형태의 레이아웃입니다. 리니어 레이아웃 처럼 orientation속성을 조절해서 배치되는 라디오버튼들을 가로로 정렬할 건지 세로로 정렬할 건지를 결정할 수 있습니다.<br>
+라디오그룹은 리니어 레이아웃에 라디오버튼을 담을 수 있는 형태의 레이아웃입니다. 리니어 레이아웃 처럼 orientation속성을 조절해서 배치되는 라디오버튼들을 가로로 정렬할 건지 세로로 정렬할 건지를 결정할 수 있습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-105.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 선택된 라디오버튼 설정하기: checkedButton
-미리 선택되어 있는 라디오버튼을 설정할 수 있습니다.<br>
+미리 선택되어 있는 라디오버튼을 설정할 수 있습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-106.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ## 2.6 체크박스
 
-1. 체크박스를 라디오버튼처럼 구성하기 위해서 기본 텍스트뷰는 삭제하고 리니어 레이아웃 (horizontal) 을 화면 가운데 배치합니다. 컨스트레인트를 네 방향 모두 연결하여 화면 가운데 배치합니다. 그런 다음 3개의 체크박스를 리니어 레이아웃 안에 가져다 놓고 각각의 id속성에는 ‘checkedApple’, ‘checkedBanana’, ‘checkedOrange’를 입력합니다. 그리고 text속성도 ‘사과’, ‘바나나’, ‘오렌지’를 순서대로 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-107.png){: style="box-shadow: 0 0 5px #777"}
+1. 체크박스를 라디오버튼처럼 구성하기 위해서 기본 텍스트뷰는 삭제하고 리니어 레이아웃 (horizontal) 을 화면 가운데 배치합니다. 컨스트레인트를 네 방향 모두 연결하여 화면 가운데 배치합니다. 그런 다음 3개의 체크박스를 리니어 레이아웃 안에 가져다 놓고 각각의 id속성에는 ‘checkedApple’, ‘checkedBanana’, ‘checkedOrange’를 입력합니다. 그리고 text속성도 ‘사과’, ‘바나나’, ‘오렌지’를 순서대로 입력합니다.
 
-1. 리니어 레이아웃의 외곽선이 입력된 체크박스에 맞추기 위해 각 체크박스의 layout_width와 layout_height 속성을 모두 ``‘wrap_content’``로 설정합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-108.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-107.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 리니어 레이아웃의 외곽선이 입력된 체크박스에 맞추기 위해 각 체크박스의 layout_width와 layout_height 속성을 모두 ``‘wrap_content’``로 설정합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-108.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 소스 코드와 연결하기 위해서 그래들 설정에 viewBinding을 추가합니다. build.gradle 파일을 열고 android 스코프에 viewBinding true 설정을 추가합니다. 설정 후 우측 상단의 [Sync Now]를 클릭하는 것을 잊으면 안됩니다.
 
 1. [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. onCreate() 위에 binding프로퍼티를 하나 생성하고 by lazy를 사용해서 ActivityMainBinding을 inflate합니다.
+
     ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     ```
 
 1. onCreate() 메서드 안에 작성되어 있는 setContentView에 binding.root를 전달합니다.
+
     ```kotlin
     setContentView(binding.root)
     ```
 
 1. 이어서 binding으로 앞에서 작성해둔 체크박스에 id를 연결합니다.
+
 1. 이어서 ‘setOnChecked’까지 입력하면 나타나는 리스너 중에 중괄호로 시작하는 코드를 선택합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetscheckbox
 
@@ -669,7 +738,9 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. 생성되는 코드 블록의 두 번째 파라미터가 영문 이니셜 (b 또는 다른 글자)로 표시되어 있으면 알아보기 쉽게 ‘isChecked’로 바꿔줍니다. 체크박스 리스너의 첫 번째 파라미터에는 상태 변화가 있는 체크박스 위젯이 그대로 전달되고, 두 번째 파라미터에는 라디오그룹과는 다르게 체크 여부가 Boolean 타입으로 전달됩니다.
+
     ```kotlin
     package kr.co.hanbit.widgetscheckbox
 
@@ -696,7 +767,9 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. 이런 방식으로 코딩하면 모든 체크박스에 리스너를 달아줘야 해서 코드량이 늘어나는 단점이 있습니다. 라디오 그룹에서 처럼 하나의 코드 블록을 처리하기 위해 코드를 조금 바꿔보겠습니다. onCreate() 메서드 위에 listener 프로퍼티를 하나 만듭니다.  그리고 by lazy 를 사용해서 CompoundButton 클래스에 있는 OnCheckedChangeListener를 직접 작성합니다. 
+
     ```kotlin
     package kr.co.hanbit.widgetscheckbox
 
@@ -719,7 +792,9 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. 이 리스너를 모든 체크박스에서 사용할 것이기 때문에 when 문으로 어떤 체크박스가 이 리스너로 전달되는지 확인하는 코드를 작성합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetscheckbox
 
@@ -747,7 +822,9 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. onCreate() 메서드 안에 작성했던 리스너의 중괄호 ({})를 괄호 (())로 변경한 다음 앞에서 작성한 listener프로퍼티를 입력해서 세 줄의 코드를 한줄로 변경합니다.
+
     ```kotlin
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -758,9 +835,12 @@ alpha는 투명도를 조절합니다.
     }
     ```
 
-1. 에뮬레이터에서 실행하고 로그를 확인합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-109.png){: style="box-shadow: 0 0 5px #777"}<br>
-다음은 MainActivity.kt의 전체 코드입니다. 체크박스는 보통 체크와 해제를 모두 확인해야 하기 때문에 실제 프로젝트에서는 다음처럼 체크박스 해제 코드도 추가해야 합니다.<br>
+1. 에뮬레이터에서 실행하고 로그를 확인합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-109.png){: style="box-shadow: 0 0 5px #777"}
+
+    다음은 MainActivity.kt의 전체 코드입니다. 체크박스는 보통 체크와 해제를 모두 확인해야 하기 때문에 실제 프로젝트에서는 다음처럼 체크박스 해제 코드도 추가해야 합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetscheckbox
 
@@ -802,21 +882,29 @@ alpha는 투명도를 조절합니다.
     ```
 
 ## 2.7 토글버튼, 스위치, 이미지뷰
+
 토글버튼<sup>ToggleButton</sup>은 체크박스와 동일합니다. 부모 클래스인 CompoundButton을 상속받아 사용하기 때문에 체크박스의 리스너와 구현이 완전 동일합니다.
 
 스위치도 체크박스와 구현이 동일하며 체크박스, 토글버튼, 스위치는 모두 CompoundButton을 상속받아 사용하므로 하나의 사용법만 익히면 동일한 리스너로 컨트롤 할 수 있습니다.
 
 ## 2.8 프로그래스바
+
 프로그래스바<sup>ProgressBar</sup>는 진행 상태를 나타내는 위젯입니다.
 
 ### 프로그래스바의 진행 상태 표시하기
 
 1. activity_main.xml 에서 화면에 리니어 레이아웃 (vertical)을 가져다 놓고 컨스트레인트는 네방향 모두 연결합니다. 리니어 레이아웃의 id속성에 ‘progressLayout’이라고 입력하고 gravity속성을 ‘center’로 설정합니다.
+
 1. 그다음 팔레트의 위젯 카테고리에서 프로그래스바(ProgressBar)와 텍스트 카테고리의 텍스트뷰를 1개씩 리니어 레이아웃 안에 가져다 놓습니다. 텍스튜뷰의 gravity속성도 ‘center’로 설정합니다.
-1. 텍스트뷰의 text 속성에 ‘Downloading...’이라고 입력해주면 다음 그림과 같이 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-110.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 텍스트뷰의 text 속성에 ‘Downloading...’이라고 입력해주면 다음 그림과 같이 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-110.png){: style="box-shadow: 0 0 5px #777"}
+
 1. build.gradle 파일에 viewBinding을 설정하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+
 1. 클래스 안에 showProgress메서드를 만들고 리니어 레이아웃을 숨겼다 보였다 할 수 있는 코드를 추가합니다.
+
     ```kotlin
     package kr.co.hanbit.widgetsprogressbar
 
@@ -843,20 +931,26 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
-    - ``공통 속성 visiblity``
+
+    ``공통 속성 visiblity``
+
       - ``VISIBLE`` : 현재 보이는 상태
       - ``INVISIBLE`` : 현재 안 보이는 상태. 보이지는 않지만 공간을 차지하고 있습니다.
       - ``GONE`` : 현재 안보이는 상태. 보이지도 않고 공간도 차지하지 않습니다.
 
 1. 앱이 실행되고 3초 후에 showProgress(false)를 호출하는 코드를 onCreate() 메서드 안에 작성합니다. Thread.sleep() 메서드를 사용하면 지정된 시간 동안 다음 코드가 실행되지 않습니다.
+
     ```kotlin
     setContentView(binding.root)
 
     Thread.sleep(3000) // 3초
     showProgress(false)
     ```
+
 1. 에뮬레이터에서 실행해봅니다. 실행해도 에뮬레이터 화면에는 아무것도 보이지 않습니다. 메인 스레드에서 동작을 멈추는 Thread.sleep() 메서드를 호출했기 때문입니다.
+
 1. Thread.sleep 메서드를 백그라운드 (서브 스레드)에서 동작시키기 위해 코드를 추가합니다. thread(start=true) 함수를 사용하면 함수 블록 안의 코드가 모두 백그라운드에서 동작합니다.
+
     ```kotlin
     thread(start=true) {
         Thread.sleep(3000)
@@ -864,7 +958,9 @@ alpha는 투명도를 조절합니다.
     }
     ```
     이대로 실행하면 3초간 프로그래스바가 동작하다가 앱이 죽습니다. UI와 관련된 모든 코드는 메인 스레드에서 실행해야만 합니다. 앞의 코드에서 showProgress메서드를 백그라운드에서 호출하기 때문에 앱이 강제 종료되는 것입니다.
-1. showProgress메서드만 메인 스레드에서 실행하도록 코드를 한 줄 더 추가합니다. 
+
+1. showProgress메서드만 메인 스레드에서 실행하도록 코드를 한 줄 더 추가합니다.
+
     ```kotlin
     thread(start=true) {
         Thread.sleep(3000)
@@ -873,27 +969,40 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. 이제 앱을 다시 실행하면 3초간 프로그래스바가 동작하다가 없어집니다.
 
 
 ## 2.9 시크바
+
 시크바<sup>SeekBar</sup>는 ``볼륨을 조절``하거나 ``뮤직플레이어에서 재생 시간을 조절``하는 용도로 많이 사용합니다.
 
 1. 위젯 카테고리의 시크바 (SeekBar)를 드래드해서 화면 가운데에 가져다 놓고 컨스트레인트를 네 방향 모두 연결합니다. 그리고 layout-width 속성은 ‘0dp’, layout_height 속성은 ‘wrap_content’로 입력합니다.
+
 1. id속성에 seekBar가 입력되어 있는 것을 확인합니다. 없으면 입력합니다.
-1. 시크바 위에 텍스트뷰를 하나 가져다 놓고 컨스트레인트를 연결합니다. 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0’을 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-111.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 시크바 위에 텍스트뷰를 하나 가져다 놓고 컨스트레인트를 연결합니다. 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0’을 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-111.png){: style="box-shadow: 0 0 5px #777"}
+
 1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후, setContentView에 binding.root를 전달합니다.
+
 1. setContentView 아랫줄에 ‘binding.seekBar.set’까지만 입력하면 나타나는 목록에서 setOnSeekBarChangeListnener를 선택합니다.
+
 1. 앞에서 생성된 리스너의 괄호 안에 ‘object: SeekBar.OnSeekBarChangeListener {}’ 코드를 다음과 같이 추가합니다.
+
     ```kotlin
     binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
 
     })
     ```
-1. 리스너의 코드 블록 사이를 클릭한 채로 (중괄호 안에 마우스 포인터를 두고) ``Ctrl`` + `I`키를 입력한 후 나타나는 [Implement Members]팝업창에서 3개의 메서드를 모두 선택하고 [OK]를 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-112.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 리스너의 코드 블록 사이를 클릭한 채로 (중괄호 안에 마우스 포인터를 두고) ``Ctrl`` + `I`키를 입력한 후 나타나는 [Implement Members]팝업창에서 3개의 메서드를 모두 선택하고 [OK]를 클릭합니다.
+    
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-112.png){: style="box-shadow: 0 0 5px #777"}
+
 1. onProgressChanged 메서드 안에 다음의 코드를 한 줄 추가합니다.
+
     ```kotlin
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         binding.textView.text = "$progress"
@@ -901,8 +1010,11 @@ alpha는 투명도를 조절합니다.
     ```
     - ``텍스트뷰의 text속성``
       - 텍스트뷰의 text속성에는 문자열만 입력이 가능합니다. 텍스트뷰의 text에 Int타입의 숫자를 입력하면 리소스 아이디로 인식해서 오류가 발생합니다. 따라서 Int타입의 숫자를 입력할 때는 쌍따음표 ("") 안에 $변수를 넣는 형태로 입력해야 합니다.
+
 1. 에뮬레이터에서 실행한 후 시크바를 드래그하면 상단의 숫자가 바뀌는 것을 확인할 수 있습니다.
+
     OnSeekBarChangeListener의 첫 번째 메서드인 onProgressChanged의 파라미터는 다음과 같습니다.
+
     - ``seekBar`` : 리스너가 동작하고 있는 시크바 위젯
     - ``progress`` : 현재 시크바의 현재 progress값
     - ``fromUser`` : 사용자 터치 여부 (코드에서 시크바를 움직일 수도 있기 때문에 사용자의 터치에 의해 동작하는 것인지를 알기위한 값)
@@ -939,7 +1051,9 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
     시크바의 주요 속성은 다음과 같습니다.
+
     - ``max`` : 시크바의 최대값을 설정합니다. 위의 예제에서 드래그를 좌측 끝까지 설정하면 100이 되는데, max값을 200으로 설정하면 200까지 표현할 수 있습니다.
     - ``progress`` : 처음 시작하는 시크바의 값을 설정합니다. 기본값은 0
 
@@ -947,9 +1061,13 @@ alpha는 투명도를 조절합니다.
 ## 2.10 레이팅바
 
 1. 화면 중앙에 위젯의 레이팅바<sup>RatingBar</sup>를 가져다 놓고 컨스트레인트를 네 방향 모두 연결합니다. id속성에는 ‘ratingBar’가 입력되어 있는지 확인합니다.
-1. 레이팅바 오른쪽에 텍스트뷰를 배치하고 컨스트레인트를 레이팅바에 연결합니다. 그리고 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0.0’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-113.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이팅바 오른쪽에 텍스트뷰를 배치하고 컨스트레인트를 레이팅바에 연결합니다. 그리고 텍스트뷰의 id속성에는 ‘textView’, text속성에는 ‘0.0’를 입력합니다.
+    
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-113.png){: style="box-shadow: 0 0 5px #777"}
+
 1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+
     ```kotlin
     package kr.co.hanbit.wdgetsratingbar
 
@@ -969,48 +1087,64 @@ alpha는 투명도를 조절합니다.
         }
     }
     ```
+
 1. setContentView 다음 줄에 ‘binding.ratingBar.setOn’까지만 입력하면 나타나는 리스너 메서드 중에 중괄호로 시작하는 코드를 선택합니다. 그러면 다음과 같이 코드가 생성됩니다.
+
     ```kotlin
     binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
         
     }
     ```
+
 1. 시크바와 마찬가지로 안드로이드 스튜디오 버전에 따라 파라미터 이름이 다를 수 있습니다.  앞의 순서대로 변경해서 사용하면 됩니다.
-  - rating : 현재별점
-  - fromUser : 사용자 입력 여부
+
+    - rating : 현재별점
+    - fromUser : 사용자 입력 여부
+
 1. 시크바와는 인터페이스 구조가 다르기 때문에 중괄호 안에 식을 바로 사용할 수 있습니다.
+
     ```kotlin
     binding.ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
         binding.textView.text = "$rating"
     }
     ```
-1. 에뮬레이터에서 실행하고 드래그해보면 숫자의 값이 바뀌는 것을 확인할 수 있습니다.<br>
-  레이팅바에서 사용되는 주요 속성은 다음과 같습니다.
-  - numStars : 전체 표시되는 별의 개수를 설정할 수 있습니다.
-  - rating : 기본 별점 처음 시작하는 별점값입니다.
-  - stepSize : 별을 드래그했을 때 움직이는 최소 단위 0.1로 설정하면 별 하나를 10단위로 쪼개서 표시해줍니다.
+
+1. 에뮬레이터에서 실행하고 드래그해보면 숫자의 값이 바뀌는 것을 확인할 수 있습니다.
+
+    레이팅바에서 사용되는 주요 속성은 다음과 같습니다.
+    - numStars : 전체 표시되는 별의 개수를 설정할 수 있습니다.
+    - rating : 기본 별점 처음 시작하는 별점값입니다.
+    - stepSize : 별을 드래그했을 때 움직이는 최소 단위 0.1로 설정하면 별 하나를 10단위로 쪼개서 표시해줍니다.
 
 
 # 3. 리소스 다루기
 
 ## 3.1 drawable과 단위
+
 안드로이는 스마트폰마다 가로세로 화소(픽셀)의 개수가 다르기 때문에 사이즈를 표시하는 단위로 가상 화소 개념인 dp를 사용합니다. dp는 화면 밀도인 DPI에 따라서 실세 픽셀로 변환되는 크기가 달라지는데 drawable 또한 DPI에 따라서 서로 다른 이름의 디렉토리를 사용합니다.
 
 ### DPI
+
 DPI<sup>Dots Per Inch</sup>는 가로세로 1인치 (2.54cm)의 정사각형 공간에 들어 있는 픽셀의 숫자를 나타내는 단위 입니다. 안드로이드는 160DPI를 기본으로 사용하는데 이를 mdpi라고 합니다. 내 스마트폰의 DPI가 mdpi라면 화면을 켰을 때 1인치의 사각형 안에 160개의 화소가 그려집니다. 
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-114.png){: style="box-shadow: 0 0 5px #777"}
 
 ### dp
+
 DP<sup>Density-independent Pixels</sup>는 안드로이드에서 사용하는 독립적 수치 단위로, 해상도와 관계없이 동일한 크기로 화면에 표시하기 위해서 사용됩니다. 예를들어 가로세로가 각각 3dp인 사각형을 mdpi스마트폰에 그릴 때와 xhdpi스마트폰에 그릴 때 두 화면에서 같은 크기로 보이기 위해서 다음과 같이 그립니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-115.png){: style="box-shadow: 0 0 5px #777"}
 
 ### sp
+
 텍스트뷰에서 한 번 언급한 바와 같이, 문자열 크기를 나타내기 위해 사용하는 단위입니다. 단위에 sp<sup>Scale-independent pixcels</sup>를 사용하면 줌인이나 줌아웃 시에 다른 위젯에는 영향을 주지 않고 해당 위젯의 글자만 커지거나 작아지게 할 수 있습니다.
 
 
 ### drawable 디렉토리 구성
+
 앞서 설명한 DPI구조로 인해 각각의 해상도에 맞는 drawable디렉토리에 이미지를 넣고 사용합니다.
-실무에서 디자이너와 함께 협업하면 총 5개의 디렉토리에 각 사이즈에 맞는 이미지를 전달해줍니다.<br>
+실무에서 디자이너와 함께 협업하면 총 5개의 디렉토리에 각 사이즈에 맞는 이미지를 전달해줍니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-116.png){: style="box-shadow: 0 0 5px #777"}
 
 안드로이드 스튜디오의 좌측 탐색 영역 모드를 Project로 놓고 사용하는 것이 디렉토리 구조를 그대로 보여주기 때문에 이미지와 같은 리소스를 관리하기에 편합니다.
@@ -1024,17 +1158,20 @@ DP<sup>Density-independent Pixels</sup>는 안드로이드에서 사용하는 �
 
 ### mipmap
 안드로이드는 drawable과 더불어 앱의 아이콘에 사용하는 용도로 mipmap디렉토리를 제공합니다.
-mipmap은 앱 아이콘 관리용으로만 사용하도록 권장하므로 일반 이미지는 drawable에 넣고 사용해야 합니다.<br>
+mipmap은 앱 아이콘 관리용으로만 사용하도록 권장하므로 일반 이미지는 drawable에 넣고 사용해야 합니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-117.png){: style="box-shadow: 0 0 5px #777"}
 
 안드로이드 버전 26부터는 아이콘에 백그라운드, 포어그라운드 개념이 도입되면서 mipmap-anydpi-v26디렉토리가 추가되었습니다.
-각각의 디렉토리에 아이콘 이미지를 넣고 AndroidManifest.xml에 있는 <application> 태그의 icon 속성에 설정하면 앱 설치 후 안드로이드 화면에 나타납니다.<br>
+각각의 디렉토리에 아이콘 이미지를 넣고 AndroidManifest.xml에 있는 <application> 태그의 icon 속성에 설정하면 앱 설치 후 안드로이드 화면에 나타납니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-118.png){: style="box-shadow: 0 0 5px #777"}
 
 roundIcon속성은 버전 25부터 지원한 속성으로 안드로이드 런처가 둥그란 아이콘을 사용하면 해당 속성에 지정된 mipmap이미지를 사용합니다.
 
 ### adaptive icon
-mipmap-anydpi-v26 디렉토리 안에 있는 ic_launcher.xml 파일을 열어보면 다음과 같은 xml코드가 작성되어 있는데, 태그명에서 유추할 수 있듯이 백그라운드 이미지와 포어그라운드 이미지 2개를 포개어서 아이콘으로 그려주는 역활을 합니다.<br>
+mipmap-anydpi-v26 디렉토리 안에 있는 ic_launcher.xml 파일을 열어보면 다음과 같은 xml코드가 작성되어 있는데, 태그명에서 유추할 수 있듯이 백그라운드 이미지와 포어그라운드 이미지 2개를 포개어서 아이콘으로 그려주는 역활을 합니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-119.png){: style="box-shadow: 0 0 5px #777"}
 
 ``<background>`` 태그값에 @drawable/ic_launcher_background 파일명이 지정되어 잇는데, 이 파일에 앞서 설명한 백터 기반의 이미지가 입력되어 있습니다.
@@ -1046,14 +1183,17 @@ mipmap-anydpi-v26 디렉토리 안에 있는 ic_launcher.xml 파일을 열어보
 
 안드로이드는 strings.xml 을 Translations Editor를 통해서 관리할 수 있습니다.
 
-1. strings.xml 파일을 열어 우측 상단에 있는 [Open editor]링크를 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-120.png){: style="box-shadow: 0 0 5px #777"}
+1. strings.xml 파일을 열어 우측 상단에 있는 [Open editor]링크를 클릭합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-120.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 링크를 클릭하면 Translation Editor가 나타나는데 [Code]모드에서 직접 XML을 수정하는 대신에 이 에디터를 통해서 strings를 추가하거나 삭제할 수 있습니다.
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-121.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-121.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 에디터 상단에 [+]버튼을 클릭하면 ``<string>`` 태그를 생성할 수 있는 팝업창이 나타납니다. Key와 Value를 입력해서 하나를 생성해보세요
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-122.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-122.png){: style="box-shadow: 0 0 5px #777"}
 
 1. [-]버튼은 ``<string>``을 삭제하는데 사용합니다.
 
@@ -1061,14 +1201,17 @@ mipmap-anydpi-v26 디렉토리 안에 있는 ic_launcher.xml 파일을 열어보
 ### 다국어 처리하기
 Translations Editor의 원래 기능은 단순히 ``<string>`` 태그를 생성하는게 아니라 다국어를 처리하는데 목적이 있습니다.
 
-1. [+]와 [-]버튼 오른쪽에 있는 지구본을 클릭하면 나타나는 선택 메뉴에서 [Korean(ko)]을 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-123.png){: style="box-shadow: 0 0 5px #777"}
+1. [+]와 [-]버튼 오른쪽에 있는 지구본을 클릭하면 나타나는 선택 메뉴에서 [Korean(ko)]을 선택합니다.
 
-1. ‘Korean(ko)’을 선택하면 기존 strings목록의 컬럼에 Korean(ko)가 추가됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-124.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-123.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 좌측의 탐색기를 보면 새로운 디렉토리인 values-ko가 생성되어 있고 그 안에 strings.xml이 추가되어 있습니다. 다국어 처리시에도 Project뷰로 놓고 사용하는 것이 좋습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-125.png){: style="box-shadow: 0 0 5px #777"}
+1. ‘Korean(ko)’을 선택하면 기존 strings목록의 컬럼에 Korean(ko)가 추가됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-124.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 좌측의 탐색기를 보면 새로운 디렉토리인 values-ko가 생성되어 있고 그 안에 strings.xml이 추가되어 있습니다. 다국어 처리시에도 Project뷰로 놓고 사용하는 것이 좋습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-125.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 다시 Translations Editor로 돌아가서 새로 생긴 Korean(ko)컬럼에 한글을 입력합니다.
 
