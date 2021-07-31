@@ -1166,7 +1166,338 @@ NetworkRetrofit이라는 이름으로 새로운 Empty Activity 프로젝트를 �
 
 1. License, Owner, Repository 클래스가 생성되었습니다. License, Owner 클래스는 JSON 데이터가 JSON 오브젝트를 값으로 사용하는 경우, 해당 데이터의 이름으로 클래스를 생성하고 사용합니다.  05의 그림에서 데이터의 중간쯤을 보면 ‘Owner’를 이름으로 사용하고 값이 JSON 오브젝트인 부분이 있습니다. 이 오브젝트의 클래스 이름이 ‘Owner’가 되는 것입니다. 이렇게 클래스를 준비했습니다. 
 
+### 화면 만들기
 
+이제 데이터를 출력할 화면을 만들어보겠습니다.
+
+1. 먼저 activity_main.xml 파일을 편집하겠습니다.  [Design] 모드에서 화면의 기본 텍스트뷰는 삭제하고 깃허브의 데이터 API 주소를 요청할 버튼을 2의 그림과 같이 화면 상단에 배치합니다. id속성은 ‘buttonRequest’, text 속성은 ‘GITHUB 사용자 가져오기’로 입력합니다.
+
+1. 가져온 데이터의 목록을 보여줄 리사이클러뷰를 버튼 아래쪽 공간에 배치합니다. 리사이클러뷰를 드래그해서 좌측 컴포넌트 트리 영역의 버튼 아래로 가져다 놓고, id속성창에는 ‘recyclerView’라고 입력합니다. 버튼과 리사이클러뷰의 컨스트레인트는 아래 그림과 같이 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-302.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 리사이클러뷰 안에 넣을 아이템을 위한 새 파일을 생성할 겁니다. [app] - [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]을 클릭합니다. File name은 ‘item_recycler.xml’로 생성합니다. 최상위 레이아웃인 Root element 에는 androidx로 시작하는 패키지에 있는 컨스트레인트 레이아웃을 설정합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-303.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이아웃의 layout_height 속성은 ‘100dp’정도로 설정합니다. 그리고 다음과 같이 이미지뷰 1개와 텍스트뷰 2개를 배치하고 id속성을 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-304.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 리사이클러뷰어댑터 만들기
+
+이제 사용자 정보를 목록으로 보여주기 위해 리사이클러뷰어댑터를 생성하고 사용하겠습니다.
+
+1. [app] - [java] 디렉토리 밑에 있는 기본 패키지에 CustomAdapter 클래스를 하나 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-305.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 생성된 클래스 파일을 열고 CustomAdapter 클래스 밑에 Holder 클래스를 추가합니다.
+
+    ```kotlin
+    package kr.co.hanbit.networkretrofit
+
+    class CustomAdapter {
+        // 04에서 이 부분을 수정합니다
+    }
+
+    class Holder {
+        // 03에서 이 부분을 수정합니다
+    }
+    ```
+
+1. 홀더의 생성자에서 바인딩을 전달받고 상속받은 ViewHolder에는 binding.root를 전달합니다.
+
+    ```kotlin
+    class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        // 10은 이 부분을 수정합니다
+    }
+    ```
+
+1. CustomAdapter에 RecyclerView.Adapter를상속받고 제네릭으로 Holder를 지정합니다.
+
+    ```kotlin
+    class CustomAdapter: RecyclerView.Adapter<Holder>() {
+        // 05에서 이 부분을 수정합니다
+    }
+    ```
+
+1. class CustomAdapter 블록을 클릭한 채로 ``Ctrl`` + ``I`` 키를 눌러서 3개의 필수 메서드를 자동 생성합니다. 함께 생성된 TODO()행은 모두 삭제합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-306.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    // 06은 여기에 입력합니다.
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        // 08은 여기에 입력합니다.
+    }
+
+    override fun getItemCount(): Int {
+        // 07은 여기에 입력합니다.
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        // 09은 여기에 입력합니다.
+    }
+    ```
+
+1. 자동 생성된 코드는 그대로 두고 어댑터 코드 블록 가장 위에 어댑터에서 사용할 데이터 컬렉션을 변수로 만들어 놓았습니다. 우리가 사용할 데이터셋은 앞에서 자동으로 생성해두었던 repository입니다. nullable로 선언합니다.
+
+    ```kotlin
+    var userList: Repository? = null
+    ```
+
+1. 목록에 출력되는 총 아이템 개수를 정하는 getItemCount()를 구현합니다.
+
+    ```kotlin
+    return userList?.size?: 0
+    ```
+
+1. 홀더를 생성하는 onCreateViewHolder()를 구현합니다. 레이아웃을 인플레이트한 후 바인딩에 담아서 반환합니다.
+
+    ```kotlin
+    val binding =
+        ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    return Holder(binding)
+    ```
+
+1. 실제 목록에 뿌려지는 아이템을 그려주는 onBindViewHolder()를 구현합니다. 현 위치의 사용자 데이터를 userList에서 가져오고 아직 만들어지지 않은 홀더의 setUser() 메서드에 넘겨줍니다.
+
+    ```kotlin
+    val user = userList?.get(position)
+    holder.setUser(user)
+    ```
+
+1. 다시 03에서 작성했던 Holder 클래스로 돌아가서 setUser() 메서드를 구현합니다. setUser() 메서드는 1개의 RepositoryItem을 파라미터로 사용합니다. 클래스 가장 윗줄에서 userList가 nullable이기 때문에 user파라미터도 nullable로 설정되어야 합니다.
+
+    ```kotlin
+    fun setUser(user: RepositoryItem?) {
+        // 12는 여기에 입력합니다.
+    }
+    ```
+
+1. 이제 홀더가 가지고 있는 아이템 레이아웃에 데이터를 하나씩 세팅해주면 되는데 우리가 사용하는 데이터는 세가지 입니다. 변수 user: RepositoryItem에 있는 각각의 데이터 이름은 다음과 같습니다.
+
+    - ``아바타 주소``: user.owner.avatar_url
+    - ``사용자 이름``: user.name
+    - ``사용자ID``: user.node_id
+
+1. 먼저 사용자 이름과 아이디를 세팅합니다. 아바타는 Glide를 사용해서 이미지뷰에 세팅합니다.
+
+    ```kotlin
+    user?.let {
+        binding.textName.setText(it.name)
+        binding.textId.setText(it.node_id)
+        Glide.with(binding.imageAvatar).load(it.owner.avatar_url).into(binding.imageAvatar)
+    }
+    ```
+
+``CustomAdapter.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.networkretrofit
+
+import android.text.Editable
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+
+import kr.co.hanbit.networkretrofit.databinding.ItemRecyclerBinding
+
+class CustomAdapter : RecyclerView.Adapter<Holder>() {
+
+    var userList: Repository? = null
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding =
+            ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    override fun getItemCount(): Int {
+        return userList?.size ?: 0
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val user = userList?.get(position)
+        holder.setUser(user)
+    }
+}
+
+class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    fun setUser(user: RepositoryItem?) {
+
+        user?.let {
+            binding.textName.setText(it.name)
+            binding.textId.setText(it.node_id)
+            Glide.with(binding.imageAvatar).load(it.owner.avatar_url).into(binding.imageAvatar)
+        }
+    }
+}
+```
+
+### 레트로핏 사용하기
+
+이제 레트로핏을 사용해서 데이터를 조회해서 가져오고 어댑터를 통해 목록에 출력하면 됩니다.
+
+레트로핏을 사용하기 위해서는 인터페이스가 정의되어 있어야 합니다.
+
+
+1. MainActivity.kt 를 열고 onCreate() 메서드 위에 바인딩을 생성한 후 binding 프로퍼티에 저장하고 setContentView()에 binding.root를 입력합니다.
+
+    ```kotlin
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+1. 클래스 아래 탑레벨에 GithubService 인터페이스를 만듭니다. 레트로핏 인터페이스는 호출 방식, 주소, 데이터 등을 지정합니다.  Retrofit 라이브러리는 인터페이스를 해석해 HTTP 통신을 처리합니다.
+
+    ```kotlin
+    class MainActivity...
+
+        //..
+    }
+
+    interface GithubService {
+        // 03은 여기에 입력합니다.
+    }
+    ```
+
+1. 인터페이스 안에 Github API를 호출할 users 메서드를 만들고 @GET 애노테이션을 사용해 요청 주소를 설정합니다. (요청 주소에는 Github의 도메인은 제외하고 작성합니다.). 반환값은 call<List<데이터 클래스>> 형태로 작성합니다. Call 클래스를 import 하면 여러 개가 선택되는데 retrofit2 패키지에 있는 것을 선택해야 합니다. 레트로핏은 이렇게 만들어진 인터페이스에 지정된 방식으로 서버와 통신하고 데이터를 가져옵니다.
+
+    ```kotlin
+    @GET("users/Kotlin/repos")
+    fun users(): Call<Repository>
+    ```
+
+1. 이제 레트로핏을 사용할 준비가 되었으니 데이터를 요청할 차례입니다. onCreate() 블록 안에서 recyclerView의 adapter에 앞에서 만들었던 CustomAdapter를 생성하고 recyclerView에 연결합니다.
+
+    ```kotlin
+    val adapter = CustomAdapter()
+    binding.recyclerView.adapter = adapter
+    ```
+
+1. 이어서 리니어 레이아웃 매니저도 연결합니다.
+
+    ```kotlin
+    binding.recyclerView.layoutManager = LinearLayoutManager(this)
+    ```
+
+1. Retrofit.Builder()를 사용해서 레트로핏을 생성하고 retrofit 변수에 담습니다. baseUrl이 되는 Github의 도메인 주소와 JSON 데이터를 앞에서 생성한 Repository 클래스의 컬렉션으로 변환해주는 컨버터를 입력하고 build() 메서드를 호출해서 생성합니다.
+
+    ```kotlin
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://api.github.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    ```
+
+1. 레트로핏의 create() 메서드에 앞에서 정의한 인터페이스를 파라미터로 넘겨주면 실행 가능한 서비스 객체를 생성해서 반환해줍니다.
+
+    ```kotlin
+    val githubService = retrofit.create(GithubService::class.java)
+    ```
+
+1. githubService에는 GitHubService 인터페이스를 이용해서 객체를 생성했기 때문에 실행 (호출 )가능한 상태의 users() 메서드를 가지고 있습니다. 레트로핏의 create() 메서드는 인터페이스를 실행 가능한 서비스 객체로 만들면서 users() 메서드 안에 비동기 통신으로 데이터를 가져오는 enqueue() 메서드를 추가해 놓았습니다. enqueue() 가 호출되면 통신이 시작됩니다.
+
+    ```kotlin
+    binding.buttonRequest.setOnClickListener {
+        val githubService = retrofit.create(GithubService::class.java)
+        // 10에서 이 부분을 수정합니다.
+        githubService.users().enqueue()
+    }
+    ```
+
+1. enqueue() 메서드를 호출한 후 Github API 서버로부터 응답받으면 enqueue() 안에 작성하는 콜백 인터페이스가 작동하게 됩니다. enqueue() 의 파라미터로 콜백 인터페이스를 구현합니다.
+
+    ```kotlin
+    githubService.users().enqueue(object: Callback<Repository> {
+        // 11은 여기에 입력합니다.
+    })
+    ```
+
+1. 콜백 인터페이스의 필수 메서드도 구현합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-307.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    override fun onResponse(call: Call<Repository>, response: Response<Repository>) {
+        // 12는 여기에 입력합니다.
+    }
+
+    override fun onFailure(call: Call<Repository>, t: Throwable) {
+    }
+    ```
+
+1. onResponse() 메서드의 두 번째 파라미터인 response의 body() 메서드를 호출하면 서버로부터 전송된 데이터를 꺼낼 수 있습니다. 꺼낸 데이터를 List<Repository>로 형변환한 후에 어댑터의 userList에 담습니다. 마지막으로 어댑터의 notifyDataSetChanged를 호출하면 리사이클러뷰에 변경된 사항이 반영됩니다.
+
+    ```kotlin
+    adapter.userList = response.body() as Repository
+    adapter.notifyDataSetChanged()
+    ```
+
+``MainActivity.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.networkretrofit
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.hanbit.networkretrofit.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+
+class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        val adapter = CustomAdapter()
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.github.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        binding.buttonRequest.setOnClickListener {
+            val githubService = retrofit.create(GithubService::class.java)
+            // 10에서 이 부분을 수정합니다.
+            githubService.users().enqueue(object: Callback<Repository> {
+                override fun onResponse(call: Call<Repository>, response: Response<Repository>) {
+                    adapter.userList = response.body() as Repository
+                    adapter.notifyDataSetChanged()
+                }
+
+                override fun onFailure(call: Call<Repository>, t: Throwable) {
+                }
+            })
+        }
+    }
+}
+
+interface GithubService {
+
+    @GET("users/Kotlin/repos")
+    fun users(): Call<Repository>
+}
+```
 
 
 <style>
