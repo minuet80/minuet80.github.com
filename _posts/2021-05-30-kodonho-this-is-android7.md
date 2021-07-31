@@ -95,9 +95,9 @@ DDL<sup> (Data Definition Language) </sup>은 데이터의 구조를 정의하�
 
 | SQL | 설명 |
 | :--- | :--- |
-| CREATE TABLE | 테이블 생성<br>CREATE TABLE 테이블명 (컬럼 타입) |
-| DROP TABLE | 테이블 삭제<br>DROP TABLE 테이블 명 | 
-| ALTER TABLE | 테이블 수정 (컬럼 수정, 추가, 삭제)<br>ALTER TABLE 테이블명 ADD COLUMN 컬럼 타입<br>ALTER TABLE 테이블명 MODIFY COLUMN 컬럼 타입<br>ALTER TABLE 테이블명 DROP COLUMN 컬럼 타입 |
+| CREATE TABLE | 테이블 생성 CREATE TABLE 테이블명 (컬럼 타입) |
+| DROP TABLE | 테이블 삭제 DROP TABLE 테이블 명 | 
+| ALTER TABLE | 테이블 수정 (컬럼 수정, 추가, 삭제) ALTER TABLE 테이블명 ADD COLUMN 컬럼 타입, ALTER TABLE 테이블명 MODIFY COLUMN 컬럼 타입, ALTER TABLE 테이블명 DROP COLUMN 컬럼 타입 |
 {: .table .table-striped .table-hover}
 
 데이터베이스는 하나의 빈 껍데기이고 DDL 쿼리를 실행하여 테이블을 하나씩 만들고 수정합니다.
@@ -110,10 +110,10 @@ DML<sup> (Data Manipulation Language) </sup>은 데이터를 조작하는 명령
 
 | SQL | 명령 | 설명 |
 | :--- | :--- | :--- |
-| SELECT | Read | 데이터 조회<br>SELECT 컬럼 FROM 테이블명 WHERE 조건 |
-| INSERT | Create | 데이터 삽입<br>INSERT INTO 테이블명 VALUES (데이터) |
-| UPDATE | Update | 데이터 수정<br>UPDATE 테이블명 SET 컬럼 = 데이터 WHERE 조건 |
-| DELETE | Delete | 데이터 삭제<br>DELETE FROM 테이블명 WHERE 조건 |
+| SELECT | Read | 데이터 조회, SELECT 컬럼 FROM 테이블명 WHERE 조건 |
+| INSERT | Create | 데이터 삽입, INSERT INTO 테이블명 VALUES (데이터) |
+| UPDATE | Update | 데이터 수정, UPDATE 테이블명 SET 컬럼 = 데이터 WHERE 조건 |
+| DELETE | Delete | 데이터 삭제, DELETE FROM 테이블명 WHERE 조건 |
 {: .table .table-striped .table-hover}
 
 데이터를 읽고 쓰기 위해서 SELECT, INSERT, UPDATE, DELETE 네 가지 명령어만 알고 있으면 거의 모든 처리를 할 수 있습니다.
@@ -194,8 +194,9 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
 새로운 SQLite 프로젝트를 하나 생성하고 예제를 따라 하면서 데이터베이스 사용법을 읽혀보겠습니다.
 
 
-1. [app] - [java] 데릭토리 밑에 있는 패키지에 SqliteHelper 클래스를 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-238.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [java] 데릭토리 밑에 있는 패키지에 SqliteHelper 클래스를 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-238.png){: style="box-shadow: 0 0 5px #777"}
 
 1. SQLite 데이터베이스를 사용하려면 SQLiteOpenHelper 클래스를 상속받아야 합니다. SQLiteOpenHelper는 생성 시에 Context, 데이터베이스명, 팩토리, 버전 정보가 필요합니다. 팩토리는 사용하지 않아도 되므로 나머지 세 가지 정보를 내가 만든 클래스의 생성자에 파라미터로 정의한 후에 상속받은 SQLiteOpenHelper에 전달합니다. SqliteHelper.kt 파일의 class SqliteHelper를 다음과 같이 수정합니다. 
     ```kotlin
@@ -214,8 +215,9 @@ SQLiteOpenHelper클래스는 데이터베이스를 파일로 생성하고 코틀
     }
     ```
 
-1. 클래스 안쪽을 클릭한 상태에서 ``Ctrl`` + ``I`` 키를 입력하면 나타나는 목록에서 2개의 메서드를 모두 선택하고 [OK]를 클릭합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-239.png){: style="box-shadow: 0 0 5px #777"}
+1. 클래스 안쪽을 클릭한 상태에서 ``Ctrl`` + ``I`` 키를 입력하면 나타나는 목록에서 2개의 메서드를 모두 선택하고 [OK]를 클릭합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-239.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 2개의 메서드가 자동으로 생성됩니다. TODO가 입력된 행은 삭제합니다.  생성되는 메서드의 첫 번째 파라미터로 우리가 사용할 데이터베이스가 전달됩니다.
     ```kotlin
@@ -466,21 +468,25 @@ SqliteHelper를 만들었으니 이제 화면을 만들고 MainActivity.kt에 �
 
 1. 팔레트의 텍스트 카테고리에서 플레인텍스트를 드래그해서 화면 하단에 배치합니다. 여기에 메모를 입력할 겁니다. id속성은 ‘editMemo’, text속성은 지우고 hint속성을 “메모를 입력하세요”라고 수정합니다. 여러 줄을 입력할 수 있어야 하므로 inputType속성의 아래 화살표를 눌러 textMultiLine을 ‘true’로 변경합니다. textPErsionName도 그대로 체크 상태입니다.
 
-1. 팔레트의 버튼 카테고리에서 버튼을 하나 드래그해서 우측 하단에 가져다둡니다. id속성에는 ‘btnSave’, text속성에는 ‘저장’이라고 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-240.png){: style="box-shadow: 0 0 5px #777"}
+1. 팔레트의 버튼 카테고리에서 버튼을 하나 드래그해서 우측 하단에 가져다둡니다. id속성에는 ‘btnSave’, text속성에는 ‘저장’이라고 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-240.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### item_recycler.xml 추가하기
 
 리사이클러뷰의 아이템 용도로 사용할 item_recycler.xml 레이아웃 파일을 생성해서 편집하겠습니다.
 
-1. [app] - [res] - [layout] 디렉토리에서 새 리소스 파일을 생성해서 다음과 같이 입력합니다. File name과 Root element를 주의해서 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-241.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [res] - [layout] 디렉토리에서 새 리소스 파일을 생성해서 다음과 같이 입력합니다. File name과 Root element를 주의해서 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-241.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 레이아웃 파일이 생성되면 [Degign] 모드에서 컴포넌트 트리의 최상위 컨스트레인트 레이아웃을 클릭합니다. 그리고 우측의 layout_height 속성을 ‘100dp’로 수정해서 아이템의 높이를 미리 정해 놓습니다.
 
-1. 번호와 메모의 내용을 표시할 텍스트뷰를 배치합니다. 그리고 내용을 표시하는 텍스트뷰 아래에 날자를 표시할 텍스트뷰를 하나 배치합니다. 각 속성의 수정 내용은다음 그림을 참고합니다. 이중 ellipsize속성은 maxLines에서 ‘2’로 텍스트뷰의 줄을 제한했는데 두 줄이 넘어가면 말줄임표(...)가 나오도록 하는 속성입니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-242.png){: style="box-shadow: 0 0 5px #777"}
+1. 번호와 메모의 내용을 표시할 텍스트뷰를 배치합니다. 그리고 내용을 표시하는 텍스트뷰 아래에 날자를 표시할 텍스트뷰를 하나 배치합니다. 각 속성의 수정 내용은다음 그림을 참고합니다. 이중 ellipsize속성은 maxLines에서 ‘2’로 텍스트뷰의 줄을 제한했는데 두 줄이 넘어가면 말줄임표(...)가 나오도록 하는 속성입니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-242.png){: style="box-shadow: 0 0 5px #777"}
+
     - 01: textNo
     - 메모 내용 표시
         - id: textContent
@@ -606,8 +612,9 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     binding.editMemo.setText("")
     ```
 
-1. 에뮬레이터에서 실행하고 테스트합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-243.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하고 테스트합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-243.png){: style="box-shadow: 0 0 5px #777"}
 
     ``activity_main.xml의 전체 코드``
 
@@ -695,8 +702,9 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 
 메모 목록에 삭제 버튼을 추가하여 메모를 삭제할 수 있도록 만들겠습니다.
 
-1. item_recycler.xml 파일을 열고 목록 아이템의 우측에 삭제 버튼을 배치합니다. id는 btnDelete로 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-244.png){: style="box-shadow: 0 0 5px #777"}
+1. item_recycler.xml 파일을 열고 목록 아이템의 우측에 삭제 버튼을 배치합니다. id는 btnDelete로 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-244.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 메모를 삭제하려면 SQLite의 데이터와 어댑터에 있는 Memo컬렉션의 데이터를 삭제해야 합니다.  SQLite의 데이터를 삭제하기 위해서 MainActivity.kt를 열고 클래스의 두 번째 줄에 생성해 둔 helper를 어댑터에 전달합니다. 어댑터 생성 코드 바로 아랫줄에 작성하는데 어댑터에는 아직 helper 프로퍼티가 없기 때문에 빨간색으로 나옵니다.
     ```kotlin
@@ -772,8 +780,9 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 
 1. 메모 내용이 표시되는 텍스트뷰의 maxlines 속성값을 삭제하고 layout_height 속성을 ‘wrap_content’로 변경합니다.
 
-1. 에뮬레이터에서 실행하고 여러 줄의 데이터를 작성해보세요.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-245.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하고 여러 줄의 데이터를 작성해보세요.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-245.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 프로젝트 전체 코드
 
@@ -1103,8 +1112,9 @@ Room은 데이터베이스에 읽고 쓰는 메서드를 인터페이스 형태�
 
 ``DAO란?``: *Data Access Object의 약어로 데이터베이스에 접근해서 DML 쿼리를 실행하는 메서드의 모음입니다.*
 
-1. [app] - [java] 밑의 패키지 아래에 다음처럼 RoomMemoDao 인터페이스를 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-247.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [java] 밑의 패키지 아래에 다음처럼 RoomMemoDao 인터페이스를 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-247.png){: style="box-shadow: 0 0 5px #777"}
 
 1. RoomMemoDao.kt 파일 class 위에 @Dao 어노테이션을 작성해서 Dao라는 것을 명시하고 ``Alt`` + ``Enter``키를 눌러 import합니다.
     ```kotlin
@@ -1238,8 +1248,9 @@ Room은 RoomDatabase를 제공하는데 RoomDatabase를 상속받아 클래스�
 
 RecyclerAdapter.kt를 열고 코드를 수정합니다.
 
-1. ``Ctrl`` + ``R`` 키를 누른 후 Memo 문자열을 모두 RoomMemo로 수정합니다. 대소문자를 구분해야 하기 위해서 ``Aa``라고 써 있는 아이콘을 클릭해서 활성화 한 후 [Replace all]을 눌러서 문자열을 모두 수정합니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-248.png){: style="box-shadow: 0 0 5px #777"}
+1. ``Ctrl`` + ``R`` 키를 누른 후 Memo 문자열을 모두 RoomMemo로 수정합니다. 대소문자를 구분해야 하기 위해서 ``Aa``라고 써 있는 아이콘을 클릭해서 활성화 한 후 [Replace all]을 눌러서 문자열을 모두 수정합니다. 
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-248.png){: style="box-shadow: 0 0 5px #777"}
 
 1. helper변수가 선언된 부분을 RoomHelper를 사용할 수 있도록 수정합니다.
     ``수정 전``
