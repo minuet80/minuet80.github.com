@@ -619,8 +619,9 @@ preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 
     </PreferenceScreen>
     ```
 
-1. ListPreference에서 사용할 리소스 파일을 생성하고 목록 데이터를 입력합니다.   [res] - [values] 디렉토리를 마우스 우클릭한 다음 [New] - [Values Resource File]을 선택하고, File name에 ‘array’를 입력하여 array.xml 파일을 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-233.png){: style="box-shadow: 0 0 5px #777"}
+1. ListPreference에서 사용할 리소스 파일을 생성하고 목록 데이터를 입력합니다.   [res] - [values] 디렉토리를 마우스 우클릭한 다음 [New] - [Values Resource File]을 선택하고, File name에 ‘array’를 입력하여 array.xml 파일을 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-233.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 array.xml에 다음과 같이 작성합니다. 각 태그의 name에 해당하는 부분이 ListPreference의 entries와 entryValues의 값으로 사용됩니다.
     ```xml
@@ -663,13 +664,15 @@ preferences.xml 파일에 설정 화면에서 사용할 화면 구조를 XML로 
     }
     ```
 
-1. 이제 activity_main.xml 을 열고 SettingFragment를 추가하겠습니다. [Design] 모드에서 화면 중앙의 기본 텍스트뷰는 삭제합니다. 그리고 팔레트의 커먼 또는 컨테이너에 있는 \<fragment\>를 화면에 드래그하면 나타나는 팝업창에서 SettingFragment를 추가하면 됩니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-234.png){: style="box-shadow: 0 0 5px #777"}
+1. 이제 activity_main.xml 을 열고 SettingFragment를 추가하겠습니다. [Design] 모드에서 화면 중앙의 기본 텍스트뷰는 삭제합니다. 그리고 팔레트의 커먼 또는 컨테이너에 있는 \<fragment\>를 화면에 드래그하면 나타나는 팝업창에서 SettingFragment를 추가하면 됩니다. 
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-234.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 컨스트레인트의 네 방향을 화면 가장자리에 연결하고 layout_width와 layout_height의 속성을 ‘match_constraint’로 바꿔서 화면에 꽉 차게 배치합니다.
 
-1. 에뮬레이터에스 실행하면 다음 그림처럼 설정 화면이 나타나며 기능과 옵션 설정을 사용할 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-235.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에스 실행하면 다음 그림처럼 설정 화면이 나타나며 기능과 옵션 설정을 사용할 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-235.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 설정값 사용하기
 
