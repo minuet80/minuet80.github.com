@@ -222,8 +222,9 @@ Timer 프로젝트를 새로 생성하고 코드를 하나씩 따라해 보겠�
 
 1. activity_main.xml 파일을 열고 타이머를 컨트롤하기 위한 시작과 종료 버튼을 배치합니다. 각각의 id속성은 ‘btnStart’와 ‘btnStop’으로, text속성은 ‘시작’, ‘종료’, textSize 속성을 수정해서 알맞은 크기로 글자 크기를 키웁니다.
 
-1. 시간을 표시할 텍스트뷰를 화면 중간에 배치하고, text 속성에는 ‘00:00’, id속성은 ‘textTimer’로 입력하고, textSize 속성으로 글자 크기를 키웁니다. gravity 속성에는 center_horizontal 과 center_vertical을 체크해 ‘true’로 수정해야 텍스트뷰 안의 텍스트가 가운데에 위치합니다. 버튼 2개와 텍스트뷰의 컨스트레인트는 우측 그림을 참고해서 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-259.png){: style="box-shadow: 0 0 5px #777"}
+1. 시간을 표시할 텍스트뷰를 화면 중간에 배치하고, text 속성에는 ‘00:00’, id속성은 ‘textTimer’로 입력하고, textSize 속성으로 글자 크기를 키웁니다. gravity 속성에는 center_horizontal 과 center_vertical을 체크해 ‘true’로 수정해야 텍스트뷰 안의 텍스트가 가운데에 위치합니다. 버튼 2개와 텍스트뷰의 컨스트레인트는 우측 그림을 참고해서 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-259.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 핸들러 다루기
 
@@ -290,8 +291,9 @@ Timer 프로젝트를 새로 생성하고 코드를 하나씩 따라해 보겠�
     }
     ```
 
-1. 에뮬레이터에서 실행하고 테스트합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-260.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하고 테스트합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-260.png){: style="box-shadow: 0 0 5px #777"}
 
     ``MainActivity.kt의 전체 코드``
 
@@ -600,8 +602,9 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
 
 1. 다운로드한 사진을 보여주는 이미지뷰를 플레인텍스트 상단에 배치합니다. id 속성과 컨스트레인트는 마찬가지로 다음 그림을 참고해서 수정합니다.
 
-1. 그리고 이미지뷰 위에 겹치도록 (화면 한가운데에) 위젯 카테고리에 있는 프로그래스바를 가져다 놓고 상하좌우 컨스트레인트를 연결합니다. id 속성에 ‘progress’를 입력한 뒤 visibility속성을 ‘gone’으로 바꿔서 앱을 실행해도 처음에는 화면에 보이지 않게 만들어줍니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-263.png){: style="box-shadow: 0 0 5px #777"}
+1. 그리고 이미지뷰 위에 겹치도록 (화면 한가운데에) 위젯 카테고리에 있는 프로그래스바를 가져다 놓고 상하좌우 컨스트레인트를 연결합니다. id 속성에 ‘progress’를 입력한 뒤 visibility속성을 ‘gone’으로 바꿔서 앱을 실행해도 처음에는 화면에 보이지 않게 만들어줍니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-263.png){: style="box-shadow: 0 0 5px #777"}
 
     ``프로그래스바 속성을 gone으로 설정하면 이미지가 끝으로 사라져 보이지 않습니다.``
 
@@ -692,8 +695,9 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
     }
     ```
 
-1. 앱을 실행합니다. 플레인텍스트에 이미지 주소를 입력하고, 다운로드 버튼을 클릭하면 이미지가 화면에 나타납니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-264.png){: style="box-shadow: 0 0 5px #777"}
+1. 앱을 실행합니다. 플레인텍스트에 이미지 주소를 입력하고, 다운로드 버튼을 클릭하면 이미지가 화면에 나타납니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-264.png){: style="box-shadow: 0 0 5px #777"}
 
     *``이미지 주소가 http로 시작되면 AndroidManifest.xml 파일의 <application 태그에 android:uses CleartextTraffic="true" 속성을 추가해야 합니다.``*{: style="background-color: #FFCCCC"}
 
