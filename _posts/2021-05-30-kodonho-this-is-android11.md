@@ -525,9 +525,300 @@ implementation 'com.google.android.gms:play-services-maps:17.0.0'
     // 03은 여기에 입력합니다.
     ```
 
-1. updateLocation() 메서드를 작성합니다. 위치 정보를 요청할 정확도와 주기를 설정할 locationRequest를 먼저 생성하고, 해당 주기마다 반환받을 locationCallback을 생성합니다. 마지막으로 onMapReady 에서 생성한 위치 검색 클라이언트의 requestLocationUpdates() 에 앞에서 생성한 2개와 함께 루퍼 정보를 넘겨줍니다. 이제 1초 (1,000 밀리초) 에 한 번씩 변화된 위치 정보가 LocationCallback의 onLocationResult() 로 전달됩니다. onLocationResult()는 반환받은 정보에서 위치 정보를 setLastLocation()으로 전달합니다. fusedLocationClient.requestLocationUpdates 코드는 권한 처리가 필요한데 현재 코드에서는 확인할 수 없습니다. 따라서 메서드 상단에 해당 코드를 체크하지 않아도 된다는 의미로 @SuppressLint("MissingPermission") 애너테이션을 달아줍니다.
+1. updateLocation() 메서드를 작성합니다. 위치 정보를 요청할 정확도와 주기를 설정할 locationRequest를 먼저 생성하고, 해당 주기마다 반환받을 locationCallback을 생성합니다. 마지막으로 onMapReady 에서 생성한 위치 검색 클라이언트의 requestLocationUpdates() 에 앞에서 생성한 2개와 함께 루퍼 정보를 넘겨줍니다. 이제 1초 (1,000 밀리초) 에 한 번씩 변화된 위치 정보가 LocationCallback의 onLocationResult() 로 전달됩니다. onLocationResult()는 반환받은 정보에서 위치 정보를 setLastLocation()으로 전달합니다. ``fusedLocationClient.requestLocationUpdates 코드는 권한 처리가 필요한데 현재 코드에서는 확인할 수 없습니다.``{: style="background-color: #ffcccc"} ``따라서 메서드 상단에 해당 코드를 체크하지 않아도 된다는 의미로 @SuppressLint("MissingPermission") 애너테이션을 달아줍니다.``{: style="background-color: #ffcccc"}
+
+    ```kotlin
+    @SuppressLint("MissingPermission")
+    fun updateLocation() {
+        val locationRequest = LocationRequest.create()
+        locationRequest.run {
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            interval = 1000
+        }
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                locationResult?.let {
+                    for ((i, location) in it.locations.withIndex()) {
+                        Log.d("Location", "$i ${location.latitude}, ${location.longitude}")
+                        setLastLocation(location)
+                    }
+                }
+            }
+        }
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback,
+            Looper.myLooper()
+        )
+    }
+
+    // 04는 여기에 작성합니다.
+    ```
+
+1. 위치 정보를 받아서 마커를 그리고 화면을 이동하는 setLastLocation()을 작성합니다.
+
+    ```kotlin
+    fun setLastLocation(lastLocation: Location) {
+        // 05은 여기에 작성합니다.
+    }
+    ```
+
+1. 전달받은 위치 정보로 좌표를 생성하고 해당 좌표로 마커를 생성합니다.
+
+    ```kotlin
+    val LATLNG = LatLng(lastLocation.latitude, lastLocation.longitude)
+    val markerOptions = MarkerOptions().position(LATLNG).title("Here!")
+
+    // 06은 여기에 작성합니다.
+    ```
+
+1. 카메라 위치를 현재 위치로 세팅하고 마커와 함께 지도에 반영합니다. 마커를 지도에 반영하기 전에 mMap.clear()를 호출해서 이전에 그려진 마커가 있으면 지웁니다.
+
+    ```kotlin
+    val cameraPosition = CameraPosition.Builder().target(LATLNG).zoom(15.0f).build()
+    mMap.clear()
+    mMap.addMarker(markerOptions)
+    mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
+    ```
+
+1. 안드로이드 애뮬레이터에서 실행한 후 다음 순서대로 위치를 변경해봅니다. 다른 위치를 클릭하면서 [SET LOCATION]을 클릭하면 마커가 이동하는 것을 확인할 수 있습니다. 
+
+    1. 애뮬레이터 좌측 메뉴 중 가장 아래에 있는 [...] 클릭
+    1. Location 선택 (가장 위에 있음)
+    1. 지도에서 아무 곳이나 클릭
+    1. 우측 하단의 [SET LOCATION] 버튼 클릭
+
+``MapsActivity.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.mapsmylocation
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.location.Location
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.Looper
+import android.util.Log
+import android.widget.Toast
+import com.google.android.gms.location.*
+import com.google.android.gms.maps.*
+
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import kr.co.hanbit.mapsmylocation.databinding.ActivityMapsBinding
+
+class MapsActivity : BaseActivity(), OnMapReadyCallback {
+
+    private lateinit var mMap: GoogleMap
+    private lateinit var binding: ActivityMapsBinding
+
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var locationCallback: LocationCallback
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityMapsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val permissions = arrayOf(
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+
+        requirePermissions(permissions, 999)
+    }
+
+    override fun permissionGranted(requestCode: Int) {
+        startProcess()
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+
+        Toast.makeText(this, "권한 승인이 필요합니다.", Toast.LENGTH_LONG).show()
+    }
+
+    fun startProcess() {
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        updateLocation()
+    }
+
+    @SuppressLint("MissingPermission")
+    fun updateLocation() {
+        val locationRequest = LocationRequest.create()
+        locationRequest.run {
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            interval = 1000
+        }
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult?) {
+                locationResult?.let {
+                    for ((i, location) in it.locations.withIndex()) {
+                        Log.d("Location", "$i ${location.latitude}, ${location.longitude}")
+                        setLastLocation(location)
+                    }
+                }
+            }
+        }
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback,
+            Looper.myLooper()
+        )
+    }
+
+    fun setLastLocation(lastLocation: Location) {
+        val LATLNG = LatLng(lastLocation.latitude, lastLocation.longitude)
+        val markerOptions = MarkerOptions().position(LATLNG).title("Here!")
+
+        val cameraPosition = CameraPosition.Builder().target(LATLNG).zoom(15.0f).build()
+        mMap.clear()
+        mMap.addMarker(markerOptions)
+        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
+    }
+
+}
+```
+
+# 2. 네트워크
+
+네트워크는 ‘2대 이상의 컴퓨터가 연결되어 데이터를 주고받는 통신 체계’라고 정의할 수 있습니다.
+
+인터넷은 전송할 데이터를 HTTP라는 프로토콜로 만들어진 패킷에 담은 후에 전송 프로토콜인 TCP/IP를 사용하여 수신 측에 전달하는 구조로 만들어져 있습니다.
+
+여기서는 스마트폰에서 인터넷을 통해 원격지 (google.com, naver.com 등의 서버)에 있는 데이터를 가져와 사용하는 방법을 코드를 통해 알아보겠습니다.
+
+## 2.1 HTTP
+
+1. ``프로토콜``{: style="background-color: #FFFFCC"}
+
+    컴퓨터 간의 데이터를 전송하는 방식이 서로 다르면 데이터를 주고받을 때마다 각 컴퓨터의 전송 방식에 맞게 코드를 수정해야 합니다.
+
+    프로토콜은 이런 전송 방식을 표준화하여 어떤 컴퓨터와도 동일한 방식으로 데이터를 주고받을 수 있게 만들어진 통신 규약입니다.
+
+    인터넷은 TCP/IP로 동작하는데 이 TCP/IP가 프로토콜입니다.
+
+    우리가 가장 익숙하게 사용하는 웹은 HTTP라는 프로토콜을 사용하며, 웹 서버와 웹 브라우저가 이 규약에 따라 데이터를 주고 받습니다.
+
+1. ``패킷``{: style="background-color: #FFFFCC"}
+
+    패킷은 데이터가 전송되는 실제 단위입니다.
+
+    예를 들어 책 한 권의 분량의 문자열을 네트워크를 통해 전송할 때, 전체 데이터가 한 번에 전송되는 것이 아니라 책 한쪽 정도의 문자열만을 담을 수 있는 패킷이라는 바구니에 담은 후에 한 바구니씩 전송합니다.
+
+    패킷으로 만들어진 데이터는 앞에서부터 1,2,3,4,5... 순서대로 전송되지만 네트워크를 지나면서 수신 측에는 순서대로 도착하지 않습니다.
+
+    컴퓨터 프로그램은 데이터를 주고받기 위해 HTTP 말고도 서로 다른 네트워크 계층 (네트워크 카드, 컴퓨터 OS, 프로그램 등의 계층을 나눠서 사용하는 프로토콜이 다릅니다.)에서 여러 종류의 프로토콜이 동시에 사용됩니다.
+
+
+
+
+이렇게 사용하는 프로토콜의 종류는 다양하지만 프로그래머가 직접적으로 코드에서 사용하는 프로토콜은 HTTP입니다.
+
+프로그래머가 아니더라도 많이 접하는 프로토콜이기도 한데, 웹 브라우저의 주소창에 주소를 입력할 때 주소 앞에 ‘http://’ 라고 접두어를 붙이는 이유가 요청하는 주소의 데이터를 HTTP프로토콜로 처리하기 때문입니다.
+
+HTTP는 웹상의 서버와 클라이언트인 웹 브라우저와의 데이터 통신이 가능하도록 설계된 표준 규약입니다.
+
+클라이언트가 서버에 데이터를 요청하는 요청<sup> (Request) </sup>메시지와 클라이언트가 요청한 데이터를 응답하는 응답<sup> (Response) </sup>메시지로 구성됩니다.
+
+HTTP를 알아보기 전에 간단하게 URL의 구조를 살펴보겠습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-295.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### HTTP의 구조
+
+HTTP는 명령줄에 해당하는 헤더와 실제 데이터가 들어 있는 바디로 구성되어 있습니다.
+
+예를 들기 위해서 헤더에 한 줄만 작성했지만 실제로는 여러 줄에 걸쳐 정보들이 기술되어 있습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-296.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### HTTP 요청 방식
+
+HTTP 요청 방식은 첫 줄에 첫 번째 단어로 작성되는 일종의 명령어 (HTTP 메서드)로 이뤄집니다.
+
+HTTP 메서드는 클라이언트의 요청 방식을 정의하고 서버의 리소스에 대한 행위를 지정합니다.
+
+주로 사용되는 HTTP 메서드는 다음과 같습니다.
+
+| HTTP 메서드 | 설명 |
+| :--- | :--- |
+| GET | 지정한 URI의 리소스를 요청합니다. |
+| POST | 요청과 데이터를 담아 전송하면 해당 URI에 리소스를 생성합니다. |
+| PUT | 지정한 URI의 리소스를 수정합니다. |
+| DELETE | 지정한 URI의 리소스를 삭제합니다. |
+{: .table .table-striped .table-hover}
+
+
+### HTTP 응답 코드
+
+| HTTP 응답 코드 | 설명 |
+| :--- | :--- |
+| 1xx | 조건부 응답 |
+| 2xx | 성공 |
+| 3xx | 리다이렉션 완료 |
+| 4xx | 클라이언트 요청 에러 |
+| 5xx | 서버 에러 |
+{: .table .table-striped .table-hover}
+
+1부터 5까지의 숫자로 시작하는 세 자릿수로 만들어져 있으며, HTTP 버전에 따라 차이는 있지만 1.1 버전을 기준으로 약 40개 정도의 응답 코드가 정의되어 있습니다. 
+
+더 자세한 코드는 다음 URL를 참고하세요
+
+[http-status-codes](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+
+
+## 2.2 HttpURLConnection
+
+안드로이드는 HTTP로 데이터 통신을 하기 위해서 HttpUrlConnection 클래스와 HTTPS 사양으로 확장한 HttpsURLConnection 클래스를 지원합니다.
+
+HTTPS는 HTTP에서 보안이 강화된 버전의 프로토콜입니다.
+
+간단하게 웹 페이지 주소를 입력하여 서버로부터 응답받는 웹 페이지의 코드를 화면에 출력하는 앱을 만들어보겠습니다.
+
+NetworkHttpUrlConnection 이라는 이름으로 새로운 Empty Activity 프로젝트를 새로 생성하고 build.gradle 파일에 viewBinding 설정을 합니다.
+
+백그라운드 처리도 필요하기 때문에 dependencies에 코루틴 의존성도 추가합니다
+
+```gradle
+dependencies {
+    ...
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+}
+```
+
+### 권한 선언하고 화면 만들기
+
+1. [app] - [manifests] 에 있는 AndroidManifest.xml 파일을 열고 인터넷 접근 권한을 입력합니다.
+
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    ```
+
+
+
+
+
+
+
+
+
+
+
 
 
 <style>
-.page-container {max-width: 1200px}657‘’“”
+.page-container {max-width: 1200px}676‘’“”
 </style>
