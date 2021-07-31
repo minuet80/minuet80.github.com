@@ -28,14 +28,16 @@ width: large
 
 1. activity_main.xml 파일을 열고 화면 가운데 있는 텍스트뷰를 삭제합니다.
 
-1. 카메라 앱을 호출하는 버튼을 드래그해서 화면 하단에 배치합니다. 그리고 text속성에는 ‘카메라’, id속성에는 ‘buttonCamera’를 입력하고, 컨스트레인트는 다음 그림과 같이 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-250.png){: style="box-shadow: 0 0 5px #777"}
+1. 카메라 앱을 호출하는 버튼을 드래그해서 화면 하단에 배치합니다. 그리고 text속성에는 ‘카메라’, id속성에는 ‘buttonCamera’를 입력하고, 컨스트레인트는 다음 그림과 같이 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-250.png){: style="box-shadow: 0 0 5px #777"}
 
 
 1. 카메라 앱으로 촬영한 사진을 미리보기 할 이미지뷰(ImageView)를 버튼 상단에 배치합니다. 이미지뷰를 드래그했을 때 나타나는 팝업창에서 [avatars]를 선택한 다음 [OK]버튼을 클릭합니다.
 
-1. 이미지뷰의 layout_width와 layout_height 의 속성에 ‘0dp’를 입력한 다음 컨스트레인트를 우측 그림과 같이 연결합니다. 그리고 id속성에는 ‘imagePreview’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-251.png){: style="box-shadow: 0 0 5px #777"}
+1. 이미지뷰의 layout_width와 layout_height 의 속성에 ‘0dp’를 입력한 다음 컨스트레인트를 우측 그림과 같이 연결합니다. 그리고 id속성에는 ‘imagePreview’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-251.png){: style="box-shadow: 0 0 5px #777"}
 
 1. [app] - [manifests]의 AndroidManifest.xml 파일을 열고 다음의 코드를 입력하여 카메라 권한과 카메라로 촬영한 사진에 대한 접근 권한을 선언합니다.  위치는 \<application\>태그 시작 전에 입력합니다. (WRITE 권한이 있으면 같은 그룹의 READ권한은 없어도 되지만, 이렇게 모두 작성하고 사용해도 괜찮습니다.) 카메라를 사용하기 위해서는 \<uses-feature /\>도 같이 설정해야 합니다.
     ```xml
@@ -63,8 +65,9 @@ width: large
     }
     ```
 
-1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-252.png){: style="box-shadow: 0 0 5px #777"}
+1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-252.png){: style="box-shadow: 0 0 5px #777"}
 
     생성된 코드에서 TODO() 행만 삭제하고 일단 빈 채로 두겠습니다.
 
@@ -172,8 +175,9 @@ Intent에 카메라 앱을 호출하기 위한 플래그인 MediaStore.ACTOIN_IM
     }
     ```
 
-1. openCamera() 메서드를 통해서 카메라가 정상적으로 호출되고, 사진 촬영이 완료하면 onActivityResult() 메서드로 결괏값이 전달됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-253.png){: style="box-shadow: 0 0 5px #777"}
+1. openCamera() 메서드를 통해서 카메라가 정상적으로 호출되고, 사진 촬영이 완료하면 onActivityResult() 메서드로 결괏값이 전달됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-253.png){: style="box-shadow: 0 0 5px #777"}
 
     ``MainActivity.kt의 전체 코드``
 
@@ -490,8 +494,9 @@ onActivityResult의 세 번째 파라미터로 전달되는 data에는 해당 �
 
 Intent 와 startActivityForResult() 메서드로 갤러리 앱을 호출한 후 사용자가 선택한 사진의 Uri를 onActivityResult() 메서드에서 받아서 사용하는 코드를 작성해보겠습니다.
 
-1. activity_main.xml 의 [Degisn] 모드에서 버튼을 추가하고, text 속성은 ‘갤러리’, id속성은 ‘btnGallery’로 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-256.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 의 [Degisn] 모드에서 버튼을 추가하고, text 속성은 ‘갤러리’, id속성은 ‘btnGallery’로 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-256.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt를 열고 setViews() 메서드 안에 btnGallery.setOnClickListener를 추가하고 openGallery() 메서드를 호출합니다. openGallery() 메서드는 04에서 작성합니다.
     ```kotlin
