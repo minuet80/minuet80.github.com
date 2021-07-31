@@ -271,11 +271,11 @@ table {
     margin: 0;
     padding: 0; }
     table tr:nth-child(2n) {
-      background-color: lightyellow }
+      background-color: whitesmoke }
     table tr th {
       font-weight: bold;
       border: 1px solid $grey-color;
-      background-color: whitesmoke;
+      background-color: lightyellow;
       text-align: left;
       margin: 0;
       padding: 6px 13px; }
