@@ -23,7 +23,8 @@ width: large
 앞으로 사용할 액티비티, 서비스 등의 컴포넌트와 스피너, 리사이클러뷰와 같은 화면 요소를 사용하기 위해서는 컨텍스트가 필요합니다.
 
 컨텍스트<sup>Context</sup>는 시스템을 사용하기 위한 정보(프로퍼티)와 도구(메서드)가 담겨 있는 클래스입니다.
-대부분의 컨텍스트는 컴포넌트 실행<sup>Runtime</sup>시 함께 생성되고, 생성된 컴포넌트가 가지고 있는 메서드를 호출해서 각각의 도구들을 사용할 수 있습니다.<br>
+대부분의 컨텍스트는 컴포넌트 실행<sup>Runtime</sup>시 함께 생성되고, 생성된 컴포넌트가 가지고 있는 메서드를 호출해서 각각의 도구들을 사용할 수 있습니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-126.png){: style="box-shadow: 0 0 5px #777"}
 
 안드로이드에서의 컨텍스트는 앱을 실행하기 위해 잘 짜여진 설계도의 개념으로 앱에서는 사용하는 기본 기능이 담겨 있는 기본 클래스<sup>Base Class</sup>입니다.
@@ -46,7 +47,8 @@ width: large
 ## 1.2 인텐트
 액티비티를 실행하기 위해서는 단순히 컨텍스트가 제공하는 메서드를 호출하면 되는데, 이때 실행할 액티비티가 명시된 인텐트<sup>Intent</sup>를 해당 메서드에 전달해야 합니다.
 액티비티를 실행하려면 기본적으로 인텐트가 필요하지만, 프로젝트를 생성할 때 함께 만들어지는 MainActivity는 특별한 설정을 하지 않아도 안드로이드에 자동으로 등록되고 실행됩니다.
-하지만 MainActivity외에 다른 액티비티를 사용할 때는 인텐트에 새 액티비티의 이름을 담아서 시스템에 전달합니다.<br>
+하지만 MainActivity외에 다른 액티비티를 사용할 때는 인텐트에 새 액티비티의 이름을 담아서 시스템에 전달합니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-128.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 실행할 대상의 액티비티 이름과 전달할 데이터를 담아서 인텐트를 생성합니다.
@@ -58,12 +60,14 @@ width: large
 
 ## 1.3 새 액티비티 만들고 실행하기
 
-1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하여 나타나는 메뉴에서 [New] - [Activity] - [Empty Activity] 를 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-129.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하여 나타나는 메뉴에서 [New] - [Activity] - [Empty Activity] 를 선택합니다.
 
-1. 액티비티 생성 창의 Activity Name에 ‘SubActivity’라고 입력하면 Layout name은 자동적으로 ‘activity_sub’라고 입력됩니다. 액티비티명은 ``낙타표기법<sup>Camel-Case</sup>``을 사용합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-130.png){: style="box-shadow: 0 0 5px #777"}
-  - Launcher Activity : ``Launcher Activity 를 체크``하면 안드로이드 설정 파일인 AndroidManifest.xml 에 런처로 등록되어 프로그램 실행 시 가장 먼저 호출되도록 설정됩니다.
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-129.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 액티비티 생성 창의 Activity Name에 ‘SubActivity’라고 입력하면 Layout name은 자동적으로 ‘activity_sub’라고 입력됩니다. 액티비티명은 ``낙타표기법<sup>Camel-Case</sup>``을 사용합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-130.png){: style="box-shadow: 0 0 5px #777"}
+    - Launcher Activity : ``Launcher Activity 를 체크``하면 안드로이드 설정 파일인 AndroidManifest.xml 에 런처로 등록되어 프로그램 실행 시 가장 먼저 호출되도록 설정됩니다.
 
 1. 생성된 activity_sub.xml 파일을 열고 화면 상단에 텍스트뷰를 하나 가져다 놓고 속성 영역의 text 속성에 ‘서브 액티비티’라고 입력합니다.
 
@@ -72,13 +76,15 @@ width: large
 
 1. ‘Hello World!’가 적힌 텍스트뷰의 text속성에 ‘메인 액티비티’라고 입력합니다. 컨스트레인트는 세방향을 연결하고 아래쪽은 해제한 다음 ‘서브 액티비티’와 같은 위치에 배치합니다. 속성 영역의 Layout 에서 상단 숫자를 같게 입력하면 같은 위치가 됩니다.
 
-1. 버튼을 텍스트뷰 아래에 가져다 놓고 위쪽 컨스트레인트를 텍스트뷰에 연결하고 좌우는 화면의 가장자리에 연결합니다. 버튼의 id속성에는 ‘btnStart’, text속성에는 ‘서브 액티비티 실행’이라고 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-131.png){: style="box-shadow: 0 0 5px #777"}
+1. 버튼을 텍스트뷰 아래에 가져다 놓고 위쪽 컨스트레인트를 텍스트뷰에 연결하고 좌우는 화면의 가장자리에 연결합니다. 버튼의 id속성에는 ‘btnStart’, text속성에는 ‘서브 액티비티 실행’이라고 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-131.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 메인 액티비티에서 서브 액티비티 실행하기
 
 1. build.gradle 파일에 viewBinding을 설정하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다.  그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+
     ```kotlin
     package kr.co.hanbit.activity
 
@@ -116,8 +122,9 @@ binding.btnStart.setOnClickListener { }
 binding.btnStart.setOnClickListener { startActivity(intent) }
 ```
 
-1. 에뮬레이터에서 실행하면 메인 액티비티 화면에 실행 버튼이 보입니다. 버튼을 클릭하면 서비 액티비티가 실행됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-132.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하면 메인 액티비티 화면에 실행 버튼이 보입니다. 버튼을 클릭하면 서비 액티비티가 실행됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-132.png){: style="box-shadow: 0 0 5px #777"}
 
 ## 1.4 액티비티 사이에 값 주고받기
 액티비티와 같은 컴포넌트는 인텐트에 실행 메시지도 전달하지만 인텐트를 통해 데이터도 주고받을 수 있습니다.
@@ -130,8 +137,9 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     intent.putExtra("from2", 2021)
     ```
 
-1. 값을 받는 측의 코드를 작성하기 전에, 전달받은 값을 출력할 텍스트뷰 2개를 화면에 배치하겠습니다. activity_sub.xml 을 열고 텍스트뷰 2개를 화면에 배치합니다. 다음 그림처럼 첫 번째 텍스트뷰는 화면 좌측에 위치시키고 id와 text속성에 모두 ‘to1’이라고 입력합니다. 두번째 텍스트뷰는 화면 우측에 위치시키고 id와 text속성에 모두 ‘to2’라고 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-133.png){: style="box-shadow: 0 0 5px #777"}
+1. 값을 받는 측의 코드를 작성하기 전에, 전달받은 값을 출력할 텍스트뷰 2개를 화면에 배치하겠습니다. activity_sub.xml 을 열고 텍스트뷰 2개를 화면에 배치합니다. 다음 그림처럼 첫 번째 텍스트뷰는 화면 좌측에 위치시키고 id와 text속성에 모두 ‘to1’이라고 입력합니다. 두번째 텍스트뷰는 화면 우측에 위치시키고 id와 text속성에 모두 ‘to2’라고 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-133.png){: style="box-shadow: 0 0 5px #777"}
 
 1. SubActivity.kt 파일을 열고 binding 을 생성한 후 setContentView 에 binding.root를 전달합니다. SubActivityt에서 사용하는 레이아웃 파일의 이름이 activity_sub.xml이기 때문에 바인딩도 ActivitySubBinding이 됩니다.
     ```kotlin
@@ -162,6 +170,7 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
       - intent가 액티비티의 기본 프로퍼티이기 때문에 전달된 인텐트는 intent로 바로 호출해서 사용할 수 있습니다.
 
 1. 전달받은 인텐트에서 from2도 같은 방법으로 꺼내서 to2의 text에 입력합니다. from2에 전달 값의 타입이 숫자이기 때문에 getIntExtra() 메서드를 사용합니다. getIntExtra() 메서드는 파라미터를 2개 가지고 있는데, 두 번째 파라미터는 일단 ‘0’이라고 입력해둡니다.
+
     ```kotlin
     binding.to2.text = intent.getIntExtra("from2", 0)
     ```
@@ -173,9 +182,12 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     - ``getIntExtra() 메서드의 두 번째 파라미터는 기본값``
       - getIntExtra() 메서드에 입력되는 두 번째 값은 from2 키로 값을 꺼냈는데 아무런 값도 전달되지 않았을 경우 디폴트로 사용할 기본값을 설정하는 파라미터입니다.
 
-1. 에뮬레이터에서 실행한 다음 결과를 확인합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-134.png){: style="box-shadow: 0 0 5px #777"}<br><br>
+1. 에뮬레이터에서 실행한 다음 결과를 확인합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-134.png){: style="box-shadow: 0 0 5px #777"}
+
     여기까지 MainActivity.kt 코드
+
     ```kotlin
     package kr.co.hanbit.activity
 
@@ -228,10 +240,12 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
 
 1. activity_sub.xml 파일을 열고 to1 텍스트뷰 아래에 플레인텍스트 (EditText)를 하나 추가하고 컨스트레인트를 연결합니다. id 속성에는 ‘editMessage’, hint 속성에는 ‘전달할 메시지를 입력하세요’라고 입력하고, text 속성값은 지웁니다.
 
-1. 플레인텍스트 하단에 버튼을 하나 추가하고 오른쪽 그림을 참고해서 컨스트레인트를 연결합니다. 버튼의 id속성에는 ‘btnClose’, text속성에는 ‘액티비티 닫기’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-135.png){: style="box-shadow: 0 0 5px #777"}
+1. 플레인텍스트 하단에 버튼을 하나 추가하고 오른쪽 그림을 참고해서 컨스트레인트를 연결합니다. 버튼의 id속성에는 ‘btnClose’, text속성에는 ‘액티비티 닫기’를 입력합니다.
 
-1. 서브 액티비티가 종료될 때 자신을 호출했던 액티비티로 값을 돌려주는 코드를 추가하겠습니다. SubActivity.kt 파일을 열고 onCreate() 메서드 안에 ‘btnClose’를 입력한 후에 클릭리스너를 달아줍니다.<br>
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-135.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 서브 액티비티가 종료될 때 자신을 호출했던 액티비티로 값을 돌려주는 코드를 추가하겠습니다. SubActivity.kt 파일을 열고 onCreate() 메서드 안에 ‘btnClose’를 입력한 후에 클릭리스너를 달아줍니다.
+
     ```kotlin
     binding.btnClose.setOnClickListener {
         
@@ -288,8 +302,9 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     }
     ```
 
-1. MainActivity.kt 안에 SubActivity에서 돌려준 값을 받는 코드를 추가합니다. onCreate() 메서드의 블록 밖을 클릭한 후 ``Ctrl`` + ``O``키를 누릅니다. 메서드 목록 중에서 onActivityResult를 선택하고 [OK]버튼을 클릭하면 코드가 자동으로 생성됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-136.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. MainActivity.kt 안에 SubActivity에서 돌려준 값을 받는 코드를 추가합니다. onCreate() 메서드의 블록 밖을 클릭한 후 ``Ctrl`` + ``O``키를 누릅니다. 메서드 목록 중에서 onActivityResult를 선택하고 [OK]버튼을 클릭하면 코드가 자동으로 생성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-136.png){: style="box-shadow: 0 0 5px #777"}
 
     ```kotlin
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -315,7 +330,8 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     val message = data?.getStringExtra("returnValue")
     ```
 
-1. 해당 메시지를 토스트(Toast)로 화면에 보여주는 코드를 작성합니다. 토스트는 화면에 잠깐 나타났다 사라지는 메시지 출력 도구입니다. 메서드의 닫는 괄호()) 다음에 반드시 .show() 를 호출해야지만 화면에 나타납니다. <br>
+1. 해당 메시지를 토스트(Toast)로 화면에 보여주는 코드를 작성합니다. 토스트는 화면에 잠깐 나타났다 사라지는 메시지 출력 도구입니다. 메서드의 닫는 괄호()) 다음에 반드시 .show() 를 호출해야지만 화면에 나타납니다.
+
     ```kotlin
     Toast.makeText(this, messsage, Toast.LENGTH_LONG).show()
     ```
@@ -338,13 +354,14 @@ binding.btnStart.setOnClickListener { startActivity(intent) }
     }
     ```
 
-1. 여기까지 작성하고 에뮬레이터에서 실행한 후 액티비티 닫기 버튼을 클릭해보세요. 그런데 서브 액티비티는 닫히지만 받는 메인 액티비티에는 아무런 변화가 없습니다. startActivity() 메서드로 실행된 액티비티에서는 값을 돌려받을 수 없기 때문입니다. 메인 액티비티에서 서브 액티비티를 호출한 후 값을 돌려받고 싶을 때는 startActivityForResult() 메서드를 사용해야만 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-137.png){: style="box-shadow: 0 0 5px #777"}
+1. 여기까지 작성하고 에뮬레이터에서 실행한 후 액티비티 닫기 버튼을 클릭해보세요. 그런데 서브 액티비티는 닫히지만 받는 메인 액티비티에는 아무런 변화가 없습니다. startActivity() 메서드로 실행된 액티비티에서는 값을 돌려받을 수 없기 때문입니다. 메인 액티비티에서 서브 액티비티를 호출한 후 값을 돌려받고 싶을 때는 startActivityForResult() 메서드를 사용해야만 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-137.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### startActivityForResult() 메서드 사용하기
 
-1. 이어서 MainActivity.kt의 onCreate() 메서드 코드 블록 안에 있는 클릭리스너에서 호출하는 startActivity() 메서드를 startActivityForResult() 로 변경하고 첫 번째 인텐트와 함께 두번째 파라미터는 임시로 ‘99’라는 값을 입력합니다. 두 번째 파라미터는 메인 액티비티에서 서브 액티비티를 호출하는 버튼이 여러 개 있을 때 어떤 버튼에서 호출된 것인지를 구분하는 용도입니다.<br>
+1. 이어서 MainActivity.kt의 onCreate() 메서드 코드 블록 안에 있는 클릭리스너에서 호출하는 startActivity() 메서드를 startActivityForResult() 로 변경하고 첫 번째 인텐트와 함께 두번째 파라미터는 임시로 ‘99’라는 값을 입력합니다. 두 번째 파라미터는 메인 액티비티에서 서브 액티비티를 호출하는 버튼이 여러 개 있을 때 어떤 버튼에서 호출된 것인지를 구분하는 용도입니다.
 
     **변경전**
     ```kotlin
@@ -367,7 +384,8 @@ if (resultCode == RESULT_OK) {
 }
 ```
 
-1. 전체 코드<br>
+1. 전체 코드
+
     **MainActivity.kt**
     ```kotlin
     package kr.co.hanbit.activity
@@ -446,7 +464,7 @@ if (resultCode == RESULT_OK) {
 | --- | --- | --- |
 | onCreate() | 만들어짐 | 액티비티가 생성 |
 | onStart() | 화면에 나타남 | 화면에 보이기 시작 |
-| onResume() | 화면에 나타남<br>현재 실행중 | 실제 액티비티가 실행되고 있음 |
+| onResume() | 화면에 나타남 현재 실행중 | 실제 액티비티가 실행되고 있음 |
 | onPause() | 화면이 가려짐 | 액티비티 화면의 일부가 다른 액티비티에 가려짐 |
 | onStop() | 화면이 없어짐 | 다른 액티비티가 실행되어서 화면이 완전히 가려짐 |
 | onDestroy() | 종료됨 | 종료됨 |
@@ -494,28 +512,35 @@ override fun onPause() {
 ```
 
 ### 생명 주기 콜백의 이해
+
 액티비티는 인스턴스 생성과 동시에 관련된 생명 주기 메서드가 순차적으로 호출됩니다.
 
 그리고 finish() 메서드나 뒤로가기 액티비티를 종료하면 소멸과 관련된 생명 주기 메서드가 순차적으로 호출됩니다. 
 
-1. 먼저 액티비티를 생성해서 화면에 나타내는 생명 주기를 살펴봅니다. 액티비티는 onCreate() 메서드로 생성된 다음 화면 구성 요소를 메모리에 로드하고, onStart() 와 onResume() 에서 화면의 구성요소를 나타내고 사용자와의 상호작용을 시작합니다. onResume() 메서드 다음의 상태 표시인 Resumed(실행 중) 는 액티비티가 화면에서 실행되고 있음을 나타냅니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-138.png){: style="box-shadow: 0 0 5px #777"}
+1. 먼저 액티비티를 생성해서 화면에 나타내는 생명 주기를 살펴봅니다. 액티비티는 onCreate() 메서드로 생성된 다음 화면 구성 요소를 메모리에 로드하고, onStart() 와 onResume() 에서 화면의 구성요소를 나타내고 사용자와의 상호작용을 시작합니다. onResume() 메서드 다음의 상태 표시인 Resumed(실행 중) 는 액티비티가 화면에서 실행되고 있음을 나타냅니다.
 
-1. 다음으로 액티비티를 화면에서 제거하는 생명 주기를 살펴봅니다. 액티비티를 벗어나게 되면 소멸과 관련된 생명주기가 시작되는데 뒤로가기를 하거나 finish() 메서드로 액티비티를 종료하면 onPause() 와 onStop() 이 동시에 실행되고, 최종적으로 onDestroy() 가 호출되면서 액티비티가 메모리에서 제거됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-139.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-138.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 새로운 액티비티가 생성될 때 현재 액티비티의 생명 주기를 살펴봅니다. 액티비티를 종료하지 않고 현재 액티비티에서 새로운 액티비티를 실행하면 현재 액티비티의 생명주기가 onPause()를 거쳐서 onStop()까지만 호출되고 종료되지는 않습니다. 그리고 새로 생성된 액티비티는 onStart()와 onResume()을 연속적으로 호출한 후 실행 상태가 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-140.png){: style="box-shadow: 0 0 5px #777"}
+1. 다음으로 액티비티를 화면에서 제거하는 생명 주기를 살펴봅니다. 액티비티를 벗어나게 되면 소멸과 관련된 생명주기가 시작되는데 뒤로가기를 하거나 finish() 메서드로 액티비티를 종료하면 onPause() 와 onStop() 이 동시에 실행되고, 최종적으로 onDestroy() 가 호출되면서 액티비티가 메모리에서 제거됩니다.
 
-1. 새로운 액티비티가 현재 액티비티를 모두 가리지 않고 생성될 때 현재 액티비티의 생명 주기를 살펴봅니다. 현재 액티비티에서 실행되는 새로운 액티비티가 반투명하거나 전체 화면이 아니라서 현재 액티비티의 영역이 1dp라도 화면에 표시되면 onPause()까지만 진행된 후 Paused상태에서 대기하고, 새로 생성됐던 액티비티가 종료되면 onStart()를 거치지 않고 바로 onResume() 이 호출됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-141.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-139.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 새로운 액티비티가 생성될 때 현재 액티비티의 생명 주기를 살펴봅니다. 액티비티를 종료하지 않고 현재 액티비티에서 새로운 액티비티를 실행하면 현재 액티비티의 생명주기가 onPause()를 거쳐서 onStop()까지만 호출되고 종료되지는 않습니다. 그리고 새로 생성된 액티비티는 onStart()와 onResume()을 연속적으로 호출한 후 실행 상태가 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-140.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 새로운 액티비티가 현재 액티비티를 모두 가리지 않고 생성될 때 현재 액티비티의 생명 주기를 살펴봅니다. 현재 액티비티에서 실행되는 새로운 액티비티가 반투명하거나 전체 화면이 아니라서 현재 액티비티의 영역이 1dp라도 화면에 표시되면 onPause()까지만 진행된 후 Paused상태에서 대기하고, 새로 생성됐던 액티비티가 종료되면 onStart()를 거치지 않고 바로 onResume() 이 호출됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-141.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 액티비티 백스택
+
 백스택<sup>Back Stack</sup>은 액티비티 또는 화면 컴포넌트를 담는 안드로이드의 저장 공간입니다. 액티비티 A에서 액티비티 B를 실행하고, 다시 액티비티 B에서 액티비티 C를 실행하면 다음 그림과 같이 마치 종이가 쌓이듯이 액티비티가 화면 (백스택)에 쌓이게 되고, 사용자는 가장 위에 있는 액티비티를 보게 됩니다.
 
 ### 태스크와 프로세스
-태스크<sup>Task</sup>는 애플리케이션에서 실행되는 프로세스<sup>Process</sup>를 관리하는 작업 단위입니다. 안드로이드는 애플리케이션의 실행 단위로 프로세스를 사용하는데 먼저 애플리케이션의 실행 단위인 프로세스를 살펴보겠습니다. 다음 그림과 같이 하나의 앱을 만들고 실행하면 앱당 하나의 프로세스가 생성되고 액티비티를 처리합니다.<br>
+태스크<sup>Task</sup>는 애플리케이션에서 실행되는 프로세스<sup>Process</sup>를 관리하는 작업 단위입니다. 안드로이드는 애플리케이션의 실행 단위로 프로세스를 사용하는데 먼저 애플리케이션의 실행 단위인 프로세스를 살펴보겠습니다. 다음 그림과 같이 하나의 앱을 만들고 실행하면 앱당 하나의 프로세스가 생성되고 액티비티를 처리합니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-142.png){: style="box-shadow: 0 0 5px #777"}
 
 안드로이드에서 태스크는 다른 프로세스의 액티비티를 함께 담을 수 있습니다. 안드로이드는 서로 다른 애플리케이션의 액티비티를 공유할 수 있는데 카메라와 갤러리 액티비티를 예로 들 수 있습니다.
@@ -523,6 +548,7 @@ override fun onPause() {
 카메라 기능을 간단히 코드로 호출해서 사용하면 실제로는 카메라 액의 독자적인 프로세스가 실행되고 카메라 액티비티 또한 카메라 앱의 프로세스에 의해 처리됩니다.
 
 다음은 특정 앱의 액티비티에서 카메라를 사용할 때 인텐트를 시스템을 통해 카메라 앱에 전달하는 예제 코드입니다. 
+
 ```kotlin
 class Activity_B: AppCompatActivity() {
     val REQ_CAMERA = 100
@@ -556,7 +582,7 @@ class Activity_B: AppCompatActivity() {
 
 | 속성 | 설명 |
 | --- | --- |
-| launchMode | 호출할 엑티비티를 새로 생성할 것인지 재사용할 것인지를 결정합니다. 기본값은 항상 새로 생성하게 되어 있습니다.<br> 네 가지 모드: ``standard``, ``singleTop``, ``singleTask``, ``singleInstance`` |
+| launchMode | 호출할 엑티비티를 새로 생성할 것인지 재사용할 것인지를 결정합니다. 기본값은 항상 새로 생성하게 되어 있습니다. 네 가지 모드: ``standard``, ``singleTop``, ``singleTask``, ``singleInstance`` |
 | taskAffinity | affinity가 동일한 액티비티들은 같은 task에 들어갑니다. 기본값은 manifest에 정의된 패키지명이므로 기본적으로 한 앱의 모든 앱티비티들은 동일한 affinity를 가집니다. affinity를 사용하여 액티비티를 서로 다르게 그룹화하거나, 서로 다른 앱(프로세스)에 정의된 액티비티를 같은 태스크에 둘 수도 있습니다. |
 | allowTaskReparenting | 기본값은 false이며, true일 경우 호출한 액티비티를 동일한 affinity를 가진 태스크에 쌓이도록 합니다. |
 | clearTaskOnLaunch | true이면 액티비티가 재실행될 때 실행한 액티비티의 수와 관계없이 메인 액티비티를 제외하고 모두 제거합니다. 기본값은 false 입니다. |
@@ -574,10 +600,10 @@ intent.addFlag(Intent.FLAG_ACTIVITY_NEW_TASK)
 
 | 플래그 | 설명 |
 | --- | --- |
-| FLAG_ACTIVITY<br>_CLEAR_TOP | 호출하는 액티비티가 스택에 있으면 해당 액티비티를 Top으로 만들기 위해 그 위에 존재하던 액티비티를 모두 삭제합니다. 예를 들어 액티비티 A/B/C/D/E가 스택에 있을 때 C를 호출하면 D/E를 삭제해서 C를 화면에 나타냅니다. |
-| FLAG_ACTIVITY<br>_NEW_TASK | 새로운 태스크를 생성하여 안에 액티비티를 추가할 때 사용합니다. 단, 기존에 존재하는 태스크 중에 생성하려는 액티비티와 동일한 AFFINITY를 가지고 있는 태스크가 있으면 해당 태스크로 액티비티가 들어갑니다. |
-| FLAG_ACTIVITY<br>_MULTIPLE_TASK | 호출되는 액티비티를 메인으로 하는 새로운 태스크를 생성합니다. 이렇게 하면 동일한 액티비티를 하나 이상의 태스크에서 열 수 있습니다. FLAG_ACTIVITY<br>_NEW_TASK와 함께 사용하지 않는다면 아무 효과 없는 플래그입니다. |
-| FLAG_ACTIVITY<br>_SINGLE_TOP | 호출되는 액티비티가 Top에 있으면 해당 액티비티를 다시 생성하지 않고, 존재하던 액티비티를 다시 사용합니다. 액티비티 A/B/C가 있을 때 C를 호출하면 기존과 동리하게 A/B/C가 나옵니다. |
+| FLAG_ACTIVITY_CLEAR_TOP | 호출하는 액티비티가 스택에 있으면 해당 액티비티를 Top으로 만들기 위해 그 위에 존재하던 액티비티를 모두 삭제합니다. 예를 들어 액티비티 A/B/C/D/E가 스택에 있을 때 C를 호출하면 D/E를 삭제해서 C를 화면에 나타냅니다. |
+| FLAG_ACTIVITY_NEW_TASK | 새로운 태스크를 생성하여 안에 액티비티를 추가할 때 사용합니다. 단, 기존에 존재하는 태스크 중에 생성하려는 액티비티와 동일한 AFFINITY를 가지고 있는 태스크가 있으면 해당 태스크로 액티비티가 들어갑니다. |
+| FLAG_ACTIVITY_MULTIPLE_TASK | 호출되는 액티비티를 메인으로 하는 새로운 태스크를 생성합니다. 이렇게 하면 동일한 액티비티를 하나 이상의 태스크에서 열 수 있습니다. FLAG_ACTIVITY_NEW_TASK와 함께 사용하지 않는다면 아무 효과 없는 플래그입니다. |
+| FLAG_ACTIVITY_SINGLE_TOP | 호출되는 액티비티가 Top에 있으면 해당 액티비티를 다시 생성하지 않고, 존재하던 액티비티를 다시 사용합니다. 액티비티 A/B/C가 있을 때 C를 호출하면 기존과 동리하게 A/B/C가 나옵니다. |
 {: .table .table-striped .table-hover}
 
 
@@ -607,13 +633,16 @@ ContainerSpinner 프로젝트를 생성합니다.
 
 1. 팔레트의 컨테이너 (Containers) 카테고리에서 스피너 (Spinner) 를 드래그해서 텍스트뷰 아래에 가져다 놓습니다. 스피너의 id속성에 ‘spinner’라고 입력되어 있는 것을 확인합니다.
 
-1. 스피너의 컨스트레인트를 좌우는 끝까지 연결하고 위는 텍스트뷰와 연결합니다. 마진은 좌우는 ‘50’, 위는 ‘25’로 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-145.png){: style="box-shadow: 0 0 5px #777"}
+1. 스피너의 컨스트레인트를 좌우는 끝까지 연결하고 위는 텍스트뷰와 연결합니다. 마진은 좌우는 ‘50’, 위는 ‘25’로 합니다.
 
-1. 혹시 그림과 같이 마진값이 적용되지 않는다면 사각형 중앙의 가로 측 사이즈 조절바를 클릭해서 매치 컨스트레인트(![1]({{site.baseurl}}/images/this-is-android/this-is-android-40.png){: style="box-shadow: 0 0 5px #777"}) 로 만들어줍니다. 또는 layout_width 속성에 ‘0dp’라고 입력해도 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-146.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-145.png){: style="box-shadow: 0 0 5px #777"}
 
-1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt] 탭을 클릭해서 소스코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.<br>
+1. 혹시 그림과 같이 마진값이 적용되지 않는다면 사각형 중앙의 가로 측 사이즈 조절바를 클릭해서 매치 컨스트레인트(![1]({{site.baseurl}}/images/this-is-android/this-is-android-40.png){: style="box-shadow: 0 0 5px #777"}) 로 만들어줍니다. 또는 layout_width 속성에 ‘0dp’라고 입력해도 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-146.png){: style="box-shadow: 0 0 5px #777"}
+
+1. build.gradle파일에 viewBinding설정을 하고 [MainActivity.kt] 탭을 클릭해서 소스코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+
     ```kotlin
     package kr.co.hanbit.containerspinner
 
@@ -633,16 +662,19 @@ ContainerSpinner 프로젝트를 생성합니다.
     ```
 
 1. 위 코드에 이어서 다음 행에 스피너에 입력될 가상의 데이터를 작성합니다. data변수를 만들고 listOf 를 사용해서 여러 개의 데이터를 입력합니다. 첫번째 데이터는 아직 데이터가 선택하지 않았기 때문에 기본으로 보여주는 ‘- 선택하세요 `’로 입력합니다.
-```kotlin
-var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월", "6월")
-```
 
-1. 앞에서 만든 데이터와 스피너를 연결해줄 ArrayAdapter 클래스를 만들어 adapter 변수에 저장합니다. ArrayAdapter클래스는 adapter에서 사용할 데이터 타입을 제네릭으로 지정해야 합니다. 앞에서 문자열로 데이터를 구성했기 때문에 ``<String>``으로 지정합니다. ArrayAdapter의 파라미터는 총 3개이며 (스피너를 화면에 그리기 위한 컨텍스트, 스피너에 보여줄 목록 하나하나가 그려질 레이아웃, 어댑터에서 사용할 데이터) 순으로 입력합니다. 컨텍스트는 this를 사용하고, 레이아웃은 기본으로 제공하는 simple_list_item1을 사용합니다. 마지막 값으로 미리 만들어둔 data변수를 입력합니다.<br>
+    ```kotlin
+    var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월", "6월")
+    ```
+
+1. 앞에서 만든 데이터와 스피너를 연결해줄 ArrayAdapter 클래스를 만들어 adapter 변수에 저장합니다. ArrayAdapter클래스는 adapter에서 사용할 데이터 타입을 제네릭으로 지정해야 합니다. 앞에서 문자열로 데이터를 구성했기 때문에 ``<String>``으로 지정합니다. ArrayAdapter의 파라미터는 총 3개이며 (스피너를 화면에 그리기 위한 컨텍스트, 스피너에 보여줄 목록 하나하나가 그려질 레이아웃, 어댑터에서 사용할 데이터) 순으로 입력합니다. 컨텍스트는 this를 사용하고, 레이아웃은 기본으로 제공하는 simple_list_item1을 사용합니다. 마지막 값으로 미리 만들어둔 data변수를 입력합니다.
+
     ```kotlin
     var dapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
     ```
 
-1. 다음 코드를 입력해 어댑터를 스피너 위젯에 연결합니다. 스피너의 adapter속성에 담아주는 것만으로 간단하게 연결됩니다. <br>
+1. 다음 코드를 입력해 어댑터를 스피너 위젯에 연결합니다. 스피너의 adapter속성에 담아주는 것만으로 간단하게 연결됩니다.
+
     ```kotlin
     binding.spinner.adapter = adapter
     ```
@@ -651,14 +683,17 @@ var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월",
 1. 이번에는 사용자가 스피너를 선택하면 선택한 값을 선택 결과에 보여주는 코드를 작성하겠습니다. 스피너를 선택하는 동작을 인식하기 위해서 onItemSelectedListener를 사용하는데, 이름 그대로 스피너에 있는 아이템이 선택되면 동작하는 리스너입니다.
 
 1. 이어서 ‘=object: OnItem’까지만 입력하면 나타나는 자동 완성 코드에서 OnItemSelectedListener를 선택하고 중괄호 ({})를 붙여서 코드를 작성합니다.
+
     ```kotlin
     binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
         
     }
     ```
 
-1. 코드 블럭 사이를 클릭한 다음 마우스 오른쪽 버튼을 클릭해서 [Generate] - [Implements Methods]를 선택합니다. 나오는 메서드 목록 2개를 모두 선택하면 코드가 자동 완서오디는데 TODO()행은 모두 삭제합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-148.png){: style="box-shadow: 0 0 5px #777"}
+1. 코드 블럭 사이를 클릭한 다음 마우스 오른쪽 버튼을 클릭해서 [Generate] - [Implements Methods]를 선택합니다. 나오는 메서드 목록 2개를 모두 선택하면 코드가 자동 완서오디는데 TODO()행은 모두 삭제합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-148.png){: style="box-shadow: 0 0 5px #777"}
+
     ```kotlin
     override fun onItemSelected(
         parent: AdapterView<*>?,
@@ -675,12 +710,15 @@ var data = listOf("- 선택하세요 -", "1월", "2월", "3월", "4월", "5월",
     ```
 
 1. 자동 완성된 코드 중에서 onItemSelected() 메서드만 사용할 예정입니다. 이 메서드에 파라미터가 4개 있는데 OnItemSelectedListener를 사용할 때는 대부분 세 번째 position만 사용합니다. 사용자가 스피너에서 선택을 하면 몇 번째 아이템인지를 알려주는 파라미터입니다. 혹시 파라미터 이름이 다르면 책과 동일하게 수정한 다음 진행합니다. 두 번째 메서드 안에 다음 코드를 추가합니다. 리스너에서 넘겨주는 position값으로 data의 해당 위치에 있는 문자 값을 선택 결과 텍스트뷰에 입력하는 코드입니다.
-```kotlin
-binding.result.text = data.get(position)
-```
 
-1. 이제 스피너를 선택하면 해당 값이 선택 결과의 위치에 표시됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-149.png){: style="box-shadow: 0 0 5px #777"}<br>
+    ```kotlin
+    binding.result.text = data.get(position)
+    ```
+
+1. 이제 스피너를 선택하면 해당 값이 선택 결과의 위치에 표시됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-149.png){: style="box-shadow: 0 0 5px #777"}
+
     ```kotlin
     package kr.co.hanbit.containerspinner
 
@@ -723,9 +761,10 @@ binding.result.text = data.get(position)
     ```
 
 ## 2.2 리사이클러뷰
+
 리사이클러뷰<sup>RecyclerView</sup>는 스피너가 조금 더 확장된 형태입니다. 리사이클러뷰도 스피너처럼 목록을 화면에 출력하는데, 레이아웃 매니저를 이용하면 간단한 코드만으로 리스트를 그리도로 바꿀 수도 있습니다.
 
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-150.png){: style="box-shadow: 0 0 5px #777"}<br>
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-150.png){: style="box-shadow: 0 0 5px #777"}
 
 리사이클러뷰처럼 목록을 표시하는 컨테이너들은 표시될 데이터와 아이템 레이아웃을 어댑터에서 연결해주므로 어댑터에서 어떤 아이템 레이아웃을 사용하느냐에 따라 표시되는 모양을 다르게 만들 수 있습니다.
 
@@ -736,26 +775,33 @@ ContainerRecyclerView 프로젝트를 생성합니다.
 
 1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다. 리사이클러뷰 (RecyclerView)를 처음 사용한다면 팔레트의 컨테이너를 클릭했을 때 리사이클러뷰 오른쪽에 [다운로드 아이콘]이 보일 것입니다. 이 상태에서 리사이클러뷰를 드래그해서 UI편집기에 가져다 놓습니다.
 
-1. 다운로드가 완료되면 Item0, Item1... 이라는 글자가 여러 줄 쓰여 있는 리사이클러뷰가 화면에 그려집니다. id 속성에 ‘recyclerView’라고 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-151.png){: style="box-shadow: 0 0 5px #777"}
+1. 다운로드가 완료되면 Item0, Item1... 이라는 글자가 여러 줄 쓰여 있는 리사이클러뷰가 화면에 그려집니다. id 속성에 ‘recyclerView’라고 입력합니다.
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-151.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 컨스트레이트는 상하좌우를 모두 연결합니다. 네 방향을 모두 연결해야 할 때는 아이콘을 하나씩 클릭하는 대신 UI 편집기 상단 [Infer Constraints 아이콘 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-152.png){: style="box-shadow: 0 0 5px #777"}]을 클릭하면 컨스트레인트를 가장 가까운 곳에 모두 연결해줍니다.
 
-1. 여러 개의 정보를 하나의 아이템에 보여줘야 하니 아이템 레이아웃을 레이아웃 파일로 직접 생성하여 사용합니다. [app] - [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]를 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-153.png){: style="box-shadow: 0 0 5px #777"}<br>
 
-1. File name 에 ‘item_recycler’를, Root element에 ‘LinearLayout’을 입력하고 [OK]를 클릭해서 파일을 생성합니다. 다른 값은 건드리지 않습니다. activity_main.xml 아래에 item_recycler.xml이 생성된 걸 확인할 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-154.png){: style="box-shadow: 0 0 5px #777"}<br><br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-155.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. 여러 개의 정보를 하나의 아이템에 보여줘야 하니 아이템 레이아웃을 레이아웃 파일로 직접 생성하여 사용합니다. [app] - [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]를 선택합니다.
 
-1. 리니어 레이아웃의 속성 영역에서 layout_height를 ‘50dp’로 변경합니다. 대부분 match_parent일 텐데 ‘50dp’을 입력하면 바로 수정됩니다. 반드시 뒤에 ‘dp’를 같이 입력해야 합니다. 숫자만 입력하면 오류가 발생할 수 있습니다. 이어서 orientation속성을 ‘horizontal’로 변경하고, gravity 속성에 ‘center_vertical’을 적용합니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-156.png){: style="box-shadow: 0 0 5px #777"}<br>
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-153.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 레이아웃 안에 텍스트뷰를 3개 배치합니다. 각각 번호, 제목, 날짜 데이터를 표시할 텍스트뷰입니다. 이어서 layout-weight 속성을 각각 ‘1, 5, 3’으로 수정하면 다음과 같이 보입니다. 가로 비율이 맞지 않으면 각 텍스트뷰의 layout_width 속성을 ‘0dp’로 설정합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-157.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. File name 에 ‘item_recycler’를, Root element에 ‘LinearLayout’을 입력하고 [OK]를 클릭해서 파일을 생성합니다. 다른 값은 건드리지 않습니다. activity_main.xml 아래에 item_recycler.xml이 생성된 걸 확인할 수 있습니다.
 
-1. 첫 번째 텍스튜브의 text속성은 ‘01’, id속성은 ‘textNo’로 입력합니다. 두 번째 텍스뷰의 text속성은 ‘Title’, id속성은 ‘textTitle’로 입력하고, 세 번째 텍스트뷰의 text속성은 ‘2021-01-01’, id속성은 ‘textDate’로 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-158.png){: style="box-shadow: 0 0 5px #777"}<br>
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-154.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-155.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 리니어 레이아웃의 속성 영역에서 layout_height를 ‘50dp’로 변경합니다. 대부분 match_parent일 텐데 ‘50dp’을 입력하면 바로 수정됩니다. 반드시 뒤에 ‘dp’를 같이 입력해야 합니다. 숫자만 입력하면 오류가 발생할 수 있습니다. 이어서 orientation속성을 ‘horizontal’로 변경하고, gravity 속성에 ‘center_vertical’을 적용합니다. 
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-156.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이아웃 안에 텍스트뷰를 3개 배치합니다. 각각 번호, 제목, 날짜 데이터를 표시할 텍스트뷰입니다. 이어서 layout-weight 속성을 각각 ‘1, 5, 3’으로 수정하면 다음과 같이 보입니다. 가로 비율이 맞지 않으면 각 텍스트뷰의 layout_width 속성을 ‘0dp’로 설정합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-157.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 첫 번째 텍스튜브의 text속성은 ‘01’, id속성은 ‘textNo’로 입력합니다. 두 번째 텍스뷰의 text속성은 ‘Title’, id속성은 ‘textTitle’로 입력하고, 세 번째 텍스트뷰의 text속성은 ‘2021-01-01’, id속성은 ‘textDate’로 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-158.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 데이터를 정의하고 가상 데이터 만들기
@@ -763,30 +809,38 @@ ContainerRecyclerView 프로젝트를 생성합니다.
 
 번호, 타이틀, 날짜 세 종류의 값을 담을 데이터 클래스를하나 만들겠습니다.
 
-1. java 디렉토리 아래에 있는 기본 패키지명을 마우스 우클릭하여 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택합니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-159.png){: style="box-shadow: 0 0 5px #777"}
+1. java 디렉토리 아래에 있는 기본 패키지명을 마우스 우클릭하여 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택합니다. 
 
-1. 입력 필드에 ‘Memo’를 입력하고, 바로 아래 목록 중에 Data Class를 더블클릭하면 파일이 생성됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-160.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-159.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 입력 필드에 ‘Memo’를 입력하고, 바로 아래 목록 중에 Data Class를 더블클릭하면 파일이 생성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-160.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 Memo 클래스를 열어보면 기본 코드가 있는데 class 코드를 약간 수정하여 파라미터 3개 가지는 데이터 클래스로 만듭니다. 마지막 날짜 파라미터의 이름을 timestamp로 만들고 Long 타입을 선언하였습니다. 날짜는 실제 개발할 때에도 타임스탬프라고 불리는 숫자형을 저장해 놓고 변환해서 많이 사용하기 때문에 여기서도 그렇게 사용하겠습니다.
+
     ```kotlin
     package kr.co.hanbit.containerrecyclerview
 
     data class Memo(var no: Int, var title: String, var timestamp: Long)
     ```
+
 1. 이어서 MainActivity.kt 안에 100개의 가상 데이터를 만드는 코드를 작성해보겠습니다. MainActivity.kt를 열고 MutableList<Memo>를 반환하는 loadData() 메서드를 onCreate() 메서드 아래에 만듭니다.
+
     ```kotlin
     fun loadData(): MutableList<Memo> {
 
     }
     ```
+
 1. 메서드 안에 리턴할 MutableList 컬렉션을 선언합니다.
+
     ```kotlin
     val data: MutableList<Memo> = mutableListOf()
     ```
 
 1. 100개의 가상 데이터를 만들어야 하니 for문을 사용해서 백 번 반복합니다. for문에 사용한 no 변수는 그래도 Memo 클래스의  번호로 사용할 것입니다.
+
     ```kotlin
     for (no in 1..100) {
         
@@ -794,18 +848,21 @@ ContainerRecyclerView 프로젝트를 생성합니다.
     ```
 
 1. for문 안에 타이틀과 날짜로 사용할 데이터를 가상으로 생성해서 변수에 담아둡니다. title 변수에는 ‘이것이 안드로이드다 1’, ‘이것이 안드로이드다 2’ ... 의 형태의 제목이 백 번 반복하여 저장되고, date 변수에는 안드로이드 스마트폰의 현재 시간이 숫자 값으로 저장됩니다.
+
     ```kotlin
     var title = "이것이 안드로이드다 ${no}"
     var date = System.currenttimeMillis()
     ```
 
 1. 변수에 저장된 값과 번호로 Memo클래스를 생성하고, 위에서 선언해둔 data변수에 추가합니다.
+
     ```kotlin
     var memo = Memo(no, title, date)
     data.add(memo)
     ```
 
 1. 마지막으로 반복문이 끝나면 100개의 Memo 클래스가 담겨 있는 data변수를 리턴해서 호출한 측에 전달합니다.
+
     ```kotlin
     return data
     ```
@@ -866,6 +923,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 앞서 작성한 ConstrainerRecyclerView 프로젝트에서 이어서 코드를 작성하겠습니다.
 
 1. build.gradle 파일에 viewBinding 설정을 하고 [MainActivity.kt]탭을 클릭해서 소스 코드로 이동합니다. 그리고 binding을 생성한 후 setContentView에 binding.root를 전달합니다.
+
     ```kotlin
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
@@ -875,11 +933,14 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     }
     ```
 
-1. java 디렉토리 밑에 있는 패키지에 CustomAdapter 클래스를 하나 생성하고 같은 파일 안에 Holder 클래스를 작성하겠습니다.  패키지명을 마우스 우클릭하여 [New] - [Kotlin File/Class]를 선택한 후 나타나는 팝업의 입력란에 ‘CustomAdapter’를 입력하고 그 아래 목록에서 Class를 더블클릭해서 파일을 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-162.png){: style="box-shadow: 0 0 5px #777"}<br><br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-163.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. java 디렉토리 밑에 있는 패키지에 CustomAdapter 클래스를 하나 생성하고 같은 파일 안에 Holder 클래스를 작성하겠습니다.  패키지명을 마우스 우클릭하여 [New] - [Kotlin File/Class]를 선택한 후 나타나는 팝업의 입력란에 ‘CustomAdapter’를 입력하고 그 아래 목록에서 Class를 더블클릭해서 파일을 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-162.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-163.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 소스 코드가 생성되면 class CustomAdapter 아래에 ㅇclass Holder를 추가로 작성합니다.
+
     ```kotlin
     package kr.co.hanbit.containerrecyclerview
 
@@ -892,6 +953,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. Holder 클래스에 RecyclerView의 ViewHolder를 상속받습니다.
+
     ```kotlin
     class Holder: RecyclerView.ViewHolder {
         
@@ -899,15 +961,19 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. ViewHolder에 빨간색 밑줄이 생기는데 생성자에 1개의 값이 필수로 입력되야 하기 때문에 그렇습니다.  아이템 레이아웃은 ViewHolder 자체에서 만들지 않고 어댑터가 만들어서 넘겨주므로 코드를 다음과 같이 수정해야 합니다. 어댑터에서 넘겨주는 바인딩을 Holder 클래스의 생성자에게서 받아 ViewHolder의 생성자에게로 넘겨주는 구조입니다. ViewHolder의 생성자는 바인딩이 아닌 View를 필요로 하기 때문에 binding.root를 전달합니다. 그리고 binding은 Holder 클래스안에서 전역변수 (프로퍼티)로 사용돼야 하기 때문에 val 키워드를 앞에 붙여줍니다.
+
     ```kotlin
     class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
         
     }
     ```
-    - ``바인딩 생성은 어댑터에서``
+
+    ``바인딩 생성은 어댑터에서``
       - 뷰홀더가 사용하는 바인딩은 어댑터에서 생성한 후에 넘겨줍니아. 이 어댑터에서 사용할 레이아웃의 이름이 item_recycler이기 때문에 안드로이드에서 생성해주는 바인딩의 이름은 ItemRecyclerBinding이 됩니다.
 
+
 1. Holder 내부의 코드가 실행되기 전에 어댑터 클래스 코드가 먼저 선행되어야 하므로 어댑터 클래스를 먼저 수정하겠습니다. 다음과 같이 CustomAdapter 코드는 RecyclerView의 Adapter를 상속받고 앞에서 생성한 Holder를 제네릭으로 지정합니다.
+
     ```kotlin
     class CustomAdapter: RecyclerView.Adapter<Holder>() {
         
@@ -924,8 +990,10 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     }
     ```
 
-1. class CustomAdapter... 코드 블록 ({}) 의 중간에서 ``Ctrl`` + ``I``키를 눌러 팝업창에서 3개의 인터페이스를 모두 선택해서 import하면 코드가 자동으로 추가됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-164.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. class CustomAdapter... 코드 블록 ({}) 의 중간에서 ``Ctrl`` + ``I``키를 눌러 팝업창에서 3개의 인터페이스를 모두 선택해서 import하면 코드가 자동으로 추가됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-164.png){: style="box-shadow: 0 0 5px #777"}
+
     ```kotlin
     class CustomAdapter: RecyclerView.Adapter<Holder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -940,11 +1008,13 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. 추가된 코드의 맨 윗줄에 이 어댑터에서 사용할 데이터 목록 변수를 하나 선언합니다. 목록형 컬렉션은 listOf() 계열의 메서드로 초기화할 수 있습니다. 앞에서 미리 작성해둔 loadData() 메서드에서 리턴해주는 값을 사용할 것이기 때문에 ``mutableListOf<Memo>()``를 사용합니다.
+
     ```kotlin
     var listData = mutableListOf<Memo>()
     ```
 
 1. 리사이클러뷰에서 사용할 데이터의 총 개수를 리턴하는 getItemCount() 메서드부터 구현합니다.
+
     ```kotlin
     override fun getItemCount(): Int {
         return listData.size
@@ -955,11 +1025,13 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
 액티비티와는 다르게 어댑터에서 사용하는 바인딩인 ItemRecyclerBinding의 inflate 메서드는 3개의 파라미터가 사용됩니다.
 첫 번째 파라미터로 전달되는 인플리이터는 LayoutInflater.from으로 생성해서 입력합니다. from에는 파라미터로 context가 전달돼야 하는데, 이는 안드로이드가 넘겨주는 parent에서 꺼낼 수 있습니다. 두 번째는 parent를 그대로 사용하고, 세 번째는 항상 false를 사용하면 됩니다. 그리고 다음 줄에서 생성된 바인딩을 Holder 클래스에 담아서 반환합니다.
 안드로이드는 이런 과정을 거쳐 전달된 Holder 클래스를 메모리에 저장했다가 요청이 있을 때마다 꺼내서 사용합니다.
+
     ```kotlin
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
+
     ```
     - inflate(inflater, parent, attachToRoot) 파라미터의 의미
       - ``inflater`` : 바인딩을 생성할 때 사용하는 인프레이터입니다. 액티비티에서와는 다르게 LayoutInflater.from 을 사용해서 생성해야 합니다.
@@ -967,6 +1039,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
       - ``attachToRoot`` : true일 경우 attach 해야 하는 대상으로 root를 지정하고 아래에 붙입니다. false일 경우 뷰의 최상위 레이아웃의 속성을 기본으로 레이아웃이 적용됩니다.
 
 1. 생성된 뷰홀더를 화면에 보여주는 onBindViewHolder() 메서드를 구현합니다. 먼저 listData에서 현재 위치에 해당하는 메모를 하나 꺼내 memo 변수에 저장한 후 홀더에 전달합니다. 임의로 홀더에 setMemo() 라는 메서드가 있다고 가정하고 다음과 같이 작성합니다.
+
     ```kotlin
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val memo = listData.get(position)
@@ -975,6 +1048,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. 이제 마지막으로 Holder 클래스에서 화면에 데이터를 세팅하는 setMemo() 메서드를 구현합니다.
+
     ```kotlin
     class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
         fun setMemo(memo: Memo) {
@@ -984,6 +1058,7 @@ class 홀더(바인딩): RecyclerView.ViewHolder(바인딩.root)
     ```
 
 1. setMemo() 메서드 안의 다음 코드를 추가합니다. texTNo 웨젯에는 memo의 no값을 입력합니다.
+
     ```kotlin
     binding.textNo.text = "${memo.no}"
     ```
@@ -993,6 +1068,7 @@ SimpledateFormat을 import하면 선택지가 2개 나타나는데 java.text의 
 SimpleDateFormat을 생성하면서 생성자에 날짜가 보여질 형식을 ‘yyyy/MM/dd’로 정의합니다.
 
 다음은 CustomAdapter.kt의 전체 코드입니다.
+
 ```kotlin
 package kr.co.hanbit.containerrecyclerview
 
@@ -1037,25 +1113,30 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 지금까지 생성한 레이아웃과 소스 코드를 MainActivity.kt에서 모두 연결합니다.
 
 1. setContentView 메서드 아래에 먼저 사용할 데이터를 생성하는 코드를 추가합니다.
+
     ```kotlin
     val data: MutableList<Memo> = loadData()
     ```
 
 1. 어댑터를 생성하고 어댑터의 listData 변수에 위에서 생성한 데이터 목록을 저장합니다.
+
     ```kotlin
     var adapter = CustomAdapter()
     adapter.listData =data
     ```
 
 1. recyclerView 위젯의 adapter 속성에 생성할 어댑터를 연결합니다.
+
     ```kotlin
     binding.recyclerView.adapter = adapter
     ```
 
-1. 마지막으로 리사이클러뷰에서 확인해봅니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-165.png){: style="box-shadow: 0 0 5px #777"}<br>
+1. 마지막으로 리사이클러뷰에서 확인해봅니다.
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-165.png){: style="box-shadow: 0 0 5px #777"}
+
 
 다음은 MainActivity.kt의 전체 코드입니다.
+
 ```kotlin
 package kr.co.hanbit.containerrecyclerview
 
@@ -1099,6 +1180,7 @@ class MainActivity : AppCompatActivity() {
 리사이클러뷰에서 사용할 수 있는 레이아웃 매니저<sup>Layout Manager</sup>의 종류는 세 가지 입니다. 이중에서 세 번째 StaggeredGridLayoutManager는 핀터레스트 같은 사진 앱에서 자주 사용되는 형태입니다. 
 
 1. ``LinearLayoutManager``
+
   - ``세로 스크롤`` : 기본으로 세로 스크롤을 하며 일반 리스트처럼 한 줄로 목록을 생성합니다. 추가로 설정하면 가로 스크롤도 할 수 있습니다. 
     ```kotlin
     LinearLayoutManager(this)
@@ -1109,18 +1191,24 @@ class MainActivity : AppCompatActivity() {
     ```
 
 1. ``GridLayoutManager``
+
   - 데이터의 사이즈에 따라 그리드의 크기가 결정됩니다. 두 번째 파라미터에 한 줄에 몇 개의 아이템을 표시할 건지 개수를 설정합니다.
     ```kotlin
     GridLayoutManager(this, 3)
     ```
 
-1. ``StaggeredGridLayoutManager``<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-166.png){: style="box-shadow: 0 0 5px #777"}<br>
-  - ``세로 스크롤`` : 컨텍스트를 사용하지 않으므로 this를 넘기지 않아도 됩니다. 첫 번째 파라미터에는 한 줄에 표시되는 아이템의 개수, 두 번째 파라미터에는 세로 방향을 설정합니다.
+1. ``StaggeredGridLayoutManager``
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-166.png){: style="box-shadow: 0 0 5px #777"}
+
+    - ``세로 스크롤`` : 컨텍스트를 사용하지 않으므로 this를 넘기지 않아도 됩니다. 첫 번째 파라미터에는 한 줄에 표시되는 아이템의 개수, 두 번째 파라미터에는 세로 방향을 설정합니다.
+
     ```kotlin
     StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
     ```
-  - ``가로 스크롤`` : 두 번째 파라미터에 가로 방향을 설정합니다.
+
+    - ``가로 스크롤`` : 두 번째 파라미터에 가로 방향을 설정합니다.
+
     ```kotlin
     StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
     ```
@@ -1132,6 +1220,7 @@ class MainActivity : AppCompatActivity() {
 간단하게 홀더가 가지고 있는 아이템뷰에 클릭리스너를 달고, 리스너 블록에 실행할 코드만 추가하면 목록이 클릭 될 때마다 해당 코드가 실행됩니다.
 
 1. CustomAdapter.kt 파일을 열어 Holder 클래스가 생성되는 시점에 클릭리스너를 추가하려면 먼저 Holder 클래스에 init를 추가해야 합니다. init에서 아이템뷰에 클릭 리스너를 달고 리스너 블록 안에 토스트로 간단한 메시지를 보여주는 코드를 setMemo() 메서드 위에 작성합니다.
+
     ```kotin
     init {
         binding.root.setOnClickListener {
@@ -1142,7 +1231,8 @@ class MainActivity : AppCompatActivity() {
     Toast.makeText 메서드가 사용하는 첫 번째 파라미터인 context는 binding.root에서 꺼낼 수 있습니다.
 
 1. 에뮬레이터를 실행하고 목록을 클릭해보면 토스트 메시지가 나타납니다. 목록에서 클릭 처리는 이렇게 뷰홀더 안에서 간단하게 만들 수 있습니다. 목록에서 상세화면으로 이동이 일어날 경우는 클릭리스너 안에서 startActivity를 호출하는 형태로 처리할 수 있습니다.
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-167.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-167.png){: style="box-shadow: 0 0 5px #777"}
 
 
 
@@ -1167,7 +1257,8 @@ class MainActivity : AppCompatActivity() {
 - 한 번에 1개의 프래그먼트가 화면에 나타나는 형태로 프래그먼트를 여러 개를 미리 만들어두고 탭 메뉴나 스와이프<sup>Swipe</sup>로 화면 간 이동할 때 사용됩니다.
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-169.png){: style="box-shadow: 0 0 5px #777"}
 
-- 한 번에 여러 개의 프래그먼트가 동시에 화면에 나타나는 형태로 태블릿과 같은 대형 화면을 가진 디바이스에서 메뉴와 뷰를 함께 나타내거나 여러 개의 섹션을 모듈화 한 후 한 화면에 나타낼 때 사용됩니다.<br>
+- 한 번에 여러 개의 프래그먼트가 동시에 화면에 나타나는 형태로 태블릿과 같은 대형 화면을 가진 디바이스에서 메뉴와 뷰를 함께 나타내거나 여러 개의 섹션을 모듈화 한 후 한 화면에 나타낼 때 사용됩니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-170.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -1181,11 +1272,13 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 
 ### 목록 프래그먼트 만들기
 
-1. java 디렉토리 밑에 있는 패키지명을 선택하여 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Black)]를 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-171.png){: style="box-shadow: 0 0 5px #777"}
+1. java 디렉토리 밑에 있는 패키지명을 선택하여 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Black)]를 선택합니다.
 
-1. Fragment Name에 ‘ListFragment’를 입력하면 해당 프래그먼트가 사용하는 레이아웃인 fragment_list를 자동으로 생성해줍니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-172.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-171.png){: style="box-shadow: 0 0 5px #777"}
+
+1. Fragment Name에 ‘ListFragment’를 입력하면 해당 프래그먼트가 사용하는 레이아웃인 fragment_list를 자동으로 생성해줍니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-172.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 이제 layout 디렉토리 아래에 fragment_list.xml 과 java 디렉토리 아래의 패키지명 밑에 ListFragment.kt 파일이 생성되고 화면에 열려 있습니다.  ListFragment.kt의 onCreateView() 메서드는 리사이클러뷰의 onCreateViewHolder() 메서드처럼 동작합니다.  액티비티가 프래그먼트를 요청하면 onCreateView() 메서드를 통해 뷰를 만들어서 보여줍니다. inflate 메서드는 리사이클러뷰에서와 동일하게 동작합니다.  다음은 프래그먼트 생성 후 ListFragment.kt의 기본 코드입니다.
     ```kotiln
@@ -1249,8 +1342,11 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
         }
     }
     ```
-    현재 실습을 하지 않는 코드가 많이 있기 때문에 가독성을 위해 모두 지웁니다.<br>
+
+    현재 실습을 하지 않는 코드가 많이 있기 때문에 가독성을 위해 모두 지웁니다.
+
     ``수정 후 전체코드``
+
     ```kotlin
     package kr.co.hanbit.fragment
 
@@ -1306,11 +1402,13 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-1. 편집기 우측 상단의 [Design] 버튼을 클릭해서 모드를 변경합니다.  텍스트뷰의 layout_width 와 layout_height 속성을 모두 ‘wrap_content’로 바꿉니다. 그 당ㅁ text 속성에 ‘List’를 입력하고 드래드해서 화면 상단 중앙에 가져다 놓고 좌우 그리고 위쪽의 컨스트레인트를 화면 끝에 연결합니다. 위쪽의 거리는 컨스트레인트 편집기에서 ‘32’로 설정해줍니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-173.png){: style="box-shadow: 0 0 5px #777"}
+1. 편집기 우측 상단의 [Design] 버튼을 클릭해서 모드를 변경합니다.  텍스트뷰의 layout_width 와 layout_height 속성을 모두 ‘wrap_content’로 바꿉니다. 그 당ㅁ text 속성에 ‘List’를 입력하고 드래드해서 화면 상단 중앙에 가져다 놓고 좌우 그리고 위쪽의 컨스트레인트를 화면 끝에 연결합니다. 위쪽의 거리는 컨스트레인트 편집기에서 ‘32’로 설정해줍니다.
 
-1. 팔레트 영역에서 버튼을 화면 중앙에 추가합니다. 버튼의 좌우 컨스트레인트는화면 가장자리에 연결하고, 위쪽은 텍스트뷰에 연결하며 거리는 ‘24’로 설정합니다. text 속성에 ‘Next’를 입력하고, id 속성에 ‘btnNext’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-174.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-173.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 팔레트 영역에서 버튼을 화면 중앙에 추가합니다. 버튼의 좌우 컨스트레인트는화면 가장자리에 연결하고, 위쪽은 텍스트뷰에 연결하며 거리는 ‘24’로 설정합니다. text 속성에 ‘Next’를 입력하고, id 속성에 ‘btnNext’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-174.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 액티비티에 프래그먼트 추가하기 
@@ -1324,8 +1422,9 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
 
 1. activity_main.xml 파일을 열고 액티비티 영역과 프래그먼트 영역을 구분해주기 위해서 레이아웃을 수정합니다.  기본 텍스트뷰를 화면 상단으로 옮기고 text 속성에 ‘Activity’를 입력합니다. 컨스트레인트는 아래르 제외하고 모두 연결하며 위쪽과의 거리는 ‘16’으로 설정합니다.
 
-1. 레이아웃 카테고리의 프레임 레이아웃을 드래그해서 화면에 가져다 놓고 텍스트뷰 아래 화면이 꽉 차도록 컨스트레인트를 설정합니다. id속성에 ‘frameLayout’을 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-175.png){: style="box-shadow: 0 0 5px #777"}
+1. 레이아웃 카테고리의 프레임 레이아웃을 드래그해서 화면에 가져다 놓고 텍스트뷰 아래 화면이 꽉 차도록 컨스트레인트를 설정합니다. id속성에 ‘frameLayout’을 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-175.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 앞에서 만든 프래그먼트를 액티비티에 삽입하는 코드를 작성해야 하는데, 이번 절에서는 액티비티에서 레이아웃에 접근하는 코드가 없기 때문에 MainActivity에는 바인딩 관련 코드를 작성하지 않습니다.  MainActivity.kt파일을 열고 onCreate() 메서드 아래에 프래그먼트를 삽입하는 빈 메서드인 setFragment()를 만들고 onCreate() 안에서 미리 호출합니다. 
     ```kotlin
@@ -1372,9 +1471,12 @@ Fragment 프로젝트를 하나 생성합니다. 프로젝트가 생성되면 bu
       - replace(레이아웃, 프래그먼트): 레이아웃에 삽입되어 있는 프래그먼트를 교체합니다.
       - remove(프래그먼트): 지정한 프래그먼트를 제거합니다.
 
-1. 에뮬레이터에서 실행하면 Activity안에 List가 나타납니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-176.png){: style="box-shadow: 0 0 5px #777"}<br>
-  다음은 MainActivity.kt 파일에 작성된 코드의 일부입니다.
+1. 에뮬레이터에서 실행하면 Activity안에 List가 나타납니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-176.png){: style="box-shadow: 0 0 5px #777"}
+
+    다음은 MainActivity.kt 파일에 작성된 코드의 일부입니다.
+
     ```kotlin
     package kr.co.hanbit.fragment
 
@@ -1406,13 +1508,16 @@ fragment 컨테이너를 사용하면 소스 코드를 거치지 않고 레이�
 
 1. activity_main.xml 파일을 열고 [Code]버튼을 클릭해서 모드를 변경합니다. XML 태그 중간에 ``<FrameLayout> ~ </FrameLayout>``까지 주석으로 처리합니다.
 
-1. 다시 디자인 모드로 변경하고 컨테이너 카테고리의 ``<fragment>``를 화면에 가져다 놓습니다. 이 때 ``<fragment>``태그를 삽입할 클래스 선택 팝업창이 뜨는데 앞에서 작성한 [ListFragment]를 선택합니다. ``책에서 잘 안되어 다음 그림과 같이 처리함!!``<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-177.png){: style="box-shadow: 0 0 5px #777"}
+1. 다시 디자인 모드로 변경하고 컨테이너 카테고리의 ``<fragment>``를 화면에 가져다 놓습니다. 이 때 ``<fragment>``태그를 삽입할 클래스 선택 팝업창이 뜨는데 앞에서 작성한 [ListFragment]를 선택합니다. ``책에서 잘 안되어 다음 그림과 같이 처리함!!``
 
-1. 속성 영역에서 id를 ‘fragmentLayout’으로 변경합니다. ``<fragment>``의 컨스트레인트를 네 방향 모두 연결합니다. 위쪽은 텍스트뷰에 연결합니다. layout_width와 layout_height 속성을 모두 ‘match_constraint’로 변경합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-178.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-177.png){: style="box-shadow: 0 0 5px #777"}
 
-1. MainActivity.kt 파일을 열고 setFragment() 메서드 안의 내용을 모두 주석 처리합니다.<br>
+1. 속성 영역에서 id를 ‘fragmentLayout’으로 변경합니다. ``<fragment>``의 컨스트레인트를 네 방향 모두 연결합니다. 위쪽은 텍스트뷰에 연결합니다. layout_width와 layout_height 속성을 모두 ‘match_constraint’로 변경합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-178.png){: style="box-shadow: 0 0 5px #777"}
+
+1. MainActivity.kt 파일을 열고 setFragment() 메서드 안의 내용을 모두 주석 처리합니다.
+
     ```kotlin
     fun setFragment() {
     /*
@@ -1438,10 +1543,11 @@ DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next
 
 1. fragment_detail.xml 파일을 열고 [Code] 모드에서 ‘FrameLayout’을 ‘ConstraintLayout’으로 변경합니다.
 
-1. [Design] 버튼을 클릭해서 모드를 바꿈니다.  기존 텍스트뷰의 text 속성에는 ‘Detail’을 입력하고 layout_width와 layout_height 속성은 모두 ‘wrap_content’로 바꿉니다. 텍스트뷰를 화면 상단 중앙으로 옮기고 컨스트레인트는 좌우와 위쪽을 연결합니다. 위쪽 거리는 ‘24’로 설정합니다.<br>
+1. [Design] 버튼을 클릭해서 모드를 바꿈니다.  기존 텍스트뷰의 text 속성에는 ‘Detail’을 입력하고 layout_width와 layout_height 속성은 모두 ‘wrap_content’로 바꿉니다. 텍스트뷰를 화면 상단 중앙으로 옮기고 컨스트레인트는 좌우와 위쪽을 연결합니다. 위쪽 거리는 ‘24’로 설정합니다.
 
-1. 텍스트뷰 아래에 버튼을 하나 드래그해서 가져다 놓고, id속성에 ‘btnBlank’, text속성에는 ‘Back’을 입력합니다. 컨스트레인트의 위쪽은 텍스트뷰와 연결하고 거리를 ‘24’로 설정하고 좌우로도 화면 가장자리에 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-179.png){: style="box-shadow: 0 0 5px #777"}
+1. 텍스트뷰 아래에 버튼을 하나 드래그해서 가져다 놓고, id속성에 ‘btnBlank’, text속성에는 ‘Back’을 입력합니다. 컨스트레인트의 위쪽은 텍스트뷰와 연결하고 거리를 ‘24’로 설정하고 좌우로도 화면 가장자리에 연결합니다.
+    
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-179.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 메인 액티비티에 두 프래그먼트 연결하기
@@ -1450,12 +1556,14 @@ DetailFragment를 새로 하나 만들고, 앞에서 만든 ListFragment의 Next
 
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-180.png){: style="box-shadow: 0 0 5px #777"}
 
-1. MainActivity.kt을 열고 ListFragment의 Next 버튼을 클릭했을 때 호출할 goDetail() 메서드를 setFragment() 메서드 아래에 작성합니다. goDetail() 메서드가 호출되면 DetailFragment를 생성해서 메인 액티비티의 frameLayout에 삽입할 겁니다.<br>
+1. MainActivity.kt을 열고 ListFragment의 Next 버튼을 클릭했을 때 호출할 goDetail() 메서드를 setFragment() 메서드 아래에 작성합니다. goDetail() 메서드가 호출되면 DetailFragment를 생성해서 메인 액티비티의 frameLayout에 삽입할 겁니다.
+
     ```kotlin
     fun goDetail()
     ```
 
-1. goDetail() 메서드 안에서 DetailFragment를 생성하고 detailFragment 변수에 저장합니다.<br>
+1. goDetail() 메서드 안에서 DetailFragment를 생성하고 detailFragment 변수에 저장합니다.
+
     ```kotlin
     fun goDetail() {
         val detailFragment = DetailFragment()
@@ -1501,8 +1609,9 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     - 인터페이스를 사용하지 않고 액티비티를 직접 변수에 담아 사용합니다.
       - 프래그먼트를 만들면 자동으로 생성되는 기본 코드에서는 인터페이스를 통해 의존성을 제거하는 코드로 작성되어 있지만, 처음 공부할 때는 이런 코드가 오히려 이해하는 데 방해가 될 수 있어서 액티비티를 그대로 사용하는 것을 권장합니다.
 
-1. ListFragment 의 빈 공간을 클릭한 상태에서 키보드의 ``Ctrl`` + ``O``키를 입력하면 메서드를 오버라이드할 수 있는 팝업창이 나타납니다. onAttach(context: Context)메서드를 오버라이드 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-181.png){: style="box-shadow: 0 0 5px #777"}
+1. ListFragment 의 빈 공간을 클릭한 상태에서 키보드의 ``Ctrl`` + ``O``키를 입력하면 메서드를 오버라이드할 수 있는 팝업창이 나타납니다. onAttach(context: Context)메서드를 오버라이드 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-181.png){: style="box-shadow: 0 0 5px #777"}
 
 
 1. onAttach() 메서드를 통해 넘어온 Context를 캐스팅해서 MainActivity에 담습니다. 프래그먼트의 onAttach() 메서드를 통해 넘어오는 Context는 부모 액티비티 전체가 담겨 있습니다. context의 타입이 MainActivity인 것을 확인하고 mainActivity 프로퍼티에 저장해둡니다.
@@ -1563,8 +1672,9 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     }
     ```
 
-1. 에뮬레이터에서 실행한 후 Next 버튼을 클릭하면 Detail 프래그먼트가 화면에 겹쳐 보입니다. 프래그먼트는 하나의 레이아웃에 한 층씩 쌓이는 형태라서 기본 배경색을 설정하지 않으면 화면이 중첩된 채로 그려집니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-182.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행한 후 Next 버튼을 클릭하면 Detail 프래그먼트가 화면에 겹쳐 보입니다. 프래그먼트는 하나의 레이아웃에 한 층씩 쌓이는 형태라서 기본 배경색을 설정하지 않으면 화면이 중첩된 채로 그려집니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-182.png){: style="box-shadow: 0 0 5px #777"}
 
 
 1. fragment_detail.xml 파일을 열고 컴포넌트 트리의 컨스트레인트 레이아웃을 선택한 다음 속성 영역의 background 속성에 ‘#ff0000’을 입력해서 배경을 빨강색으로 설정합니다.
@@ -1619,8 +1729,9 @@ MainActivity.kt에서 작성된 goDetail() 메서드를 호출해야 하므로 M
     }
     ```
 
-1. 에뮬레이터를 실행하고 테스트합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-183.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터를 실행하고 테스트합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-183.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ## 3.3 프래그먼트로 값 전달하기
@@ -1672,8 +1783,9 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     }
     ```
 
-1. ListFragment에서 사용하는 레이아웃 파일인 fragment_list.xml 파일을 열고, 화면의 Next 버튼 바로 아래에 텍스트뷰 2개를 추가한 후 다음과 같이 설정합니다. 왼쪽 텍스트의 id속성은 ‘textTitle’, 오른쪽 텍스트의 id속성은 ‘textValue’를 각각 입력하고 컨스트레인트를 연결해서 화면과 비슷하게 배치합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-185.png){: style="box-shadow: 0 0 5px #777"}
+1. ListFragment에서 사용하는 레이아웃 파일인 fragment_list.xml 파일을 열고, 화면의 Next 버튼 바로 아래에 텍스트뷰 2개를 추가한 후 다음과 같이 설정합니다. 왼쪽 텍스트의 id속성은 ‘textTitle’, 오른쪽 텍스트의 id속성은 ‘textValue’를 각각 입력하고 컨스트레인트를 연결해서 화면과 비슷하게 배치합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-185.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 프래그먼트에서 전달받은 값을 꺼낼 때에는 arguments에서 직접 꺼낼 수 있습니다. ListFragment.kt파일을 열고 onCreateView() 메서드의 마지막 줄에 있는 return binding.root 바로 윗줄에 코드를 입력합니다. arguements 에서 값을 꺼낸 후 레이아웃에 작성해둔 텍스트뷰에 입력하는 코드입니다.
     ```kotlin
@@ -1693,15 +1805,17 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     }
     ```
 
-1. 이제 에뮬레이터에서 실행하면 ListFragment에 액티비티에서 전달한 2개의 값이 표시되는 것을 확인할 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-186.png){: style="box-shadow: 0 0 5px #777"}
+1. 이제 에뮬레이터에서 실행하면 ListFragment에 액티비티에서 전달한 2개의 값이 표시되는 것을 확인할 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-186.png){: style="box-shadow: 0 0 5px #777"}
 
 ### 생성되어 화면에 보이는 프래그먼트에 값 전달하기
 
 액티비티에서 이미 생성되어 화면에 보이는 프래그먼트로 값을 전달하기 위해서는 프래그먼트에 메서드를 정의하고 fragment.setValue() 의 형태로 만들어둔 메서드를 직접 호출하면 되기 때문에 앞의 코드를 조금 응용해서 사용할 수 있습니다.
 
-1. 앞의 코드에 이어서 따라 해보겠습니다. fragment_list.xml 파일을 열고 텍스트뷰를 하나 더 추가하고 다음과 같이 설정합니다. text속성과 id속성에 ‘textFromActivity’를 입력하고 컨스트레인트를 연결해서 그림과 같이 배치합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-187.png){: style="box-shadow: 0 0 5px #777"}
+1. 앞의 코드에 이어서 따라 해보겠습니다. fragment_list.xml 파일을 열고 텍스트뷰를 하나 더 추가하고 다음과 같이 설정합니다. text속성과 id속성에 ‘textFromActivity’를 입력하고 컨스트레인트를 연결해서 그림과 같이 배치합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-187.png){: style="box-shadow: 0 0 5px #777"}
 
 1. ListFragment.kt를 열고 액티비티로부터 전달받을 문자열을 출력하는 setValue() 메서드를 하나 추가합니다. 메서드 안에서 textFromActivity에 전달받은 문자열을 세팅하는 코드를 다음과 같이 작성하면 되는데 binding이 아직 프로퍼티로 생성되지 않았기 때문에 빨간색으로 나타납니다. 
     ```kotlin
@@ -1731,8 +1845,9 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
         return binding.root
     }
     ```
-1. activity_main.xml 파일을열고 화면에 버튼을 하나 추가하고 id 속성에 ‘btnSend’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-188.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을열고 화면에 버튼을 하나 추가하고 id 속성에 ‘btnSend’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-188.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt 파일을 열고 onCreate() 메서드 위에 바인딩을 추가하고, setContentView에는 binding.root를 입력합니다.
     ```kotlin
@@ -1814,8 +1929,9 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
     }
     ```
 
-1. 이제 에뮬레이터에서 실행한 후 SEND 버튼을 클릭하면 setValue() 메서드를 통해서 전달한 값이 ListFragment 화면에 나타나는 것을 확인할 수 있습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-189.png){: style="box-shadow: 0 0 5px #777"}
+1. 이제 에뮬레이터에서 실행한 후 SEND 버튼을 클릭하면 setValue() 메서드를 통해서 전달한 값이 ListFragment 화면에 나타나는 것을 확인할 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-189.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 프래그먼트에 프래그먼트로 값 전달하기
@@ -1933,8 +2049,11 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
         }
     }
     ```
-    이제 수신 측의 코드는 완료되었습니다.<br>
+    
+    이제 수신 측의 코드는 완료되었습니다.
+
     ``ReceiverFragment.kt의 전체 코드``
+
     ```kotlin
     package kr.co.hanbit.fragment
 
@@ -1973,8 +2092,9 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 
 1. 값을 전달하는 송식 측 프래그먼트를 만들 차례입니다. 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)]를 선택하고 SenderFragment를 생성합니다.
 
-1. 자동 생성된 fragment_sender.xml 파일을 열과 다음과 같이 화면을 구성합니다. [Code]모드에서 두 번째 줄에 있는 ``<FrameLayout>`` 태그를 ‘ConstraintLayout’으로 변경합니다. 그리고 화면 가운데 2개의 버튼을 배치하고 버튼 이름에 각각 'YES', 'NO' 를 입력합니다. id에도 각각 ‘btnYes’, ‘btnNo’를 입력해 둡니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-190.png){: style="box-shadow: 0 0 5px #777"}
+1. 자동 생성된 fragment_sender.xml 파일을 열과 다음과 같이 화면을 구성합니다. [Code]모드에서 두 번째 줄에 있는 ``<FrameLayout>`` 태그를 ‘ConstraintLayout’으로 변경합니다. 그리고 화면 가운데 2개의 버튼을 배치하고 버튼 이름에 각각 'YES', 'NO' 를 입력합니다. id에도 각각 ‘btnYes’, ‘btnNo’를 입력해 둡니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-190.png){: style="box-shadow: 0 0 5px #777"}
 
 1. SenderFragment.kt 파일을 열고 ReceiverFragment.kt 파일과 마찬가지로 onCreateView 메서드만 남기고 코드를 모두 삭제합니다. onCreateView 메서드 위에 바인딩을 선언합니다. 레이아웃의 이름이 fragment_sender.xml 이기 때문에 바인딩 이름은 FragmentSenderBinding 입니다.
 
@@ -2077,8 +2197,9 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 
 1. 사용할 프래그먼트를 선택하는 팝업창이 나타납니다. 먼저 SenderFragment를 선택해서 화면 위쪽에 배치합니다. 위쪽과 좌우 컨스트레인트를 연결하고 높이를 3dp 정도로 미리 고정해두는 것이 배치하기 편합니다.
 
-1. ReceiverFragment를 같은 방식으로 화면 아래쪽에 배치합니다. SenderFragment의 높이를 고정했기 때문에 ReceiverFragment는 상하좌우 컨스트레인트를 모두 연결합니다. <br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-191.png){: style="box-shadow: 0 0 5px #777"}
+1. ReceiverFragment를 같은 방식으로 화면 아래쪽에 배치합니다. SenderFragment의 높이를 고정했기 때문에 ReceiverFragment는 상하좌우 컨스트레인트를 모두 연결합니다. 
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-191.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 에뮬레이터를 실행하고 YES와 NO 버튼을 클릭하면 ‘리시버’에 값이 각각 전달되는 것을 확인할 수 있습니다.
 
@@ -2095,23 +2216,27 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 
 생성과 관련된 5개의 생명 주기 메서드가 있지만 프래그먼트를 포함하고 있는 액티비티가 화면에 계속 나타나고 있는 상태에서는 onAttach() 부터 onResume() 까지의 메서드가 모두 한 번에 호출됩니다. 
 
-1. onAttach()<br>
+1. onAttach()
+
   프래그먼트 매너저를 통해 액티비티에 프래그먼트가 추가되고 commit되는 순간 호출됩니다. 
   액티비티 소스 코드에서 var fragment = Fragment() 형태로 생성자가 호출하는 순간에는 호출되지 않습니다.
   파라미터로 전달되는 Context 를 저장해 놓고 사용하거나 또는 Context 로부터 상위 액티비티를 꺼내서 사용합니다. 
   객체지향의 설계구조로 인해 onAttach()를 통해 넘어오는 Context에서만 상위 액티비티를 꺼낼 수 있습니다.
 
-1. onCreate()<br>
+1. onCreate()
+
   프래그먼트가 생성됨과 동시에 호출됩니다.
   사용자 인터페이스인 뷰와 관련된 것을 제외한 프래그먼트 자원(주로 변수)을 초기화할 때 사용합니다.
 
-1. onCreateView<br>
+1. onCreateView
+
   사용자 인터페이스와 관련된 뷰를 초기화하기 위해 사용됩니다.
 
-1. onStart()<br>
+1. onStart()
+
   액티비티의 startActivity로 새로운 액티비티를 호출하는 것처럼 프래그먼트가 새로 add되거나 화면에서 사라졌다가 다시 나타나면 onCreateView()는 호출되지 않고 onStart()만 호출됩니다. 주로 화면 생성 후에 화면에 입력되 값을 초기화하는 용도로 사용됩니다.
 
-1. onResume()<br>
+1. onResume()
   onStart()와 같은 용도로 사용됩니다. 다른 점은 소멸 주기 메서드가 onPause() 상태에서 멈췄을 때 (현재 프래그먼트의 일부가 가려지지 않았을 때)는 onStart() 를 거치지 않고 onResume()이 바로 호출된다는 점입니다.
 
 
@@ -2119,19 +2244,24 @@ arguments는 프래그먼트의 기본 프로퍼티이기 때문에 선언 없�
 
 현재 프래그먼트 위로 새로운 프래그먼트가 add되거나 현재 프래그먼트를 제거하면 소멸 주기와 관련된 메서드가 순차적으로 호출됩니다.
 
-1. onPause()<br>
+1. onPause()
+
   현재 프래그먼트가 화면에서 사라지면 호출됩니다. ``주로 동영상 플레이어를 일시정지한다거나 현재 작업을 잠시 멈추는 용도로 사용됩니다.``
 
-1. onStop()<br>
+1. onStop()
+
   onPause()와 다른 점은 현재 프래그먼트가 화면에 일부분이라도 보이면 onStop()은 호출되지 않습니다. 예를 들어 add되는 새로운 플래그먼트가 반투명하면 현재 프래그먼트의 생명 주기 메서드는 onPause() 까지만 호출됩니다. ``동영상 플레이어를 예로 든다면 일시정지가 아닌 정지를 하는 용도로 사용됩니다.``
 
-1. onDestroyView()<br>
+1. onDestroyView()
+
   뷰의 초기화를 해제하는 용도로 사용됩니다. 이 메서드가 호출된 후에 생성 주기 메서드인 onCreateView()에서 인프레이터로 생성한 View가 모두 소멸됩니다.
 
-1. onDestory()<br>
+1. onDestory()
+
   액티비티에는 아직 남아있지만 프래그먼트 자체는 소멸됩니다. 프래그먼트에 연결된 모든 자원을 해제하는 용도로 사용됩니다.
 
-1. onDetach()<br>
+1. onDetach()
+
   액티비티에서 연결이 해제됩니다.
 
 # 4. 뷰 사용하기
@@ -2224,10 +2354,12 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     }
     ```
 
-1. activity_main.xml 파일을 열고 ‘Hello World!’가 적인 텍스트뷰의 text속성을 ‘Draw Text’로 바꿔주고 위쪽으로부터 거리는 ‘24’로 설정합니다. 그리고 팔레트의 레이아웃 프레임을 하나 추가하고 텍스트뷰의 위치를 조정하여 다음과 같은 화면을 만듭니다. 프레임 레이아웃의 id속성에는 ‘frameLayout’을 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-194.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 ‘Hello World!’가 적인 텍스트뷰의 text속성을 ‘Draw Text’로 바꿔주고 위쪽으로부터 거리는 ‘24’로 설정합니다. 그리고 팔레트의 레이아웃 프레임을 하나 추가하고 텍스트뷰의 위치를 조정하여 다음과 같은 화면을 만듭니다. 프레임 레이아웃의 id속성에는 ‘frameLayout’을 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-194.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity.kt 파일을 열고 바인딩을 생성한 후 binding 변수에 담아둡니다. 그리고 setCnotextView에 binding.root를 입력합니다.
+
     ```kotlin
     class MainActivity : AppCompatActivity() {
 
@@ -2248,11 +2380,13 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     binding.frameLayout.addView(customView)
     ```
 
-1. 에뮬레이터에서 실행합니다. 다음처럼 ‘안녕하세요’글자의 아래쪽만 살짝 걸친 듯이 출력됩니다. drawText를 할 때 좌표의 기준이 문자열의 좌측 하단이기 때문에 그렇습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-195.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행합니다. 다음처럼 ‘안녕하세요’글자의 아래쪽만 살짝 걸친 듯이 출력됩니다. drawText를 할 때 좌표의 기준이 문자열의 좌측 하단이기 때문에 그렇습니다.
 
-1. 정상적으로 표시하기 위해서 drawText의 세 번째 파라미터인 y 좌푯값에 텍스트의 크기인 ‘100f’를 입력한 후 다시 한번 실행합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-196.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-195.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 정상적으로 표시하기 위해서 drawText의 세 번째 파라미터인 y 좌푯값에 텍스트의 크기인 ‘100f’를 입력한 후 다시 한번 실행합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-196.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 앞의 코드에서 CustomView는 항상 ‘안녕하세요’라는 글자면 출력할 수 있습니다. CustomView의 생성자에 문자열을 입력받는 파라미터를 추가해서 내가 원하는 글자를 출력할 수 있도록 변경하겠습니다. CustomView의 생성자에 문자열 타입인 text 파라미터를 추가해보겠습니다. class CustomView(context: Context): View(context) 코드에 ‘text: String’을 다음과 같이 입력합니다. 
     ```kotlin
@@ -2266,8 +2400,9 @@ onDraw() 메서드의 사용법만 정확하게 이해한다면 원하는 위젯
     canvas?.drawText(text, 0f, 100f, paint)
     ```
 
-1. 에뮬레이터에서 실행하고 확인합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-197.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하고 확인합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-197.png){: style="box-shadow: 0 0 5px #777"}
 
     ``MainActiity.kt의 전체 소스``
 
@@ -2438,8 +2573,9 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 
 1. [app] - [res] - [values] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Value Resource File]을 선택합니다.
 
-1. File name에 ‘attrs’를 입력하고 [OK] 버튼을 클릭하면 파일이 생성됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-203.png){: style="box-shadow: 0 0 5px #777"}
+1. File name에 ‘attrs’를 입력하고 [OK] 버튼을 클릭하면 파일이 생성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-203.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 파일의 ``<resources>`` 태그 사이에 다음과 같이 입력합니다. strings나 dimens와는 다르게 정의하는 클래스와 속성을 계층형으로 입력해야 하므로 여러 줄이 필요합니다.
     ```kotlin
@@ -2458,8 +2594,9 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
         android:text="20210101" />
     ```
 
-1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택하여 나타난 팝업창의 입력란에 ‘CustomText’를 입력한 후 목록에서 Class를 더블클릭해서 파일을 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-204.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Kotlin File/Class]를 선택하여 나타난 팝업창의 입력란에 ‘CustomText’를 입력한 후 목록에서 Class를 더블클릭해서 파일을 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-204.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 파일이 열리면 다음과 같이 수정해서 ``AppCompatTextView`` 클래스를 상속받습니다.
 
@@ -2558,22 +2695,24 @@ text 속성의 입력값으로 ‘20210101’이 입력되면 연월일을 구�
 
 1. activity_main.xml 파일을 열고 화면 가운데 있는 텍스트뷰를 삭제합니다.
 
-1. 팔레트의 가장 아래에 프로젝트(Project)라는 카테고리가 생성되어 있고, 프로젝트 카테고리를 클릭하면 우측에 커스텀텍스트(CustomText) 위젯이 추가된 것을 확인할 수 있습니다.<br>
-    *``반드시 안드로이드 스튜디오를 재시작해야 합니다.``*<br>
+1. 팔레트의 가장 아래에 프로젝트(Project)라는 카테고리가 생성되어 있고, 프로젝트 카테고리를 클릭하면 우측에 커스텀텍스트(CustomText) 위젯이 추가된 것을 확인할 수 있습니다.
+
+    *``반드시 안드로이드 스튜디오를 재시작해야 합니다.``*
+
     ![1]({{site.baseurl}}/images/this-is-android/this-is-android-205.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 커스텀 텍스트를 드래그해서 화면 가운데 가져다 놓고 컨스트레인트를 상하좌우 모두 연결합니다. 커스텀 텍스트 위젯을 클릭한 상태에서 text 속성에 ‘20210101’을 입력합니다.
 
-1. 속성 영역의 All Attributes를 펼치면 중간쯤에 delimeter 속성이 추가되어 있습니다. ‘-’을 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-206.png){: style="box-shadow: 0 0 5px #777"}
+1. 속성 영역의 All Attributes를 펼치면 중간쯤에 delimeter 속성이 추가되어 있습니다. ‘-’을 입력합니다.
 
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-206.png){: style="box-shadow: 0 0 5px #777"}
 
-- ``View``: 화면에 보이는 모든 요소의 최상위 클래스입니다. 화면에 무엇인가를 그리기 위해서는 View클래스가 상속받아져 있어야 합니다.
-- ``onDraw() 메서드``: View클래스가 화면에 텍스트를 출력하거나 그림을 그릴 때 호출하는 메서드입니다.
-- ``Canvas``: onDraw() 메서드를 통해 전달되는 그리기 도구입니다. drawText(), drawCircle() 등의 메서드를 사용하여 화면에 그릴 수 있습니다.
-- ``Paint``: 화면에 그려지는 요소들의 색상, 스타일, 굵기 정보 등을 정의하는 클래스입니다.
-- ``attrs.xml``: 내가 만든 위젯에 새로운 속성을 정의할 때 사용되는 리소스 파일입니다.
-- ``custom``: attrs.xml에 정의한 새로운 속성을 custom이라는 Prefix로 레이아웃에서 사용할 수 있습니다.
+    - ``View``: 화면에 보이는 모든 요소의 최상위 클래스입니다. 화면에 무엇인가를 그리기 위해서는 View클래스가 상속받아져 있어야 합니다.
+    - ``onDraw() 메서드``: View클래스가 화면에 텍스트를 출력하거나 그림을 그릴 때 호출하는 메서드입니다.
+    - ``Canvas``: onDraw() 메서드를 통해 전달되는 그리기 도구입니다. drawText(), drawCircle() 등의 메서드를 사용하여 화면에 그릴 수 있습니다.
+    - ``Paint``: 화면에 그려지는 요소들의 색상, 스타일, 굵기 정보 등을 정의하는 클래스입니다.
+    - ``attrs.xml``: 내가 만든 위젯에 새로운 속성을 정의할 때 사용되는 리소스 파일입니다.
+    - ``custom``: attrs.xml에 정의한 새로운 속성을 custom이라는 Prefix로 레이아웃에서 사용할 수 있습니다.
 
 
 # 5. 탭 메뉴로 화면 구성하기: 뷰 페이저와 탭 레이아웃
@@ -2603,13 +2742,15 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 
 1. 탐색기의 [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Fragment] - [Fragment (Blank)]를 선택합니다.
 
-1. Fragment Name에 ‘FragmentA’라고 입력합니다. 레이아웃 이름이 자동으로 생성되는데 fragment_만 있거나 fragment_fragment_a와 같은 이름이 중복되어 있다면 fragment_a로 변경합니다.  클래스의 이름을 참조해 레이아웃 파일의 이름이 결정되는데, fragment_a.xml 형식으로 된 이름을 자동으로 만들기 위해서는 A를 이름 앞에 작성하고 Fragment를 뒤에 붙여서 AFragment라고 하면 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-209.png){: style="box-shadow: 0 0 5px #777"}
+1. Fragment Name에 ‘FragmentA’라고 입력합니다. 레이아웃 이름이 자동으로 생성되는데 fragment_만 있거나 fragment_fragment_a와 같은 이름이 중복되어 있다면 fragment_a로 변경합니다.  클래스의 이름을 참조해 레이아웃 파일의 이름이 결정되는데, fragment_a.xml 형식으로 된 이름을 자동으로 만들기 위해서는 A를 이름 앞에 작성하고 Fragment를 뒤에 붙여서 AFragment라고 하면 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-209.png){: style="box-shadow: 0 0 5px #777"}
 
 1. [Finish] 버튼을 클릭해서 프래그먼트를 생성합니다.
 
-1. fragment_a.xml 파일을 열고 기본으로 생성된 텍스트뷰의 layout_width와 layout_height속성을 ‘wrap_content’로 변경하고, 화면 가운데에 배치합니다. FrameLayout에는 정렬 기능이 따로 없기 때문에 텍스트뷰를 선택한 상태에서 텍스트뷰 속성인 layout_gravity의 값을 ‘center’로 바꿔주면 가운데 정렬이 됩니다. text속성에 ‘프래그먼트A’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-210.png){: style="box-shadow: 0 0 5px #777"}
+1. fragment_a.xml 파일을 열고 기본으로 생성된 텍스트뷰의 layout_width와 layout_height속성을 ‘wrap_content’로 변경하고, 화면 가운데에 배치합니다. FrameLayout에는 정렬 기능이 따로 없기 때문에 텍스트뷰를 선택한 상태에서 텍스트뷰 속성인 layout_gravity의 값을 ‘center’로 바꿔주면 가운데 정렬이 됩니다. text속성에 ‘프래그먼트A’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-210.png){: style="box-shadow: 0 0 5px #777"}
 
     FragmentB.kt, FragmentC.kt, FragmentD.kt도 위와 같은 순서대로 작성합니다.
 
@@ -2632,8 +2773,9 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 
 1. id에 ‘viewPager’를 입력합니다.
 
-1. 이제 프래그먼트를 뷰페이지에 보여주기 위한 프래그먼트 어댑터를 만들 차례입니다. 마치 리사이클러뷰에서 Adapter를 상속받아 커스텀어댑터를 만들었던 것처럼 프래그먼트를 담을 수 있는 FragmentStateAdapter를 상속받아서 FragmentAdapter를 만들겠습니다. java 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 우측과 같이 FragmentAdapter 클래스를 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-212.png){: style="box-shadow: 0 0 5px #777"}
+1. 이제 프래그먼트를 뷰페이지에 보여주기 위한 프래그먼트 어댑터를 만들 차례입니다. 마치 리사이클러뷰에서 Adapter를 상속받아 커스텀어댑터를 만들었던 것처럼 프래그먼트를 담을 수 있는 FragmentStateAdapter를 상속받아서 FragmentAdapter를 만들겠습니다. java 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나는 메뉴에서 우측과 같이 FragmentAdapter 클래스를 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-212.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 생성된 클래스 파일에서 FragmentStateAdapter를 상속받도록 소스 코드를 수정합니다. 끝에 괄호를 생략하고 상속받습니다.
     ```kotlin
@@ -2647,11 +2789,13 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
     }
     ```
 
-1. 아직 클래스명 아래에 빨간색 밑줄이 생기는데 클릭한 후 ``Alt`` + ``Enter``키를 눌러 목록에서 Implement members를 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-213.png){: style="box-shadow: 0 0 5px #777"}
+1. 아직 클래스명 아래에 빨간색 밑줄이 생기는데 클릭한 후 ``Alt`` + ``Enter``키를 눌러 목록에서 Implement members를 선택합니다.
 
-1. 그 다음 선택 창에서 2개의 메서드를 모두 선택하고 [OK]버튼을 클릭하면 코드가 자동 생성됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-214.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-213.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 그 다음 선택 창에서 2개의 메서드를 모두 선택하고 [OK]버튼을 클릭하면 코드가 자동 생성됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-214.png){: style="box-shadow: 0 0 5px #777"}
 
     ```kotlin
     class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
@@ -2770,8 +2914,9 @@ FragmentB.kt, FragmentC.kt, FragmentD.kt 도 같은 과정으로 만듭니다.
 
 앞에서 만든 화면의 상단의 탭 메뉴를 배치하고 탭 메뉴 클릭 시 해당 프래그먼트로 이동하는 코드를 작성해보겠습니다.
 
-1. activity_main.xml 파일을 열고 팔레트의 컨테이너에 있는 탭 레이아웃(TabLayout)을 드래그해서 뷰페이저 위에 배치하고 id는 ‘tabLayout’으로 변경합니다. 뷰페이저의 위쪽 컨스트레인트를 삭제한 후 작업하는 것이 편합니다. 탭 레이아웃이 정상적으로 배치되었으면 뷰페이저의 위쪽 컨스트레인트를 탭 레이아웃 아래에 연결하여 다음 그림과 같이 만들어줍니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-215.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 팔레트의 컨테이너에 있는 탭 레이아웃(TabLayout)을 드래그해서 뷰페이저 위에 배치하고 id는 ‘tabLayout’으로 변경합니다. 뷰페이저의 위쪽 컨스트레인트를 삭제한 후 작업하는 것이 편합니다. 탭 레이아웃이 정상적으로 배치되었으면 뷰페이저의 위쪽 컨스트레인트를 탭 레이아웃 아래에 연결하여 다음 그림과 같이 만들어줍니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-215.png){: style="box-shadow: 0 0 5px #777"}
 
 1. ViewPager1과는 다르게 ViewPager2에서는 TabLayoutMediator를 사용하여 TabLayout과 뷰페이저를 연결합니다. 먼저 메뉴명으로 사용할 이름들을 배열에 저장합니다. 앞에서 작성한 MainActivity.kt 파일을 열어 binding.viewPAger.... 다음 줄에 작성합니다.
 ```kotlin
@@ -2785,8 +2930,9 @@ val tabTitles = listOf<String>("A", "B", "C", "D")
     }.attach()
     ```
 
-1. 에뮬레이터에서 실행하면 메뉴와 뷰페이저가 모두 정상적으로 동작합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-216.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행하면 메뉴와 뷰페이저가 모두 정상적으로 동작합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-216.png){: style="box-shadow: 0 0 5px #777"}
 
     ``TabLayoutMediator가 추가된 MainActivity.kt의 전체코드``
     ```kotlin
@@ -2836,11 +2982,13 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 
 1. 리사이클러뷰의 아이템 레이아웃처럼 하나의 뷰에서 사용할 아이템 레이아웃을 생성합니다. [res] - [layout] 디렉토리를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Layout Resource File]을 선택합니다.
 
-1. File name에 ‘item_viewpager’라고 입력하고 파일을 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-218.png){: style="box-shadow: 0 0 5px #777"}
+1. File name에 ‘item_viewpager’라고 입력하고 파일을 생성합니다.
 
-1. 레이아웃 파일 가운데에 텍스트뷰를 하나 가져다 놓고 상하좌우 컨스트레인트를 연결해서 가운데에 오도록 배치합니다. 텍스트뷰의 text속성에 ‘여기제목’을 입력합니다. 텍스트뷰의 id에 ‘textView’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-219.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-218.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 레이아웃 파일 가운데에 텍스트뷰를 하나 가져다 놓고 상하좌우 컨스트레인트를 연결해서 가운데에 오도록 배치합니다. 텍스트뷰의 text속성에 ‘여기제목’을 입력합니다. 텍스트뷰의 id에 ‘textView’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-219.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### CustomPagerAdapter 만들기
@@ -2849,8 +2997,9 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 
 목록을 만들 때 사용하는 Recyclerview.Adapter를 상속받아서 사용합니다.
 
-1. CustomPagerAdapter 클래스를 하나 생성합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-220.png){: style="box-shadow: 0 0 5px #777"}
+1. CustomPagerAdapter 클래스를 하나 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-220.png){: style="box-shadow: 0 0 5px #777"}
 
     *이후부터는 리사이클러뷰를 사용하는 방법과 같습니다. 뷰페이저에 리사이클러뷰어댑터를 사용하면 기존에는 세로로 출력되는 것을 가로로 출력되도록 해준다고 생각하면 이해하기가 더 쉽습니다.*
 
@@ -2877,8 +3026,9 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     }
     ```
 
-1. 클래스 안쪽을 클릭한 상태로 키보드의 ``Ctrl`` + ``I`` 키를 눌러 나타나는 메뉴에서 3개의 메서드를 선택하고 오버라이드 합니다. 자동 생성된 코드에서 TODO 행은 모두 삭제합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-221.png){: style="box-shadow: 0 0 5px #777"}
+1. 클래스 안쪽을 클릭한 상태로 키보드의 ``Ctrl`` + ``I`` 키를 눌러 나타나는 메뉴에서 3개의 메서드를 선택하고 오버라이드 합니다. 자동 생성된 코드에서 TODO 행은 모두 삭제합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-221.png){: style="box-shadow: 0 0 5px #777"}
 
     ```kotlin
     class CustomPagerAdapter: RecyclerView.Adapter<Holder>() {
@@ -2969,8 +3119,9 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
 
 1. ViewPager2를 드래그해서 탭 레이아웃 아래에 배치하고 상하좌우 컨스트레인트를 연결합니다.
 
-1. id에 ‘viewPager’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-222.png){: style="box-shadow: 0 0 5px #777"}
+1. id에 ‘viewPager’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-222.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### MainActivity 소스 코드 연결하기
