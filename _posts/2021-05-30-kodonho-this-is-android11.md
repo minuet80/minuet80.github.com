@@ -807,18 +807,368 @@ dependencies {
     <uses-permission android:name="android.permission.INTERNET" />
     ```
 
+1. activity_main.xml 파일을 열고 [Design] 모드에서 화면의 기본 텍스트뷰는 삭제합니다. 그리고 웹페이지 주소를 입력받을 플레인텍스트와 요청 버튼을 화면 상단에 배치합니다. 플레인텍스트의 hint 와 id 속성에는 ‘주소를 입력하세요’와 ‘editUrl’을, 버튼의 text와 id속성에는 ‘요청’, ‘buttonRequest’로 입력하고, 컨스트레인트는 아래 그림과 같이 연결해줍니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-297.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 응답받은 웹 페이지의 코드를 출력할 텍스트뷰를 화면 화단에 배치합니다. id는 ‘textContent’로 합니다.
 
 
+### MainActivity에 코드 작성하기
+
+1. MainActivity.kt를 열고 바인딩을 생성한 후 binding 프로퍼티에 저장하고 setContentView()에 binding.root를 입력합니다.
+
+    ```kotiln
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+    }
+    ```
+
+1. setContentView() 밑으로 요청 버튼에 클릭리스너를 달아주는 코드를 작성합니다.
+
+    ```kotlin
+    binding.buttonRequest.setOnClickListener {
+        // 03은 여기에 입력합니다.
+    }
+    ```
+
+1. 버튼을 클릭하면 네트워크 작업을 요청하고 이를 백그라운드에서 처리하기 위해 디스패처 IO를 사용하여 CoroutineScope를 생성합니다.
+
+    ```kotlin
+    binding.buttonRequest.setOnClickListener {
+        CoroutineScope(Dispatchers.IO).launch {
+            // 04는 여기에 입력합니다.
+        }
+    }
+    ```
+
+1. 주소 입력 필드에 입력된 주소를 가져와 https로 시작하지 않으면 앞에 https://를 붙여줍니다.  http는 보안 문제가 있어서 http를 사용하려면 AndroidManifest.xml 파일에 부가적인 설정이 필요합니다.
+
+    ```kotlin
+    var urlText = binding.editUrl.text.toString()
+    if (!urlText.startsWith("https")) {
+        urlText = "https://${urlText}"
+    }
+    // 05~08은 여기에 입력합니다.
+    ```
+
+1. 이어서 주소를 URL 객체로 변환하고 변수에 저장합니다.
+
+    ```kotlin
+    var url = URL(urlText)
+    ```
+
+1. URL 객체에서 openConnection() 메서드를 사용하여 서버와의 연결을 생성합니다. 그리고 HttpURLConnection으로 형 변환해줍니다. openConnection() 메서드에서 반환되는 값은 URLConnection이라는 추상(설계) 클래스입니다. 추상 클래스를 사용하기 위해서는 실제 구현 클래스인 HttpURLConnection으로 변환하는 과정이 필요합니다.
+
+    ```kotiln
+    var urlConnection = url.openConnection() as HttpURLConnection
+    ```
+
+1. 연결된 커넥션에 요청 방식을 설정합니다. 대문자로 입력해야 하며 없는 방식을 입력하면 오류가 발생합니다.
+
+    ```kotlin
+    urlConnection.requestMethod = "GET"
+    ```
+
+1. 응답이 정상이면 응답 데이터를 처리합니다.
+
+    ```kotlin
+    if (urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
+        // 09~13은 여기에 입력합니다.
+    }
+    ```
+
+1. 입력 스트림을 연결하고 버퍼에 담아서 데이터를 읽을 준비를 합니다.
+
+    ```kotlin
+    val streamReader = InputStreamReader(urlConnection.inputStream)
+    val buffered = BufferedReader(streamReader)
+    ```
+
+1. 반복문을 돌면서 한 줄씩 읽은 데이터를 content 변수에 저장합니다.
+
+    ```kotlin
+    val content = StringBuffer()
+    while (true) {
+        val line = buffered.readLine()?: break;
+        content.append(line)
+    }
+    ```
+
+1. 사용한 스트림과 커넥션을 모두 해제합니다.
+
+    ```kotlin
+    buffered.close()
+    urlConnection.disconnect()
+    ```
+
+1. 화면의 텍스트뷰에 content 변수에 저장된 값을 입력합니다. UI에 값을 세팅하는 것은 Main 디스패처에서 해야 합니다.
+
+    ```kotlin
+    launch(Dispatchers.Main) {
+        binding.textContent.text = content.toString()
+    }
+    ```
+
+1. CoroutineScope(Dispatchers.IO).launch {} 코드 블록 안의 모든 코드 (04 ~ 12까지) 를 try 문으로 감싸서 예외 처리를 합니다. 네트워크 관련 코드는 예외로 치명적인 오류(앱 다운)가 발생할 수 있습니다. e.printStackTrace() 메서드는 예외 발생 시 로그를 출력하는 역할을 합니다.
+
+    ```kotlin
+    CoroutineScope(Dispatchers.IO).launch {
+        try {
+            // 04~12는 여기에 입력합니다.
+        } catch ( e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    ```
+
+1. 애뮬레이터에서 실행해봅니다. 입력 필드에 주소를 입력하고 요청을 하면 웹 페이지를 구성하고 있는 HTML 태그가 화면에 나타납니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-298.png){: style="box-shadow: 0 0 5px #777"}
 
 
+``MainActivity.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.networkhttpurlconnection
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kr.co.hanbit.networkhttpurlconnection.databinding.ActivityMainBinding
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.lang.Exception
+import java.net.HttpURLConnection
+import java.net.URL
+
+class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        binding.buttonRequest.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    var urlText = binding.editUrl.text.toString()
+                    if (!urlText.startsWith("https")) {
+                        urlText = "https://${urlText}"
+                    }
+                    var url = URL(urlText)
+                    var urlConnection = url.openConnection() as HttpURLConnection
+                    urlConnection.requestMethod = "GET"
+
+                    if (urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
+                        val streamReader = InputStreamReader(urlConnection.inputStream)
+                        val buffered = BufferedReader(streamReader)
+                        val content = StringBuffer()
+                        while (true) {
+                            val line = buffered.readLine() ?: break;
+                            content.append(line)
+                        }
+                        buffered.close()
+                        urlConnection.disconnect()
+
+                        launch(Dispatchers.Main) {
+                            binding.textContent.text = content.toString()
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+}
+```
+
+## 2.3 레트로핏 데이터 통신 라이브러리
+
+앞에서 사용한 HttpURLConnection은 데이터 통신의 기본 원리를 설명하기 위한 용도였습니다.
+
+이번에는 조금 편하게 적은 양의 코드로 데이터 통신을 할 수 있게 도와주는 레트로핏<sup> (Retrofit) </sup>라이브러리를 사용하겠습니다.
+
+레트로핏의 공식 사이트는 다음과 같습니다.
+
+[레트로핏](https://square.github.io/retrofit)
 
 
+### 레트로핏을 위한 준비사항
+
+레트로핏을 사용하기 전에 두 가지 준비사항이 필요합니다.
+
+1. 데이터를 가져올 곳 (웹 사이트 또는 API 서버) 결정
+
+1. 어떤 (표준 프로토콜) 데이터를 사용할 것인지 데이터의 형식을 결정
 
 
+어디서 가져올 지는 웹 사이트의 주소만 알면 되기 때문에 별다른 공부가 필요하지 않지만, 어떤 데이터 형식을 사용할 것인지는 프로토콜이 정해지면 해당 프로토콜에 대한 공부가 선행되어야 합니다. 
+
+1. 사용자 정보 API를 무료로 제공하는 Github API
+
+    깃허브<sup> (Github) </sup>에서 공개한 Github API를 사용하겠습니다. 
+
+    깃허브는 개발자를 위해서 가입 없이 무료로 사용할 수 있는 API를 제공합니다.
+
+    - Github API: https://developer.github.com/v3
+
+    예젱서는 Github API 중에서 사용자 정보를 검색하고 사용자 정보의 저장소를 보여주는 API를 사용할 것입니다.
+
+1. 간단한 데이터 구조를 가진 JSON
+
+    앞의 예제에서는 HTML로 만들어진 데이터를 그대로 텍스트뷰에 보여주기만 했습니다. HTML 은 구조가 복잡해서 짧은 시간에 분석하고 처리하기에는 거의 불가능한 수준의 프로토콜입니다. 
+
+    그런 이유로 현재 데이터 통신용으로 가장 많이 사용되고 있는 구조 또한 간단한 JSON<sup> (Javascript Object Notation) </sup>을 사용하겠습니다.
+
+    네트워크 관점에서 JSON은 HTTP와 같은 데이터 프로토콜에서 바디 영역에 정의된 데이터 통신을 위한 개발형 규격입니다.
+
+
+### JSON 구조
+
+간단한 구조로 되어있지만, 각각의 형식이 의미하는 바를 알고 있어야 합니다.
+
+JSON은 크게 세 가지 형태의 조합으로 구성되어 있습니다.
+
+1. JSON 오브젝트
+1. JSON 데이터
+1. JSON 배열
+
+#### JSON 오브젝트
+
+JSON 객체는 여는 중괄호 ({)로 시작해 닫는 중괄호 (})로 끝납니다.
+
+``{중괄호 사이에 JSON 데이터가 표현됩니다}``{: style="background-color: #ffcccc"}
+
+
+#### JSON 데이터
+
+JSON 오브젝트인 중괄호 ({}) 사이에 “데이터 이름”: 값의 형식으로 표현되며 이름은 항상 쌍따옴표 (“”)로 감싸야 하고 이름과 값의 사이는 콜론 (:)으로 구분합니다. 
+
+데이터가 여러 개일 경우는 쉼표 (,)로 구분합니다.
+
+``{"데이터 이름": "값", "데이터2 이름": "값2"}``{: style="background-color: #ffcccc"}
+
+데이터의 값은 문자, 숫자, 불린, null, JSON 객체, JSON 배열이 될 수 있는데 표현식은 조금씩 다릅니다.
+
+| 데이터 형식 | 데이터 이름: 값 표현 | 비고 |
+| :--- | :--- | :--- |
+| 문자 | "데이터 이름": "값" | 값을 쌍따옴표로 감싸야 합니다. |
+| 숫자 | "데이터 이름": 123 | 값에 쌍다옴표를 사용하지 않습니다. |
+| 불린 | "데이터 이름": true | true, false를 값으로 사용하되 쌍따옴표를 사용하지 않습니다. |
+| null | "데이터 이름": null | null값을 사용할 수 있습니다. |
+| JSON객체 | "데이터 이름": {} | 데이터의 값으로 JSON 오브젝트를 사용할 수 있습니다. |
+| JSON배열 | "데이터 이름": [] | 데이터의 값으로 JSON 배열을 사용할 수 있습니다. |
+{: .table .table-striped .table-hover}
+
+#### JSON 배열
+
+JSON 배열은 JSON 오브젝트의 컬렉션으로 여는 대괄호 ([) 로 시작해 닫는 대괄호 (])로 끝납니다.
+
+배열에 입력되는 JSON 오브젝트가 복수 개일 경우는 쉼표 (,)로 구분합니다.
+
+``[ {"데이터1 이름", "값"}, {"데이터1 이름", "두번째 값"}, {"데이터2 이름", 123} ]``{: style="background-color: #ffcccc"}
+
+
+## 2.4 깃허브 사용자 정보를 가져오는 앱 개발하기
+
+코드를 본격적으로 수정하기 전에 라이브러리 하나만 더 설명하겠습니다.
+
+깃허브에서 가져온 목록 데이터에는 이미지 정보인 아바타 주소가 포함되어 있습니다. 
+
+HttpURLConnection을 직접 구현해서 서버에 있는 아바타 이미지를 화면에 보여줄 수도 있지만, 구현 난이도는 높은 반면 효율성은 떨어지므로 라이브러리를 사용하겠습니다.
+
+이미지를 화면에 보여주기 위해서는 이미지 로딩 라이브러리를 사용할 수 있는데 이미지가 URL 주소만 알라주면 해당 이미지가 있는 서버에 접속하여 이미지를 다운로드해서 이미지뷰에 보내는 편리한 도구 입니다.
+
+현재 로딩 라이브러리 중에 많이 사용되고 있는 것으로는 Glide와 피카소가 있으며 여기서는 조금 더 많은 사용자층을 가지고 있는 Glide를 사용하겠습니다.
+
+Glide 홈페이지는 다음과 같습니다.
+
+[Glide](https://github.com/bumptech/glide)
+
+NetworkRetrofit이라는 이름으로 새로운 Empty Activity 프로젝트를 하나 생성합니다.
+
+
+#### Retrofit과 Glide 설정하기
+
+1. build.gradle 파일을 열고 viewBinding 설정을 해줍니다.
+
+1. 그리고 dependencies에 레트로핏과 converter-gson 의존성을 추가합니다. converter-gson은 레트로핏에서 JSON 데이터를 사용하기 위해서 사용하는 부가적인 라이브러리 입니다.
+
+    ```gradle
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    ```
+
+1. 이어서 dependencies에 Glide 의존성을 추가하는데 Glide 공식 페이지에 나와 았는 Glide를 사용하면 성능 관련 warning이 발생합니다. 이를 피하기 위해서는 GlideApp을 사용해야 하는데 다음과 같은 부가적인 설명이 필요합니다. 먼저 build.gradle 파일의 상단에 있는 plugins에 kotlin-kapt를 추가합니다.
+
+    ```gradle
+    plugins {
+        ...
+        id 'kotlin-kapt'
+    }
+    ```
+
+1. dependencies 블록의 아래쪽에 의존성과 함께 kapt 설정을 추가합니다. 공식 페이지에는 annotationProcessor를 사용하라고 되어 있지만 안드로이드 스튜디오 버전에 따라 정상 동작 하지 않을 수 있습니다. [Sync Now]를 클릭해서 변경 사항을 반영합니다.
+
+    ```gradle
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // 정상동작하지 않습니다.
+    // annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    ```
+
+1. 이렇게 하면 동작하지 않습니다. 가상의 클래스를 하나 만들고 @GlideModule 애너테이션을 사용하는 코드를 추가해야 합니다. [app] - [java] 밑에 있는 패키지명을 마우스 우클릭해서 MyGlideApp 클래스를 하나 생성하고 다음처럼 AppGlideModlue을 상속받고 GlideModule 애너테이션도 추가합니다.
+
+    ```kotlin
+    package kr.co.hanbit.networkretrofit
+
+    import com.bumptech.glide.annotation.GlideModule
+    import com.bumptech.glide.module.AppGlideModule
+
+    @GlideModule
+    class MyGlideApp: AppGlideModule() {
+    }
+    ```
+
+1. 마지막으로 상단 메뉴에서 [Build] - [Rebuild Project]를 선택해서 프로젝트를 다시 빌드합니다.
+
+
+### 권한 설정하고 데이터 클래스 정의하기
+
+1. 인터넷에 접근하기 위해 [app] - [manifests] 디렉토리 밑의 AndroidManifest.xml 파일에 권한을 선언합니다. 다음 코드를 \<application\> 태그 위에 입력합니다. 인터넷 권한은 별도의 권한 요청이 필요하지 않습니다. 
+
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    ```
+
+1. 안드로이드 스튜디오는 앱 개발에 도움을 주는 다양한 플러그인을 지원합니다. 그중에 JSON To Kotiln Class 플러그인은 JSON 형식으로 된 텍스트 데이터를 코틀린 클래스로 간단하게 변환해줍니다. 안드로이드 스튜디오의 상단 메뉴에서 [File] - [Settings]를 클릭한 후 나오는 세팅 창에서 [Plugins]를 선택한 다음 JSON To Kotlin Class 플러그인을 검색하고 설치합니다. 검색이 안되면 검색 결과 중간에 Search in marketplace라는 파란색 텍스트 링크가 나타납니다. 텍스트를 클릭하면 다시 검색됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-299.png){: style="box-shadow: 0 0 5px #777"}
+
+
+1. 설치하고 나면 [Install]버튼이 [installed]버튼으로 변경됩니다. [OK]버튼을 클릭해서 반영합니다.
+
+1. 웹 브라우저에서 https://api.github.com/users/Kotlin/repos 웹 페이지를 엽니다. 이 웹 페이지의 JSON 데이터를 전체 선택하고 복사합니다.
+
+1. 다시 안드로이드 스튜디오에서 기본 패키지를 마우스 우클릭하고 [New] - [Kotlin data class File from JSON]을 클릭한 다음 새 창이 뜨면 복사한 JSON 데이터를 붙여넣습니다. Class Name에 ‘Repository’를 입력하고 [Generate] 버튼을 클릭하면 변환된 데이터 클래스를 자동으로 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-300.png){: style="box-shadow: 0 0 5px #777"}
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-301.png){: style="box-shadow: 0 0 5px #777"}
+
+1. License, Owner, Repository 클래스가 생성되었습니다. License, Owner 클래스는 JSON 데이터가 JSON 오브젝트를 값으로 사용하는 경우, 해당 데이터의 이름으로 클래스를 생성하고 사용합니다.  05의 그림에서 데이터의 중간쯤을 보면 ‘Owner’를 이름으로 사용하고 값이 JSON 오브젝트인 부분이 있습니다. 이 오브젝트의 클래스 이름이 ‘Owner’가 되는 것입니다. 이렇게 클래스를 준비했습니다. 
 
 
 
 
 <style>
-.page-container {max-width: 1200px}676‘’“”
+.page-container {max-width: 1200px}692‘’“”
 </style>
