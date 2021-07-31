@@ -85,8 +85,9 @@ width: large
 
 ### Started Service 만들기
 
-1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나느 메뉴에서 [New] - [Service] - [Service]를 선택합니다. Class Name은 ‘MyService’로 입력되어 있습니다. 하단의 [Finish]를 클릭하여 MyService 서비스를 생성하면 MyService.kt파일이 열립니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-267.png){: style="box-shadow: 0 0 5px #777"}
+1. [app] - [java] 디렉토리 밑에 있는 패키지명을 마우스 우클릭하면 나타나느 메뉴에서 [New] - [Service] - [Service]를 선택합니다. Class Name은 ‘MyService’로 입력되어 있습니다. 하단의 [Finish]를 클릭하여 MyService 서비스를 생성하면 MyService.kt파일이 열립니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-267.png){: style="box-shadow: 0 0 5px #777"}
 
     처음 생성하면 바운드 서비스를 할 수 있는 onBind() 메서드가 오버라이드되어 있습니다.
 
@@ -153,12 +154,14 @@ width: large
     }
     ```
 
-1. activity_main.xml 파일을 열고 다음과 같이 버튼을 구성합니다. 버튼에서 직접 앞에서 작성한 메서드를 호출할 것이기 때문에 id속성에는 따로 작성하지 않아도 됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-268.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 다음과 같이 버튼을 구성합니다. 버튼에서 직접 앞에서 작성한 메서드를 호출할 것이기 때문에 id속성에는 따로 작성하지 않아도 됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-268.png){: style="box-shadow: 0 0 5px #777"}
 
 
-1. 먼저 서비스 START 버튼을 클릭한 상태에서 속성 창을 보면 onClick 이라는 속성이 있습니다. 클릭하면 다음 그림과 같이 MainActivity에 (view: View) 파라미터가 적용된 메서드 목록이 나타납니다. ‘serviceStart’를 선택합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-269.png){: style="box-shadow: 0 0 5px #777"}
+1. 먼저 서비스 START 버튼을 클릭한 상태에서 속성 창을 보면 onClick 이라는 속성이 있습니다. 클릭하면 다음 그림과 같이 MainActivity에 (view: View) 파라미터가 적용된 메서드 목록이 나타납니다. ‘serviceStart’를 선택합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-269.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 마찬가지로 서비스 STOP 버튼을 클릭한 상태에서 onClick 속성에 ‘serviceStop’을 적용합니다.
 
@@ -284,14 +287,17 @@ width: large
     }
     ```
 
-1. activity_main.xml 파일을 열고 서비스 BIND 와 서비스 UNBIND 버튼을 다음 그림처럼 배치합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-270.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 서비스 BIND 와 서비스 UNBIND 버튼을 다음 그림처럼 배치합니다.
 
-1. 서비스 BIND 버튼의 onClick 속성에는 ‘serviceBind’를 연결하고, 서비스 UNBIND 버튼에는 ‘serviceUnbind’를 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-271.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-270.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 앱을 실행하고 버큰을 클릭해서 테스트합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-272.png){: style="box-shadow: 0 0 5px #777"}
+1. 서비스 BIND 버튼의 onClick 속성에는 ‘serviceBind’를 연결하고, 서비스 UNBIND 버튼에는 ‘serviceUnbind’를 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-271.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 앱을 실행하고 버큰을 클릭해서 테스트합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-272.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 서비스의 메서드 호출하기
@@ -335,8 +341,9 @@ width: large
     }
     ```
 
-1. activity_main.xml 파일을 열고 서비스 함수 호출 버튼을 다음 그림과 같이 추가합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-273.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 서비스 함수 호출 버튼을 다음 그림과 같이 추가합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-273.png){: style="box-shadow: 0 0 5px #777"}
 
 1. 서비스 함수 호출 버튼을 클릭한 상태에서 onClick 속성에 ‘callServiceFunction’을 적용한 후 앱을 실행하여 서비스 BIND를 클릭합니다.
 
@@ -559,8 +566,9 @@ ForegroundService 프로젝트를 생성하고 build.gradle 파일에 viewBindin
 
 1. activity_main.xml 파일을 열어 [Design] 모드에서 기본 텍스트뷰는 삭제합니다.
 
-1. 서비스 시작과 서비스 종료 버튼을 배치합니다. 그리고 다음 그림과 같이 각 버튼의 id와 text속성을 변경하고 컨스트레인트를 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-274.png){: style="box-shadow: 0 0 5px #777"}
+1. 서비스 시작과 서비스 종료 버튼을 배치합니다. 그리고 다음 그림과 같이 각 버튼의 id와 text속성을 변경하고 컨스트레인트를 연결합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-274.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ### 액티비티에서 서비스 호출하기
@@ -600,11 +608,13 @@ ForegroundService 프로젝트를 생성하고 build.gradle 파일에 viewBindin
     }
     ```
 
-1. 에뮬레이터에서 실행한 후 서비스 시작 버튼을 클릭합니다. 하얀색 동그란 모양의 아이콘이 안드로이드 상태 바에서 나타납니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-275.png){: style="box-shadow: 0 0 5px #777"}
+1. 에뮬레이터에서 실행한 후 서비스 시작 버튼을 클릭합니다. 하얀색 동그란 모양의 아이콘이 안드로이드 상태 바에서 나타납니다.
 
-1. 상단을 아래로 스와이프해서 끌어내리면 알림창도 나타납니다. 포어그라운드 서비스는 사용자에게 현재 서비스가 실행 중임을 항상 알려줘야 합니다. 실행한 액티비티를 강제 종료해도 서비스가 실행되기 때문에 알림이 사라지지 않습니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-276.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-275.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 상단을 아래로 스와이프해서 끌어내리면 알림창도 나타납니다. 포어그라운드 서비스는 사용자에게 현재 서비스가 실행 중임을 항상 알려줘야 합니다. 실행한 액티비티를 강제 종료해도 서비스가 실행되기 때문에 알림이 사라지지 않습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-276.png){: style="box-shadow: 0 0 5px #777"}
 
     ``Foreground.kt의 전체 코드``
 
@@ -785,8 +795,9 @@ val proj = arrayOf(
     }
     ```
 
-1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 누르면 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-279.png){: style="box-shadow: 0 0 5px #777"}
+1. onCreate() 메서드 바로 아래에서 ``Ctrl`` + ``I`` 키를 누르면 나타나는 팝업창에서 BaseActivity에 선언되어 있는 2개의 추상 메서드를 선택하고 [OK]버튼을 클릭해서 오버라이드 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-279.png){: style="box-shadow: 0 0 5px #777"}
     
     생성된 코드에서 TODO() 행만 삭제하고 일단 빈 채로 두겠습니다.
 
@@ -920,14 +931,18 @@ val proj = arrayOf(
 
 이제 화면을 만들어 보겠습니다. 
 
-1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다.  그 다음 팔레트의 커먼 카테고리에 있는 리사이클러뷰를 드래그해서 화면 전체에 배치합니다. id속성은 ‘recyclerView’로 하고 컨스트레인트는 상하좌우를 모두 연결합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-280.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 기본 텍스트뷰는 삭제합니다.  그 다음 팔레트의 커먼 카테고리에 있는 리사이클러뷰를 드래그해서 화면 전체에 배치합니다. id속성은 ‘recyclerView’로 하고 컨스트레인트는 상하좌우를 모두 연결합니다.
 
-1. 리사이클러뷰에 사용할 item_recycler.xml 파일을 [app] - [res] - [layout] 디렉토리에 생성합니다. 입력은 다음 그림과 같이 합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-281.png){: style="box-shadow: 0 0 5px #777"}
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-280.png){: style="box-shadow: 0 0 5px #777"}
 
-1. 최상위 레이아웃인 컨스트레인트 레이아웃의 layout_height 속성을 ‘100dp’로 설정합니다. 1개의 음원 파일 정보가 표시될 크기입니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-282.png){: style="box-shadow: 0 0 5px #777"}
+1. 리사이클러뷰에 사용할 item_recycler.xml 파일을 [app] - [res] - [layout] 디렉토리에 생성합니다. 입력은 다음 그림과 같이 합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-281.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 최상위 레이아웃인 컨스트레인트 레이아웃의 layout_height 속성을 ‘100dp’로 설정합니다. 1개의 음원 파일 정보가 표시될 크기입니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-282.png){: style="box-shadow: 0 0 5px #777"}
+
     - 이미지의 id는 ‘imageAlbum’
     - Artist의 id는 ‘textArtist’
     - Title의 id는 ‘textTitle’
@@ -961,8 +976,9 @@ val proj = arrayOf(
     }
     ```
 
-1. 어댑터 필수 메서드 3개를 자동 생성합니다. 클래스 안쪽을 클릭한 상태에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 3개 모두 선택합니다. 자동 생성된 코드에서 TODO()행은 모두 삭제합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-283.png){: style="box-shadow: 0 0 5px #777"}
+1. 어댑터 필수 메서드 3개를 자동 생성합니다. 클래스 안쪽을 클릭한 상태에서 ``Ctrl`` + ``I`` 키를 눌러 나타나는 팝업창에서 3개 모두 선택합니다. 자동 생성된 코드에서 TODO()행은 모두 삭제합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-283.png){: style="box-shadow: 0 0 5px #777"}
 
     ```kotlin
     class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
@@ -1144,8 +1160,9 @@ MainActivity.kt에 음원 정보를 읽어오고 리사이클러뷰에 음원 �
     binding.recyclerView.layoutManager = LinearLayoutManager(this)
     ```
 
-1. 애뮬레이터에서 실행하고 테스트해 봅니다. 애뮬레이터에는 음원 파일이 없기 때문에 목록에 아무것도 나오지 않습니다. 이메일로 MP3파일을 전송한 후에 에뮬레이터에서 다운로드해서 사용할 수 있고, 아니면 스마트폰에서 실행해서 확인해야 합니다. 그림과 같이 이미지와 제목이 표시됩니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-284.png){: style="box-shadow: 0 0 5px #777"}
+1. 애뮬레이터에서 실행하고 테스트해 봅니다. 애뮬레이터에는 음원 파일이 없기 때문에 목록에 아무것도 나오지 않습니다. 이메일로 MP3파일을 전송한 후에 에뮬레이터에서 다운로드해서 사용할 수 있고, 아니면 스마트폰에서 실행해서 확인해야 합니다. 그림과 같이 이미지와 제목이 표시됩니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-284.png){: style="box-shadow: 0 0 5px #777"}
 
 MainActivity.kt의 전체 코드
 
