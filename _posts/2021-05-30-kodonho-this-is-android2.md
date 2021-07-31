@@ -396,28 +396,34 @@ var doubleArray = DoubleeArray(10)
 ### 문자 배열에 빈 공간 할당하기
 String은 기본 타입이 아니기 때문에 StringArray는 없지만 다음과 같이 사용할 수 있습니다.
 괄호 안의 ``첫 번째 숫자인 10만 변경해서 사용하면 그 숫자만큼 빈 문자열로 된 배열 공간을 할당``합니다.
+
 ```kotlin
 var stringArray = Array(10, {item->""})
 ```
 
 ### 값으로 배열 공간 할당하기
 arrayOf함수를 사용해서 String값을 직접 할당할 수도 있습니다.
+
 ```kotlin
 var dayArray = arrayOf("MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN")
 ```
 
 ### 배열에 값 입력하기
 1. 배열을 선언한 변수명 옆에 대괄호 ([])를 사용하고, 대괄호 안에 값을 저장할 위치의 인덱스 번호를 작성합니다.
+
     ```kotlin
     students[9] = 99
     ```
+
 1. set함수를 사용할 수 있습니다
+
     ```kotlin
     students.set(8, 98)
     ```
 
 ### 배열에 있는 값 꺼내기
 값을 입력할 때 같은 방식으로 인덱스로 값을 가져올 수 있습니다. 저장할 때와 마찬가지로 대괄호 안에 인덱스를 입력해서 가져올 수 있으며 꺼너낸 배열의 함수는 get() 입니다.
+
 ```kotlin
 var student = students[9]
 var student = students.get(8)
@@ -479,6 +485,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 ```text
 일곱 번째 intArray의 값은 137입니다.
 열 번째 intArray의 값은 200입니다.
@@ -487,33 +494,44 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ## 4.2 Collection
+
 여러 개의 값을 넣을 수 있는 자료형에는 배열 외에도 컬렉션<sup>Collection</sup>이 있습니다. 컬렉션은 다른 이름으로 ``동적 배열``이라고 하는데, 이는 배열과는 다르게 공간의 크기를 처음 크기로 고정하지 않고 임의의 개수를 담을 수 있기 때문입니다.
 
 컬렉션은 크게 세 가지로 ``List``, ``Map``, ``Set`` 이 있으며 각각은 다음과 같은 용도로 사용합니다.
+
 ### ‘List’
+
+
 #### ‘List’ 생성하기
+
 리스트 자료형 앞에 뮤터블<sup>Mutable</sup>이라는 접두어가 붙습니다.
+
 ```kotlin
 var mutableList = mutableListOf("MON", "TUE", "WED")
 ```
 
 #### ‘List’에 값 추가히기: add
+
 ```kotlin
 mutableList.add("TUE")
 ```
+
 add 함수를 사용하면 입력될 위치인 인덱스를 따로 지정해주지 않아도 입력되는 순서대로 인덱스가 저장됩니다.
 
 #### ‘List’에 입력된 값 사용하기: get
+
 ```kotlin
 var variable = mutableList.get(1)
 ```
 
 #### ‘List’값 수정하기: set
+
 ```kotlin
 mutableList.set(1, "수정할 값")
 ```
 
 #### ‘List’에 입력된 값 제거하기: removeAt
+
 ```kotlin
 mutableList.removeAt(1)
 ```

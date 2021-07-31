@@ -95,6 +95,51 @@ Google Maps API를 사용하면 구글 플레이 서비스 SDK 를 설치해야 
 
 ## 1.2 구글 지도 코드 살펴보기
 
+구글 지도를 간단하게 사용하려면 먼저 SupportMapFragment에 대해 알고 있어야 합니다.
+
+### activity_maps.xml 의 SupportMapFragment
+
+프로젝트를 생성하면 activity_maps.xml 파일이 자동 생성됩니다.
+
+보통은 파일이 열려있는데 현재는 보이지 않을 겁니다.
+
+[app] - [res] - [layout] 에 있는 activity_maps.xml 파일을 더블클릭하고 [Code] 모드로 변경합니다.
+
+android:name에 “com.google.android.gms.maps.SupportMapFragment”가 설정되어 있습니다.
+
+Google Maps API는 SupportMapFragment에 구글 지도를 표시합니다.
+
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity" />
+```
+
+### MapsActivity.kt의 SupportMapFragment.getMapAsync
+
+MapsActivity.kt 파일을 열면 onCreate() 메서드 블록 안에서는 SupportFragmentManager의 findFragmentById() 메서드로 id가 map인 SupportMapFragment를 찾은 후 getMapAsync()를 호출해서 안드로이드에 구글 지도를 그려달라는 요청을 합니다.
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    binding = ActivityMapsBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+    val mapFragment = supportFragmentManager
+        .findFragmentById(R.id.map) as SupportMapFragment
+    mapFragment.getMapAsync(this)
+}
+```
+
 
 
 <style>
