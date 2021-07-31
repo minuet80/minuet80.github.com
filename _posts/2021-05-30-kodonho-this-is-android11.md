@@ -140,6 +140,115 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
+### MapsActivity.kt의 OnMapReadyCallback
+
+안드로이드는 구글 지도가 준비되면 OnMapReadyCallback 인터페이스의 onMapReady() 메서드를 호출하면서 파라미터로 준비된 GoogleMap을 전달해줍니다.
+
+메서드 안에서 미리 선언된 mMap 프로퍼티에 GoogleMap을 저장해두면 액티비티 전체에서 맵을 사용할 수 있습니다.
+
+```kotlin
+package kr.co.hanbit.googlemaps
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import kr.co.hanbit.googlemaps.databinding.ActivityMapsBinding
+
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+
+    private lateinit var mMap: GoogleMap
+
+    ...
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        // Add a marker in Sydney and move the camera
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }
+}
+```
+
+## 1.3 카메라와 지도 뷰
+
+구글 지도에서는 카메라를 통해 현재 화면의 지도 뷰를 변경할 수 있습니다.
+
+지도 뷰는 평면에서 아래를 내려다보면서 모델링 되며 카메라의 포지션은 위도/경도, 방위, 기울기 및 확대/축소 속성으로 지정됩니다.
+
+카메라의 위치는 CameraPosition 클래스에 각종 옵션을 사용해서 조절할 수 있습니다.
+
+``CameraPosition.Builder().옵션1.옵션2.build()``{: style="background-color: #ffcccc"}
+
+옵션 종류를 살펴보겠습니다.
+
+### Target
+
+카메라의 목표 지점은 지도 중심의 위치이며 취도 및 경도 좌료로 지정됩니다.
+
+``CameraPosition.Builder().target(LatLng(-34, 0, 151.0))``
+
+### Zoom
+
+카메라의 줌 (확대/축소) 레벨에 따라 지도의 배율이 결정됩니다.
+
+줌 레벨이 높을 수록 더 자세한 지도를 볼 수 있는 반면, 줌 레벨이 작을수록 더 넒은 지도를 볼 수 있습니다.
+
+``CameraPosition.Builder().zoom(15,5f)``
+
+줌 레벨이 0인 지도의 배율은 전 세계의 너비가 약 256dp가 되며 레벨 범위는 다음과 같습니다.
+
+| 레벨 | 설명 |
+| :---: | :---: |
+| 1.0 | 세계 |
+| 5.0 | 대륙 |
+| 10.0 | 도시 |
+| 15.0 | 거리 |
+| 20.0 | 건물 |
+
+### Bearing
+
+카메라의 베어링은 지도의 수직선이 북쪽을 기준으로 시계 방향 단위로 측정되는 방향입니다.
+
+자동자를 운전하는 사름은 지도를 돌려가며 여행 방향에 맞추고 지도와 나침판을 사용하는 등산객은 지도의 수직선이 북쪽을 향하도록 지도의 방향을 정합니다.
+
+```kotlin
+CameraPosition.Builder().bearing(300f)
+```
+
+
+### Tilt
+
+카메라 기울기는 지도의 중앙 위치와 지구 표면 사이의 원호에서 카메라 위치를 지정합니다.
+
+기울기로 시야각을 변경하면 멀리 떨어진 지형이 더 작게 나타나고 주변 지형이 더 커져 맵이 원근으로 나타납니다.
+
+```kotlin
+CameraPosition.Builder().tilt(50f)
+```
+
+## 1.4 소스 코드에서 카메라 이동하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <style>
