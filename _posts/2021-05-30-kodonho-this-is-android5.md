@@ -128,11 +128,11 @@ width: large
     <tbody>
         <tr>
             <td rowspan="2" style="text-align: left">CALENDAR</td>
-            <td style="text-align: left">READ_<br>CALENDAR</td>
+            <td style="text-align: left">READ_CALENDAR</td>
             <td style="text-align: left">캘린더 읽기</td>
         </tr>
         <tr>
-            <td style="text-align: left">WRITE_<br>CALENDAR</td>
+            <td style="text-align: left">WRITE_CALENDAR</td>
             <td style="text-align: left">캘린더 쓰기</td>
         </tr>
         <tr>
@@ -142,29 +142,29 @@ width: large
         </tr>
         <tr>
             <td rowspan="3" style="text-align: left">CONTACTS</td>
-            <td style="text-align: left">READ_<br>CONTACTS</td>
+            <td style="text-align: left">READ_CONTACTS</td>
             <td style="text-align: left">주소록 읽기</td>
         </tr>
         <tr>
-            <td style="text-align: left">WRITE_<br>CONTACTS</td>
+            <td style="text-align: left">WRITE_CONTACTS</td>
             <td style="text-align: left">주소록 쓰기</td>
         </tr>
         <tr>
-            <td style="text-align: left">GET_<br>ACCOUNTS</td>
+            <td style="text-align: left">GET_ACCOUNTS</td>
             <td style="text-align: left">계정 정보 가져오기</td>
         </tr>
         <tr>
             <td style="text-align: left">MICROPHONE</td>
-            <td style="text-align: left">RECORD_<br>AUDIO</td>
+            <td style="text-align: left">RECORD_AUDIO</td>
             <td style="text-align: left">마이크 녹음</td>
         </tr>
         <tr>
             <td rowspan="9" style="text-align: left">PHONE</td>
-            <td style="text-align: left">READ_<br>PHONE_<br>STATE</td>
+            <td style="text-align: left">READ_PHONE_STATE</td>
             <td style="text-align: left">폰 상태 정보</td>
         </tr>
         <tr>
-            <td style="text-align: left">READ_<br>PHONE_<br>NUMBERS</td>
+            <td style="text-align: left">READ_PHONE_NUMBERS</td>
             <td style="text-align: left">전화번호 가져오기</td>
         </tr>
         <tr>
@@ -172,19 +172,19 @@ width: large
             <td style="text-align: left">발신하기</td>
         </tr>
         <tr>
-            <td style="text-align: left">ANSWER_<br>PHONE_<br>CALLS</td>
+            <td style="text-align: left">ANSWER_PHONE_CALLS</td>
             <td style="text-align: left">응답하기</td>
         </tr>
         <tr>
-            <td style="text-align: left">READ_<br>CALL_<br>LOG</td>
+            <td style="text-align: left">READ_CALL_LOG</td>
             <td style="text-align: left">전화 로그 읽기</td>
         </tr>
         <tr>
-            <td style="text-align: left">WRITE_<br>CALL_<br>LOG</td>
+            <td style="text-align: left">WRITE_CALL_LOG</td>
             <td style="text-align: left">전화 로그 쓰기</td>
         </tr>
         <tr>
-            <td style="text-align: left">ADD_<br>VOICEMAIL</td>
+            <td style="text-align: left">ADD_VOICEMAIL</td>
             <td style="text-align: left">음성메일 추가</td>
         </tr>
         <tr>
@@ -192,42 +192,42 @@ width: large
             <td style="text-align: left">SIP 사용</td>
         </tr>
         <tr>
-            <td style="text-align: left">PROCESS_<br>OUTGOING_<br>CALLS</td>
+            <td style="text-align: left">PROCESS_OUTGOING_CALLS</td>
             <td style="text-align: left">통화 관련 Broadcast 수신</td>
         </tr>
         <tr>
             <td style="text-align: left">SENSORS</td>
-            <td style="text-align: left">BODY_<br>SENSORS</td>
+            <td style="text-align: left">BODY_SENSORS</td>
             <td style="text-align: left">바디센서</td>
         </tr>
         <tr>
             <td rowspan="5" style="text-align: left">SMS</td>
-            <td style="text-align: left">SEND_<br>SMS</td>
+            <td style="text-align: left">SEND_SMS</td>
             <td style="text-align: left">SMS 보내기</td>
         </tr>
         <tr>
-            <td style="text-align: left">RECEIVE_<br>SMS</td>
+            <td style="text-align: left">RECEIVE_SMS</td>
             <td style="text-align: left">SMS </td>
         </tr>
         <tr>
-            <td style="text-align: left">READ_<br>SMS</td>
+            <td style="text-align: left">READ_SMS</td>
             <td style="text-align: left">SMS 읽기</td>
         </tr>
         <tr>
-            <td style="text-align: left">RECEIVE_<br>WAP_<br>PUSH</td>
+            <td style="text-align: left">RECEIVE_WAP_PUSH</td>
             <td style="text-align: left">WAP 수신</td>
         </tr>
         <tr>
-            <td style="text-align: left">RECEIVE_<br>MMS</td>
+            <td style="text-align: left">RECEIVE_MMS</td>
             <td style="text-align: left">MMS 받기</td>
         </tr>
         <tr>
             <td rowspan="2" style="text-align: left">STORAGE</td>
-            <td style="text-align: left">READ_<br>EXTERNAL_<br>STORAGE</td>
+            <td style="text-align: left">READ_EXTERNAL_STORAGE</td>
             <td style="text-align: left">안드로이드 공용 저장소 읽기</td>
         </tr>
         <tr>
-            <td style="text-align: left">WRITE_<br>EXTERNAL_<br>STORAGE</td>
+            <td style="text-align: left">WRITE_EXTERNAL_STORAGE</td>
             <td style="text-align: left">안드로이드 공용 저장소 쓰기</td>
         </tr>
     </tbody>
@@ -291,8 +291,9 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
 
 1. activity_main.xml 파일을 열고 [Design]모드에서 기본으로 생성되어 있는 텍스트뷰의 text 속성에 ‘위험 권한’이라고 입력합니다.
 
-1. 텍스트뷰 아래에 버튼을 하나 가져다 놓고 text 속성에는 ‘카메라’를, id속성에는 ‘btnCamera’를 입력합니다.  컨스트레인트는 다음 그림과 같이 좌우는 화면 가장자리에 연결하고, 위쪽은 텍스트뷰에 연결하며 거리를 ‘24’로 설정합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-226.png){: style="box-shadow: 0 0 5px #777"}
+1. 텍스트뷰 아래에 버튼을 하나 가져다 놓고 text 속성에는 ‘카메라’를, id속성에는 ‘btnCamera’를 입력합니다.  컨스트레인트는 다음 그림과 같이 좌우는 화면 가장자리에 연결하고, 위쪽은 텍스트뷰에 연결하며 거리를 ‘24’로 설정합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-226.png){: style="box-shadow: 0 0 5px #777"}
 
 
 ## 2.4 소스 코드에서 위험 권한 처리하기
@@ -356,7 +357,8 @@ Permission 프로젝트를 새로 생성하고, build.gradle 파일에 viewBindi
 
 ### 2단계: 사용자에게 승인 요청
 
-ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 요청하는 팝업창이 뜨고 팝업을 눌러 승인 처리하면 마치 액티비티에서 안드로이드가 activityResult() 메서드를 호출했던 것처럼 onRequestPermissionResult() 메서드를 호출합니다.<br>
+ActivityCompat.requestPermissions()를 호출하면 사용자에게 권한을 요청하는 팝업창이 뜨고 팝업을 눌러 승인 처리하면 마치 액티비티에서 안드로이드가 activityResult() 메서드를 호출했던 것처럼 onRequestPermissionResult() 메서드를 호출합니다.
+
 ![1]({{site.baseurl}}/images/this-is-android/this-is-android-227.png){: style="box-shadow: 0 0 5px #777"}
 
 
@@ -640,8 +642,9 @@ fun requirePermissions(permissions: Array<String>, requestCode: Int) {
     <uses-permission android:name="android.permission.CAMERA" />
     ```
 
-1. activity_main.xml 파일을 열고 팔레트의 버튼 카테고리에서 버튼을 하나 드래그해서 UI편집기에 가져다 놓은 후 text속성에는 ‘CAMERA’를, id속성에는 ‘btnCamera’를 입력합니다.<br>
-![1]({{site.baseurl}}/images/this-is-android/this-is-android-228.png){: style="box-shadow: 0 0 5px #777"}
+1. activity_main.xml 파일을 열고 팔레트의 버튼 카테고리에서 버튼을 하나 드래그해서 UI편집기에 가져다 놓은 후 text속성에는 ‘CAMERA’를, id속성에는 ‘btnCamera’를 입력합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-228.png){: style="box-shadow: 0 0 5px #777"}
 
 1. MainActivity를 열고 클래스 이름 옆의 AppCompatActivity를 BaseActivity로 변경합니다.
     ```kotlin
