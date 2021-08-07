@@ -1881,7 +1881,7 @@ for (lib in libraries.SeoulPublicLibraryInfo.row) {
 
 1. onMapReady()에 기본으로 작성되어 있는 코드를 삭제하고 loadLibraries() 메서드를 호출합니다.
 
-앞에서도 설명했지만, 코드에 val sydney로 시작하는 선언부터 총 세줄을 보통 삭제합니다.
+    앞에서도 설명했지만, 코드에 val sydney로 시작하는 선언부터 총 세줄을 보통 삭제합니다.
 
     ```kotlin
     override fun onMapReady(googleMap: GoogleMap) {
