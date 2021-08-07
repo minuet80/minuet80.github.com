@@ -7,7 +7,7 @@ categories: jekyll update
 img: this-is-android/this-is-android-1.png
 categories: [one, two]
 color: 00897B
-author: Minuet80
+author: Hanbit
 permalink: /this-is-android11/
 width: large
 ---
@@ -1524,6 +1524,503 @@ Open API란 데이터 또는 서비스를 공개해 일반 개발자들이 사�
 
 1. https://data.seoul.go.kr에 접속 후 검색창에 ‘도서관 위치 정보’를 입력하면 ‘서울특별시 공공도서관 현황정보’ API가 검색됩니다. 클릭해서 상세 화면으로 이동합니다.
 
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-308.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 화면 중간 미리보기에 있는 [Open API]를 클릭하면 하단의 내용이 바뀝니다.  우측 상단에 보이는 [인증키 신청] 버튼을 클릭합니다. 
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-309.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 서비스 이용 약관에 동의하고 내용을 입력한 후 [인증키 신청]을 클릭해서 발급을 요청합니다.
+
+1. 신청이 완료되면 다음과 같이 발급현황에 인증키가 나타납니다. [인증키 복사]를 눌러 인증키 값을 복사한 다음 메모장 등에 따로 붙여둡니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-310.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 다시 ‘도서관 위치 정보’를 검색해서 01과 같은 데이터를 선택합니다. [Open API] 탭 바로 다음에 샘플 URL이 표시되어 있습니다. 여기서 [서울시 공공도서관 현황]을 클릭하면 새 창이 뜹니다.
+
+1. 주소창의 주소는 openapi.seoul.go.kr:8088/sample/xml/SeoulPublicLibraryInfo/1/5/로 뜰 텐데 이 주소의 sample 위치에 아까 04에서 복사해둔 인증키를 붙여 넣고 ``Enter``키를 입력합니다. 그러면 웹 브라우저의 데이터가 XML 형식으로 보입니다. 각자의 주소는 ‘openapi.seoul.go.kr:8088/인증키/xml/SeoulPublicLibraryInfo/1/5’ 입니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-311.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 이번에는 주소의 경로 중간의 XML을 JSON 으로 바꿔서 다시 요청하면 JSON 으로 바뀐 형식으로 데이터가 나타납니다. 이번 예제에서는 JSON 형식을 사용해서 데이터를 처리할 것이기 때문에 꼭 경로의 XML을 JSON으로 변경해야 합니다.  웹 브라우저의 URL은 ‘http://openapi.seoul.go.kr:8088/인증키/json/MgisLibrary/1/5/’입니다.
+
+### Open API의 구조
+
+Open API를 사용하려면 구조를 알아야 합니다.
+
+서울 열린데이터광장에서 제공하는 Open API는 다음과 같은 구조로 제공되고 있습니다.
+
+![1]({{site.baseurl}}/images/this-is-android/this-is-android-312.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 요청 결과와 데이터 설명
+
+다음은 웹 브라우저에서 URL을 입력해서 나오는 데이터입니다.
+
+데이터를 보면 내용이 다양한데 이 내용은 https://data.seoul.go.kr/dataList/OA-15480/S/1/datasetView.do 의 미리보기 하단에 있는 [출력값]에 자세히 나와 있습니다. 우리는 이 중 일부 데이터만을 사용하려 합니다.
+
+- list_total_count: 총 데이터 건수 (정상조회 시 출력됨)
+
+- ADRES: 주소
+
+- LBRRY_NAME: 도서관 이름
+
+- HMPG_URL: 홈페이지 주소
+
+- YDNTS: 경도
+
+- XCNTS: 위도
+
+## 3.2 서울 공공도서관 앱 개발하기
+
+
+### 프로젝트를 생성하고 의존성 추가하기
+
+서울 공공도서관 앱은 지도 정보가 필요하므로 앞에서 공부한 Google Maps Activity를 사용합니다.
+
+이 앱으로 구글 플레이 스토어 등록까지 진행할 예정입니다.
+
+모든 내용을 실습하려면 패키지명을 ‘com.example’로 입력할 수 없습니다.
+
+따라서 패키지명을 각자 드르게 입력해야 합니다. 
+
+저는 다음과 같이 입력했습니다.
+
+이 내용은 각자 다른 이름으로 입력하길 권합니다.
+
+- kr.co.hanbit
+
+1. 프로젝트 종류를 [Google Maps Activity]로 선택해서 프로젝트를 생성합니다.
+
+1. Name을 ‘SeoulPublicLibraries’로 입력하고, Package name에는 ‘example’을 삭제하고 앞에서 설명한 형태로 수정합니다. 패키지명 마지막에 프로젝트명은 지우면 안 됩니다. 필자의 프로젝트 패키지명은 ‘kr.co.hanbit.seoulpubliclibraries’입니다. 
+
+1. google_maps_api.xml 파일에 구글 API 키를 추가합니다. 패키지명이 바뀌면 API키도 다시 생성해야 합니다. 이 장의 ‘1.1 구글 지도 시작하기’의 ‘Google Maps API키 받기’를 참고해서 API 키를 생성하고 ‘YOUR_KEY_HERE’에 넣습니다.
+
+    ```xml
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBMoEo8zVHmeSgrdhq2icODYoXARZainSk</string>
+    ```
+
+1. [app] - [manifests]이 AndroidManifest.xml 파일을 열고 위치 권한 아래에 인터넷 권한을 추가합니다.
+
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    ```
+
+1. 도서관 정보 API가 보안 프로토콜인 HTTPS가 아니라 HTTP를 사용하기 때문에 AndroidManifest.xml 의 \<application\> 태그 제일 마지막에 userCleartextTraffic="true" 를 추가합니다.
+
+    ```xml
+    <application
+        // 중간 내용은 생략했습니다.
+        android:requiredForAllUsers="true">
+    ```
+
+1. [app] - [Gradle Scripts]의 build.gradle 파일을 열고 dependencies 블록 안에 Retrofit과 JSON 컨버터 의존성을 추가합니다.
+
+    ```gradle
+    dependencies {
+        implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+        implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    }
+    ```
+
+### 데이터 클래스 Library 생성
+
+앞에서 웹 브라우저에 주소를 요청해서 받은 JSON 샘플 데이터로 Kotlin 데이터 클래스를 생성합니다.
+
+1. JSON 데이터를 코틀린 클래스로 컨버팅하면 구조에 따라 클래스의 개수가 여러 개가 될 수 있습니다. 관리를 하기 위해서 [app] - [java] 밑에 있는 기본 패키지 아래에 data 패키지를 하나 생성합니다. 패키지를 마우스 우클릭하면 나타나는 메뉴에서 [New] - [Package]를 선택하고 data 패키지를 생성합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-313.png){: style="box-shadow: 0 0 5px #777"}
+
+1. data 패키지를 마우스 우클릭한 다음 [New] - [Kotlin data class File from JSON]을 클릭합니다. 빈 여백에 샘플 데이터를 붙여넣은 후 Class Name에는 ‘Library’를 입력하고 [Generate]를 클릭합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-314.png){: style="box-shadow: 0 0 5px #777"}
+
+1. 아래처럼 새로운 데이터가 생성된 것을 확인할 수 있습니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-315.png){: style="box-shadow: 0 0 5px #777"}
+
+
+#### 권한 처리 코드 사용 안 함
+
+이 예제에서는 위험 권한을 사용하지 않기 때문에 권한 처리 코드를 사용하지 않습니다.
+
+### 기본 정보 클래스와 레트로핏 인터페이스 만들기
+
+Open API를 사용하기 위한 기본 정보를 담아두는 클래스와 레트로핏에서 사용할 인터페이스를 같은 클래스에 만들겠습니다.
+
+1. 기본 패키지에 SeoulOpenApi 클래스를 만들겠습니다.  기본 패키지에 SeoulOpenApi 클래스를 하나 생성하고, 클래스 안에 companion object를 만들어 그 안에 도메인 주소와 API키를 저장해 놓는 변수를 2개 만듭니다. 그리고 각각의 변수에 주소와 미리 부여받은 Open API 키를 입력해둡니다. 이렇게 companion object 블록 안에 변수를 선언해두면 SeoulOpenApi.DOMAIN 처럼 클래스 이름으로 바로 사용할 수 있습니다.
+
+    ```kotlin
+    class SeoulOpenApi {
+
+        companion object {
+            val DOMAIN = "http://openapi.seoul.go.kr:8088"
+            val API_KEY = "68597671566d696B3131376747746352"
+        }
+    }
+    ```
+
+1. SeoulOpenApi 클래스 바깥에 레트로핏에서 사용할 SeoulOpenService 인터페이스를 생성합니다.
+
+    ```kotlin
+    interface SeoulOpenService {
+    }
+  
+    ```
+
+1. 인터페이스 안에 도서관 데이터를 가져오는 getLibrary() 메서드를 정의하고, @GET 애노테이션을 사용해서 호출할 주소를 지정합니다. 레트로핏에서 사용할 때 @GET에 입력된 주소와 SeoulOpenApi에 미리 정의한 DOMAIN을 조합해서 사용할 것 입니다. 도서관 수가 120개 정도이므로 모두 불러오기 위해 주소 끝 부분에 페이지 ‘1’과 가져올 개수 ‘200’을 입력합니다. getLibrary() 메서드의 파라미터로 사용된 key는 SeoulOpenApi클래스에 정의한 API_KEY를 레트로핏을 실행하는 코드에서 넘겨받은 후 주소와 결합합니다. 반환값은 Call<JSON 변환된 클래스> 입니다.
+
+    ```kotlin
+    interface SeoulOpenService {
+        
+        @GET("/json/SeoulPublicLibraryInfo/1/200")
+        fun getLibrary(key: String): Call<Library>
+    }
+    ```
+
+1. @Path 애노테이션을 사용하면 메서드의 파라미터로 넘어온 값을 @GET에 정의된 주소에 동적으로 삽입할 수 있습니다. 03에서 입력한 코드를 다음과 같이 수정합니다.
+
+    ```kotlin
+    interface SeoulOpenService {
+        
+        @GET("{api_key}/json/SeoulPublicLibraryInfo/1/200")
+        fun getLibrary(@Path("api_key") key: String): Call<Library>
+    }
+    ```
+
+``SeoulOpenApi.kt의 전체 코드``
+
+```kotlin
+package kr.co.hanbit.seoulpubliclibraries
+
+import kr.co.hanbit.seoulpubliclibraries.data.Library
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Path
+
+interface SeoulOpenService {
+
+    @GET("{api_key}/json/SeoulPublicLibraryInfo/1/200")
+    fun getLibrary(@Path("api_key") key: String): Call<Library>
+}
+```
+
+### 레트로핏으로 데이터 불러오기
+
+앞에서 정의한 인터페이스를 적용하고 데이터를 불러오는 코드를 작성하겠습니다.
+
+1. MapsActivity.kt를 열고 onMapReady() 아래에 loadLibraries() 메서드를 하나 만듭니다.
+
+    ```kotlin
+    fun loadLibraries() {
+        // 02~05는 여기에 입력합니다.
+    }
+    ```
+
+1. loadLibraries() 메서드 안에 도메인 주소와 JSON 컨버터를 설정해서 레트로핏을 생성합니다.
+
+    ```kotlin
+    val retrofit = Retrofit.Builder()
+        .baseUrl(SeoulOpenApi.DOMAIN)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    ```
+
+1. 이어서 앞에서 정의한 인터페이스를 실행 가능한 서비스 객체로 변환합니다.
+
+    ```kotlin
+    val seoulOpenService = retrofit.create(SeoulOpenService::class.java)
+    ```
+
+1. 인터페이스에 정의된 getLibrary() 메서드에 ‘API_KEY’를 입력하고, enqueue() 메서드를 호출해서 서버에 요청합니다.
+
+    ```kotlin
+    seoulOpenService.getLibrary(SeoulOpenApi.API_KEY).enqueue(object : Callback<Library> {
+        // 05는 여기에서 Ctrl + I 키를 입력합니다.
+    })
+    ```
+
+1. ``Ctrl`` + ``I`` 키를 눌러서 인터페이스 코드를 2개 자동 생성합니다.  TODO() 행은 모두 지우고 06과 07의 코드 입력은 다음을 참조합니다.
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-316.png){: style="box-shadow: 0 0 5px #777"}
+
+    ```kotlin
+    override fun onResponse(call: Call<Library>, response: Response<Library>) {
+        // 07은 여기에 입력합니다.
+    }
+
+    override fun onFailure(call: Call<Library>, t: Throwable) {
+        // 06은 여기에 입력합니다.
+    }
+    ```
+
+1. onFailure() 메서드에서 서버 요청이 실패했을 경우 간단한 토스트 메시지로 알려줍니다.
+
+    ```kotlin
+    Toast.makeText(baseContext, "서버에서 데이터를 가져올 수 없습니다.", Toast.LENGTH_LONG).show()
+    ```
+1. 서버에서 데이터를 정상적으로 받았다면 지도에 마커를 표시하는 메서드를 호출합니다. 호출하도록 onResponse() 메서드에 다음 코드를 추가합니다.
+
+    ```kotlin
+    showLibraries(response.body() as Library)
+    ```
+
+    다은은 loadLibraries() 메서드의 전체 코드입니다.
+
+    ```kotlin
+    fun loadLibraries() {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(SeoulOpenApi.DOMAIN)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val seoulOpenService = retrofit.create(SeoulOpenService::class.java)
+
+        seoulOpenService.getLibrary(SeoulOpenApi.API_KEY).enqueue(object : Callback<Library> {
+            override fun onResponse(call: Call<Library>, response: Response<Library>) {
+                showLibraries(response.body() as Library)
+            }
+
+            override fun onFailure(call: Call<Library>, t: Throwable) {
+                Toast.makeText(baseContext, "서버에서 데이터를 가져올 수 없습니다.", Toast.LENGTH_LONG).show()
+            }
+            // 05는 여기에서 Ctrl + I 키를 입력합니다.
+        })
+    }
+    ```
+
+### 지도에 도서관 마커 표시하기
+
+1. 지도에 마커를 표시하는 showLibraries() 메서드를 loadLibraries() 메서드 아래 만듭니다.
+
+    ```kotlin
+    fun showLibraries(libraries: Library) {
+        // 02는 여기에 입력합니다.
+    }
+    ```
+
+1. 파라미터로 전달된 libraries의 SeoulPublicLibraryInfo.row에 도서관 목록이 담겨 있습니다. 반복문으로 하나씩 꺼냅니다. 
+
+```kotlin
+for (lib in libraries.SeoulPublicLibraryInfo.row) {
+    // 03~10 은 여기에 입력합니다.
+}
+```
+
+1. 마커의 좌표를 생성합니다.
+
+    ```kotlin
+    val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
+    ```
+
+1. 좌표와 도서관 이름으로 마커를 생성합니다. LBRRY_NAME에 도서관 이름이 저장되어 있습니다.
+
+    ```kotlin
+    val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
+    ```
+
+1. 마커를 지도에 추가합니다.
+
+    ```kotlin
+    mMap.addMarker(marker)
+    ```
+
+1. 이렇게 하면 마커가 지도에 표시되지만, 지도를 보여주는 카메라가 시드니를 가르키므로 카메라 위치 조정이 필요합니다. 수동으로 카메라의 좌표를 직접 입력해주는 방법도 있지만 마커 전체의 영역을 먼저 구하고, 마커의 영역만큼 보여주는 코드로 작성하겠습니다. 02에서 작성한 for문 위에 마커의 영역을 저장하는 LatLngBounds.Builder를 생성합니다.
+
+    ```kotlin
+    val latLngBounds = LatLngBounds.Builder()
+    ```
+
+1. for문 안에서 지도에 마커를 추가한 후 latLngBounds에도 마커를 추가합니다. 05에서 입력한 코드 다음에 다음 코드를 입력합니다.
+
+    ```kotlin
+    latLngBounds.include(marker.position)
+    ```
+
+1. for 문이 끝난 후에 앞에서 저장해둔 마커의 영역을 구합니다. padding 변수는 마커의 영역에 얼마만큼의 여백을 줄 것인지 정합니다.
+
+    ```kotlin
+    val bounds = latLngBounds.build()
+    val padding = 0
+    ```
+
+1. bounds와 padding으로 카메라를 업데이트합니다.
+
+    ```kotlin
+    val updated = CameraUpdateFactory.newLatLngBounds(bounds, padding)
+    ```
+
+1. 업데이트된 카메라의 지도에 반영합니다.
+
+    ```kotlin
+    mMap.moveCamera(updated)
+    ```
+
+    다음은 지금까지 작성한 showLibraries() 메서드의 전체 코드입니다.
+
+    ```kotlin
+    fun showLibraries(libraries: Library) {
+
+        val latLngBounds = LatLngBounds.Builder()
+
+        for (lib in libraries.SeoulPublicLibraryInfo.row) {
+            val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
+            val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
+            mMap.addMarker(marker)
+
+            latLngBounds.include(marker.position)
+        }
+
+        val bounds = latLngBounds.build()
+        val padding = 0
+        val updated = CameraUpdateFactory.newLatLngBounds(bounds, padding)
+        mMap.moveCamera(updated)
+    }
+    ```
+
+### onMapReady에서 loadLibraries() 메서드 호출하기
+
+1. onMapReady()에 기본으로 작성되어 있는 코드를 삭제하고 loadLibraries() 메서드를 호출합니다.
+
+앞에서도 설명했지만, 코드에 val sydney로 시작하는 선언부터 총 세줄을 보통 삭제합니다.
+
+    ```kotlin
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        loadLibraries()
+    }
+    ```
+
+1. 여기까지 잘 따라 했다면 에뮬레이터에서 실행했을 때 지도에 마커가 생성되고 모두 마커가 보이도록 설정됩니다. 에뮬레이터에서 실행하고 테스트해봅니다.
+
+
+    여기까지 MapsActivity.kt의 전체 코드입니다.
+
+    ```kotlin
+    package kr.co.hanbit.seoulpubliclibraries
+
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.widget.Toast
+
+    import com.google.android.gms.maps.CameraUpdateFactory
+    import com.google.android.gms.maps.GoogleMap
+    import com.google.android.gms.maps.OnMapReadyCallback
+    import com.google.android.gms.maps.SupportMapFragment
+    import com.google.android.gms.maps.model.LatLng
+    import com.google.android.gms.maps.model.LatLngBounds
+    import com.google.android.gms.maps.model.MarkerOptions
+    import kr.co.hanbit.seoulpubliclibraries.data.Library
+    import kr.co.hanbit.seoulpubliclibraries.databinding.ActivityMapsBinding
+    import retrofit2.Call
+    import retrofit2.Callback
+    import retrofit2.Response
+    import retrofit2.Retrofit
+    import retrofit2.converter.gson.GsonConverterFactory
+
+    class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+
+        private lateinit var mMap: GoogleMap
+        private lateinit var binding: ActivityMapsBinding
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            binding = ActivityMapsBinding.inflate(layoutInflater)
+            setContentView(binding.root)
+
+            val mapFragment = supportFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
+            mapFragment.getMapAsync(this)
+        }
+
+        override fun onMapReady(googleMap: GoogleMap) {
+            mMap = googleMap
+
+            loadLibraries()
+        }
+
+        fun loadLibraries() {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(SeoulOpenApi.DOMAIN)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val seoulOpenService = retrofit.create(SeoulOpenService::class.java)
+
+            seoulOpenService.getLibrary(SeoulOpenApi.API_KEY).enqueue(object : Callback<Library> {
+                override fun onResponse(call: Call<Library>, response: Response<Library>) {
+                    showLibraries(response.body() as Library)
+                }
+
+                override fun onFailure(call: Call<Library>, t: Throwable) {
+                    Toast.makeText(baseContext, "서버에서 데이터를 가져올 수 없습니다.", Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+
+        fun showLibraries(libraries: Library) {
+
+            val latLngBounds = LatLngBounds.Builder()
+
+            for (lib in libraries.SeoulPublicLibraryInfo.row) {
+                val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
+                val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
+                mMap.addMarker(marker)
+
+                latLngBounds.include(marker.position)
+            }
+
+            val bounds = latLngBounds.build()
+            val padding = 0
+            val updated = CameraUpdateFactory.newLatLngBounds(bounds, padding)
+            mMap.moveCamera(updated)
+        }
+    }
+    ```
+
+    ![1]({{site.baseurl}}/images/this-is-android/this-is-android-317.png){: style="box-shadow: 0 0 5px #777"}
+
+
+### 도서관 이름 클릭 시 홈페이지로 이동하기
+
+클릭리스너로 새 창을 띄우거나 추가적인 처리를 할 수 있습니다.
+
+여기서는 도서관 홈페이지의 URL이 있는지 검사하고, 있으면 홈페이지를 웹 브라우저에 띄우는 코드를 작성하겠습니다.
+
+1. 마커에 tag 정보를 추가하겠습니다. 마커를 클릭하면 id와 같은 구분 값을 tag에 저장해두고 사용할 수 있습니다. 지도에 마커를 추가하는 코드로 수정하고 tag값에 홈페이지 주소를 저장합니다. MapsActivity.kt 파일에서 showLibraries() 메서드의 다음 부분을 수정합니다.
+
+    ```kotlin
+    // 수정 전
+    mMap.addMarker(marker)
+
+    // 수정 후
+    var obj = mMap.addMarker(marker)
+    obj.tag = lib.HMPG_URL
+    ```
+
+1. 이제 클릭리스너를 달고 tag의 홈페이지 주소를 웹 브라우저에 띄우겠습니다. onMapReady() 안에서 추가로 코드를 작성합니다. 지도에 마커클릭리스너를 달고 리스너를 통해 전달되는 마커의 tag를 검사해서 값이 있으면 인텐트로 홈페이지를 띄웁니다. 마커클릭리스너를 사용하면 리스너 블럭으로 마커가 전달되는데, it이라는 예약어로 사용할 수 있습니다.
+
+    ```kotlin
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        loadLibraries()
+
+        mMap.setOnMarkerClickListener {
+            if (it.tag != null) {
+                var url = it.tag as String
+                if (!url.startsWith("http")) {
+                    url = "http://${url}"
+                }
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }
+            true
+        }
+    }
+    ```
+
+1. 에뮬레이터를 실행하고 테스트합니다
 
 <style>
 .page-container {max-width: 1200px}692‘’“”
