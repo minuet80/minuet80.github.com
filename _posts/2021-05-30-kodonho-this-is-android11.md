@@ -2023,5 +2023,5 @@ for (lib in libraries.SeoulPublicLibraryInfo.row) {
 1. 에뮬레이터를 실행하고 테스트합니다
 
 <style>
-.page-container {max-width: 1200px}692‘’“”
+.page-container {max-width: 1200px}
 </style>
