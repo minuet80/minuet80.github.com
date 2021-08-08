@@ -1132,6 +1132,7 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
     ```
 
 1. 마지막으로 리사이클러뷰에서 확인해봅니다.
+
     ![1]({{site.baseurl}}/images/this-is-android/this-is-android-165.png){: style="box-shadow: 0 0 5px #777"}
 
 
