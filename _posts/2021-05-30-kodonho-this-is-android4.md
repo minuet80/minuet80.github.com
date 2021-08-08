@@ -3154,7 +3154,7 @@ ViewpagerView라는 새 프로젝트를 하나 생성하고 build.gradle 파일�
     customAdapter.textList = textList
     ```
 
-1. viewPAger에 어댑터를 연결합니다.
+1. viewPager에 어댑터를 연결합니다.
     ```kotlin
     binding.viewPager.adapter = customAdapter
     ```
