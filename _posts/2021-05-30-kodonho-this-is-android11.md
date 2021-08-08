@@ -1800,11 +1800,11 @@ interface SeoulOpenService {
 
 1. 파라미터로 전달된 libraries의 SeoulPublicLibraryInfo.row에 도서관 목록이 담겨 있습니다. 반복문으로 하나씩 꺼냅니다. 
 
-```kotlin
-for (lib in libraries.SeoulPublicLibraryInfo.row) {
-    // 03~10 은 여기에 입력합니다.
-}
-```
+    ```kotlin
+    for (lib in libraries.SeoulPublicLibraryInfo.row) {
+        // 03~10 은 여기에 입력합니다.
+    }
+    ```
 
 1. 마커의 좌표를 생성합니다.
 
