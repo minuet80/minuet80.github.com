@@ -7,7 +7,7 @@ categories: jekyll update
 img: bummy-mobile-refund/bummy-mobile-refund-1.png
 categories: [one, two]
 color: 663399
-author: Minuet80
+author: Minuet
 permalink: /mobile-refund/
 width: large
 ---

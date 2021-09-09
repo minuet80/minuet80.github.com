@@ -4,7 +4,7 @@ title: 존 테일러 "연준, 연내 테이퍼링 해야…한국은행, 빨리 
 description: 글로벌 구루에게 듣는다
 img: talks-with-global-guru2/talks-with-global-guru2-1.png
 color: 212121
-author: Minuet80
+author: Minuet
 permalink: /talks-with-global-guru2/
 width: large
 ---

@@ -7,7 +7,7 @@ categories: jekyll update
 img: frugality_traffic_card/frugality_traffic_card-1.png
 categories: [one, two]
 color: 663399
-author: Minuet80
+author: Minuet
 permalink: /frugality_traffic_card/
 width: large
 ---

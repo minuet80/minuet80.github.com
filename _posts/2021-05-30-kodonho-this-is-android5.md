@@ -7,7 +7,7 @@ categories: jekyll update
 img: this-is-android/this-is-android-1.png
 categories: [one, two]
 color: 00897B
-author: Minuet80
+author: Minuet
 permalink: /this-is-android5/
 width: large
 ---

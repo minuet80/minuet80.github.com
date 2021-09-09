@@ -4,7 +4,7 @@ title: 카카오뱅크 상장
 description: 증권가 고평가 논란
 img: flotation-kakaobank/flotation-kakaobank-1.png
 color: 212121
-author: Minuet80
+author: Minuet
 permalink: /kakaobank/
 width: large
 ---

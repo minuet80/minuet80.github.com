@@ -4,7 +4,7 @@ title: ‘키움증권’ 해외주식 동영상 안내
 description: 해외주식 관련 동영상 주소를 안내
 img: kiwoon-trade-overseas-stocks/kiwoon-trade-overseas-stocks-1.png
 color: 212121
-author: Minuet80
+author: Minuet
 permalink: /kiwoon-trade-overseas-stocks/
 width: large
 ---

@@ -4,7 +4,7 @@ title: 경제전쟁 꾼 19회
 description: 반도체 호황 속 고점논란
 img: econwarggun-19/econwarggun-19-1.png
 color: 1976D2
-author: Minuet80
+author: Minuet
 permalink: /econwarggun-19/
 width: large
 ---
