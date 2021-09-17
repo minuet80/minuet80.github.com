@@ -6,52 +6,29 @@ layout: compress
 {% include head.html %}
 <script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
 <script>
-function showLoadingBar(width) {
-    var maskHeight = $(document).height() + 300;
-    var maskWidth = window.document.body.clientWidth;
-    var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
-    var loadingImg = '';
-
-    loadingImg += "<div id='loadingImg' style='position:absolute; left:" + (maskWidth / 2 - 44) + "px; top:40%; display:none; z-index:3;'>";
-    loadingImg += "    <img src='/images/loading.gif'/>";
-    loadingImg += "</div>";
-
-    $('body').append(mask).append(loadingImg);
-
-    $('#mask').css({
-        'width' : maskWidth
-        , 'height': maskHeight
-        , 'opacity' : '0.3'
-    });
-
-    $('#mask').show();
-    $('#loadingImg').show();
-}
-function hideLoadingBar() {
-    $('#mask, #loadingImg').hide();
-    $('#mask, #loadingImg').remove();
-}
+  $(document).ready(function() {
+      var userAgent = navigator.userAgent;
+      if(userAgent.match('.*minuetchoi.*')) {
+          $('header').remove();
+          $('.featured-img').remove();
+          $('.page-title').remove();
+          $('.meta').remove();
+          $('#markdown-toc').remove();
+          $('.comment').remove();
+          $('footer').remove();
+      }
+  });
 </script>
 <body>
 <header>
-<div id="mySidenav1" class="sidenav1">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">&times;</a>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(">&times;</a>
 
-  {% include menu-links1.html %}
+  {% include menu-links.html %}
 </div>
 
 <!-- Use any element to open the sidenav -->
-<span id="slid1" onclick="openNav(1)"><i class="fa fa-align-left" aria-hidden="true"></i></span>
-
-
-<div id="mySidenav2" class="sidenav2">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a>
-
-  {% include menu-links2.html %}
-</div>
-
-<!-- Use any element to open the sidenav -->
-<span id="slid2" onclick="openNav(2)"><i class="fa fa-align-right" aria-hidden="true"></i></span>
+<span id="slid" onclick="openNav()"><i class="fa fa-align-left" aria-hidden="true"></i></span>
 
 <a href="{{site.baseurl}}/">
   <h1 class="header-title">{{site.title}}
@@ -69,19 +46,11 @@ function hideLoadingBar() {
 
 </div>
 <script>
-function openNav(mode) {
-  if (mode == 1) {
-    document.getElementById("mySidenav1").style.width = "250px";
-  } else {
-    document.getElementById("mySidenav2").style.width = "85px";
-  }
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
 }
-function closeNav(mode) {
-  if (mode == 1) {
-    document.getElementById("mySidenav1").style.width = "0";
-  } else {
-    document.getElementById("mySidenav2").style.width = "0";
-  }
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";    
 }
 </script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
