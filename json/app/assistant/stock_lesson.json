@@ -4,196 +4,249 @@
         "title": "재무제표와 돈의 흐름이 보이는",
         "subtitle": "하마터면 회계를 모르고 일할 뻔했다!",
         "bgColor": "#FFFFCC",
-        "author": "김수헌,이재홍 공저",
         "contents": [
             {
                 "uid": "1-1",
                 "title": "",
                 "subtitle": "01장 자본과 부채가 결혼해 자산을 낳았다!",
                 "link": "https://minuet80.github.io/app-assistant-stock-lesson-hama01/",
-                "imgUrl": "https://minuet80.github.io/images/app/assistant/stock/lesson/hama/bg_title.png"
+                "imgUrl": "https://minuet80.github.io/images/app/assistant/stock/lesson/hama/bg_title.png",
+                "publishedAt": "2021-09-17T09:00:00Z",
+                "author": "김수헌,이재홍 공저"
             },
             {
                 "uid": "1-2",
                 "title": "",
                 "subtitle": "02장 모든 회계 처리를 움켜 쥔 단 하나의 공식, 회계항등식",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-3",
                 "title": "",
                 "subtitle": "03장 재무상태표와 손익계산서는 한 몸",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-4",
                 "title": "",
                 "subtitle": "04장 손익계산 1～2단계 : 매출총이익과 영업이익",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-5",
                 "title": "",
                 "subtitle": "05장 손익계산 3～4단계 : 세전이익과 당기순이익",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-6",
                 "title": "",
                 "subtitle": "06장 실전 분석: 일곱 개 기업 손익계산서 파헤쳐보기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-7",
                 "title": "",
                 "subtitle": "07장 실전 재무상태표 파헤쳐보기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-8",
                 "title": "",
                 "subtitle": "08장 기계설비를 구매하면 비용 처리는 언제, 어떻게 할까? 감가상각의 원리",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-9",
                 "title": "",
                 "subtitle": "09장 돈 값어치 못하는 기계에게 가차 없는 유형자산 손상 회계",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-10",
                 "title": "",
                 "subtitle": "10장 안 보여도 열 일하는 무형자산 회계처리",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-11",
                 "title": "",
                 "subtitle": "11장 개발비, 비용이 아니라 자산이라고?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-12",
                 "title": "",
                 "subtitle": "12장 미리 준 돈(선급금)은 자산, 미리 받은 돈(선수금)은 부채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-13",
                 "title": "",
                 "subtitle": "13장 좌우균형 등식으로 회계 원리 꿰뚫기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-14",
                 "title": "",
                 "subtitle": "14장 통신사와 연예기획사에만 있는 무형자산은?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-15",
                 "title": "",
                 "subtitle": "15장 외상대금 못 받을 거 같아요. 매출채권 손상",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-16",
                 "title": "",
                 "subtitle": "16장 누구에게 언제 얼마를 줄지 정확히 몰라도 빛, 충당부채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-17",
                 "title": "",
                 "subtitle": "17장 매출보다 당기순이익이 더 커지는 마법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-18",
                 "title": "",
                 "subtitle": "18장 지분법 회계 완전정복",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-19",
                 "title": "",
                 "subtitle": "19장 인수・합병에 붙는 웃돈, 영업권",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-20",
                 "title": "",
                 "subtitle": "20장 기업가치와 영업권 금액 어떻게 계산할까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-21",
                 "title": "",
                 "subtitle": "21장 망할 회사 감별하는 현금흐름표 이해하기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-22",
                 "title": "",
                 "subtitle": "22장 실전분석: 영업, 투자, 재무 현금흐름 꿰뚫기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-23",
                 "title": "",
                 "subtitle": "23장 회사 종합건강검진 : 재무비율 분석 기초",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-24",
                 "title": "",
                 "subtitle": "24장 재무비율 분석1 : 손익계산서로 수익성과 성장성 진단하기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-25",
                 "title": "",
                 "subtitle": "25장 재무상태표 분석 기초",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-26",
                 "title": "",
                 "subtitle": "26장 재무비율 분석2 : 재무상태표로 안정성 진단하기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "1-27",
                 "title": "",
                 "subtitle": "27장 재무비율 분석3 : 얼마나 빨리 팔고, 빨리 회수하는가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             }
         ]
     },
@@ -209,469 +262,603 @@
                 "title": "제1장 자산 공부하기",
                 "subtitle": "01장 재무상태표는 어떤 정보를 제공할까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-2",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "02장 자본을 조달하는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-3",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "03장 자산은 어떻게 구성될까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-4",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "04장 자산 구분하기: 사업용 자산 vs. 금융자산",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-5",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "05장 매출채권과 운전자본 관계를 이해하라",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-6",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "06장 자금 사정과 관련 있는 재고자산",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-7",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "07장 중요한 회계항목인 매도가능 금융자산",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-8",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "08장 매도가능금융자산의 부실화를 조심하라",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-9",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "09장 기업의 투자활동은 어떻게 회계처리될까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-10",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "10장 자산이면서 비용인 유형자산",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-11",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "11장 개발비를 자산처리할 때 발생하는 문제점",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-12",
                 "title": "제1장 자산 공부하기",
                 "subtitle": "12장 창투사의 자산운용",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-13",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "13장 부채에도 각각의 특징이 있다.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-14",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "14장 충당부채 개념 정리하기.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-15",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "15장 유이자부채와 금융비용을 분석하는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-16",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "16장 기회이익을 의미하는 무이자부채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-17",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "17장 삼각관계인 순현금, 순차입금, 순부채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-18",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "18장 부채도 이용하기 나름이다.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-19",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "19장 수급과 실적은 어떻게 숫자로 나타날까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-20",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "20장 산업분야마다 이해가 다른 선수금",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-21",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "21장 저렴하게 자금을 조달하는 전환사채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-22",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "22장 신주인수권부사채 이해하기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-23",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "23장 보유주식을 활용해 자금조달하는 교환사채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-24",
                 "title": "제2장 부채 공부하기",
                 "subtitle": "24장 재무구조를 개선시키는 영구채",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-25",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "25장 자본을 구성하는 항목들",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-26",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "26장 자본 변동에 영향을 주는 요인들",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-27",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "27장 미래 성장이 담보되면 유상증자도 좋다.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-28",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "28장 자사주 매입에 담긴 의미",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-29",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "29장 현금배당이 자기자본에 미치는 영향",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-30",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "30장 주식배당은 자본 구성을 어떻게 바꿀까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-31",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "31장 스톡옵션이 회계처리되는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-32",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "32장 유상감자와 감자차손",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-33",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "33장 자기자본이익률의 중요성",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-34",
                 "title": "제3장 자본 공부하기",
                 "subtitle": "34장 신뢰성을 높이는 투하자본이익률",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-35",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "35장 매출액은 손익의 출발점이다.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-36",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "36장 매출액에 변화를 주는 요인",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-37",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "37장 매출 성장을 위한 투자활동",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-38",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "38장 매출원가는 어떻게 구성되고 왜 변동할까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-39",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "39장 영업이익을 결정하는 요인",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-40",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "40장 왜 감가상각을 해야 할까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-41",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "41장 감가상각비를 제대로 보는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-42",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "42장 감가상각비와 영업레버리지 관계",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-43",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "43장 감가상각비를 회계처리하는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-44",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "44장 기업마다 비용구조가 다르다: 변동비형 vs. 고정비형",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-45",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "45장 고정비가 높다면 영업레버리지를 노려라",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-46",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "46장 설비가동률이 높아지면 영업레버리지 효과가 나타난다",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-47",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "47장 순이익이 증가하면 주가가 오를까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-48",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "48장 순이익은 어디로 갔을까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-49",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "49장 연결회계를 정확하게 보는 법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-50",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "50장 연결재무제표에서 손익계산서 보는 법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-51",
                 "title": "제4장 손익계산서 공부하기",
                 "subtitle": "51장 당기순이익에 영향을 미치지 않는 기타포괄손익",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-52",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "52장 현금흐름표가 중요한 이유",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-53",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "53장 현금흐름표 작성 방법: 직접법 vs. 간접법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-54",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "54장 순이익은 왜 영업활동현금흐름과 다를까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-55",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "55장 감가상각비를 현금흐름표에서 표시하는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-56",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "56장 투자활동의 두 가지 측면: 영업투자 vs. 지분투자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-57",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "57장 영업이익보다 더 중요한 EBITDA",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-58",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "58장 현금흐름표 확인하기: 법인세비용 vs. 법인세 납부",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-59",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "59장 투자활동현금흐름: 설비투자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-60",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "60장 투자활동: 설비투자와 감가상각비",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-61",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "61장 잉여현금흐름을 계산하는 방법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-62",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "62장 잉여현금흐름을 어떻게 활용할까",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-63",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "63장 서비스기업의 잉여현금흐름",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-64",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "64장 잉여현금흐름이 주가에 미치는 영향",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-65",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "65장 자금을 조달하고 상환하는 재무활동현금흐름",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-66",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "66장 재무활동현금흐름과 배당금",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "2-67",
                 "title": "제5장 현금흐름표 공부하기",
                 "subtitle": "67장 현금흐름표 실전 분석",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             }
         ]
     },
@@ -687,490 +874,630 @@
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "01장 매일오는 단골손님, 공급계약",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-2",
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "02장 공급계약 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-3",
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "03장 공급계약의 유형",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-4",
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "04장 정기 공급계약의 투자포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-5",
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "05장 스팟성 공급계약, 단기와 장기의 차이",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-6",
                 "title": "제1장 기업의 실적이 보인다 (단일판매・공급계약)",
                 "subtitle": "06장 스팟성 공급계약의 투자포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-7",
                 "title": "제2장 주가상승의 촉매 (무상증자)",
                 "subtitle": "07장 무상증자는 주가상승의 공식?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-8",
                 "title": "제2장 주가상승의 촉매 (무상증자)",
                 "subtitle": "08장 무상증자 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-9",
                 "title": "제2장 주가상승의 촉매 (무상증자)",
                 "subtitle": "09장 무상증자, 왜 주가에 긍정적인가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-10",
                 "title": "제3장 무상증자로 부족하다면 (주식분할・주식병합)",
                 "subtitle": "10장 주식. 쪼개거나 붙이면 무엇이 달라지나?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-11",
                 "title": "제3장 무상증자로 부족하다면 (주식분할・주식병합)",
                 "subtitle": "11장 주식분할 공식 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-12",
                 "title": "제3장 무상증자로 부족하다면 (주식분할・주식병합)",
                 "subtitle": "12장 주식분할 효과_거래 활성화",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-13",
                 "title": "제3장 무상증자로 부족하다면 (주식분할・주식병합)",
                 "subtitle": "13장 주식병합 공식 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-14",
                 "title": "제3장 무상증자로 부족하다면 (주식분할・주식병합)",
                 "subtitle": "14장 주식병합 효과 싼 게 비지떡",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-15",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "15장 지분공시의 의미",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-16",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "16장 5%룰. 누구도 피할 수 없다",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-17",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "17장 신규 보고와 변동 보고. 무엇이 다른가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-18",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "18장 단 1주만 매매해도 공시하는 이유",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-19",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "19장 5%룰과 임원공시의 차이점은?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-20",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "20장 대량보유보고서. 신전 투자에 어떻게 활용하나?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-21",
                 "title": "제4장 지분공시로 종목 발굴하는 법 (5%・임원보고)",
                 "subtitle": "21장 임원공시. 실전 투자에 어떻게 활용하나?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-22",
                 "title": "제5장 투자타이밍을 잡아라 (자사주 취득・처분 공시)",
                 "subtitle": "22장 개미의 주식투자와 기업의 자사주 취득. 무엇이 다른가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-23",
                 "title": "제5장 투자타이밍을 잡아라 (자사주 취득・처분 공시)",
                 "subtitle": "23장 자사주 취득 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-24",
                 "title": "제5장 투자타이밍을 잡아라 (자사주 취득・처분 공시)",
                 "subtitle": "24장 자사주 활용법_태우고,  팔고, 담보잡다",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-25",
                 "title": "제5장 투자타이밍을 잡아라 (자사주 취득・처분 공시)",
                 "subtitle": "25장 워런 버핏도 울고 갈. 빅텍의 자사주 매매 재테크",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-26",
                 "title": "제6장 대주주・임원・기관의 동상이몽 (공개매수)",
                 "subtitle": "26장 나 이 주식 삽니다. 자신있게 공개하는 이유는?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-27",
                 "title": "제6장 대주주・임원・기관의 동상이몽 (공개매수)",
                 "subtitle": "27장 공개매수 공시 핵심포인트 ① 상장폐지",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-28",
                 "title": "제6장 대주주・임원・기관의 동상이몽 (공개매수)",
                 "subtitle": "28장 공개매수 공시 핵심포인트 ② 경영권 강화",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-29",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "29장 유상증자. 갚지 않아도 되는 부모님의 돈?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-30",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "30장 유상증자. 누구에게 손 벌리는지가 중요하다",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-31",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "31장 주주배정 유상증자 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-32",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "32장 호재성 유상증자 vs. 악재성 유상증자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-33",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "33장 투자포인트를 알려주는 제3자배정 유상증자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-34",
                 "title": "제7장 악재와 호재를 오가다 (유상증자)",
                 "subtitle": "34장 다 된 밥에 숟가락 올리기 투자법",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-35",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "35장 주식일까? 채권일까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-36",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "36장 CB 발행공시 핵심포인트_발행대상과 전환가액",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-37",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "37장 BW 발행공시 핵심포인트_분리되는가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-38",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "38장 EB 발행공시 핵심포인트_자사주인가. 타사주인가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-39",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "39장 CB vs. BW vs. EB",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-40",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "40장 주식연계채권 발행 이후_① 행사가액 조정",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-41",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "41장 주식연계채권 발행 이후_② 풋 옵션・콜 옵션",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-42",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "42장 주식연계채권 발행 이후_③ 사채권 주식으로 바꾸기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-43",
                 "title": "제8장 이란성 삼둥이 투자활용법 (BW, CB, EB)",
                 "subtitle": "43장 BW 투자 전략, 최대주주와 같은 배 타기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-44",
                 "title": "제9장 담담하게 대처하라 (소송 공시)",
                 "subtitle": "44장 소송, 이제 당황하지 말자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-45",
                 "title": "제9장 담담하게 대처하라 (소송 공시)",
                 "subtitle": "45장 소송 공시 핵심 포인트_삼화페인트 BW 분쟁",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-46",
                 "title": "제10장 골동품이 문화재로 바뀌기도 한다 (자산재평가)",
                 "subtitle": "46장 다락방 도자기가 문화재로 밝혀졌다면?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-47",
                 "title": "제10장 골동품이 문화재로 바뀌기도 한다 (자산재평가)",
                 "subtitle": "47장 자산재평가 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-48",
                 "title": "제10장 골동품이 문화재로 바뀌기도 한다 (자산재평가)",
                 "subtitle": "48장 자산재평가 실제 결과와 그 효과",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-49",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "49장 직장인과 주식의 운명을 결정 짓는 시기란?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-50",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "50장 연말연시. 주목해야 할 이벤트?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-51",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "51장 배당 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-52",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "52장 보유 종목 배당금을 예측해보자",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-53",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "53장 주식배당을 하면 지분가치가 올라갈까?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-54",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "54장 매출액 손익 구조 변동 공시. 진짜는 4분기다.",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-55",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "55장 결산기 관리종목 폭탄 주의보?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-56",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "56장 관리종목 탈피 기업을 미리 알아내보자!",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-57",
                 "title": "제11장 알아두면 돈이 된다. (연말연시 빅 이벤트3)",
                 "subtitle": "57장 재평가의 단초. 사업목적 추가",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-58",
                 "title": "제12장 2보다 2+∂를 바란다. (합병)",
                 "subtitle": "58장 둘이 만나 하나가 되는 이유",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-59",
                 "title": "제12장 2보다 2+∂를 바란다. (합병)",
                 "subtitle": "59장 합병 공시 구성, A to Z",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-60",
                 "title": "제12장 2보다 2+∂를 바란다. (합병)",
                 "subtitle": "60장 합병 공시 핵심포인트",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-61",
                 "title": "제12장 2보다 2+∂를 바란다. (합병)",
                 "subtitle": "61장 주식매수청구권이 없는 합병_소규모. 간이",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-62",
                 "title": "제12장 2보다 2+∂를 바란다. (합병)",
                 "subtitle": "62장 합병. 최대주주의 경영권 강화 도구인가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-63",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "63장 푸드코트에 입점한  커피숍의 딜레마",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-64",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "64장 분할 공시 구성. A to Z",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-65",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "65장 물적분할 공시 핵심포인트_골판지를 벗은 산성앨엔에스",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-66",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "66장 인적분할이 물적분할보다 중요한 이유",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-67",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "67장 인적분할로 지주회사 체제 갖추기",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-68",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "68장 분할의 마법_6일 연속 상한가 기록한 골프존의 비밀",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-69",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "60장 지주회사 급락・사업회사 급등의 배후",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             },
             {
                 "uid": "3-70",
                 "title": "제13장 사업・지배구조 재편의 화룡점정 (분할)",
                 "subtitle": "70장 지주회사냐 사업회사냐. 어디에 베팅할 것인가?",
                 "link": "",
-                "imgUrl": ""
+                "imgUrl": "",
+                "time": "",
+                "author": ""
             }
         ]
     }
