@@ -174,7 +174,7 @@
         "id": "2",
         "title": "한눈에 오를 주식만 골라내는 재무제표 완전 공략법",
         "subtitle": "대한민국 주식투자자를 위한 완벽한 재무제표 읽기",
-        "bgcolor": "#CCE5FF",
+        "bgColor": "#CCE5FF",
         "author": "이강연",
         "contents": [
             {
@@ -585,7 +585,7 @@
         "id": "3",
         "title": "내일의 주가가 보이는법",
         "subtitle": "전자공시 100% 활용",
-        "bgcolor": "#FFE5CC",
+        "bgColor": "#FFE5CC",
         "author": "이래학",
         "contents": [
             {
