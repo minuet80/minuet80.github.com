@@ -3,7 +3,6 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
 <script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
 <script>
   $(document).ready(function() {
@@ -17,6 +16,8 @@ layout: compress
       }
   });
 </script>
+{% include head.html %}
+
 <body>
 <header>
 <div id="mySidenav" class="sidenav">
@@ -40,8 +41,9 @@ layout: compress
 
 {{content}}
 
+<!--
 {% include footer.html %}
-
+-->
 </div>
 <script>
 function openNav() {
