@@ -1,3 +1,13 @@
+<script src={{ "/js/jquery.min.js" | prepend: site.baseurl }}></script>
+<script>
+    $(document).ready(function() {
+        var userAgent = navigator.userAgent;
+        if(userAgent.match('.*minuetchoi.*')) {
+            $('.comment').remove();
+            $('footer').remove();
+        }
+    });
+</script>
 <footer>
     <p style="margin: 0">Copyrights {{site.time | date: '%Y'}}. All Rights Reserved by {{site.title}}</p>
     <p style="margin: 0">Image credits - <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
