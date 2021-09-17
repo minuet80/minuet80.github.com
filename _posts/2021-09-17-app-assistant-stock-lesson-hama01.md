@@ -84,12 +84,15 @@ width: large
 
 ![1]({{site.baseurl}}/images/app/assistant/stock/lesson/hama/hama3.png){: style="box-shadow: 0 0 5px #777"}
 
-```text
-회사의 주인은 주주
 
-회사에 자본을 대고 주식을 발급받아 지분율만큼 회사의 주인이 된 사람
+``회사의 주인은 주주``
+
+```text
+회사에 자본을 대고 주식을 발급받아 
+
+지분율만큼 회사의 주인이 된 사람
 ```
-{: style="width: 650px"}
+{: style="width: 400px"}
 
 ``기업 활동은 주주의 몫 (자본 = 순자산)을 늘리기 위한 것``{: style="background-color: #ffcccc"}
 
