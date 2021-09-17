@@ -8,14 +8,14 @@ layout: compress
   $(document).ready(function() {
       var userAgent = navigator.userAgent;
       if(userAgent.match('.*minuetchoi.*')) {
-        $('#markdown-toc').remove();
+          $('#markdown-toc').remove();
       } else {
           $('header').show();
           $('.page-title').show();
           $('.featured-img').show();
           $('.meta').show();
           $('.comment').show();
-        $('footer').show();
+          $('footer').show();
       }
   });
 </script>
