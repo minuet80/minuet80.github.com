@@ -2,7 +2,7 @@
 layout: post
 title: 01장 자본과 부채가 결혼해 자산을 낳았다!
 img: flotation-kakaobank/flotation-kakaobank-1.png
-color: B1D5C2
+color: 008000
 author: minuetchoi
 permalink: /app-assistant-stock-lesson-hama01/
 width: large
