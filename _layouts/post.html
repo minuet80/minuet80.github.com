@@ -23,12 +23,14 @@ layout: default
 <script>
     $(document).ready(function() {
         var userAgent = navigator.userAgent;
+        console.log('userAgent1 : ' + userAgent);
         if(userAgent.match('.*minuetchoi.*')) {
             $('header').remove();
             $('.featured-img').remove();
             $('.page-title').remove();
             $('.meta').remove();
             $('.comment').remove();
+            console.log('userAgent2 : ' + userAgent);
         }
     });
 </script>
