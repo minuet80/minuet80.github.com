@@ -8,10 +8,6 @@ permalink: /app-assistant-stock-lesson-hama01/
 width: large
 ---
 
-* some text
-{: toc}
-
-
 ## 1. 사업현황
 
 은행법에 따라 설립된 인터넷 전문 은행
