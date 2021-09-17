@@ -8,11 +8,14 @@ layout: compress
   $(document).ready(function() {
       var userAgent = navigator.userAgent;
       if(userAgent.match('.*minuetchoi.*')) {
-          $('header').remove();
-          $('.featured-img').remove();
-          $('.page-title').remove();
-          $('.meta').remove();
-          $('#markdown-toc').remove();
+        $('#markdown-toc').remove();
+      } else {
+          $('header').show();
+          $('.page-title').show();
+          $('.featured-img').show();
+          $('.meta').show();
+          $('.comment').show();
+        $('footer').show();
       }
   });
 </script>
@@ -41,9 +44,8 @@ layout: compress
 
 {{content}}
 
-<!--
 {% include footer.html %}
--->
+
 </div>
 <script>
 function openNav() {
