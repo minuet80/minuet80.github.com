@@ -12,6 +12,7 @@ layout: compress
       } else {
           $('header').show();
           $('.header-title').show();
+          $('.header-tagline').show();
           $('.page-title').show();
           $('.featured-img').show();
           $('.meta').show();
@@ -39,7 +40,7 @@ layout: compress
   </h1>
 </a>
 
-<h2 class="header-tagline">{{site.description}}</h2>
+<h2 class="header-tagline" style="display: none">{{site.description}}</h2>
 </header>
 <div id="main">
 
