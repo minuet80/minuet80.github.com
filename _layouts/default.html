@@ -7,9 +7,7 @@ layout: compress
 <script>
   $(document).ready(function() {
       var userAgent = navigator.userAgent;
-      if(userAgent.match('.*minuetchoi.*')) {
-          $('#markdown-toc').remove();
-      } else {
+      if(!userAgent.match('.*minuetchoi.*')) {
           $('header').show();
           $('.page-title').show();
           $('.featured-img').show();
